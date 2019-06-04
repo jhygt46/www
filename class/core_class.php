@@ -24,7 +24,6 @@ class Core{
     public function get_data(){
 
         if(is_dir($this->dir_info)){
-            echo "0";
             if(file_exists($this->file_info)){
                 return json_decode(file_get_contents($this->file_info));
             }else{

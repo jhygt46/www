@@ -5,10 +5,14 @@
     $core = new Core();
     $info = $core->get_data();
     
+    echo $info->{'mapcode'}."<br/>";
+    echo $info->{'code'};
     
     echo "<pre>";
     print_r($info);
     echo "</pre>";
+
+
     exit;
     
 
