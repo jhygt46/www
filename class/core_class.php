@@ -52,15 +52,11 @@ class Core{
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         $data = json_decode(curl_exec($ch));
-
-        echo "<pre>";
-        print_r($data);
-        echo "</pre>";
-
+ 
         if(file_exists($this->file_info)){
             rename($this->file_info, $this->dir_info.date("Ymd", filemtime($this->file_info)).".json");
         }
-        file_put_contents($this->file_info, json_encode($data["info"]));
+        file_put_contents($this->file_info, json_encode($data->{"info"}));
         //file_put_contents($this->data, "var data=".json_encode($data->{"data"}));
         curl_close($ch);
         return $data;
