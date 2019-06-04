@@ -45,13 +45,18 @@ class Core{
         }
 
     }
-    public function curlData($send){
+    public function curlData($param){
+
+        echo "HOLA";
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'http://misitiodelivery.cl/servicio.php');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($param));
+        
+        echo "MUNDO";
         $data = json_decode(curl_exec($ch));
+        echo "NELSON";
 
         echo "<pre>";
         print_r($data);
