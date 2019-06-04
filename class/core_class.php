@@ -36,7 +36,7 @@ class Core{
             }
         }else{
             echo "3";
-            if(mkdir($this->dir_info, 0644)){
+            if(mkdir($this->dir_info, 0777)){
                 echo "4";
                 $send['host'] = $this->host;
                 $send['ft'] = 1;
