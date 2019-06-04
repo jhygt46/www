@@ -45,19 +45,17 @@ class Core{
         }
 
     }
-    public function curlData($param){
+    public function curlData($send){
 
-        echo "HOLA1";
         $ch = curl_init();
-        echo "HOLA2";
         curl_setopt($ch, CURLOPT_URL, 'http://misitiodelivery.cl/servicio.php');
-        echo "HOLA3";
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        echo "HOLA4";
-        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($param));
-        echo "HOLA5";
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         $data = json_decode(curl_exec($ch));
-        echo "HOLA6";
+
+        echo "<pre>";
+        print_r($data);
+        echo "</pre>";
 
         if(file_exists($this->file_info)){
             rename($this->file_info, $this->dir_info.date("Ymd", filemtime($this->file_info)).".json");
