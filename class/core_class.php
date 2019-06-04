@@ -58,7 +58,8 @@ class Core{
         if(!file_put_contents($this->file_info, json_encode($data->{"info"}))){
             // REPORTAR ERROR
         }
-        if(!file_put_contents($this->dir_data.$data->{'js_data'}, "var data=".json_encode($data->{"data"}))){
+        echo $this->dir_data.$data->{"info"}->{"js_data"}."AAA<br>";
+        if(!file_put_contents($this->dir_data.$data->{"js_data"}, "var data=".json_encode($data->{"data"}))){
             // REPORTAR ERROR
         }
         curl_close($ch);
