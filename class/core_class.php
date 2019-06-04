@@ -59,15 +59,15 @@ class Core{
         }
         */
 
-        if(!file_put_contents($this->file_info, json_encode($data->{"info"}))){
-            // REPORTAR ERROR
+        if(file_put_contents($this->file_info, json_encode($data->{"info"}))){
+            
             echo "<pre>";
             print_r($data->{"info"});
             echo "</pre>";
         }
 
         if(file_put_contents($this->dir_data.$data->{"info"}->{"js_data"}, "var data=".json_encode($data->{"data"}))){
-            // REPORTAR ERROR
+            
             $categorias = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
             for($i=0; $i<count($categorias); $i++){
                 if(strlen($categorias[$i]->{"image"}) == 24 || strlen($categorias[$i]->{"image"}) == 26){
