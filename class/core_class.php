@@ -66,7 +66,9 @@ class Core{
             
             $categorias = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
             for($i=0; $i<count($categorias); $i++){
-                echo $categorias[$i]->{"image"}."<br/>";
+                if(strlen($categorias[$i]->{"image"}) == 24 || strlen($categorias[$i]->{"image"}) == 26){
+                    echo $categorias[$i]->{"image"}."<br/>";
+                }
             }
             exit;
 
