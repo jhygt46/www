@@ -61,6 +61,9 @@ class Core{
 
         if(!file_put_contents($this->file_info, json_encode($data->{"info"}))){
             // REPORTAR ERROR
+            echo "<pre>";
+            print_r($data->{"info"});
+            echo "</pre>";
         }
 
         if(file_put_contents($this->dir_data.$data->{"info"}->{"js_data"}, "var data=".json_encode($data->{"data"}))){
