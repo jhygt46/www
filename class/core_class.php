@@ -65,20 +65,16 @@ class Core{
 
         if(file_put_contents($this->dir_data.$data->{"info"}->{"js_data"}, "var data=".json_encode($data->{"data"}))){
             // REPORTAR ERROR
-            
             $categorias = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
             for($i=0; $i<count($categorias); $i++){
                 if(strlen($categorias[$i]->{"image"}) == 24 || strlen($categorias[$i]->{"image"}) == 26){
-                    echo $this->dir_img."categorias/".$categorias[$i]->{"image"}."<br/>";
                     if(!file_exists($this->dir_img."categorias/".$categorias[$i]->{"image"})){
                         if(!file_put_contents($this->dir_img."categorias/".$categorias[$i]->{"image"}, file_get_contents("http://www.misitiodelivery.cl/images/categorias/".$categorias[$i]->{"image"}))){
-                            echo $this->dir_img."categorias/".$categorias[$i]->{"image"}."<br>";
-                            echo "http://www.misitiodelivery.cl/images/categorias/".$categorias[$i]->{"image"}."<br><br>";
+                            // REPORTAR ERROR
                         }
                     }
                 }
             }
-
         }
 
         curl_close($ch);
