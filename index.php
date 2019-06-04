@@ -4,17 +4,6 @@
 
     $core = new Core();
     $info = $core->get_data();
-    
-    echo $info->{'mapcode'}."<br/>";
-    echo $info->{'code'};
-    
-    echo "<pre>";
-    print_r($info);
-    echo "</pre>";
-
-
-    exit;
-    
 
 ?>
 
@@ -40,7 +29,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/libphonenumber-js/1.4.2/libphonenumber-js.min.js" type="text/javascript"></script>
-        <script src="/data/<?php echo $info->{"js_data"}; ?>" type="text/javascript"></script>
+        <script src="/data/<?php echo $info->{'js_data'}; ?>" type="text/javascript"></script>
         <script src="/js/html_func.js" type="text/javascript"></script>
         <script src="/js/base.js" type="text/javascript"></script>
         <script src="/js/base_lista.js" type="text/javascript"></script>

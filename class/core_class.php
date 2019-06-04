@@ -5,6 +5,7 @@ class Core{
     public $host = null;
     public $dir_info = null;
     public $file_info = null;
+    public $dir_data = null;
 
     public function __construct(){
 
@@ -14,9 +15,11 @@ class Core{
         if($_SERVER["HTTP_HOST"] == "localhost"){
             $this->dir_info = "C:/var/".$this->host."/";
             $this->file_info = "C:/var/".$this->host."/last.json";
+            $this->dir_data = "C:/AppServ/www/restaurants_web/deliveryweb/data/";
         }else{
             $this->dir_info = "/var/data/".$this->host."/";
             $this->file_info = "/var/data/".$this->host."/last.json";
+            $this->dir_data = "/var/www/html/data/";
         }
 
     }
@@ -27,14 +30,14 @@ class Core{
             if(file_exists($this->file_info)){
                 return json_decode(file_get_contents($this->file_info));
             }else{
-                $send['host'] = $this->host;
-                $send['ft'] = 1;
+                $send["host"] = $this->host;
+                $send["ft"] = 1;
                 return $this->curlData($send);
             }
         }else{
             if(mkdir($this->dir_info, 0777)){
-                $send['host'] = $this->host;
-                $send['ft'] = 1;
+                $send["host"] = $this->host;
+                $send["ft"] = 1;
                 return $this->curlData($send);
             }
         }
@@ -55,9 +58,11 @@ class Core{
         if(!file_put_contents($this->file_info, json_encode($data->{"info"}))){
             // REPORTAR ERROR
         }
-        //file_put_contents($this->data, "var data=".json_encode($data->{"data"}));
+        if(!file_put_contents($this->dir_data.$data->{'js_data'}, "var data=".json_encode($data->{"data"}))){
+            // REPORTAR ERROR
+        }
         curl_close($ch);
-        return $data;
+        return $data->{"info"};
 
     }
 
