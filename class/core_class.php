@@ -56,10 +56,10 @@ class Core{
         if(file_exists($this->file_info)){
             rename($this->file_info, $this->dir_info.date("Ymd", filemtime($this->file_info)).".json");
         }
-        file_put_contents($this->file_info, json_encode($data->{"info"}));
+        file_put_contents($this->file_info, json_encode($data["info"]));
         //file_put_contents($this->data, "var data=".json_encode($data->{"data"}));
         curl_close($ch);
-        return $data->{"info"};
+        return $data["info"];
 
     }
 
