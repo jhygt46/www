@@ -53,6 +53,10 @@ class Core{
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         $data = json_decode(curl_exec($ch));
 
+        echo "<pre>";
+        print_r($data);
+        echo "</pre>";
+
         if(file_exists($this->file_info)){
             rename($this->file_info, $this->dir_info.date("Ymd", filemtime($this->file_info)).".json");
         }
