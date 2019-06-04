@@ -8,8 +8,8 @@ class Core{
 
     public function __construct(){
 
-        $this->host = "www.fireapp.cl";
-        //$this->host = $_SERVER["HTTP_HOST"];
+        //$this->host = "www.fireapp.cl";
+        $this->host = $_SERVER["HTTP_HOST"];
 
         if($_SERVER["HTTP_HOST"] == "localhost"){
             $this->dir_info = "C:/var/".$this->host."/";
