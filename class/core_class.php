@@ -59,7 +59,7 @@ class Core{
         file_put_contents($this->file_info, json_encode($data["info"]));
         //file_put_contents($this->data, "var data=".json_encode($data->{"data"}));
         curl_close($ch);
-        return $data["info"];
+        return $data;
 
     }
 
