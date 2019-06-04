@@ -57,7 +57,7 @@ class Core{
             rename($this->file_info, $this->dir_info.date("Ymd", filemtime($this->file_info)).".json");
         }
         echo $this->file_info;
-        if(file_put_contents($this->file_info, $data->{"info"})){
+        if(file_put_contents($this->file_info, json_encode($data->{"info"}))){
             echo "SI";
         }else{
             echo "NO";
