@@ -61,9 +61,14 @@ class Core{
 
         if(file_put_contents($this->file_info, json_encode($data->{"info"}))){
             
-            echo "<pre>";
-            print_r($data->{"info"});
-            echo "</pre>";
+            if($data->{"info"}->{"logo"} != "sinlogo.png"){
+                if(!file_exists($this->dir_img."logos/".$data->{"info"}->{"logo"})){
+                    if(!file_put_contents($this->dir_img."logos/".$data->{"info"}->{"logo"}, file_get_contents("http://www.misitiodelivery.cl/images/logos/".$data->{"info"}->{"logo"}))){
+                        // REPORTAR ERROR
+                    }
+                }
+            }
+
         }
 
         if(file_put_contents($this->dir_data.$data->{"info"}->{"js_data"}, "var data=".json_encode($data->{"data"}))){
