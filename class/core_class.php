@@ -51,16 +51,21 @@ class Core{
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         $data = json_decode(curl_exec($ch));
  
+        /*
         if(file_exists($this->file_info)){
             rename($this->file_info, $this->dir_info.date("Ymd", filemtime($this->file_info)).".json");
         }
+        */
 
         if(!file_put_contents($this->file_info, json_encode($data->{"info"}))){
             // REPORTAR ERROR
         }
 
-        if(!file_put_contents($this->dir_data.$data->{"info"}->{"js_data"}, "var data=".json_encode($data->{"data"}))){
+        if(file_put_contents($this->dir_data.$data->{"info"}->{"js_data"}, "var data=".json_encode($data->{"data"}))){
             // REPORTAR ERROR
+            echo "<pre>";
+            print_r($data->{"data"}->{"catalogos"}[0]->{"categorias"});
+            echo "</pre>";
         }
         
         curl_close($ch);
