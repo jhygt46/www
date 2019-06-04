@@ -26,18 +26,14 @@ class Core{
         if(is_dir($this->dir_info)){
             echo "0";
             if(file_exists($this->file_info)){
-                echo "1";
                 return json_decode(file_get_contents($this->file_info));
             }else{
-                echo "2";
                 $send['host'] = $this->host;
                 $send['ft'] = 1;
                 return $this->curlData($send);
             }
         }else{
-            echo "3";
             if(mkdir($this->dir_info, 0777)){
-                echo "4";
                 $send['host'] = $this->host;
                 $send['ft'] = 1;
                 return $this->curlData($send);
@@ -56,11 +52,9 @@ class Core{
         if(file_exists($this->file_info)){
             rename($this->file_info, $this->dir_info.date("Ymd", filemtime($this->file_info)).".json");
         }
-        echo $this->file_info;
-        if(file_put_contents($this->file_info, json_encode($data->{"info"}))){
-            echo "SI";
-        }else{
-            echo "NO";
+
+        if(!file_put_contents($this->file_info, json_encode($data->{"info"}))){
+            // REPORTAR ERROR
         }
         //file_put_contents($this->data, "var data=".json_encode($data->{"data"}));
         curl_close($ch);
