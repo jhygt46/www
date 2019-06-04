@@ -1,0 +1,376 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+body .contenedor {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* MENU LEFT */
+body .contenedor .menu_left {
+  width: 219px;
+  height: 100%;
+  top: 0px;
+  left: -220px;
+  position: fixed;
+  z-index: 2;
+}
+body .contenedor .menu_left .cont_menu_left {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+body .contenedor .menu_left .cont_menu_left .btn_toogle {
+  width: 40px;
+  height: 40px;
+  right: -50px;
+  font-size: 40px;
+  position: absolute;
+}
+body .contenedor .menu_left .cont_menu_left .menu_info {
+  display: block;
+}
+/* PAGINA */
+body .contenedor .pagina {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+}
+body .contenedor .pagina .cont_pagina {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .contenedor .pagina .cont_pagina .header {
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+}
+body .contenedor .pagina .cont_pagina .header .header_logo {
+  position: absolute;
+}
+body .contenedor .pagina .cont_pagina .header .header_logo img {
+  max-width: 100%;
+}
+body .contenedor .pagina .cont_pagina .header .menu_right {
+  height: 40px;
+  width: 40px;
+  right: 20px;
+  position: absolute;
+  z-index: 2;
+}
+body .contenedor .pagina .cont_pagina .header .menu_right .cantcart {
+  width: 26px;
+  height: 26px;
+  border-radius: 13px;
+  top: 22px;
+  left: -10px;
+  position: absolute;
+}
+body .contenedor .pagina .cont_pagina .header .menu_right .cantcart .cantcart_num {
+  position: absolute;
+}
+body .contenedor .pagina .cont_pagina .footer {
+  height: 100px;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  z-index: 2;
+}
+body .contenedor .pagina .cont_pagina .fixed {
+  position: fixed;
+}
+body .contenedor .pagina .cont_pagina .contenido {
+  width: 100%;
+  z-index: 1;
+}
+body .contenedor .pagina .cont_pagina .contenido .cont_contenido {
+  margin: 0 auto;
+  display: block;
+}
+body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales {
+  display: block;
+}
+body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .nombre {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .descripcion {
+  position: absolute;
+  top: 32px;
+  left: 10px;
+  line-height: 15px;
+  padding-right: 26%;
+}
+body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .precio {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+body .contenedor .pagina .cont_pagina .contenido .padding_cont_f1 {
+  padding-bottom: 110px;
+}
+body .contenedor .pagina .cont_pagina .contenido .padding_cont_f2 {
+  padding-bottom: 5px;
+}
+
+/* MODALS */
+body .contenedor .modals {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 3;
+  display: none;
+}
+body .contenedor .modals .cont_modals {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+body .contenedor .modals .cont_modals .modal {
+  position: absolute;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .titulo {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .titulo .cont_titulo {
+  position: absolute;
+  width: 100%;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .titulo .cont_titulo h1 {
+  display: block;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .titulo .cont_titulo h2 {
+  display: block;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .close {
+  position: absolute;
+  z-index: 3;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .cont_info {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .pedido_final {
+  display: block;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .sub_total {
+  position: absolute;
+  z-index: 2;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .sub_total .cont_subtotal {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .acciones {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+}
+.modal_carta .cont_modal .cont_info .info_modal .lista_productos .categoria .detalle_pro .nombre_pro {
+  float: left;
+}
+.modal_carta .cont_modal .cont_info .info_modal .lista_productos .categoria .detalle_pro .precio_pro {
+  float: left;
+}
+.modal_carta .cont_modal .cont_info .info_modal .lista_productos .categoria .info .info_cont .info_01 {
+  float: left;
+}
+.modal_carta .cont_modal .cont_info .info_modal .lista_productos .categoria .info .info_cont .info_02 {
+  float: left;
+}
+.modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoria .listado .prod_item .prod_i_nom {
+  float: left;
+}
+.modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoria .listado .prod_item .prod_i_pre {
+  float: left;
+}
+.modal_carta .cont_modal .cont_info .info_modal .lista_promociones .promocion_categoria .item_pro_cat .item_pro_cat_cant {
+  float: left;
+}
+.modal_carta .cont_modal .cont_info .info_modal .lista_promociones .promocion_categoria .item_pro_cat .item_pro_cat_nom {
+  float: left;
+}
+.paso_01 .process_carro .process_carro_promo {
+  position: relative;
+}
+.paso_01 .process_carro .process_carro_promo .promo_detalle .promo_detalle_item .promo_detalle_nombre {
+  float: left;
+}
+.paso_01 .process_carro .process_carro_promo .promo_detalle .promo_detalle_item .promo_detalle_acciones {
+  float: left;
+}
+.paso_01 .process_carro .process_carro_promo .promo_detalle .promo_detalle_item .promo_detalle_acciones .accion {
+  float: left;
+}
+.paso_01 .process_carro .process_carro_promo .promo_detalle .promo_detalle_item .promo_detalle_acciones .precio {
+  float: left;
+}
+.paso_01 .process_carro .process_carro_promo .promo_delete {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 30px;
+  height: 30px;
+}
+.paso_01 .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_nombre {
+  float: left;
+}
+.paso_01 .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones {
+  float: left;
+}
+.paso_01 .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones .accion {
+  float: left;
+}
+.paso_01 .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones .precio {
+  float: left;
+}
+.paso_01 .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones .pregunta {
+  float: left;
+}
+.paso_01 .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones .espacio {
+  float: left;
+}
+.paso_02 .cont_direccion {
+  height: 100%;
+}
+.paso_02 .cont_direccion .direccion_opciones .dir_op .title {
+  display: block;
+}
+.paso_02 .cont_direccion .direccion_opciones .dir_op .stitle {
+  display: block;
+}
+.paso_02a .cont_direccion {
+  height: 100%;
+}
+.paso_02a .cont_direccion .direccion_op1 .dir_locales .cont_local {
+  cursor: pointer;
+}
+.paso_02a .cont_direccion .direccion_op1 .dir_locales .cont_local .local_info .title {
+  display: block;
+}
+.paso_02a .cont_direccion .direccion_op1 .dir_locales .cont_local .local_info .stitle {
+  display: block;
+}
+.paso_02a .cont_direccion .direccion_op1 .dir_locales .lmap {
+  display: none;
+}
+
+.paso_02b .cont_direccion {
+  height: 100%;
+}
+.paso_02b .cont_direccion .direccion_op2 {
+  height: 100%;
+}
+.paso_02b .cont_direccion .direccion_op2 #pac-input {
+  margin: 1%;
+  width: 97%;
+  height: 40px;
+}
+.paso_02b .cont_direccion .direccion_op2 #map_direccion {
+  height: 100%;
+}
+.paso_02b .info_modal {
+  height: calc(100% - 133px);
+}
+
+.paso_03 .cont_final .block_direccion {
+  display: block;
+}
+.paso_03 .cont_final .block_direccion li {
+  float: left;
+}
+.paso_03 .cont_final .block_direccion li h1 {
+  display: block;
+  font-size: 12px;
+}
+.paso_03 .cont_final .block_direccion li h2 {
+  display: block;
+  font-size: 16px;
+  height: 30px;
+  width: calc(100% - 2px);
+  padding-top: 3px;
+}
+.paso_03 .cont_final .block_direccion li input {
+  width: calc(100% - 2px);
+  margin-right: 2px;
+  border: 0px;
+  height: 30px;
+}
+.paso_03 .cont_final .block_nombre_telefono {
+  display: block;
+}
+.paso_03 .cont_final .block_nombre_telefono li {
+  float: left;
+}
+.paso_03 .cont_final .block_nombre_telefono input {
+  width: calc(100% - 3px);
+  margin-right: 3px;
+  border: 0px;
+  height: 30px;
+}
+.paso_03 .cont_final .block_nombre_telefono h1 {
+  display: block;
+  font-size: 12px;
+}
+.paso_03 .cont_final .block_preguntas {
+  display: block;
+}
+.paso_03 .cont_final .block_preguntas h1 {
+  display: block;
+  font-size: 12px;
+}
+.paso_03 .cont_final .block_preguntas .preguntas .pregunta li {
+  float: left;
+}
+
+.hide {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background: #eee;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/*# sourceMappingURL=css_base.css.map */
