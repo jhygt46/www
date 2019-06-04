@@ -16,10 +16,12 @@ class Core{
             $this->dir_info = "C:/var/".$this->host."/";
             $this->file_info = "C:/var/".$this->host."/last.json";
             $this->dir_data = "C:/AppServ/www/restaurants_web/deliveryweb/data/";
+            $this->dir_img = "C:/AppServ/www/restaurants_web/deliveryweb/images/";
         }else{
             $this->dir_info = "/var/data/".$this->host."/";
             $this->file_info = "/var/data/".$this->host."/last.json";
             $this->dir_data = "/var/www/html/data/";
+            $this->dir_img = "/var/www/html/images/";
         }
 
     }
@@ -67,7 +69,12 @@ class Core{
             $categorias = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
             for($i=0; $i<count($categorias); $i++){
                 if(strlen($categorias[$i]->{"image"}) == 24 || strlen($categorias[$i]->{"image"}) == 26){
-                    echo $categorias[$i]->{"image"}."<br/>";
+                    echo $this->dir_img."categorias/".$categorias[$i]->{"image"}."<br/>";
+                    if(file_exists($this->dir_img."categorias/".$categorias[$i]->{"image"})){
+                        echo $categorias[$i]->{"image"}." EXISTE: <br/>";
+                    }else{
+                        echo $categorias[$i]->{"image"}." NO EXISTE: <br/>";
+                    }
                 }
             }
             exit;
