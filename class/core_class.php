@@ -97,7 +97,7 @@ class Core{
         if(is_dir($this->dir_info)){
             if(file_exists($this->dir_info."polygons.json")){
 
-                $polygons = json_decode(file_get_contents($this->dir_info."polygons.json"));
+                $polygons = file_get_contents($this->dir_info."polygons.json"));
                 $precio = 9999999;
                 $info['op'] = 2;
                 foreach($polygons as $polygon){
@@ -109,7 +109,7 @@ class Core{
                         $lats[] = $punto->{'lat'};
                         $lngs[] = $punto->{'lng'};
                     }
-                    $is = is_in_polygon($lats, $lngs, $lat, $lng);
+                    $is = $this->is_in_polygon($lats, $lngs, $lat, $lng);
                     if($is){
                         if($precio > $polygon['precio']){
                             $info['op'] = 1;
@@ -129,7 +129,7 @@ class Core{
         }
     }
 
-    function is_in_polygon($vertices_x, $vertices_y, $longitude_x, $latitude_y){
+    public function is_in_polygon($vertices_x, $vertices_y, $longitude_x, $latitude_y){
         $points_polygon = count($vertices_x) - 1;
         $i = $j = $c = $point = 0;
         for($i=0, $j=$points_polygon ; $i<$points_polygon; $j=$i++) {
