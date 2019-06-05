@@ -109,7 +109,7 @@ class Core{
                         $lats[] = $punto->{'lat'};
                         $lngs[] = $punto->{'lng'};
                     }
-                    $is = $this->is_in_polygon($lats, $lngs, $lat, $lng);
+                    $is = is_in_polygon($lats, $lngs, $lat, $lng);
                     if($is){
                         if($precio > $polygon['precio']){
                             $info['op'] = 1;
