@@ -54,37 +54,43 @@ class Core{
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         $data = json_decode(curl_exec($ch));
  
-        /*
-        if(file_exists($this->file_info)){
-            rename($this->file_info, $this->dir_info.date("Ymd", filemtime($this->file_info)).".json");
-        }
-        */
+        if(isset($data->{'op'}) && $data->{'op'} == 1){
 
-        if(!file_put_contents($this->dir_info."polygons.json", json_encode($data->{"polygons"}))){
-            // REPORTAR ERROR
-        }
-
-        if(file_put_contents($this->file_info, json_encode($data->{"info"}))){
-            if($data->{"info"}->{"logo"} != "sinlogo.png"){
-                if(!file_exists($this->dir_img."logos/".$data->{"info"}->{"logo"})){
-                    if(!file_put_contents($this->dir_img."logos/".$data->{"info"}->{"logo"}, file_get_contents("http://www.misitiodelivery.cl/images/logos/".$data->{"info"}->{"logo"}))){
-                        // REPORTAR ERROR
-                    }
-                }
+            /*
+            if(file_exists($this->file_info)){
+                rename($this->file_info, $this->dir_info.date("Ymd", filemtime($this->file_info)).".json");
             }
-        }
+            */
 
-        if(file_put_contents($this->dir_data.$data->{"info"}->{"js_data"}, "var data=".json_encode($data->{"data"}))){
-            $categorias = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
-            for($i=0; $i<count($categorias); $i++){
-                if(strlen($categorias[$i]->{"image"}) == 24 || strlen($categorias[$i]->{"image"}) == 26){
-                    if(!file_exists($this->dir_img."categorias/".$categorias[$i]->{"image"})){
-                        if(!file_put_contents($this->dir_img."categorias/".$categorias[$i]->{"image"}, file_get_contents("http://www.misitiodelivery.cl/images/categorias/".$categorias[$i]->{"image"}))){
+            if(!file_put_contents($this->dir_info."polygons.json", json_encode($data->{"polygons"}))){
+                // REPORTAR ERROR
+            }
+
+            if(file_put_contents($this->file_info, json_encode($data->{"info"}))){
+                if($data->{"info"}->{"logo"} != "sinlogo.png"){
+                    if(!file_exists($this->dir_img."logos/".$data->{"info"}->{"logo"})){
+                        if(!file_put_contents($this->dir_img."logos/".$data->{"info"}->{"logo"}, file_get_contents("http://www.misitiodelivery.cl/images/logos/".$data->{"info"}->{"logo"}))){
                             // REPORTAR ERROR
                         }
                     }
                 }
             }
+
+            if(file_put_contents($this->dir_data.$data->{"info"}->{"js_data"}, "var data=".json_encode($data->{"data"}))){
+                $categorias = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
+                for($i=0; $i<count($categorias); $i++){
+                    if(strlen($categorias[$i]->{"image"}) == 24 || strlen($categorias[$i]->{"image"}) == 26){
+                        if(!file_exists($this->dir_img."categorias/".$categorias[$i]->{"image"})){
+                            if(!file_put_contents($this->dir_img."categorias/".$categorias[$i]->{"image"}, file_get_contents("http://www.misitiodelivery.cl/images/categorias/".$categorias[$i]->{"image"}))){
+                                // REPORTAR ERROR
+                            }
+                        }
+                    }
+                }
+            }
+
+        }else{
+            
         }
 
         curl_close($ch);
