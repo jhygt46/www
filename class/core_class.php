@@ -98,14 +98,13 @@ class Core{
             if(file_exists($this->dir_info."polygons.json")){
 
                 $polygons = json_decode(file_get_contents($this->dir_info."polygons.json"));
-                return $polygons;
                 $precio = 9999999;
                 $info['op'] = 2;
                 foreach($polygons as $polygon){
 
                     $lats = [];
                     $lngs = [];
-                    $puntos = $polygon['poligono'];
+                    $puntos = json_decode($polygon['poligono']);
                     foreach($puntos as $punto){
                         $lats[] = $punto->{'lat'};
                         $lngs[] = $punto->{'lng'};
