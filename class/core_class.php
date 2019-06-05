@@ -98,6 +98,7 @@ class Core{
             if(file_exists($this->dir_info."polygons.json")){
 
                 $polygons = json_decode(file_get_contents($this->dir_info."polygons.json"));
+                return $polygons;
                 $precio = 9999999;
                 $info['op'] = 2;
                 foreach($polygons as $polygon){
