@@ -111,14 +111,14 @@ class Core{
                     }
                     $is = $this->is_in_polygon($lats, $lngs, $lat, $lng);
                     if($is){
-                        if($precio > $polygon['precio']){
+                        if($precio > $polygon->{'precio'}){
                             $info['op'] = 1;
-                            $info['id_loc'] = intval($polygon['id_loc']);
-                            $info['precio'] = intval($polygon['precio']);
-                            $info['nombre'] = $polygon['nombre'];
+                            $info['id_loc'] = intval($polygon->{'id_loc'});
+                            $info['precio'] = intval($polygon->{'precio'});
+                            $info['nombre'] = $polygon->{'nombre'};
                             $info['lat'] = $lat;
                             $info['lng'] = $lng;
-                            $precio = $polygon['precio'];
+                            $precio = $polygon->{'precio'};
                         }
                     }
                 }
