@@ -104,7 +104,7 @@ class Core{
 
                     $lats = [];
                     $lngs = [];
-                    $puntos = json_decode($polygon['poligono']);
+                    $puntos = json_decode($polygon->{'poligono'});
                     foreach($puntos as $punto){
                         $lats[] = $punto->{'lat'};
                         $lngs[] = $punto->{'lng'};
