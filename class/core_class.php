@@ -60,8 +60,11 @@ class Core{
         }
         */
 
+        if(!file_put_contents($this->dir_info."polygons.json", json_encode($data->{"polygons"}))){
+            // REPORTAR ERROR
+        }
+
         if(file_put_contents($this->file_info, json_encode($data->{"info"}))){
-            
             if($data->{"info"}->{"logo"} != "sinlogo.png"){
                 if(!file_exists($this->dir_img."logos/".$data->{"info"}->{"logo"})){
                     if(!file_put_contents($this->dir_img."logos/".$data->{"info"}->{"logo"}, file_get_contents("http://www.misitiodelivery.cl/images/logos/".$data->{"info"}->{"logo"}))){
@@ -69,11 +72,9 @@ class Core{
                     }
                 }
             }
-
         }
 
         if(file_put_contents($this->dir_data.$data->{"info"}->{"js_data"}, "var data=".json_encode($data->{"data"}))){
-            
             $categorias = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
             for($i=0; $i<count($categorias); $i++){
                 if(strlen($categorias[$i]->{"image"}) == 24 || strlen($categorias[$i]->{"image"}) == 26){
