@@ -148,6 +148,8 @@ class Core{
 
         $info['op'] = 1;
         $info['aux_pedido'] = json_decode($_POST['pedido']);
+        $info['nombre'] = $info['aux_pedido']->{'nombre'};
+        $info['telefono'] = str_replace(" ", "", $info['aux_pedido']->{'telefono'});
         return $info;
         
         
