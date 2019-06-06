@@ -146,7 +146,7 @@ class Core{
     }
     public function enviar_pedido(){
 
-        $info['op'] = 1;
+        $info['op'] = 3;
         $pedido = json_decode($_POST['pedido']);
         $nombre = $pedido->{'nombre'};
         $telefono = str_replace(" ", "", $pedido->{'telefono'});
