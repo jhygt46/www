@@ -148,15 +148,9 @@ class Core{
 
         $info['op'] = 1;
         $info['aux_pedido'] = json_decode($_POST['pedido']);
-        $info['nombre'] = $info['aux_pedido']->{'nombre'};
-        $info['telefono'] = str_replace(" ", "", $info['aux_pedido']->{'telefono'});
-        return $info;
+        $nombre = $info['aux_pedido']->{'nombre'};
+        $telefono = str_replace(" ", "", $info['aux_pedido']->{'telefono'});
         
-        
-        $aux_pedido = json_decode($_POST['pedido']);
-        $nombre = $aux_pedido->{'nombre'};
-        $telefono = str_replace(" ", "", $aux_pedido->{'telefono'});
-
         if(strlen($nombre) > 2){
             if(strlen($telefono) >= 12 && strlen($telefono) <= 14){
 
@@ -169,13 +163,15 @@ class Core{
                 curl_setopt($ch, CURLOPT_URL, 'https://www.misitiodelivery.cl/enviar_pedido.php');
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-                $data = curl_exec($ch);
+                $info['data'] = curl_exec($ch);
                 curl_close($ch);
 
-                return $data;
+                
 
             }
         }
+
+        return $info;
 
     }
 
