@@ -945,12 +945,10 @@ function send_chat(){
 
     var pedido = get_pedido();
     var mensaje = $('#texto_chat').val();
-    var url = (host == 1) ? '../ajax/index.php' : 'ajax/index.php' ;
     var send = { accion: 'enviar_chat', id_ped: pedido.id_ped, id_loc: pedido.id_loc, code: pedido.pedido_code, mensaje: mensaje };
-    var nombre = 'Diego';
 
     $.ajax({
-        url: url,
+        url: 'ajax/index.php',
         type: "POST",
         data: send,
         success: function(info){
@@ -986,14 +984,16 @@ function paso_4(){
             pedido.pre_teriyaki = ($('#pedido_teriyaki').is(':checked') ? 1 : 0 );
             pedido.comentarios = $('#pedido_comentarios').val();
             
-            var url = (host == 1) ? '../ajax/index.php' : 'ajax/index.php' ;
-            var send = { accion: 'enviar_pedido', pedido: JSON.stringify(pedido), carro: JSON.stringify(get_carro()), promos: JSON.stringify(get_promos()), puser: JSON.stringify(get_puser()), referer: referer };
+            var send = { accion: 'enviar_pedido', pedido: JSON.stringify(pedido), carro: JSON.stringify(get_carro()), promos: JSON.stringify(get_promos()), puser: JSON.stringify(get_puser()) };
             
             $.ajax({
-                url: url,
+                url: 'ajax/index.php',
                 type: "POST",
                 data: send,
                 success: function(info){
+
+                    console.log("info");
+                    console.log(info);
 
                     var data = JSON.parse(info);
                     if(data.op == 2){
@@ -1188,7 +1188,7 @@ function initMap(){
             
             if(num != 0){
                 
-                var send = { accion: 'despacho_domicilio', lat: places[0].geometry.location.lat(), lng: places[0].geometry.location.lng(), referer: referer};
+                var send = { accion: 'despacho_domicilio', lat: places[0].geometry.location.lat(), lng: places[0].geometry.location.lng()};
                 $.ajax({
                     url: 'ajax/index.php',
                     type: "POST",

@@ -26,7 +26,6 @@ class Core{
         }
 
     }
-
     public function get_data(){
 
         if(is_dir($this->dir_info)){
@@ -90,14 +89,13 @@ class Core{
             }
 
         }else{
-            
+
         }
 
         curl_close($ch);
         return $data->{"info"};
 
     }
-
     public function get_info_despacho($lat, $lng){
 
         if(is_dir($this->dir_info)){
@@ -134,7 +132,6 @@ class Core{
             }
         }
     }
-
     public function is_in_polygon($vertices_x, $vertices_y, $longitude_x, $latitude_y){
         $points_polygon = count($vertices_x) - 1;
         $i = $j = $c = $point = 0;
@@ -146,6 +143,36 @@ class Core{
                 $c = !$c;
         }
         return $c;
+    }
+    public function enviar_pedido(){
+
+        $info['op'] = 1;
+        $pedido = $_POST["pedido"];
+        
+        $aux_pedido = json_decode($_POST['pedido']);
+        $nombre = $aux_pedido->{'nombre'};
+        $telefono = str_replace(" ", "", $aux_pedido->{'telefono'});
+
+        if(strlen($nombre) > 2){
+            if(strlen($telefono) >= 12 && strlen($telefono) <= 14){
+
+                $send['pedido'] = $_POST['pedido'];
+                $send['puser'] = $_POST['puser'];
+                $send['carro'] = $_POST['carro'];
+                $send['promos'] = $_POST['promos'];
+
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, 'https://www.misitiodelivery.cl/enviar_pedido.php');
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
+                $data = curl_exec($ch);
+                curl_close($ch);
+
+                return $data;
+
+            }
+        }
+
     }
 
 }
