@@ -173,6 +173,8 @@ class Core{
             }
         }
 
+        return $info;
+
     }
 
 }
