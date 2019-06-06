@@ -154,10 +154,10 @@ class Core{
         if(strlen($nombre) > 2){
             if(strlen($telefono) >= 12 && strlen($telefono) <= 14){
 
-                $send['pedido'] = $_POST['pedido'];
-                $send['puser'] = $_POST['puser'];
-                $send['carro'] = $_POST['carro'];
-                $send['promos'] = $_POST['promos'];
+                $send['pedido'] = $pedido;
+                $send['puser'] = json_decode($_POST['puser']);
+                $send['carro'] = json_decode($_POST['carro']);
+                $send['promos'] = json_decode($_POST['promos']);
 
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/enviar_pedido.php');
