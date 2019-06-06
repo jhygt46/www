@@ -147,8 +147,7 @@ class Core{
     public function enviar_pedido(){
 
         $info['op'] = 1;
-        $info['post'] = $_POST;
-
+        $info['aux_pedido'] = json_decode($_POST['pedido']);
         return $info;
         
         

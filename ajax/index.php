@@ -9,7 +9,6 @@
     if($_POST["accion"] == "enviar_pedido"){
         $core = new Core();
         $info = $core->enviar_pedido();
-        $info["BUE"] = 1;
     }
     echo json_encode($info);
 
