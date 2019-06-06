@@ -147,9 +147,9 @@ class Core{
     public function enviar_pedido(){
 
         $info['op'] = 1;
-        $info['aux_pedido'] = json_decode($_POST['pedido']);
-        $nombre = $info['aux_pedido']->{'nombre'};
-        $telefono = str_replace(" ", "", $info['aux_pedido']->{'telefono'});
+        $pedido = json_decode($_POST['pedido']);
+        $nombre = $pedido->{'nombre'};
+        $telefono = str_replace(" ", "", $pedido->{'telefono'});
         
         if(strlen($nombre) > 2){
             if(strlen($telefono) >= 12 && strlen($telefono) <= 14){
