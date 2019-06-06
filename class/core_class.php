@@ -160,7 +160,7 @@ class Core{
                 $send['promos'] = $_POST['promos'];
 
                 $ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, 'https://www.misitiodelivery.cl/enviar_pedido.php');
+                curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/enviar_pedido.php');
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
                 $info['data'] = curl_exec($ch);
