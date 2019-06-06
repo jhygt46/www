@@ -2,12 +2,14 @@
 
     require_once "../class/core_class.php";
 
-    $core = new Core();
     if($_POST["accion"] == "despacho_domicilio"){
+        $core = new Core();
         $info = $core->get_info_despacho($_POST["lat"], $_POST["lng"]);
     }
     if($_POST["accion"] == "enviar_pedido"){
+        $core = new Core();
         $info = $core->enviar_pedido();
+        $info["BUE"] = 1;
     }
     echo json_encode($info);
 
