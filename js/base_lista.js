@@ -985,14 +985,13 @@ function paso_4(){
             pedido.comentarios = $('#pedido_comentarios').val();
             
             var send = { accion: 'enviar_pedido', pedido: JSON.stringify(pedido), carro: JSON.stringify(get_carro()), promos: JSON.stringify(get_promos()), puser: JSON.stringify(get_puser()) };
-            
+            console.log(send);
             $.ajax({
                 url: 'ajax/index.php',
                 type: "POST",
                 data: send,
                 success: function(info){
 
-                    console.log("info");
                     console.log(info);
 
                     var data = JSON.parse(info);
