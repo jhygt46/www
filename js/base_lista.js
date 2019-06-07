@@ -969,7 +969,7 @@ function paso_4(){
     var telefono = $('#pedido_telefono').val();
 
     if(nombre.length > 2){
-        if(telefono.length >= 11 && telefono.length <= 16){
+        if(telefono.length >= 12 && telefono.length <= 14){
             
             var pedido = get_pedido();
             pedido.nombre = nombre;

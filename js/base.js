@@ -3,11 +3,6 @@ $(document).ready(function(){
     borrar_carro();
     cantidad = get_carro().length;
     $('.cantcart_num').html(cantidad);
-    $("#pedido_telefono").keyup(function(){
-        var val_old = $(this).val();
-        var newString = new libphonenumber.AsYouType('CL').input(val_old);
-        $(this).focus().val('').val(newString);
-    });
     var init_puser = get_puser();
     $('#pedido_nombre').val(init_puser.nombre);
     $('#pedido_telefono').val(init_puser.telefono);
