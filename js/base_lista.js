@@ -982,7 +982,7 @@ function paso_4(){
             pedido.pre_palitos = ($('#pedido_palitos').val()) ? $('#pedido_palitos').val() : 0 ;
             pedido.pre_soya = ($('#pedido_soya').is(':checked') ? 1 : 0 );
             pedido.pre_teriyaki = ($('#pedido_teriyaki').is(':checked') ? 1 : 0 );
-            pedido.comentarios = $('#pedido_comentarios').val();
+            pedido.comentarios = ($('#pedido_comentarios').val()) ? $('#pedido_comentarios').val() : '' ;
             
             var send = { accion: 'enviar_pedido', pedido: JSON.stringify(pedido), carro: JSON.stringify(get_carro()), promos: JSON.stringify(get_promos()), puser: JSON.stringify(get_puser()) };
             
