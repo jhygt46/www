@@ -968,6 +968,8 @@ function paso_4(){
     var nombre = $('#pedido_nombre').val();
     var telefono = $('#pedido_telefono').val();
 
+    console.log(telefono);
+
     if(nombre.length > 2){
         if(telefono.length >= 12 && telefono.length <= 14){
             
