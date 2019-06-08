@@ -146,7 +146,6 @@ class Core{
     }
     public function enviar_pedido(){
 
-        $info['op'] = 3;
         $pedido = json_decode($_POST['pedido']);
         $nombre = $pedido->{'nombre'};
         $telefono = str_replace(" ", "", $pedido->{'telefono'});
@@ -163,7 +162,7 @@ class Core{
                 curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/enviar_pedido.php');
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-                $info['data'] = json_decode(curl_exec($ch));
+                $info = json_decode(curl_exec($ch));
                 curl_close($ch);
 
             }

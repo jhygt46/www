@@ -973,7 +973,7 @@ function paso_4(){
             
             var pedido = get_pedido();
             pedido.nombre = nombre;
-            pedido.telefono = $('#pedido_telefono').val();
+            pedido.telefono = telefono;
             pedido.depto = $('#pedido_depto').val();
 
             pedido.pre_gengibre = ($('#pedido_gengibre').is(':checked') ? 1 : 0 );
