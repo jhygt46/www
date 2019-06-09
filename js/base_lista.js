@@ -57,8 +57,8 @@ function open_categoria(id){
                         }
                     }
 
-                    if(cats.length == 0){ imprimir_productos_modal(id) }
-                    if(cats.length > 0){ imprimir_categoria_modal(cats) }
+                    if(cats.length == 0){ console.log("a1"); imprimir_productos_modal(id) }
+                    if(cats.length > 0){ console.log("a2"); imprimir_categoria_modal(cats) }
                 }
             }
 
