@@ -129,7 +129,6 @@ function imprimir_productos_modal(id){
 }
 function imprimir_categoria_modal(categorias){
     
-    console.log(categorias);
     $('.modal_carta .info_modal').html('');
     
     var html = create_element_class('lista_categorias');
@@ -174,14 +173,10 @@ function add_carro_producto(id_pro){
     
 }
 function add_carro_promocion(id_cae){
-    
-    console.log(id_cae);
 
     var producto, item_carro;
     var carro = JSON.parse(localStorage.getItem("carro")) || [];
     var promo = get_categoria(id_cae);
-
-    console.log(promo);
 
     if(promo.categorias){
         for(var i=0, ilen=promo.categorias.length; i<ilen; i++){
@@ -889,20 +884,15 @@ function proceso(categorias, preguntas){
 function paso_2(){
 
     paso = 2;
-    console.log("init paso 2");
     if(proceso(true, true) && cantidad > 0){
-        console.log(data.config);
         if(data.config.retiro_local == 1 && data.config.despacho_domicilio == 1){
             ver_paso_2();
-            console.log("ver_paso_2");
         }else{
             if(data.config.retiro_local == 1){
                 show_modal_locales();
-                console.log("show modal locales");
             }
             if(data.config.despacho_domicilio == 1){
                 show_despacho();
-                console.log("show despacho");
             }
             
         }
@@ -973,8 +963,6 @@ function paso_4(){
     var nombre = $('#pedido_nombre').val();
     var telefono = $('#pedido_telefono').val();
 
-    console.log(telefono);
-
     if(nombre.length > 2){
         if(telefono.length >= 12 && telefono.length <= 14){
             
@@ -998,8 +986,6 @@ function paso_4(){
                 type: "POST",
                 data: send,
                 success: function(info){
-
-                    console.log(info);
 
                     var data = JSON.parse(info);
                     if(data.op == 2){
@@ -1202,7 +1188,6 @@ function initMap(){
                     success: function(datas){
 
                         var data = JSON.parse(datas);
-                        console.log(data);
                         
                         if(data.op == 1){
 
@@ -1224,9 +1209,7 @@ function initMap(){
                             alert("Su domicilio no se encuentra en la zona de reparto, disculpe las molestias");
                         }
                         
-                    }, error: function(e){
-                        console.log(e);
-                    }
+                    }, error: function(e){}
                 });
                 
             }else{
@@ -1244,7 +1227,7 @@ function initMap(){
         var bounds = new google.maps.LatLngBounds();
         places.forEach(function(place){
             if(!place.geometry) {
-                console.log("Returned place contains no geometry");
+                //console.log("Returned place contains no geometry");
                 return;
             }
             var icon = {
