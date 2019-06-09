@@ -175,6 +175,8 @@ function add_carro_producto(id_pro){
 }
 function add_carro_promocion(id_cae){
     
+    console.log(id_cae);
+
     var producto, item_carro;
     var carro = JSON.parse(localStorage.getItem("carro")) || [];
     var promo = get_categoria(id_cae);
