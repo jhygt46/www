@@ -5,6 +5,10 @@
     $core = new Core();
     $info = $core->get_data();
 
+    echo "<pre>";
+    print_r($info);
+    echo "</pre>";
+
 ?>
 
 
