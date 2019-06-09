@@ -1,0 +1,104 @@
+/* MENU LEFT */
+body {
+  color: #000;
+}
+body .contenedor .menu_left {
+  background: #fff;
+  border-right: 1px solid #ED030C;
+}
+body .contenedor .menu_left .cont_menu_left .btn_toogle {
+  color: #ED030C;
+}
+body .contenedor .menu_left .cont_menu_left .menu_info ul li {
+  border-bottom: 1px solid #ddd;
+}
+
+/* PAGINA */
+body .contenedor .pagina .cont_pagina .header {
+  background: #000;
+  border-bottom: 1px solid #ED030C;
+}
+body .contenedor .pagina .cont_pagina .header .menu_right .shop {
+  color: #ED030C;
+}
+body .contenedor .pagina .cont_pagina .header .menu_right .cantcart {
+  background: #fff;
+}
+body .contenedor .pagina .cont_pagina .footer {
+  background: #000;
+  border-top: 1px solid #ED030C;
+}
+body .contenedor .pagina .cont_pagina .contenido {
+  background: #e8e8e8;
+}
+/* MODALS */
+body .contenedor .modals .cont_modals .modal .cont_modal .titulo {
+  background: #f5f5f5;
+  border-bottom: 1px solid #999;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .close {
+  background: #888;
+  color: #000;
+  font-size: 34px;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .cont_info {
+  background: #eee;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .sub_total {
+  background: #ddd;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .acciones {
+  background: #f5f5f5;
+  border-top: 1px solid #999;
+}
+.modal_productos_promo .cont_modal .cont_info .info_modal .pro_cat_promo .pro_cat_item {
+  background: #ccc;
+}
+.modal_pregunta_productos .cont_modal .cont_info .info_modal .s_pregunta .e_pregunta .v_pregunta .n_pregunta {
+  background: #ccc;
+}
+.modal_pregunta_productos .cont_modal .cont_info .info_modal .s_pregunta .e_pregunta .v_pregunta .selected {
+  background: #999;
+}
+.modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto {
+  background: #ccc;
+}
+.modal_carta .cont_modal .cont_info .info_modal .lista_productos .categoria {
+  background: #ccc;
+}
+.modal_carta .cont_modal .cont_info .info_modal .lista_categorias .producto {
+  background: #ccc;
+}
+.modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoria {
+  background: #ccc;
+}
+.modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen {
+  background: #ccc;
+}
+.modal_carta .cont_modal .cont_info .info_modal .lista_categorias .promocion {
+  background: #ccc;
+}
+.paso_01 .process_carro .process_carro_promo {
+  background: #f5f5f5;
+}
+.paso_01 .process_carro .process_carro_restantes {
+  background: #f5f5f5;
+}
+.paso_02 .cont_direccion .direccion_opciones .dir_op {
+  background: #ccc;
+}
+.paso_02 .cont_direccion .direccion_opciones .dir_op .alert {
+  color: #d00;
+}
+.paso_02 .cont_direccion .direccion_opciones .selected {
+  background: #fcc;
+}
+
+.paso_02a .cont_direccion .direccion_op1 .dir_locales .cont_local {
+  background: #ccc;
+}
+.paso_03 .cont_final .block_preguntas .preguntas {
+  background: #ddd;
+}
+
+/*# sourceMappingURL=css_colores_02.css.map */
