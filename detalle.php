@@ -4,12 +4,12 @@
 
     $core = new Core();
     $info = $core->ver_pedido();
-    /*
+    
     echo "<pre>";
-    print_r();
+    print_r($info['data']);
     echo "</pre>";
     exit;
-    */
+    
 
     if($info['op'] == 1){
 
