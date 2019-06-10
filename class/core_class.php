@@ -196,7 +196,7 @@ class Core{
             if($diff < 86400){
                 $info['op'] = 1;
                 $info['data'] = $data;
-                $info['fi'] = json_decode(file_get_contents($this->file_info));
+                $info['js_data'] = json_decode(file_get_contents($this->file_info))->{'code'}.".js";
             }else{
                 $info['op'] = 2;
             }
