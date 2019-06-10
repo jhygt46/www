@@ -170,7 +170,8 @@ class Core{
 
                     $send['pedido']->{'id_ped'} = $info->{'id_ped'};
                     $send['pedido']->{'num_ped'} = $info->{'num_ped'};
-                    file_put_contents($this->dir_info."pedidos/".$info->{'id_ped'}.".json", json_encode($send));
+                    $send['pedido']->{'pedido_code'} = $info->{'pedido_code'};
+                    file_put_contents($this->dir_info."pedidos/".$info->{'pedido_code'}.".json", json_encode($send));
 
                 }
 
@@ -181,6 +182,17 @@ class Core{
 
         return $info;
 
+    }
+    public function ver_pedido(){
+
+        $pedido_code = $_GET["code"];
+        $file = $this->dir_info."pedidos/".$pedido_code.".json";
+        if(file_exists($file)){
+            $info = json_decode(file_get_contents($this->dir_info."pedidos/".$pedido_code.".json"));
+        }else{
+
+        }
+        return $info;
     }
 
 }

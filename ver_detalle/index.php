@@ -1,10 +1,9 @@
 <?php
 
-    if(isset($_GET["cd"])){
-        echo "ver detalle";
-    }else{
-        echo "";
-    }
+    require_once "../class/core_class.php";
+
+    $core = new Core();
+    $info = $core->ver_pedido();
 
 
 ?>
