@@ -14,7 +14,7 @@ $(document).ready(function(){
         //console.log("cate: "+get_categoria(promos[i].id_cae).precio);
     }
     var diff = costo + total_process - total; 
-    console.log("dif: "+diff);
+    console.log("diff: "+diff);
     if(diff > 0){
         //$('.verificar').append('<div>ERROR: TOTAL ENVIADO ES MENOR: ($'+diff+')</div>')
     }
