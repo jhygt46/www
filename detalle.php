@@ -4,11 +4,12 @@
 
     $core = new Core();
     $info = $core->ver_pedido();
-
+    /*
     echo "<pre>";
-    print_r($info['js_data']);
+    print_r();
     echo "</pre>";
     exit;
+    */
 
     if($info['op'] == 1){
 
@@ -16,9 +17,7 @@
         $puser = $info['data']->{'puser'};
         $carro = $info['data']->{'carro'};
         $promos = $info['data']->{'promos'};
-
-
-
+        
 ?>
 
 
@@ -29,7 +28,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <script src="<?php echo $info["js_data"]; ?>" type="text/javascript"></script>
+        <script src="/data/<?php echo $info["js_data"]; ?>" type="text/javascript"></script>
 
         <script>
             var catalogo = 0;
