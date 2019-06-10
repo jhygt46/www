@@ -51,7 +51,7 @@
             <?php } ?>
             </div>
             */ ?>
-            <div class="titulo txtcen font_01 padding_01 borbottom">Pedido #<?php echo $info->{"num_ped"}; ?></div>
+            <div class="titulo txtcen font_01 padding_01 borbottom">Pedido #<?php echo $pedido->{"num_ped"}; ?></div>
             <div class="lista_de_productos padding_01 borbottom"></div>
             <?php if($info['pre_wasabi'] == 1 || $info['pre_gengibre'] == 1 || $info['pre_embarazadas'] == 1 || $info['pre_palitos'] > 0 || $info['pre_soya'] == 1 || $info['pre_teriyaki'] == 1 || $info['comentarios'] != ""){ ?>
             <div class="contacto padding_01 borbottom">
