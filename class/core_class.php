@@ -192,8 +192,7 @@ class Core{
             $data = json_decode(file_get_contents($this->dir_info."pedidos/".$pedido_code.".json"));
             $fecha = $data->{'pedido'}->{'fecha'};
             $info['op'] = 1;
-            $info['fecha'] = $fecha;
-            $info['now'] = time();
+            $info['dif'] = time() - $fecha;
         }else{
             $info["BUE"] = 1;
         }
