@@ -5,12 +5,19 @@
     $core = new Core();
     $info = $core->ver_pedido();
 
+    echo "<pre>";
+    print_r($info['data']);
+    echo "</pre>";
+    exit;
+
     if($info['op'] == 1){
 
         $pedido = $info['data']->{'pedido'};
         $puser = $info['data']->{'puser'};
         $carro = $info['data']->{'carro'};
         $promos = $info['data']->{'promos'};
+
+
 
 ?>
 
