@@ -1,0 +1,64 @@
+.detalle {
+  width: 100%;
+}
+.detalle .txtcen {
+  text-align: center;
+}
+.detalle .font_01 {
+  font-size: 30px;
+}
+.detalle .font_02 {
+  font-size: 20px;
+}
+.detalle .font_03 {
+  font-size: 16px;
+}
+.detalle .font_04 {
+  font-size: 14px;
+}
+.detalle .font_05 {
+  font-size: 12px;
+}
+.detalle .font_06 {
+  font-size: 27px;
+}
+.detalle .padding_01 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.detalle .padding_02 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.detalle .borbottom {
+  border-bottom: 1px solid #000;
+}
+.detalle .strong {
+  font-weight: bold;
+}
+.detalle .pddtop_01 {
+  padding-top: 8px;
+}
+.detalle .lista_de_productos .producto .nombre {
+  text-align: center;
+  font-size: 16px;
+}
+.detalle .lista_de_productos .producto .pregunta {
+  text-align: center;
+  font-size: 16px;
+}
+.detalle .verificar {
+  display: block;
+  border-bottom: 1px solid #f00;
+  background: #fee;
+}
+.detalle .verificar div {
+  display: block;
+  color: #f00;
+  font-size: 18px;
+  text-align: center;
+  border-top: 1px solid #f00;
+  padding: 10px 0px;
+}
+
+/*# sourceMappingURL=css_detalle_01.css.map */

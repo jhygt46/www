@@ -40,6 +40,7 @@
         </script>
         <link rel="stylesheet" href="/css/detalle.css" media="all" />
         <link rel="stylesheet" href="/css/css_base.css" media="all" />
+        <link rel="stylesheet" href="/css/css_detalle_01.css" media="all" />
     </head>
     <body>
         <div class="detalle">
