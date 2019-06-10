@@ -6,7 +6,7 @@
     $info = $core->ver_pedido();
 
     echo "<pre>";
-    print_r($info['data']);
+    print_r($info['fi']);
     echo "</pre>";
     exit;
 
