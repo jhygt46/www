@@ -164,7 +164,14 @@ class Core{
                 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
                 $res = json_decode(curl_exec($ch));
 
-                $info['test'] = $res->{'id_ped'};
+                if($res->{'op'} == 1){
+
+                    $info['id_ped'] = $res->{'id_ped'};
+
+                }
+
+                
+                $info['res'] = $res;
 
                 curl_close($ch);
 
