@@ -189,7 +189,6 @@ class Core{
         $pedido_code = $_GET["code"];
         $file = $this->dir_info."pedidos/".$pedido_code.".json";
         if(file_exists($file)){
-
             $data = json_decode(file_get_contents($this->dir_info."pedidos/".$pedido_code.".json"));
             $fecha = $data->{'pedido'}->{'fecha'};
             $diff = time() - $fecha;
@@ -199,11 +198,11 @@ class Core{
             }else{
                 $info['op'] = 2;
             }
-
         }else{
             $info['op'] = 2;
         }
         return $info;
+        
     }
 
 }
