@@ -26,8 +26,8 @@
 
         <script>
             var catalogo = 0;
-            var carro = <?php echo $info['carro']; ?>;
-            var promos = <?php echo $info['promos']; ?>;
+            var carro = <?php echo $carro; ?>;
+            var promos = <?php echo $promos; ?>;
             var costo = <?php echo $costo; ?>;
             var total = <?php echo $total; ?>;
             var t = <?php echo $_GET["t"]; ?>;
