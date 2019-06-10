@@ -76,7 +76,6 @@
                     
                 <?php 
                     if($pedido->{'despacho'} == 1){
-                    
                 ?>
                 <div class="txtcen font_03 strong pddtop_01">Despacho a Domicilio</div>
                 <div class="txtcen font_03"><?php echo $pedido->{'calle'}; ?> <?php echo $pedido->{'num'}; ?> <?php if($pedido->{'depto'} != ""){ ?>Depto: <?php echo $pedido->{'depto'}; ?><?php } ?></div>
