@@ -53,22 +53,22 @@
             */ ?>
             <div class="titulo txtcen font_01 padding_01 borbottom">Pedido #<?php echo $pedido->{"num_ped"}; ?></div>
             <div class="lista_de_productos padding_01 borbottom"></div>
-            <?php if($info['pre_wasabi'] == 1 || $info['pre_gengibre'] == 1 || $info['pre_embarazadas'] == 1 || $info['pre_palitos'] > 0 || $info['pre_soya'] == 1 || $info['pre_teriyaki'] == 1 || $info['comentarios'] != ""){ ?>
+            <?php if($pedido->{'pre_wasabi'} == 1 || $pedido->{'pre_gengibre'} == 1 || $pedido->{'pre_embarazadas'} == 1 || $pedido->{'pre_palitos'} > 0 || $pedido->{'pre_soya'} == 1 || $pedido->{'pre_teriyaki'} == 1 || $pedido->{'comentarios'} != ""){ ?>
             <div class="contacto padding_01 borbottom">
                 
-                <?php if($info['pre_wasabi'] == 1){ ?><div class="txtcen font_04">Wasabi</div><?php } ?>
-                <?php if($info['pre_gengibre'] == 1){ ?><div class="txtcen font_04">Gengibre</div><?php } ?>
-                <?php if($info['pre_embarazadas'] == 1){ ?><div class="txtcen font_04">Embarazadas</div><?php } ?>
-                <?php if($info['pre_palitos'] > 0){ ?><div class="txtcen font_04">Palitos: <?php echo $info['pre_palitos']; ?></div><?php } ?>
-                <?php if($info['pre_soya'] == 1){ ?><div class="txtcen font_04">Soya</div><?php } ?>
-                <?php if($info['pre_teriyaki'] == 1){ ?><div class="txtcen font_04">Teriyaki</div><?php } ?>
-                <?php if($info['comentarios'] != ""){ ?><div style="padding-top: 10px" class="txtcen font_02"><?php echo $info['comentarios']; ?></div><?php } ?>
+                <?php if($pedido->{'pre_wasabi'} == 1){ ?><div class="txtcen font_04">Wasabi</div><?php } ?>
+                <?php if($pedido->{'pre_gengibre'} == 1){ ?><div class="txtcen font_04">Gengibre</div><?php } ?>
+                <?php if($pedido->{'pre_embarazadas'} == 1){ ?><div class="txtcen font_04">Embarazadas</div><?php } ?>
+                <?php if($pedido->{'pre_palitos'} > 0){ ?><div class="txtcen font_04">Palitos: <?php echo $pedido->{'pre_palitos'}; ?></div><?php } ?>
+                <?php if($pedido->{'pre_soya'} == 1){ ?><div class="txtcen font_04">Soya</div><?php } ?>
+                <?php if($pedido->{'pre_teriyaki'} == 1){ ?><div class="txtcen font_04">Teriyaki</div><?php } ?>
+                <?php if($pedido->{'comentarios'} != ""){ ?><div style="padding-top: 10px" class="txtcen font_02"><?php echo $pedido->{'comentarios'}; ?></div><?php } ?>
                 
             </div>
             <?php } ?>            
             <div class="contacto padding_01 borbottom">
-                <div class="txtcen font_02"><?php echo $info['puser']['nombre']; ?></div>
-                <div class="txtcen font_03"><?php echo $info['puser']['telefono']; ?></div>
+                <div class="txtcen font_02"><?php echo $puser->{'nombre'}; ?></div>
+                <div class="txtcen font_03"><?php echo $puser->{'telefono'}; ?></div>
                 <?php 
                     if($despacho == 0){
                 ?>
