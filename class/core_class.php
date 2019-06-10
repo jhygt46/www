@@ -162,7 +162,9 @@ class Core{
                 curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/enviar_pedido.php');
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-                $info['res'] = json_decode(curl_exec($ch));
+                $res = json_decode(curl_exec($ch));
+
+                $info['test'] = $res->{'id_ped'};
 
                 curl_close($ch);
 
