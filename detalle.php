@@ -39,7 +39,7 @@
             var t = <?php echo $_GET["t"]; ?>;
         </script>
         
-        <link rel="stylesheet" href="/css/detale.css" media="all" />
+        <link rel="stylesheet" href="/css/detalle.css" media="all" />
         <link rel="stylesheet" href="/css/css_base.css" media="all" />
         <script src="/js/detalle.js" type="text/javascript"></script>
 
