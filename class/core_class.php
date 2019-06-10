@@ -38,9 +38,11 @@ class Core{
             }
         }else{
             if(mkdir($this->dir_info, 0777)){
-                $send["host"] = $this->host;
-                $send["ft"] = 1;
-                return $this->curlData($send);
+                if(mkdir($this->dir_info."pedidos/", 0777)){
+                    $send["host"] = $this->host;
+                    $send["ft"] = 1;
+                    return $this->curlData($send);
+                }
             }
         }
 
@@ -162,16 +164,15 @@ class Core{
                 curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/enviar_pedido.php');
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-                $res = json_decode(curl_exec($ch));
+                $info = json_decode(curl_exec($ch));
 
-                if($res->{'op'} == 1){
+                if($info->{'op'} == 1 && $info->{'id_ped'} > 0){
 
-                    $info['id_ped'] = $res->{'id_ped'};
+                    $send['pedido']->{'id_ped'} = $info->{'id_ped'};
+                    $send['pedido']->{'num_ped'} = $info->{'num_ped'};
+                    file_put_contents($this->dir_info."pedidos/".$info->{'id_ped'}.".json", json_encode($send));
 
                 }
-
-                
-                $info['res'] = $res;
 
                 curl_close($ch);
 

@@ -1029,7 +1029,6 @@ function paso_4(){
 
                     }else{
                         document.getElementById("enviar_cotizacion").disabled = false;
-                        document.getElementById("enviar_cotizacion").disabled = false;
                     }
                 }, error: function(e){
                     alert("En estos momentos no podemos atenderlo.. por favor intente mas tarde");
