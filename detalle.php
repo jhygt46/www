@@ -7,9 +7,7 @@
     
     echo "<pre>";
     print_r($info['data']);
-    echo "</pre>";
-    exit;
-    
+    echo "</pre>";    
 
     if($info['op'] == 1){
 
@@ -17,7 +15,7 @@
         $puser = $info['data']->{'puser'};
         $carro = $info['data']->{'carro'};
         $promos = $info['data']->{'promos'};
-        
+
 ?>
 
 
@@ -71,23 +69,23 @@
                 <div class="txtcen font_02"><?php echo $puser->{'nombre'}; ?></div>
                 <div class="txtcen font_03"><?php echo $puser->{'telefono'}; ?></div>
                 <?php 
-                    if($despacho == 0){
+                    if($pedido->{'despacho'} == 0){
                 ?>
                     <div class="txtcen font_03 strong pddtop_01">Retiro Local <?php echo $pedido->{'local'}; ?></div>
                 <?php } ?>
                     
                 <?php 
-                    if($despacho == 1){
+                    if($pedido->{'despacho'} == 1){
                     
                 ?>
                 <div class="txtcen font_03 strong pddtop_01">Despacho a Domicilio</div>
-                <div class="txtcen font_03"><?php echo $info['pdir']['calle']; ?> <?php echo $info['pdir']['num']; ?> <?php if($info['pdir']['depto'] != ""){ ?>Depto: <?php echo $info['pdir']['depto']; ?><?php } ?></div>
-                <div class="txtcen font_04"><?php echo $info['pdir']['comuna']; ?></div>
+                <div class="txtcen font_03"><?php echo $pedido->{'calle'}; ?> <?php echo $pedido->{'num'}; ?> <?php if($pedido->{'depto'} != ""){ ?>Depto: <?php echo $pedido->{'depto'}; ?><?php } ?></div>
+                <div class="txtcen font_04"><?php echo $pedido->{'comuna'}; ?></div>
                 <?php } ?>
             </div>
             <div class="total padding_01 borbottom">
-                <?php if($costo > 0){ ?><div class="txtcen font_04">Costo Despacho: $<?php echo number_format($costo, 0, '', '.');; ?></div><?php } ?>
-                <div class="txtcen font_06 strong">Total: $<?php echo number_format($total, 0, '', '.'); ?></div>
+                <?php if($pedido->{'costo'} > 0){ ?><div class="txtcen font_04">Costo Despacho: $<?php echo number_format($pedido->{'costo'}, 0, '', '.');; ?></div><?php } ?>
+                <div class="txtcen font_06 strong">Total: $<?php echo number_format($pedido->{'total'}, 0, '', '.'); ?></div>
             </div>
         </div>
         
