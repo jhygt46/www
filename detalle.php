@@ -39,9 +39,9 @@
             var t = <?php echo $_GET["t"]; ?>;
         </script>
         
-        <link rel="stylesheet" href="<?php echo $info["css_detalle"]; ?>" media="all" />
-        <link rel="stylesheet" href="<?php echo $info["css_base"]; ?>" media="all" />
-        <script src="<?php echo $info["js_detalle"]; ?>" type="text/javascript"></script>
+        <link rel="stylesheet" href="/css/detale.css" media="all" />
+        <link rel="stylesheet" href="/css/css_base.css" media="all" />
+        <script src="/js/detalle.js" type="text/javascript"></script>
 
     </head>
     <body>
