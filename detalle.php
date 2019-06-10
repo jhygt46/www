@@ -29,7 +29,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="/data/<?php echo $info["js_data"]; ?>" type="text/javascript"></script>
-
+        <script src="/js/detalle.js" type="text/javascript"></script>
         <script>
             var catalogo = 0;
             var carro = <?php echo json_encode($carro); ?>;
@@ -38,11 +38,8 @@
             var total = <?php echo $pedido->{'total'}; ?>;
             var t = <?php echo $_GET["t"]; ?>;
         </script>
-        
         <link rel="stylesheet" href="/css/detalle.css" media="all" />
         <link rel="stylesheet" href="/css/css_base.css" media="all" />
-        <script src="/js/detalle.js" type="text/javascript"></script>
-
     </head>
     <body>
         <div class="detalle">
