@@ -190,7 +190,7 @@ class Core{
         if(file_exists($file)){
             $info = json_decode(file_get_contents($this->dir_info."pedidos/".$pedido_code.".json"));
         }else{
-
+            $info["BUE"] = 1;
         }
         return $info;
     }
