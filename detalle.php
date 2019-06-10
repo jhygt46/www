@@ -28,8 +28,8 @@
             var catalogo = 0;
             var carro = <?php echo json_encode($carro); ?>;
             var promos = <?php echo json_encode($promos); ?>;
-            var costo = <?php echo $costo; ?>;
-            var total = <?php echo $total; ?>;
+            var costo = <?php echo $pedido->{'costo'}; ?>;
+            var total = <?php echo $pedido->{'total'}; ?>;
             var t = <?php echo $_GET["t"]; ?>;
         </script>
         
