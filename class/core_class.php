@@ -192,7 +192,7 @@ class Core{
             $data = json_decode(file_get_contents($this->dir_info."pedidos/".$pedido_code.".json"));
             $fecha = $data->{'pedido'}->{'fecha'};
             $diff = time() - $fecha;
-            if($diff < 21600){
+            if($diff < 86400){
                 $info['op'] = 1;
                 $info['data'] = $data;
             }else{
@@ -202,7 +202,7 @@ class Core{
             $info['op'] = 2;
         }
         return $info;
-        
+
     }
 
 }
