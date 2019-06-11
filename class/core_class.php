@@ -6,6 +6,7 @@ class Core{
     public $code = null;
     public $dir_info = null;
     public $file_info = null;
+    public $file_act = null;
     public $dir_data = null;
     public $dir_img = null;
 
@@ -18,35 +19,38 @@ class Core{
         if($_SERVER["HTTP_HOST"] == "localhost"){
             $this->dir_info = "C:/var/".$this->host."/";
             $this->file_info = "C:/var/".$this->host."/last.json";
+            $this->file_act = "C:/var/".$this->host."/actualizar.json";
             $this->dir_data = "C:/AppServ/www/restaurants_web/deliveryweb/data/";
             $this->dir_img = "C:/AppServ/www/restaurants_web/deliveryweb/images/";
         }else{
             $this->dir_info = "/var/data/".$this->host."/";
             $this->file_info = "/var/data/".$this->host."/last.json";
+            $this->file_act = "/var/data/".$this->host."/actualizar.json";
             $this->dir_data = "/var/www/html/data/";
             $this->dir_img = "/var/www/html/images/";
         }
 
     }
+    public function actualizar(){
+        file_put_contents($this->file_act, '');
+    }
     public function get_data(){
-
         if(is_dir($this->dir_info)){
-            if(file_exists($this->file_info)){
+            if(file_exists($this->file_info) && !file_exists($this->file_act)){
                 return json_decode(file_get_contents($this->file_info));
             }else{
-                return $this->curlData($send);
+                return $this->curlData();
             }
         }else{
             if(mkdir($this->dir_info, 0777)){
                 if(mkdir($this->dir_info."pedidos/", 0777)){
-                    return $this->curlData($send);
+                    return $this->curlData();
                 }
             }
         }
-
     }
 
-    public function curlData($send){
+    public function curlData(){
 
         $send["code"] = $this->code;
         $send["host"] = $this->host;
@@ -59,15 +63,12 @@ class Core{
  
         if(isset($data->{'op'}) && $data->{'op'} == 1){
 
-            
             if(file_exists($this->file_info)){
                 rename($this->file_info, $this->dir_info.date("Ymd", filemtime($this->file_info)).".json");
             }
-
             if(!file_put_contents($this->dir_info."polygons.json", json_encode($data->{"polygons"}))){
                 // REPORTAR ERROR
             }
-
             if(file_put_contents($this->file_info, json_encode($data->{"info"}))){
                 if($data->{"info"}->{"logo"} != "sinlogo.png"){
                     if(!file_exists($this->dir_img."logos/".$data->{"info"}->{"logo"})){
@@ -77,7 +78,6 @@ class Core{
                     }
                 }
             }
-
             if(file_put_contents($this->dir_data.$data->{"info"}->{"js_data"}, "var data=".json_encode($data->{"data"}))){
                 $categorias = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
                 for($i=0; $i<count($categorias); $i++){
@@ -90,6 +90,7 @@ class Core{
                     }
                 }
             }
+            unlink($this->file_act);
 
         }
 
