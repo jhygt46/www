@@ -82,7 +82,7 @@ class Core{
 
             if(!is_dir($this->dir_data.$data->{"info"}->{"code"})){
                 mkdir($this->dir_data.$data->{"info"}->{"code"}, 0777);
-                file_put_contents($this->dir_data.$data->{"info"}->{"code"}."/index.js", "");
+                file_put_contents($this->dir_data.$data->{"info"}->{"code"}."/index.html", "");
             }
 
             if(file_put_contents($this->dir_data.$data->{"info"}->{"code"}."/index.js", "var data=".json_encode($data->{"data"}))){
