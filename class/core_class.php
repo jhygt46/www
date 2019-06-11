@@ -13,8 +13,13 @@ class Core{
     public function __construct(){
 
         $this->code = file_get_contents("/var/code.json");
-        $host = explode(".", $_SERVER["HTTP_HOST"]);
-        $this->host = (count($host) == 2) ? "www.".$_SERVER["HTTP_HOST"] : $_SERVER["HTTP_HOST"] ;
+        
+        if($_SERVER["HTTP_HOST"] != "35.192.157.227"){
+            $host = explode(".", $_SERVER["HTTP_HOST"]);
+            $this->host = (count($host) == 2) ? "www.".$_SERVER["HTTP_HOST"] : $_SERVER["HTTP_HOST"] ;
+        }else{
+            $this->host = $_GET["url"];
+        }
 
         if($_SERVER["HTTP_HOST"] == "localhost"){
             $this->dir_info = "C:/var/".$this->host."/";
