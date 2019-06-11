@@ -35,6 +35,7 @@ class Core{
         file_put_contents($this->file_act, '');
     }
     public function get_data(){
+
         if(is_dir($this->dir_info)){
             if(file_exists($this->file_info) && !file_exists($this->file_act)){
                 return json_decode(file_get_contents($this->file_info));
@@ -62,6 +63,7 @@ class Core{
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         $data = json_decode(curl_exec($ch));
         if(isset($data->{'op'}) && $data->{'op'} == 1){
+
             if(file_exists($this->file_info)){
                 rename($this->file_info, $this->dir_info."versiones/".date("Ymd", filemtime($this->file_info)).".json");
             }
@@ -77,10 +79,12 @@ class Core{
                     }
                 }
             }
-            if(file_exists($this->dir_data.$data->{"info"}->{"code"}.".js")){
-                rename($this->dir_data.$data->{"info"}->{"code"}.".js", $this->dir_data.$data->{"info"}->{"code"}.date("Ymd", filemtime($this->dir_data.$data->{"info"}->{"code"}.".js")).".js");
+
+            if(!is_dir($this->dir_data.$data->{"info"}->{"code"})){
+                mkdir($this->dir_data.$data->{"info"}->{"code"}, 0777);
             }
-            if(file_put_contents($this->dir_data.$data->{"info"}->{"code"}.".js", "var data=".json_encode($data->{"data"}))){
+
+            if(file_put_contents($this->dir_data.$data->{"info"}->{"code"}."/index.js", "var data=".json_encode($data->{"data"}))){
                 $categorias = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
                 for($i=0; $i<count($categorias); $i++){
                     if(strlen($categorias[$i]->{"image"}) == 24 || strlen($categorias[$i]->{"image"}) == 26){
