@@ -56,15 +56,12 @@ class Core{
 
         $send["code"] = $this->code;
         $send["host"] = $this->host;
-
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/servicio.php');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         $data = json_decode(curl_exec($ch));
- 
         if(isset($data->{'op'}) && $data->{'op'} == 1){
-
             if(file_exists($this->file_info)){
                 rename($this->file_info, $this->dir_info."versiones/".date("Ymd", filemtime($this->file_info)).".json");
             }
@@ -80,7 +77,10 @@ class Core{
                     }
                 }
             }
-            if(file_put_contents($this->dir_data.$data->{"info"}->{"js_data"}, "var data=".json_encode($data->{"data"}))){
+            if(file_exists($this->dir_data.$data->{"info"}->{"code"}.".js")){
+                rename($this->dir_data.$data->{"info"}->{"code"}.".js", $this->dir_data.$data->{"info"}->{"code"}.date("Ymd", filemtime($this->dir_data.$data->{"info"}->{"code"}.".js")).".js");
+            }
+            if(file_put_contents($this->dir_data.$data->{"info"}->{"code"}.".js", "var data=".json_encode($data->{"data"}))){
                 $categorias = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
                 for($i=0; $i<count($categorias); $i++){
                     if(strlen($categorias[$i]->{"image"}) == 24 || strlen($categorias[$i]->{"image"}) == 26){
@@ -93,12 +93,9 @@ class Core{
                 }
             }
             unlink($this->file_act);
-
         }
-
         curl_close($ch);
         return $data->{"info"};
-
     }
     public function get_info_despacho($lat, $lng){
 
