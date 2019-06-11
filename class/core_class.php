@@ -3,6 +3,7 @@
 class Core{
     
     public $host = null;
+    public $code = null;
     public $dir_info = null;
     public $file_info = null;
     public $dir_data = null;
@@ -10,7 +11,7 @@ class Core{
 
     public function __construct(){
 
-        //$this->host = "www.fireapp.cl";
+        $this->code = file_get_contents("/var/code.json");
         $this->host = $_SERVER["HTTP_HOST"];
 
         if($_SERVER["HTTP_HOST"] == "localhost"){
@@ -47,21 +48,11 @@ class Core{
         }
 
     }
-    public function curlTest(){
-
-        $send["code"] = "BUENA NELSON";
-        $send["host"] = $this->host;
-
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/test.php');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-        $data = json_decode(curl_exec($ch));
-        curl_close($ch);
-        return $data;
     
-    }
     public function curlData($send){
+
+        $send["code"] = $this->code;
+        $send["host"] = $this->host;
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/servicio.php');
