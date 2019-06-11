@@ -33,22 +33,18 @@ class Core{
             if(file_exists($this->file_info)){
                 return json_decode(file_get_contents($this->file_info));
             }else{
-                $send["host"] = $this->host;
-                $send["ft"] = 1;
                 return $this->curlData($send);
             }
         }else{
             if(mkdir($this->dir_info, 0777)){
                 if(mkdir($this->dir_info."pedidos/", 0777)){
-                    $send["host"] = $this->host;
-                    $send["ft"] = 1;
                     return $this->curlData($send);
                 }
             }
         }
 
     }
-    
+
     public function curlData($send){
 
         $send["code"] = $this->code;
