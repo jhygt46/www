@@ -4,10 +4,6 @@
 
     $core = new Core();
     $info = $core->get_data();
-
-    echo "<pre>";
-    print_r($info);
-    echo "</pre>";
     
     if ((empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === "off") && $info->{'ssl'} == 1) {
         $location = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
