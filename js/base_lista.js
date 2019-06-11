@@ -988,8 +988,6 @@ function paso_4(){
                 success: function(info){
 
                     var data = JSON.parse(info);
-                    console.log(data);
-
                     if(data.op == 2){
                         alert(data.mensaje);
                     }

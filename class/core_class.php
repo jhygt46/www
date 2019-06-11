@@ -47,21 +47,34 @@ class Core{
         }
 
     }
+    public function curlTest(){
+
+        $send["code"] = "BUENA NELSON";
+        $send["host"] = $this->host;
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/test.php');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
+        $data = json_decode(curl_exec($ch));
+        curl_close($ch);
+        return $data;
+    
+    }
     public function curlData($send){
 
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'http://misitiodelivery.cl/servicio.php');
+        curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/servicio.php');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         $data = json_decode(curl_exec($ch));
  
         if(isset($data->{'op'}) && $data->{'op'} == 1){
 
-            /*
+            
             if(file_exists($this->file_info)){
                 rename($this->file_info, $this->dir_info.date("Ymd", filemtime($this->file_info)).".json");
             }
-            */
 
             if(!file_put_contents($this->dir_info."polygons.json", json_encode($data->{"polygons"}))){
                 // REPORTAR ERROR
