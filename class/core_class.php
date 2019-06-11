@@ -44,7 +44,9 @@ class Core{
         }else{
             if(mkdir($this->dir_info, 0777)){
                 if(mkdir($this->dir_info."pedidos/", 0777)){
-                    return $this->curlData();
+                    if(mkdir($this->dir_info."versiones/", 0777)){
+                        return $this->curlData();
+                    }
                 }
             }
         }
@@ -64,7 +66,7 @@ class Core{
         if(isset($data->{'op'}) && $data->{'op'} == 1){
 
             if(file_exists($this->file_info)){
-                rename($this->file_info, $this->dir_info.date("Ymd", filemtime($this->file_info)).".json");
+                rename($this->file_info, $this->dir_info."versiones/".date("Ymd", filemtime($this->file_info)).".json");
             }
             if(!file_put_contents($this->dir_info."polygons.json", json_encode($data->{"polygons"}))){
                 // REPORTAR ERROR
