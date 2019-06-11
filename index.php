@@ -41,7 +41,7 @@
         <script src="https://www.izusushi.cl/socket.io/socket.io.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
-        <script src="/data/<?php echo $info->{'js_data'}; ?>" type="text/javascript"></script>
+        <script src="/data/<?php echo $info->{'code'}; ?>/index.js" type="text/javascript"></script>
         <script src="/js/html_func.js" type="text/javascript"></script>
         <script src="/js/base.js" type="text/javascript"></script>
         <script src="/js/base_lista.js" type="text/javascript"></script>
