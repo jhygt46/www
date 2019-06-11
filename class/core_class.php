@@ -12,7 +12,8 @@ class Core{
     public function __construct(){
 
         $this->code = file_get_contents("/var/code.json");
-        $this->host = $_SERVER["HTTP_HOST"];
+        $host = explode(".", $_SERVER["HTTP_HOST"]);
+        $this->host = (count($host) == 2) ? "www.".$_SERVER["HTTP_HOST"] : $_SERVER["HTTP_HOST"] ;
 
         if($_SERVER["HTTP_HOST"] == "localhost"){
             $this->dir_info = "C:/var/".$this->host."/";
@@ -89,8 +90,6 @@ class Core{
                     }
                 }
             }
-
-        }else{
 
         }
 
