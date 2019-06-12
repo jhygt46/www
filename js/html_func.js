@@ -5,7 +5,7 @@ function html_home_categorias(obj, num){
     Div.className = 'botones_principales';
     
     if(obj.image === null){
-        Div.style.backgroundImage = 'url("'+dominio+'/images/base/cat_'+num+'.jpg")';
+        Div.style.backgroundImage = 'url("'+dominio+'/_images/cat_'+num+'.jpg")';
     }else{
         Div.style.backgroundImage = 'url("'+dominio+'/data/'+code+'/'+obj.image+'")';
     }
