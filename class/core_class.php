@@ -9,109 +9,107 @@ class Core{
     public $file_act = null;
     public $dir_data = null;
     public $dir_img = null;
+    public $server_ip = null;
 
     public function __construct(){
 
         $this->code = file_get_contents("/var/code.json");
-        
-        echo $_SERVER["HTTP_HOST"]."<br/>";
-        $realIP = file_get_contents("http://ipecho.net/plain");
-        echo $realIP;
-        exit;
+        $this->server_ip = file_get_contents("/var/server_ip.json");
 
-        if($_SERVER["HTTP_HOST"] != "35.192.157.227"){
-            $host = explode(".", $_SERVER["HTTP_HOST"]);
-            $this->host = (count($host) == 2) ? "www.".$_SERVER["HTTP_HOST"] : $_SERVER["HTTP_HOST"] ;
+        if($_SERVER["HTTP_HOST"] == $this->server_ip){
+            $this->host = (count(explode(".", $_GET["url"])) == 2) ? "www.".$_GET["url"] : $_GET["url"] ;
         }else{
-            $this->host = $_GET["url"];
+            $this->host = (count(explode(".", $_SERVER["HTTP_HOST"])) == 2) ? "www.".$_SERVER["HTTP_HOST"] : $_SERVER["HTTP_HOST"] ;
         }
-
         if($_SERVER["HTTP_HOST"] == "localhost"){
             $this->dir_info = "C:/var/".$this->host."/";
-            $this->file_info = "C:/var/".$this->host."/last.json";
-            $this->file_act = "C:/var/".$this->host."/actualizar.json";
-            $this->dir_data = "C:/AppServ/www/restaurants_web/deliveryweb/data/";
-            $this->dir_img = "C:/AppServ/www/restaurants_web/deliveryweb/images/";
+            $this->dir_data = "C:/AppServ/www/restaurants_web/deliveryweb/";
         }else{
             $this->dir_info = "/var/data/".$this->host."/";
-            $this->file_info = "/var/data/".$this->host."/last.json";
-            $this->file_act = "/var/data/".$this->host."/actualizar.json";
-            $this->dir_data = "/var/www/html/data/";
-            $this->dir_img = "/var/www/html/images/";
+            $this->dir_data = "/var/www/html/";
         }
 
-    }
-    public function actualizar(){
-        file_put_contents($this->file_act, '');
     }
     public function get_data(){
 
-        if(is_dir($this->dir_info)){
-            if(file_exists($this->file_info) && !file_exists($this->file_act)){
-                return json_decode(file_get_contents($this->file_info));
-            }else{
-                return $this->curlData();
-            }
-        }else{
-            if(mkdir($this->dir_info, 0777)){
-                if(mkdir($this->dir_info."pedidos/", 0777)){
-                    if(mkdir($this->dir_info."versiones/", 0777)){
-                        return $this->curlData();
-                    }
-                }
-            }
+        if(!is_dir($this->dir_info)){
+            mkdir($this->dir_info, 0777);
+            mkdir($this->dir_info."pedidos/", 0777);
+            mkdir($this->dir_info."versiones/", 0777);
+            mkdir($this->dir_info."polygon/", 0777);
         }
-    }
+        
+        if(file_exists($this->dir_info."config.json")){
+            $config = json_decode(file_get_contents($this->dir_info."config.json"));
+        }else{
+            $config["info"] = "last.json";
+            $config["polygon"] = "last.json";
+            $config["actualizar"] = 0;
+            file_put_contents($this->dir_info."config.json", json_encode($config));
+        }
 
+        if(file_exists($this->dir_info."versiones/".$config["info"]) && $config["actualizar"] == 0){
+            return file_get_contents($this->dir_info."versiones/".$config["info"]);
+        }else{
+            return $this->curlData();
+        }
+
+    }
     public function curlData(){
 
         $send["code"] = $this->code;
         $send["host"] = $this->host;
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/servicio.php');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         $data = json_decode(curl_exec($ch));
+
         if(isset($data->{'op'}) && $data->{'op'} == 1){
 
-            if(file_exists($this->file_info)){
-                rename($this->file_info, $this->dir_info."versiones/".date("Ymd", filemtime($this->file_info)).".json");
+            if(file_exists($this->dir_info."versiones/last.json")){
+                rename($this->dir_info."versiones/last.json", $this->dir_info."versiones/".date("Ymd", filemtime($this->dir_info."versiones/last.json")).".json");
             }
-            if(!file_put_contents($this->dir_info."polygons.json", json_encode($data->{"polygons"}))){
-                // REPORTAR ERROR
-            }
-            if(file_put_contents($this->file_info, json_encode($data->{"info"}))){
+            if(file_put_contents($this->dir_info."versiones/last.json", json_encode($data->{"info"}))){
                 if($data->{"info"}->{"logo"} != "sinlogo.png"){
-                    if(!file_exists($this->dir_img."logos/".$data->{"info"}->{"logo"})){
-                        if(!file_put_contents($this->dir_img."logos/".$data->{"info"}->{"logo"}, file_get_contents("http://www.misitiodelivery.cl/images/logos/".$data->{"info"}->{"logo"}))){
+                    if(!file_exists($this->dir_data."images/logos/".$data->{"info"}->{"logo"})){
+                        if(!file_put_contents($this->dir_data."images/logos/".$data->{"info"}->{"logo"}, file_get_contents("http://www.misitiodelivery.cl/images/logos/".$data->{"info"}->{"logo"}))){
                             // REPORTAR ERROR
                         }
                     }
                 }
             }
 
-            if(!is_dir($this->dir_data.$data->{"info"}->{"code"})){
-                mkdir($this->dir_data.$data->{"info"}->{"code"}, 0777);
-                file_put_contents($this->dir_data.$data->{"info"}->{"code"}."/index.html", "");
+            if(file_exists($this->dir_info."polygon/last.json")){
+                rename($this->dir_info."polygon/last.json", $this->dir_info."polygon/".date("Ymd", filemtime($this->dir_info."polygon/last.json")).".json");
+            }
+            if(file_put_contents($this->dir_info."polygon/last.json", json_encode($data->{"polygons"}))){
+                // REPORTAR ERROR
+            }
+            
+            if(!is_dir($this->dir_data."data/".$data->{"info"}->{"code"})){
+                mkdir($this->dir_data."data/".$data->{"info"}->{"code"}, 0777);
+                file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.html", "");
             }
 
-            if(file_put_contents($this->dir_data.$data->{"info"}->{"code"}."/index.js", "var data=".json_encode($data->{"data"}))){
+            if(file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.js", "var data=".json_encode($data->{"data"}))){
                 $categorias = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
                 for($i=0; $i<count($categorias); $i++){
                     if(strlen($categorias[$i]->{"image"}) == 24 || strlen($categorias[$i]->{"image"}) == 26){
-                        if(!file_exists($this->dir_img."categorias/".$categorias[$i]->{"image"})){
-                            if(!file_put_contents($this->dir_img."categorias/".$categorias[$i]->{"image"}, file_get_contents("http://www.misitiodelivery.cl/images/categorias/".$categorias[$i]->{"image"}))){
+                        if(!file_exists($this->dir_data."images/categorias/".$categorias[$i]->{"image"})){
+                            if(!file_put_contents($this->dir_data."images/categorias/".$categorias[$i]->{"image"}, file_get_contents("http://www.misitiodelivery.cl/images/categorias/".$categorias[$i]->{"image"}))){
                                 // REPORTAR ERROR
                             }
                         }
                     }
                 }
             }
-            unlink($this->file_act);
 
         }
         curl_close($ch);
         return $data->{"info"};
+
     }
     public function get_info_despacho($lat, $lng){
 
