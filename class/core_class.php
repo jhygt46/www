@@ -15,7 +15,8 @@ class Core{
         $this->code = file_get_contents("/var/code.json");
         
         echo $_SERVER["HTTP_HOST"]."<br/>";
-        echo $_SERVER['SERVER_ADDR']."<br/>";
+        $realIP = file_get_contents("http://ipecho.net/plain");
+        echo $realIP;
         exit;
 
         if($_SERVER["HTTP_HOST"] != "35.192.157.227"){
