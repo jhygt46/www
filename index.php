@@ -78,7 +78,7 @@
             <div class="pagina">
                 <div class="cont_pagina">
                     <div class="header <?php echo ($info->{"header_fixed"} == 1) ? 'fixed' : ''; ?>">
-                        <div class="header_logo vhalign"><img src="/data/<?php echo $info->{'code'}; ?>/<?php echo $info->{"logo"}; ?>" alt="" /></div>
+                        <div class="header_logo vhalign"><img src="<?php ($info->{'code'} == "sin_logo.png") ? echo "/_images/sin_logo.png" : echo "/data/".$info->{'code'}."/".$info->{"logo"} ; ?>" alt="" /></div>
                         <div class="menu_right valign" onclick="open_carro()"><div class="shop material-icons">shopping_cart</div><div class="cantcart"><div class="cantcart_num vhalign"></div></div></div>
                     </div>
                     <div class="contenido">
