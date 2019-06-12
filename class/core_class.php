@@ -14,6 +14,10 @@ class Core{
 
         $this->code = file_get_contents("/var/code.json");
         
+        echo $_SERVER["HTTP_HOST"]."<br/>";
+        echo $_SERVER['REMOTE_ADDR']."<br/>";
+        exit;
+
         if($_SERVER["HTTP_HOST"] != "35.192.157.227"){
             $host = explode(".", $_SERVER["HTTP_HOST"]);
             $this->host = (count($host) == 2) ? "www.".$_SERVER["HTTP_HOST"] : $_SERVER["HTTP_HOST"] ;
