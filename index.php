@@ -1,7 +1,7 @@
 <?php
 
     if($_SERVER['HTTP_HOST'] == "www.mikasushi.cl" || $_SERVER['HTTP_HOST'] == "mikasushi.cl" || $_SERVER['HTTP_HOST'] == "www.runasushi.cl" || $_SERVER['HTTP_HOST'] == "runasushi.cl"){
-        die("<table border='0' cellpadding='0' cellspacing='0' width='100%' height='100%'><tr><td align='center' valign='middle'></td></tr></table>");
+        die("<table border='0' cellpadding='0' cellspacing='0' width='100%' height='100%'><tr><td align='center' valign='middle'>Sitio no disponible</td></tr></table>");
     }
 
     require_once "class/core_class.php";
