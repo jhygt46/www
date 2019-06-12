@@ -41,7 +41,9 @@ class Core{
 
         if(file_exists($this->dir_info."config.json")){
             $aux_conf = json_decode(file_get_contents($this->dir_info."config.json"));
-            return $aux_conf;
+            $config["info"] = $aux_conf->{"info"};
+            $config["polygon"] = $aux_conf->{"polygon"};
+            $config["actualizar"] = $aux_conf->{"actualizar"};
         }else{
             $config["info"] = "last.json";
             $config["polygon"] = "last.json";
