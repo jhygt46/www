@@ -7,7 +7,7 @@ function html_home_categorias(obj, num){
     if(obj.image === null){
         Div.style.backgroundImage = 'url("'+dominio+'/images/base/cat_'+num+'.jpg")';
     }else{
-        Div.style.backgroundImage = 'url("'+dominio+'/images/categorias/'+obj.image+'")';
+        Div.style.backgroundImage = 'url("'+dominio+'/data/'+code+'/'+obj.image+'")';
     }
 
     Div.onclick = function(){ open_categoria(obj.id_cae) };
@@ -58,7 +58,7 @@ function create_html_categorias(obj){
 
     var Div = document.createElement('div');
     Div.className = 'categoria';
-    Div.style.backgroundImage = 'url("'+dominio+'/images/categorias/'+obj.image+'")';
+    Div.style.backgroundImage = 'url("'+dominio+'/data/'+code+'/'+obj.image+'")';
 
     var Divm = document.createElement('div');
 
@@ -207,7 +207,7 @@ function create_html_promocion(obj){
     var Div = document.createElement('div');
     Div.className = 'promocion';
     Div.onclick = function(){ add_carro_promocion(obj.id_cae) };    
-    Div.style.backgroundImage = 'url("'+dominio+'/images/categorias/'+obj.image+'")';
+    Div.style.backgroundImage = 'url("'+dominio+'/data/'+code+'/'+obj.image+'")';
     
     var Divm = document.createElement('div');
 

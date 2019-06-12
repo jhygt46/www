@@ -40,7 +40,7 @@
         <link rel="stylesheet" href="/css/<?php echo $info->{"css_tipo"}; ?>" media="all" />
         <link rel="stylesheet" href="/css/css_base.css" media="all" />
         
-        <link rel='shortcut icon' type='image/x-icon' href='/images/favicon/<?php echo $info->{"favicon"}; ?>' />
+        <link rel='shortcut icon' type='image/x-icon' href='/data/<?php echo $info->{'code'}; ?>/<?php echo $info->{"favicon"}; ?>' />
         
         <script src="https://www.izusushi.cl/socket.io/socket.io.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -50,6 +50,7 @@
         <script src="/js/base.js" type="text/javascript"></script>
         <script src="/js/base_lista.js" type="text/javascript"></script>
         <script>
+            var code = "<?php echo $info->{'code'}; ?>";
             var dominio = "<?php echo $info->{"dominio"}; ?>";
             var referer = "<?php echo $info->{"url"}; ?>";
             var host = "<?php echo $host; ?>";
@@ -77,7 +78,7 @@
             <div class="pagina">
                 <div class="cont_pagina">
                     <div class="header <?php echo ($info->{"header_fixed"} == 1) ? 'fixed' : ''; ?>">
-                        <div class="header_logo vhalign"><img src="/images/logos/<?php echo $info->{"logo"}; ?>" alt="" /></div>
+                        <div class="header_logo vhalign"><img src="/data/<?php echo $info->{'code'}; ?>/<?php echo $info->{"logo"}; ?>" alt="" /></div>
                         <div class="menu_right valign" onclick="open_carro()"><div class="shop material-icons">shopping_cart</div><div class="cantcart"><div class="cantcart_num vhalign"></div></div></div>
                     </div>
                     <div class="contenido">
