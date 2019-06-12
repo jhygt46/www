@@ -52,7 +52,7 @@ class Core{
         }
 
         if(file_exists($this->dir_info."versiones/".$config["info"]) && $config["actualizar"] == 0){
-            return file_get_contents($this->dir_info."versiones/".$config["info"]);
+            return json_decode(file_get_contents($this->dir_info."versiones/".$config["info"]));
         }else{
             return $this->curlData();
         }
