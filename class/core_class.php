@@ -38,9 +38,12 @@ class Core{
             mkdir($this->dir_info."versiones/", 0777);
             mkdir($this->dir_info."polygon/", 0777);
         }
-        
+
         if(file_exists($this->dir_info."config.json")){
-            $config = json_decode(file_get_contents($this->dir_info."config.json"));
+            $aux_conf = json_decode(file_get_contents($this->dir_info."config.json"));
+            $config["info"] = $aux_conf->{"info"};
+            $config["polygon"] = $aux_conf->{"polygon"};
+            $config["actualizar"] = $aux_conf->{"actualizar"};
         }else{
             $config["info"] = "last.json";
             $config["polygon"] = "last.json";
@@ -73,8 +76,8 @@ class Core{
             }
             if(file_put_contents($this->dir_info."versiones/last.json", json_encode($data->{"info"}))){
                 if($data->{"info"}->{"logo"} != "sinlogo.png"){
-                    if(!file_exists($this->dir_data."images/logos/".$data->{"info"}->{"logo"})){
-                        if(!file_put_contents($this->dir_data."images/logos/".$data->{"info"}->{"logo"}, file_get_contents("http://www.misitiodelivery.cl/images/logos/".$data->{"info"}->{"logo"}))){
+                    if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"logo"})){
+                        if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"logo"}, file_get_contents("http://www.misitiodelivery.cl/images/logos/".$data->{"info"}->{"logo"}))){
                             // REPORTAR ERROR
                         }
                     }
@@ -97,8 +100,8 @@ class Core{
                 $categorias = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
                 for($i=0; $i<count($categorias); $i++){
                     if(strlen($categorias[$i]->{"image"}) == 24 || strlen($categorias[$i]->{"image"}) == 26){
-                        if(!file_exists($this->dir_data."images/categorias/".$categorias[$i]->{"image"})){
-                            if(!file_put_contents($this->dir_data."images/categorias/".$categorias[$i]->{"image"}, file_get_contents("http://www.misitiodelivery.cl/images/categorias/".$categorias[$i]->{"image"}))){
+                        if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$categorias[$i]->{"image"})){
+                            if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$categorias[$i]->{"image"}, file_get_contents("http://www.misitiodelivery.cl/images/categorias/".$categorias[$i]->{"image"}))){
                                 // REPORTAR ERROR
                             }
                         }
