@@ -10,7 +10,7 @@
     $info = $core->get_data();
     
     if($_SERVER['HTTP_HOST'] == "www.fireapp.cl"){
-        exit;
+
     }else{
 
     }
