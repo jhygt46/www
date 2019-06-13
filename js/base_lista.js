@@ -988,8 +988,7 @@ function paso_4(){
                 success: function(info){
 
                     var data = JSON.parse(info);
-                    console.log(data);
-                    console.log(data.pedido_code);
+                    
                     if(data.op == 2){
                         alert(data.mensaje);
                     }
@@ -1189,7 +1188,8 @@ function initMap(){
                     success: function(datas){
 
                         var data = JSON.parse(datas);
-                        
+                        console.log(data);
+
                         if(data.op == 1){
 
                             var pedido = get_pedido();
