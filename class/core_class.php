@@ -89,6 +89,8 @@ class Core{
             if(file_exists($this->dir_info."polygon/last.json")){
                 rename($this->dir_info."polygon/last.json", $this->dir_info."polygon/".date("Ymd", filemtime($this->dir_info."polygon/last.json")).".json");
             }
+            echo "BUE<BR/>";
+            echo json_encode($data->{"polygons"});
             if(file_put_contents($this->dir_info."polygon/last.json", json_encode($data->{"polygons"}))){
                 // REPORTAR ERROR
             }
