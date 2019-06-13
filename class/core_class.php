@@ -81,7 +81,6 @@ class Core{
             }
             if(file_put_contents($this->dir_info."versiones/last.json", json_encode($data->{"info"}))){
                 if($data->{"info"}->{"logo"} != "sinlogo.png"){
-                    return 2;
                     if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"logo"})){
                         return 3;
                         if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"logo"}, file_get_contents("http://www.misitiodelivery.cl/images/logos/".$data->{"info"}->{"logo"}))){
