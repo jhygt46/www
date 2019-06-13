@@ -84,6 +84,7 @@ class Core{
                     if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"logo"})){
                         if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"logo"}, file_get_contents("http://www.misitiodelivery.cl/images/logos/".$data->{"info"}->{"logo"}))){
                             // REPORTAR ERROR
+                            return "BUENA NELSON";
                         }
                     }
                 }
