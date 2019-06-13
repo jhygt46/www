@@ -199,12 +199,11 @@ class Core{
     public function ver_pedido(){
 
         $pedido_code = $_GET["code"];
+        $config = $this->get_config();
         $file = $this->dir_info."pedidos/".$pedido_code.".json";
-        $aux_conf = json_decode(file_get_contents($this->dir_info."config.json"));
-        $info['code'] = json_decode(file_get_contents($this->dir_info."versiones/".$aux_conf->{"info"}))->{'code'};
 
         if(file_exists($file)){
-            $data = json_decode(file_get_contents($this->dir_info."pedidos/".$pedido_code.".json"));
+            $data = json_decode(file_get_contents($file));
             $fecha = $data->{'pedido'}->{'fecha'};
             $diff = time() - $fecha;
             if($diff < 86400){

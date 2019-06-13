@@ -9,6 +9,7 @@
 
         $pedido = $info['data']->{'pedido'};
         $puser = $info['data']->{'puser'};
+        
         echo "<pre>";
         print_r($puser);
         echo "</pre>";

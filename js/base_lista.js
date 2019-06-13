@@ -966,11 +966,13 @@ function paso_4(){
     if(nombre.length > 2){
         if(telefono.length >= 12 && telefono.length <= 14){
             
-            var pedido = get_pedido();
-            pedido.nombre = nombre;
-            pedido.telefono = telefono;
-            pedido.depto = $('#pedido_depto').val();
+            var user = get_puser();
+            user.nombre = nombre;
+            user.telefono = telefono;
+            set_puser(user);
 
+            var pedido = get_pedido();
+            pedido.depto = $('#pedido_depto').val();
             pedido.pre_gengibre = ($('#pedido_gengibre').is(':checked') ? 1 : 0 );
             pedido.pre_wasabi = ($('#pedido_wasabi').is(':checked') ? 1 : 0 );
             pedido.pre_embarazadas = ($('#pedido_embarazadas').is(':checked') ? 1 : 0 );
@@ -989,7 +991,7 @@ function paso_4(){
 
                     var data = JSON.parse(info);
                     console.log(data.pedido_code);
-                    
+
                     if(data.op == 2){
                         alert(data.mensaje);
                     }
