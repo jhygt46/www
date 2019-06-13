@@ -118,11 +118,11 @@ class Core{
 
         $config = $this->get_config();
         $polygons = json_decode(file_get_contents($this->dir_info."polygon/".$config["polygon"]));
-        return $polygons; 
+        $info['po'] = $polygons;
         $precio = 9999999;
         $info['op'] = 2;
         foreach($polygons as $polygon){
-
+            
             $lats = [];
             $lngs = [];
             $puntos = json_decode($polygon->{'poligono'});
@@ -144,9 +144,7 @@ class Core{
             }
         }
             
-            return $info;
-
-        
+        return $info;
 
     }
     public function is_in_polygon($vertices_x, $vertices_y, $longitude_x, $latitude_y){
