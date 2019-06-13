@@ -10,8 +10,8 @@
         $pedido = $info['data']->{'pedido'};
         $puser = $info['data']->{'puser'};
 
-        $nombre = ($puser->{'nombre'} == "") ? $pedido->{'nombre'} : $puser->{'nombre'} ;
-        $telefono = ($puser->{'telefono'} == "") ? $pedido->{'telefono'} : $puser->{'telefono'} ;
+        $nombre = ($pedido->{'nombre'} != "") ? $pedido->{'nombre'} : $puser->{'nombre'} ;
+        $telefono = ($pedido->{'telefono'} != "") ? $pedido->{'telefono'} : $puser->{'telefono'} ;
         
         $carro = $info['data']->{'carro'};
         $promos = $info['data']->{'promos'};
