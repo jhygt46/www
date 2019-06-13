@@ -9,11 +9,9 @@
 
         $pedido = $info['data']->{'pedido'};
         $puser = $info['data']->{'puser'};
-        
-        echo "<pre>";
-        print_r($puser);
-        echo "</pre>";
-        exit;
+
+        $nombre = ($puser->{'nombre'} == "") ? $pedido->{'nombre'} : $puser->{'nombre'} ;
+        $telefono = ($puser->{'telefono'} == "") ? $pedido->{'telefono'} : $puser->{'telefono'} ;
         
         $carro = $info['data']->{'carro'};
         $promos = $info['data']->{'promos'};
@@ -68,8 +66,8 @@
             </div>
             <?php } ?>            
             <div class="contacto padding_01 borbottom">
-                <div class="txtcen font_02"><?php echo $puser->{'nombre'}; ?></div>
-                <div class="txtcen font_03"><?php echo $puser->{'telefono'}; ?></div>
+                <div class="txtcen font_02"><?php echo $nombre; ?></div>
+                <div class="txtcen font_03"><?php echo $telefono; ?></div>
                 <?php 
                     if($pedido->{'despacho'} == 0){
                 ?>
