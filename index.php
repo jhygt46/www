@@ -10,7 +10,10 @@
     $info = $core->get_data();
     
     if($_SERVER['HTTP_HOST'] == "www.fireapp.cl"){
-        
+        echo "<pre>";
+        print_r($info->{'lista_locales'});
+        echo "</pre>";
+        exit;
     }else{
 
     }
