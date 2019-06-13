@@ -207,7 +207,9 @@
                                 <div class="info_modal">
                                     <div class="cont_direccion">
                                         <div class="direccion_op1">
-                                            <?php for($i=0; $i<count($locales); $i++){ ?>
+                                            <?php 
+                                            $locales = $info->{'lista_locales'};
+                                            for($i=0; $i<count($locales); $i++){ ?>
                                             <div class="dir_locales" id="<?php echo $locales[$i]->{'id_loc'}; ?>">
                                                 <div class="cont_local clearfix">
                                                     <div class="local_info" onclick="select_local(<?php echo $locales[$i]->{'id_loc'}; ?>, '<?php echo $locales[$i]->{'nombre'}; ?>', '<?php echo $locales[$i]->{'direccion'}; ?>')">
