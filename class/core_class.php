@@ -116,40 +116,37 @@ class Core{
     }
     public function get_info_despacho($lat, $lng){
 
-        if(file_exists($this->dir_info."config.json")){
-            
-            $aux_conf = json_decode(file_get_contents($this->dir_info."config.json"));
-            $config["polygon"] = $aux_conf->{"polygon"};
+        $config = $this->get_config();
+        $polygons = json_decode(file_get_contents($this->dir_info."polygon/".$config["polygon"]));
+        return $polygons; 
+        $precio = 9999999;
+        $info['op'] = 2;
+        foreach($polygons as $polygon){
 
-            $polygons = json_decode(file_get_contents($this->dir_info."polygon/".$config["polygon"]));
-            $precio = 9999999;
-            $info['op'] = 2;
-            foreach($polygons as $polygon){
-
-                $lats = [];
-                $lngs = [];
-                $puntos = json_decode($polygon->{'poligono'});
-                foreach($puntos as $punto){
-                    $lats[] = $punto->{'lat'};
-                    $lngs[] = $punto->{'lng'};
-                }
-                $is = $this->is_in_polygon($lats, $lngs, $lat, $lng);
-                if($is){
-                    if($precio > $polygon->{'precio'}){
-                        $info['op'] = 1;
-                        $info['id_loc'] = intval($polygon->{'id_loc'});
-                        $info['precio'] = intval($polygon->{'precio'});
-                        $info['nombre'] = $polygon->{'nombre'};
-                        $info['lat'] = $lat;
-                        $info['lng'] = $lng;
-                        $precio = $polygon->{'precio'};
-                    }
+            $lats = [];
+            $lngs = [];
+            $puntos = json_decode($polygon->{'poligono'});
+            foreach($puntos as $punto){
+                $lats[] = $punto->{'lat'};
+                $lngs[] = $punto->{'lng'};
+            }
+            $is = $this->is_in_polygon($lats, $lngs, $lat, $lng);
+            if($is){
+                if($precio > $polygon->{'precio'}){
+                    $info['op'] = 1;
+                    $info['id_loc'] = intval($polygon->{'id_loc'});
+                    $info['precio'] = intval($polygon->{'precio'});
+                    $info['nombre'] = $polygon->{'nombre'};
+                    $info['lat'] = $lat;
+                    $info['lng'] = $lng;
+                    $precio = $polygon->{'precio'};
                 }
             }
+        }
             
             return $info;
 
-        }
+        
 
     }
     public function is_in_polygon($vertices_x, $vertices_y, $longitude_x, $latitude_y){
