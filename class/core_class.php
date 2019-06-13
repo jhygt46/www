@@ -81,28 +81,21 @@ class Core{
             }
             if(file_put_contents($this->dir_info."versiones/last.json", json_encode($data->{"info"}))){
                 if($data->{"info"}->{"logo"} != "sinlogo.png"){
-                    return $this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"logo"};
-                    if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"logo"})){
-                        if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"logo"}, file_get_contents("http://www.misitiodelivery.cl/images/logos/".$data->{"info"}->{"logo"}))){
-                            // REPORTAR ERROR
-                            return "BUENA NELSON";
-                        }
+                    if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"logo"}, file_get_contents("http://www.misitiodelivery.cl/images/logos/".$data->{"info"}->{"logo"}))){
+                        // REPORTAR ERROR
                     }
                 }
             }
-
             if(file_exists($this->dir_info."polygon/last.json")){
                 rename($this->dir_info."polygon/last.json", $this->dir_info."polygon/".date("Ymd", filemtime($this->dir_info."polygon/last.json")).".json");
             }
             if(file_put_contents($this->dir_info."polygon/last.json", json_encode($data->{"polygons"}))){
                 // REPORTAR ERROR
             }
-            
             if(!is_dir($this->dir_data."data/".$data->{"info"}->{"code"})){
                 mkdir($this->dir_data."data/".$data->{"info"}->{"code"}, 0777);
                 file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.html", "");
             }
-
             if(file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.js", "var data=".json_encode($data->{"data"}))){
                 $categorias = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
                 for($i=0; $i<count($categorias); $i++){
