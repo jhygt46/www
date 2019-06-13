@@ -8,11 +8,12 @@
     if($info['op'] == 1){
 
         $pedido = $info['data']->{'pedido'};
+        $puser = $info['data']->{'puser'};
         echo "<pre>";
-        print_r($pedido);
+        print_r($puser);
         echo "</pre>";
         exit;
-        $puser = $info['data']->{'puser'};
+        
         $carro = $info['data']->{'carro'};
         $promos = $info['data']->{'promos'};
 
