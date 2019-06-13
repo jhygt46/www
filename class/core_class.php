@@ -208,8 +208,8 @@ class Core{
         $file = $this->dir_info."pedidos/".$pedido_code.".json";
         $aux_conf = json_decode(file_get_contents($this->dir_info."config.json"));
 
-        if(file_exists($this->dir_info."versiones/".$config["info"])){
-            $info['bue'] = $this->dir_info."versiones/".$config["info"];
+        if(file_exists($this->dir_info."versiones/".$config->{"info"})){
+            $info['bue'] = $this->dir_info."versiones/".$config->{"info"};
         }
 
         if(file_exists($file)){
