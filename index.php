@@ -205,12 +205,13 @@
                                     <div class="cont_direccion">
                                         <div class="direccion_op1">
                                             <?php 
-                                            for($i=0; $i<count($info->{'lista_locales'}); $i++){ ?>
+                                            $locales = json_decode($info->{'lista_locales'});
+                                            for($i=0; $i<count($locales); $i++){ ?>
                                             <div class="dir_locales" id="<?php echo $locales[$i]->{'id_loc'}; ?>">
                                                 <div class="cont_local clearfix">
                                                     <div class="local_info" onclick="select_local(<?php echo $locales[$i]->{'id_loc'}; ?>, '<?php echo $locales[$i]->{'nombre'}; ?>', '<?php echo $locales[$i]->{'direccion'}; ?>')">
-                                                        <div class="title"><?php echo $info->{'lista_locales'}[$i]->{'nombre'}; ?></div>
-                                                        <div class="stitle"><?php echo $info->{'lista_locales'}[$i]->{'direccion'}; ?></div>
+                                                        <div class="title"><?php echo $locales[$i]->{'nombre'}; ?></div>
+                                                        <div class="stitle"><?php echo $locales[$i]->{'direccion'}; ?></div>
                                                         <div class="alert"></div>
                                                     </div>
                                                     <div class="local_mapa valign" onclick="map_local(<?php echo $locales[$i]->{'id_loc'}; ?>, <?php echo $locales[$i]->{'lat'}; ?>, <?php echo $locales[$i]->{'lng'}; ?>)">
