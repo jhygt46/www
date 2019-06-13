@@ -989,6 +989,7 @@ function paso_4(){
 
                     var data = JSON.parse(info);
                     console.log(data);
+                    console.log(data.pedido_code);
                     if(data.op == 2){
                         alert(data.mensaje);
                     }
