@@ -209,7 +209,7 @@ class Core{
         $aux_conf = json_decode(file_get_contents($this->dir_info."config.json"));
 
         if(file_exists($this->dir_info."versiones/".$aux_conf->{"info"})){
-            $info['bue'] = $this->dir_info."versiones/".$aux_conf->{"info"};
+            $info['bue'] = json_decode(file_get_contents($this->dir_info."versiones/".$aux_conf->{"info"}));
         }
 
         if(file_exists($file)){
