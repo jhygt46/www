@@ -207,10 +207,7 @@ class Core{
         $pedido_code = $_GET["code"];
         $file = $this->dir_info."pedidos/".$pedido_code.".json";
         $aux_conf = json_decode(file_get_contents($this->dir_info."config.json"));
-
-        if(file_exists($this->dir_info."versiones/".$aux_conf->{"info"})){
-            $info['bue'] = json_decode(file_get_contents($this->dir_info."versiones/".$aux_conf->{"info"}))->{'code'};
-        }
+        $info['code'] = json_decode(file_get_contents($this->dir_info."versiones/".$aux_conf->{"info"}))->{'code'};
 
         if(file_exists($file)){
             $data = json_decode(file_get_contents($this->dir_info."pedidos/".$pedido_code.".json"));
@@ -219,7 +216,6 @@ class Core{
             if($diff < 86400){
                 $info['op'] = 1;
                 $info['data'] = $data;
-                $info['code'] = json_decode(file_get_contents($this->file_info))->{'code'}.".js";
             }else{
                 $info['op'] = 2;
             }
