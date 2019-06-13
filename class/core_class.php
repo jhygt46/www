@@ -30,14 +30,7 @@ class Core{
         }
 
     }
-    public function get_data(){
-
-        if(!is_dir($this->dir_info)){
-            mkdir($this->dir_info, 0777);
-            mkdir($this->dir_info."pedidos/", 0777);
-            mkdir($this->dir_info."versiones/", 0777);
-            mkdir($this->dir_info."polygon/", 0777);
-        }
+    public function get_config(){
 
         if(file_exists($this->dir_info."config.json")){
             $aux_conf = json_decode(file_get_contents($this->dir_info."config.json"));
@@ -50,7 +43,19 @@ class Core{
             $config["actualizar"] = 0;
             file_put_contents($this->dir_info."config.json", json_encode($config));
         }
+        return $config;
 
+    }
+    public function get_data(){
+
+        if(!is_dir($this->dir_info)){
+            mkdir($this->dir_info, 0777);
+            mkdir($this->dir_info."pedidos/", 0777);
+            mkdir($this->dir_info."versiones/", 0777);
+            mkdir($this->dir_info."polygon/", 0777);
+        }
+
+        $config = $this->get_config();
         if(file_exists($this->dir_info."versiones/".$config["info"]) && $config["actualizar"] == 0){
             return json_decode(file_get_contents($this->dir_info."versiones/".$config["info"]));
         }else{
