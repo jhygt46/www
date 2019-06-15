@@ -1,18 +1,17 @@
 <?php
 
-    if($_SERVER['HTTP_HOST'] == "www.mikasushi.cl" || $_SERVER['HTTP_HOST'] == "mikasushi.cl"){
-        die("<table border='0' cellpadding='0' cellspacing='0' width='100%' height='100%'><tr><td align='center' valign='middle'>Sitio no disponible</td></tr></table>");
+    if($_POST["test"] == "Dw7k2s_hKi5sqPs8"){
+        die("hjS3r%mDs-5gYa6ib_5Ps");
     }
 
     require_once "class/core_class.php";
-
     $core = new Core();
     $info = $core->get_data();
     
-    if($_SERVER['HTTP_HOST'] == "www.fireapp.cl"){
-
-    }else{
-
+    if($_SERVER['HTTP_HOST'] == "35.192.157.227"){
+        echo "<pre>";
+        print_r($info);
+        echo "</pre>";
     }
     
     if ((empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === "off") && $info->{'ssl'} == 1) {
