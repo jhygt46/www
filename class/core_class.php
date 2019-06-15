@@ -14,10 +14,13 @@ class Core{
     public function __construct(){
 
         $this->code = file_get_contents("/var/code.json");
-        $this->server_ip = file_get_contents("/var/server_ip.json");
-
-        echo "SERVER IP: ".$this->server_ip."<br/>";
-        echo "HTTP HOST: ".$_SERVER["HTTP_HOST"]."<br/>";
+        
+        if(file_exists("/var/server_ip.json")){
+            $this->server_ip = file_get_contents("/var/server_ip.json");
+        }else{
+            $this->server_ip = file_get_contents("http://ipecho.net/plain");
+            file_put_contents("/var/server_ip.json", $this->server_ip);
+        }
 
         if($_SERVER["HTTP_HOST"] == $this->server_ip){
             $this->host = (count(explode(".", $_GET["url"])) == 2) ? "www.".$_GET["url"] : $_GET["url"] ;
