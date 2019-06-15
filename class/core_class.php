@@ -78,6 +78,7 @@ class Core{
         echo "<pre>";
         print_r($data);
         echo "</pre>";
+        
 
         if(isset($data->{'op'}) && $data->{'op'} == 1){
 
