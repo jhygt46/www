@@ -16,6 +16,9 @@ class Core{
         $this->code = file_get_contents("/var/code.json");
         $this->server_ip = file_get_contents("/var/server_ip.json");
 
+        echo "SERVER IP: ".$this->server_ip."<br/>";
+        echo "HTTP HOST: ".$_SERVER["HTTP_HOST"]."<br/>";
+
         if($_SERVER["HTTP_HOST"] == $this->server_ip){
             $this->host = (count(explode(".", $_GET["url"])) == 2) ? "www.".$_GET["url"] : $_GET["url"] ;
         }else{
