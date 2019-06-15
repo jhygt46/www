@@ -61,15 +61,15 @@ class Core{
         $send["code"] = $this->code;
         $send["host"] = $this->host;
 
+        echo "<pre>";
+        print_r($send);
+        echo "</pre>";
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/servicio.php');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         $data = json_decode(curl_exec($ch));
-
-        echo "<pre>";
-        print_r($data);
-        echo "</pre>";
 
         if(isset($data->{'op'}) && $data->{'op'} == 1){
 
