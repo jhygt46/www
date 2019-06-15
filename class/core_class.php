@@ -67,8 +67,6 @@ class Core{
         $send["code"] = $this->code;
         $send["host"] = $this->host;
 
-        
-
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/servicio.php');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
