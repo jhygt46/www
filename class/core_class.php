@@ -73,12 +73,6 @@ class Core{
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         $data = json_decode(curl_exec($ch));
 
-        echo "HOST: ".$send["host"];
-        echo "<pre>";
-        print_r($data);
-        echo "</pre>";
-
-
         if(isset($data->{'op'}) && $data->{'op'} == 1){
 
             if(!is_dir($this->dir_info)){
