@@ -72,7 +72,7 @@ class Core{
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         $data = json_decode(curl_exec($ch));
-        return json_encode($data);
+        return $data;
         if(isset($data->{'op'}) && $data->{'op'} == 1){
 
             if(!is_dir($this->dir_info)){
