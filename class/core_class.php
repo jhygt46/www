@@ -73,10 +73,6 @@ class Core{
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         $data = json_decode(curl_exec($ch));
 
-        echo "<pre>";
-        print_r($data);
-        echo "</pre>";
-
         if(isset($data->{'op'}) && $data->{'op'} == 1){
 
             if(!is_dir($this->dir_info)){
@@ -121,7 +117,7 @@ class Core{
 
         }
         curl_close($ch);
-        return $data->{"info"};
+        return $data;
 
     }
     public function get_info_despacho($lat, $lng){
