@@ -9,9 +9,11 @@
     $info = $core->get_data();
 
     if($_SERVER['HTTP_HOST'] == "35.192.157.227"){
+        echo "INFO 1";
         echo "<pre>";
         print_r($info);
         echo "</pre>";
+        echo "INFO 2";
         exit;
     }
     
