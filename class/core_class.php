@@ -33,7 +33,7 @@ class Core{
         }
 
     }
-    private function volver(){
+    public function volver(){
         
         $config = $this->get_config();
 
