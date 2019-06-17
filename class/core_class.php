@@ -138,6 +138,10 @@ class Core{
 
         if(isset($data->{'op'}) && $data->{'op'} == 1){
 
+            $config = $this->get_config();
+            $config["actualizar"] = 0;
+            file_put_contents($this->dir_info."config.json", json_encode($config));
+
             if(!is_dir($this->dir_info)){
                 mkdir($this->dir_info, 0777);
                 mkdir($this->dir_info."pedidos/", 0777);
