@@ -16,6 +16,7 @@
 
     if($_SERVER['HTTP_HOST'] == "35.192.157.227"){
         $core->volver();
+        exit;
     }
 
     $info = $core->get_data();
