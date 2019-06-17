@@ -19,6 +19,9 @@ class Core{
             file_put_contents("/var/data/server_ip.json", $this->server_ip);
         }
 
+        echo "IP 1:".$this->server_ip."<br/>";
+        echo "IP 2:".file_get_contents("http://ipecho.net/plain")."<br/>";
+
         if($_SERVER["HTTP_HOST"] == $this->server_ip){
             $this->host = (count(explode(".", $_GET["url"])) == 2) ? "www.".$_GET["url"] : $_GET["url"] ;
         }else{
@@ -117,11 +120,11 @@ class Core{
 
         $config = $this->get_config();
         if(file_exists($this->dir_info."versiones/".$config["info"]) && $config["actualizar"] == 0){
-            echo "FILE<br/>";
+            //echo "FILE<br/>";
             return json_decode(file_get_contents($this->dir_info."versiones/".$config["info"]));
         }else{
-            echo "file: ".$this->dir_info."versiones/".$config["info"]."<br/>";
-            echo "act: ".$config["actualizar"]."<br/>";
+            //echo "file: ".$this->dir_info."versiones/".$config["info"]."<br/>";
+            //echo "act: ".$config["actualizar"]."<br/>";
             return $this->curlData();
         }
 
