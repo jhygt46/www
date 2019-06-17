@@ -90,7 +90,7 @@ class Core{
         }
 
     }
-    private function actualizar(){
+    public function actualizar(){
         
         $config = $this->get_config();
         $config["actualizar"] = 1;
