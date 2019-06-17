@@ -5,10 +5,7 @@ class Core{
     public $host = null;
     public $code = null;
     public $dir_info = null;
-    public $file_info = null;
-    public $file_act = null;
     public $dir_data = null;
-    public $dir_img = null;
     public $server_ip = null;
 
     public function __construct(){
@@ -34,6 +31,31 @@ class Core{
             $this->dir_info = "/var/data/".$this->host."/";
             $this->dir_data = "/var/www/html/";
         }
+
+    }
+    private function volver(){
+        
+        $config = $this->get_config();
+
+        $versiones = opendir($this->dir_info."versiones/");
+        while($archivo = readdir($versiones)){
+            $config["info"] = $archivo;
+            echo "version: ".$archivo."<br/>";
+        }
+        $polygon = opendir($this->dir_info."polygon/");
+        while($archivo = readdir($polygon)){
+            $config["polygon"] = $archivo;
+            echo "polygon: ".$archivo."<br/>";
+        }
+        
+        //file_put_contents($this->dir_info."config.json", json_encode($config));
+
+    }
+    private function actualizar(){
+        
+        $config = $this->get_config();
+        $config["actualizar"] = 1;
+        file_put_contents($this->dir_info."config.json", json_encode($config));
 
     }
     public function get_config(){
@@ -117,7 +139,7 @@ class Core{
 
         }
         curl_close($ch);
-        return $data;
+        return $data->{'info'};
 
     }
     public function get_info_despacho($lat, $lng){
