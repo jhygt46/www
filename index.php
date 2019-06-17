@@ -7,7 +7,7 @@
     require_once "class/core_class.php";
     $core = new Core();
 
-    if($_POST["accion"] == "xS3w1Dm8Po87Wltd"){
+    if($_GET["accion"] == "xS3w1Dm8Po87Wltd"){
         $core->actualizar();
         die("BUENA NELSON");
     }
