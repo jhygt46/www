@@ -11,13 +11,10 @@
         $core->actualizar();
     }
     if($_POST["accion"] == "uDr72rE2kIt9z5bF"){
-        
+        $core->volver();
     }
 
-    if($_SERVER['HTTP_HOST'] == "35.192.157.227"){
-        $core->volver();
-        exit;
-    }
+    if($_SERVER['HTTP_HOST'] == "35.192.157.227"){}
 
     $info = $core->get_data();
 
