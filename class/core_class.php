@@ -117,11 +117,10 @@ class Core{
 
         $config = $this->get_config();
         if(file_exists($this->dir_info."versiones/".$config["info"]) && $config["actualizar"] == 0){
-            //echo "FILE<br/>";
+            echo "FILE<br/>";
             return json_decode(file_get_contents($this->dir_info."versiones/".$config["info"]));
         }else{
-            echo "file: ".$this->dir_info."versiones/".$config["info"]."<br/>";
-            //echo "act: ".$config["actualizar"]."<br/>";
+            echo "CURL<br/>";
             return $this->curlData();
         }
 
