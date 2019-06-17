@@ -117,8 +117,10 @@ class Core{
 
         $config = $this->get_config();
         if(file_exists($this->dir_info."versiones/".$config["info"]) && $config["actualizar"] == 0){
+            echo "FILE";
             return json_decode(file_get_contents($this->dir_info."versiones/".$config["info"]));
         }else{
+            echo "CURL";
             return $this->curlData();
         }
 
@@ -229,7 +231,7 @@ class Core{
                 $c = !$c;
         }
         return $c;
-        
+
     }
     public function enviar_pedido(){
 
