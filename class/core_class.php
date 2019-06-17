@@ -39,13 +39,24 @@ class Core{
 
         $versiones = opendir($this->dir_info."versiones/");
         while($archivo = readdir($versiones)){
-            $config["info"] = $archivo;
-            echo "version: ".$archivo."<br/>";
+            if($archivo != "." && $archivo != ".." && $archivo != "last.json"){
+                $ver_file[] = $archivo;
+            }
         }
+        sort($ver_file);
+
         $polygon = opendir($this->dir_info."polygon/");
         while($archivo = readdir($polygon)){
-            $config["polygon"] = $archivo;
-            echo "polygon: ".$archivo."<br/>";
+            if($archivo != "." && $archivo != ".." && $archivo != "last.json"){
+                $pol_file[] = $archivo;
+            }
+        }
+        sort($pol_file);
+
+        for($i=0; $i<count($ver_file); $i++){
+
+            echo $ver_file[$i]."<br/>";
+
         }
         
         //file_put_contents($this->dir_info."config.json", json_encode($config));
