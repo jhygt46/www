@@ -9,7 +9,6 @@
 
     if($_POST["accion"] == "xS3w1Dm8Po87Wltd"){
         $core->actualizar();
-        die("BUENA NELSON");
     }
     if($_POST["accion"] == "uDr72rE2kIt9z5bF"){
         $core->volver();
