@@ -273,7 +273,7 @@ class Core{
                 curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-                $info['web'] = json_decode(curl_exec($ch));
+                $info = json_decode(curl_exec($ch));
 
                 if($info->{'op'} == 1 && $info->{'id_ped'} > 0){
 
