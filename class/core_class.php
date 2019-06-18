@@ -251,6 +251,8 @@ class Core{
                 $send['puser'] = json_decode($_POST['puser']);
                 $send['carro'] = json_decode($_POST['carro']);
                 $send['promos'] = json_decode($_POST['promos']);
+                $send["code"] = $this->code;
+                $send["host"] = $this->host;
 
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/enviar_pedido.php');
