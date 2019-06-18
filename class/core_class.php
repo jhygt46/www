@@ -247,7 +247,7 @@ class Core{
         while($archivo = readdir($pedidos)){
             if($archivo != "." && $archivo != ".."){
                 $files_nombres[] = $archivo;
-                $files_tiempo[] = filemtime($this->dir_info."pedidos/".$archivo);
+                $files_tiempo[] = time() - filemtime($this->dir_info."pedidos/".$archivo);
             }
         }
         
