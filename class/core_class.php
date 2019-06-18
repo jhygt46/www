@@ -246,7 +246,7 @@ class Core{
         $pedidos = opendir($this->dir_info."pedidos/");
         while($archivo = readdir($pedidos)){
             if($archivo != "." && $archivo != ".."){
-                $files[] = time() - filemtime($archivo);
+                $files[] = $archivo;
             }
         }
         ksort($files);
