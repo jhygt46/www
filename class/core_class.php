@@ -133,9 +133,10 @@ class Core{
 
         $send["code"] = $this->code;
         $send["host"] = $this->host;
+        $send["tipo"] = 1;
 
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/servicio.php');
+        curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         $data = json_decode(curl_exec($ch));
@@ -253,9 +254,10 @@ class Core{
                 $send['promos'] = json_decode($_POST['promos']);
                 $send["code"] = $this->code;
                 $send["host"] = $this->host;
+                $send["tipo"] = 2;
 
                 $ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/enviar_pedido.php');
+                curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
                 $info = json_decode(curl_exec($ch));
