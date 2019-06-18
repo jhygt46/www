@@ -72,7 +72,6 @@ function open_categoria(id){
     }
     
 }
-
 function tiene_pedido(){
     
     var pedido = get_pedido();
@@ -144,15 +143,11 @@ function imprimir_categoria_modal(categorias){
     $('.modal_carta .info_modal').append(html);
     
 }
-
 // ADD PRODUCTOS Y PROMOCION //
-
 function add_carro_producto_aux(that){
     var id = $(that).attr('id');
     add_carro_producto(id);
 }
-
-
 function add_carro_producto(id_pro){
     
     var producto = get_producto(id_pro);
@@ -540,7 +535,6 @@ function set_cantidad(n){
     cantidad = cantidad + n;
     $('.cantcart_num').html(cantidad);
 }
-
 function get_puser(){
     return JSON.parse(localStorage.getItem("p_user")) || { id_puser: 0, code: '', nombre: '', telefono: '+56 9 ' };
 }
@@ -553,8 +547,6 @@ function get_pdir(){
 function set_pdir(pdir){
     localStorage.setItem("p_dir", JSON.stringify(pdir));
 }
-
-
 // BORRAR //
 function get_pep(){
     return JSON.parse(localStorage.getItem("pep")) || { id_pep: 0, pep_code: '' };
@@ -563,7 +555,6 @@ function set_pep(pep){
     localStorage.setItem("pep", JSON.stringify(pep));
 }
 // BORRAR //
-
 function get_carro(){
     return JSON.parse(localStorage.getItem("carro")) || [];
 }
@@ -687,7 +678,6 @@ function tooglemenu(){
     if(menu == 1)
         hidemenu();
 }
-
 function get_horarios(id, tipo){
 
     var fecha = new Date();
@@ -724,7 +714,6 @@ function get_horarios(id, tipo){
     }
     return objeto;
 }
-
 function info_locales(){
     var fecha = new Date();
     if(data.locales !== null){
@@ -773,7 +762,6 @@ function info_despacho(){
         }
     }
 }
-
 function ver_paso_2(){
     
     var info_loc = info_locales();
@@ -882,7 +870,6 @@ function proceso(categorias, preguntas){
     return true;
     
 }
-
 function paso_2(){
 
     paso = 2;
@@ -1446,7 +1433,6 @@ function confirmar_productos_promo(that){
     }
      
 }
-
 function aux_nuevo(){
     borrar_carro();
     set_pedido(null);
