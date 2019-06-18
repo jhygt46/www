@@ -7,7 +7,6 @@ class Core{
     public $dir_info = null;
     public $dir_data = null;
     public $server_ip = null;
-    public $aux = null;
 
     public function __construct(){
 
@@ -21,7 +20,6 @@ class Core{
         }
 
         if($_SERVER["HTTP_HOST"] == $this->server_ip){
-            $this->aux = 1;
             if(isset($_GET["url"])){
                 $this->host = (count(explode(".", $_GET["url"])) == 2) ? "www.".$_GET["url"] : $_GET["url"] ;
             }else{
@@ -199,10 +197,6 @@ class Core{
         $polygons = json_decode(file_get_contents($this->dir_info."polygon/".$config["polygon"]));
         $precio = 9999999;
         $info['op'] = 2;
-
-        if($this->aux == 1){
-            return $this->dir_info."polygon/".$config["polygon"];
-        }
 
         foreach($polygons as $polygon){
 
