@@ -952,9 +952,6 @@ function paso_4(){
     var nombre = $('#pedido_nombre').val();
     var telefono = $('#pedido_telefono').val().split(" ").join("");
 
-    console.log(telefono);
-    console.log(telefono.length);
-
     if(nombre.length > 2){
         if(telefono.length >= 12 && telefono.length <= 14){
             
@@ -979,7 +976,7 @@ function paso_4(){
                 success: function(info){
 
                     var data = JSON.parse(info);
-                    console.log(data.pedido_code);
+                    console.log(data);
                     
                     if(data.op == 2){
                         alert(data.mensaje);
