@@ -244,7 +244,7 @@ class Core{
         $config = $this->get_config();
 
         $pedidos = opendir($this->dir_info."pedidos/");
-        while($archivo = readdir($versiones)){
+        while($archivo = readdir($pedidos)){
             if($archivo != "." && $archivo != ".."){
                 $files[] = time() - filemtime($archivo);
             }
