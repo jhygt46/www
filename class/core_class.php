@@ -246,11 +246,13 @@ class Core{
         $pedidos = opendir($this->dir_info."pedidos/");
         while($archivo = readdir($pedidos)){
             if($archivo != "." && $archivo != ".."){
-                $files[] = $archivo;
+                $files_nombres[] = $archivo;
+                $files_tiempo[] = filemtime($archivo);
             }
         }
-        ksort($files);
-        $info['files'] = $files;
+        
+        $info['f_nombre'] = $files_nombres;
+        $info['f_tiempo'] = $files_tiempo;
 
         $pedido = json_decode($_POST['pedido']);
         $nombre = $pedido->{'nombre'};
