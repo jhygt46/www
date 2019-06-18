@@ -7,6 +7,7 @@ class Core{
     public $dir_info = null;
     public $dir_data = null;
     public $server_ip = null;
+    public $aux = null;
 
     public function __construct(){
 
@@ -20,10 +21,17 @@ class Core{
         }
 
         if($_SERVER["HTTP_HOST"] == $this->server_ip){
-            $this->host = (count(explode(".", $_GET["url"])) == 2) ? "www.".$_GET["url"] : $_GET["url"] ;
+            $this->aux = 1;
+            if(isset($_GET["url"])){
+                $this->host = (count(explode(".", $_GET["url"])) == 2) ? "www.".$_GET["url"] : $_GET["url"] ;
+            }else{
+                $var = explode("?url=", $_SERVER["HTTP_REFERER"]);
+                $this->host = (count(explode(".", $var[1])) == 2) ? "www.".$var[1] : $var[1] ;
+            }
         }else{
             $this->host = (count(explode(".", $_SERVER["HTTP_HOST"])) == 2) ? "www.".$_SERVER["HTTP_HOST"] : $_SERVER["HTTP_HOST"] ;
         }
+
         if($_SERVER["HTTP_HOST"] == "localhost"){
             $this->dir_info = "C:/var/".$this->host."/";
             $this->dir_data = "C:/AppServ/www/restaurants_web/deliveryweb/";
@@ -191,6 +199,11 @@ class Core{
         $polygons = json_decode(file_get_contents($this->dir_info."polygon/".$config["polygon"]));
         $precio = 9999999;
         $info['op'] = 2;
+
+        if($this->aux == 1){
+            return $this->dir_info."polygon/".$config["polygon"];
+        }
+
         foreach($polygons as $polygon){
 
             $lats = [];
