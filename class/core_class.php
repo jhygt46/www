@@ -241,6 +241,17 @@ class Core{
     }
     public function enviar_pedido(){
 
+        $config = $this->get_config();
+
+        $pedidos = opendir($this->dir_info."pedidos/");
+        while($archivo = readdir($versiones)){
+            if($archivo != "." && $archivo != ".."){
+                $files[] = time() - filemtime($archivo);
+            }
+        }
+        ksort($files);
+        $info['files'] = $files;
+
         $pedido = json_decode($_POST['pedido']);
         $nombre = $pedido->{'nombre'};
         $telefono = str_replace(" ", "", $pedido->{'telefono'});
@@ -260,7 +271,7 @@ class Core{
                 curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-                $info = json_decode(curl_exec($ch));
+                $info['web'] = json_decode(curl_exec($ch));
 
                 if($info->{'op'} == 1 && $info->{'id_ped'} > 0){
 
