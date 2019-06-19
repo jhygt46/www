@@ -300,6 +300,11 @@ class Core{
                     $send["host"] = $this->host;
                     $send["tipo"] = 2;
 
+                    $file['pedido'] = $pedido;
+                    $file['puser'] = $send['puser'];
+                    $file['carro'] = $send['carro'];
+                    $file['promos'] = $send['promos'];
+
                     $ch = curl_init();
                     curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -308,11 +313,11 @@ class Core{
 
                     if($info['data']->{'op'} == 1 && $info['data']->{'id_ped'} > 0){
                         $info['op'] = 1;
-                        $send['pedido']->{'id_ped'} = $info['data']->{'id_ped'};
-                        $send['pedido']->{'num_ped'} = $info['data']->{'num_ped'};
-                        $send['pedido']->{'pedido_code'} = $info['data']->{'pedido_code'};
-                        $send['pedido']->{'fecha'} = $info['data']->{'fecha'};
-                        file_put_contents($this->dir_info."pedidos/".$info['data']->{'pedido_code'}.".json", json_encode($send));
+                        $file['pedido']->{'id_ped'} = $info['data']->{'id_ped'};
+                        $file['pedido']->{'num_ped'} = $info['data']->{'num_ped'};
+                        $file['pedido']->{'pedido_code'} = $info['data']->{'pedido_code'};
+                        $file['pedido']->{'fecha'} = $info['data']->{'fecha'};
+                        file_put_contents($this->dir_info."pedidos/".$info['data']->{'pedido_code'}.".json", json_encode($file));
 
                     }
 
@@ -321,8 +326,8 @@ class Core{
                 }
             }
         }else{
-            $info->{'op'} = 2;
-            $info->{'mensaje'} = 'Error:';
+            $info['op'] = 2;
+            $info['mensaje'] = 'Error';
         }
         return $info;
 
