@@ -1255,7 +1255,7 @@ function send_error(error){
         url: 'ajax/index.php',
         type: "POST",
         data: send,
-        success: function(data){ console.log(JSON.parse(data)); }
+        success: function(data){ console.log(data); }
     });
 
 }
