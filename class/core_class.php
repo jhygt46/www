@@ -343,13 +343,18 @@ class Core{
         
         $send["tipo"] = 3;
         $send["nombre"] = $_POST["nombre"];
+        $send["id_puser"] = $_POST["id_puser"];
+        $send["code"] = $_POST["code"];
+        $send["host"] = $this->host;
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-        curl_exec($ch);
+        $info = curl_exec($ch);
         curl_close($ch);
+        return json_encode($info);
+        
     }
     public function ver_pedido(){
 

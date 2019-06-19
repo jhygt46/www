@@ -1251,12 +1251,11 @@ function send_error(error){
 
     var puser = get_puser();
     var send = { accion: 'enviar_error', error: error, id_puser: puser.id_puser, code: puser.code };
-    console.log(send);
     $.ajax({
         url: 'ajax/index.php',
         type: "POST",
         data: send,
-        success: function(){}
+        success: function(data){ console.log(JSON.parse(data)); }
     });
 
 }
