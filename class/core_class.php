@@ -353,8 +353,8 @@ class Core{
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         $info = curl_exec($ch);
         curl_close($ch);
-        return json_encode($info);
-        
+        return $info;
+
     }
     public function ver_pedido(){
 
