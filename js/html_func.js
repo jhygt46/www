@@ -472,7 +472,6 @@ function html_seleccionar_productos_categoria_promo(categoria, i, cantidad){
     
     var producto;
     var pro_cat_item, pro_cat_item_select, pro_cat_item_nombre, select, option;
-    console.log(categoria);
     
     if(categoria.productos){
         
@@ -571,20 +570,14 @@ function html_preguntas_producto(i){
                 
                 var n_pregunta = document.createElement('div');
                 if(carro[i].preguntas[k].valores[m].seleccionados){
-                    /*
-                    console.log(carro[i].preguntas[k].valores[m].seleccionados);
-                    console.log(carro[i].preguntas[k].valores[m].valores[n]);
-                    */
                     if(carro[i].preguntas[k].valores[m].seleccionados.indexOf(carro[i].preguntas[k].valores[m].valores[n].trim()) != -1){
                         n_pregunta.className = 'n_pregunta selected';
                     }else{
                         n_pregunta.className = 'n_pregunta';
                     }
-
                 }else{
                     n_pregunta.className = 'n_pregunta';
                 }
-
                 n_pregunta.innerHTML = carro[i].preguntas[k].valores[m].valores[n];
                 n_pregunta.onclick = function(){ select_pregunta(this) };
                 v_pregunta.appendChild(n_pregunta);

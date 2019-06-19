@@ -805,8 +805,6 @@ function ver_paso_2(){
 function show_modal_locales(){
     
     var info_loc = info_locales();
-    console.log("INFO LOCATION");
-    console.log(info_loc);
     var custom_min = 30;
 
     if(info_loc){
@@ -1208,17 +1206,13 @@ function initMap(){
             }
 
         }
-        // Clear out the old markers.
         markers.forEach(function(marker){
             marker.setMap(null);
         });
         markers = [];
-
-        // For each place, get the icon, name and location.
         var bounds = new google.maps.LatLngBounds();
         places.forEach(function(place){
             if(!place.geometry) {
-                //console.log("Returned place contains no geometry");
                 return;
             }
             var icon = {
@@ -1228,8 +1222,6 @@ function initMap(){
                 anchor: new google.maps.Point(17, 34),
                 scaledSize: new google.maps.Size(25, 25)
             };
-
-            // Create a marker for each place.
             markers.push(new google.maps.Marker({
                 map: map,
                 icon: icon,
