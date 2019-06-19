@@ -312,6 +312,13 @@ class Core{
                     $info['data'] = json_decode(curl_exec($ch));
 
                     if($info['data']->{'op'} == 1 && $info['data']->{'id_ped'} > 0){
+
+                        if($info['data']->{'email'}->{'op'} == 1){
+                            $info['mail_enviado'] = 1;
+                        }else{
+                            $info['mail_enviado'] = 0;
+                        }
+
                         $info['op'] = 1;
                         $file['pedido']->{'id_ped'} = $info['data']->{'id_ped'};
                         $file['pedido']->{'num_ped'} = $info['data']->{'num_ped'};
