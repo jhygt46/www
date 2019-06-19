@@ -976,7 +976,7 @@ function paso_4(){
                 success: function(info){
 
                     var data = JSON.parse(info);
-                    console.log(data);
+                    console.log("op: "+data.data.op);
                     
                     if(data.op == 2){
                         alert(data.mensaje);
