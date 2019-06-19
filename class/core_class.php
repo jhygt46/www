@@ -307,7 +307,7 @@ class Core{
                     $info['data'] = json_decode(curl_exec($ch));
 
                     if($info['data']->{'op'} == 1 && $info['data']->{'id_ped'} > 0){
-
+                        $info->{'op'} = 1;
                         $send['pedido']->{'id_ped'} = $info['data']->{'id_ped'};
                         $send['pedido']->{'num_ped'} = $info['data']->{'num_ped'};
                         $send['pedido']->{'pedido_code'} = $info['data']->{'pedido_code'};

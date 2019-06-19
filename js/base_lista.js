@@ -975,36 +975,35 @@ function paso_4(){
                 data: send,
                 success: function(info){
 
-                    var data = JSON.parse(info);
-                    console.log("op: "+data.data.op);
+                    var res = JSON.parse(info);
                     
-                    if(data.op == 2){
-                        alert(data.mensaje);
+                    if(res.op == 2){
+                        alert(res.mensaje);
                     }
-                    if(data.op == 1){
+                    if(res.op == 1){
 
                         $('#pedido_nombre').css({ border: '0px' });
                         $('#pedido_telefono').css({ border: '0px' });
-                        if(data.set_puser == 1){
-                            set_puser(data.puser);
+                        if(res.data.set_puser == 1){
+                            set_puser(res.data.puser);
                         }
                         
                         document.getElementById("enviar_cotizacion").disabled = false;
 
-                        pedido.id_ped = data.id_ped;
-                        pedido.num_ped = data.num_ped;
-                        pedido.pedido_code = data.pedido_code;
-                        pedido.fecha = data.fecha;
-                        pedido.lat = data.lat;
-                        pedido.lng = data.lng;
+                        pedido.id_ped = res.data.id_ped;
+                        pedido.num_ped = res.data.num_ped;
+                        pedido.pedido_code = res.data.pedido_code;
+                        pedido.fecha = res.data.fecha;
+                        pedido.lat = res.data.lat;
+                        pedido.lng = res.data.lng;
                         pedido.estado = estados[0];
                         
                         if(pedido.despacho == 0){
-                            pedido.time = data.t_retiro;
+                            pedido.time = res.data.t_retiro;
                             $('.pedido_mensaje').html(pedido.nombre+" tu pedido fue recibido correctamente. En "+pedido.time+" minutos puedes venir a buscarlo");
                         }
                         if(pedido.despacho == 1){
-                            pedido.time = data.t_despacho;
+                            pedido.time = res.data.t_despacho;
                             $('.pedido_mensaje').html(pedido.nombre+" tu pedido fue recibido correctamente. En "+pedido.time+" minutos estaremos alla");
                         }                
                         
