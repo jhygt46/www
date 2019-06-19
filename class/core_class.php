@@ -342,7 +342,7 @@ class Core{
     public function enviar_error(){
         
         $send["tipo"] = 3;
-        $send["nombre"] = $_POST["nombre"];
+        $send["error"] = $_POST["error"];
         $send["id_puser"] = $_POST["id_puser"];
         $send["code"] = $_POST["code"];
         $send["host"] = $this->host;
