@@ -10,6 +10,11 @@
         $core = new Core();
         $info = $core->enviar_pedido();
     }
+    if($_POST["accion"] == "enviar_error"){
+        require_once "../class/core_class.php";
+        $core = new Core();
+        $info = $core->enviar_error();
+    }
     echo json_encode($info);
 
 ?>

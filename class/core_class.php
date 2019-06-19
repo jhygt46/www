@@ -339,6 +339,18 @@ class Core{
         return $info;
 
     }
+    public function enviar_error(){
+        
+        $send["tipo"] = 3;
+        $send["nombre"] = $_POST["nombre"];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
+        curl_exec($ch);
+        curl_close($ch);
+    }
     public function ver_pedido(){
 
         $pedido_code = $_GET["code"];

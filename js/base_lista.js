@@ -976,14 +976,9 @@ function paso_4(){
                 success: function(info){
 
                     var res = JSON.parse(info);
-                    console.log(res);
 
-
-                    if(res.op == 2){
-                        alert(res.mensaje);
-                    }
                     if(res.op == 1){
-
+                        
                         $('#pedido_nombre').css({ border: '0px' });
                         $('#pedido_telefono').css({ border: '0px' });
                         if(res.data.set_puser == 1){
@@ -1015,10 +1010,14 @@ function paso_4(){
                         set_pedido(pedido);
                         paso = 1;
 
+                    }else if(res.op == 2){
+                        alert(res.mensaje);
                     }else{
-                        document.getElementById("enviar_cotizacion").disabled = false;
+                        send_error("enviar pedido op diferente");
                     }
+                    
                 }, error: function(e){
+                    send_error("Web enviar pedido error");
                     alert("En estos momentos no podemos atenderlo.. por favor intente mas tarde");
                 }
             });
@@ -1177,8 +1176,6 @@ function initMap(){
                     success: function(datas){
 
                         var data = JSON.parse(datas);
-                        console.log(data);
-
                         if(data.op == 1){
 
                             var pedido = get_pedido();
@@ -1195,11 +1192,15 @@ function initMap(){
                             set_pedido(pedido);
                             paso_3_despacho();
                             
-                        }else{
+                        }else if(data.op == 2){
                             alert("Su domicilio no se encuentra en la zona de reparto, disculpe las molestias");
+                        }else{
+                            send_error("despacho domicilio op diferente");
                         }
                         
-                    }, error: function(e){}
+                    }, error: function(e){
+                        send_error("Web despacho a domicilio error");
+                    }
                 });
                 
             }else{
@@ -1243,6 +1244,19 @@ function initMap(){
             }
         });
         map.fitBounds(bounds);
+    });
+
+}
+function send_error(error){
+
+    var puser = get_puser();
+    var send = { accion: 'enviar_error', error: error, id_puser: puser.id_puser, code: puser.code };
+    console.log(send);
+    $.ajax({
+        url: 'ajax/index.php',
+        type: "POST",
+        data: send,
+        success: function(){}
     });
 
 }
