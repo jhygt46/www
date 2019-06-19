@@ -284,47 +284,47 @@ class Core{
     public function enviar_pedido(){
 
         if($this->bloquear()){
-            $info['bloqueo'] = 0;
-        }else{
-            $info['bloqueo'] = 1;
-        }
-
-        $pedido = json_decode($_POST['pedido']);
-        $nombre = $pedido->{'nombre'};
-        $telefono = str_replace(" ", "", $pedido->{'telefono'});
         
-        if(strlen($nombre) > 2){
-            if(strlen($telefono) >= 12 && strlen($telefono) <= 14){
+            $pedido = json_decode($_POST['pedido']);
+            $nombre = $pedido->{'nombre'};
+            $telefono = str_replace(" ", "", $pedido->{'telefono'});
+            
+            if(strlen($nombre) > 2){
+                if(strlen($telefono) >= 12 && strlen($telefono) <= 14){
 
-                $send['pedido'] = $pedido;
-                $send['puser'] = json_decode($_POST['puser']);
-                $send['carro'] = json_decode($_POST['carro']);
-                $send['promos'] = json_decode($_POST['promos']);
-                $send["code"] = $this->code;
-                $send["host"] = $this->host;
-                $send["tipo"] = 2;
+                    $send['pedido'] = $pedido;
+                    $send['puser'] = json_decode($_POST['puser']);
+                    $send['carro'] = json_decode($_POST['carro']);
+                    $send['promos'] = json_decode($_POST['promos']);
+                    $send["code"] = $this->code;
+                    $send["host"] = $this->host;
+                    $send["tipo"] = 2;
 
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-                $info['data'] = json_decode(curl_exec($ch));
+                    $ch = curl_init();
+                    curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
+                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
+                    $info = json_decode(curl_exec($ch));
 
-                if($info['data']->{'op'} == 1 && $info['data']->{'id_ped'} > 0){
+                    if($info->{'op'} == 1 && $info->{'id_ped'} > 0){
 
-                    $send['pedido']->{'id_ped'} = $info['data']->{'id_ped'};
-                    $send['pedido']->{'num_ped'} = $info['data']->{'num_ped'};
-                    $send['pedido']->{'pedido_code'} = $info['data']->{'pedido_code'};
-                    $send['pedido']->{'fecha'} = $info['data']->{'fecha'};
-                    file_put_contents($this->dir_info."pedidos/".$info['data']->{'pedido_code'}.".json", json_encode($send));
+                        $info['info'] = 1;
+                        $send['pedido']->{'id_ped'} = $info->{'id_ped'};
+                        $send['pedido']->{'num_ped'} = $info->{'num_ped'};
+                        $send['pedido']->{'pedido_code'} = $info->{'pedido_code'};
+                        $send['pedido']->{'fecha'} = $info->{'fecha'};
+                        file_put_contents($this->dir_info."pedidos/".$info->{'pedido_code'}.".json", json_encode($send));
+
+                    }
+
+                    curl_close($ch);
 
                 }
-
-                curl_close($ch);
-
             }
+        }else{
+            $info->{'op'} = 2;
+            $info->{'mensaje'} = 'Error:';
         }
-
         return $info;
 
     }
