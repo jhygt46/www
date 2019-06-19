@@ -304,15 +304,15 @@ class Core{
                     curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-                    $info = json_decode(curl_exec($ch));
+                    $info['data'] = json_decode(curl_exec($ch));
 
-                    if($info->{'op'} == 1 && $info->{'id_ped'} > 0){
+                    if($info['data']->{'op'} == 1 && $info['data']->{'id_ped'} > 0){
 
-                        $send['pedido']->{'id_ped'} = $info->{'id_ped'};
-                        $send['pedido']->{'num_ped'} = $info->{'num_ped'};
-                        $send['pedido']->{'pedido_code'} = $info->{'pedido_code'};
-                        $send['pedido']->{'fecha'} = $info->{'fecha'};
-                        file_put_contents($this->dir_info."pedidos/".$info->{'pedido_code'}.".json", json_encode($send));
+                        $send['pedido']->{'id_ped'} = $info['data']->{'id_ped'};
+                        $send['pedido']->{'num_ped'} = $info['data']->{'num_ped'};
+                        $send['pedido']->{'pedido_code'} = $info['data']->{'pedido_code'};
+                        $send['pedido']->{'fecha'} = $info['data']->{'fecha'};
+                        file_put_contents($this->dir_info."pedidos/".$info['data']->{'pedido_code'}.".json", json_encode($send));
 
                     }
 

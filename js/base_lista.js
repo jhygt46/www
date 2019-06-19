@@ -1012,7 +1012,6 @@ function paso_4(){
                         
                         show_modal_4(pedido);
                         set_pedido(pedido);
-                        time();
                         paso = 1;
 
                     }else{
