@@ -1,17 +1,17 @@
 <?php
 
-    if($_POST["test"] == "Dw7k2s_hKi5sqPs8"){
+    if(isset($_POST["test"]) && $_POST["test"] == "Dw7k2s_hKi5sqPs8"){
         die("hjS3r%mDs-5gYa6ib_5Ps");
     }
 
     require_once "class/core_class.php";
     $core = new Core();
 
-    if($_POST["accion"] == "xS3w1Dm8Po87Wltd"){
+    if(isset($_POST["accion"]) && $_POST["accion"] == "xS3w1Dm8Po87Wltd"){
         $core->actualizar();
         die("OK");
     }
-    if($_POST["accion"] == "uDr72rE2kIt9z5bF"){
+    if(isset($_POST["accion"]) && $_POST["accion"] == "uDr72rE2kIt9z5bF"){
         $core->volver();
     }
 
