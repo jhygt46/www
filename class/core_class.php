@@ -308,7 +308,6 @@ class Core{
 
                     if($info->{'op'} == 1 && $info->{'id_ped'} > 0){
 
-                        $info['info'] = 1;
                         $send['pedido']->{'id_ped'} = $info->{'id_ped'};
                         $send['pedido']->{'num_ped'} = $info->{'num_ped'};
                         $send['pedido']->{'pedido_code'} = $info->{'pedido_code'};
