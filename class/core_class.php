@@ -239,20 +239,55 @@ class Core{
         return $c;
 
     }
-    public function enviar_pedido(){
+    private function bloquear(){
 
-        $config = $this->get_config();
-
-        $pedidos = opendir($this->dir_info."pedidos/");
-        while($archivo = readdir($pedidos)){
-            if($archivo != "." && $archivo != ".."){
-                $files_nombres[] = $archivo;
-                $files_tiempo[] = time() - filemtime($this->dir_info."pedidos/".$archivo);
+        if(file_exists($this->dir_info."/bloqueo.json")){
+            $file_time = filemtime($this->dir_info."/bloqueo.json");
+            $segundos = intval(file_get_contents($this->dir_info."/bloqueo.json"));
+            $diff = time() - $file_time;
+            if($diff < $segundos){
+                if($diff <= 3){
+                    $aux = $segundos + 60;
+                    $aux2 = ($aux > 300) ? 300 : $aux;
+                    file_put_contents($this->dir_info."/bloqueo.json", $aux2);
+                }else{
+                    $aux = $segundos - $diff;
+                    file_put_contents($this->dir_info."/bloqueo.json", $aux);
+                }
+                return false;
+            }else{
+                unlink($this->dir_info."/bloqueo.json");
+                return true;
+            }
+        }else{
+            $pedidos = opendir($this->dir_info."pedidos/");
+            while($archivo = readdir($pedidos)){
+                if($archivo != "." && $archivo != ".."){
+                    $tiempo_existe = time() - filemtime($this->dir_info."pedidos/".$archivo);
+                    if($tiempo_existe < 10){
+                        $tiempo1++;
+                    }
+                    if($tiempo_existe < 40){
+                        $tiempo2++;
+                    }
+                }
+            }
+            if($tiempo1 > 4 || $tiempo2 > 9){
+                file_put_contents($this->dir_info."/bloqueo.json", "300");
+                return false;
+            }else{
+                return true;
             }
         }
-        
-        $info['f_nombre'] = $files_nombres;
-        $info['f_tiempo'] = $files_tiempo;
+
+    }
+    public function enviar_pedido(){
+
+        if($this->bloquear()){
+            $info['bloqueo'] = 0;
+        }else{
+            $info['bloqueo'] = 1;
+        }
 
         $pedido = json_decode($_POST['pedido']);
         $nombre = $pedido->{'nombre'};
