@@ -17,10 +17,6 @@
 
     $info = $core->get_data();
 
-    if($info['op'] == 2){
-        die("URL no existe");
-    }
-
     if($_SERVER["HTTP_HOST"] == "35.192.157.227"){
         
         echo "<pre>";
