@@ -17,21 +17,26 @@
 
     $info = $core->get_data();
 
+    if($info['op'] == 2){
+        die("URL no existe");
+    }
+
     if($_SERVER["HTTP_HOST"] == "35.192.157.227"){
-        echo $_SERVER["HTTP_HOST"];
+        
         echo "<pre>";
         print_r($info);
         echo "</pre>";
         exit;
+        
     }
 
-    if ((empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === "off") && $info->{'ssl'} == 1) {
+    if ((empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === "off") && $info['info']->{'ssl'} == 1) {
         $location = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         header('HTTP/1.1 301 Moved Permanently');
         header('Location: ' . $location);
         exit;
     }
-    if ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === "on") && $info->{'ssl'} == 0) {
+    if ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === "on") && $info['info']->{'ssl'} == 0) {
         $location = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         header('HTTP/1.1 302 Moved Temporarily');
         header('Location: ' . $location);
@@ -44,34 +49,34 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title><?php echo $info->{"titulo"}; ?></title>
+        <title><?php echo $info['info']->{"titulo"}; ?></title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=<?php echo $info->{"font"}->{'family'}; ?>" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=<?php echo $info['info']->{"font"}->{'family'}; ?>" rel="stylesheet">
         
         <link rel="stylesheet" href="/css/reset.css" media="all" />
-        <link rel="stylesheet" href="/css/<?php echo $info->{"css_font_size"}; ?>" media="all" />
-        <link rel="stylesheet" href="/css/<?php echo $info->{"css_color"}; ?>" media="all" />
-        <link rel="stylesheet" href="/css/<?php echo $info->{"css_tipo"}; ?>" media="all" />
+        <link rel="stylesheet" href="/css/<?php echo $info['info']->{"css_font_size"}; ?>" media="all" />
+        <link rel="stylesheet" href="/css/<?php echo $info['info']->{"css_color"}; ?>" media="all" />
+        <link rel="stylesheet" href="/css/<?php echo $info['info']->{"css_tipo"}; ?>" media="all" />
         <link rel="stylesheet" href="/css/css_base.css" media="all" />
         
-        <link rel='shortcut icon' type='image/x-icon' href='/data/<?php echo $info->{'code'}; ?>/<?php echo $info->{"favicon"}; ?>' />
+        <link rel='shortcut icon' type='image/x-icon' href='/data/<?php echo $info['info']->{'code'}; ?>/<?php echo $info['info']->{"favicon"}; ?>' />
         
         <script src="https://www.izusushi.cl/socket.io/socket.io.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
-        <script src="/data/<?php echo $info->{'code'}; ?>/index.js" type="text/javascript"></script>
+        <script src="/data/<?php echo $info['info']->{'code'}; ?>/index.js" type="text/javascript"></script>
         <script src="/js/html_func.js" type="text/javascript"></script>
         <script src="/js/base.js" type="text/javascript"></script>
         <script src="/js/base_lista.js" type="text/javascript"></script>
         <script>
-            var code = "<?php echo $info->{'code'}; ?>";
-            var estados = [ <?php for($i=0; $i<count($info->{'estados'}); $i++){ if($i>0){ echo ", "; } echo "'".$info->{'estados'}[$i]."'";  } ?> ];
+            var code = "<?php echo $info['info']->{'code'}; ?>";
+            var estados = [ <?php for($i=0; $i<count($info['info']->{'estados'}); $i++){ if($i>0){ echo ", "; } echo "'".$info['info']->{'estados'}[$i]."'";  } ?> ];
         </script>
         <style>
             body{
-                font-family: <?php echo $info->{"font"}->{'css'}; ?>;
+                font-family: <?php echo $info['info']->{"font"}->{'css'}; ?>;
             }
         </style>
     </head>
@@ -90,14 +95,14 @@
             </div>
             <div class="pagina">
                 <div class="cont_pagina">
-                    <div class="header <?php echo ($info->{"header_fixed"} == 1) ? 'fixed' : ''; ?>">
-                        <div class="header_logo vhalign"><img src="<?php if($info->{'logo'} == "sinlogo.png"){ echo "/_images/sinlogo.png"; }else{ echo "/data/".$info->{"code"}."/".$info->{"logo"}; } ?>" alt="" /></div>
+                    <div class="header <?php echo ($info['info']->{"header_fixed"} == 1) ? 'fixed' : ''; ?>">
+                        <div class="header_logo vhalign"><img src="<?php if($info['info']->{'logo'} == "sinlogo.png"){ echo "/_images/sinlogo.png"; }else{ echo "/data/".$info['info']->{"code"}."/".$info['info']->{"logo"}; } ?>" alt="" /></div>
                         <div class="menu_right valign" onclick="open_carro()"><div class="shop material-icons">shopping_cart</div><div class="cantcart"><div class="cantcart_num vhalign"></div></div></div>
                     </div>
                     <div class="contenido">
-                        <div class="cont_contenido <?php echo ($info->{"footer_fixed"} == 1) ? 'padding_cont_f1' : 'padding_cont_f2'; ?>"></div>
+                        <div class="cont_contenido <?php echo ($info['info']->{"footer_fixed"} == 1) ? 'padding_cont_f1' : 'padding_cont_f2'; ?>"></div>
                     </div>
-                    <div class="footer <?php echo ($info->{"footer_fixed"} == 1) ? 'fixed' : ''; ?>"><?php echo $info->{"footer_html"}; ?></div>
+                    <div class="footer <?php echo ($info['info']->{"footer_fixed"} == 1) ? 'fixed' : ''; ?>"><?php echo $info['info']->{"footer_html"}; ?></div>
                 </div>
             </div>
             <div class="modals">
@@ -147,7 +152,7 @@
                     <!-- MODAL CARRO 01 -->
                     <div class="modal vhalign hide modal_carro paso_01">
                         <div class="cont_modal">
-                            <div class="titulo"><div class="cont_titulo valign"><h1><?php echo $info->{"pedido_01_titulo"}; ?></h1><h2><?php echo $info->{"pedido_01_subtitulo"}; ?></h2></div></div>
+                            <div class="titulo"><div class="cont_titulo valign"><h1><?php echo $info['info']->{"pedido_01_titulo"}; ?></h1><h2><?php echo $info['info']->{"pedido_01_subtitulo"}; ?></h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info">
                                 <div class="info_modal" style="padding-bottom: 57px"></div>
@@ -165,10 +170,10 @@
                         </div>
                     </div>
                     
-                    <?php if($info->{'retiro_local'} == 1 && $info->{'despacho_domicilio'} == 1){ ?>
+                    <?php if($info['info']->{'retiro_local'} == 1 && $info['info']->{'despacho_domicilio'} == 1){ ?>
                     <div class="modal vhalign hide modal_carro paso_02">
                         <div class="cont_modal">
-                            <div class="titulo"><div class="cont_titulo valign"><h1><?php echo $info->{"pedido_02_titulo"}; ?></h1><h2><?php echo $info->{"pedido_02_subtitulo"}; ?></h2></div></div>
+                            <div class="titulo"><div class="cont_titulo valign"><h1><?php echo $info['info']->{"pedido_02_titulo"}; ?></h1><h2><?php echo $info['info']->{"pedido_02_subtitulo"}; ?></h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info">
                                 <div class="info_modal">
@@ -187,7 +192,7 @@
                                                 <div class="codir prin_alpha_1">
                                                     <div class="cont_info_dir valign">
                                                         <div class="title">Despacho a Domicilio</div>
-                                                        <div class="stitle">Desde $<?php echo $info->{"desde"}; ?></div>
+                                                        <div class="stitle">Desde $<?php echo $info['info']->{"desde"}; ?></div>
                                                         <div class="alert"></div>
                                                     </div>
                                                 </div>
@@ -202,17 +207,17 @@
                         </div>
                     </div>
                     <?php } ?>
-                    <?php if($info->{'retiro_local'} == 1){ ?>
+                    <?php if($info['info']->{'retiro_local'} == 1){ ?>
                     <div class="modal vhalign hide modal_carro paso_02a">
                         <div class="cont_modal">
-                            <div class="titulo"><div class="cont_titulo valign"><h1><?php echo $info->{"pedido_02_titulo"}; ?></h1><h2><?php echo $info->{"pedido_02_subtitulo"}; ?></h2></div></div>
+                            <div class="titulo"><div class="cont_titulo valign"><h1><?php echo $info['info']->{"pedido_02_titulo"}; ?></h1><h2><?php echo $['info']->{"pedido_02_subtitulo"}; ?></h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info">
                                 <div class="info_modal">
                                     <div class="cont_direccion">
                                         <div class="direccion_op1">
                                             <?php 
-                                            $locales = json_decode($info->{'lista_locales'});
+                                            $locales = json_decode($info['info']->{'lista_locales'});
                                             for($i=0; $i<count($locales); $i++){ ?>
                                             <div class="dir_locales" id="<?php echo $locales[$i]->{'id_loc'}; ?>">
                                                 <div class="cont_local clearfix">
@@ -222,7 +227,7 @@
                                                         <div class="alert"></div>
                                                     </div>
                                                     <div class="local_mapa valign" onclick="map_local(<?php echo $locales[$i]->{'id_loc'}; ?>, <?php echo $locales[$i]->{'lat'}; ?>, <?php echo $locales[$i]->{'lng'}; ?>)">
-                                                        <div class="icon_mapa" style="background: url('<?php echo $info->{"dominio"}; ?>/images/google-maps.png') no-repeat"></div>
+                                                        <div class="icon_mapa" style="background: url('<?php echo $info['info']->{"dominio"}; ?>/images/google-maps.png') no-repeat"></div>
                                                     </div>
                                                 </div>
                                                 <div id="lmap-<?php echo $locales[$i]->{'id_loc'}; ?>" class="lmap"></div>
@@ -236,10 +241,10 @@
                     </div>
                     <?php } ?>
                     
-                    <?php if($info->{'despacho_domicilio'} == 1){ ?>
+                    <?php if($info['info']->{'despacho_domicilio'} == 1){ ?>
                     <div class="modal vhalign hide modal_carro paso_02b">
                         <div class="cont_modal">
-                            <div class="titulo"><div class="cont_titulo valign"><h1><?php echo $info->{"pedido_02_titulo"}; ?></h1><h2><?php echo $info->{"pedido_02_subtitulo"}; ?></h2></div></div>
+                            <div class="titulo"><div class="cont_titulo valign"><h1><?php echo $info['info']->{"pedido_02_titulo"}; ?></h1><h2><?php echo $info['info']->{"pedido_02_subtitulo"}; ?></h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info">
                                 <div class="info_modal">
@@ -260,7 +265,7 @@
                     
                     <div class="modal vhalign hide modal_carro paso_03">
                         <div class="cont_modal">
-                            <div class="titulo"><div class="cont_titulo valign"><h1><?php echo $info->{"pedido_03_titulo"}; ?></h1><h2><?php echo $info->{"pedido_03_subtitulo"}; ?></h2></div></div>
+                            <div class="titulo"><div class="cont_titulo valign"><h1><?php echo $info['info']->{"pedido_03_titulo"}; ?></h1><h2><?php echo $info['info']->{"pedido_03_subtitulo"}; ?></h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info">
                                 <div class="info_modal" style="padding-bottom: 116px">
@@ -275,41 +280,41 @@
                                             <li class="item_nombre"><h1>Nombre:</h1><input type="text" id="pedido_nombre" /></li>
                                                 <li class="item_telefono"><h1>Telefono:</h1><input type="text" id="pedido_telefono" value="+569" /></li>
                                         </ul>
-                                        <?php if($info->{'pedido_wasabi'} == 1 || $info->{'pedido_gengibre'} == 1 || $info->{'pedido_embarazadas'} == 1 || $info->{'pedido_palitos'} == 1){ ?>
+                                        <?php if($info['info']->{'pedido_wasabi'} == 1 || $info['info']->{'pedido_gengibre'} == 1 || $info['info']->{'pedido_embarazadas'} == 1 || $info['info']->{'pedido_palitos'} == 1){ ?>
                                         <div class="block_preguntas">
                                             <h1>Opciones</h1>
                                             <div class="preguntas">
-                                                <?php if($info->{'pedido_wasabi'} == 1){ ?>
+                                                <?php if($info['info']->{'pedido_wasabi'} == 1){ ?>
                                                 <ul class="pregunta clearfix">
                                                     <li class="pre_nom">Wasabi</li>
                                                     <li class="pre_input"><input type="checkbox" id="pedido_wasabi" /></li>
                                                 </ul>
                                                 <?php } ?>
-                                                <?php if($info->{'pedido_gengibre'} == 1){ ?>
+                                                <?php if($info['info']->{'pedido_gengibre'} == 1){ ?>
                                                 <ul class="pregunta clearfix">
                                                     <li class="pre_nom">Gengibre</li>
                                                     <li class="pre_input"><input type="checkbox" id="pedido_gengibre" /></li>
                                                 </ul>
                                                 <?php } ?>
-                                                <?php if($info->{'pedido_embarazadas'} == 1){ ?>
+                                                <?php if($info['info']->{'pedido_embarazadas'} == 1){ ?>
                                                 <ul class="pregunta clearfix">
                                                     <li class="pre_nom">Es para Embarazada?</li>
                                                     <li class="pre_input"><input type="checkbox" id="pedido_embarazadas" /></li>
                                                 </ul>
                                                 <?php } ?>
-                                                <?php if($info->{'pedido_soya'} == 1){ ?>
+                                                <?php if($info['info']->{'pedido_soya'} == 1){ ?>
                                                 <ul class="pregunta clearfix">
                                                     <li class="pre_nom">Soya</li>
                                                     <li class="pre_input"><input type="checkbox" id="pedido_soya" /></li>
                                                 </ul>
                                                 <?php } ?>
-                                                <?php if($info->{'pedido_teriyaki'} == 1){ ?>
+                                                <?php if($info['info']->{'pedido_teriyaki'} == 1){ ?>
                                                 <ul class="pregunta clearfix">
                                                     <li class="pre_nom">Teriyaki</li>
                                                     <li class="pre_input"><input type="checkbox" id="pedido_teriyaki" /></li>
                                                 </ul>
                                                 <?php } ?>
-                                                <?php if($info->{'pedido_palitos'} == 1){ ?>
+                                                <?php if($info['info']->{'pedido_palitos'} == 1){ ?>
                                                 <ul class="pregunta clearfix">
                                                     <li class="pre_nom">Palitos</li>
                                                     <li class="pre_input"><select id="pedido_palitos"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select></li>
@@ -318,7 +323,7 @@
                                             </div>
                                         </div>
                                         <?php } ?>
-                                        <?php if($info->{'pedido_comentarios'} == 1){ ?>
+                                        <?php if($info['info']->{'pedido_comentarios'} == 1){ ?>
                                         <div class="block_preguntas">
                                             <h1>Comentarios</h1>
                                             <div class="preguntas">
@@ -380,6 +385,6 @@
                 </div>
             </div>
         </div>
-        <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo $info->{'mapcode'}; ?>&libraries=places" async defer></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo $info['info']->{'mapcode'}; ?>&libraries=places" async defer></script>
     </body>
 </html>
