@@ -17,7 +17,7 @@
 
     $info = $core->get_data();
     if($info == null){
-        die("URL NULL");
+        die("<table border='0' width='100%' height='100%'><tr><td align='center' valign='middle'>ERROR: Sitio no disponible</td></tr></table>");
     }
 
     if($_SERVER["HTTP_HOST"] == "35.192.157.227"){
