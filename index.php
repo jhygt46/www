@@ -16,12 +16,12 @@
     }
 
     $info = $core->get_data();
-    
+    /*
     echo "<pre>";
     print_r($info);
     echo "</pre>";
     exit;
-
+    */
     if($_SERVER["HTTP_HOST"] == "35.192.157.227"){
         
         
