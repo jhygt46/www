@@ -210,7 +210,7 @@
                     <?php if($info['info']->{'retiro_local'} == 1){ ?>
                     <div class="modal vhalign hide modal_carro paso_02a">
                         <div class="cont_modal">
-                            <div class="titulo"><div class="cont_titulo valign"><h1><?php echo $info['info']->{"pedido_02_titulo"}; ?></h1><h2><?php echo $['info']->{"pedido_02_subtitulo"}; ?></h2></div></div>
+                            <div class="titulo"><div class="cont_titulo valign"><h1><?php echo $info['info']->{"pedido_02_titulo"}; ?></h1><h2><?php echo $info['info']->{"pedido_02_subtitulo"}; ?></h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info">
                                 <div class="info_modal">
