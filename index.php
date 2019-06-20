@@ -20,7 +20,7 @@
         die("<table border='0' width='100%' height='100%'><tr><td align='center' valign='middle'>Sitio no disponible</td></tr></table>");
     }else{
         if($info->{'item_pagina'} == 0){
-            die("<table border='0' width='100%' height='100%'><tr><td align='center' valign='middle'>Sitio no disponible</td></tr></table>");
+            //die("<table border='0' width='100%' height='100%'><tr><td align='center' valign='middle'>Sitio no disponible</td></tr></table>");
         }
     }
 
