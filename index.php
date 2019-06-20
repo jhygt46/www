@@ -16,9 +16,9 @@
     }
 
     $info = $core->get_data();
-    echo "op: ".$info['op'];
+    
     echo "<pre>";
-    print_r($info->{'titulo'});
+    print_r($info);
     echo "</pre>";
     exit;
 
