@@ -16,16 +16,20 @@
     }
 
     $info = $core->get_data();
-    if($info == null){
+    if($info === null){
         die("<table border='0' width='100%' height='100%'><tr><td align='center' valign='middle'>Sitio no disponible</td></tr></table>");
+    }else{
+        if($info->{'item_pagina'} == 0){
+            die("<table border='0' width='100%' height='100%'><tr><td align='center' valign='middle'>Sitio no disponible</td></tr></table>");
+        }
     }
 
     if($_SERVER["HTTP_HOST"] == "35.192.157.227"){
-        echo $info->{'item_pagina'};
+        /*
         echo "<pre>";
         print_r($info);
         echo "</pre>";
-        exit;
+        */
     }
 
     if ((empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === "off") && $info->{'ssl'} == 1) {
