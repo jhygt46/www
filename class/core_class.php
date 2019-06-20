@@ -143,9 +143,6 @@ class Core{
 
         if(isset($data->{'op'}) && $data->{'op'} == 1){
 
-            $info['op'] = 1;
-            $info['info'] = $data->{'info'};
-
             $config = $this->get_config();
             $config["actualizar"] = 0;
             file_put_contents($this->dir_info."config.json", json_encode($config));
@@ -190,13 +187,9 @@ class Core{
                 }
             }
 
-        }else{
-
-            $info['op'] = 2;
-
         }
         curl_close($ch);
-        return $info;
+        return $data->{"info"};
 
     }
     public function get_info_despacho($lat, $lng){
