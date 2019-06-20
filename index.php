@@ -16,6 +16,9 @@
     }
 
     $info = $core->get_data();
+    if($info == null){
+        die("URL NULL");
+    }
 
     if($_SERVER["HTTP_HOST"] == "35.192.157.227"){
         

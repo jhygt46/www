@@ -186,10 +186,12 @@ class Core{
                     }
                 }
             }
+            curl_close($ch);
+            return $data->{"info"};
 
+        }else{
+            return null;
         }
-        curl_close($ch);
-        return $data->{"info"};
 
     }
     public function get_info_despacho($lat, $lng){
