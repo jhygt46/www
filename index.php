@@ -17,7 +17,7 @@
 
     $info = $core->get_data();
     echo "<pre>";
-    print_r($info);
+    print_r($info->{'titulo'});
     echo "</pre>";
     exit;
 
