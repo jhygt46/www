@@ -187,6 +187,8 @@ class Core{
                 }
             }
 
+        }else{
+            $data->{'info'}->{'op'} = 2;
         }
         curl_close($ch);
         return $data->{'info'};
