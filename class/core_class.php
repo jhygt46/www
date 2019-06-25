@@ -364,17 +364,26 @@ class Core{
         $file = $this->dir_info."pedidos/".$pedido_code.".json";
 
         if(file_exists($file)){
+
             $data = json_decode(file_get_contents($file));
             $fecha = $data->{'pedido'}->{'fecha'};
             $diff = time() - $fecha;
+
             if($diff < 86400){
+
+                $aux = json_decode(file_get_contents($this->dir_info."versiones/".$config["info"]));
                 $info['op'] = 1;
                 $info['data'] = $data;
+                $info['code'] = $aux->{'code'};
+
             }else{
                 $info['op'] = 2;
             }
+
         }else{
+
             $info['op'] = 2;
+
         }
         return $info;
 
