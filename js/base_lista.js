@@ -143,7 +143,6 @@ function imprimir_categoria_modal(categorias){
             html.appendChild(create_html_promocion(categorias[i]));
         }
     }
-    
     $('.modal_carta .info_modal').append(html);
     
 }
