@@ -60,7 +60,6 @@ function open_categoria(id){
                         imprimir_productos_modal(id);
                     }
                     if(cats.length > 0){ 
-                        console.log(cats);
                         imprimir_categoria_modal(cats);
                     }
                 }
