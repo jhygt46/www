@@ -56,9 +56,13 @@ function open_categoria(id){
                             cats.push(categorias[j]);
                         }
                     }
-
-                    if(cats.length == 0){ imprimir_productos_modal(id) }
-                    if(cats.length > 0){ imprimir_categoria_modal(cats) }
+                    if(cats.length == 0){ 
+                        imprimir_productos_modal(id);
+                    }
+                    if(cats.length > 0){ 
+                        console.log("SHOW CATS");
+                        imprimir_categoria_modal(cats);
+                    }
                 }
             }
 
