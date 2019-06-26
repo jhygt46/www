@@ -141,10 +141,6 @@ class Core{
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         $data = json_decode(curl_exec($ch));
 
-        echo "<pre>";
-        print_r($data);
-        echo "</pre>";
-
         if(isset($data->{'op'}) && $data->{'op'} == 1){
 
             $config = $this->get_config();
