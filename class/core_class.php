@@ -303,9 +303,9 @@ class Core{
                     $send["tipo"] = 2;
 
                     $file['pedido'] = $pedido;
-                    $file['puser'] = $send['puser'];
-                    $file['carro'] = $send['carro'];
-                    $file['promos'] = $send['promos'];
+                    $file['puser'] = json_decode($_POST['puser']);
+                    $file['carro'] = json_decode($_POST['carro']);
+                    $file['promos'] = json_decode($_POST['promos']);
 
                     $ch = curl_init();
                     curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
@@ -410,6 +410,25 @@ class Core{
                 $pedido['pedido']->{'calle'} = $data->{'calle'};
                 $pedido['pedido']->{'num'} = $data->{'num'};
                 $pedido['pedido']->{'depto'} = $data->{'depto'};
+                $pedido['pedido']->{'direccion'} = $data->{'direccion'};
+                $pedido['pedido']->{'comuna'} = $data->{'comuna'};
+                $pedido['pedido']->{'lat'} = $data->{'lat'};
+                $pedido['pedido']->{'lng'} = $data->{'lng'};
+
+                $pedido['pedido']->{'comentarios'} = $data->{'comentarios'};
+                $pedido['pedido']->{'pre_gengibre'} = $data->{'pre_gengibre'};
+                $pedido['pedido']->{'pre_wasabi'} = $data->{'pre_wasabi'};
+                $pedido['pedido']->{'pre_embarazadas'} = $data->{'pre_embarazadas'};
+                $pedido['pedido']->{'pre_palitos'} = $data->{'pre_palitos'};
+                $pedido['pedido']->{'pre_teriyaki'} = $data->{'pre_teriyaki'};
+                $pedido['pedido']->{'pre_soya'} = $data->{'pre_soya'};
+
+                $pedido['pedido']->{'puser'} = $data->{'puser'};
+                $pedido['pedido']->{'carro'} = $data->{'carro'};
+                $pedido['pedido']->{'promos'} = $data->{'promos'};
+
+                $pedido['pedido']->{'costo'} = $data->{'costo'};
+                $pedido['pedido']->{'total'} = $data->{'total'};
 
                 file_put_contents($file, json_encode($pedido));
             
