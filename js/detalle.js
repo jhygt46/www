@@ -18,7 +18,7 @@ $(document).ready(function(){
     if(diff > 0){
         //$('.verificar').append('<div>ERROR: TOTAL ENVIADO ES MENOR: ($'+diff+')</div>')
     }
-    if(tc == 2){
+    if(tc == 1){
         window.print();
         window.close();
     }
