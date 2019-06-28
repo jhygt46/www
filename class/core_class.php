@@ -395,13 +395,17 @@ class Core{
 
             $info['op'] = 3;
             $info['data'] = $data;
-            /*
-            $pedido['pedido']->{'id_ped'} = $info['data']->{'id_ped'};
-            $pedido['pedido']->{'num_ped'} = $info['data']->{'num_ped'};
-            $pedido['pedido']->{'pedido_code'} = $info['data']->{'pedido_code'};
-            $pedido['pedido']->{'fecha'} = $info['data']->{'fecha'};
-            file_put_contents($file, json_encode($pedido));
-            */
+            
+            if($data->{'op'} == 1){
+
+                $pedido['pedido']->{'id_ped'} = $data->{'id_ped'};
+                $pedido['pedido']->{'num_ped'} = $data->{'num_ped'};
+                $pedido['pedido']->{'pedido_code'} = $data->{'pedido_code'};
+                $pedido['pedido']->{'fecha'} = $data->{'fecha'};
+                file_put_contents($file, json_encode($pedido));
+            
+            }
+            
         }
         return $info;
 
