@@ -38,8 +38,8 @@
         <script src="/js/detalle.js" type="text/javascript"></script>
         <script>
             var catalogo = 0;
-            var carro = <?php echo json_encode($carro); ?>;
-            var promos = <?php echo json_encode($promos); ?>;
+            var carro = <?php echo ($carro != "") ? json_encode($carro) : '[]' ; ?>;
+            var promos = <?php echo ($promos != "") ? json_encode($promos) : '[]' ; ?>;
             var costo = <?php echo $pedido->{'costo'}; ?>;
             var total = <?php echo $pedido->{'total'}; ?>;
             var tc = <?php echo (isset($_GET["tc"])) ? $_GET["tc"] : 0 ; ?>;

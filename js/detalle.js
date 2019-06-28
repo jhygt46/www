@@ -21,6 +21,7 @@ $(document).ready(function(){
     if(tc == 1){
         window.print();
         window.close();
+        console.log("TC 1");
     }
 });
 
