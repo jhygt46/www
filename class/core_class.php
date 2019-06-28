@@ -395,7 +395,6 @@ class Core{
 
             $info['op'] = 3;
             $info['data'] = $data;
-            $info['code'] = $aux->{'code'};
             /*
             $pedido['pedido']->{'id_ped'} = $info['data']->{'id_ped'};
             $pedido['pedido']->{'num_ped'} = $info['data']->{'num_ped'};
