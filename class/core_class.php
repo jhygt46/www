@@ -364,7 +364,7 @@ class Core{
         $file = $this->dir_info."pedidos/".$pedido_code.".json";
         $aux = json_decode(file_get_contents($this->dir_info."versiones/".$config["info"]));
 
-        if(file_exists($file)){
+        if(file_exists($file) && !isset($_GET["ft"])){
 
             $data = json_decode(file_get_contents($file));
             $fecha = $data->{'pedido'}->{'fecha'};
