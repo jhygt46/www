@@ -403,6 +403,7 @@ class Core{
                 $pedido['pedido']->{'pedido_code'} = $data->{'pedido_code'};
                 $pedido['pedido']->{'fecha'} = strtotime($data->{'fecha'});
                 $pedido['pedido']->{'despacho'} = $data->{'despacho'};
+                $pedido['pedido']->{'id_loc'} = $data->{'id_loc'};
                 
                 $pedido['pedido']->{'nombre'} = $data->{'nombre'};
                 $pedido['pedido']->{'telefono'} = $data->{'telefono'};
