@@ -362,6 +362,7 @@ class Core{
         $pedido_code = $_GET["code"];
         $config = $this->get_config();
         $file = $this->dir_info."pedidos/".$pedido_code.".json";
+        $aux = json_decode(file_get_contents($this->dir_info."versiones/".$config["info"]));
 
         if(file_exists($file)){
 
@@ -371,7 +372,6 @@ class Core{
 
             if($diff < 86400){
 
-                $aux = json_decode(file_get_contents($this->dir_info."versiones/".$config["info"]));
                 $info['op'] = 1;
                 $info['data'] = $data;
                 $info['code'] = $aux->{'code'};
@@ -382,7 +382,20 @@ class Core{
 
         }else{
 
-            $info['op'] = 2;
+            $send["tipo"] = 4;
+            $send["code"] = $pedido_code;
+            $send["host"] = $this->host;
+
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
+            $data = json_decode(curl_exec($ch));
+            curl_close($ch);
+
+            $info['op'] = 3;
+            $info['data'] = $data;
+            $info['code'] = $aux->{'code'};
 
         }
         return $info;

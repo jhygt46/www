@@ -4,7 +4,15 @@
 
     $core = new Core();
     $info = $core->ver_pedido();
-      
+    
+    if($info['op'] == 3){
+
+        echo "<pre>";
+        print_r($info);
+        echo "</pre>";
+
+    }
+    
     if($info['op'] == 1){
 
         $pedido = $info['data']->{'pedido'};
