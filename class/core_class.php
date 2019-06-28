@@ -401,7 +401,16 @@ class Core{
                 $pedido['pedido']->{'id_ped'} = $data->{'id_ped'};
                 $pedido['pedido']->{'num_ped'} = $data->{'num_ped'};
                 $pedido['pedido']->{'pedido_code'} = $data->{'pedido_code'};
-                $pedido['pedido']->{'fecha'} = $data->{'fecha'};
+                $pedido['pedido']->{'fecha'} = strtotime($data->{'fecha'});
+                $pedido['pedido']->{'despacho'} = $data->{'despacho'};
+                
+                $pedido['pedido']->{'nombre'} = $data->{'nombre'};
+                $pedido['pedido']->{'telefono'} = $data->{'telefono'};
+
+                $pedido['pedido']->{'calle'} = $data->{'calle'};
+                $pedido['pedido']->{'num'} = $data->{'num'};
+                $pedido['pedido']->{'depto'} = $data->{'depto'};
+
                 file_put_contents($file, json_encode($pedido));
             
             }

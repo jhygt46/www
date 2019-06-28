@@ -1,1 +1,1 @@
-<?php //header("Location: https://misitiodelivery.cl/admin"); ?>
+<?php header("Location: https://misitiodelivery.cl/admin"); ?>

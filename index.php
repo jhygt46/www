@@ -1,5 +1,7 @@
 <?php
 
+    exit;
+
     if(isset($_POST["test"]) && $_POST["test"] == "Dw7k2s_hKi5sqPs8"){
         die("hjS3r%mDs-5gYa6ib_5Ps");
     }
