@@ -42,7 +42,7 @@
             var promos = <?php echo json_encode($promos); ?>;
             var costo = <?php echo $pedido->{'costo'}; ?>;
             var total = <?php echo $pedido->{'total'}; ?>;
-            var t = <?php echo (isset($_GET["t"])) ? $_GET["t"] : 0 ; ?>;
+            var tc = <?php echo (isset($_GET["tc"])) ? $_GET["tc"] : 0 ; ?>;
         </script>
         <link rel="stylesheet" href="/css/detalle.css" media="all" />
         <link rel="stylesheet" href="/css/css_base.css" media="all" />
