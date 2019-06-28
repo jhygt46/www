@@ -990,6 +990,7 @@ function paso_4(){
                         pedido.id_ped = res.data.id_ped;
                         pedido.num_ped = res.data.num_ped;
                         pedido.pedido_code = res.data.pedido_code;
+                        console.log(res.data.pedido_code);
                         pedido.fecha = res.data.fecha;
                         pedido.lat = res.data.lat;
                         pedido.lng = res.data.lng;
