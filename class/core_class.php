@@ -390,10 +390,12 @@ class Core{
             curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-            $info['data'] = json_decode(curl_exec($ch));
+            $data = json_decode(curl_exec($ch));
             curl_close($ch);
 
             $info['op'] = 3;
+            $info['data'] = $data;
+            $info['code'] = $aux->{'code'};
             /*
             $pedido['pedido']->{'id_ped'} = $info['data']->{'id_ped'};
             $pedido['pedido']->{'num_ped'} = $info['data']->{'num_ped'};
