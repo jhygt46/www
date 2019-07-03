@@ -948,7 +948,6 @@ function send_chat(){
 }
 function paso_4(){
     
-    document.getElementById("enviar_cotizacion").disabled = true;
     var nombre = $('#pedido_nombre').val();
     var telefono = $('#pedido_telefono').val().split(" ").join("");
 
@@ -967,6 +966,7 @@ function paso_4(){
             pedido.pre_teriyaki = ($('#pedido_teriyaki').is(':checked') ? 1 : 0 );
             pedido.comentarios = ($('#pedido_comentarios').val()) ? $('#pedido_comentarios').val() : '' ;
             
+            document.getElementById("enviar_cotizacion").disabled = true;
             var send = { accion: 'enviar_pedido', pedido: JSON.stringify(pedido), carro: JSON.stringify(get_carro()), promos: JSON.stringify(get_promos()), puser: JSON.stringify(get_puser()) };
             
             $.ajax({
@@ -976,6 +976,8 @@ function paso_4(){
                 success: function(info){
 
                     var res = JSON.parse(info);
+                    console.log("RES");
+                    console.log(res);
 
                     if(res.op == 1){
                         
@@ -984,13 +986,10 @@ function paso_4(){
                         if(res.data.set_puser == 1){
                             set_puser(res.data.puser);
                         }
-                        
-                        document.getElementById("enviar_cotizacion").disabled = false;
 
                         pedido.id_ped = res.data.id_ped;
                         pedido.num_ped = res.data.num_ped;
                         pedido.pedido_code = res.data.pedido_code;
-                        console.log(res.data.pedido_code);
                         pedido.fecha = res.data.fecha;
                         pedido.lat = res.data.lat;
                         pedido.lng = res.data.lng;
@@ -1016,10 +1015,14 @@ function paso_4(){
                     }else{
                         send_error("enviar pedido op diferente");
                     }
+                    document.getElementById("enviar_cotizacion").disabled = false;
                     
                 }, error: function(e){
+
                     send_error("Web enviar pedido error");
                     alert("En estos momentos no podemos atenderlo.. por favor intente mas tarde");
+                    document.getElementById("enviar_cotizacion").disabled = false;
+
                 }
             });
 
