@@ -121,7 +121,16 @@ class Core{
     }
     public function get_prueba(){
 
-        return $this->curlData();
+        $send["code"] = $this->code;
+        $send["host"] = $this->host;
+        $send["tipo"] = 1;
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
+        $data = json_decode(curl_exec($ch));
+        return $data;
 
     }
     public function get_data(){
