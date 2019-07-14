@@ -25,11 +25,11 @@
     }
 
     if($_SERVER["HTTP_HOST"] == "35.192.157.227"){
-        /*
+        
         echo "<pre>";
         print_r($info);
         echo "</pre>";
-        */
+        
     }
 
     if ((empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === "off") && $info->{'ssl'} == 1) {
