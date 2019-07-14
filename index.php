@@ -14,15 +14,13 @@
     if(isset($_POST["accion"]) && $_POST["accion"] == "uDr72rE2kIt9z5bF"){
         $core->volver();
     }
-    
+    $info = $core->get_data();
     if($_SERVER["HTTP_HOST"] == "35.192.157.227"){
-        $info = $core->get_prueba();
+        /*
         echo "<pre>";
         print_r($info);
         echo "</pre>";
-        exit;
-    }else{
-        $info = $core->get_data();
+        */
     }
 
     if($info === null){
