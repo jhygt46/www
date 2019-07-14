@@ -119,6 +119,11 @@ class Core{
         return $config;
 
     }
+    public function get_prueba(){
+        
+        return $this->curlData();
+
+    }
     public function get_data(){
 
         $config = $this->get_config();
