@@ -220,7 +220,7 @@
                                             $locales = json_decode($info->{'lista_locales'});
                                             for($i=0; $i<count($locales); $i++){ ?>
                                             <div class="dir_locales">
-                                                <div class="cont_local">
+                                                <div class="cont_local prin_alpha_1">
                                                     <div class="local_info valign" onclick="select_local(<?php echo $locales[$i]->{'id_loc'}; ?>, '<?php echo $locales[$i]->{'nombre'}; ?>', '<?php echo $locales[$i]->{'direccion'}; ?>')">
                                                         <div class="title"><?php echo $locales[$i]->{'nombre'}; ?></div>
                                                         <div class="stitle"><?php echo $locales[$i]->{'direccion'}; ?></div>

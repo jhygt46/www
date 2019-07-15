@@ -358,10 +358,11 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
 }
 .paso_02a .cont_direccion .direccion_op1 .dir_locales {
   margin-bottom: 10px;
+  background: #ddd;
 }
 .paso_02a .cont_direccion .direccion_op1 .dir_locales .cont_local {
   width: 100%;
-  height: 80px;
+  height: 100px;
   position: relative;
 }
 .paso_02a .cont_direccion .direccion_op1 .dir_locales .cont_local .local_info {
