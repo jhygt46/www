@@ -224,8 +224,8 @@
                                                     <div class="local_info valign" onclick="select_local(<?php echo $locales[$i]->{'id_loc'}; ?>, '<?php echo $locales[$i]->{'nombre'}; ?>', '<?php echo $locales[$i]->{'direccion'}; ?>')">
                                                         <div class="title"><?php echo $locales[$i]->{'nombre'}; ?></div>
                                                         <div class="stitle"><?php echo $locales[$i]->{'direccion'}; ?></div>
-                                                        <div class="ver_mapa">Ver Mapa</div>
                                                         <div class="alert"></div>
+                                                        <div class="ver_mapa">Ver Mapa</div>
                                                     </div>
                                                 </div>
                                                 <div class="lmap"></div>
