@@ -127,7 +127,6 @@
                     </div>
                     <div class="modal vhalign hide modal_productos_promo">
                         <div class="cont_modal">
-                            
                             <div class="titulo"><div class="cont_titulo valign"><h1></h1><h2></h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info">
@@ -136,7 +135,6 @@
                             <div class="acciones">
                                 <input class="confirmar" onclick="confirmar_productos_promo(this)" type="button" value="Confirmar" />
                             </div>
-                        
                         </div>
                     </div>
                     <div class="modal vhalign hide modal_pregunta_productos">
@@ -151,7 +149,6 @@
                             </div>
                         </div>
                     </div>
-
                     <!-- MODAL CARRO 01 -->
                     <div class="modal vhalign hide modal_carro paso_01">
                         <div class="cont_modal">
@@ -220,12 +217,11 @@
                                     <div class="cont_direccion">
                                         <div class="direccion_op1">
                                             <?php
-
                                             $locales = json_decode($info->{'lista_locales'});
                                             for($i=0; $i<count($locales); $i++){ ?>
-                                            <div class="dir_locales" id="<?php echo $locales[$i]->{'id_loc'}; ?>">
-                                                <div class="cont_local clearfix">
-                                                    <div class="local_info" onclick="select_local(<?php echo $locales[$i]->{'id_loc'}; ?>, '<?php echo $locales[$i]->{'nombre'}; ?>', '<?php echo $locales[$i]->{'direccion'}; ?>')">
+                                            <div class="dir_locales">
+                                                <div class="cont_local">
+                                                    <div class="local_info valign" onclick="select_local(<?php echo $locales[$i]->{'id_loc'}; ?>, '<?php echo $locales[$i]->{'nombre'}; ?>', '<?php echo $locales[$i]->{'direccion'}; ?>')">
                                                         <div class="title"><?php echo $locales[$i]->{'nombre'}; ?></div>
                                                         <div class="stitle"><?php echo $locales[$i]->{'direccion'}; ?></div>
                                                         <div class="alert"></div>
@@ -237,8 +233,6 @@
                                                 <div id="lmap-<?php echo $locales[$i]->{'id_loc'}; ?>" class="lmap"></div>
                                             </div>
                                             <?php } ?>
-
-                                            
                                         </div>
                                     </div>
                                 </div>
