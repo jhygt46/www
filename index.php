@@ -225,10 +225,9 @@
                                                         <div class="title"><?php echo $locales[$i]->{'nombre'}; ?></div>
                                                         <div class="stitle"><?php echo $locales[$i]->{'direccion'}; ?></div>
                                                         <div class="alert"></div>
-                                                        <div class="ver_mapa">Ver Mapa</div>
                                                     </div>
                                                 </div>
-                                                <div class="lmap"></div>
+                                                <div id="lmap-<?php echo $locales[$i]->{'id_loc'}; ?>" class="lmap"></div>
                                             </div>
                                             <?php } ?>
                                         </div>

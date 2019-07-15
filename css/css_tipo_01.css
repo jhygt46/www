@@ -373,20 +373,6 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   font-size: 13px;
   display: none;
 }
-.paso_02a .cont_direccion .direccion_op1 .dir_locales .cont_local .local_info .ver_mapa {
-  background: #999;
-  padding: 5px;
-  color: #fff;
-  width: 75px;
-  font-size: 14px;
-  text-align: center;
-  margin-top: 6px;
-}
-.paso_02a .cont_direccion .direccion_op1 .dir_locales .cont_local .local_mapa .icon_mapa {
-  width: 30px;
-  height: 30px;
-  background: url("/images/google-maps.png") no-repeat;
-}
 .paso_02a .cont_direccion .direccion_op1 .dir_locales .lmap {
   height: 150px;
 }
