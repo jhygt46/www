@@ -821,7 +821,7 @@ function modal_test(){
 
     }
     //$('.paso_02 .cont_direccion').html('');
-    $('.paso_02 .cont_direccion').html(lista_locales);
+    $('.paso_02 .info_modal').html(lista_locales);
 
 }
 function show_modal_locales(){
