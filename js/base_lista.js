@@ -806,6 +806,31 @@ function ver_paso_2(){
 }
 function show_modal_locales(){
     
+    
+    var direccion_op1 = create_element_class('direccion_op1');
+
+    for(var i=0, ilen=data.locales.length; i<ilen; i++){
+
+        var dir_locales = create_element_class('dir_locales');
+        var cont_local = create_element_class('cont_local clearfix');
+        var local_info = create_element_class('local_info');
+        local_info.onclick = function(){ select_local(data.locales[i]) };
+        var local_mapa = create_element_class('local_mapa valign');
+        local_mapa.onclick = function(){ map_local(data.locales[i]) };
+        cont_local.appendChild(local_info);
+        cont_local.appendChild(local_mapa);
+        var lmap = create_element_class('lmap');
+        dir_locales.appendChild(cont_local);
+        dir_locales.appendChild(lmap);
+        direccion_op1.appendChild(dir_locales);
+
+    }
+
+    $(".cont_direccion").html(direccion_op1);
+    
+
+
+
     var info_loc = info_locales();
     var custom_min = 30;
 

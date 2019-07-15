@@ -217,7 +217,8 @@
                                 <div class="info_modal">
                                     <div class="cont_direccion">
                                         <div class="direccion_op1">
-                                            <?php 
+                                            <?php
+
                                             $locales = json_decode($info->{'lista_locales'});
                                             for($i=0; $i<count($locales); $i++){ ?>
                                             <div class="dir_locales" id="<?php echo $locales[$i]->{'id_loc'}; ?>">
@@ -234,6 +235,8 @@
                                                 <div id="lmap-<?php echo $locales[$i]->{'id_loc'}; ?>" class="lmap"></div>
                                             </div>
                                             <?php } ?>
+
+                                            
                                         </div>
                                     </div>
                                 </div>
