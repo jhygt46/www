@@ -820,8 +820,8 @@ function modal_test(){
         lista_locales.appendChild(locales);
 
     }
-    $('.cont_direccion').html('');
-    $('.cont_direccion').append(lista_locales);
+    //$('.paso_02 .cont_direccion').html('');
+    $('.paso_02 .cont_direccion').html(lista_locales);
 
 }
 function show_modal_locales(){
