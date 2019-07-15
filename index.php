@@ -24,7 +24,9 @@
         exit;
         
     }else{
+
         $info = $core->get_data();
+        
     }
 
     if($info === null){
