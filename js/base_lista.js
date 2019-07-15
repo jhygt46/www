@@ -806,9 +806,8 @@ function ver_paso_2(){
 }
 function show_modal_locales(){
     
-    
+    /*
     var direccion_op1 = create_element_class('direccion_op1');
-
     for(var i=0, ilen=data.locales.length; i<ilen; i++){
 
         var dir_locales = create_element_class('dir_locales');
@@ -825,11 +824,8 @@ function show_modal_locales(){
         direccion_op1.appendChild(dir_locales);
 
     }
-
     $(".cont_direccion").html(direccion_op1);
-    
-
-
+    */
 
     var info_loc = info_locales();
     var custom_min = 30;
