@@ -804,13 +804,33 @@ function ver_paso_2(){
     $('.modals, .paso_02').show();
 
 }
+function modal_test(){
+
+    var lista_locales = create_element_class('lista_locales');
+
+    for(var i=0, ilen=data.locales.length; i<ilen; i++){
+
+        var locales = create_element_class('locales');
+        var cont_local = create_element_class('cont_locales');
+        var info_local = create_element_class('info_locales valign');
+        var titulo_local = create_element_class_inner('titulo', 'Local #X');
+        info_local.appendChild(titulo_local);
+        cont_local.appendChild(info_local);
+        locales.appendChild(cont_local);
+        lista_locales.appendChild(locales);
+
+    }
+    $('.cont_direccion').html('');
+    $('.cont_direccion').append(lista_locales);
+
+}
 function show_modal_locales(){
     
     /*
-    var direccion_op1 = create_element_class('direccion_op1');
+    
     for(var i=0, ilen=data.locales.length; i<ilen; i++){
 
-        var dir_locales = create_element_class('dir_locales');
+        
         var cont_local = create_element_class('cont_local clearfix');
         var local_info = create_element_class('local_info');
         local_info.onclick = function(){ select_local(data.locales[i]) };
