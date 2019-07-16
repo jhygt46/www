@@ -33,6 +33,7 @@ function btn_prin(){
     });
 }
 function close(){
+    console.log('close');
     $('.modals').hide();
     $('.modal').hide();
 }
