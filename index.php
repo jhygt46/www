@@ -74,13 +74,13 @@
         <script src="/js/base.js" type="text/javascript"></script>
         <script src="/js/base_lista.js" type="text/javascript"></script>
         <script>
-            var inicio = "<?php echo ($info->{"inicio_html"} == "") ? 0 : 1 ; ?>";
+            var inicio = <?php echo ($info->{"inicio_html"} == "") ? 0 : 1 ; ?>;
             var code = "<?php echo $info->{'code'}; ?>";
             var estados = [ <?php for($i=0; $i<count($info->{'estados'}); $i++){ if($i>0){ echo ", "; } echo "'".$info->{'estados'}[$i]."'";  } ?> ];
         </script>
         <style>
             body{
-                font-family: <?php echo $info->{"font"}->{'css'}; ?>;
+                font-family: "<?php echo $info->{"font"}->{"css"}; ?>";
             }
         </style>
     </head>
@@ -111,6 +111,12 @@
             </div>
             <div class="modals">
                 <div class="cont_modals">
+                    <div class="modal vhalign hide modal_inicio">
+                        <div class="cont_modal">
+                            <div onclick="close_that(this)" class="close material-icons">close</div>
+                            <div class="cont_info"><?php echo $info->{"inicio_html"}; ?></div>
+                        </div>
+                    </div>
                     <div class="modal vhalign hide modal_pagina">
                         <div class="cont_modal">
                             <div onclick="close_that(this)" class="close material-icons">close</div>

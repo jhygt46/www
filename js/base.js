@@ -6,7 +6,9 @@ $(document).ready(function(){
     var init_puser = get_puser();
     $('#pedido_nombre').val(init_puser.nombre);
     $('#pedido_telefono').val(init_puser.telefono);
-    
+    if(inicio == 1){
+        show_modal('modal_inicio');
+    }
 });
 
 $(window).resize(function(){
