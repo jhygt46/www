@@ -111,12 +111,7 @@
             </div>
             <div class="modals">
                 <div class="cont_modals">
-                    <div class="modal vhalign hide modal_inicio">
-                        <div class="cont_modal">
-                            <div onclick="close_that(this)" class="close material-icons">close</div>
-                            <div class="cont_info"><?php echo $info->{"inicio_html"}; ?></div>
-                        </div>
-                    </div>
+                    <?php echo $info->{"inicio_html"}; ?>
                     <div class="modal vhalign hide modal_pagina">
                         <div class="cont_modal">
                             <div onclick="close_that(this)" class="close material-icons">close</div>
