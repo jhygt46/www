@@ -33,7 +33,7 @@ function btn_prin(){
     });
 }
 function close(){
-    console.log('close');
+    console.log("CLOSE");
     $('.modals').hide();
     $('.modal').hide();
 }
