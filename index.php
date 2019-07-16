@@ -17,7 +17,7 @@
     
     $info = $core->get_data();
     if($_SERVER["HTTP_HOST"] == "35.192.157.227"){
-        echo $info->{"inicio_html"};
+        echo 
         /*
         echo "<pre>";
         print_r($info);
@@ -75,6 +75,7 @@
         <script src="/js/base.js" type="text/javascript"></script>
         <script src="/js/base_lista.js" type="text/javascript"></script>
         <script>
+            var inicio = "<?php echo ($info->{"inicio_html"} == "") ? "0" : "1" ; ?>";
             var code = "<?php echo $info->{'code'}; ?>";
             var estados = [ <?php for($i=0; $i<count($info->{'estados'}); $i++){ if($i>0){ echo ", "; } echo "'".$info->{'estados'}[$i]."'";  } ?> ];
         </script>
