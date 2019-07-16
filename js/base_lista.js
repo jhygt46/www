@@ -32,10 +32,9 @@ function btn_prin(){
         $(this).css({ height: height+'px'});
     });
 }
-function close(){
-    console.log("CLOSE");
+function close_that(that){
     $('.modals').hide();
-    $('.modal').hide();
+    $(that).parents('.modal').hide();
 }
 function open_categoria(id){
     
