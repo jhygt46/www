@@ -227,7 +227,6 @@
                                                         <div class="alert"></div>
                                                     </div>
                                                 </div>
-                                                <div id="lmap-<?php echo $locales[$i]->{'id_loc'}; ?>" class="lmap"></div>
                                             </div>
                                             <?php } ?>
                                         </div>
