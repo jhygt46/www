@@ -335,10 +335,10 @@ class Core{
         return $info;
 
     }
-    public function enviar_error(){
+    public function enviar_error($error){
         
         $send["tipo"] = 3;
-        $send["error"] = $_POST["error"];
+        $send["error"] = $error;
         $send["id_puser"] = $_POST["id_puser"];
         $send["code"] = $_POST["code"];
         $send["host"] = $this->host;

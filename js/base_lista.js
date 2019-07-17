@@ -1,4 +1,4 @@
-// INICIO CREAR PAGINA //
+var map_socket, markers;
 function render_pagina(){
     
     // BOTONES PRINCIPALES
@@ -145,7 +145,6 @@ function imprimir_categoria_modal(categorias){
     $('.modal_carta .info_modal').append(html);
     
 }
-// ADD PRODUCTOS Y PROMOCION //
 function add_carro_producto_aux(that){
     var id = $(that).attr('id');
     add_carro_producto(id);
@@ -549,14 +548,6 @@ function get_pdir(){
 function set_pdir(pdir){
     localStorage.setItem("p_dir", JSON.stringify(pdir));
 }
-// BORRAR //
-function get_pep(){
-    return JSON.parse(localStorage.getItem("pep")) || { id_pep: 0, pep_code: '' };
-}
-function set_pep(pep){
-    localStorage.setItem("pep", JSON.stringify(pep));
-}
-// BORRAR //
 function get_carro(){
     return JSON.parse(localStorage.getItem("carro")) || [];
 }
@@ -642,6 +633,7 @@ function get_productos_categoria(id_cae){
 function borrar_carro(){
     localStorage.setItem("carro", null);
     localStorage.setItem("carro_promos", null);
+    $('.cantcart_num').html(0);
 }
 function ver_pagina(id){
 
@@ -825,27 +817,6 @@ function modal_test(){
 
 }
 function show_modal_locales(){
-    
-    /*
-    
-    for(var i=0, ilen=data.locales.length; i<ilen; i++){
-
-        
-        var cont_local = create_element_class('cont_local clearfix');
-        var local_info = create_element_class('local_info');
-        local_info.onclick = function(){ select_local(data.locales[i]) };
-        var local_mapa = create_element_class('local_mapa valign');
-        local_mapa.onclick = function(){ map_local(data.locales[i]) };
-        cont_local.appendChild(local_info);
-        cont_local.appendChild(local_mapa);
-        var lmap = create_element_class('lmap');
-        dir_locales.appendChild(cont_local);
-        dir_locales.appendChild(lmap);
-        direccion_op1.appendChild(dir_locales);
-
-    }
-    $(".cont_direccion").html(direccion_op1);
-    */
 
     var info_loc = info_locales();
     var custom_min = 30;
@@ -934,10 +905,15 @@ function paso_2(){
     
 }
 function paso_3(){
+
+    var init_puser = get_puser();
+    $('#pedido_nombre').val(init_puser.nombre);
+    $('#pedido_telefono').val(init_puser.telefono);
+
     paso = 3;
     show_modal('paso_03');
+
 }
-var map_socket, markers;
 function show_modal_4(pedido){
     
     var punto = { lat: parseFloat(pedido.lat), lng: parseFloat(pedido.lng) };
@@ -1150,25 +1126,6 @@ function show_despacho(){
         show_modal('paso_02b');
     }
     
-}
-var formatNumber = {
-    separador: ".", // separador para los miles
-    sepDecimal: ',', // separador para los decimales
-    formatear:function (num){
-        num +='';
-        var splitStr = num.split('.');
-        var splitLeft = splitStr[0];
-        var splitRight = splitStr.length > 1 ? this.sepDecimal + splitStr[1] : '';
-        var regx = /(\d+)(\d{3})/;
-        while (regx.test(splitLeft)) {
-            splitLeft = splitLeft.replace(regx, '$1' + this.separador + '$2');
-        }
-        return this.simbol + splitLeft +splitRight;
-    },
-    new: function(num, simbol){
-        this.simbol = simbol ||'';
-        return this.formatear(num);
-    }
 }
 function initMap(){
     
@@ -1507,4 +1464,23 @@ function aux_nuevo(){
     $('#pedido_comentarios').val('');
     $('#pac-input').val("");
     // VOLVER A LA NORMALIDAD
+}
+var formatNumber = {
+    separador: ".", // separador para los miles
+    sepDecimal: ',', // separador para los decimales
+    formatear: function(num){
+        num +='';
+        var splitStr = num.split('.');
+        var splitLeft = splitStr[0];
+        var splitRight = splitStr.length > 1 ? this.sepDecimal + splitStr[1] : '';
+        var regx = /(\d+)(\d{3})/;
+        while (regx.test(splitLeft)) {
+            splitLeft = splitLeft.replace(regx, '$1' + this.separador + '$2');
+        }
+        return this.simbol + splitLeft +splitRight;
+    },
+    new: function(num, simbol){
+        this.simbol = simbol ||'';
+        return this.formatear(num);
+    }
 }

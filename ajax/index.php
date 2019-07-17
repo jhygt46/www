@@ -15,7 +15,7 @@
     if($_POST["accion"] == "enviar_error"){
         require_once "../class/core_class.php";
         $core = new Core();
-        $info = $core->enviar_error();
+        $info = $core->enviar_error($_POST["error"]);
     }
 
 ?>

@@ -1,14 +1,11 @@
 $(document).ready(function(){
+    
     render_pagina();
     borrar_carro();
-    cantidad = get_carro().length;
-    $('.cantcart_num').html(cantidad);
-    var init_puser = get_puser();
-    $('#pedido_nombre').val(init_puser.nombre);
-    $('#pedido_telefono').val(init_puser.telefono);
     if(inicio == 1){
         show_modal('modal_inicio');
     }
+    
 });
 
 $(window).resize(function(){
