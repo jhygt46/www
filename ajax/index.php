@@ -1,5 +1,8 @@
 <?php
 
+    header('Content-type: text/json');
+    header('Content-type: application/json');
+
     if($_POST["accion"] == "despacho_domicilio"){
         require_once "../class/core_class.php";
         $core = new Core();
