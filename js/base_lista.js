@@ -998,7 +998,7 @@ function paso_4(){
 
                     var res = JSON.parse(info);
                     console.log("RES");
-                    console.log(res);
+                    console.log(res.resp);
 
                     if(res.op == 1){
                         
