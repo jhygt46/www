@@ -1004,22 +1004,22 @@ function paso_4(){
                         
                         $('#pedido_nombre').css({ border: '0px' });
                         $('#pedido_telefono').css({ border: '0px' });
-                        if(res.data.set_puser == 1){ set_puser(res.data.puser); }
+                        if(res.resp.set_puser == 1){ set_puser(res.resp.puser); }
 
-                        pedido.id_ped = res.data.id_ped;
-                        pedido.num_ped = res.data.num_ped;
-                        pedido.pedido_code = res.data.pedido_code;
-                        pedido.fecha = res.data.fecha;
-                        pedido.lat = res.data.lat;
-                        pedido.lng = res.data.lng;
+                        pedido.id_ped = res.resp.id_ped;
+                        pedido.num_ped = res.resp.num_ped;
+                        pedido.pedido_code = res.resp.pedido_code;
+                        pedido.fecha = res.resp.fecha;
+                        pedido.lat = res.resp.lat;
+                        pedido.lng = res.resp.lng;
                         pedido.estado = estados[0];
                         
                         if(pedido.despacho == 0){
-                            pedido.time = res.data.t_retiro;
+                            pedido.time = res.resp.t_retiro;
                             $('.pedido_mensaje').html(pedido.nombre+" tu pedido fue recibido correctamente. En "+pedido.time+" minutos puedes venir a buscarlo");
                         }
                         if(pedido.despacho == 1){
-                            pedido.time = res.data.t_despacho;
+                            pedido.time = res.resp.t_despacho;
                             $('.pedido_mensaje').html(pedido.nombre+" tu pedido fue recibido correctamente. En "+pedido.time+" minutos estaremos alla");
                         }                
                         
