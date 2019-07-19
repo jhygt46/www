@@ -1031,7 +1031,7 @@ function paso_4(){
 
                     }
                     if(res.op == 2){
-                        alert("TEMP CODE": res.temp_code);
+                        alert("TEMP CODE: " +res.temp_code);
                     }
                     document.getElementById("enviar_cotizacion").disabled = false;
                     
