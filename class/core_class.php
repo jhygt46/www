@@ -30,13 +30,9 @@ class Core{
             $this->host = (count(explode(".", $_SERVER["HTTP_HOST"])) == 2) ? "www.".$_SERVER["HTTP_HOST"] : $_SERVER["HTTP_HOST"] ;
         }
 
-        if($_SERVER["HTTP_HOST"] == "localhost"){
-            $this->dir_info = "C:/var/".$this->host."/";
-            $this->dir_data = "C:/AppServ/www/restaurants_web/deliveryweb/";
-        }else{
-            $this->dir_info = "/var/data/".$this->host."/";
-            $this->dir_data = "/var/www/html/";
-        }
+        $this->dir_info = "/var/data/".$this->host."/";
+        $this->dir_data = "/var/www/html/";
+        $this->file_err = "/var/error/error.log";
 
     }
     public function volver(){
@@ -308,25 +304,28 @@ class Core{
                 curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-                $info['data'] = json_decode(curl_exec($ch));
+                $resp = json_decode(curl_exec($ch));
 
-                if($info['data']->{'op'} == 1 && $info['data']->{'id_ped'} > 0){
-
-                    if($info['data']->{'email'}->{'op'} == 1){
-                        $info['mail_enviado'] = 1;
-                    }else{
-                        $info['mail_enviado'] = 0;
-                    }
+                if($resp->{'op'} == 1){
 
                     $info['op'] = 1;
-                    $file['pedido']->{'id_ped'} = $info['data']->{'id_ped'};
-                    $file['pedido']->{'num_ped'} = $info['data']->{'num_ped'};
-                    $file['pedido']->{'pedido_code'} = $info['data']->{'pedido_code'};
-                    $file['pedido']->{'fecha'} = $info['data']->{'fecha'};
-                    file_put_contents($this->dir_info."pedidos/".$info['data']->{'pedido_code'}.".json", json_encode($file));
+                    $file['pedido']->{'id_ped'} = $resp->{'id_ped'};
+                    $file['pedido']->{'num_ped'} = $resp->{'num_ped'};
+                    $file['pedido']->{'pedido_code'} = $resp->{'pedido_code'};
+                    $file['pedido']->{'fecha'} = $resp->{'fecha'};
+                    
+                }else{
+
+                    $info['op'] = 2;
+                    $info['temp_code'] = bin2hex(openssl_random_pseudo_bytes(10));
+                    $file['pedido']->{'id_ped'} = 0;
+                    $file['pedido']->{'num_ped'} = 0;
+                    $file['pedido']->{'pedido_code'} = $info['temp_code'];
+                    $file['pedido']->{'fecha'} = date('Y-m-d H:i:s');
 
                 }
 
+                file_put_contents($this->dir_info."pedidos/".$file['pedido']->{'pedido_code'}.".json", json_encode($file));
                 curl_close($ch);
 
             }
@@ -335,20 +334,32 @@ class Core{
         return $info;
 
     }
-    public function enviar_error($error){
+    public function enviar_error($error, $id, $code){
         
         $send["tipo"] = 3;
         $send["error"] = $error;
-        $send["id_puser"] = $_POST["id_puser"];
-        $send["code"] = $_POST["code"];
+        $send["id_puser"] = $id;
+        $send["code"] = $code;
         $send["host"] = $this->host;
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-        curl_exec($ch);
+        
+        $resp = json_decode(curl_exec($ch));
+        if($resp->{'op'} != 1){
+            $this->enviar_error_2($error);
+        }
+
         curl_close($ch);
+
+    }
+    private function enviar_error_2($error){
+
+        // EMAIL DE EMERGENCIA
+        // GUARDAR ERROR EN EL DISCO
+        file_put_contents($this->file_err, $this->host." - ".$error);
 
     }
     public function ver_pedido(){

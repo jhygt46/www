@@ -1,11 +1,11 @@
 $(document).ready(function(){
     
-    render_pagina();
     borrar_carro();
+    render_pagina();
     if(inicio == 1){
         show_modal('modal_inicio');
     }
-    
+
 });
 
 $(window).resize(function(){

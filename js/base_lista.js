@@ -1004,9 +1004,7 @@ function paso_4(){
                         
                         $('#pedido_nombre').css({ border: '0px' });
                         $('#pedido_telefono').css({ border: '0px' });
-                        if(res.data.set_puser == 1){
-                            set_puser(res.data.puser);
-                        }
+                        if(res.data.set_puser == 1){ set_puser(res.data.puser); }
 
                         pedido.id_ped = res.data.id_ped;
                         pedido.num_ped = res.data.num_ped;
@@ -1031,10 +1029,9 @@ function paso_4(){
                         set_pedido(pedido);
                         paso = 1;
 
-                    }else if(res.op == 2){
-                        alert(res.mensaje);
-                    }else{
-                        send_error("enviar pedido op diferente");
+                    }
+                    if(res.op == 2){
+                        alert("TEMP CODE": res.temp_code);
                     }
                     document.getElementById("enviar_cotizacion").disabled = false;
                     
@@ -1050,7 +1047,7 @@ function paso_4(){
         }else{
             document.getElementById("enviar_cotizacion").disabled = false;
             $('#pedido_telefono').css({ border: '1px solid #900' });
-            alert("Debe ingresar numero  de telefono valido");
+            alert("Debe ingresar numero de telefono valido");
         }  
     }else{
         document.getElementById("enviar_cotizacion").disabled = false;
