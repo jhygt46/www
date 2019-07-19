@@ -956,8 +956,8 @@ function send_chat(){
         url: 'ajax/index.php',
         type: "POST",
         data: send,
-        success: function(info){
-            var data = JSON.parse(info);
+        success: function(data){
+            
             if(data.op == 1){
                 $('#texto_chat').val("");
                 $(".info_mensajes").append("<div class='chat_1'><div class='nom'>"+nombre+"</div><div class='msg'>"+mensaje+"</div></div>");
@@ -996,7 +996,6 @@ function paso_4(){
                 data: send,
                 success: function(res){
 
-                    //var res = JSON.parse(info);
                     console.log("RES");
                     console.log(res);
 
@@ -1176,9 +1175,8 @@ function initMap(){
                     url: 'ajax/index.php',
                     type: "POST",
                     data: send,
-                    success: function(datas){
+                    success: function(data){
 
-                        var data = JSON.parse(datas);
                         if(data.op == 1){
 
                             var pedido = get_pedido();

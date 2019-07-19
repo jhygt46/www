@@ -253,9 +253,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="acciones acc_paso2b">
-                                <input class="confirmar" onclick="paso_3_despacho()" type="button" value="Siguiente" />
-                            </div>
                         </div>
                     </div>
                     <?php } ?>
