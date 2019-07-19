@@ -994,11 +994,11 @@ function paso_4(){
                 url: 'ajax/index.php',
                 type: "POST",
                 data: send,
-                success: function(info){
+                success: function(res){
 
-                    var res = JSON.parse(info);
+                    //var res = JSON.parse(info);
                     console.log("RES");
-                    console.log(res.resp);
+                    console.log(res);
 
                     if(res.op == 1){
                         
