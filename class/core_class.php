@@ -306,7 +306,6 @@ class Core{
                 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
                 $resp = json_decode(curl_exec($ch));
                 $info['resp'] = $resp;
-                
 
                 if($resp->{'op'} == 1){
 
