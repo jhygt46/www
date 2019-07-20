@@ -996,13 +996,18 @@ function paso_4(){
                 data: send,
                 success: function(res){
 
-                    console.log(res.email);
-
                     if(res.op == 1){
                         
-                        if(res.email == 1){ console.log("AA"); }
                         $('#pedido_nombre').css({ border: '0px' });
                         $('#pedido_telefono').css({ border: '0px' });
+
+                        if(res.email == 1){ 
+
+                        }else{
+
+                        }
+
+                        
                         if(res.resp.set_puser == 1){ set_puser(res.resp.puser); }
 
                         pedido.id_ped = res.resp.id_ped;

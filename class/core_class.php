@@ -320,7 +320,6 @@ class Core{
                     }
                     if($resp->{'email'} == 2){
                         $info['email'] = 2;
-                        alert("EMAIL NO ENVIADO");
                     }
                     
                 }else{
