@@ -306,7 +306,7 @@ class Core{
                 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
                 $resp = json_decode(curl_exec($ch));
                 $info['resp'] = $resp;
-                
+
                 if($resp->{'op'} == 1){
 
                     $info['op'] = 1;
@@ -314,6 +314,14 @@ class Core{
                     $file['pedido']->{'num_ped'} = $resp->{'num_ped'};
                     $file['pedido']->{'pedido_code'} = $resp->{'pedido_code'};
                     $file['pedido']->{'fecha'} = $resp->{'fecha'};
+
+                    if($resp->{'email'} == 1){
+                        $info['email'] = 1;
+                    }
+                    if($resp->{'email'} == 2){
+                        $info['email'] = 2;
+                        alert("EMAIL NO ENVIADO");
+                    }
                     
                 }else{
 
