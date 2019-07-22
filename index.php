@@ -114,7 +114,9 @@
                     <div class="modal modal_dim2 vhalign hide modal_error">
                         <div class="cont_modal">
                             <div onclick="close_that(this)" class="close material-icons">close</div>
-                            <div class="cont_info">ERROR</div>
+                            <div class="cont_info">
+                                <div class="titulo_error">Lo sentimos, en estos momentos tu pedido no pudo ser enviado</div>
+                            </div>
                         </div>
                     </div>
                     <div class="modal modal_dim1 vhalign hide modal_pagina">

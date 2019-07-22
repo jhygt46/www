@@ -81,7 +81,12 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones {
 body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   padding: 5px 15px;
 }
-
+.modal_carta .cont_modal .cont_info .titulo_error{
+  display: block;
+  padding: 5px 10px;
+  text-align: center;
+  font-size: 14px;
+}
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos {
   margin: 10px;
   background: #eee;
