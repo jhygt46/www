@@ -272,7 +272,7 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
 }
 .modal_error .cont_modal .cont_info .cont_err .cont_ab_err .titulo_error{
   display: block;
-  padding: 10px 15px 5px 15px;
+  padding: 0px 15px 15px 15px;
   text-align: center;
   font-size: 22px;
 }
@@ -282,7 +282,7 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   margin: 0 auto;
 }
 .modal_error .cont_modal .cont_info .cont_err .cont_ab_err .btns_err .btn_err{
-  width: 128px;
+  width: 118px;
   float: left;
   color: #fff;
   padding: 10px 5px;
