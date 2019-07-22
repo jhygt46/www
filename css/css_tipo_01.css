@@ -262,11 +262,26 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   font-size: 12px;
   margin-bottom: 4px;
 }
-.modal_error .cont_modal .cont_info .titulo_error{
+.modal_error .cont_modal .cont_info .cont_err{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.modal_error .cont_modal .cont_info .cont_err .cont_ab_err{
+  left: 0px;
+}
+.modal_error .cont_modal .cont_info .cont_err .cont_ab_err .titulo_error{
   display: block;
-  padding: 5px 10px;
+  padding: 10px 15px 5px 15px;
   text-align: center;
-  font-size: 14px;
+  font-size: 22px;
+}
+.modal_error .cont_modal .cont_info .cont_err .cont_ab_err .btns_err{
+  display: block;
+}
+.modal_error .cont_modal .cont_info .cont_err .cont_ab_err .btns_err .btn_err{
+  width: 150px;
+  background: #900;
 }
 .paso_01 .process_carro {
   padding: 10px;
