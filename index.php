@@ -111,19 +111,19 @@
             <div class="modals">
                 <div class="cont_modals">
                     <?php echo $info->{"inicio_html"}; ?>
-                    <div class="modal_err vhalign hide modal_error">
+                    <div class="modal modal_dim2 vhalign hide modal_error">
                         <div class="cont_modal">
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info">ERROR</div>
                         </div>
                     </div>
-                    <div class="modal vhalign hide modal_pagina">
+                    <div class="modal modal_dim1 vhalign hide modal_pagina">
                         <div class="cont_modal">
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info"></div>
                         </div>
                     </div>
-                    <div class="modal vhalign hide modal_carta">
+                    <div class="modal modal_dim1 vhalign hide modal_carta">
                         <div class="cont_modal">
                             <div class="titulo"><div class="cont_titulo valign"><h1 class="buena"></h1><h2></h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
@@ -132,7 +132,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal vhalign hide modal_productos_promo">
+                    <div class="modal modal_dim1 vhalign hide modal_productos_promo">
                         <div class="cont_modal">
                             <div class="titulo"><div class="cont_titulo valign"><h1></h1><h2></h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
@@ -144,7 +144,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal vhalign hide modal_pregunta_productos">
+                    <div class="modal modal_dim1 vhalign hide modal_pregunta_productos">
                         <div class="cont_modal">
                             <div class="titulo"><div class="cont_titulo valign"><h1></h1><h2></h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
@@ -157,7 +157,7 @@
                         </div>
                     </div>
                     <!-- MODAL CARRO 01 -->
-                    <div class="modal vhalign hide modal_carro paso_01">
+                    <div class="modal modal_dim1 vhalign hide modal_carro paso_01">
                         <div class="cont_modal">
                             <div class="titulo"><div class="cont_titulo valign"><h1><?php echo $info->{"pedido_01_titulo"}; ?></h1><h2><?php echo $info->{"pedido_01_subtitulo"}; ?></h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
@@ -178,7 +178,7 @@
                     </div>
                     
                     <?php if($info->{'retiro_local'} == 1 && $info->{'despacho_domicilio'} == 1){ ?>
-                    <div class="modal vhalign hide modal_carro paso_02">
+                    <div class="modal modal_dim1 vhalign hide modal_carro paso_02">
                         <div class="cont_modal">
                             <div class="titulo"><div class="cont_titulo valign"><h1><?php echo $info->{"pedido_02_titulo"}; ?></h1><h2><?php echo $info->{"pedido_02_subtitulo"}; ?></h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
@@ -215,7 +215,7 @@
                     </div>
                     <?php } ?>
                     <?php if($info->{'retiro_local'} == 1){ ?>
-                    <div class="modal vhalign hide modal_carro paso_02a">
+                    <div class="modal modal_dim1 vhalign hide modal_carro paso_02a">
                         <div class="cont_modal">
                             <div class="titulo"><div class="cont_titulo valign"><h1><?php echo $info->{"pedido_02_titulo"}; ?></h1><h2><?php echo $info->{"pedido_02_subtitulo"}; ?></h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
@@ -245,7 +245,7 @@
                     <?php } ?>
                     
                     <?php if($info->{'despacho_domicilio'} == 1){ ?>
-                    <div class="modal vhalign hide modal_carro paso_02b">
+                    <div class="modal modal_dim1 vhalign hide modal_carro paso_02b">
                         <div class="cont_modal">
                             <div class="titulo"><div class="cont_titulo valign"><h1><?php echo $info->{"pedido_02_titulo"}; ?></h1><h2><?php echo $info->{"pedido_02_subtitulo"}; ?></h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
@@ -263,7 +263,7 @@
                     </div>
                     <?php } ?>
                     
-                    <div class="modal vhalign hide modal_carro paso_03">
+                    <div class="modal modal_dim1 vhalign hide modal_carro paso_03">
                         <div class="cont_modal">
                             <div class="titulo"><div class="cont_titulo valign"><h1><?php echo $info->{"pedido_03_titulo"}; ?></h1><h2><?php echo $info->{"pedido_03_subtitulo"}; ?></h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
@@ -349,7 +349,7 @@
                         </div>
                     </div>
                     
-                    <div class="modal vhalign hide modal_carro paso_04">
+                    <div class="modal modal_dim1 vhalign hide modal_carro paso_04">
                         <div class="cont_modal">
                             <div class="titulo"><div class="cont_titulo valign"><h1 class=""></h1><h2 class=""></h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
