@@ -709,6 +709,7 @@ function get_horarios(id, tipo){
     return objeto;
 }
 function info_locales(){
+
     var fecha = new Date();
     if(data.locales !== null){
         for(var i=0, ilen=data.locales.length; i<ilen; i++){
@@ -731,6 +732,7 @@ function info_locales(){
             }
         }
     }
+
 }
 function info_despacho(){
     var fecha = new Date();
@@ -1002,37 +1004,37 @@ function paso_4(){
                         $('#pedido_nombre').css({ border: '0px' });
                         $('#pedido_telefono').css({ border: '0px' });
 
-                        if(res.email == 1){ 
+                        if(res.email == 1){
+
+                            if(res.set_puser == 1){ set_puser({ id_puser: res.puser_id, code: res.puser_code, nombre: res.puser_nombre, telefono: res.puser_telefono }); }
+
+                            if(pedido.despacho == 0){
+                                pedido.time = res.t_retiro;
+                                //$('.pedido_mensaje').html(pedido.nombre+" tu pedido fue recibido correctamente. En "+pedido.time+" minutos puedes venir a buscarlo");
+                            }
+                            if(pedido.despacho == 1){
+                                pedido.time = res.t_despacho;
+                                //$('.pedido_mensaje').html(pedido.nombre+" tu pedido fue recibido correctamente. En "+pedido.time+" minutos estaremos alla");
+                            }                
+                            //$('.pedido_mensaje').show();
+
+                            pedido.id_ped = res.id_ped;
+                            pedido.num_ped = res.num_ped;
+                            pedido.pedido_code = res.pedido_code;
+                            pedido.fecha = res.fecha;
+                            pedido.lat = res.lat;
+                            pedido.lng = res.lng;
+                            pedido.estado = estados[0];
+
+                            show_modal_4(pedido);
+                            set_pedido(pedido);
+                            paso = 1;
 
                         }else{
 
-                        }
+                            show_modal('modal_error');
 
-                        
-                        if(res.resp.set_puser == 1){ set_puser(res.resp.puser); }
-
-                        pedido.id_ped = res.resp.id_ped;
-                        pedido.num_ped = res.resp.num_ped;
-                        pedido.pedido_code = res.resp.pedido_code;
-                        pedido.fecha = res.resp.fecha;
-                        pedido.lat = res.resp.lat;
-                        pedido.lng = res.resp.lng;
-                        pedido.estado = estados[0];
-                        
-                        if(pedido.despacho == 0){
-                            pedido.time = res.resp.t_retiro;
-                            $('.pedido_mensaje').html(pedido.nombre+" tu pedido fue recibido correctamente. En "+pedido.time+" minutos puedes venir a buscarlo");
                         }
-                        if(pedido.despacho == 1){
-                            pedido.time = res.resp.t_despacho;
-                            $('.pedido_mensaje').html(pedido.nombre+" tu pedido fue recibido correctamente. En "+pedido.time+" minutos estaremos alla");
-                        }                
-                        
-                        $('.pedido_mensaje').show();
-                        
-                        show_modal_4(pedido);
-                        set_pedido(pedido);
-                        paso = 1;
 
                     }
                     if(res.op == 2){

@@ -42,6 +42,12 @@ body .contenedor .modals .cont_modals .modal {
   max-width: 400px;
   max-height: 580px;
 }
+body .contenedor .modals .cont_modals .modal_err {
+  width: 90%;
+  height: 90%;
+  max-width: 400px;
+  max-height: 180px;
+}
 body .contenedor .modals .cont_modals .modal .cont_modal .titulo {
   height: 80px;
   text-align: center;

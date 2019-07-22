@@ -310,6 +310,25 @@ class Core{
                 if($resp->{'op'} == 1){
 
                     $info['op'] = 1;
+                    $info['lat'] = $resp->{'lat'};
+                    $info['lng'] = $resp->{'lng'};
+                    $info['id_ped'] = $resp->{'id_ped'};
+                    $info['num_ped'] = $resp->{'num_ped'};
+                    $info['t_despacho'] = $resp->{'t_despacho'};
+                    $info['t_retiro'] = $resp->{'t_retiro'};
+                    $info['fecha'] = $resp->{'fecha'};
+                    $info['pedido_code'] = $resp->{'pedido_code'};
+
+                    if($resp->{'set_puser'} == 1){
+
+                        $info['set_puser'] = 1;
+                        $info['puser_id'] = $resp->{'puser_id'};
+                        $info['puser_code'] = $resp->{'puser_code'};
+                        $info['puser_nombre'] = $resp->{'puser_nombre'};
+                        $info['puser_telefono'] = $resp->{'puser_telefono'};
+
+                    }
+
                     $file['pedido']->{'id_ped'} = $resp->{'id_ped'};
                     $file['pedido']->{'num_ped'} = $resp->{'num_ped'};
                     $file['pedido']->{'pedido_code'} = $resp->{'pedido_code'};
