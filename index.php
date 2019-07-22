@@ -119,8 +119,8 @@
                                     <div class="cont_ab_err valign">
                                         <div class="titulo_error">Lo sentimos, tu pedido no pudo ser enviado</div>
                                         <div class="btns_err clearfix">
-                                            <div class="btn_err btn_err1">BTN 1</div>
-                                            <div class="btn_err btn_err2">BTN 2</div>
+                                            <div class="btn_err btn_err1">Llamar al local</div>
+                                            <div class="btn_err btn_err2">Enviar pedido por mail</div>
                                         </div>
                                     </div>
                                 </div>
