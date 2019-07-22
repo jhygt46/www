@@ -1033,6 +1033,7 @@ function paso_4(){
                         }else{
 
                             show_modal('modal_error');
+                            console.log("BUENA");
 
                         }
 
