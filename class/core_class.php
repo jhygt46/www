@@ -29,7 +29,7 @@ class Core{
         }else{
             $this->host = (count(explode(".", $_SERVER["HTTP_HOST"])) == 2) ? "www.".strtolower($_SERVER["HTTP_HOST"]) : strtolower($_SERVER["HTTP_HOST"]) ;
         }
-        
+
         $this->dir_info = "/var/data/".$this->host."/";
         $this->dir_data = "/var/www/html/";
         $this->file_err = "/var/error/error.log";
@@ -305,18 +305,15 @@ class Core{
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
                 $resp = json_decode(curl_exec($ch));
-                $info['resp'] = $resp;
 
                 if($resp->{'op'} == 1){
 
+                    $file['pedido']->{'id_ped'} = $resp->{'id_ped'};
+                    $file['pedido']->{'num_ped'} = $resp->{'num_ped'};
+                    $file['pedido']->{'pedido_code'} = $resp->{'pedido_code'};
+                    $file['pedido']->{'fecha'} = $resp->{'fecha'};
+
                     $info['op'] = 1;
-                    $info['lat'] = $resp->{'lat'};
-                    $info['lng'] = $resp->{'lng'};
-                    $info['id_ped'] = $resp->{'id_ped'};
-                    $info['num_ped'] = $resp->{'num_ped'};
-                    $info['t_despacho'] = $resp->{'t_despacho'};
-                    $info['t_retiro'] = $resp->{'t_retiro'};
-                    $info['fecha'] = $resp->{'fecha'};
                     $info['pedido_code'] = $resp->{'pedido_code'};
 
                     if($resp->{'set_puser'} == 1){
@@ -329,25 +326,39 @@ class Core{
 
                     }
 
-                    $file['pedido']->{'id_ped'} = $resp->{'id_ped'};
-                    $file['pedido']->{'num_ped'} = $resp->{'num_ped'};
-                    $file['pedido']->{'pedido_code'} = $resp->{'pedido_code'};
-                    $file['pedido']->{'fecha'} = $resp->{'fecha'};
-
                     if($resp->{'email'} == 1){
+
                         $info['email'] = 1;
+                        $info['lat'] = $resp->{'lat'};
+                        $info['lng'] = $resp->{'lng'};
+                        $info['id_ped'] = $resp->{'id_ped'};
+                        $info['num_ped'] = $resp->{'num_ped'};
+                        $info['t_despacho'] = $resp->{'t_despacho'};
+                        $info['t_retiro'] = $resp->{'t_retiro'};
+                        $info['fecha'] = $resp->{'fecha'};
+
                     }
                     if($resp->{'email'} == 2){
+
                         $info['email'] = 2;
+                        $info['tel'] = $resp->{'telefono'};
+                        $info['mailto'] = $resp->{'correo'};
+                        $info['body'] = 'https://www.buenanelson.com';
+
                     }
                     
                 }else{
 
                     $info['op'] = 2;
-                    $info['temp_code'] = bin2hex(openssl_random_pseudo_bytes(10));
+                    $temp_code = bin2hex(openssl_random_pseudo_bytes(10));
+
+                    $info['tel'] = $resp->{'telefono'};
+                    $info['mailto'] = $resp->{'correo'};
+                    $info['body'] = 'https://www.buenanelson.com';
+
                     $file['pedido']->{'id_ped'} = 0;
                     $file['pedido']->{'num_ped'} = 0;
-                    $file['pedido']->{'pedido_code'} = $info['temp_code'];
+                    $file['pedido']->{'pedido_code'} = $temp_code;
                     $file['pedido']->{'fecha'} = date('Y-m-d H:i:s');
 
                 }
