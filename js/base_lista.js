@@ -1030,20 +1030,23 @@ function paso_4(){
                             set_pedido(pedido);
                             paso = 1;
 
-                        }else{
+                        }
+                        if(res.email == 2){
 
+                            console.log(res.tel+' / '+res.mailto+' / '+res.body);
                             show_modal('modal_error');
                             $('#err_telefono').attr('href', 'tel:'+res.tel);
-                            $('#err_correo').attr('href', 'mailto:'+res.mailto+';misitiodelivery@gmail.com?subject='+res.subject+'&body='+res.body);
+                            $('#err_correo').attr('href', 'mailto:'+res.mailto+';misitiodelivery@gmail.com?subject=Envio%20Manual&body='+res.body);
 
                         }
 
                     }
                     if(res.op == 2){
                         
+                        console.log(res.tel+' / '+res.mailto+' / '+res.body);
                         show_modal('modal_error');
                         $('#err_telefono').attr('href', 'tel:'+res.tel);
-                        $('#err_correo').attr('href', 'mailto:'+res.mailto+';misitiodelivery@gmail.com?subject='+res.subject+'&body='+res.body);
+                        $('#err_correo').attr('href', 'mailto:'+res.mailto+';misitiodelivery@gmail.com?subject=Envio%20Manual&body='+res.body);
 
                     }
                     document.getElementById("enviar_cotizacion").disabled = false;
