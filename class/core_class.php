@@ -21,15 +21,15 @@ class Core{
 
         if($_SERVER["HTTP_HOST"] == $this->server_ip){
             if(isset($_GET["url"])){
-                $this->host = (count(explode(".", $_GET["url"])) == 2) ? "www.".$_GET["url"] : $_GET["url"] ;
+                $this->host = (count(explode(".", $_GET["url"])) == 2) ? "www.".strtolower($_GET["url"]) : strtolower($_GET["url"]) ;
             }else{
                 $var = explode("?url=", $_SERVER["HTTP_REFERER"]);
-                $this->host = (count(explode(".", $var[1])) == 2) ? "www.".$var[1] : $var[1] ;
+                $this->host = (count(explode(".", $var[1])) == 2) ? "www.".strtolower($var[1]) : strtolower($var[1]) ;
             }
         }else{
-            $this->host = (count(explode(".", $_SERVER["HTTP_HOST"])) == 2) ? "www.".$_SERVER["HTTP_HOST"] : $_SERVER["HTTP_HOST"] ;
+            $this->host = (count(explode(".", $_SERVER["HTTP_HOST"])) == 2) ? "www.".strtolower($_SERVER["HTTP_HOST"]) : strtolower($_SERVER["HTTP_HOST"]) ;
         }
-
+        
         $this->dir_info = "/var/data/".$this->host."/";
         $this->dir_data = "/var/www/html/";
         $this->file_err = "/var/error/error.log";

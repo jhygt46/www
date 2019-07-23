@@ -1033,13 +1033,18 @@ function paso_4(){
                         }else{
 
                             show_modal('modal_error');
-                            console.log("BUENA NELSON");
+                            $('#err_telefono').attr('href', 'tel:'+res.tel);
+                            $('#err_correo').attr('href', 'mailto:'+res.mailto+';misitiodelivery@gmail.com?subject='+res.subject+'&body='+res.body);
 
                         }
 
                     }
                     if(res.op == 2){
-                        alert("TEMP CODE: " +res.temp_code);
+                        
+                        show_modal('modal_error');
+                        $('#err_telefono').attr('href', 'tel:'+res.tel);
+                        $('#err_correo').attr('href', 'mailto:'+res.mailto+';misitiodelivery@gmail.com?subject='+res.subject+'&body='+res.body);
+
                     }
                     document.getElementById("enviar_cotizacion").disabled = false;
                     
