@@ -355,7 +355,7 @@ class Core{
                     $info['op'] = 2;
                     $temp_code = bin2hex(openssl_random_pseudo_bytes(10));
 
-                    $info['tel'] = $resp->{'telefono'};
+                    $info['tel'] = $resp->{'tel'};
                     $info['mailto'] = $resp->{'correo'};
                     $info['body'] = $resp->{'url'}.'/detalle.php?code='.$temp_code;
 
