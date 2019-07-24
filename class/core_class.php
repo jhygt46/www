@@ -315,6 +315,7 @@ class Core{
 
                     $info['op'] = 1;
                     $info['pedido_code'] = $resp->{'pedido_code'};
+                    $info['puser'] = $file['puser'];
 
                     if($resp->{'set_puser'} == 1){
 
@@ -343,7 +344,7 @@ class Core{
                         $info['email'] = 2;
                         $info['tel'] = $resp->{'telefono'};
                         $info['mailto'] = $resp->{'correo'};
-                        $info['body'] = 'https://www.buenanelson.com';
+                        $info['body'] = $resp->{'url'}.'/detalle.php?code='.$resp->{'pedido_code'};
 
                     }
                     
@@ -354,7 +355,7 @@ class Core{
 
                     $info['tel'] = $resp->{'telefono'};
                     $info['mailto'] = $resp->{'correo'};
-                    $info['body'] = 'https://www.buenanelson.com';
+                    $info['body'] = $resp->{'url'}.'/detalle.php?code='.$temp_code;
 
                     $file['pedido']->{'id_ped'} = 0;
                     $file['pedido']->{'num_ped'} = 0;
