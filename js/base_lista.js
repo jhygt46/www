@@ -1043,18 +1043,37 @@ function paso_4(){
                     }
                     if(res.op == 2){
                         
-                        console.log(res.tel+' / '+res.mailto+' / '+res.body);
-                        show_modal('modal_error');
+                        $('.btns_err').width(260);
+                        $('#err_telefono').show();
+                        $('#err_correo').show();
                         $('#err_telefono').attr('href', 'tel:'+res.tel);
                         $('#err_correo').attr('href', 'mailto:'+res.mailto+';misitiodelivery@gmail.com?subject=Envio%20Manual&body='+res.body);
+                        show_modal('modal_error');
 
                     }
                     document.getElementById("enviar_cotizacion").disabled = false;
                     
-                }, error: function(e){
+                }, error: function(e, err){
 
-                    send_error("Web enviar pedido error");
-                    alert("En estos momentos no podemos atenderlo.. por favor intente mas tarde");
+                    var cant_locales = data.locales.length;
+
+                    if(cant_locales == 1){
+
+                        // MOSTRAR ERROR
+                        $('.btns_err').width(130);
+                        $('#err_telefono').show();
+                        $('#err_correo').hide();
+                        $('#err_telefono').attr('href', 'tel:'+data.locales[0].telefono);
+                        show_modal('modal_error');
+
+                    }else{
+
+                        // MOSTRAR LOCALES
+                        show_modal('modal_error_locales');
+                        
+                    }
+
+                    send_error("#A01", e.status, err);
                     document.getElementById("enviar_cotizacion").disabled = false;
 
                 }
@@ -1259,7 +1278,7 @@ function initMap(){
     });
 
 }
-function send_error(error){
+function send_error(code, error){
 
     var puser = get_puser();
     var send = { accion: 'enviar_error', error: error, id_puser: puser.id_puser, code: puser.code };

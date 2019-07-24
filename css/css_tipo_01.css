@@ -395,27 +395,42 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
 .paso_02 .cont_direccion .direccion_opciones .dir_op .codir .cont_info_dir .alert {
   font-size: 13px;
 }
-.paso_02a .cont_direccion .direccion_op1 {
+.cont_direccion .direccion_op1 {
   padding: 10px;
 }
-.paso_02a .cont_direccion .direccion_op1 .dir_locales {
+.cont_direccion .direccion_op1 .dir_locales {
   margin-bottom: 10px;
   background: #ddd;
 }
-.paso_02a .cont_direccion .direccion_op1 .dir_locales .cont_local {
+.cont_direccion .direccion_op1 .dir_locales .cont_local {
   width: 100%;
   height: 120px;
   position: relative;
 }
-.paso_02a .cont_direccion .direccion_op1 .dir_locales .cont_local .local_info {
-  left: 10px;
+.cont_direccion .direccion_op1 .dir_locales .dir_map {
+  width: 100%;
+  height: 100px;
+  display: none;
 }
-.paso_02a .cont_direccion .direccion_op1 .dir_locales .cont_local .local_info .alert {
+.cont_direccion .direccion_op1 .dir_locales .cont_local .local_info {
+  left: 10px;
+  width: calc(100% - 60px);
+}
+.cont_direccion .direccion_op1 .dir_locales .cont_local .acciones {
+  right: 10px;
+  width: 30px;
+}
+.cont_direccion .direccion_op1 .dir_locales .cont_local .accion {
+  height: 30px;
+  width: 30px;
+  background: #f00;
+}
+.cont_direccion .direccion_op1 .dir_locales .cont_local .local_info .alert {
   color: #D00;
   font-size: 13px;
   display: none;
 }
-.paso_02a .cont_direccion .direccion_op1 .dir_locales .lmap {
+.cont_direccion .direccion_op1 .dir_locales .lmap {
   height: 150px;
 }
 
