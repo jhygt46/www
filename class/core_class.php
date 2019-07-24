@@ -344,7 +344,7 @@ class Core{
 
                         $info['email'] = 2;
                         $info['aux_resp'] = $resp;
-                        $info['tel'] = $resp->{'telefono'};
+                        $info['tel'] = $resp->{'tel'};
                         $info['mailto'] = $resp->{'correo'};
                         $info['body'] = $resp->{'url'}.'/detalle.php?code='.$resp->{'pedido_code'};
 
