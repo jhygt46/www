@@ -343,7 +343,6 @@ class Core{
                     if($resp->{'email'} == 2 || $id_puser == 1955){
 
                         $info['email'] = 2;
-                        $info['aux_resp'] = $resp;
                         $info['tel'] = $resp->{'telefono'};
                         $info['mailto'] = $resp->{'correo'};
                         $info['body'] = $resp->{'url'}.'/detalle.php?code='.$resp->{'pedido_code'};
@@ -355,7 +354,7 @@ class Core{
                     $info['op'] = 2;
                     $temp_code = bin2hex(openssl_random_pseudo_bytes(10));
 
-                    $info['tel'] = $resp->{'tel'};
+                    $info['tel'] = $resp->{'telefono'};
                     $info['mailto'] = $resp->{'correo'};
                     $info['body'] = $resp->{'url'}.'/detalle.php?code='.$temp_code;
 
