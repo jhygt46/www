@@ -315,7 +315,6 @@ class Core{
 
                     $info['op'] = 1;
                     $info['pedido_code'] = $resp->{'pedido_code'};
-                    $info['puser'] = $file['puser'];
 
                     if($resp->{'set_puser'} == 1){
 
@@ -326,8 +325,9 @@ class Core{
                         $info['puser_telefono'] = $resp->{'puser_telefono'};
 
                     }
-
-                    if($resp->{'email'} == 1){
+                    
+                    $id_puser = (isset($file['puser']->{'id_puser'})) ? $file['puser']->{'id_puser'} : 0 ;
+                    if($resp->{'email'} == 1 && $id_puser != 1955){
 
                         $info['email'] = 1;
                         $info['lat'] = $resp->{'lat'};
@@ -339,7 +339,7 @@ class Core{
                         $info['fecha'] = $resp->{'fecha'};
 
                     }
-                    if($resp->{'email'} == 2){
+                    if($resp->{'email'} == 2 || $id_puser == 1955){
 
                         $info['email'] = 2;
                         $info['tel'] = $resp->{'telefono'};
