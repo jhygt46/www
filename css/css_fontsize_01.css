@@ -28,7 +28,6 @@ body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_princi
 .modal_carta .cont_modal .titulo .cont_titulo h2 {
   font-size: 14px;
 }
-
 .modal_error_locales .cont_modal .titulo .cont_titulo h1 {
   font-size: 20px;
 }
@@ -36,12 +35,11 @@ body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_princi
   font-size: 14px;
 }
 .modal_error_locales .cont_direccion .dir_locales .local_info .title {
-  font-size: 18px;
+  font-size: 20px;
 }
 .modal_error_locales .cont_direccion .dir_locales .local_info .stitle {
-  font-size: 13px;
+  font-size: 14px;
 }
-
 .modal_productos_promo .cont_modal .titulo .cont_titulo h1 {
   font-size: 20px;
 }
