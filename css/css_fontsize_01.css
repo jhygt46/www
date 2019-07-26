@@ -4,7 +4,6 @@ body .contenedor .menu_left .cont_menu_left .menu_info h1 {
 body .contenedor .menu_left .cont_menu_left .menu_info ul li {
   font-size: 12px;
 }
-
 body .contenedor .pagina .cont_pagina .header .menu_right .cantcart .cantcart_num {
   font-size: 14px;
 }
@@ -29,6 +28,20 @@ body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_princi
 .modal_carta .cont_modal .titulo .cont_titulo h2 {
   font-size: 14px;
 }
+
+.modal_error_locales .cont_modal .titulo .cont_titulo h1 {
+  font-size: 20px;
+}
+.modal_error_locales .cont_modal .titulo .cont_titulo h2 {
+  font-size: 14px;
+}
+.modal_error_locales .cont_direccion .dir_locales .local_info .title {
+  font-size: 17px;
+}
+.modal_error_locales .cont_direccion .dir_locales .local_info .stitle {
+  font-size: 11px;
+}
+
 .modal_productos_promo .cont_modal .titulo .cont_titulo h1 {
   font-size: 20px;
 }
@@ -71,7 +84,6 @@ body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_princi
 .paso_01 .sub_total .cont_subtotal .total_detalle li {
   font-size: 28px;
 }
-
 .paso_02 .cont_direccion .direccion_opciones .dir_op .title {
   font-size: 17px;
 }
@@ -81,7 +93,6 @@ body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_princi
 .paso_02 .sub_total .cont_subtotal .total_detalle li {
   font-size: 14px;
 }
-
 .paso_02a .cont_direccion .direccion_op1 .dir_locales .cont_local .local_info .title {
   font-size: 24px;
 }
