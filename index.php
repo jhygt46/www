@@ -145,7 +145,7 @@
                                                         <div class="stitle"><?php echo $locales[$i]->{'direccion'}; ?></div>
                                                         <div class="alert"></div>
                                                     </div>
-                                                    <div class="acciones valign">
+                                                    <div class="accioness valign">
                                                         <a class="accion ver_mapa" href="" onclick="local_mapa(<?php echo $locales[$i]->{'lat'}; ?>, <?php echo $locales[$i]->{'lng'}; ?>)"></a>
                                                         <a class="accion ver_mapa" href="tel:<?php echo $locales[$i]->{'telefono'}; ?>"></a>
                                                         <a class="accion ver_mapa" href="https://api.whatsapp.com/send?phone=<?php echo $locales[$i]->{'whatsapp'}; ?>"></a>
