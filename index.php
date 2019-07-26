@@ -127,6 +127,39 @@
                             </div>
                         </div>
                     </div>
+                    <div class="modal modal_dim1 vhalign hide modal_error_locales">
+                        <div class="cont_modal">
+                            <div class="titulo"><div class="cont_titulo valign"><h1><?php echo $info->{"pedido_02_titulo"}; ?></h1><h2><?php echo $info->{"pedido_02_subtitulo"}; ?></h2></div></div>
+                            <div onclick="close_that(this)" class="close material-icons">close</div>
+                            <div class="cont_info">
+                                <div class="info_modal">
+                                    <div class="cont_direccion">
+                                        <div class="direccion_op1">
+                                            <?php
+                                            $locales = json_decode($info->{'lista_locales'});
+                                            for($i=0; $i<count($locales); $i++){ ?>
+                                            <div class="dir_locales">
+                                                <div class="cont_local prin_alpha_1">
+                                                    <div class="local_info valign">
+                                                        <div class="title"><?php echo $locales[$i]->{'nombre'}; ?></div>
+                                                        <div class="stitle"><?php echo $locales[$i]->{'direccion'}; ?></div>
+                                                        <div class="alert"></div>
+                                                    </div>
+                                                    <div class="acciones valign">
+                                                        <a class="accion ver_mapa" href="" onclick="local_mapa(<?php echo $locales[$i]->{'lat'}; ?>, <?php echo $locales[$i]->{'lng'}; ?>)"></a>
+                                                        <a class="accion ver_mapa" href="tel:<?php echo $locales[$i]->{'telefono'}; ?>"></a>
+                                                        <a class="accion ver_mapa" href="https://api.whatsapp.com/send?phone=<?php echo $locales[$i]->{'whatsapp'}; ?>"></a>
+                                                    </div>
+                                                </div>
+                                                <div class="dir_map"></div>
+                                            </div>
+                                            <?php } ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="modal modal_dim1 vhalign hide modal_pagina">
                         <div class="cont_modal">
                             <div onclick="close_that(this)" class="close material-icons">close</div>
@@ -253,39 +286,6 @@
                         </div>
                     </div>
                     <?php } ?>
-                    <div class="modal modal_dim1 vhalign hide modal_error_locales">
-                        <div class="cont_modal">
-                            <div class="titulo"><div class="cont_titulo valign"><h1><?php echo $info->{"pedido_02_titulo"}; ?></h1><h2><?php echo $info->{"pedido_02_subtitulo"}; ?></h2></div></div>
-                            <div onclick="close_that(this)" class="close material-icons">close</div>
-                            <div class="cont_info">
-                                <div class="info_modal">
-                                    <div class="cont_direccion">
-                                        <div class="direccion_op1">
-                                            <?php
-                                            $locales = json_decode($info->{'lista_locales'});
-                                            for($i=0; $i<count($locales); $i++){ ?>
-                                            <div class="dir_locales">
-                                                <div class="cont_local prin_alpha_1">
-                                                    <div class="local_info valign">
-                                                        <div class="title"><?php echo $locales[$i]->{'nombre'}; ?></div>
-                                                        <div class="stitle"><?php echo $locales[$i]->{'direccion'}; ?></div>
-                                                        <div class="alert"></div>
-                                                    </div>
-                                                    <div class="acciones valign">
-                                                        <a class="accion ver_mapa" href="" onclick="local_mapa(<?php echo $locales[$i]->{'lat'}; ?>, <?php echo $locales[$i]->{'lng'}; ?>)"></a>
-                                                        <a class="accion ver_mapa" href="tel:<?php echo $locales[$i]->{'telefono'}; ?>"></a>
-                                                        <a class="accion ver_mapa" href="https://api.whatsapp.com/send?phone=<?php echo $locales[$i]->{'whatsapp'}; ?>"></a>
-                                                    </div>
-                                                </div>
-                                                <div class="dir_map"></div>
-                                            </div>
-                                            <?php } ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <?php if($info->{'despacho_domicilio'} == 1){ ?>
                     <div class="modal modal_dim1 vhalign hide modal_carro paso_02b">
                         <div class="cont_modal">
