@@ -374,10 +374,10 @@ class Core{
         return $info;
 
     }
-    public function enviar_error($code, $status, $error, $id, $code){
+    public function enviar_error($codes, $status, $error, $id, $code){
         
         $send["tipo"] = 3;
-        $send["code"] = $code;
+        $send["codes"] = $codes;
         $send["status"] = $status;
         $send["error"] = $error;
         $send["id_puser"] = $id;
