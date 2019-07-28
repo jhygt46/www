@@ -374,9 +374,11 @@ class Core{
         return $info;
 
     }
-    public function enviar_error($error, $id, $code){
+    public function enviar_error($code, $status, $error, $id, $code){
         
         $send["tipo"] = 3;
+        $send["code"] = $code;
+        $send["status"] = $status;
         $send["error"] = $error;
         $send["id_puser"] = $id;
         $send["code"] = $code;
@@ -386,13 +388,14 @@ class Core{
         curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-        
         $resp = json_decode(curl_exec($ch));
+
         if($resp->{'op'} != 1){
-            $this->enviar_error_2($error);
+            $this->enviar_error_2($code.$status.$error);
         }
 
         curl_close($ch);
+        return $info;
 
     }
     private function enviar_error_2($error){

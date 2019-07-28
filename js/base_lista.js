@@ -1040,42 +1040,17 @@ function paso_4(){
 
                         }
 
-                    }
-                    if(res.op == 2){
-                        
-                        $('.btns_err').width(260);
-                        $('#err_telefono').show();
-                        $('#err_correo').show();
-                        $('#err_telefono').attr('href', 'tel:'+res.tel);
-                        $('#err_correo').attr('href', 'mailto:'+res.mailto+';misitiodelivery@gmail.com?subject=Envio%20Manual&body='+res.body);
-                        show_modal('modal_error');
-
+                    }else if(res.op == 2){
+                        show_modal('modal_error_locales');
+                    }else{
+                        send_error("#A02", 0, '');
                     }
                     document.getElementById("enviar_cotizacion").disabled = false;
                     
                 }, error: function(e, err){
-
-                    var cant_locales = data.locales.length;
-
-                    if(cant_locales == 1){
-
-                        // MOSTRAR ERROR
-                        $('.btns_err').width(130);
-                        $('#err_telefono').show();
-                        $('#err_correo').hide();
-                        $('#err_telefono').attr('href', 'tel:'+data.locales[0].telefono);
-                        show_modal('modal_error');
-
-                    }else{
-
-                        // MOSTRAR LOCALES
-                        show_modal('modal_error_locales');
-                        
-                    }
-
+                    show_modal('modal_error_locales');
                     send_error("#A01", e.status, err);
                     document.getElementById("enviar_cotizacion").disabled = false;
-
                 }
             });
 
@@ -1232,11 +1207,13 @@ function initMap(){
                         }else if(data.op == 2){
                             alert("Su domicilio no se encuentra en la zona de reparto, disculpe las molestias");
                         }else{
-                            send_error("despacho domicilio op diferente");
+                            send_error("#B02", 0, '');
                         }
                         
-                    }, error: function(e){
-                        send_error("Web despacho a domicilio error");
+                    }, error: function(e, err){
+                        show_modal('modal_error_locales');
+                        send_error("#B01", e.status, err);
+                        document.getElementById("enviar_cotizacion").disabled = false;
                     }
                 });
                 
@@ -1278,15 +1255,20 @@ function initMap(){
     });
 
 }
-function send_error(code, error){
+function send_error(code, status, error){
 
     var puser = get_puser();
-    var send = { accion: 'enviar_error', error: error, id_puser: puser.id_puser, code: puser.code };
+    var send = { accion: 'enviar_error', code: code, status: status, error: error, id_puser: puser.id_puser, code: puser.code };
     $.ajax({
         url: 'ajax/index.php',
         type: "POST",
         data: send,
-        success: function(){}
+        success: function(){
+
+        },
+        error: function(){
+            
+        }
     });
 
 }

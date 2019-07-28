@@ -129,7 +129,7 @@
                     </div>
                     <div class="modal modal_dim1 vhalign hide modal_error_locales">
                         <div class="cont_modal">
-                            <div class="titulo"><div class="cont_titulo valign"><h1><?php echo $info->{"pedido_02_titulo"}; ?></h1><h2><?php echo $info->{"pedido_02_subtitulo"}; ?></h2></div></div>
+                            <div class="titulo"><div class="cont_titulo valign"><h1>Error</h1><h2>se ha producido un error</h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info">
                                 <div class="info_modal">
@@ -146,9 +146,9 @@
                                                         <div class="alert"></div>
                                                     </div>
                                                     <div class="accioness valign">
-                                                        <a class="accion ver_mapa" href="" onclick="local_mapa(<?php echo $locales[$i]->{'lat'}; ?>, <?php echo $locales[$i]->{'lng'}; ?>)"></a>
-                                                        <a class="accion ver_mapa" href="tel:<?php echo $locales[$i]->{'telefono'}; ?>"></a>
-                                                        <a class="accion ver_mapa" href="https://api.whatsapp.com/send?phone=<?php echo $locales[$i]->{'whatsapp'}; ?>"></a>
+                                                        <a class="accion ver_mapa" href="" onclick="local_mapa(<?php echo $locales[$i]->{'lat'}; ?>, <?php echo $locales[$i]->{'lng'}; ?>)"><img src="_images/telefono.png" alt="" /></a>
+                                                        <a class="accion ver_mapa" href="tel:<?php echo $locales[$i]->{'telefono'}; ?>"><img src="_images/whatsapp.png" alt="" /></a>
+                                                        <a class="accion ver_mapa" href="https://api.whatsapp.com/send?phone=<?php echo $locales[$i]->{'whatsapp'}; ?>"><img src="_images/mapa.png" alt="" /></a>
                                                     </div>
                                                 </div>
                                                 <div class="dir_map"></div>
