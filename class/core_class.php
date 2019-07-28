@@ -327,7 +327,7 @@ class Core{
 
                     }
                     
-                    if($resp->{'email'} == 1 && $id_puser != 1955){
+                    if($resp->{'email'} == 1){
 
                         $info['email'] = 1;
                         $info['lat'] = $resp->{'lat'};
@@ -340,7 +340,7 @@ class Core{
 
                     }
 
-                    if($resp->{'email'} == 2 || $id_puser == 1955){
+                    if($resp->{'email'} == 2){
 
                         $info['email'] = 2;
                         $info['tel'] = $resp->{'telefono'};

@@ -1034,7 +1034,7 @@ function paso_4(){
                         if(res.email == 2){
 
                             console.log(res.tel+' / '+res.mailto+' / '+res.body);
-                            show_modal('modal_error');
+                            //show_modal('modal_error');
                             $('#err_telefono').attr('href', 'tel:'+res.tel);
                             $('#err_correo').attr('href', 'mailto:'+res.mailto+';misitiodelivery@gmail.com?subject=Envio%20Manual&body='+res.body);
 
