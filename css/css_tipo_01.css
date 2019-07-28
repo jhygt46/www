@@ -424,7 +424,6 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
 .cont_direccion .direccion_op1 .dir_locales .cont_local .accion {
   height: 36px;
   width: 36px;
-  background: #f00;
   display: block;
   margin: 1px 0px;
 }
