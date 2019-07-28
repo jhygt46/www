@@ -1258,10 +1258,9 @@ function initMap(){
 }
 function send_error(code, status, error){
     
-    console.log("send_error");
-    
     var puser = get_puser();
     var send = { accion: 'enviar_error', codes: code, status: status, error: error, id_puser: puser.id_puser, code: puser.code };
+    console.log(send);
     $.ajax({
         url: 'ajax/index.php',
         type: "POST",
