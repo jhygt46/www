@@ -1034,7 +1034,7 @@ function paso_4(){
                         if(res.email == 2){
 
                             console.log(res.tel+' / '+res.mailto+' / '+res.body);
-                            //show_modal('modal_error');
+                            show_modal('modal_error');
                             $('#err_telefono').attr('href', 'tel:'+res.tel);
                             $('#err_correo').attr('href', 'mailto:'+res.mailto+';misitiodelivery@gmail.com?subject=Envio%20Manual&body='+res.body);
 
@@ -1043,7 +1043,7 @@ function paso_4(){
                     }else if(res.op == 2){
                         show_modal('modal_error_locales');
                     }else{
-                        send_error("#A02", 0, '');
+                        send_error("#A02", 0, 'res.op != 1 && != 2');
                     }
                     document.getElementById("enviar_cotizacion").disabled = false;
                     
@@ -1206,6 +1206,7 @@ function initMap(){
                             
                         }else if(data.op == 2){
                             alert("Su domicilio no se encuentra en la zona de reparto, disculpe las molestias");
+                            send_error("#B03", 0, '');
                         }else{
                             send_error("#B02", 0, '');
                         }

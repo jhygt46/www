@@ -346,6 +346,7 @@ class Core{
                         $info['tel'] = $resp->{'telefono'};
                         $info['mailto'] = $resp->{'correo'};
                         $info['body'] = $resp->{'url'}.'/detalle.php?code='.$resp->{'pedido_code'};
+                        $this->enviar_error("#A04", 0, "Email no enviado", 0, "");
 
                     }
                     
@@ -362,6 +363,7 @@ class Core{
                     $file['pedido']->{'num_ped'} = 0;
                     $file['pedido']->{'pedido_code'} = $temp_code;
                     $file['pedido']->{'fecha'} = date('Y-m-d H:i:s');
+                    $this->enviar_error("#A03", 0, "Enviado Pedido Error", 0, "");
 
                 }
 
