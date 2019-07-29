@@ -129,7 +129,7 @@
                     </div>
                     <div class="modal modal_dim1 vhalign hide modal_error_locales">
                         <div class="cont_modal">
-                            <div class="titulo"><div class="cont_titulo valign"><h1>Error</h1><h2>se ha producido un error</h2></div></div>
+                            <div class="titulo"><div class="cont_titulo valign"><h1>Ocurrio un Error</h1><h2>contactese directamente a nuestras sucursales</h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info">
                                 <div class="info_modal">

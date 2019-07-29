@@ -998,7 +998,6 @@ function paso_4(){
                 data: send,
                 success: function(res){
 
-                    console.log(res);
                     if(res.op == 1){
                         
                         $('#pedido_nombre').css({ border: '0px' });
@@ -1033,7 +1032,6 @@ function paso_4(){
                         }
                         if(res.email == 2){
 
-                            console.log(res.tel+' / '+res.mailto+' / '+res.body);
                             show_modal('modal_error');
                             $('#err_telefono').attr('href', 'tel:'+res.tel);
                             $('#err_correo').attr('href', 'mailto:'+res.mailto+';misitiodelivery@gmail.com?subject=Envio%20Manual&body='+res.body);
@@ -1206,15 +1204,16 @@ function initMap(){
                             
                         }else if(data.op == 2){
                             alert("Su domicilio no se encuentra en la zona de reparto, disculpe las molestias");
-                            send_error("#B03", 0, '');
+                        }else if(data.op == 3){
+                            alert("Error: no hay tramos definidos");
                         }else{
-                            send_error("#B02", 0, '');
+                            show_modal('modal_error_locales');
+                            send_error("#B02", 0, 'op != 1-2-3');
                         }
                         
                     }, error: function(e, err){
                         show_modal('modal_error_locales');
                         send_error("#B01", e.status, err);
-                        document.getElementById("enviar_cotizacion").disabled = false;
                     }
                 });
                 

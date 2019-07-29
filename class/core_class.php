@@ -136,57 +136,79 @@ class Core{
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         $data = json_decode(curl_exec($ch));
-        if(isset($data->{'op'}) && $data->{'op'} == 1){
 
-            $config = $this->get_config();
-            $config["actualizar"] = 0;
-            file_put_contents($this->dir_info."config.json", json_encode($config));
+        if(!curl_errno($ch)){
+            
+            if($data->{'op'} == 1){
 
-            if(!is_dir($this->dir_info)){
-                mkdir($this->dir_info, 0777);
-                mkdir($this->dir_info."pedidos/", 0777);
-                mkdir($this->dir_info."versiones/", 0777);
-                mkdir($this->dir_info."polygon/", 0777);
-            }
-
-            if(file_exists($this->dir_info."versiones/last.json")){
-                rename($this->dir_info."versiones/last.json", $this->dir_info."versiones/".date("Ymd", filemtime($this->dir_info."versiones/last.json")).".json");
-            }
-            if(file_put_contents($this->dir_info."versiones/last.json", json_encode($data->{"info"}))){
-                if($data->{"info"}->{"logo"} != "sinlogo.png"){
-                    if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"logo"}, file_get_contents("http://www.misitiodelivery.cl/images/logos/".$data->{"info"}->{"logo"}))){
-                        // REPORTAR ERROR
+                $config = $this->get_config();
+                $config["actualizar"] = 0;
+                if(!file_put_contents($this->dir_info."config.json", json_encode($config))){
+                    $this->enviar_error("#G01", 0, "No se pudo guardar actualizacion #0 de ".$this->host, 0, "");
+                }
+    
+                if(!is_dir($this->dir_info)){
+                    if(!mkdir($this->dir_info, 0777)){
+                        $this->enviar_error("#D01", 0, "No se pudo crear el direcctorio ".$this->dir_info, 0, "");
+                    }
+                    if(mkdir($this->dir_info."pedidos/", 0777)){
+                        $this->enviar_error("#D02", 0, "No se pudo crear el direcctorio ".$this->dir_info."pedidos", 0, "");
+                    }
+                    if(mkdir($this->dir_info."versiones/", 0777)){
+                        $this->enviar_error("#D03", 0, "No se pudo crear el direcctorio ".$this->dir_info."versiones", 0, "");
+                    }
+                    if(mkdir($this->dir_info."polygon/", 0777)){
+                        $this->enviar_error("#D04", 0, "No se pudo crear el direcctorio ".$this->dir_info."polygon", 0, "");
                     }
                 }
-            }
-            if(file_exists($this->dir_info."polygon/last.json")){
-                rename($this->dir_info."polygon/last.json", $this->dir_info."polygon/".date("Ymd", filemtime($this->dir_info."polygon/last.json")).".json");
-            }
-            if(file_put_contents($this->dir_info."polygon/last.json", json_encode($data->{"polygons"}))){
-                // REPORTAR ERROR
-            }
-            if(!is_dir($this->dir_data."data/".$data->{"info"}->{"code"})){
-                mkdir($this->dir_data."data/".$data->{"info"}->{"code"}, 0777);
-                file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.html", "");
-            }
-            if(file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.js", "var data=".json_encode($data->{"data"}))){
-                $categorias = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
-                for($i=0; $i<count($categorias); $i++){
-                    if(strlen($categorias[$i]->{"image"}) == 24 || strlen($categorias[$i]->{"image"}) == 26){
-                        if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$categorias[$i]->{"image"})){
-                            if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$categorias[$i]->{"image"}, file_get_contents("http://www.misitiodelivery.cl/images/categorias/".$categorias[$i]->{"image"}))){
-                                // REPORTAR ERROR
-                            }
+    
+                if(file_exists($this->dir_info."versiones/last.json")){
+                    rename($this->dir_info."versiones/last.json", $this->dir_info."versiones/".date("Ymd", filemtime($this->dir_info."versiones/last.json")).".json");
+                }
+                if(file_put_contents($this->dir_info."versiones/last.json", json_encode($data->{"info"}))){
+                    if($data->{"info"}->{"logo"} != "sinlogo.png"){
+                        if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"logo"}, file_get_contents("http://www.misitiodelivery.cl/images/logos/".$data->{"info"}->{"logo"}))){
+                            $this->enviar_error("#G02", 0, "No se pudo guardar la logo de ".$this->host, 0, "");
                         }
                     }
                 }
+                if(file_exists($this->dir_info."polygon/last.json")){
+                    rename($this->dir_info."polygon/last.json", $this->dir_info."polygon/".date("Ymd", filemtime($this->dir_info."polygon/last.json")).".json");
+                }
+                if(!file_put_contents($this->dir_info."polygon/last.json", json_encode($data->{"polygons"}))){
+                    $this->enviar_error("#G03", 0, "No se pudo guardar los poligonos de ".$this->host, 0, "");
+                }
+                if(!is_dir($this->dir_data."data/".$data->{"info"}->{"code"})){
+                    mkdir($this->dir_data."data/".$data->{"info"}->{"code"}, 0777);
+                    if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.html", "")){
+                        $this->enviar_error("#G04", 0, "No se pudo crear el html vacio de ".$this->host, 0, "");
+                    }
+                }
+                if(file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.js", "var data=".json_encode($data->{"data"}))){
+                    $categorias = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
+                    for($i=0; $i<count($categorias); $i++){
+                        if(strlen($categorias[$i]->{"image"}) == 24 || strlen($categorias[$i]->{"image"}) == 26){
+                            if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$categorias[$i]->{"image"})){
+                                if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$categorias[$i]->{"image"}, file_get_contents("http://www.misitiodelivery.cl/images/categorias/".$categorias[$i]->{"image"}))){
+                                    $this->enviar_error("#G05", 0, "No se pudo guardar las imagenes de categorias de ".$this->host, 0, "");
+                                }
+                            }
+                        }
+                    }
+                }else{
+                    $this->enviar_error("#G06", 0, "No se pudo crear el archivo data ".$this->host, 0, "");
+                }
+                curl_close($ch);
+                return $data->{"info"};
+    
+            }else{
+                return null;
             }
-            curl_close($ch);
-            return $data->{"info"};
 
         }else{
-            return null;
+            $this->enviar_error("#K01", 0, "No se pudo traer informacion de ".$this->host, 0, "");
         }
+
 
     }
     public function get_info_despacho($lat, $lng){
@@ -196,29 +218,35 @@ class Core{
         $precio = 9999999;
         $info['op'] = 2;
 
-        foreach($polygons as $polygon){
+        if(count($polygons) > 0){
+            foreach($polygons as $polygon){
 
-            $lats = [];
-            $lngs = [];
-            $puntos = json_decode($polygon->{'poligono'});
-            foreach($puntos as $punto){
-                $lats[] = $punto->{'lat'};
-                $lngs[] = $punto->{'lng'};
-            }
-            $is = $this->is_in_polygon($lats, $lngs, $lat, $lng);
-            if($is){
-                if($precio > $polygon->{'precio'}){
-                    $info['op'] = 1;
-                    $info['id_loc'] = intval($polygon->{'id_loc'});
-                    $info['precio'] = intval($polygon->{'precio'});
-                    $info['nombre'] = $polygon->{'nombre'};
-                    $info['lat'] = $lat;
-                    $info['lng'] = $lng;
-                    $precio = $polygon->{'precio'};
+                $lats = [];
+                $lngs = [];
+                $puntos = json_decode($polygon->{'poligono'});
+                foreach($puntos as $punto){
+                    $lats[] = $punto->{'lat'};
+                    $lngs[] = $punto->{'lng'};
                 }
+                $is = $this->is_in_polygon($lats, $lngs, $lat, $lng);
+                if($is){
+                    if($precio > $polygon->{'precio'}){
+                        $info['op'] = 1;
+                        $info['id_loc'] = intval($polygon->{'id_loc'});
+                        $info['precio'] = intval($polygon->{'precio'});
+                        $info['nombre'] = $polygon->{'nombre'};
+                        $info['lat'] = $lat;
+                        $info['lng'] = $lng;
+                        $precio = $polygon->{'precio'};
+                    }
+                }
+
             }
+        }else{
+            $info['op'] = 3;
+            $this->enviar_error("#B03", 0, "Sin Poligonos", 0, "");
         }
-            
+    
         return $info;
 
     }
@@ -306,69 +334,74 @@ class Core{
                 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
                 $resp = json_decode(curl_exec($ch));
 
-                if($resp->{'op'} == 1){
+                if(!curl_errno($ch)){
 
-                    $file['pedido']->{'id_ped'} = $resp->{'id_ped'};
-                    $file['pedido']->{'num_ped'} = $resp->{'num_ped'};
-                    $file['pedido']->{'pedido_code'} = $resp->{'pedido_code'};
-                    $file['pedido']->{'fecha'} = $resp->{'fecha'};
+                    if($resp->{'op'} == 1){
 
-                    $info['op'] = 1;
-                    $info['pedido_code'] = $resp->{'pedido_code'};
-                    $id_puser = (isset($file['puser']->{'id_puser'})) ? $file['puser']->{'id_puser'} : 0 ;
-                    
-                    if($resp->{'set_puser'} == 1){
-
-                        $info['set_puser'] = 1;
-                        $info['puser_id'] = $resp->{'puser_id'};
-                        $info['puser_code'] = $resp->{'puser_code'};
-                        $info['puser_nombre'] = $resp->{'puser_nombre'};
-                        $info['puser_telefono'] = $resp->{'puser_telefono'};
-
+                        $file['pedido']->{'id_ped'} = $resp->{'id_ped'};
+                        $file['pedido']->{'num_ped'} = $resp->{'num_ped'};
+                        $file['pedido']->{'pedido_code'} = $resp->{'pedido_code'};
+                        $file['pedido']->{'fecha'} = $resp->{'fecha'};
+    
+                        $info['op'] = 1;
+                        $info['pedido_code'] = $resp->{'pedido_code'};
+                        $id_puser = (isset($file['puser']->{'id_puser'})) ? $file['puser']->{'id_puser'} : 0 ;
+                        
+                        if($resp->{'set_puser'} == 1){
+    
+                            $info['set_puser'] = 1;
+                            $info['puser_id'] = $resp->{'puser_id'};
+                            $info['puser_code'] = $resp->{'puser_code'};
+                            $info['puser_nombre'] = $resp->{'puser_nombre'};
+                            $info['puser_telefono'] = $resp->{'puser_telefono'};
+    
+                        }
+                        
+                        if($resp->{'email'} == 1){
+    
+                            $info['email'] = 1;
+                            $info['lat'] = $resp->{'lat'};
+                            $info['lng'] = $resp->{'lng'};
+                            $info['id_ped'] = $resp->{'id_ped'};
+                            $info['num_ped'] = $resp->{'num_ped'};
+                            $info['t_despacho'] = $resp->{'t_despacho'};
+                            $info['t_retiro'] = $resp->{'t_retiro'};
+                            $info['fecha'] = $resp->{'fecha'};
+    
+                        }
+    
+                        if($resp->{'email'} == 2){
+    
+                            $info['email'] = 2;
+                            $info['tel'] = $resp->{'telefono'};
+                            $info['mailto'] = $resp->{'correo'};
+                            $info['body'] = $resp->{'url'}.'/detalle.php?code='.$resp->{'pedido_code'};
+    
+                        }
+                        
                     }
-                    
-                    if($resp->{'email'} == 1){
-
-                        $info['email'] = 1;
-                        $info['lat'] = $resp->{'lat'};
-                        $info['lng'] = $resp->{'lng'};
-                        $info['id_ped'] = $resp->{'id_ped'};
-                        $info['num_ped'] = $resp->{'num_ped'};
-                        $info['t_despacho'] = $resp->{'t_despacho'};
-                        $info['t_retiro'] = $resp->{'t_retiro'};
-                        $info['fecha'] = $resp->{'fecha'};
-
-                    }
-
-                    if($resp->{'email'} == 2){
-
-                        $info['email'] = 2;
+                    if($resp->{'op'} == 2){
+    
+                        $info['op'] = 2;
+                        $temp_code = bin2hex(openssl_random_pseudo_bytes(10));
+    
                         $info['tel'] = $resp->{'telefono'};
                         $info['mailto'] = $resp->{'correo'};
-                        $info['body'] = $resp->{'url'}.'/detalle.php?code='.$resp->{'pedido_code'};
-                        $this->enviar_error("#A04", 0, "Email no enviado", 0, "");
-
+                        $info['body'] = $resp->{'url'}.'/detalle.php?code='.$temp_code;
+    
+                        $file['pedido']->{'id_ped'} = 0;
+                        $file['pedido']->{'num_ped'} = 0;
+                        $file['pedido']->{'pedido_code'} = $temp_code;
+                        $file['pedido']->{'fecha'} = date('Y-m-d H:i:s');
+    
                     }
-                    
+    
+                    file_put_contents($this->dir_info."pedidos/".$file['pedido']->{'pedido_code'}.".json", json_encode($file));
+                    curl_close($ch);
+
                 }else{
-
-                    $info['op'] = 2;
-                    $temp_code = bin2hex(openssl_random_pseudo_bytes(10));
-
-                    $info['tel'] = $resp->{'telefono'};
-                    $info['mailto'] = $resp->{'correo'};
-                    $info['body'] = $resp->{'url'}.'/detalle.php?code='.$temp_code;
-
-                    $file['pedido']->{'id_ped'} = 0;
-                    $file['pedido']->{'num_ped'} = 0;
-                    $file['pedido']->{'pedido_code'} = $temp_code;
-                    $file['pedido']->{'fecha'} = date('Y-m-d H:i:s');
-                    $this->enviar_error("#A03", 0, "Enviado Pedido Error", 0, "");
-
+                    $this->enviar_error("#E01", 0, "No se pudo enviar pedido de ".$this->host, 0, "");
                 }
-
-                file_put_contents($this->dir_info."pedidos/".$file['pedido']->{'pedido_code'}.".json", json_encode($file));
-                curl_close($ch);
 
             }
         }
@@ -376,14 +409,14 @@ class Core{
         return $info;
 
     }
-    public function enviar_error($codes, $status, $error, $id, $code){
+    public function enviar_error($codes, $status, $error, $id_puser, $code){
         
         $send["tipo"] = 3;
         $send["codes"] = $codes;
         $send["status"] = $status;
         $send["error"] = $error;
-        $send["id_puser"] = $id;
-        $send["code"] = $code;
+        $send["id_puser"] = $id_puser;
+        $send["code"] = $this->code;
         $send["host"] = $this->host;
 
         $ch = curl_init();
@@ -391,9 +424,12 @@ class Core{
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         $resp = json_decode(curl_exec($ch));
-
-        if($resp->{'op'} != 1){
-            $this->enviar_error_2($code.$status.$error);
+        if(!curl_errno($ch)){
+            if($resp->{'op'} != 1){
+                $this->enviar_error_2($codes."/".$status."/".$error);
+            }
+        }else{
+            $this->enviar_error_2($codes."/".$status."/".$error);
         }
 
         curl_close($ch);
@@ -433,8 +469,9 @@ class Core{
         }else{
 
             $send["tipo"] = 4;
-            $send["code"] = $pedido_code;
+            $send["pedido_code"] = $pedido_code;
             $send["host"] = $this->host;
+            $send["code"] = $this->code;
 
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
