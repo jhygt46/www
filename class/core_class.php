@@ -141,30 +141,31 @@ class Core{
             
             if($data->{'op'} == 1){
 
+                if(!is_dir($this->dir_info)){
+                    if(!mkdir($this->dir_info, 0777)){
+                        $this->enviar_error("#D01", 0, "No se pudo crear el direcctorio ".$this->dir_info, 0, "");
+                    }
+                    if(!mkdir($this->dir_info."pedidos/", 0777)){
+                        $this->enviar_error("#D02", 0, "No se pudo crear el direcctorio ".$this->dir_info."pedidos", 0, "");
+                    }
+                    if(!mkdir($this->dir_info."versiones/", 0777)){
+                        $this->enviar_error("#D03", 0, "No se pudo crear el direcctorio ".$this->dir_info."versiones", 0, "");
+                    }
+                    if(!mkdir($this->dir_info."polygon/", 0777)){
+                        $this->enviar_error("#D04", 0, "No se pudo crear el direcctorio ".$this->dir_info."polygon", 0, "");
+                    }
+                }
+
                 $config = $this->get_config();
                 $config["actualizar"] = 0;
                 if(!file_put_contents($this->dir_info."config.json", json_encode($config))){
                     $this->enviar_error("#G01", 0, "No se pudo guardar actualizacion #0 de ".$this->host, 0, "");
                 }
-    
-                if(!is_dir($this->dir_info)){
-                    if(!mkdir($this->dir_info, 0777)){
-                        $this->enviar_error("#D01", 0, "No se pudo crear el direcctorio ".$this->dir_info, 0, "");
-                    }
-                    if(mkdir($this->dir_info."pedidos/", 0777)){
-                        $this->enviar_error("#D02", 0, "No se pudo crear el direcctorio ".$this->dir_info."pedidos", 0, "");
-                    }
-                    if(mkdir($this->dir_info."versiones/", 0777)){
-                        $this->enviar_error("#D03", 0, "No se pudo crear el direcctorio ".$this->dir_info."versiones", 0, "");
-                    }
-                    if(mkdir($this->dir_info."polygon/", 0777)){
-                        $this->enviar_error("#D04", 0, "No se pudo crear el direcctorio ".$this->dir_info."polygon", 0, "");
-                    }
-                }
-    
+
                 if(file_exists($this->dir_info."versiones/last.json")){
                     rename($this->dir_info."versiones/last.json", $this->dir_info."versiones/".date("Ymd", filemtime($this->dir_info."versiones/last.json")).".json");
                 }
+
                 if(file_put_contents($this->dir_info."versiones/last.json", json_encode($data->{"info"}))){
                     if($data->{"info"}->{"logo"} != "sinlogo.png"){
                         if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"logo"}, file_get_contents("http://www.misitiodelivery.cl/images/logos/".$data->{"info"}->{"logo"}))){
@@ -172,18 +173,22 @@ class Core{
                         }
                     }
                 }
+
                 if(file_exists($this->dir_info."polygon/last.json")){
                     rename($this->dir_info."polygon/last.json", $this->dir_info."polygon/".date("Ymd", filemtime($this->dir_info."polygon/last.json")).".json");
                 }
+
                 if(!file_put_contents($this->dir_info."polygon/last.json", json_encode($data->{"polygons"}))){
                     $this->enviar_error("#G03", 0, "No se pudo guardar los poligonos de ".$this->host, 0, "");
                 }
+
                 if(!is_dir($this->dir_data."data/".$data->{"info"}->{"code"})){
                     mkdir($this->dir_data."data/".$data->{"info"}->{"code"}, 0777);
                     if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.html", "")){
                         $this->enviar_error("#G04", 0, "No se pudo crear el html vacio de ".$this->host, 0, "");
                     }
                 }
+                
                 if(file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.js", "var data=".json_encode($data->{"data"}))){
                     $categorias = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
                     for($i=0; $i<count($categorias); $i++){
