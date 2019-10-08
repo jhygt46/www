@@ -215,11 +215,12 @@ class Core{
                 return $data->{"info"};
     
             }else{
-                return null;
+                die("Curl Data Error");
             }
 
         }else{
             $this->enviar_error("#K01", 0, "No se pudo traer informacion de ".$this->host, 0, "");
+            die("Curl Error");
         }
 
 
