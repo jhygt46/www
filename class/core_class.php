@@ -10,27 +10,36 @@ class Core{
 
     public function __construct(){
 
-        $this->code = file_get_contents("/var/code.json");
-        if(file_exists("/var/data/server_ip.json")){
-            $this->server_ip = file_get_contents("/var/data/server_ip.json");
-        }else{
-            $this->server_ip = file_get_contents("http://ipecho.net/plain");
-            file_put_contents("/var/data/server_ip.json", $this->server_ip);
-        }
-        if($_SERVER["HTTP_HOST"] == $this->server_ip){
-            if(isset($_GET["url"])){
-                $this->host = (count(explode(".", $_GET["url"])) == 2) ? "www.".strtolower($_GET["url"]) : strtolower($_GET["url"]) ;
+        if(file_exists("/var/code.json")){
+            $this->code = file_get_contents("/var/code.json");
+            if(file_exists("/var/data/server_ip.json")){
+                $this->server_ip = file_get_contents("/var/data/server_ip.json");
             }else{
-                $var = explode("?url=", $_SERVER["HTTP_REFERER"]);
-                $this->host = (count(explode(".", $var[1])) == 2) ? "www.".strtolower($var[1]) : strtolower($var[1]) ;
+                $this->server_ip = file_get_contents("http://ipecho.net/plain");
+                file_put_contents("/var/data/server_ip.json", $this->server_ip);
             }
+            if($_SERVER["HTTP_HOST"] == $this->server_ip){
+                if(isset($_GET["url"])){
+                    $this->host = (count(explode(".", $_GET["url"])) == 2) ? "www.".strtolower($_GET["url"]) : strtolower($_GET["url"]) ;
+                }else{
+                    $var = explode("?url=", $_SERVER["HTTP_REFERER"]);
+                    $this->host = (count(explode(".", $var[1])) == 2) ? "www.".strtolower($var[1]) : strtolower($var[1]) ;
+                }
+            }else{
+                $this->host = (count(explode(".", $_SERVER["HTTP_HOST"])) == 2) ? "www.".strtolower($_SERVER["HTTP_HOST"]) : strtolower($_SERVER["HTTP_HOST"]) ;
+            }
+
+            $this->dir_info = "/var/data/".$this->host."/";
+            if(!is_dir($this->dir_info)){
+                mkdir($this->dir_info, 0700);
+            }
+            $this->dir_data = "/var/www/html/";
+            $this->file_err = "/var/error/error.log";
+
         }else{
-            $this->host = (count(explode(".", $_SERVER["HTTP_HOST"])) == 2) ? "www.".strtolower($_SERVER["HTTP_HOST"]) : strtolower($_SERVER["HTTP_HOST"]) ;
+            die("ARCHIVO CODE NO EXISTE");
         }
-        echo $_SERVER["HTTP_HOST"];
-        $this->dir_info = "/var/data/".$this->host."/";
-        $this->dir_data = "/var/www/html/";
-        $this->file_err = "/var/error/error.log";
+        
 
     }
     public function volver(){
