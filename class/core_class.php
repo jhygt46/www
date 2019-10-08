@@ -27,6 +27,7 @@ class Core{
         }else{
             $this->host = (count(explode(".", $_SERVER["HTTP_HOST"])) == 2) ? "www.".strtolower($_SERVER["HTTP_HOST"]) : strtolower($_SERVER["HTTP_HOST"]) ;
         }
+        echo $_SERVER["HTTP_HOST"];
         $this->dir_info = "/var/data/".$this->host."/";
         $this->dir_data = "/var/www/html/";
         $this->file_err = "/var/error/error.log";
