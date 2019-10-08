@@ -31,7 +31,7 @@ class Core{
 
             $this->dir_info = "/var/data/".$this->host."/";
             if(!is_dir($this->dir_info)){
-                mkdir($this->dir_info, 0777);
+                mkdir($this->dir_info, 777);
             }
             $this->dir_data = "/var/www/html/";
             $this->file_err = "/var/error/error.log";
