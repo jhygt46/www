@@ -30,9 +30,6 @@ class Core{
             }
 
             $this->dir_info = "/var/data/".$this->host."/";
-            if(!is_dir($this->dir_info)){
-                mkdir($this->dir_info, 0777);
-            }
             $this->dir_data = "/var/www/html/";
             $this->file_err = "/var/error/error.log";
 
@@ -143,6 +140,10 @@ class Core{
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         $data = json_decode(curl_exec($ch));
+
+        echo "CurlData<pre>";
+        print_r($data);
+        echo "</pre>";
 
         if(!curl_errno($ch)){
             
