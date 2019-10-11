@@ -408,7 +408,7 @@ class Core{
         $send["code"] = $this->code;
         $send["host"] = $this->host;
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
+        curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/webs/');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         $resp = json_decode(curl_exec($ch));
