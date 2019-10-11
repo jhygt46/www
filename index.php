@@ -1,7 +1,7 @@
 <?php
 
     if($_GET["mode"] != "developer"){
-        die("SITIO NO DISPONIBLE");
+        die("SITIO EN CONSTRUCCION");
     }
 
     if(isset($_POST["test"]) && $_POST["test"] == "Dw7k2s_hKi5sqPs8"){
@@ -10,9 +10,7 @@
 
     require_once "class/core_class.php";
     $core = new Core();
-    $core->enviar_error(16, "Error Web");
-    exit;
-
+    
     if(isset($_POST["accion"]) && $_POST["accion"] == "xS3w1Dm8Po87Wltd"){
         $core->actualizar();
         die("OK");
