@@ -408,13 +408,13 @@ class Core{
         $send["code"] = $this->code;
         $send["host"] = $this->host;
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
+        curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         $resp = json_decode(curl_exec($ch));
         if(!curl_errno($ch)){
-            if($resp->{'op'} != 1){ $this->enviar_error_2($code." // ".$error); }
-        }else{ $this->enviar_error_2($code." // ".$error); }
+            if($resp->{'op'} != 1){ $this->enviar_error_2($code." // ".$error); die("Err: 1"); }
+        }else{ $this->enviar_error_2($code." // ".$error); die("Err: 2"); }
         curl_close($ch);
 
     }
