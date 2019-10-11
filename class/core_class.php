@@ -403,7 +403,7 @@ class Core{
     public function enviar_error($code, $error){
 
         $send["tipo"] = 3;
-        $send["code"] = $code;
+        $send["codes"] = $code;
         $send["error"] = $error;
         $send["code"] = $this->code;
         $send["host"] = $this->host;
@@ -413,7 +413,7 @@ class Core{
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         $resp = json_decode(curl_exec($ch));
         if(!curl_errno($ch)){
-            if($resp->{'op'} != 1){ $this->enviar_error_2($codes." // ".$error); }
+            if($resp->{'op'} != 1){ $this->enviar_error_2($code." // ".$error); }
         }else{ $this->enviar_error_2($code." // ".$error); }
         curl_close($ch);
 
