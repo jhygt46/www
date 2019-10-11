@@ -93,14 +93,11 @@ class Core{
 
     }
     public function actualizar(){
-        
         $config = $this->get_config();
         $config["actualizar"] = 1;
         file_put_contents($this->dir_info."config.json", json_encode($config));
-
     }
     public function get_config(){
-
         if(file_exists($this->dir_info."config.json")){
             $aux_conf = json_decode(file_get_contents($this->dir_info."config.json"));
             $config["info"] = $aux_conf->{"info"};
@@ -113,25 +110,21 @@ class Core{
             file_put_contents($this->dir_info."config.json", json_encode($config));
         }
         return $config;
-
     }
     public function get_data(){
-
         $config = $this->get_config();
         if(file_exists($this->dir_info."versiones/".$config["info"]) && $config["actualizar"] == 0){
             return json_decode(file_get_contents($this->dir_info."versiones/".$config["info"]));
         }else{
             return $this->curlData();
         }
-
     }
     public function curlData(){
-
         $send["code"] = $this->code;
         $send["host"] = $this->host;
         $send["tipo"] = 1; 
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
+        curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         if(!curl_errno($ch)){
@@ -140,22 +133,22 @@ class Core{
             if($data->{'op'} == 1){
                 if(!is_dir($this->dir_info)){
                     if(!mkdir($this->dir_info, 0777)){
-                        $this->enviar_error("#D01", 0, "No se pudo crear el direcctorio ".$this->dir_info, 0, "");
+                        $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info);
                     }
                     if(!mkdir($this->dir_info."pedidos/", 0777)){
-                        $this->enviar_error("#D02", 0, "No se pudo crear el direcctorio ".$this->dir_info."pedidos", 0, "");
+                        $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."pedidos");
                     }
                     if(!mkdir($this->dir_info."versiones/", 0777)){
-                        $this->enviar_error("#D03", 0, "No se pudo crear el direcctorio ".$this->dir_info."versiones", 0, "");
+                        $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."versiones");
                     }
                     if(!mkdir($this->dir_info."polygon/", 0777)){
-                        $this->enviar_error("#D04", 0, "No se pudo crear el direcctorio ".$this->dir_info."polygon", 0, "");
+                        $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."polygon");
                     }
                 }
                 $config = $this->get_config();
                 $config["actualizar"] = 0;
                 if(!file_put_contents($this->dir_info."config.json", json_encode($config))){
-                    $this->enviar_error("#G01", 0, "No se pudo guardar actualizacion #0 de ".$this->host, 0, "");
+                    $this->enviar_error(16, "No se pudo guardar actualizacion #0");
                 }
                 if(file_exists($this->dir_info."versiones/last.json")){
                     rename($this->dir_info."versiones/last.json", $this->dir_info."versiones/".date("Ymd", filemtime($this->dir_info."versiones/last.json")).".json");
@@ -163,7 +156,7 @@ class Core{
                 if(file_put_contents($this->dir_info."versiones/last.json", json_encode($data->{"info"}))){
                     if($data->{"info"}->{"logo"} != "sinlogo.png"){
                         if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"logo"}, file_get_contents("http://www.misitiodelivery.cl/images/logos/".$data->{"info"}->{"logo"}))){
-                            $this->enviar_error("#G02", 0, "No se pudo guardar la logo de ".$this->host, 0, "");
+                            $this->enviar_error(16, "No se pudo guardar la logo");
                         }
                     }
                 }
@@ -171,12 +164,12 @@ class Core{
                     rename($this->dir_info."polygon/last.json", $this->dir_info."polygon/".date("Ymd", filemtime($this->dir_info."polygon/last.json")).".json");
                 }
                 if(!file_put_contents($this->dir_info."polygon/last.json", json_encode($data->{"polygons"}))){
-                    $this->enviar_error("#G03", 0, "No se pudo guardar los poligonos de ".$this->host, 0, "");
+                    $this->enviar_error(16, "No se pudo guardar los poligonos");
                 }
                 if(!is_dir($this->dir_data."data/".$data->{"info"}->{"code"})){
                     mkdir($this->dir_data."data/".$data->{"info"}->{"code"}, 0777);
                     if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.html", "")){
-                        $this->enviar_error("#G04", 0, "No se pudo crear el html vacio de ".$this->host, 0, "");
+                        $this->enviar_error(16, "No se pudo crear el html vacio");
                     }
                 }
                 if(file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.js", "var data=".json_encode($data->{"data"}))){
@@ -185,22 +178,15 @@ class Core{
                         if(strlen($categorias[$i]->{"image"}) == 24 || strlen($categorias[$i]->{"image"}) == 26){
                             if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$categorias[$i]->{"image"})){
                                 if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$categorias[$i]->{"image"}, file_get_contents("http://www.misitiodelivery.cl/images/categorias/".$categorias[$i]->{"image"}))){
-                                    $this->enviar_error("#G05", 0, "No se pudo guardar las imagenes de categorias de ".$this->host, 0, "");
+                                    $this->enviar_error(16, "No se pudo guardar las imagenes de categorias");
                                 }
                             }
                         }
                     }
-                }else{
-                    $this->enviar_error("#G06", 0, "No se pudo crear el archivo data ".$this->host, 0, "");
-                }
+                }else{ $this->enviar_error(16, "No se pudo crear el archivo index.js"); }
                 return $data->{"info"};
-            }else{
-                die("Curl Data Error");
-            }
-        }else{
-            $this->enviar_error("#K01", 0, "No se pudo traer informacion de ".$this->host, 0, "");
-            die("Curl Error");
-        }
+            }else{ $this->enviar_error(17, "curlData() #2"); }
+        }else{ $this->enviar_error(17, "curlData() #1"); }
     }
     public function get_info_despacho($lat, $lng){
 
@@ -483,7 +469,6 @@ class Core{
         return $info;
 
     }
-    
     public function enviar_error($code, $error){
 
         $send["tipo"] = 3;
