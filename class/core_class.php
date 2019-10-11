@@ -4,12 +4,13 @@ class Core{
     
     public $host = null;
     public $code = null;
+    public $dir = null;
     public $dir_info = null;
     public $dir_data = null;
     public $server_ip = null;
 
     public function __construct(){
-
+        
         if(file_exists("/var/code.json")){
             $this->code = file_get_contents("/var/code.json");
             if(file_exists("/var/data/server_ip.json")){
@@ -28,16 +29,11 @@ class Core{
             }else{
                 $this->host = (count(explode(".", $_SERVER["HTTP_HOST"])) == 2) ? "www.".strtolower($_SERVER["HTTP_HOST"]) : strtolower($_SERVER["HTTP_HOST"]) ;
             }
-
+            $this->dir = "/var/data/";
             $this->dir_info = "/var/data/".$this->host."/";
             $this->dir_data = "/var/www/html/";
             $this->file_err = "/var/error/error.log";
-
-        }else{
-            die("ARCHIVO CODE NO EXISTE");
-        }
-        
-
+        }else{ die("ARCHIVO CODE NO EXISTE"); }
     }
     public function volver(){
         
@@ -133,22 +129,15 @@ class Core{
 
         $send["code"] = $this->code;
         $send["host"] = $this->host;
-        $send["tipo"] = 1;
-
+        $send["tipo"] = 1; 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-        $data = json_decode(curl_exec($ch));
-
-        echo "CurlData<pre>";
-        print_r($data);
-        echo "</pre>";
-
         if(!curl_errno($ch)){
-            
+            $data = json_decode(curl_exec($ch));
+            curl_close($ch);
             if($data->{'op'} == 1){
-
                 if(!is_dir($this->dir_info)){
                     if(!mkdir($this->dir_info, 0777)){
                         $this->enviar_error("#D01", 0, "No se pudo crear el direcctorio ".$this->dir_info, 0, "");
@@ -163,17 +152,14 @@ class Core{
                         $this->enviar_error("#D04", 0, "No se pudo crear el direcctorio ".$this->dir_info."polygon", 0, "");
                     }
                 }
-
                 $config = $this->get_config();
                 $config["actualizar"] = 0;
                 if(!file_put_contents($this->dir_info."config.json", json_encode($config))){
                     $this->enviar_error("#G01", 0, "No se pudo guardar actualizacion #0 de ".$this->host, 0, "");
                 }
-
                 if(file_exists($this->dir_info."versiones/last.json")){
                     rename($this->dir_info."versiones/last.json", $this->dir_info."versiones/".date("Ymd", filemtime($this->dir_info."versiones/last.json")).".json");
                 }
-
                 if(file_put_contents($this->dir_info."versiones/last.json", json_encode($data->{"info"}))){
                     if($data->{"info"}->{"logo"} != "sinlogo.png"){
                         if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"logo"}, file_get_contents("http://www.misitiodelivery.cl/images/logos/".$data->{"info"}->{"logo"}))){
@@ -181,22 +167,18 @@ class Core{
                         }
                     }
                 }
-
                 if(file_exists($this->dir_info."polygon/last.json")){
                     rename($this->dir_info."polygon/last.json", $this->dir_info."polygon/".date("Ymd", filemtime($this->dir_info."polygon/last.json")).".json");
                 }
-
                 if(!file_put_contents($this->dir_info."polygon/last.json", json_encode($data->{"polygons"}))){
                     $this->enviar_error("#G03", 0, "No se pudo guardar los poligonos de ".$this->host, 0, "");
                 }
-
                 if(!is_dir($this->dir_data."data/".$data->{"info"}->{"code"})){
                     mkdir($this->dir_data."data/".$data->{"info"}->{"code"}, 0777);
                     if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.html", "")){
                         $this->enviar_error("#G04", 0, "No se pudo crear el html vacio de ".$this->host, 0, "");
                     }
                 }
-                
                 if(file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.js", "var data=".json_encode($data->{"data"}))){
                     $categorias = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
                     for($i=0; $i<count($categorias); $i++){
@@ -211,19 +193,14 @@ class Core{
                 }else{
                     $this->enviar_error("#G06", 0, "No se pudo crear el archivo data ".$this->host, 0, "");
                 }
-                curl_close($ch);
                 return $data->{"info"};
-    
             }else{
                 die("Curl Data Error");
             }
-
         }else{
             $this->enviar_error("#K01", 0, "No se pudo traer informacion de ".$this->host, 0, "");
             die("Curl Error");
         }
-
-
     }
     public function get_info_despacho($lat, $lng){
 
@@ -423,39 +400,26 @@ class Core{
         return $info;
 
     }
-    public function enviar_error($codes, $status, $error, $id_puser, $code){
-        
+    public function enviar_error($code, $error){
+
         $send["tipo"] = 3;
-        $send["codes"] = $codes;
-        $send["status"] = $status;
+        $send["code"] = $code;
         $send["error"] = $error;
-        $send["id_puser"] = $id_puser;
         $send["code"] = $this->code;
         $send["host"] = $this->host;
-
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
+        curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         $resp = json_decode(curl_exec($ch));
         if(!curl_errno($ch)){
-            if($resp->{'op'} != 1){
-                $this->enviar_error_2($codes."/".$status."/".$error);
-            }
-        }else{
-            $this->enviar_error_2($codes."/".$status."/".$error);
-        }
-
+            if($resp->{'op'} != 1){ $this->enviar_error_2($codes." // ".$error); }
+        }else{ $this->enviar_error_2($code." // ".$error); }
         curl_close($ch);
-        return $info;
 
     }
     private function enviar_error_2($error){
-
-        // EMAIL DE EMERGENCIA
-        // GUARDAR ERROR EN EL DISCO
         file_put_contents($this->file_err, $this->host." - ".$error);
-
     }
     public function ver_pedido(){
 
