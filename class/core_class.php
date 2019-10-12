@@ -114,8 +114,10 @@ class Core{
     public function get_data(){
         $config = $this->get_config();
         if(file_exists($this->dir_info."versiones/".$config["info"]) && $config["actualizar"] == 0){
+            echo "GET DATA FILE<br/>";
             return json_decode(file_get_contents($this->dir_info."versiones/".$config["info"]));
         }else{
+            echo "GET DATA CURL<br/>";
             return $this->curlData();
         }
     }
@@ -129,6 +131,7 @@ class Core{
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         if(!curl_errno($ch)){
             $data = json_decode(curl_exec($ch));
+            echo "CURL NO ERROR<br/>";
             curl_close($ch);
             if($data->{'op'} == 1){
                 if(!is_dir($this->dir_info)){
