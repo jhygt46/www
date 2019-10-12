@@ -145,6 +145,7 @@ class Core{
                         $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."polygon");
                     }
                 }
+                /*
                 $config = $this->get_config();
                 $config["actualizar"] = 0;
                 if(!file_put_contents($this->dir_info."config.json", json_encode($config))){
@@ -184,6 +185,7 @@ class Core{
                         }
                     }
                 }else{ $this->enviar_error(16, "No se pudo crear el archivo index.js"); }
+                */
                 return $data->{"info"};
             }else{ $this->enviar_error(17, "curlData() #2"); }
         }else{ $this->enviar_error(17, "curlData() #1"); }
