@@ -132,12 +132,17 @@ class Core{
         if(!curl_errno($ch)){
             $data = json_decode(curl_exec($ch));
             echo "CURL NO ERROR<br/>";
+            echo "<pre>";
+            print_r($data);
+            echo "</pre>";
             curl_close($ch);
             if($data->{'op'} == 1){
                 if(!is_dir($this->dir_info)){
+                    echo "DIR: ".$this->dir_info." NO EXISTE<br/>";
                     if(!mkdir($this->dir_info, 0777)){
                         $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info);
-                    }
+                        echo "DIR: ".$this->dir_info." NO PUDO SER CREADA <br/>";
+                    }else{ echo "DIR: ".$this->dir_info." FUE CREADA CON EXITO <br/>"; }
                     if(!mkdir($this->dir_info."pedidos/", 0777)){
                         $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."pedidos");
                     }
@@ -147,7 +152,7 @@ class Core{
                     if(!mkdir($this->dir_info."polygon/", 0777)){
                         $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."polygon");
                     }
-                }
+                }else{ echo "DIR: ".$this->dir_info." EXISTE<br/>"; }
                 /*
                 $config = $this->get_config();
                 $config["actualizar"] = 0;
