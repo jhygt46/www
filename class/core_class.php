@@ -114,10 +114,10 @@ class Core{
     public function get_data(){
         $config = $this->get_config();
         if(file_exists($this->dir_info."versiones/".$config["info"]) && $config["actualizar"] == 0){
-            echo "GET DATA FILE<br/>";
+            echo "GET DATA FILE";
             return json_decode(file_get_contents($this->dir_info."versiones/".$config["info"]));
         }else{
-            echo "GET DATA CURL<br/>";
+            echo "GET CURL FILE";
             return $this->curlData();
         }
     }
@@ -129,22 +129,14 @@ class Core{
         curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-        $data = json_decode(curl_exec($ch));
-        echo "<pre>";
-        print_r($data);
-        echo "</pre>";
-        curl_close($ch);
-        /*
         if(!curl_errno($ch)){
-            echo "CURL NO ERROR<br/>";
+            $data = json_decode(curl_exec($ch));
             curl_close($ch);
             if($data->{'op'} == 1){
                 if(!is_dir($this->dir_info)){
-                    echo "DIR: ".$this->dir_info." NO EXISTE<br/>";
                     if(!mkdir($this->dir_info, 0777)){
                         $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info);
-                        echo "DIR: ".$this->dir_info." NO PUDO SER CREADA <br/>";
-                    }else{ echo "DIR: ".$this->dir_info." FUE CREADA CON EXITO <br/>"; }
+                    }
                     if(!mkdir($this->dir_info."pedidos/", 0777)){
                         $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."pedidos");
                     }
@@ -154,8 +146,8 @@ class Core{
                     if(!mkdir($this->dir_info."polygon/", 0777)){
                         $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."polygon");
                     }
-                }else{ echo "DIR: ".$this->dir_info." EXISTE<br/>"; }
-                
+                }
+                /*
                 $config = $this->get_config();
                 $config["actualizar"] = 0;
                 if(!file_put_contents($this->dir_info."config.json", json_encode($config))){
@@ -195,11 +187,10 @@ class Core{
                         }
                     }
                 }else{ $this->enviar_error(16, "No se pudo crear el archivo index.js"); }
-                
+                */
                 return $data->{"info"};
             }else{ $this->enviar_error(17, "curlData() #2"); }
         }else{ $this->enviar_error(17, "curlData() #1"); }
-        */
     }
     public function get_info_despacho($lat, $lng){
 
