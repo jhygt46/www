@@ -175,14 +175,16 @@ class Core{
                     if(!mkdir($this->dir_data."data/".$data->{"info"}->{"code"}."/", 0777)){
                         die("LA CARPETA ".$this->dir_data."data/".$data->{"info"}->{"code"}."/ NO PUDO SER CREADA<br/>");
                         $this->enviar_error(16, "No se pudo crear el directorio ".$this->dir_data."data/".$data->{"info"}->{"code"}."/");
-                    }else{ 
+                    }else{
+                        /*
                         if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.html", "")){
                             die("EL ARCHIVO ".$this->dir_data."data/".$data->{"info"}->{"code"}."/index.html NO PUDO SER CREADO<br/>");
                             $this->enviar_error(16, "No se pudo crear el html vacio");
                         }
+                        */
                     }
                 }
-                /*
+                
                 if(file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.js", "var data=".json_encode($data->{"data"}))){
                     $categorias = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
                     for($i=0; $i<count($categorias); $i++){
@@ -195,7 +197,7 @@ class Core{
                         }
                     }
                 }else{ $this->enviar_error(16, "No se pudo crear el archivo index.js"); }
-                */
+                
                 return $data->{"info"};
             }else{ $this->enviar_error(17, "curlData() #2"); }
         }else{ $this->enviar_error(17, "curlData() #1"); }
