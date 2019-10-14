@@ -29,26 +29,20 @@ class Core{
             }else{
                 $this->host = (count(explode(".", $_SERVER["HTTP_HOST"])) == 2) ? "www.".strtolower($_SERVER["HTTP_HOST"]) : strtolower($_SERVER["HTTP_HOST"]) ;
             }
-            $this->dir = "/var/data/";
-            $this->dir_info = "/var/data/".$this->host."/";
+            $this->dir = "/var/www/data/";
+            $this->dir_info = "/var/www/data/".$this->host."/";
             $this->dir_data = "/var/www/html/";
             $this->file_err = "/var/error/error.log";
         }else{ die("ARCHIVO CODE NO EXISTE"); }
     }
     public function volver(){
-        
         if(file_exists($this->dir_info."versiones/last.json")){
-            
             $aux = json_decode(file_get_contents($this->dir_info."versiones/last.json"));
             $code = $aux->{'code'};
-
             if($code == $_POST["code"]){
-
                 $config = $this->get_config();
-            
                 $ver_anterior = (isset($_POST["version"]) && is_numeric($_POST["version"])) ? $_POST["version"] : -1 ;
                 $pol_anterior = (isset($_POST["polygon"]) && is_numeric($_POST["polygon"])) ? $_POST["polygon"] : -1 ;
-
                 $versiones = opendir($this->dir_info."versiones/");
                 while($archivo = readdir($versiones)){
                     if($archivo != "." && $archivo != ".." && $archivo != "last.json"){
@@ -56,7 +50,6 @@ class Core{
                     }
                 }
                 ksort($ver_file);
-
                 $polygon = opendir($this->dir_info."polygon/");
                 while($archivo = readdir($polygon)){
                     if($archivo != "." && $archivo != ".." && $archivo != "last.json"){
@@ -64,7 +57,6 @@ class Core{
                     }
                 }
                 ksort($pol_file);
-
                 if($ver_anterior == -1){
                     $config["info"] = "last.json";
                 }
@@ -85,12 +77,9 @@ class Core{
                         }
                     }
                 }
-                
                 file_put_contents($this->dir_info."config.json", json_encode($config));
             }   
-        
         }
-
     }
     public function actualizar(){
         $config = $this->get_config();
