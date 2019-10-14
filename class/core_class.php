@@ -171,12 +171,6 @@ class Core{
                 if(!file_put_contents($this->dir_info."polygon/last.json", json_encode($data->{"polygons"}))){
                     $this->enviar_error(16, "No se pudo guardar los poligonos");
                 }
-                if(!is_dir($this->dir_data."data/")){
-                    if(!mkdir($this->dir_data."data/", 0777)){
-                        die("LA CARPETA ".$this->dir_data."data/ NO PUDO SER CREADA<br/>");
-                        $this->enviar_error(16, "No se pudo crear el directorio ".$this->dir_data);
-                    }
-                }
                 if(!is_dir($this->dir_data."data/".$data->{"info"}->{"code"}."/")){
                     if(!mkdir($this->dir_data."data/".$data->{"info"}->{"code"}."/", 0777)){
                         die("LA CARPETA ".$this->dir_data."data/".$data->{"info"}->{"code"}."/ NO PUDO SER CREADA<br/>");
