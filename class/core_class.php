@@ -136,18 +136,18 @@ class Core{
             $data = json_decode(curl_exec($ch));
             curl_close($ch);
             if($data->{'op'} == 1){
-                if(!is_dir($this->dir_data)){
-                    echo "DIRECTORIO ".$this->dir_data." NO EXISTE <br/>";
-                    if(!mkdir($this->dir_data, 0777)){
-                        echo "NO PUDO SER CREADA LA CARPETA ".$this->dir_data."<br/>";
-                        $this->enviar_error(16, "No se pudo crear el directorio ".$this->dir_data);
+                if(!is_dir($this->dir)){
+                    echo "DIRECTORIO ".$this->dir." NO EXISTE <br/>";
+                    if(!mkdir($this->dir, 0777)){
+                        echo "NO PUDO SER CREADA LA CARPETA ".$this->dir."<br/>";
+                        $this->enviar_error(16, "No se pudo crear el directorio ".$this->dir);
                     }else{
-                        echo "DIRECTORIO ".$this->dir_data." CREADO <br/>";
-                        if(!file_put_contents($this->dir_data."/index.html", "")){
+                        echo "DIRECTORIO ".$this->dir." CREADO <br/>";
+                        if(!file_put_contents($this->dir."/index.html", "")){
                             $this->enviar_error(16, "No se pudo crear el html vacio");
                         }
                     }
-                }else{ echo "DIRECTORIO ".$this->dir_data." EXISTE <br/>"; }
+                }else{ echo "DIRECTORIO ".$this->dir." EXISTE <br/>"; }
                 /*
                 if(!is_dir($this->dir_info)){
                     if(!mkdir($this->dir_info, 0777)){
