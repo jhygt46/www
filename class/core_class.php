@@ -126,32 +126,31 @@ class Core{
             curl_close($ch);
             if($data->{'op'} == 1){
                 if(!is_dir($this->dir)){
-                    echo "DIRECTORIO ".$this->dir." NO EXISTE <br/>";
                     if(!mkdir($this->dir, 0777)){
-                        echo "NO PUDO SER CREADA LA CARPETA ".$this->dir."<br/>";
+                        die("LA CARPETA ".$this->dir." NO PUDO SER CREADA<br/>");
                         $this->enviar_error(16, "No se pudo crear el directorio ".$this->dir);
-                    }else{
-                        echo "DIRECTORIO ".$this->dir." CREADO <br/>";
-                        if(!file_put_contents($this->dir."/index.html", "")){
-                            $this->enviar_error(16, "No se pudo crear el html vacio");
-                        }
-                    }
-                }else{ echo "DIRECTORIO ".$this->dir." EXISTE <br/>"; }
-                /*
-                if(!is_dir($this->dir_info)){
-                    if(!mkdir($this->dir_info, 0777)){
-                        $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info);
-                    }
-                    if(!mkdir($this->dir_info."pedidos/", 0777)){
-                        $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."pedidos");
-                    }
-                    if(!mkdir($this->dir_info."versiones/", 0777)){
-                        $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."versiones");
-                    }
-                    if(!mkdir($this->dir_info."polygon/", 0777)){
-                        $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."polygon");
                     }
                 }
+                if(!is_dir($this->dir_info)){
+                    if(!mkdir($this->dir_info, 0777)){
+                        die("LA CARPETA ".$this->dir_info." NO PUDO SER CREADA<br/>");
+                        $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info);
+                    }else{
+                        if(!mkdir($this->dir_info."pedidos/", 0777)){
+                            die("LA CARPETA ".$this->dir_info."pedidos/ NO PUDO SER CREADA<br/>");
+                            $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."pedidos");
+                        }
+                        if(!mkdir($this->dir_info."versiones/", 0777)){
+                            die("LA CARPETA ".$this->dir_info."versiones/ NO PUDO SER CREADA<br/>");
+                            $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."versiones");
+                        }
+                        if(!mkdir($this->dir_info."polygon/", 0777)){
+                            die("LA CARPETA ".$this->dir_info."polygon/ NO PUDO SER CREADA<br/>");
+                            $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."polygon");
+                        }
+                    }
+                }
+                /*
                 $config = $this->get_config();
                 $config["actualizar"] = 0;
                 if(!file_put_contents($this->dir_info."config.json", json_encode($config))){
