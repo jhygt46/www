@@ -13,11 +13,11 @@ class Core{
         
         if(file_exists("/var/code.json")){
             $this->code = file_get_contents("/var/code.json");
-            if(file_exists("/var/data/server_ip.json")){
-                $this->server_ip = file_get_contents("/var/data/server_ip.json");
+            if(file_exists("/var/server_ip.json")){
+                $this->server_ip = file_get_contents("/var/server_ip.json");
             }else{
                 $this->server_ip = file_get_contents("http://ipecho.net/plain");
-                file_put_contents("/var/data/server_ip.json", $this->server_ip);
+                file_put_contents("/var/server_ip.json", $this->server_ip);
             }
             if($_SERVER["HTTP_HOST"] == $this->server_ip){
                 if(isset($_GET["url"])){
@@ -136,6 +136,15 @@ class Core{
             $data = json_decode(curl_exec($ch));
             curl_close($ch);
             if($data->{'op'} == 1){
+                if(!is_dir($this->dir_data)){
+                    if(!mkdir($this->dir_data, 0777)){
+                        $this->enviar_error(16, "No se pudo crear el directorio ".$this->dir_data);
+                    }else{
+                        if(!file_put_contents($this->dir_data."/index.html", "")){
+                            $this->enviar_error(16, "No se pudo crear el html vacio");
+                        }
+                    }
+                }
                 if(!is_dir($this->dir_info)){
                     if(!mkdir($this->dir_info, 0777)){
                         $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info);
@@ -170,15 +179,6 @@ class Core{
                 }
                 if(!file_put_contents($this->dir_info."polygon/last.json", json_encode($data->{"polygons"}))){
                     $this->enviar_error(16, "No se pudo guardar los poligonos");
-                }
-                if(!is_dir($this->dir_data."data/")){
-                    if(!mkdir($this->dir_data."data/", 0777)){
-                        $this->enviar_error(16, "No se pudo crear el directorio ".$this->dir_data."data/");
-                    }else{
-                        if(!file_put_contents($this->dir_data."data/index.html", "")){
-                            $this->enviar_error(16, "No se pudo crear el html vacio");
-                        }
-                    }
                 }
                 if(!is_dir($this->dir_data."data/".$data->{"info"}->{"code"})){
                     echo "NO EXISTE DIRECCION ".$this->dir_data."data/".$data->{"info"}->{"code"};
