@@ -150,7 +150,6 @@ class Core{
                         $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."polygon");
                     }
                 }
-                
                 $config = $this->get_config();
                 $config["actualizar"] = 0;
                 if(!file_put_contents($this->dir_info."config.json", json_encode($config))){
@@ -161,7 +160,7 @@ class Core{
                 }
                 if(file_put_contents($this->dir_info."versiones/last.json", json_encode($data->{"info"}))){
                     if($data->{"info"}->{"logo"} != "sinlogo.png"){
-                        if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"logo"}, file_get_contents("http://www.misitiodelivery.cl/images/logos/".$data->{"info"}->{"logo"}))){
+                        if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"logo"}, file_get_contents("https://www.misitiodelivery.cl/images/logos/".$data->{"info"}->{"logo"}))){
                             $this->enviar_error(16, "No se pudo guardar la logo");
                         }
                     }
