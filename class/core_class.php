@@ -150,7 +150,6 @@ class Core{
                         }
                     }
                 }
-                /*
                 $config = $this->get_config();
                 $config["actualizar"] = 0;
                 if(!file_put_contents($this->dir_info."config.json", json_encode($config))){
@@ -172,14 +171,24 @@ class Core{
                 if(!file_put_contents($this->dir_info."polygon/last.json", json_encode($data->{"polygons"}))){
                     $this->enviar_error(16, "No se pudo guardar los poligonos");
                 }
-                if(!is_dir($this->dir_data."data/".$data->{"info"}->{"code"})){
-                    echo "NO EXISTE DIRECCION ".$this->dir_data."data/".$data->{"info"}->{"code"};
-                    if(mkdir($this->dir_data."data/".$data->{"info"}->{"code"}, 0777)){
+                if(!is_dir($this->dir_data."data/")){
+                    if(!mkdir($this->dir_data."data/", 0777)){
+                        die("LA CARPETA ".$this->dir_data."data/ NO PUDO SER CREADA<br/>");
+                        $this->enviar_error(16, "No se pudo crear el directorio ".$this->dir_data);
+                    }
+                }
+                if(!is_dir($this->dir_data."data/".$data->{"info"}->{"code"}."/")){
+                    if(!mkdir($this->dir_data."data/".$data->{"info"}->{"code"}."/", 0777)){
+                        die("LA CARPETA ".$this->dir_data."data/".$data->{"info"}->{"code"}."/ NO PUDO SER CREADA<br/>");
+                        $this->enviar_error(16, "No se pudo crear el directorio ".$this->dir_data."data/".$data->{"info"}->{"code"}."/");
+                    }else{ 
                         if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.html", "")){
+                            die("EL ARCHIVO ".$this->dir_data."data/".$data->{"info"}->{"code"}."/index.html NO PUDO SER CREADO<br/>");
                             $this->enviar_error(16, "No se pudo crear el html vacio");
                         }
-                    }else{ echo "ERROR: ".$this->dir_data."data/".$data->{"info"}->{"code"}; }
+                    }
                 }
+                /*
                 if(file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.js", "var data=".json_encode($data->{"data"}))){
                     $categorias = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
                     for($i=0; $i<count($categorias); $i++){
