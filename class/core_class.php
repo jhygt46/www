@@ -137,15 +137,18 @@ class Core{
             curl_close($ch);
             if($data->{'op'} == 1){
                 if(!is_dir($this->dir_data)){
+                    echo "DIRECTORIO ".$this->dir_data." NO EXISTE <br/>";
                     if(!mkdir($this->dir_data, 0777)){
                         echo "NO PUDO SER CREADA LA CARPETA ".$this->dir_data."<br/>";
                         $this->enviar_error(16, "No se pudo crear el directorio ".$this->dir_data);
                     }else{
+                        echo "DIRECTORIO ".$this->dir_data." CREADO <br/>";
                         if(!file_put_contents($this->dir_data."/index.html", "")){
                             $this->enviar_error(16, "No se pudo crear el html vacio");
                         }
                     }
-                }
+                }else{ echo "DIRECTORIO ".$this->dir_data." EXISTE <br/>"; }
+                /*
                 if(!is_dir($this->dir_info)){
                     if(!mkdir($this->dir_info, 0777)){
                         $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info);
@@ -189,7 +192,6 @@ class Core{
                         }
                     }else{ echo "ERROR: ".$this->dir_data."data/".$data->{"info"}->{"code"}; }
                 }
-
                 if(file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.js", "var data=".json_encode($data->{"data"}))){
                     $categorias = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
                     for($i=0; $i<count($categorias); $i++){
@@ -202,6 +204,7 @@ class Core{
                         }
                     }
                 }else{ $this->enviar_error(16, "No se pudo crear el archivo index.js"); }
+                */
                 return $data->{"info"};
             }else{ $this->enviar_error(17, "curlData() #2"); }
         }else{ $this->enviar_error(17, "curlData() #1"); }
