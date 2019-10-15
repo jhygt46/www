@@ -168,6 +168,11 @@ class Core{
                             $this->enviar_error(16, "No se pudo guardar la logo");
                         }
                     }
+                    if($data->{"info"}->{"favicon"} != "default.ico"){
+                        if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"favicon"}, file_get_contents("https://www.misitiodelivery.cl/images/favicon/".$data->{"info"}->{"favicon"}))){
+                            $this->enviar_error(16, "No se pudo guardar la logo");
+                        }
+                    }
                 }
                 if(file_exists($this->dir_info."polygon/last.json")){
                     rename($this->dir_info."polygon/last.json", $this->dir_info."polygon/".date("Ymd", filemtime($this->dir_info."polygon/last.json")).".json");
