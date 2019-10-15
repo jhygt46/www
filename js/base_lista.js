@@ -888,18 +888,22 @@ function paso_2(){
 
     paso = 2;
     if(proceso(true, true) && cantidad > 0){
+        console.log("A");
         if(data.config.retiro_local == 1 && data.config.despacho_domicilio == 1){
+            console.log("B");
             ver_paso_2();
         }else{
+            console.log("C");
             if(data.config.retiro_local == 1){
+                console.log("D");
                 show_modal_locales();
             }
             if(data.config.despacho_domicilio == 1){
+                console.log("E");
                 show_despacho();
             }
-            
         }
-    }
+    }else{ console.log("F"); }
     
 }
 function paso_3(){

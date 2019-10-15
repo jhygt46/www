@@ -123,12 +123,6 @@ class Core{
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         if(!curl_errno($ch)){
             $data = json_decode(curl_exec($ch));
-            /*
-            echo "<pre>";
-            print_r($data);
-            echo "</pre>";
-            exit;
-            */
             curl_close($ch);
             if($data->{'op'} == 1){
                 if(!is_dir($this->dir)){
