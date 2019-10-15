@@ -123,6 +123,10 @@ class Core{
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         if(!curl_errno($ch)){
             $data = json_decode(curl_exec($ch));
+            echo "<pre>";
+            print_r($data);
+            echo "</pre>";
+            exit;
             curl_close($ch);
             if($data->{'op'} == 1){
                 if(!is_dir($this->dir)){
@@ -176,15 +180,9 @@ class Core{
                         die("LA CARPETA ".$this->dir_data."data/".$data->{"info"}->{"code"}."/ NO PUDO SER CREADA<br/>");
                         $this->enviar_error(16, "No se pudo crear el directorio ".$this->dir_data."data/".$data->{"info"}->{"code"}."/");
                     }else{
-                        /*
-                        if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.html", "")){
-                            die("EL ARCHIVO ".$this->dir_data."data/".$data->{"info"}->{"code"}."/index.html NO PUDO SER CREADO<br/>");
-                            $this->enviar_error(16, "No se pudo crear el html vacio");
-                        }
-                        */
+                        file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.html", "");
                     }
                 }
-                
                 if(file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.js", "var data=".json_encode($data->{"data"}))){
                     $categorias = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
                     for($i=0; $i<count($categorias); $i++){
