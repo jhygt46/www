@@ -63,8 +63,12 @@
         <link rel="stylesheet" href="/css/<?php echo $info->{"css_color"}; ?>" media="all" />
         <link rel="stylesheet" href="/css/<?php echo $info->{"css_tipo"}; ?>" media="all" />
         <link rel="stylesheet" href="/css/css_base.css" media="all" />
+        <?php if($info->{"favicon"} == "default.ico"){ ?>
+            <link rel='shortcut icon' type='image/x-icon' href='default.ico' />
+        <?php }else{ ?>
+            <link rel='shortcut icon' type='image/x-icon' href='/data/<?php echo $info->{'code'}; ?>/<?php echo $info->{"favicon"}; ?>' />
+        <?php } ?>
         
-        <link rel='shortcut icon' type='image/x-icon' href='/data/<?php echo $info->{'code'}; ?>/<?php echo $info->{"favicon"}; ?>' />
         
         <script src="https://www.izusushi.cl/socket.io/socket.io.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
