@@ -710,6 +710,8 @@ function get_horarios(id, tipo){
 }
 function info_locales(){
 
+    console.log(data);
+
     var fecha = new Date();
     if(data.locales !== null){
         for(var i=0, ilen=data.locales.length; i<ilen; i++){
