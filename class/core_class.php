@@ -102,16 +102,11 @@ class Core{
     }
     public function get_data(){
         $config = $this->get_config();
-        return $this->curlData();
-        /*
         if(file_exists($this->dir_info."versiones/".$config["info"]) && $config["actualizar"] == 0){
-            echo "GET DATA FILE";
             return json_decode(file_get_contents($this->dir_info."versiones/".$config["info"]));
         }else{
-            echo "GET CURL FILE";
             return $this->curlData();
         }
-        */
     }
     public function curlData(){
         $send["code"] = $this->code;
