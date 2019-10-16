@@ -185,17 +185,16 @@ class Core{
                 if(file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.js", "var data=".json_encode($data->{"data"}))){
                     $categorias = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
                     for($i=0; $i<count($categorias); $i++){
-                        echo "image: ".$categorias[$i]->{"image"}." strlen: ".strlen($categorias[$i]->{"image"})."<br/>";
-                        //if(strlen($categorias[$i]->{"image"}) == 24 || strlen($categorias[$i]->{"image"}) == 26){
+                        if(strlen($categorias[$i]->{"image"}) == 25){
                             if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$categorias[$i]->{"image"})){
                                 if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$categorias[$i]->{"image"}, file_get_contents("http://www.misitiodelivery.cl/images/categorias/".$categorias[$i]->{"image"}))){
                                     $this->enviar_error(16, "No se pudo guardar las imagenes de categorias");
                                 }
                             }
-                        //}
+                        }
                     }
                 }else{ $this->enviar_error(16, "No se pudo crear el archivo index.js"); }
-                exit;
+                
                 return $data->{"info"};
             }else{ $this->enviar_error(17, "curlData() #2"); }
         }else{ $this->enviar_error(17, "curlData() #1"); }
