@@ -20,11 +20,6 @@
     }
     
     $info = $core->get_data();
-    /*
-    echo "<pre>";
-    print_r($info);
-    echo "</pre>";
-    */
     if($info === null){
         die("<table border='0' width='100%' height='100%'><tr><td align='center' valign='middle'>Sitio no existe</td></tr></table>");
     }else{
@@ -81,6 +76,8 @@
             var inicio = <?php echo ($info->{"inicio_html"} == "") ? 0 : 1 ; ?>;
             var code = "<?php echo $info->{'code'}; ?>";
             var estados = [ <?php for($i=0; $i<count($info->{'estados'}); $i++){ if($i>0){ echo ", "; } echo "'".$info->{'estados'}[$i]."'";  } ?> ];
+            var fecha_actual = <?php echo time(); ?>000;
+            var fecha_pc = new Date().getTime();
         </script>
         <style>
             body{

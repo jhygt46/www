@@ -712,28 +712,22 @@ function info_locales(){
 
     var fecha = new Date();
     if(data.locales !== null){
-        console.log("A");
         for(var i=0, ilen=data.locales.length; i<ilen; i++){
             if(data.locales[i].horarios !== null){
-                console.log("B");
                 var dia = fecha.getDay() > 0 ? fecha.getDay() : 7 ;
                 var hora = fecha.getHours() * 60 + fecha.getMinutes();
                 for(var j=0, jlen=data.locales[i].horarios.length; j<jlen; j++){
                     if(data.locales[i].horarios[j].dia_ini <= dia && data.locales[i].horarios[j].dia_fin >= dia){
-                        console.log("C");
                         var hr_inicio = data.locales[i].horarios[j].hora_ini * 60 + parseInt(data.locales[i].horarios[j].min_ini);
                         var hr_fin = data.locales[i].horarios[j].hora_fin * 60 + parseInt(data.locales[i].horarios[j].min_fin);
                         if(hr_inicio <= hora && hr_fin >= hora){
-                            console.log("D");
                             if(data.locales[i].horarios[j].tipo == 1 || data.locales[i].horarios[j].tipo == 0){
-                                console.log("E");
                                 return true;
                             }
                         }
                     }
                 }
             }else{
-                console.log("F");
                 return true;
             }
         }
