@@ -77,6 +77,7 @@
             var code = "<?php echo $info->{'code'}; ?>";
             var estados = [ <?php for($i=0; $i<count($info->{'estados'}); $i++){ if($i>0){ echo ", "; } echo "'".$info->{'estados'}[$i]."'";  } ?> ];
             var fecha_js = new Date(<?php echo time(); ?>000);
+            var fecha_pc = new Date().getTime();
         </script>
         <style>
             body{
@@ -230,7 +231,7 @@
                                 <div class="info_modal">
                                     <div class="cont_direccion">
                                         <div class="direccion_opciones">
-                                            <div class="rlocal dir_op" onclick="show_modal_locales()" style="background: url('/images/retiro_01.jpg')">
+                                            <div class="rlocal dir_op" onclick="show_modal_locales()" style="background: url('/_images/retiro.jpg')">
                                                 <div class="codir prin_alpha_1">
                                                     <div class="cont_info_dir valign">
                                                         <div class="title">Retiro en Local</div>
@@ -239,7 +240,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="cdesp dir_op" onclick="show_despacho()" style="background: url('/images/despacho_01.jpg')">
+                                            <div class="cdesp dir_op" onclick="show_despacho()" style="background: url('/_images/despacho.jpg')">
                                                 <div class="codir prin_alpha_1">
                                                     <div class="cont_info_dir valign">
                                                         <div class="title">Despacho a Domicilio</div>
