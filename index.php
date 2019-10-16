@@ -1,11 +1,11 @@
 <?php
 
-    if($_GET["mode"] != "developer"){
-        die("SITIO EN CONSTRUCCION");
-    }
-
     if(isset($_POST["test"]) && $_POST["test"] == "Dw7k2s_hKi5sqPs8"){
         die("hjS3r%mDs-5gYa6ib_5Ps");
+    }
+
+    if($_GET["mode"] != "developer"){
+        die("SITIO EN CONSTRUCCION");
     }
 
     require_once "class/core_class.php";
@@ -76,8 +76,7 @@
             var inicio = <?php echo ($info->{"inicio_html"} == "") ? 0 : 1 ; ?>;
             var code = "<?php echo $info->{'code'}; ?>";
             var estados = [ <?php for($i=0; $i<count($info->{'estados'}); $i++){ if($i>0){ echo ", "; } echo "'".$info->{'estados'}[$i]."'";  } ?> ];
-            var fecha_js = new Date(<?php echo time(); ?>000).toString();
-            console.log(fecha_js);
+            var fecha_js = new Date(<?php echo time(); ?>000);
         </script>
         <style>
             body{
