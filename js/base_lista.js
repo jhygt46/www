@@ -822,8 +822,11 @@ function aux_fecha(){
     var fecha_actual = new Date(datetime_actual);
     var fecha_ayer = new Date(datetime_actual - 86400000);
 
+    var fecha_ayer_00 = new Date(fecha_ayer.getFullYear(), fecha_ayer.getMonth(), fecha_ayer.getDate());
+
     console.log(fecha_actual);
-    console.log(fecha_ayer.getDay());
+    console.log(fecha_ayer);
+    console.log(fecha_ayer_00);
 
     //var dia = fecha.getDay() > 0 ? fecha.getDay() : 7 ;
     //var dia = fecha_actual.getDay() > 0 ? fecha_actual.getDay() : 7 ;
