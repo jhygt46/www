@@ -829,6 +829,8 @@ function aux_fecha(){
         for(var i=0, ilen=data.locales.length; i<ilen; i++){
             for(var j=0, jlen=data.locales[i].horarios.length; j<jlen; j++){
 
+                console.log(data.locales[i].horarios[j]);
+
                 var dia_ayer = fecha_ayer.getDay() > 0 ? fecha_ayer.getDay() : 7 ;
                 var dia_hoy = fecha_actual.getDay() > 0 ? fecha_actual.getDay() : 7 ;
                 var hora_ini = (data.locales[i].horarios[j].hora_ini * 60 + data.locales[i].horarios[j].min_ini) * 1000;
@@ -848,7 +850,7 @@ function aux_fecha(){
                         console.log("ENTRO HORA HOY");
                     }
                 }
-                
+
             }
         }
     }
