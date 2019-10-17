@@ -815,12 +815,18 @@ function info_locales(){
         }
     }
 }
+
 function aux_fecha(){
 
     var datetime_actual = fecha_js + new Date().getTime() - fecha_pc;
     var fecha_actual = new Date(datetime_actual);
-    var dia = fecha_actual.getDay() > 0 ? fecha_actual.getDay() : 7 ;
-    console.log(dia);
+    var fecha_ayer = new Date(datetime_actual - 86400000);
+
+    console.log(fecha_actual);
+    console.log(fecha_ayer);
+
+    //var dia = fecha_actual.getDay() > 0 ? fecha_actual.getDay() : 7 ;
+    //console.log(dia);
 
     if(data.locales !== null){
         for(var i=0, ilen=data.locales.length; i<ilen; i++){
