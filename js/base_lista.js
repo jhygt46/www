@@ -825,8 +825,6 @@ function aux_fecha(){
     var fecha_hoy_00 = new Date(fecha_actual.getFullYear(), fecha_actual.getMonth(), fecha_actual.getDate()).getTime();
     var fecha_ayer_00 = new Date(fecha_ayer.getFullYear(), fecha_ayer.getMonth(), fecha_ayer.getDate()).getTime();
 
-    console.log(datetime_actual);
-
     if(data.locales !== null){
         for(var i=0, ilen=data.locales.length; i<ilen; i++){
             for(var j=0, jlen=data.locales[i].horarios.length; j<jlen; j++){
