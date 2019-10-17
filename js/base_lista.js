@@ -818,6 +818,9 @@ function info_locales(){
 function aux_fecha(){
 
     var hora_actual = fecha_js + new Date().getTime() - fecha_pc;
+    var dia = fecha.getDay() > 0 ? fecha.getDay() : 7 ;
+    console.log(dia);
+
     if(data.locales !== null){
         for(var i=0, ilen=data.locales.length; i<ilen; i++){
             console.log(data.locales[i]);
