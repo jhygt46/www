@@ -816,7 +816,7 @@ function info_locales(){
     }
 }
 
-function aux_fecha(){
+function estado_local(id_loc){
 
     var datetime_actual = fecha_js + new Date().getTime() - fecha_pc;
     var fecha_actual = new Date(datetime_actual);
@@ -824,11 +824,11 @@ function aux_fecha(){
 
     var fecha_hoy_00 = new Date(fecha_actual.getFullYear(), fecha_actual.getMonth(), fecha_actual.getDate()).getTime();
     var fecha_ayer_00 = new Date(fecha_ayer.getFullYear(), fecha_ayer.getMonth(), fecha_ayer.getDate()).getTime();
-    var res = { op: 2, mensaje: '', tiempo: 0 }
+    var res = { op: 2, mensaje: 'Local Cerrado', tiempo: 0 }
 
     if(data.locales !== null){
         for(var i=0, ilen=data.locales.length; i<ilen; i++){
-            console.log(data.locales[i]);
+            if(data.locales[i].id_loc == id_loc);
             for(var j=0, jlen=data.locales[i].horarios.length; j<jlen; j++){
 
                 var dia_ayer = fecha_ayer.getDay() > 0 ? fecha_ayer.getDay() : 7 ;
@@ -853,6 +853,7 @@ function aux_fecha(){
                     }
                 }
 
+            }
             }
         }
     }
