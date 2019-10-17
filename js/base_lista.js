@@ -851,10 +851,14 @@ function aux_fecha(){
                     console.log("ENTRO HORA HOY #1");
                     var time_hoy_ini = new Date(fecha_hoy_00 + hora_ini).getTime();
                     var time_hoy_fin = new Date(fecha_hoy_00 + hora_fin).getTime();
-                    console.log(time_hoy_ini+"//"+time_hoy_fin);
+                    console.log(new Date(datetime_actual));
+                    console.log(new Date(fecha_hoy_00 + hora_ini));
+                    console.log(new Date(fecha_hoy_00 + hora_fin));
+                    /*
                     if(datetime_actual >= time_hoy_ini && datetime_actual <= time_hoy_fin){
                         console.log("ENTRO HORA HOY #2");
                     }
+                    */
                 }
 
             }
