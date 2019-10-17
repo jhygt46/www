@@ -815,6 +815,13 @@ function info_locales(){
         }
     }
 }
+function aux_fecha(){
+
+    console.log(fecha_js);
+    var diff = new Date().getTime() - fecha_pc;
+    console.log(fecha_js+"/"+diff);
+
+}
 function show_modal_locales(){
 
     var info_loc = info_locales();
