@@ -882,6 +882,7 @@ function estado_locales(tipo){
 
     if(data.locales !== null){
         for(var i=0, ilen=data.locales.length; i<ilen; i++){
+            console.log(data.locales[i].tipo);
             if(data.locales[i].tipo == tipo || data.locales[i].tipo == 0){
                 for(var j=0, jlen=data.locales[i].horarios.length; j<jlen; j++){
 
