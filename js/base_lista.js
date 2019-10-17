@@ -835,8 +835,8 @@ function aux_fecha(){
 
                 var dia_ayer = fecha_ayer.getDay() > 0 ? fecha_ayer.getDay() : 7 ;
                 var dia_hoy = fecha_actual.getDay() > 0 ? fecha_actual.getDay() : 7 ;
-                var hora_ini = (data.locales[i].horarios[j].hora_ini * 60 + data.locales[i].horarios[j].min_ini) * 1000;
-                var hora_fin = (data.locales[i].horarios[j].hora_fin * 60 + data.locales[i].horarios[j].min_fin) * 1000;
+                var hora_ini = (data.locales[i].horarios[j].hora_ini * 24 + data.locales[i].horarios[j].min_ini * 60) * 1000;
+                var hora_fin = (data.locales[i].horarios[j].hora_fin * 24 + data.locales[i].horarios[j].min_fin * 60) * 1000;
 
                 if(dia_ayer >= data.locales[i].horarios[j].dia_ini && dia_ayer <= data.locales[i].horarios[j].dia_fin){
                     console.log("ENTRO HORA AYER #2");
