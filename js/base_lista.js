@@ -828,32 +828,32 @@ function estado_local(id_loc){
 
     if(data.locales !== null){
         for(var i=0, ilen=data.locales.length; i<ilen; i++){
-            if(data.locales[i].id_loc == id_loc);
-            for(var j=0, jlen=data.locales[i].horarios.length; j<jlen; j++){
+            if(data.locales[i].id_loc == id_loc){
+                for(var j=0, jlen=data.locales[i].horarios.length; j<jlen; j++){
 
-                var dia_ayer = fecha_ayer.getDay() > 0 ? fecha_ayer.getDay() : 7 ;
-                var dia_hoy = fecha_actual.getDay() > 0 ? fecha_actual.getDay() : 7 ;
-                var hora_ini = (data.locales[i].horarios[j].hora_ini * 3600 + data.locales[i].horarios[j].min_ini * 60) * 1000;
-                var hora_fin = (data.locales[i].horarios[j].hora_fin * 3600 + data.locales[i].horarios[j].min_fin * 60) * 1000;
+                    var dia_ayer = fecha_ayer.getDay() > 0 ? fecha_ayer.getDay() : 7 ;
+                    var dia_hoy = fecha_actual.getDay() > 0 ? fecha_actual.getDay() : 7 ;
+                    var hora_ini = (data.locales[i].horarios[j].hora_ini * 3600 + data.locales[i].horarios[j].min_ini * 60) * 1000;
+                    var hora_fin = (data.locales[i].horarios[j].hora_fin * 3600 + data.locales[i].horarios[j].min_fin * 60) * 1000;
 
-                if(dia_ayer >= data.locales[i].horarios[j].dia_ini && dia_ayer <= data.locales[i].horarios[j].dia_fin){
-                    var time_ayer_ini = new Date(fecha_ayer_00 + hora_ini).getTime();
-                    var time_ayer_fin = new Date(fecha_ayer_00 + hora_fin).getTime();
-                    if(datetime_actual >= time_ayer_ini && datetime_actual <= time_ayer_fin){
-                        res.op = 1;
-                        res.tiempo = parseInt((time_ayer_fin - datetime_actual)/60000);
+                    if(dia_ayer >= data.locales[i].horarios[j].dia_ini && dia_ayer <= data.locales[i].horarios[j].dia_fin){
+                        var time_ayer_ini = new Date(fecha_ayer_00 + hora_ini).getTime();
+                        var time_ayer_fin = new Date(fecha_ayer_00 + hora_fin).getTime();
+                        if(datetime_actual >= time_ayer_ini && datetime_actual <= time_ayer_fin){
+                            res.op = 1;
+                            res.tiempo = parseInt((time_ayer_fin - datetime_actual)/60000);
+                        }
                     }
-                }
-                if(dia_hoy >= data.locales[i].horarios[j].dia_ini && dia_hoy <= data.locales[i].horarios[j].dia_fin){
-                    var time_hoy_ini = new Date(fecha_hoy_00 + hora_ini).getTime();
-                    var time_hoy_fin = new Date(fecha_hoy_00 + hora_fin).getTime();
-                    if(datetime_actual >= time_hoy_ini && datetime_actual <= time_hoy_fin){
-                        res.op = 1;
-                        res.tiempo = parseInt((time_hoy_fin - datetime_actual)/60000);
+                    if(dia_hoy >= data.locales[i].horarios[j].dia_ini && dia_hoy <= data.locales[i].horarios[j].dia_fin){
+                        var time_hoy_ini = new Date(fecha_hoy_00 + hora_ini).getTime();
+                        var time_hoy_fin = new Date(fecha_hoy_00 + hora_fin).getTime();
+                        if(datetime_actual >= time_hoy_ini && datetime_actual <= time_hoy_fin){
+                            res.op = 1;
+                            res.tiempo = parseInt((time_hoy_fin - datetime_actual)/60000);
+                        }
                     }
-                }
 
-            }
+                }
             }
         }
     }
