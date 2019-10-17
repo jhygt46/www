@@ -825,14 +825,19 @@ function aux_fecha(){
     console.log(fecha_actual);
     console.log(fecha_ayer.getDay());
 
+    //var dia = fecha.getDay() > 0 ? fecha.getDay() : 7 ;
     //var dia = fecha_actual.getDay() > 0 ? fecha_actual.getDay() : 7 ;
     //console.log(dia);
 
     if(data.locales !== null){
         for(var i=0, ilen=data.locales.length; i<ilen; i++){
-            console.log(data.locales[i]);
             for(var j=0, jlen=data.locales[i].horarios.length; j<jlen; j++){
-                console.log(data.locales[i].horarios[j]);
+                console.log(data.locales[i].horarios[j].dia_ini);
+                console.log(data.locales[i].horarios[j].dia_fin);
+                console.log(data.locales[i].horarios[j].hora_ini);
+                console.log(data.locales[i].horarios[j].hora_fin);
+                console.log(data.locales[i].horarios[j].min_ini);
+                console.log(data.locales[i].horarios[j].min_fin);
             }
         }
     }
