@@ -840,7 +840,7 @@ function aux_fecha(){
                     var time_ayer_fin = new Date(fecha_ayer_00 + hora_fin).getTime();
                     if(datetime_actual >= time_ayer_ini && datetime_actual <= time_ayer_fin){
                         res.op = 1;
-                        res.tiempo = (time_ayer_fin - datetime_actual)/1000;
+                        res.tiempo = parseInt((time_ayer_fin - datetime_actual)/60000);
                     }
                 }
                 if(dia_hoy >= data.locales[i].horarios[j].dia_ini && dia_hoy <= data.locales[i].horarios[j].dia_fin){
@@ -848,7 +848,7 @@ function aux_fecha(){
                     var time_hoy_fin = new Date(fecha_hoy_00 + hora_fin).getTime();
                     if(datetime_actual >= time_hoy_ini && datetime_actual <= time_hoy_fin){
                         res.op = 1;
-                        res.tiempo = (time_hoy_fin - datetime_actual)/1000;
+                        res.tiempo = parseInt((time_hoy_fin - datetime_actual)/60000);
                     }
                 }
 
