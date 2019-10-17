@@ -824,6 +824,7 @@ function aux_fecha(){
 
     var fecha_hoy_00 = new Date(fecha_actual.getFullYear(), fecha_actual.getMonth(), fecha_actual.getDate()).getTime();
     var fecha_ayer_00 = new Date(fecha_ayer.getFullYear(), fecha_ayer.getMonth(), fecha_ayer.getDate()).getTime();
+    var res = { op: 2, mensaje: '', tiempo: 0 }
 
     if(data.locales !== null){
         for(var i=0, ilen=data.locales.length; i<ilen; i++){
@@ -835,25 +836,26 @@ function aux_fecha(){
                 var hora_fin = (data.locales[i].horarios[j].hora_fin * 3600 + data.locales[i].horarios[j].min_fin * 60) * 1000;
 
                 if(dia_ayer >= data.locales[i].horarios[j].dia_ini && dia_ayer <= data.locales[i].horarios[j].dia_fin){
-                    console.log("ENTRO HORA AYER #1");
                     var time_ayer_ini = new Date(fecha_ayer_00 + hora_ini).getTime();
                     var time_ayer_fin = new Date(fecha_ayer_00 + hora_fin).getTime();
                     if(datetime_actual >= time_ayer_ini && datetime_actual <= time_ayer_fin){
-                        console.log("ENTRO HORA AYER #2");
+                        res.op = 1;
+                        res.tiempo = (time_ayer_fin - datetime_actual)/1000;
                     }
                 }
                 if(dia_hoy >= data.locales[i].horarios[j].dia_ini && dia_hoy <= data.locales[i].horarios[j].dia_fin){
-                    console.log("ENTRO HORA HOY #1");
                     var time_hoy_ini = new Date(fecha_hoy_00 + hora_ini).getTime();
                     var time_hoy_fin = new Date(fecha_hoy_00 + hora_fin).getTime();
                     if(datetime_actual >= time_hoy_ini && datetime_actual <= time_hoy_fin){
-                        console.log("ENTRO HORA HOY #2");
+                        res.op = 1;
+                        res.tiempo = (time_hoy_fin - datetime_actual)/1000;
                     }
                 }
 
             }
         }
     }
+    return res;
 
 }
 function show_modal_locales(){
