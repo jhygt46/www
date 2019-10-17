@@ -76,7 +76,7 @@
             var inicio = <?php echo ($info->{"inicio_html"} == "") ? 0 : 1 ; ?>;
             var code = "<?php echo $info->{'code'}; ?>";
             var estados = [ <?php for($i=0; $i<count($info->{'estados'}); $i++){ if($i>0){ echo ", "; } echo "'".$info->{'estados'}[$i]."'";  } ?> ];
-            var fecha_js = new Date(<?php echo time(); ?>000);
+            var fecha_js = new Date(<?php echo time(); ?>000).getTime();
             var fecha_pc = new Date().getTime();
         </script>
         <style>
