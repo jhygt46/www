@@ -828,6 +828,7 @@ function aux_fecha(){
 
     if(data.locales !== null){
         for(var i=0, ilen=data.locales.length; i<ilen; i++){
+            console.log(data.locales[i]);
             for(var j=0, jlen=data.locales[i].horarios.length; j<jlen; j++){
 
                 var dia_ayer = fecha_ayer.getDay() > 0 ? fecha_ayer.getDay() : 7 ;
