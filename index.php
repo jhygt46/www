@@ -236,7 +236,7 @@
                                                     <div class="cont_info_dir valign">
                                                         <div class="title">Retiro en Local</div>
                                                         <div class="stitle">Sin Costo</div>
-                                                        <div class="alert"></div>
+                                                        <div class="alert">Locales Cerrados</div>
                                                     </div>
                                                 </div>
                                             </div>

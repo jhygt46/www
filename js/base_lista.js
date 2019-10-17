@@ -704,8 +704,11 @@ function ver_paso_2(){
     var total = parseInt(get_pedido().total);
     var pedido_minimo = parseInt(data.config.pedido_minimo);
 
-    console.log(info_loc);
-    console.log(info_desp);
+    var info_retiro = estado_locales(1);
+    var info_despacho = estado_locales(2);
+
+    console.log("info retiro: "+info_retiro);
+    console.log("info despacho: "+info_despacho);
 
     if(info_loc){
         // RETIRO EN LOCAL NORMAL
@@ -819,6 +822,9 @@ function info_locales(){
     }
 }
 
+
+
+
 function estado_local(id_loc){
 
     var datetime_actual = fecha_js + new Date().getTime() - fecha_pc;
@@ -865,6 +871,55 @@ function estado_local(id_loc){
     return res;
 
 }
+function estado_locales(tipo){
+
+    var datetime_actual = fecha_js + new Date().getTime() - fecha_pc;
+    var fecha_actual = new Date(datetime_actual);
+    var fecha_ayer = new Date(datetime_actual - 86400000);
+
+    var fecha_hoy_00 = new Date(fecha_actual.getFullYear(), fecha_actual.getMonth(), fecha_actual.getDate()).getTime();
+    var fecha_ayer_00 = new Date(fecha_ayer.getFullYear(), fecha_ayer.getMonth(), fecha_ayer.getDate()).getTime();
+
+    if(data.locales !== null){
+        for(var i=0, ilen=data.locales.length; i<ilen; i++){
+            if(data.locales[i].tipo == tipo || data.locales[i].tipo == 0){
+                for(var j=0, jlen=data.locales[i].horarios.length; j<jlen; j++){
+
+                    var dia_ayer = fecha_ayer.getDay() > 0 ? fecha_ayer.getDay() : 7 ;
+                    var dia_hoy = fecha_actual.getDay() > 0 ? fecha_actual.getDay() : 7 ;
+                    var hora_ini = (data.locales[i].horarios[j].hora_ini * 3600 + data.locales[i].horarios[j].min_ini * 60) * 1000;
+                    var hora_fin = (data.locales[i].horarios[j].hora_fin * 3600 + data.locales[i].horarios[j].min_fin * 60) * 1000;
+
+                    if(dia_ayer >= data.locales[i].horarios[j].dia_ini && dia_ayer <= data.locales[i].horarios[j].dia_fin){
+                        var time_ayer_ini = new Date(fecha_ayer_00 + hora_ini).getTime();
+                        var time_ayer_fin = new Date(fecha_ayer_00 + hora_fin).getTime();
+                        if(datetime_actual >= time_ayer_ini && datetime_actual <= time_ayer_fin){
+                            return true;
+                        }
+                    }
+                    if(dia_hoy >= data.locales[i].horarios[j].dia_ini && dia_hoy <= data.locales[i].horarios[j].dia_fin){
+                        var time_hoy_ini = new Date(fecha_hoy_00 + hora_ini).getTime();
+                        var time_hoy_fin = new Date(fecha_hoy_00 + hora_fin).getTime();
+                        if(datetime_actual >= time_hoy_ini && datetime_actual <= time_hoy_fin){
+                            return true;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+    return false;
+
+}
+
+
+
+
+
+
+
+
 function show_modal_locales(){
 
     var info_loc = info_locales();
