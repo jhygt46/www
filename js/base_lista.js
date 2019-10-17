@@ -704,6 +704,9 @@ function ver_paso_2(){
     var total = parseInt(get_pedido().total);
     var pedido_minimo = parseInt(data.config.pedido_minimo);
 
+    console.log(info_loc);
+    console.log(info_desp);
+
     if(info_loc){
         // RETIRO EN LOCAL NORMAL
         $('.paso_02').find('.rlocal').find('.alert').hide();
