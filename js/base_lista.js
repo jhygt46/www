@@ -672,68 +672,6 @@ function tooglemenu(){
     if(menu == 1)
         hidemenu();
 }
-function get_horarios(id, tipo){
-
-    var fecha = new Date();
-    var dia = fecha.getDay() > 0 ? fecha.getDay() : 7 ;
-    var hora = fecha.getHours() * 60 + fecha.getMinutes();
-
-    var mayor = 0;
-    var next_close = 0;
-
-    var objeto = { open: false, time: 0 };
-
-    for(var i=0, ilen=data.locales.length; i<ilen; i++){
-        if(data.locales[i].id_loc == id){
-            if(data.locales[i].horarios !== null){
-                for(var j=0, jlen=data.locales[i].horarios.length; j<jlen; j++){
-                    if(data.locales[i].horarios[j].dia_ini <= dia && data.locales[i].horarios[j].dia_fin >= dia){
-                        var hr_inicio = data.locales[i].horarios[j].hora_ini * 60 + parseInt(data.locales[i].horarios[j].min_ini);
-                        var hr_fin = data.locales[i].horarios[j].hora_fin * 60 + parseInt(data.locales[i].horarios[j].min_fin);
-                        if(hr_inicio <= hora && hr_fin >= hora){
-                            objeto.open = true;
-                            next_close = hr_fin - hora;
-                            if(next_close > mayor){
-                                mayor = next_close;
-                                objeto.time = next_close;
-                            }
-                        }
-                    }
-                }
-            }else{
-                objeto.open = true;
-                objeto.time = 10000;
-            }
-        }
-    }
-    return objeto;
-}
-function info_locales(){
-
-    var fecha = new Date();
-    if(data.locales !== null){
-        for(var i=0, ilen=data.locales.length; i<ilen; i++){
-            if(data.locales[i].horarios !== null){
-                var dia = fecha.getDay() > 0 ? fecha.getDay() : 7 ;
-                var hora = fecha.getHours() * 60 + fecha.getMinutes();
-                for(var j=0, jlen=data.locales[i].horarios.length; j<jlen; j++){
-                    if(data.locales[i].horarios[j].dia_ini <= dia && data.locales[i].horarios[j].dia_fin >= dia){
-                        var hr_inicio = data.locales[i].horarios[j].hora_ini * 60 + parseInt(data.locales[i].horarios[j].min_ini);
-                        var hr_fin = data.locales[i].horarios[j].hora_fin * 60 + parseInt(data.locales[i].horarios[j].min_fin);
-                        if(hr_inicio <= hora && hr_fin >= hora){
-                            if(data.locales[i].horarios[j].tipo == 1 || data.locales[i].horarios[j].tipo == 0){
-                                return true;
-                            }
-                        }
-                    }
-                }
-            }else{
-                return true;
-            }
-        }
-    }
-
-}
 function info_despacho(){
     var fecha = new Date();
     if(data.locales !== null){
@@ -818,12 +756,69 @@ function modal_test(){
     $('.paso_02 .info_modal').html(lista_locales);
 
 }
+function get_horarios(id, tipo){
+    var fecha = new Date();
+    var dia = fecha.getDay() > 0 ? fecha.getDay() : 7 ;
+    var hora = fecha.getHours() * 60 + fecha.getMinutes();
+    var mayor = 0;
+    var next_close = 0;
+    var objeto = { open: false, time: 0 };
+    for(var i=0, ilen=data.locales.length; i<ilen; i++){
+        if(data.locales[i].id_loc == id){
+            if(data.locales[i].horarios !== null){
+                for(var j=0, jlen=data.locales[i].horarios.length; j<jlen; j++){
+                    if(data.locales[i].horarios[j].dia_ini <= dia && data.locales[i].horarios[j].dia_fin >= dia){
+                        var hr_inicio = data.locales[i].horarios[j].hora_ini * 60 + parseInt(data.locales[i].horarios[j].min_ini);
+                        var hr_fin = data.locales[i].horarios[j].hora_fin * 60 + parseInt(data.locales[i].horarios[j].min_fin);
+                        if(hr_inicio <= hora && hr_fin >= hora){
+                            objeto.open = true;
+                            next_close = hr_fin - hora;
+                            if(next_close > mayor){
+                                mayor = next_close;
+                                objeto.time = next_close;
+                            }
+                        }
+                    }
+                }
+            }else{
+                objeto.open = true;
+                objeto.time = 10000;
+            }
+        }
+    }
+    return objeto;
+}
+function info_locales(){
+    var fecha = new Date();
+    console.log("info_loc");
+    if(data.locales !== null){
+        for(var i=0, ilen=data.locales.length; i<ilen; i++){
+            console.log(data.locales[i]);
+            if(data.locales[i].horarios !== null){
+                var dia = fecha.getDay() > 0 ? fecha.getDay() : 7 ;
+                var hora = fecha.getHours() * 60 + fecha.getMinutes();
+                for(var j=0, jlen=data.locales[i].horarios.length; j<jlen; j++){
+                    console.log(data.locales[i].horarios[j]);
+                    if(data.locales[i].horarios[j].dia_ini <= dia && data.locales[i].horarios[j].dia_fin >= dia){
+                        var hr_inicio = data.locales[i].horarios[j].hora_ini * 60 + parseInt(data.locales[i].horarios[j].min_ini);
+                        var hr_fin = data.locales[i].horarios[j].hora_fin * 60 + parseInt(data.locales[i].horarios[j].min_fin);
+                        if(hr_inicio <= hora && hr_fin >= hora){
+                            if(data.locales[i].horarios[j].tipo == 1 || data.locales[i].horarios[j].tipo == 0){
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }else{
+                return true;
+            }
+        }
+    }
+}
 function show_modal_locales(){
 
     var info_loc = info_locales();
     var custom_min = 30;
-
-    console.log(info_loc);
 
     if(info_loc){
         $('.paso_02a .direccion_op1').find('.dir_locales').each(function(){

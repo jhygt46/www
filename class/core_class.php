@@ -187,7 +187,7 @@ class Core{
                     for($i=0; $i<count($categorias); $i++){
                         if(strlen($categorias[$i]->{"image"}) == 25){
                             if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$categorias[$i]->{"image"})){
-                                if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$categorias[$i]->{"image"}, file_get_contents("http://www.misitiodelivery.cl/images/categorias/".$categorias[$i]->{"image"}))){
+                                if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$categorias[$i]->{"image"}, file_get_contents("https://www.misitiodelivery.cl/images/categorias/".$categorias[$i]->{"image"}))){
                                     $this->enviar_error(16, "No se pudo guardar las imagenes de categorias");
                                 }
                             }
