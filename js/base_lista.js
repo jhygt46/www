@@ -823,7 +823,7 @@ function aux_fecha(){
     var fecha_ayer = new Date(datetime_actual - 86400000);
 
     console.log(fecha_actual);
-    console.log(fecha_ayer);
+    console.log(fecha_ayer.getDay());
 
     //var dia = fecha_actual.getDay() > 0 ? fecha_actual.getDay() : 7 ;
     //console.log(dia);
