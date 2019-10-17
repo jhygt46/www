@@ -842,6 +842,7 @@ function estado_local(id_loc){
                         if(datetime_actual >= time_ayer_ini && datetime_actual <= time_ayer_fin){
                             res.op = 1;
                             res.tiempo = parseInt((time_ayer_fin - datetime_actual)/60000);
+                            res.mensaje = "Local Abierto";
                         }
                     }
                     if(dia_hoy >= data.locales[i].horarios[j].dia_ini && dia_hoy <= data.locales[i].horarios[j].dia_fin){
@@ -850,6 +851,7 @@ function estado_local(id_loc){
                         if(datetime_actual >= time_hoy_ini && datetime_actual <= time_hoy_fin){
                             res.op = 1;
                             res.tiempo = parseInt((time_hoy_fin - datetime_actual)/60000);
+                            res.mensaje = "Local Abierto";
                         }
                     }
 
