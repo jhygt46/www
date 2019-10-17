@@ -817,8 +817,15 @@ function info_locales(){
 }
 function aux_fecha(){
 
-    var diff = fecha_js + new Date().getTime() - fecha_pc;
-    console.log(diff);
+    var hora_actual = fecha_js + new Date().getTime() - fecha_pc;
+    if(data.locales !== null){
+        for(var i=0, ilen=data.locales.length; i<ilen; i++){
+            console.log(data.locales[i]);
+            for(var j=0, jlen=data.locales[i].horarios.length; j<jlen; j++){
+                console.log(data.locales[i].horarios[j]);
+            }
+        }
+    }
 
 }
 function show_modal_locales(){
