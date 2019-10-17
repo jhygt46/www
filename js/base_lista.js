@@ -705,10 +705,10 @@ function ver_paso_2(){
     var pedido_minimo = parseInt(data.config.pedido_minimo);
 
     var info_retiro = estado_locales(1);
-    var info_despacho = estado_locales(2);
+    var info_despa = estado_locales(2);
 
     console.log("info retiro: "+info_retiro);
-    console.log("info despacho: "+info_despacho);
+    console.log("info despacho: "+info_despa);
 
     if(info_loc){
         // RETIRO EN LOCAL NORMAL
