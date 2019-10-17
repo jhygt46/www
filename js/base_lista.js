@@ -882,9 +882,8 @@ function estado_locales(tipo){
 
     if(data.locales !== null){
         for(var i=0, ilen=data.locales.length; i<ilen; i++){
-            console.log(data.locales[i]);
-            if(data.locales[i].tipo == tipo || data.locales[i].tipo == 0){
-                for(var j=0, jlen=data.locales[i].horarios.length; j<jlen; j++){
+            for(var j=0, jlen=data.locales[i].horarios.length; j<jlen; j++){
+                if(data.locales[i].horarios[j].tipo == tipo || data.locales[i].horarios[j].tipo == 0){
 
                     var dia_ayer = fecha_ayer.getDay() > 0 ? fecha_ayer.getDay() : 7 ;
                     var dia_hoy = fecha_actual.getDay() > 0 ? fecha_actual.getDay() : 7 ;
@@ -898,6 +897,7 @@ function estado_locales(tipo){
                             return true;
                         }
                     }
+                    
                     if(dia_hoy >= data.locales[i].horarios[j].dia_ini && dia_hoy <= data.locales[i].horarios[j].dia_fin){
                         var time_hoy_ini = new Date(fecha_hoy_00 + hora_ini).getTime();
                         var time_hoy_fin = new Date(fecha_hoy_00 + hora_fin).getTime();
