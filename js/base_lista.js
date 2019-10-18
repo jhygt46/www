@@ -869,21 +869,16 @@ function estado_locales(tipo){
 function show_modal_locales(){
 
     var info_retiro = estado_locales(1);
-    var custom_min = 30;
+    var custom_min = 300;
 
     if(info_retiro){
         $('.paso_02a .direccion_op1').find('.dir_locales').each(function(){
-            var id = $(this).attr('id');
-            var hr_local = get_horarios(id, 1);
-            console.log(id);
-            console.log(estado_local(id));
             
-            var open = hr_local.open;
-            var time = hr_local.time;
-
-            if(open){
-                if(time < custom_min){
-                    $(this).find('.local_info').find('.alert').html("En "+time+" minutos cierra este local");
+            var id = $(this).attr('id');
+            var local = estado_local(id);
+            if(local.op){
+                if(local.tiempo < custom_min){
+                    $(this).find('.local_info').find('.alert').html("En "+local.tiempo+" minutos cierra este local");
                     $(this).find('.local_info').find('.alert').css({ display: 'block' });
                 }else{
                     $(this).find('.local_info').find('.alert').css({ display: 'none' });
