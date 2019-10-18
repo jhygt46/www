@@ -711,59 +711,6 @@ function ver_paso_2(){
     $('.modals, .paso_02').show();
 
 }
-function modal_test(){
-
-    var lista_locales = create_element_class('lista_locales');
-    for(var i=0, ilen=data.locales.length; i<ilen; i++){
-
-        var locales = create_element_class('locales');
-        var cont_local = create_element_class('cont_locales');
-        var info_local = create_element_class('info_locales valign');
-        var titulo_local = create_element_class_inner('titulo', 'Local #X');
-        info_local.appendChild(titulo_local);
-        cont_local.appendChild(info_local);
-        locales.appendChild(cont_local);
-        lista_locales.appendChild(locales);
-
-    }
-    //$('.paso_02 .cont_direccion').html('');
-    $('.paso_02 .info_modal').html(lista_locales);
-
-}
-function get_horarios(id, tipo){
-    var fecha = new Date();
-    var dia = fecha.getDay() > 0 ? fecha.getDay() : 7 ;
-    var hora = fecha.getHours() * 60 + fecha.getMinutes();
-    var mayor = 0;
-    var next_close = 0;
-    var objeto = { open: false, time: 0 };
-    for(var i=0, ilen=data.locales.length; i<ilen; i++){
-        if(data.locales[i].id_loc == id){
-            if(data.locales[i].horarios !== null){
-                for(var j=0, jlen=data.locales[i].horarios.length; j<jlen; j++){
-                    if(data.locales[i].horarios[j].dia_ini <= dia && data.locales[i].horarios[j].dia_fin >= dia){
-                        var hr_inicio = data.locales[i].horarios[j].hora_ini * 60 + parseInt(data.locales[i].horarios[j].min_ini);
-                        var hr_fin = data.locales[i].horarios[j].hora_fin * 60 + parseInt(data.locales[i].horarios[j].min_fin);
-                        if(hr_inicio <= hora && hr_fin >= hora){
-                            objeto.open = true;
-                            next_close = hr_fin - hora;
-                            if(next_close > mayor){
-                                mayor = next_close;
-                                objeto.time = next_close;
-                            }
-                        }
-                    }
-                }
-            }else{
-                objeto.open = true;
-                objeto.time = 10000;
-            }
-        }
-    }
-    return objeto;
-}
-
-
 
 
 function estado_local(id_loc){
@@ -1165,12 +1112,15 @@ function show_despacho(){
 
     var total = parseInt(get_pedido().total);
     var pedido_minimo = parseInt(data.config.pedido_minimo);
+    var info_desp = estado_locales(2);
 
-    if(total >= pedido_minimo){
-        if(map_init == 0){
-            initMap();
+    if(info_desp){
+        if(total >= pedido_minimo){
+            if(map_init == 0){
+                initMap();
+            }
+            show_modal('paso_02b');
         }
-        show_modal('paso_02b');
     }
     
 }
