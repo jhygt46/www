@@ -41,7 +41,7 @@
         exit;
     }
 
-    $horas = (isset($_GET['hora'])) ? $_GET['hora'] : 0 ;
+    $horas = (isset($_GET['horas'])) ? $_GET['hora'] : 0 ;
 
 ?>
 
