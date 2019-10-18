@@ -164,12 +164,12 @@ class Core{
                 }
                 if(file_put_contents($this->dir_info."versiones/last.json", json_encode($data->{"info"}))){
                     if($data->{"info"}->{"logo"} != "sinlogo.png"){
-                        if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"logo"}, file_get_contents("https://www.misitiodelivery.cl/images/logos/".$data->{"info"}->{"logo"}))){
+                        if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"logo"}, file_get_contents("http://www.misitiodelivery.cl/images/logos/".$data->{"info"}->{"logo"}))){
                             $this->enviar_error(16, "No se pudo guardar el logo");
                         }
                     }
                     if($data->{"info"}->{"favicon"} != "default.ico"){
-                        if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"favicon"}, file_get_contents("https://www.misitiodelivery.cl/images/favicon/".$data->{"info"}->{"favicon"}))){
+                        if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"favicon"}, file_get_contents("http://www.misitiodelivery.cl/images/favicon/".$data->{"info"}->{"favicon"}))){
                             $this->enviar_error(16, "No se pudo guardar el favicon");
                         }
                     }
@@ -201,14 +201,14 @@ class Core{
                     }
                     if($data->{"info"}->{"foto_retiro"} != ""){
                         if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"foto_retiro"})){
-                            if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"foto_retiro"}, file_get_contents("https://www.misitiodelivery.cl/images/categorias/".$data->{"info"}->{"foto_retiro"}))){
+                            if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"foto_retiro"}, file_get_contents("http://www.misitiodelivery.cl/images/categorias/".$data->{"info"}->{"foto_retiro"}))){
                                 $this->enviar_error(16, "No se pudo guardar la foto retiro");
                             }
                         }
                     }
                     if($data->{"info"}->{"foto_despacho"} != ""){
                         if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"foto_despacho"})){
-                            if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"foto_despacho"}, file_get_contents("https://www.misitiodelivery.cl/images/categorias/".$data->{"info"}->{"foto_despacho"}))){
+                            if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"foto_despacho"}, file_get_contents("http://www.misitiodelivery.cl/images/categorias/".$data->{"info"}->{"foto_despacho"}))){
                                 $this->enviar_error(16, "No se pudo guardar la foto despacho");
                             }
                         }
@@ -217,7 +217,7 @@ class Core{
                     for($i=0; $i<count($locales); $i++){
                         if(strlen($locales[$i]->{'image'}) == 25){
                             if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$locales[$i]->{'image'})){
-                                if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$locales[$i]->{'image'}, file_get_contents("https://www.misitiodelivery.cl/images/categorias/".$locales[$i]->{'image'}))){
+                                if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$locales[$i]->{'image'}, file_get_contents("http://www.misitiodelivery.cl/images/categorias/".$locales[$i]->{'image'}))){
                                     $this->enviar_error(16, "No se pudo guardar las imagen del local");
                                 }
                             }
@@ -348,7 +348,7 @@ class Core{
                 $file['promos'] = json_decode($_POST['promos']);
 
                 $ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
+                curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
                 $resp = json_decode(curl_exec($ch));
@@ -459,7 +459,7 @@ class Core{
             $send["code"] = $this->code;
 
             $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/index.php');
+            curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
             $data = json_decode(curl_exec($ch));
