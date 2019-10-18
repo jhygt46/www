@@ -672,45 +672,14 @@ function tooglemenu(){
     if(menu == 1)
         hidemenu();
 }
-function info_despacho(){
-    var fecha = new Date();
-    if(data.locales !== null){
-        for(var i=0, ilen=data.locales.length; i<ilen; i++){
-            if(data.locales[i].horarios !== null){
-                var dia = fecha.getDay() > 0 ? fecha.getDay() : 7 ;
-                var hora = fecha.getHours() * 60 + fecha.getMinutes();
-                for(var j=0, jlen=data.locales[i].horarios.length; j<jlen; j++){
-                    if(data.locales[i].horarios[j].dia_ini <= dia && data.locales[i].horarios[j].dia_fin >= dia){
-                        var hr_inicio = data.locales[i].horarios[j].hora_ini * 60 + parseInt(data.locales[i].horarios[j].min_ini);
-                        var hr_fin = data.locales[i].horarios[j].hora_fin * 60 + parseInt(data.locales[i].horarios[j].min_fin);
-                        if(hr_inicio <= hora && hr_fin >= hora){
-                            if(data.locales[i].horarios[j].tipo == 2 || data.locales[i].horarios[j].tipo == 0){
-                                return true;
-                            }
-                        }
-                    }
-                }
-            }else{
-                return true;
-            }
-        }
-    }
-}
 function ver_paso_2(){
     
-    var info_loc = info_locales();
-    var info_desp = info_despacho();
-
     var total = parseInt(get_pedido().total);
     var pedido_minimo = parseInt(data.config.pedido_minimo);
-
     var info_retiro = estado_locales(1);
-    var info_despa = estado_locales(2);
+    var info_desp = estado_locales(2);
 
-    console.log("info retiro: "+info_retiro);
-    console.log("info despacho: "+info_despa);
-
-    if(info_loc){
+    if(info_retiro){
         // RETIRO EN LOCAL NORMAL
         $('.paso_02').find('.rlocal').find('.alert').hide();
         $('.paso_02').find('.rlocal').find('.stitle').show();
@@ -745,7 +714,6 @@ function ver_paso_2(){
 function modal_test(){
 
     var lista_locales = create_element_class('lista_locales');
-
     for(var i=0, ilen=data.locales.length; i<ilen; i++){
 
         var locales = create_element_class('locales');
@@ -794,33 +762,6 @@ function get_horarios(id, tipo){
     }
     return objeto;
 }
-function info_locales(){
-    var fecha = new Date();
-    console.log("info_loc");
-    if(data.locales !== null){
-        for(var i=0, ilen=data.locales.length; i<ilen; i++){
-            console.log(data.locales[i]);
-            if(data.locales[i].horarios !== null){
-                var dia = fecha.getDay() > 0 ? fecha.getDay() : 7 ;
-                var hora = fecha.getHours() * 60 + fecha.getMinutes();
-                for(var j=0, jlen=data.locales[i].horarios.length; j<jlen; j++){
-                    console.log(data.locales[i].horarios[j]);
-                    if(data.locales[i].horarios[j].dia_ini <= dia && data.locales[i].horarios[j].dia_fin >= dia){
-                        var hr_inicio = data.locales[i].horarios[j].hora_ini * 60 + parseInt(data.locales[i].horarios[j].min_ini);
-                        var hr_fin = data.locales[i].horarios[j].hora_fin * 60 + parseInt(data.locales[i].horarios[j].min_fin);
-                        if(hr_inicio <= hora && hr_fin >= hora){
-                            if(data.locales[i].horarios[j].tipo == 1 || data.locales[i].horarios[j].tipo == 0){
-                                return true;
-                            }
-                        }
-                    }
-                }
-            }else{
-                return true;
-            }
-        }
-    }
-}
 
 
 
@@ -840,28 +781,32 @@ function estado_local(id_loc){
             if(data.locales[i].id_loc == id_loc){
                 for(var j=0, jlen=data.locales[i].horarios.length; j<jlen; j++){
 
-                    var dia_ayer = fecha_ayer.getDay() > 0 ? fecha_ayer.getDay() : 7 ;
-                    var dia_hoy = fecha_actual.getDay() > 0 ? fecha_actual.getDay() : 7 ;
-                    var hora_ini = (data.locales[i].horarios[j].hora_ini * 3600 + data.locales[i].horarios[j].min_ini * 60) * 1000;
-                    var hora_fin = (data.locales[i].horarios[j].hora_fin * 3600 + data.locales[i].horarios[j].min_fin * 60) * 1000;
+                    if(data.locales[i].horarios[j].tipo == 1 || data.locales[i].horarios[j].tipo == 0){
 
-                    if(dia_ayer >= data.locales[i].horarios[j].dia_ini && dia_ayer <= data.locales[i].horarios[j].dia_fin){
-                        var time_ayer_ini = new Date(fecha_ayer_00 + hora_ini).getTime();
-                        var time_ayer_fin = new Date(fecha_ayer_00 + hora_fin).getTime();
-                        if(datetime_actual >= time_ayer_ini && datetime_actual <= time_ayer_fin){
-                            res.op = 1;
-                            res.tiempo = parseInt((time_ayer_fin - datetime_actual)/60000);
-                            res.mensaje = "Local Abierto";
+                        var dia_ayer = fecha_ayer.getDay() > 0 ? fecha_ayer.getDay() : 7 ;
+                        var dia_hoy = fecha_actual.getDay() > 0 ? fecha_actual.getDay() : 7 ;
+                        var hora_ini = (data.locales[i].horarios[j].hora_ini * 3600 + data.locales[i].horarios[j].min_ini * 60) * 1000;
+                        var hora_fin = (data.locales[i].horarios[j].hora_fin * 3600 + data.locales[i].horarios[j].min_fin * 60) * 1000;
+
+                        if(dia_ayer >= data.locales[i].horarios[j].dia_ini && dia_ayer <= data.locales[i].horarios[j].dia_fin){
+                            var time_ayer_ini = new Date(fecha_ayer_00 + hora_ini).getTime();
+                            var time_ayer_fin = new Date(fecha_ayer_00 + hora_fin).getTime();
+                            if(datetime_actual >= time_ayer_ini && datetime_actual <= time_ayer_fin){
+                                res.op = 1;
+                                res.tiempo = parseInt((time_ayer_fin - datetime_actual)/60000);
+                                res.mensaje = "Local Abierto";
+                            }
                         }
-                    }
-                    if(dia_hoy >= data.locales[i].horarios[j].dia_ini && dia_hoy <= data.locales[i].horarios[j].dia_fin){
-                        var time_hoy_ini = new Date(fecha_hoy_00 + hora_ini).getTime();
-                        var time_hoy_fin = new Date(fecha_hoy_00 + hora_fin).getTime();
-                        if(datetime_actual >= time_hoy_ini && datetime_actual <= time_hoy_fin){
-                            res.op = 1;
-                            res.tiempo = parseInt((time_hoy_fin - datetime_actual)/60000);
-                            res.mensaje = "Local Abierto";
+                        if(dia_hoy >= data.locales[i].horarios[j].dia_ini && dia_hoy <= data.locales[i].horarios[j].dia_fin){
+                            var time_hoy_ini = new Date(fecha_hoy_00 + hora_ini).getTime();
+                            var time_hoy_fin = new Date(fecha_hoy_00 + hora_fin).getTime();
+                            if(datetime_actual >= time_hoy_ini && datetime_actual <= time_hoy_fin){
+                                res.op = 1;
+                                res.tiempo = parseInt((time_hoy_fin - datetime_actual)/60000);
+                                res.mensaje = "Local Abierto";
+                            }
                         }
+
                     }
 
                 }
@@ -897,7 +842,7 @@ function estado_locales(tipo){
                             return true;
                         }
                     }
-                    
+
                     if(dia_hoy >= data.locales[i].horarios[j].dia_ini && dia_hoy <= data.locales[i].horarios[j].dia_fin){
                         var time_hoy_ini = new Date(fecha_hoy_00 + hora_ini).getTime();
                         var time_hoy_fin = new Date(fecha_hoy_00 + hora_fin).getTime();
@@ -923,15 +868,19 @@ function estado_locales(tipo){
 
 function show_modal_locales(){
 
-    var info_loc = info_locales();
+    var info_retiro = estado_locales(1);
     var custom_min = 30;
 
-    if(info_loc){
+    if(info_retiro){
         $('.paso_02a .direccion_op1').find('.dir_locales').each(function(){
             var id = $(this).attr('id');
             var hr_local = get_horarios(id, 1);
+
+            console.log(estado_local(id));
+            
             var open = hr_local.open;
             var time = hr_local.time;
+            
             if(open){
                 if(time < custom_min){
                     $(this).find('.local_info').find('.alert').html("En "+time+" minutos cierra este local");
