@@ -875,12 +875,12 @@ function show_modal_locales(){
         $('.paso_02a .direccion_op1').find('.dir_locales').each(function(){
             var id = $(this).attr('id');
             var hr_local = get_horarios(id, 1);
-
+            console.log(id);
             console.log(estado_local(id));
             
             var open = hr_local.open;
             var time = hr_local.time;
-            
+
             if(open){
                 if(time < custom_min){
                     $(this).find('.local_info').find('.alert').html("En "+time+" minutos cierra este local");
