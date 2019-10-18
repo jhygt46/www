@@ -121,12 +121,12 @@ class Core{
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         if(!curl_errno($ch)){
             $data = json_decode(curl_exec($ch));
-
+            /*
             echo "<pre>";
             print_r($data);
             echo "</pre>";
             exit;
-
+            */
             curl_close($ch);
             if($data->{'op'} == 1){
                 if(!is_dir($this->dir)){
@@ -191,15 +191,36 @@ class Core{
                 if(file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.js", "var data=".json_encode($data->{"data"}))){
                     $categorias = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
                     for($i=0; $i<count($categorias); $i++){
-                        if(strlen($categorias[$i]->{"image"}) == 25){
+                        //if(strlen($categorias[$i]->{"image"}) == 25){
                             if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$categorias[$i]->{"image"})){
                                 if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$categorias[$i]->{"image"}, file_get_contents("https://www.misitiodelivery.cl/images/categorias/".$categorias[$i]->{"image"}))){
                                     $this->enviar_error(16, "No se pudo guardar las imagenes de categorias");
                                 }
                             }
+                        //}
+                    }
+                    if($data->{"info"}->{"foto_retiro"} != ""){
+                        if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"foto_retiro"})){
+                            if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"foto_retiro"}, file_get_contents("https://www.misitiodelivery.cl/images/categorias/".$data->{"info"}->{"foto_retiro"}))){
+                                $this->enviar_error(16, "No se pudo guardar la foto retiro");
+                            }
                         }
                     }
-                    $locales = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
+                    if($data->{"info"}->{"foto_despacho"} != ""){
+                        if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"foto_despacho"})){
+                            if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"foto_despacho"}, file_get_contents("https://www.misitiodelivery.cl/images/categorias/".$data->{"info"}->{"foto_despacho"}))){
+                                $this->enviar_error(16, "No se pudo guardar la foto despacho");
+                            }
+                        }
+                    }
+                    $locales = $data->{"data"}->{"locales"};
+                    for($i=0; $i<count($locales); $i++){
+                        if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$locales[$i]->{'image'})){
+                            if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$locales[$i]->{'image'}, file_get_contents("https://www.misitiodelivery.cl/images/categorias/".$locales[$i]->{'image'}))){
+                                $this->enviar_error(16, "No se pudo guardar las imagen del local");
+                            }
+                        }
+                    }
                     
                 }else{ $this->enviar_error(16, "No se pudo crear el archivo index.js"); }
                 
