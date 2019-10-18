@@ -165,12 +165,12 @@ class Core{
                 if(file_put_contents($this->dir_info."versiones/last.json", json_encode($data->{"info"}))){
                     if($data->{"info"}->{"logo"} != "sinlogo.png"){
                         if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"logo"}, file_get_contents("https://www.misitiodelivery.cl/images/logos/".$data->{"info"}->{"logo"}))){
-                            $this->enviar_error(16, "No se pudo guardar la logo");
+                            $this->enviar_error(16, "No se pudo guardar el logo");
                         }
                     }
                     if($data->{"info"}->{"favicon"} != "default.ico"){
                         if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"favicon"}, file_get_contents("https://www.misitiodelivery.cl/images/favicon/".$data->{"info"}->{"favicon"}))){
-                            $this->enviar_error(16, "No se pudo guardar la logo");
+                            $this->enviar_error(16, "No se pudo guardar el favicon");
                         }
                     }
                 }
@@ -199,6 +199,8 @@ class Core{
                             }
                         }
                     }
+                    $locales = $data->{"data"}->{"catalogos"}[0]->{"categorias"};
+                    
                 }else{ $this->enviar_error(16, "No se pudo crear el archivo index.js"); }
                 
                 return $data->{"info"};
