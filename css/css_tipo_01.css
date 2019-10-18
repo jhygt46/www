@@ -376,7 +376,7 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
 .paso_02 .cont_direccion .direccion_opciones .dir_op {
   margin-bottom: 10px;
   background-size: cover;
-  height: 100px;
+  height: 120px;
 }
 .paso_02 .cont_direccion .direccion_opciones .dir_op .codir {
   width: 100%;
@@ -415,7 +415,6 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
 .cont_direccion .direccion_op1 .dir_locales .cont_local .local_info {
   left: 10px;
   width: calc(100% - 60px);
-  padding: 28px 0px;
 }
 .cont_direccion .direccion_op1 .dir_locales .cont_local .accioness {
   right: 10px;
