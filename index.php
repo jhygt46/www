@@ -20,11 +20,6 @@
     }
     
     $info = $core->get_data();
-    echo "<pre>";
-    print_r($info);
-    echo "</pre>";
-    exit;
-
     if($info === null){
         die("<table border='0' width='100%' height='100%'><tr><td align='center' valign='middle'>Sitio no existe</td></tr></table>");
     }else{
@@ -236,7 +231,7 @@
                                 <div class="info_modal">
                                     <div class="cont_direccion">
                                         <div class="direccion_opciones">
-                                            <div class="rlocal dir_op" onclick="show_modal_locales()" style="background: url('/_images/retiro.jpg')">
+                                            <div class="rlocal dir_op" onclick="show_modal_locales()" style="background: url('<?php if($info->{'foto_retiro'} == ""){ echo "/_images/retiro.jpg"; }else{ echo "/_images/retiro.jpg"; } ?>')">
                                                 <div class="codir prin_alpha_1">
                                                     <div class="cont_info_dir valign">
                                                         <div class="title">Retiro en Local</div>
@@ -245,7 +240,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="cdesp dir_op" onclick="show_despacho()" style="background: url('/_images/despacho.jpg')">
+                                            <div class="cdesp dir_op" onclick="show_despacho()" style="background: url('<?php if($info->{'foto_despacho'} == ""){ echo "/_images/despacho.jpg"; }else{ echo "/_images/despacho.jpg"; } ?>')">
                                                 <div class="codir prin_alpha_1">
                                                     <div class="cont_info_dir valign">
                                                         <div class="title">Despacho a Domicilio</div>
