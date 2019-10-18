@@ -193,7 +193,7 @@ class Core{
                     for($i=0; $i<count($categorias); $i++){
                         if(strlen($categorias[$i]->{"image"}) == 25){
                             if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$categorias[$i]->{"image"})){
-                                if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$categorias[$i]->{"image"}, file_get_contents("https://www.misitiodelivery.cl/images/categorias/".$categorias[$i]->{"image"}))){
+                                if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$categorias[$i]->{"image"}, file_get_contents("http://www.misitiodelivery.cl/images/categorias/".$categorias[$i]->{"image"}))){
                                     $this->enviar_error(16, "No se pudo guardar las imagenes de categorias");
                                 }
                             }
@@ -402,7 +402,7 @@ class Core{
                     if($resp->{'op'} == 2){
     
                         $info['op'] = 2;
-                        $temp_code = bin2hex(openssl_random_pseudo_bytes(10));
+                        $temp_code = $this->pass_generate(20);
     
                         $info['tel'] = $resp->{'telefono'};
                         $info['mailto'] = $resp->{'correo'};
@@ -532,6 +532,5 @@ class Core{
     private function enviar_error_2($error){
         file_put_contents($this->file_err, $this->host." - ".$error);
     }
-    
 
 }
