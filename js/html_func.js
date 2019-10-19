@@ -1,10 +1,11 @@
 // IMPRIME CATEGORIAS Y PAGINAS EN HOME //
 function html_home_categorias(obj, num){
 
+    console.log(obj);
     var Div = document.createElement('div');
     Div.className = 'botones_principales';
     
-    if(obj.image === null){
+    if(obj.image == ""){
         Div.style.backgroundImage = 'url("/_images/cat_'+num+'.jpg")';
     }else{
         Div.style.backgroundImage = 'url("/data/'+code+'/'+obj.image+'")';
@@ -18,25 +19,29 @@ function html_home_categorias(obj, num){
     }else{
         Divbp.className = 'cont_bp prin_alpha_'+obj.degradado;
     }
+    
+    var Divvalign = document.createElement('div');
+    Divvalign.className = 'valign';
 
     var Divnombre = document.createElement('div');
     Divnombre.innerHTML = obj.nombre;
     Divnombre.className = 'nombre';
-    Divbp.appendChild(Divnombre);
+    Divvalign.appendChild(Divnombre);
     
     if(obj.descripcion){
         var Divdescripcion = document.createElement('div');
         Divdescripcion.innerHTML = obj.descripcion;
         Divdescripcion.className = 'descripcion';
-        Divbp.appendChild(Divdescripcion);
+        Divvalign.appendChild(Divdescripcion);
     }
     if(obj.precio > 0){
         var Divprecio = document.createElement('div');
         Divprecio.innerHTML = formatNumber.new(parseInt(obj.precio), "$");
         Divprecio.className = 'precio';
-        Divbp.appendChild(Divprecio);
+        Divvalign.appendChild(Divprecio);
     }
 
+    Divbp.appendChild(Divvalign);
     Div.appendChild(Divbp);
     return Div;
 
