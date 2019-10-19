@@ -37,14 +37,14 @@ body .contenedor .modals {
   background: rgba(0, 0, 0, 0.75);
 }
 body .contenedor .modals .cont_modals .modal_dim1 {
-  width: 90%;
-  height: 90%;
+  width: 98%;
+  height: 98%;
   max-width: 400px;
-  max-height: 580px;
+  max-height: 600px;
 }
 body .contenedor .modals .cont_modals .modal_dim2 {
-  width: 96%;
-  height: 96%;
+  width: 98%;
+  height: 98%;
   max-width: 400px;
   max-height: 200px;
 }
