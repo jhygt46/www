@@ -124,7 +124,7 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   background-size: cover;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoria .cont_fondo {
-  /*padding: 13px;*/
+  padding: 10px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoria .cont_fondo .nombre {
   font-size: 24px;
@@ -144,7 +144,7 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   background-size: cover;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo {
-  padding: 3%;
+  padding: 10px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo .nombre {
   font-size: 24px;
