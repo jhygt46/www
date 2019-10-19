@@ -124,18 +124,19 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   background-size: cover;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoria .cont_fondo {
-  padding: 10px;
+  padding: 0px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoria .cont_fondo .nombre {
   font-size: 24px;
+  padding-top: 10px;
+  padding-left: 10px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoria .cont_fondo .descripcion {
   font-size: 13px;
+  padding-left: 10px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoria .cont_fondo .precio {
-  position: absolute;
-  top: 4px;
-  right: 4px;
+  padding-left: 10px;
   font-size: 28px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen {
