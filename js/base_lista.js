@@ -711,8 +711,6 @@ function ver_paso_2(){
     $('.modals, .paso_02').show();
 
 }
-
-
 function estado_local(id_loc){
 
     var datetime_actual = fecha_js + new Date().getTime() - fecha_pc;
@@ -805,26 +803,16 @@ function estado_locales(tipo){
     return false;
 
 }
-
-
-
-
-
-
-
-
 function show_modal_locales(){
 
     var info_retiro = estado_locales(1);
-    var custom_min = 300;
-
     if(info_retiro){
         $('.paso_02a .direccion_op1').find('.dir_locales').each(function(){
             
             var id = $(this).attr('id');
             var local = estado_local(id);
             if(local.op){
-                if(local.tiempo < custom_min){
+                if(local.tiempo < data.config.tiempo_aviso){
                     $(this).find('.local_info').find('.alert').html("En "+local.tiempo+" minutos cierra este local");
                     $(this).find('.local_info').find('.alert').css({ display: 'block' });
                 }else{

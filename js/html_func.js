@@ -59,6 +59,8 @@ function create_html_categorias(obj){
     var Div = document.createElement('div');
     Div.className = 'categoria';
     Div.style.backgroundImage = 'url("/data/'+code+'/'+obj.image+'")';
+    console.log("alto: " + data.config.alto);
+
 
     var Divm = document.createElement('div');
 
