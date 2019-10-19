@@ -70,13 +70,13 @@ function create_html_categorias(obj){
     }else{
         Divm.className = 'cont_fondo prin_alpha_'+obj.degradado;
     }
-    Divm.style.height = parseInt(380 * data.config.alto / 100)+"px";
 
     var Nombre = document.createElement('div');
     Nombre.className = 'nombre';
     Nombre.innerHTML = obj.nombre;
     if(obj.mostrar_prods == 0){
         Nombre.onclick = function(){ open_categoria(obj.id_cae) };
+        Divm.style.height = parseInt(380 * data.config.alto / 100)+"px";
     }
     Divm.appendChild(Nombre);
     
