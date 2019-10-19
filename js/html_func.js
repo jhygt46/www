@@ -64,7 +64,9 @@ function create_html_categorias(obj){
 
     var Div = document.createElement('div');
     Div.className = 'categoria';
-    Div.style.backgroundImage = 'url("/data/'+code+'/'+obj.image+'")';
+    if(obj.image != ""){
+        Div.style.backgroundImage = 'url("/data/'+code+'/'+obj.image+'")';
+    }
     var Divm = document.createElement('div');
 
     if(obj.degradado == 0){
@@ -86,9 +88,7 @@ function create_html_categorias(obj){
         var Descripcion = document.createElement('div');
         Descripcion.className = 'descripcion';
         Descripcion.innerHTML = obj.descripcion;
-        if(obj.mostrar_prods == 0){
-            Descripcion.onclick = function(){ open_categoria(obj.id_cae) };
-        }
+        Descripcion.onclick = function(){ open_categoria(obj.id_cae) };
         Divm.appendChild(Descripcion);
 
     }
@@ -103,9 +103,6 @@ function create_html_categorias(obj){
         var Descripcion = document.createElement('div');
         Descripcion.className = 'descripcion';
         Descripcion.innerHTML = obj.descripcion;
-        if(obj.mostrar_prods == 0){
-            Descripcion.onclick = function(){ open_categoria(obj.id_cae) };
-        }
         Divm.appendChild(Descripcion);
 
         Div.className = 'categoriaopen';
