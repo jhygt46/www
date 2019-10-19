@@ -65,31 +65,48 @@ function create_html_categorias(obj){
     Div.className = 'categoria';
     Div.style.backgroundImage = 'url("/data/'+code+'/'+obj.image+'")';
     var Divm = document.createElement('div');
+
     if(obj.degradado == 0){
         Divm.className = 'cont_fondo';
     }else{
         Divm.className = 'cont_fondo prin_alpha_'+obj.degradado;
     }
 
-    var Nombre = document.createElement('div');
-    Nombre.className = 'nombre';
-    Nombre.innerHTML = obj.nombre;
     if(obj.mostrar_prods == 0){
+
+        var Nombre = document.createElement('div');
+        Nombre.className = 'nombre';
+        Nombre.innerHTML = obj.nombre;
+
         Nombre.onclick = function(){ open_categoria(obj.id_cae) };
         Divm.style.height = parseInt(380 * data.config.alto / 100)+"px";
+
+        Divm.appendChild(Nombre);
+        var Descripcion = document.createElement('div');
+        Descripcion.className = 'descripcion';
+        Descripcion.innerHTML = obj.descripcion;
+        if(obj.mostrar_prods == 0){
+            Descripcion.onclick = function(){ open_categoria(obj.id_cae) };
+        }
+        Divm.appendChild(Descripcion);
+
     }
-    Divm.appendChild(Nombre);
-    
-    var Descripcion = document.createElement('div');
-    Descripcion.className = 'descripcion';
-    Descripcion.innerHTML = obj.descripcion;
-    if(obj.mostrar_prods == 0){
-        Descripcion.onclick = function(){ open_categoria(obj.id_cae) };
-    }
-    Divm.appendChild(Descripcion);
-    
+
     if(obj.mostrar_prods == 1){
         
+        var Nombre = document.createElement('div');
+        Nombre.className = 'nombre';
+        Nombre.innerHTML = obj.nombre;
+
+        Divm.appendChild(Nombre);
+        var Descripcion = document.createElement('div');
+        Descripcion.className = 'descripcion';
+        Descripcion.innerHTML = obj.descripcion;
+        if(obj.mostrar_prods == 0){
+            Descripcion.onclick = function(){ open_categoria(obj.id_cae) };
+        }
+        Divm.appendChild(Descripcion);
+
         Div.className = 'categoriaopen';
         var listado = document.createElement('div');
         listado.className = 'listado';
