@@ -107,22 +107,18 @@ body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_princi
   width: 100%;
   height: 100%;
 }
-body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .nombre {
-  position: absolute;
-  top: 10px;
-  left: 10px;
+body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .cont_bpi {
+  width: 94%;
+  left: 3%;
 }
-body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .descripcion {
-  position: absolute;
-  top: 32px;
-  left: 10px;
-  line-height: 15px;
-  padding-right: 26%;
+body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .cont_bpi .nombre {
+  
 }
-body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .precio {
-  position: absolute;
-  left: 10px;
-  bottom: 10px;
+body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .cont_bpi .descripcion {
+  
+}
+body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .cont_bpi .precio {
+  
 }
 body .contenedor .pagina .cont_pagina .contenido .padding_cont_f1 {
   padding-bottom: 110px;

@@ -19,9 +19,9 @@ function html_home_categorias(obj, num){
     }else{
         Divbp.className = 'cont_bp prin_alpha_'+obj.degradado;
     }
-    
+
     var Divvalign = document.createElement('div');
-    Divvalign.className = 'valign';
+    Divvalign.className = 'cont_bpi valign';
 
     var Divnombre = document.createElement('div');
     Divnombre.innerHTML = obj.nombre;
