@@ -27,7 +27,7 @@ function render_pagina(){
     
 }
 function inclinacion(x1, y1, x2, y2, x){
-    return ((y2 - y1)/(x2 - x1))*(x - x1) + y1;
+    return parseInt((((y2 - y1)/(x2 - x1))*(x - x1) + y1) * x / 100);
 }
 function btn_prin(){
 
