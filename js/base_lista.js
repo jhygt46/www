@@ -31,14 +31,15 @@ function inclinacion(x1, y1, x2, y2, x){
 }
 function btn_prin(){
 
-    var width = $(this).width();
-    var height = $(this).height();
+    var width = $(document).width();
+    var height = $(document).height();
 
     $('.botones_principales').each(function(){
-        var heightp = width * data.config.alto / 100;
+        var heightp = $(this).width() * data.config.alto / 100;
         $(this).css({ height: heightp+'px'});
     });
     
+
     if(width < 600){
         var widthpx = inclinacion(320, 100, 600, 90, width)
     }
