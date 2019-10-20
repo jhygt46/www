@@ -44,26 +44,26 @@ function btn_prin(){
         var widthpx = inclinacion(320, 100, 600, 90, width)
     }
     if(width >= 600 && width < 768){
-        var widthpx = inclinacion(600, 90, 768, 85, width);
+        var widthpx = inclinacion(600, 90, 768, 80, width);
     }
     if(width >= 768 && width < 1024){
-        var widthpx = inclinacion(768, 85, 1024, 80, width);
+        var widthpx = inclinacion(768, 80, 1024, 70, width);
     }
     if(width >= 1024 && width < 2048){
-        var widthpx = inclinacion(1024, 80, 2048, 75, width);
+        var widthpx = inclinacion(1024, 70, 2048, 60, width);
     }
 
     if(height < 568){
-        var heightpx = inclinacion(320, 100, 568, 98, height)
+        var heightpx = inclinacion(320, 100, 568, 96, height)
     }
     if(height >= 568 && height < 768){
-        var heightpx = inclinacion(568, 98, 768, 96, height);
+        var heightpx = inclinacion(568, 96, 768, 92, height);
     }
     if(height >= 768 && height < 1024){
-        var heightpx = inclinacion(768, 96, 1024, 94, height);
+        var heightpx = inclinacion(768, 92, 1024, 88, height);
     }
     if(height >= 1024 && height < 2048){
-        var heightpx = inclinacion(1024, 94, 2048, 92, height);
+        var heightpx = inclinacion(1024, 88, 2048, 84, height);
     }
 
     $('.modal_dim1').css({ width: widthpx });
