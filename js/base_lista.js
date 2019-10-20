@@ -39,7 +39,6 @@ function btn_prin(){
         $(this).css({ height: heightp+'px'});
     });
     
-
     if(width < 600){
         var widthpx = inclinacion(320, 96, 600, 90, width)
     }
@@ -50,6 +49,10 @@ function btn_prin(){
         var widthpx = 768 * 70 / 100;
     }
 
+    var h2 = (widthpx - 20) * data.config.alto / 100;
+    $('.cont_fondo').css({ height: h2+"px" });
+
+    /*
     if(height < 568){
         var heightpx = inclinacion(320, 100, 568, 96, height)
     }
@@ -62,6 +65,7 @@ function btn_prin(){
     if(height >= 1024 && height < 2048){
         var heightpx = inclinacion(1024, 88, 2048, 84, height);
     }
+    */
 
     $('.modal_dim1').css({ width: widthpx });
     $('.modal_dim1').css({ height: heightpx });
