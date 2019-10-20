@@ -50,8 +50,7 @@ function btn_prin(){
     }
 
     var h2 = parseInt((widthpx - 20) * data.config.alto / 100);
-    $('.cont_fondo').css({ height: h2 });
-    console.log(h2);
+    $('.cont_fondo').css({ height: h2+"px" });
     
     if(height < 568){
         var heightpx = inclinacion(320, 100, 568, 96, height)
