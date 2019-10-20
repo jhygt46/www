@@ -49,8 +49,8 @@ function btn_prin(){
         var widthpx = 768 * 70 / 100;
     }
 
-    var h2 = (widthpx - 20) * data.config.alto / 100;
-    $('.cont_fondo').css({ height: h2+"px" });
+    var h2 = parseInt((widthpx - 20) * data.config.alto / 100);
+    $('.cont_fondo').css({ height: h2 });
     console.log(h2);
     
     if(height < 568){
