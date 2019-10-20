@@ -60,7 +60,7 @@ function html_paginas(pagina){
 // HTML MODALS //
 function create_html_categorias(obj){
 
-    console.log(obj);
+    //console.log(obj);
 
     var Div = document.createElement('div');
     Div.className = 'categoria';

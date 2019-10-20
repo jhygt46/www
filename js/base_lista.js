@@ -31,8 +31,8 @@ function inclinacion(x1, y1, x2, y2, x){
 }
 function btn_prin(){
 
-    var width = $(document).width();
-    var height = $(document).height();
+    var width = $(window).width();
+    var height = $(window).height();
 
     $('.botones_principales').each(function(){
         var heightp = $(this).width() * data.config.alto / 100;
