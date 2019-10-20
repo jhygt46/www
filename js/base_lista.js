@@ -53,16 +53,16 @@ function btn_prin(){
     }
 
     if(height < 568){
-        var heightpx = inclinacion(320, 100, 568, 98, width)
+        var heightpx = inclinacion(320, 100, 568, 98, height)
     }
     if(height >= 568 && height < 768){
-        var heightpx = inclinacion(568, 98, 768, 96, width);
+        var heightpx = inclinacion(568, 98, 768, 96, height);
     }
     if(height >= 768 && height < 1024){
-        var heightpx = inclinacion(768, 96, 1024, 94, width);
+        var heightpx = inclinacion(768, 96, 1024, 94, height);
     }
     if(height >= 1024 && height < 2048){
-        var heightpx = inclinacion(1024, 94, 2048, 92, width);
+        var heightpx = inclinacion(1024, 94, 2048, 92, height);
     }
 
     $('.modal_dim1').css({ width: widthpx });
