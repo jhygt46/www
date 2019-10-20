@@ -142,7 +142,7 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   background-size: cover;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo {
-  padding: 10px;
+  padding: 20px 10px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo .nombre {
   font-size: 24px;
