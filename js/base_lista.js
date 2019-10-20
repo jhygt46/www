@@ -50,7 +50,7 @@ function btn_prin(){
     }
 
     var h2 = (widthpx - 20) * data.config.alto / 100;
-    $('.cont_fondo').css({ height: h2+"px" });
+    //$('.cont_fondo').css({ height: h2+"px" });
 
     /*
     if(height < 568){
