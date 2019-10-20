@@ -26,13 +26,26 @@ function render_pagina(){
     btn_prin();
     
 }
+function inclinacion(x1, y1, x2, y2, x){
+    return ((y2 - y1)/(x2 - x1))*(x - x1) + y1;
+}
 function btn_prin(){
+
     $('.botones_principales').each(function(){
         var height = $(this).width() * data.config.alto / 100;
         $(this).css({ height: height+'px'});
     });
-    console.log($(this).width());
-    console.log($(this).height());
+    var width = $(this).width();
+    var height = $(this).height();
+
+    console.log(width + " / " + height);    
+    console.log(inclinacion(320, 100, 500, 90, 320));
+    console.log(inclinacion(320, 100, 500, 90, 400));
+    console.log(inclinacion(320, 100, 500, 90, 450));
+    console.log(inclinacion(320, 100, 500, 90, 500));
+
+    //$('.modal_dim1').css({ width: widthpx });
+
 }
 function close_that(that){
     $('.modals').hide();
