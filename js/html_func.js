@@ -69,6 +69,7 @@ function create_html_categorias(obj){
     }
     var Divm = document.createElement('div');
 
+
     if(obj.degradado == 0){
         Divm.className = 'cont_fondo';
     }else{
@@ -77,18 +78,17 @@ function create_html_categorias(obj){
 
     if(obj.mostrar_prods == 0){
 
+        Divm.onclick = function(){ open_categoria(obj.id_cae) };
+
         var Nombre = document.createElement('div');
         Nombre.className = 'nombre';
         Nombre.innerHTML = obj.nombre;
-
-        Nombre.onclick = function(){ open_categoria(obj.id_cae) };
         Divm.style.height = parseInt((widthpx - 20) * data.config.alto / 100)+"px";
 
         Divm.appendChild(Nombre);
         var Descripcion = document.createElement('div');
         Descripcion.className = 'descripcion';
         Descripcion.innerHTML = obj.descripcion;
-        Descripcion.onclick = function(){ open_categoria(obj.id_cae) };
         Divm.appendChild(Descripcion);
 
     }
