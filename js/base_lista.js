@@ -62,6 +62,9 @@ function btn_prin(){
         heightpx = inclinacion(1024, 88, 2048, 84, height);
     }
     
+    var dir_op = parseInt((widthpx - 20) * data.config.alto / 100);
+
+    $('.dir_op').css({ height: dir_op });
     $('.modal_dim1').css({ width: widthpx });
     $('.modal_dim1').css({ height: heightpx });
 
