@@ -64,6 +64,7 @@ function btn_prin(){
     
     var dir_op = parseInt((widthpx - 20) * data.config.alto / 100);
 
+    $('.dir_locales').css({ height: dir_op });
     $('.dir_op').css({ height: dir_op });
     $('.modal_dim1').css({ width: widthpx });
     $('.modal_dim1').css({ height: heightpx });
