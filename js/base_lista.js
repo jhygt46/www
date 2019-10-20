@@ -1,4 +1,4 @@
-var map_socket, markers;
+var map_socket, markers, widthpx, heightpx;
 function render_pagina(){
     
     // BOTONES PRINCIPALES
@@ -40,32 +40,28 @@ function btn_prin(){
     });
     
     if(width < 600){
-        var widthpx = inclinacion(320, 96, 600, 90, width)
+        widthpx = inclinacion(320, 96, 600, 90, width)
     }
     if(width >= 600 && width < 768){
-        var widthpx = inclinacion(600, 90, 768, 70, width);
+        widthpx = inclinacion(600, 90, 768, 70, width);
     }
     if(width >= 768){
-        var widthpx = 768 * 70 / 100;
+        widthpx = 768 * 70 / 100;
     }
-
-    var h2 = parseInt((widthpx - 20) * data.config.alto / 100);
-    $('.cont_fondo').css({ height: h2+"px" });
     
     if(height < 568){
-        var heightpx = inclinacion(320, 100, 568, 96, height)
+        heightpx = inclinacion(320, 100, 568, 96, height)
     }
     if(height >= 568 && height < 768){
-        var heightpx = inclinacion(568, 96, 768, 92, height);
+        heightpx = inclinacion(568, 96, 768, 92, height);
     }
     if(height >= 768 && height < 1024){
-        var heightpx = inclinacion(768, 92, 1024, 88, height);
+        heightpx = inclinacion(768, 92, 1024, 88, height);
     }
     if(height >= 1024 && height < 2048){
-        var heightpx = inclinacion(1024, 88, 2048, 84, height);
+        heightpx = inclinacion(1024, 88, 2048, 84, height);
     }
     
-
     $('.modal_dim1').css({ width: widthpx });
     $('.modal_dim1').css({ height: heightpx });
 

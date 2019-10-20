@@ -82,7 +82,7 @@ function create_html_categorias(obj){
         Nombre.innerHTML = obj.nombre;
 
         Nombre.onclick = function(){ open_categoria(obj.id_cae) };
-        //Divm.style.height = parseInt(380 * data.config.alto / 100)+"px";
+        Divm.style.height = parseInt((widthpx - 20) * data.config.alto / 100)+"px";
 
         Divm.appendChild(Nombre);
         var Descripcion = document.createElement('div');
