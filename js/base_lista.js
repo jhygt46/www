@@ -31,20 +31,42 @@ function inclinacion(x1, y1, x2, y2, x){
 }
 function btn_prin(){
 
-    $('.botones_principales').each(function(){
-        var height = $(this).width() * data.config.alto / 100;
-        $(this).css({ height: height+'px'});
-    });
     var width = $(this).width();
     var height = $(this).height();
 
-    console.log(width + " / " + height);    
-    console.log(inclinacion(320, 100, 500, 90, 320));
-    console.log(inclinacion(320, 100, 500, 90, 400));
-    console.log(inclinacion(320, 100, 500, 90, 450));
-    console.log(inclinacion(320, 100, 500, 90, 500));
+    $('.botones_principales').each(function(){
+        var height = width * data.config.alto / 100;
+        $(this).css({ height: height+'px'});
+    });
+    
+    if(width < 600){
+        var widthpx = inclinacion(320, 100, 600, 90, width)
+    }
+    if(width >= 600 && width < 768){
+        var widthpx = inclinacion(600, 90, 768, 85, width);
+    }
+    if(width >= 768 && width < 1024){
+        var widthpx = inclinacion(768, 85, 1024, 80, width);
+    }
+    if(width >= 1024 && width < 2048){
+        var widthpx = inclinacion(1024, 80, 2048, 75, width);
+    }
 
-    //$('.modal_dim1').css({ width: widthpx });
+    if(height < 568){
+        var heightpx = inclinacion(320, 100, 568, 98, width)
+    }
+    if(height >= 568 && height < 768){
+        var heightpx = inclinacion(568, 98, 768, 96, width);
+    }
+    if(height >= 768 && height < 1024){
+        var heightpx = inclinacion(768, 96, 1024, 94, width);
+    }
+    if(height >= 1024 && height < 2048){
+        var heightpx = inclinacion(1024, 94, 2048, 92, width);
+    }
+
+    $('.modal_dim1').css({ width: widthpx });
+    $('.modal_dim1').css({ height: heightpx });
 
 }
 function close_that(that){
