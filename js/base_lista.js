@@ -31,6 +31,8 @@ function btn_prin(){
         var height = $(this).width() * data.config.alto / 100;
         $(this).css({ height: height+'px'});
     });
+    console.log($(this).width());
+    console.log($(this).height());
 }
 function close_that(that){
     $('.modals').hide();
