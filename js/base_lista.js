@@ -49,8 +49,8 @@ function btn_prin(){
     if(width >= 768 && width < 1024){
         var widthpx = inclinacion(768, 80, 1024, 70, width);
     }
-    if(width >= 1024 && width < 2048){
-        var widthpx = inclinacion(1024, 70, 2048, 60, width);
+    if(width >= 1024){
+        var widthpx = 1024 * 70 / 100;
     }
 
     if(height < 568){
