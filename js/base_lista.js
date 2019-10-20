@@ -35,8 +35,8 @@ function btn_prin(){
     var height = $(this).height();
 
     $('.botones_principales').each(function(){
-        var height = width * data.config.alto / 100;
-        $(this).css({ height: height+'px'});
+        var heightp = width * data.config.alto / 100;
+        $(this).css({ height: heightp+'px'});
     });
     
     if(width < 600){
