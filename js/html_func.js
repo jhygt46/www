@@ -571,7 +571,7 @@ function html_preguntas_producto(i){
         e_pregunta.setAttribute('data-pos', k);
         
         var pregunta_titulo = document.createElement('div');
-        pregunta_titulo.className = 'pregunta_titulo';
+        pregunta_titulo.className = 'pregunta_titulo font3';
         pregunta_titulo.innerHTML = carro[i].preguntas[k].nombre;
         e_pregunta.appendChild(pregunta_titulo);
         
@@ -579,7 +579,7 @@ function html_preguntas_producto(i){
         for(var m=0, mlen=carro[i].preguntas[k].valores.length; m<mlen; m++){
             
             var titulo_v_pregunta = document.createElement('div');
-            titulo_v_pregunta.className = 'titulo_v_pregunta';
+            titulo_v_pregunta.className = 'titulo_v_pregunta font4';
             titulo_v_pregunta.innerHTML = carro[i].preguntas[k].valores[m].nombre;
                         
             var v_pregunta = document.createElement('div');
