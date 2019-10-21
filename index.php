@@ -236,18 +236,18 @@
                                             <div class="rlocal dir_op" onclick="show_modal_locales()" style="background-image: url('<?php if($info->{'foto_retiro'} == ""){ echo "/_images/retiro.jpg"; }else{ echo "/data/".$info->{"code"}."/".$info->{"foto_retiro"}; } ?>')">
                                                 <div class="codir prin_alpha_1">
                                                     <div class="cont_info_dir valign">
-                                                        <div class="title">Retiro en Local</div>
-                                                        <div class="stitle">Sin Costo</div>
-                                                        <div class="alert">Locales Cerrados</div>
+                                                        <div class="title font1">Retiro en Local</div>
+                                                        <div class="stitle font3">Sin Costo</div>
+                                                        <div class="alert font3">Locales Cerrados</div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="cdesp dir_op" onclick="show_despacho()" style="background-image: url('<?php if($info->{'foto_despacho'} == ""){ echo "/_images/despacho.jpg"; }else{ echo "/data/".$info->{"code"}."/".$info->{"foto_despacho"}; } ?>')">
                                                 <div class="codir prin_alpha_1">
                                                     <div class="cont_info_dir valign">
-                                                        <div class="title">Despacho a Domicilio</div>
-                                                        <div class="stitle">Desde $<?php echo $info->{"desde"}; ?></div>
-                                                        <div class="alert"></div>
+                                                        <div class="title font1">Despacho a Domicilio</div>
+                                                        <div class="stitle font3">Desde $<?php echo $info->{"desde"}; ?></div>
+                                                        <div class="alert font3"></div>
                                                     </div>
                                                 </div>
                                             </div>
