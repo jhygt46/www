@@ -592,12 +592,12 @@ function html_preguntas_producto(i){
                 var n_pregunta = document.createElement('div');
                 if(carro[i].preguntas[k].valores[m].seleccionados){
                     if(carro[i].preguntas[k].valores[m].seleccionados.indexOf(carro[i].preguntas[k].valores[m].valores[n].trim()) != -1){
-                        n_pregunta.className = 'n_pregunta font4 selected';
+                        n_pregunta.className = 'n_pregunta font3 selected';
                     }else{
-                        n_pregunta.className = 'n_pregunta font4';
+                        n_pregunta.className = 'n_pregunta font3';
                     }
                 }else{
-                    n_pregunta.className = 'n_pregunta font4';
+                    n_pregunta.className = 'n_pregunta font3';
                 }
                 n_pregunta.innerHTML = carro[i].preguntas[k].valores[m].valores[n];
                 n_pregunta.onclick = function(){ select_pregunta(this) };
