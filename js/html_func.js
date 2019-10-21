@@ -82,11 +82,11 @@ function create_html_categorias(obj){
         Divm.style.height = parseInt((widthpx - 20) * data.config.alto / 100)+"px";
 
         var Nombre = document.createElement('div');
-        Nombre.className = 'nombre';
+        Nombre.className = 'nombre font1';
         Nombre.innerHTML = obj.nombre;
         
         var Descripcion = document.createElement('div');
-        Descripcion.className = 'descripcion';
+        Descripcion.className = 'descripcion font3';
         Descripcion.innerHTML = obj.descripcion;
 
         Divm.appendChild(Nombre);
@@ -97,12 +97,12 @@ function create_html_categorias(obj){
     if(obj.mostrar_prods == 1){
         
         var Nombre = document.createElement('div');
-        Nombre.className = 'nombre';
+        Nombre.className = 'nombre font1';
         Nombre.innerHTML = obj.nombre;
 
         Divm.appendChild(Nombre);
         var Descripcion = document.createElement('div');
-        Descripcion.className = 'descripcion';
+        Descripcion.className = 'descripcion font3';
         Descripcion.innerHTML = obj.descripcion;
         Divm.appendChild(Descripcion);
 
