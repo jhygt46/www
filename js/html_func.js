@@ -128,12 +128,12 @@ function create_html_categorias(obj){
                 p_nombre.className = 'prod_i_nom';
                 
                 p_nombre_ttl = document.createElement('div');
-                p_nombre_ttl.className = 'prod_i_ttl';
+                p_nombre_ttl.className = 'prod_i_ttl font4';
                 p_nombre_ttl.innerHTML = aux.nombre;
                 p_nombre.appendChild(p_nombre_ttl);
 
                 p_nombre_sttl = document.createElement('div');
-                p_nombre_sttl.className = 'prod_i_sttl';
+                p_nombre_sttl.className = 'prod_i_sttl font4';
                 p_nombre_sttl.innerHTML = aux.descripcion;
                 p_nombre.appendChild(p_nombre_sttl);
 
