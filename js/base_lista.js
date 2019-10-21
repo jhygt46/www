@@ -48,6 +48,9 @@ function btn_prin(){
     if(width >= 768){
         widthpx = 768 * 70 / 100;
     }
+    if(widthpx > 520){
+        widthpx = 520;
+    }
     
     if(height < 568){
         heightpx = inclinacion(320, 100, 568, 96, height)
