@@ -20,7 +20,7 @@ body .contenedor .pagina .cont_pagina .header .header_logo {
   /*height: 70px;*/
 }
 body .contenedor .pagina .cont_pagina .header .menu_right .shop {
-  font-size: 40px;
+  
 }
 body .contenedor .pagina .cont_pagina .contenido .cont_contenido {
   width: 94%;
@@ -89,17 +89,14 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   margin-bottom: 5px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .nombre {
-  font-size: 16px;
   padding-right: 80px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .descripcion {
-  font-size: 10px;
   padding-right: 80px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .precio {
   position: absolute;
   right: 10px;
-  font-size: 16px;
   width: 70px;
   text-align: right;
 }
@@ -111,10 +108,10 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   padding: 6px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .producto .nombre {
-  font-size: 16px;
+
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .producto .descripcion {
-  font-size: 10px;
+
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoria {
   margin-bottom: 6px;
@@ -124,17 +121,14 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   padding: 0px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoria .cont_fondo .nombre {
-  font-size: 24px;
   padding-top: 10px;
   padding-left: 10px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoria .cont_fondo .descripcion {
-  font-size: 13px;
   padding-left: 10px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoria .cont_fondo .precio {
   padding-left: 10px;
-  font-size: 28px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen {
   margin-bottom: 6px;
@@ -145,16 +139,15 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   padding: 20px 10px 10px 10px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo .nombre {
-  font-size: 24px;
+
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo .descripcion {
-  font-size: 13px;
+
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo .precio {
   position: absolute;
   top: 4px;
   right: 4px;
-  font-size: 28px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo .listado {
   padding: 20px 0px 0px 0px;
@@ -171,17 +164,14 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo .listado .prod_item .prod_i_nom .prod_i_ttl {
   display: block;
-  font-size: 18px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo .listado .prod_item .prod_i_nom .prod_i_sttl {
   display: block;
-  font-size: 12px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo .listado .prod_item .prod_i_pre {
   position: absolute;
   right: 0px;
   width: 75px;
-  font-size: 17px;
   text-align: right;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .promocion {
@@ -193,22 +183,20 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   position: relative;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .promocion .cont_fondo .nombre {
-  font-size: 24px;
+
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .promocion .cont_fondo .descripcion {
-  font-size: 13px;
+
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .promocion .cont_fondo .precio {
   position: absolute;
   top: 13px;
   right: 13px;
-  font-size: 28px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .promocion .cont_fondo .listado {
   padding: 15px 0px 0px 0px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .promocion .cont_fondo .listado .prod_item {
-  font-size: 14px;
   padding-top: 2px;
 }
 
@@ -233,11 +221,9 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
 }
 .modal_productos_promo .cont_modal .cont_info .info_modal .pro_cat_promo .pro_cat_item .pro_cat_item_nombre {
   padding-left: 60px;
-  font-size: 16px;
 }
 .modal_productos_promo .cont_modal .cont_info .info_modal .pro_cat_promo .pro_cat_item .pro_cat_item_descripcion {
   padding-left: 60px;
-  font-size: 10px;
 }
 .modal_pregunta_productos .cont_modal .titulo .cont_titulo h1 {
   padding: 0px 30px;
@@ -249,15 +235,13 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   padding-bottom: 16px;
 }
 .modal_pregunta_productos .cont_modal .cont_info .info_modal .s_pregunta .e_pregunta .pregunta_titulo {
-  font-size: 20px;
+
 }
 .modal_pregunta_productos .cont_modal .cont_info .info_modal .s_pregunta .e_pregunta .v_pregunta .n_pregunta {
   padding: 6px;
-  font-size: 14px;
 }
 .modal_pregunta_productos .cont_modal .cont_info .info_modal .s_pregunta .e_pregunta .titulo_v_pregunta {
   margin-top: 4px;
-  font-size: 12px;
   margin-bottom: 4px;
 }
 .modal_error .cont_modal .cont_info .cont_err{
@@ -272,7 +256,6 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   display: block;
   padding: 0px 15px 15px 15px;
   text-align: center;
-  font-size: 22px;
 }
 .modal_error .cont_modal .cont_info .cont_err .cont_ab_err .btns_err{
   display: block;
@@ -284,7 +267,6 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   float: left;
   color: #fff;
   padding: 8px 5px;
-  font-size: 14px;
   text-decoration: none;
   border-radius: 6px;
   text-align: center;
@@ -324,7 +306,7 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   width: 25px;
 }
 .paso_01 .process_carro .process_carro_promo .promo_delete {
-  font-size: 31px;
+
 }
 .paso_01 .process_carro .process_carro_restantes {
   padding: 6px;
@@ -385,13 +367,13 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   left: 20px;
 }
 .paso_02 .cont_direccion .direccion_opciones .dir_op .codir .cont_info_dir .title {
-  font-size: 24px;
+
 }
 .paso_02 .cont_direccion .direccion_opciones .dir_op .codir .cont_info_dir .stitle {
-  font-size: 13px;
+
 }
 .paso_02 .cont_direccion .direccion_opciones .dir_op .codir .cont_info_dir .alert {
-  font-size: 13px;
+
 }
 .cont_direccion .direccion_op1 {
   padding: 10px;
@@ -426,7 +408,6 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
 }
 .cont_direccion .direccion_op1 .dir_locales .cont_local .local_info .alert {
   color: #D00;
-  font-size: 13px;
   display: none;
 }
 .cont_direccion .direccion_op1 .dir_locales .lmap {
@@ -499,11 +480,10 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   right: 6px;
 }
 .paso_04 .cont_modal .titulo h1 {
-  font-size: 30px !important;
+
 }
 .paso_04 .cont_modal .info_modal .pedido_mensaje {
   margin: 15px 25px 0px 25px;
-  font-size: 15px;
   background: #fcc;
   padding: 10px;
   color: #600;
@@ -523,10 +503,10 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   padding: 2%;
 }
 .paso_04 .cont_modal .info_modal .pedido_final .cont_pedido .estado h1 {
-  font-size: 12px;
+
 }
 .paso_04 .cont_modal .info_modal .pedido_final .cont_pedido .estado h2 {
-  font-size: 16px;
+
 }
 .paso_04 .cont_modal .info_modal .pedido_final .cont_pedido .tiempo {
   width: 46%;
@@ -535,10 +515,10 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   padding: 2%;
 }
 .paso_04 .cont_modal .info_modal .pedido_final .cont_pedido .tiempo h1 {
-  font-size: 12px;
+
 }
 .paso_04 .cont_modal .info_modal .pedido_final .cont_pedido .tiempo h2 {
-  font-size: 16px;
+
 }
 .paso_04 .cont_modal .info_modal .pedido_final .posicion {
   height: 240px;
@@ -547,7 +527,6 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   margin: 0px 15px;
 }
 .paso_04 .cont_modal .info_modal .pedido_final .total {
-  font-size: 24px;
   text-align: right;
   display: block;
   margin: 0 15px;
@@ -586,11 +565,9 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
 .paso_04 .cont_modal .info_modal .pedido_chat .mensajes .info_mensajes .nom {
   font-weight: bold;
   display: block;
-  font-size: 12px;
 }
 .paso_04 .cont_modal .info_modal .pedido_chat .mensajes .info_mensajes .msg {
   display: block;
-  font-size: 16px;
 }
 .paso_04 .cont_modal .info_modal .pedido_chat .enviar {
   width: 72px;
@@ -602,7 +579,6 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
 }
 .paso_04 .cont_modal .info_modal .pedido_chat .enviar .enviar_txt {
   position: absolute;
-  font-size: 14px;
   color: #fff;
 }
 .paso_04 .cont_modal .info_modal .pedido_chat .entrada {
