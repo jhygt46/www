@@ -353,7 +353,7 @@ function promo_restantes(producto, j, tiene_pregunta){
     Div.className = 'restantes_detalle_item clearfix';
     
     var Nombre = document.createElement('div');
-    Nombre.className = 'restantes_detalle_nombre';
+    Nombre.className = 'restantes_detalle_nombre font2';
     if(producto.nombre_carro == ""){
         Nombre.innerHTML = producto.nombre;
     }else{
@@ -365,7 +365,7 @@ function promo_restantes(producto, j, tiene_pregunta){
     Acciones.className = 'restantes_detalle_acciones clearfix';
 
     var Precio = document.createElement('div');
-    Precio.className = 'precio';
+    Precio.className = 'precio font3';
     Precio.innerHTML = formatNumber.new(parseInt(producto.precio), "$");
     Acciones.appendChild(Precio);
     
