@@ -230,6 +230,7 @@ function create_html_promocion(obj){
     Div.style.backgroundImage = 'url("/data/'+code+'/'+obj.image+'")';
     
     var Divm = document.createElement('div');
+    Divm.style.height = parseInt((widthpx - 20) * data.config.alto / 100)+"px";
 
     if(obj.degradado == 0){
         Divm.className = 'cont_fondo';
@@ -238,17 +239,17 @@ function create_html_promocion(obj){
     }
 
     var Nombre = document.createElement('div');
-    Nombre.className = 'nombre';
+    Nombre.className = 'nombre font1';
     Nombre.innerHTML = obj.nombre;
     Divm.appendChild(Nombre);
     
     var Descripcion = document.createElement('div');
-    Descripcion.className = 'descripcion';
+    Descripcion.className = 'descripcion font4';
     Descripcion.innerHTML = obj.descripcion;
     Divm.appendChild(Descripcion);
     
     var Precio = document.createElement('div');
-    Precio.className = 'precio';
+    Precio.className = 'precio font2';
     Precio.innerHTML = formatNumber.new(parseInt(obj.precio), "$");
     Divm.appendChild(Precio);
     
