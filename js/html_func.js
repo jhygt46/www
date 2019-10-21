@@ -230,7 +230,7 @@ function create_html_promocion(obj){
     Div.style.backgroundImage = 'url("/data/'+code+'/'+obj.image+'")';
     
     var Divm = document.createElement('div');
-    Divm.style.height = parseInt((widthpx - 20) * data.config.alto / 100)+"px";
+    Divm.style.minHeight = parseInt((widthpx - 20) * data.config.alto / 100)+"px";
 
     if(obj.degradado == 0){
         Divm.className = 'cont_fondo';
