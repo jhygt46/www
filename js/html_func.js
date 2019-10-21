@@ -133,7 +133,7 @@ function create_html_categorias(obj){
                 p_nombre.appendChild(p_nombre_ttl);
 
                 p_nombre_sttl = document.createElement('div');
-                p_nombre_sttl.className = 'prod_i_sttl font4';
+                p_nombre_sttl.className = 'prod_i_sttl font5';
                 p_nombre_sttl.innerHTML = aux.descripcion;
                 p_nombre.appendChild(p_nombre_sttl);
 
