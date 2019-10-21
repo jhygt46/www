@@ -22,6 +22,9 @@ body .contenedor .pagina .cont_pagina .header .header_logo {
 body .contenedor .pagina .cont_pagina .header .menu_right .shop {
   font-size: 36px;
 }
+body .contenedor .pagina .cont_pagina .header .menu_right .cantcart {
+  font-size: 14px;
+}
 body .contenedor .pagina .cont_pagina .contenido .cont_contenido {
   width: 94%;
   max-width: 500px;
