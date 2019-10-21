@@ -526,7 +526,7 @@ function html_seleccionar_productos_categoria_promo(categoria, i, cantidad){
             pro_cat_item.appendChild(pro_cat_item_select);
             
             pro_cat_item_nombre = document.createElement('div');
-            pro_cat_item_nombre.className = 'pro_cat_item_nombre';
+            pro_cat_item_nombre.className = 'pro_cat_item_nombre font2';
             
             if(producto.nombre_carro != ""){
                 if(producto.numero > 0){
