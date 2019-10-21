@@ -86,7 +86,7 @@ function create_html_categorias(obj){
         Nombre.innerHTML = obj.nombre;
         
         var Descripcion = document.createElement('div');
-        Descripcion.className = 'descripcion font3';
+        Descripcion.className = 'descripcion font4';
         Descripcion.innerHTML = obj.descripcion;
 
         Divm.appendChild(Nombre);
@@ -102,7 +102,7 @@ function create_html_categorias(obj){
 
         Divm.appendChild(Nombre);
         var Descripcion = document.createElement('div');
-        Descripcion.className = 'descripcion font3';
+        Descripcion.className = 'descripcion font4';
         Descripcion.innerHTML = obj.descripcion;
         Divm.appendChild(Descripcion);
 
