@@ -240,8 +240,14 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
 .modal_pregunta_productos .cont_modal .cont_info .info_modal .s_pregunta .e_pregunta .pregunta_titulo {
   padding-bottom: 6px;
 }
+.modal_pregunta_productos .cont_modal .cont_info .info_modal .s_pregunta .e_pregunta .v_pregunta {
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
 .modal_pregunta_productos .cont_modal .cont_info .info_modal .s_pregunta .e_pregunta .v_pregunta .n_pregunta {
-  padding: 10px;
+  padding: 8px 10px;
+  border-bottom: 1px solid #ccc;
 }
 .modal_pregunta_productos .cont_modal .cont_info .info_modal .s_pregunta .e_pregunta .titulo_v_pregunta {
   padding-bottom: 6px;
