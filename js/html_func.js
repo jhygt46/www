@@ -264,7 +264,7 @@ function create_html_promocion(obj){
             for(var i=0, ilen=obj.categorias.length; i<ilen; i++){
                 aux = get_categoria(obj.categorias[i].id_cae);
                 cat = document.createElement('div');
-                cat.className = 'prod_item';
+                cat.className = 'prod_item font3';
                 cat.innerHTML = obj.categorias[i].cantidad + " " +aux.nombre;
                 listado.appendChild(cat);
             }
@@ -273,7 +273,7 @@ function create_html_promocion(obj){
             for(var i=0, ilen=obj.productos.length; i<ilen; i++){
                 aux = get_producto(obj.productos[i].id_pro);
                 producto = document.createElement('div');
-                producto.className = 'prod_item';
+                producto.className = 'prod_item font3';
                 producto.innerHTML = obj.productos[i].cantidad + " " +aux.nombre;
                 listado.appendChild(producto);
             }

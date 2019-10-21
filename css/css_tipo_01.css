@@ -182,14 +182,14 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   background-size: cover;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .promocion .cont_fondo {
-  padding: 13px;
   position: relative;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .promocion .cont_fondo .nombre {
-
+  padding-top: 20px;
+  padding-left: 10px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .promocion .cont_fondo .descripcion {
-
+  padding-left: 10px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .promocion .cont_fondo .precio {
   position: absolute;
