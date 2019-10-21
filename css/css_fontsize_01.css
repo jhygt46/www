@@ -112,7 +112,47 @@ body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_princi
 }
 */
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 320px) {
+  .font1{
+    font-size: 16px;
+  }
+  .font2{
+    font-size: 18px;
+  }
+  .font3{
+    font-size: 16px;
+  }
+  .font4{
+    font-size: 14px;
+  }
+  .font5{
+    font-size: 12px;
+  }
+  .font6{
+    font-size: 10px;
+  }
+}
+@media only screen and (min-width: 320px) {
+  .font1{
+    font-size: 18px;
+  }
+  .font2{
+    font-size: 18px;
+  }
+  .font3{
+    font-size: 16px;
+  }
+  .font4{
+    font-size: 14px;
+  }
+  .font5{
+    font-size: 12px;
+  }
+  .font6{
+    font-size: 10px;
+  }
+}
+@media only screen and (min-width: 450px) {
   .font1{
     font-size: 20px;
   }
@@ -132,9 +172,9 @@ body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_princi
     font-size: 10px;
   }
 }
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 700px) {
   .font1{
-    font-size: 20px;
+    font-size: 22px;
   }
   .font2{
     font-size: 18px;
@@ -152,49 +192,9 @@ body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_princi
     font-size: 10px;
   }
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 900px) {
   .font1{
-    font-size: 20px;
-  }
-  .font2{
-    font-size: 18px;
-  }
-  .font3{
-    font-size: 16px;
-  }
-  .font4{
-    font-size: 14px;
-  }
-  .font5{
-    font-size: 12px;
-  }
-  .font6{
-    font-size: 10px;
-  }
-}
-@media only screen and (min-width: 800px) {
-  .font1{
-    font-size: 20px;
-  }
-  .font2{
-    font-size: 18px;
-  }
-  .font3{
-    font-size: 16px;
-  }
-  .font4{
-    font-size: 14px;
-  }
-  .font5{
-    font-size: 12px;
-  }
-  .font6{
-    font-size: 10px;
-  }
-}
-@media only screen and (min-width: 1000px) {
-  .font1{
-    font-size: 20px;
+    font-size: 24px;
   }
   .font2{
     font-size: 18px;
