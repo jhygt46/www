@@ -173,12 +173,12 @@ function create_html_producto(id, detalle){
         Div.appendChild(nombre);
 
         var descripcion = document.createElement('div');
-        descripcion.className = 'descripcion font4';
+        descripcion.className = 'descripcion font5';
         descripcion.innerHTML = aux.descripcion;
         Div.appendChild(descripcion);
         
         var precio = document.createElement('div');
-        precio.className = 'precio valign font1';
+        precio.className = 'precio valign font3';
         precio.innerHTML = formatNumber.new(parseInt(aux.precio), "$");
         Div.appendChild(precio);
         
