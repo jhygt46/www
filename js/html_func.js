@@ -164,7 +164,7 @@ function create_html_producto(id, detalle){
         Div.onclick = function(){ add_carro_producto(aux.id_pro) };
         
         var nombre = document.createElement('div');
-        nombre.className = 'nombre font1';
+        nombre.className = 'nombre font2';
         if(aux.numero > 0){
             nombre.innerHTML = aux.numero + '.- ' + aux.nombre;
         }else{
