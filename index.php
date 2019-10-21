@@ -237,8 +237,8 @@
                                                 <div class="codir prin_alpha_1">
                                                     <div class="cont_info_dir valign">
                                                         <div class="title font1">Retiro en Local</div>
-                                                        <div class="stitle font3">Sin Costo</div>
-                                                        <div class="alert font3">Locales Cerrados</div>
+                                                        <div class="stitle font4">Sin Costo</div>
+                                                        <div class="alert font4">Locales Cerrados</div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -246,8 +246,8 @@
                                                 <div class="codir prin_alpha_1">
                                                     <div class="cont_info_dir valign">
                                                         <div class="title font1">Despacho a Domicilio</div>
-                                                        <div class="stitle font3">Desde $<?php echo $info->{"desde"}; ?></div>
-                                                        <div class="alert font3"></div>
+                                                        <div class="stitle font4">Desde $<?php echo $info->{"desde"}; ?></div>
+                                                        <div class="alert font4"></div>
                                                     </div>
                                                 </div>
                                             </div>
