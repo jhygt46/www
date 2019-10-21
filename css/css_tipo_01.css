@@ -121,10 +121,10 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   background-size: cover;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoria .cont_fondo {
-  padding: 0px;
+
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoria .cont_fondo .nombre {
-  padding-top: 10px;
+  padding-top: 20px;
   padding-left: 10px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoria .cont_fondo .descripcion {
