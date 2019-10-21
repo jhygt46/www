@@ -181,7 +181,7 @@
                     </div>
                     <div class="modal modal_dim1 vhalign hide modal_productos_promo">
                         <div class="cont_modal">
-                            <div class="titulo"><div class="cont_titulo valign"><h1 class="font1"></h1><h2></h2></div></div>
+                            <div class="titulo"><div class="cont_titulo valign"><h1 class="font1"></h1><h2 class="font3"></h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info">
                                 <div class="info_modal" style="padding-bottom: 57px"></div>
@@ -193,7 +193,7 @@
                     </div>
                     <div class="modal modal_dim1 vhalign hide modal_pregunta_productos">
                         <div class="cont_modal">
-                            <div class="titulo"><div class="cont_titulo valign"><h1 class="font1"></h1><h2></h2></div></div>
+                            <div class="titulo"><div class="cont_titulo valign"><h1 class="font1"></h1><h2 class="font3"></h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info">
                                 <div class="info_modal" style="padding-bottom: 57px"></div>
