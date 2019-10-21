@@ -57,7 +57,7 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones {
   
 }
 .modal_pregunta_productos .cont_modal .cont_info .info_modal .s_pregunta .e_pregunta .v_pregunta .n_pregunta {
-  border-bottom: 1px solid #ccc;
+  
 }
 .modal_pregunta_productos .cont_modal .cont_info .info_modal .s_pregunta .e_pregunta .v_pregunta .selected {
   background: #ccc;
