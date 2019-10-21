@@ -140,7 +140,7 @@ function create_html_categorias(obj){
                 producto.appendChild(p_nombre);
                 
                 p_precio = document.createElement('div');
-                p_precio.className = 'prod_i_pre valign';
+                p_precio.className = 'prod_i_pre valign font3';
                 p_precio.innerHTML = formatNumber.new(parseInt(aux.precio), "$");
                 producto.appendChild(p_precio);
 
