@@ -526,7 +526,7 @@ function html_seleccionar_productos_categoria_promo(categoria, i, cantidad){
             pro_cat_item.appendChild(pro_cat_item_select);
             
             pro_cat_item_nombre = document.createElement('div');
-            pro_cat_item_nombre.className = 'pro_cat_item_nombre font2';
+            pro_cat_item_nombre.className = 'pro_cat_item_nombre font3';
             
             if(producto.nombre_carro != ""){
                 if(producto.numero > 0){
@@ -543,7 +543,7 @@ function html_seleccionar_productos_categoria_promo(categoria, i, cantidad){
                 }
                 pro_cat_item.appendChild(pro_cat_item_nombre);
                 pro_cat_item_descripcion = document.createElement('div');
-                pro_cat_item_descripcion.className = 'pro_cat_item_descripcion';
+                pro_cat_item_descripcion.className = 'pro_cat_item_descripcion font4';
                 pro_cat_item_descripcion.innerHTML = producto.descripcion;
                 pro_cat_item.appendChild(pro_cat_item_descripcion);
             }            

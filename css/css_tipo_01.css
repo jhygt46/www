@@ -215,15 +215,15 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   position: relative;
 }
 .modal_productos_promo .cont_modal .cont_info .info_modal .pro_cat_promo .pro_cat_item .pro_cat_item_select {
-  width: 40px;
+  width: 50px;
   left: 10px;
 }
 .modal_productos_promo .cont_modal .cont_info .info_modal .pro_cat_promo .pro_cat_item .pro_cat_item_select .select_promo {
   width: 100%;
-  height: 30px;
+  height: 35px;
 }
 .modal_productos_promo .cont_modal .cont_info .info_modal .pro_cat_promo .pro_cat_item .pro_cat_item_nombre {
-  padding-left: 60px;
+  padding-left: 70px;
 }
 .modal_productos_promo .cont_modal .cont_info .info_modal .pro_cat_promo .pro_cat_item .pro_cat_item_descripcion {
   padding-left: 60px;
