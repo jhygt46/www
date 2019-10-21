@@ -39,16 +39,13 @@ function btn_prin(){
         $(this).css({ height: heightp+'px'});
     });
     
-    if(width < 600){
-        widthpx = inclinacion(320, 96, 600, 90, width)
+    if(width < 500){
+        widthpx = inclinacion(320, 96, 500, 90, width)
     }
-    if(width >= 600 && width < 768){
-        widthpx = inclinacion(600, 90, 768, 70, width);
+    if(width >= 500 && width < 743){
+        widthpx = inclinacion(500, 90, 743, 70, width);
     }
-    if(width >= 768){
-        widthpx = 768 * 70 / 100;
-    }
-    if(widthpx > 520){
+    if(width >= 743){
         widthpx = 520;
     }
     
