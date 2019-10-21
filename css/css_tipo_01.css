@@ -238,14 +238,13 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   padding-bottom: 16px;
 }
 .modal_pregunta_productos .cont_modal .cont_info .info_modal .s_pregunta .e_pregunta .pregunta_titulo {
-
+  padding-bottom: 10px;
 }
 .modal_pregunta_productos .cont_modal .cont_info .info_modal .s_pregunta .e_pregunta .v_pregunta .n_pregunta {
   padding: 6px;
 }
 .modal_pregunta_productos .cont_modal .cont_info .info_modal .s_pregunta .e_pregunta .titulo_v_pregunta {
-  margin-top: 4px;
-  margin-bottom: 4px;
+  padding-bottom: 6px;
 }
 .modal_error .cont_modal .cont_info .cont_err{
   width: 100%;

@@ -571,7 +571,7 @@ function html_preguntas_producto(i){
         e_pregunta.setAttribute('data-pos', k);
         
         var pregunta_titulo = document.createElement('div');
-        pregunta_titulo.className = 'pregunta_titulo font3';
+        pregunta_titulo.className = 'pregunta_titulo font2';
         pregunta_titulo.innerHTML = carro[i].preguntas[k].nombre;
         e_pregunta.appendChild(pregunta_titulo);
         
