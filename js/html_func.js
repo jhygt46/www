@@ -164,7 +164,7 @@ function create_html_producto(id, detalle){
         Div.onclick = function(){ add_carro_producto(aux.id_pro) };
         
         var nombre = document.createElement('div');
-        nombre.className = 'nombre';
+        nombre.className = 'nombre font1';
         if(aux.numero > 0){
             nombre.innerHTML = aux.numero + '.- ' + aux.nombre;
         }else{
@@ -173,12 +173,12 @@ function create_html_producto(id, detalle){
         Div.appendChild(nombre);
 
         var descripcion = document.createElement('div');
-        descripcion.className = 'descripcion';
+        descripcion.className = 'descripcion font4';
         descripcion.innerHTML = aux.descripcion;
         Div.appendChild(descripcion);
         
         var precio = document.createElement('div');
-        precio.className = 'precio valign';
+        precio.className = 'precio valign font1';
         precio.innerHTML = formatNumber.new(parseInt(aux.precio), "$");
         Div.appendChild(precio);
         
