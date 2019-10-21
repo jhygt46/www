@@ -54,6 +54,7 @@ body .contenedor .modals .cont_modals .modal .cont_modal .close {
   height: 34px;
   top: 0px;
   right: 0px;
+  cursor: pointer;
 }
 body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal {
   padding-top: 80px;
