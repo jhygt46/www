@@ -25,19 +25,19 @@ function html_home_categorias(obj, num){
 
     var Divnombre = document.createElement('div');
     Divnombre.innerHTML = obj.nombre;
-    Divnombre.className = 'nombre';
+    Divnombre.className = 'nombre font1';
     Divvalign.appendChild(Divnombre);
     
     if(obj.descripcion){
         var Divdescripcion = document.createElement('div');
         Divdescripcion.innerHTML = obj.descripcion;
-        Divdescripcion.className = 'descripcion';
+        Divdescripcion.className = 'descripcion font3';
         Divvalign.appendChild(Divdescripcion);
     }
     if(obj.precio > 0){
         var Divprecio = document.createElement('div');
         Divprecio.innerHTML = formatNumber.new(parseInt(obj.precio), "$");
-        Divprecio.className = 'precio';
+        Divprecio.className = 'precio font3';
         Divvalign.appendChild(Divprecio);
     }
 
@@ -80,7 +80,7 @@ function create_html_categorias(obj){
 
         Divm.onclick = function(){ open_categoria(obj.id_cae) };
         Divm.style.height = parseInt((widthpx - 20) * data.config.alto / 100)+"px";
-        
+
         var Nombre = document.createElement('div');
         Nombre.className = 'nombre';
         Nombre.innerHTML = obj.nombre;
