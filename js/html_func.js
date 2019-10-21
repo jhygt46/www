@@ -353,7 +353,7 @@ function promo_restantes(producto, j, tiene_pregunta){
     Div.className = 'restantes_detalle_item clearfix';
     
     var Nombre = document.createElement('div');
-    Nombre.className = 'restantes_detalle_nombre font2';
+    Nombre.className = 'restantes_detalle_nombre font3';
     if(producto.nombre_carro == ""){
         Nombre.innerHTML = producto.nombre;
     }else{

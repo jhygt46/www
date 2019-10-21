@@ -214,7 +214,7 @@
                             <div class="sub_total">
                                 <div class="cont_subtotal">
                                     <ul class="total_detalle valign">
-                                        <li class="paso_01_sub_total"></li>
+                                        <li class="paso_01_sub_total font2"></li>
                                     </ul>
                                 </div>
                             </div>
