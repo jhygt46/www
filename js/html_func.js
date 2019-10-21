@@ -249,7 +249,7 @@ function create_html_promocion(obj){
     Divm.appendChild(Descripcion);
     
     var Precio = document.createElement('div');
-    Precio.className = 'precio font2';
+    Precio.className = 'precio font1';
     Precio.innerHTML = formatNumber.new(parseInt(obj.precio), "$");
     Divm.appendChild(Precio);
     
