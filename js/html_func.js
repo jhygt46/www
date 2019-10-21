@@ -296,7 +296,7 @@ function promo_carros(producto, j){
     Div.className = 'promo_detalle_item clearfix';
     
     var Nombre = document.createElement('div');
-    Nombre.className = 'promo_detalle_nombre';
+    Nombre.className = 'promo_detalle_nombre font4';
 
 
     if(producto.nombre_carro != ""){
@@ -406,6 +406,7 @@ function promo_restantes(producto, j, tiene_pregunta){
 
     
 }
+/*
 function promo_nombre(promocion){
     
     var Div = document.createElement('div');
@@ -419,7 +420,7 @@ function promo_nombre(promocion){
     return Div;
     
 }
-
+*/
 // PROMO DETALLE //
 function imprimir_promo_modal(categoria){
     
