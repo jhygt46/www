@@ -323,11 +323,11 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   margin-bottom: 10px;
 }
 .paso_01 .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_nombre {
-  width: calc(100% - 109px);
+  width: calc(100% - 119px);
   padding-left: 4px;
 }
 .paso_01 .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones {
-  width: 105px;
+  width: 115px;
 }
 .paso_01 .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones .accion {
   width: 19px;
