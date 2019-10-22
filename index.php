@@ -328,35 +328,35 @@
                                         </ul>
                                         <?php if($info->{'pedido_wasabi'} == 1 || $info->{'pedido_gengibre'} == 1 || $info->{'pedido_embarazadas'} == 1 || $info->{'pedido_palitos'} == 1){ ?>
                                         <div class="block_preguntas">
-                                            <h1>Opciones</h1>
+                                            <h1 class="font3">Opciones</h1>
                                             <div class="preguntas">
                                                 <?php if($info->{'pedido_wasabi'} == 1){ ?>
                                                 <ul class="pregunta clearfix">
-                                                    <li class="pre_nom">Wasabi</li>
+                                                    <li class="pre_nom font4">Wasabi</li>
                                                     <li class="pre_input"><input type="checkbox" id="pedido_wasabi" /></li>
                                                 </ul>
                                                 <?php } ?>
                                                 <?php if($info->{'pedido_gengibre'} == 1){ ?>
                                                 <ul class="pregunta clearfix">
-                                                    <li class="pre_nom">Gengibre</li>
+                                                    <li class="pre_nom font4">Gengibre</li>
                                                     <li class="pre_input"><input type="checkbox" id="pedido_gengibre" /></li>
                                                 </ul>
                                                 <?php } ?>
                                                 <?php if($info->{'pedido_embarazadas'} == 1){ ?>
                                                 <ul class="pregunta clearfix">
-                                                    <li class="pre_nom">Es para Embarazada?</li>
+                                                    <li class="pre_nom font4">Es para Embarazada?</li>
                                                     <li class="pre_input"><input type="checkbox" id="pedido_embarazadas" /></li>
                                                 </ul>
                                                 <?php } ?>
                                                 <?php if($info->{'pedido_soya'} == 1){ ?>
                                                 <ul class="pregunta clearfix">
-                                                    <li class="pre_nom">Soya</li>
+                                                    <li class="pre_nom font4">Soya</li>
                                                     <li class="pre_input"><input type="checkbox" id="pedido_soya" /></li>
                                                 </ul>
                                                 <?php } ?>
                                                 <?php if($info->{'pedido_teriyaki'} == 1){ ?>
                                                 <ul class="pregunta clearfix">
-                                                    <li class="pre_nom">Teriyaki</li>
+                                                    <li class="pre_nom font4">Teriyaki</li>
                                                     <li class="pre_input"><input type="checkbox" id="pedido_teriyaki" /></li>
                                                 </ul>
                                                 <?php } ?>
