@@ -93,7 +93,7 @@
                 <div class="cont_menu_left">
                     <div class="btn_toogle material-icons" onclick="tooglemenu()">view_headline</div>
                     <div class="menu_info">
-                        <h1>Men&uacute;</h1>
+                        <h1 class="font1">Men&uacute;</h1>
                         <ul class="lista_paginas">
                             
                         </ul>
