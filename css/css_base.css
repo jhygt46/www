@@ -358,14 +358,12 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones {
 }
 .paso_03 .cont_final .block_nombre_telefono h1 {
   display: block;
-  font-size: 12px;
 }
 .paso_03 .cont_final .block_preguntas {
   display: block;
 }
 .paso_03 .cont_final .block_preguntas h1 {
   display: block;
-  font-size: 12px;
 }
 .paso_03 .cont_final .block_preguntas .preguntas .pregunta li {
   float: left;
