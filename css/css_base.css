@@ -29,7 +29,7 @@ body .contenedor .shop {
 body .contenedor .cantcart {
   cursor: pointer;
 }
-body .contenedor .cont_fondo {
+body .contenedor .categoria .cont_fondo {
   cursor: pointer;
 }
 body .contenedor .menu_left .cont_menu_left {
