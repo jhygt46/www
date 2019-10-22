@@ -32,6 +32,9 @@ body .contenedor .cantcart {
 body .contenedor .categoria .cont_fondo {
   cursor: pointer;
 }
+body .contenedor .promocion .cont_fondo {
+  cursor: pointer;
+}
 body .contenedor .categoriaopen .listado .prod_item {
   cursor: pointer;
 }
