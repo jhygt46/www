@@ -318,13 +318,13 @@
                                     
                                     <div class="cont_final">
                                         <ul class="block_direccion clearfix">
-                                            <li class="item_direccion"><h1>Direccion: </h1><h2></h2></li>
-                                            <li class="item_numero"><h1>Numero: </h1><h2></h2></li>
-                                            <li class="item_depto"><h1>Depto: </h1><input type="text" id="pedido_depto" /></li>
+                                            <li class="item_direccion"><h1 class="font3">Direccion: </h1><h2></h2></li>
+                                            <li class="item_numero"><h1 class="font3">Numero: </h1><h2></h2></li>
+                                            <li class="item_depto"><h1 class="font3">Depto: </h1><input type="text" id="pedido_depto" /></li>
                                         </ul>
                                         <ul class="block_nombre_telefono clearfix">
-                                            <li class="item_nombre"><h1 class="font1">Nombre:</h1><input type="text" id="pedido_nombre" /></li>
-                                                <li class="item_telefono"><h1 class="font1">Telefono:</h1><input type="text" id="pedido_telefono" value="+569" /></li>
+                                            <li class="item_nombre"><h1 class="font3">Nombre:</h1><input type="text" id="pedido_nombre" /></li>
+                                                <li class="item_telefono"><h1 class="font3">Telefono:</h1><input type="text" id="pedido_telefono" value="+569" /></li>
                                         </ul>
                                         <?php if($info->{'pedido_wasabi'} == 1 || $info->{'pedido_gengibre'} == 1 || $info->{'pedido_embarazadas'} == 1 || $info->{'pedido_palitos'} == 1){ ?>
                                         <div class="block_preguntas">
