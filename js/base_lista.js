@@ -299,7 +299,8 @@ function confirmar_pregunta_productos(that){
                 if(preguntas_promo(carros[i])){
                     if(paso == 2){
                         if(proceso(true, true)){
-                            show_modal('paso_02');
+                            //show_modal('paso_02');
+                            ver_paso_2();
                         }
                     }else{
                         hide_modal();

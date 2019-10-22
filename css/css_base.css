@@ -297,7 +297,7 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones {
   display: block;
 }
 .paso_02 .cont_direccion .direccion_opciones .dir_op .alert {
-  display: none;
+  display: block;
 }
 .paso_02a .cont_direccion {
   height: 100%;
