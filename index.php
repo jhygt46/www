@@ -328,7 +328,7 @@
                                         </ul>
                                         <?php if($info->{'pedido_wasabi'} == 1 || $info->{'pedido_gengibre'} == 1 || $info->{'pedido_embarazadas'} == 1 || $info->{'pedido_palitos'} == 1){ ?>
                                         <div class="block_preguntas">
-                                            <h1 class="font3">Opciones</h1>
+                                            <h1 class="font4">Opciones</h1>
                                             <div class="preguntas">
                                                 <?php if($info->{'pedido_wasabi'} == 1){ ?>
                                                 <ul class="pregunta clearfix">
@@ -362,7 +362,7 @@
                                                 <?php } ?>
                                                 <?php if($info->{'pedido_palitos'} == 1){ ?>
                                                 <ul class="pregunta clearfix">
-                                                    <li class="pre_nom">Palitos</li>
+                                                    <li class="pre_nom font4">Palitos</li>
                                                     <li class="pre_input"><select id="pedido_palitos"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select></li>
                                                 </ul>
                                                 <?php } ?>
@@ -371,7 +371,7 @@
                                         <?php } ?>
                                         <?php if($info->{'pedido_comentarios'} == 1){ ?>
                                         <div class="block_preguntas">
-                                            <h1>Comentarios</h1>
+                                            <h1 class="font3">Comentarios</h1>
                                             <div class="preguntas">
                                                 <Textarea id="pedido_comentarios" style="width: 100%; height: 70px; border: 0px"></Textarea>
                                             </div>
