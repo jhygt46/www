@@ -22,6 +22,12 @@ body .contenedor .menu_left {
   position: fixed;
   z-index: 2;
 }
+body .contenedor .shop {
+  cursor: pointer;
+}
+body .contenedor .cont_fondo {
+  cursor: pointer;
+}
 body .contenedor .menu_left .cont_menu_left {
   width: 100%;
   height: 100%;
@@ -33,6 +39,7 @@ body .contenedor .menu_left .cont_menu_left .btn_toogle {
   right: -50px;
   font-size: 40px;
   position: absolute;
+  cursor: pointer;
 }
 body .contenedor .menu_left .cont_menu_left .menu_info {
   display: block;
@@ -106,6 +113,7 @@ body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_princi
   position: relative;
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .cont_bpi {
   width: 94%;
