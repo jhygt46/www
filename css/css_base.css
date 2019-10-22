@@ -38,6 +38,9 @@ body .contenedor .promocion .cont_fondo {
 body .contenedor .categoriaopen .listado .prod_item {
   cursor: pointer;
 }
+body .contenedor .n_pregunta {
+  cursor: pointer;
+}
 body .contenedor .menu_left .cont_menu_left {
   width: 100%;
   height: 100%;
