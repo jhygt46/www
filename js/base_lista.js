@@ -73,6 +73,7 @@ function btn_prin(){
 function close_that(that){
     $('.modals').hide();
     $(that).parents('.modal').hide();
+    paso = 1;
 }
 function open_categoria(id){
     
@@ -875,6 +876,7 @@ function show_modal(clase){
 }
 function hide_modal(){
     modal = 0;
+    paso = 1;
     $('.modals').hide();
     $('.modals .cont_modals').find('.modal').each(function(){
         $(this).hide();

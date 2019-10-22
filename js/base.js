@@ -27,7 +27,7 @@ var timer = false;
 // FIN BACK BUTTON //
 
 // CLICK OUT //
-$(document).click(function (e) {
+$(document).click(function(e) {
     if($(e.target).hasClass('cont_modals')){
         hide_modal();
     }
