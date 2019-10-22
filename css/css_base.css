@@ -261,7 +261,7 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones {
 .paso_01 .process_carro .process_carro_promo .promo_delete {
   position: absolute;
   top: 4px;
-  right: 4px;
+  right: 1px;
   width: 30px;
   height: 30px;
 }
