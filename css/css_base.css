@@ -41,6 +41,9 @@ body .contenedor .categoriaopen .listado .prod_item {
 body .contenedor .n_pregunta {
   cursor: pointer;
 }
+body .contenedor .lista_productos .producto {
+  cursor: pointer;
+}
 body .contenedor .menu_left .cont_menu_left {
   width: 100%;
   height: 100%;
