@@ -138,7 +138,6 @@ function open_carro(){
     
     var tp = tiene_pedido();
     if(!tp){
-        
         if(proceso(true, false)){
             process_carro();
             show_modal('paso_01');
@@ -147,6 +146,7 @@ function open_carro(){
     if(tp){
         show_modal('paso_04');
     }
+    paso = 2;
     
 }
 function imprimir_productos_modal(id){
