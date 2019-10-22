@@ -356,8 +356,8 @@ class Core{
                 if(!curl_errno($ch)){
 
                     $resp = json_decode(curl_exec($ch));
-                    curl_close($ch);
                     
+
                     if($resp->{'op'} == 1){
 
                         $file['pedido']->{'id_ped'} = $resp->{'id_ped'};
@@ -423,7 +423,8 @@ class Core{
                 }else{
                     $this->enviar_error("#E01", 0, "No se pudo enviar pedido de ".$this->host, 0, "");
                 }
-
+                curl_close($ch);
+                
             }
         }
         

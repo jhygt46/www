@@ -1016,6 +1016,7 @@ function paso_4(){
                 data: send,
                 success: function(res){
 
+                    console.log(res);
                     if(res.op == 1){
                         
                         $('#pedido_nombre').css({ border: '0px' });
