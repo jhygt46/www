@@ -384,8 +384,8 @@
                             <div class="sub_total">
                                 <div class="cont_subtotal">
                                     <ul class="total_detalle valign">
-                                        <li class="paso_03_costo"></li>
-                                        <li class="paso_03_total"></li>
+                                        <li class="paso_03_costo font2"></li>
+                                        <li class="paso_03_total font2"></li>
                                     </ul>
                                 </div>
                             </div>
