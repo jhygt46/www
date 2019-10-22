@@ -193,8 +193,8 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .promocion .cont_fondo .precio {
   position: absolute;
-  top: 13px;
-  right: 13px;
+  top: 20px;
+  right: 10px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .promocion .cont_fondo .listado {
   padding: 10px 0px;
