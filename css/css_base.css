@@ -22,7 +22,11 @@ body .contenedor .menu_left {
   position: fixed;
   z-index: 2;
 }
+
 body .contenedor .shop {
+  cursor: pointer;
+}
+body .contenedor .cantcart {
   cursor: pointer;
 }
 body .contenedor .cont_fondo {
