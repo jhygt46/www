@@ -351,10 +351,13 @@ class Core{
                 curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-                $resp = json_decode(curl_exec($ch));
+                
 
                 if(!curl_errno($ch)){
 
+                    $resp = json_decode(curl_exec($ch));
+                    curl_close($ch);
+                    
                     if($resp->{'op'} == 1){
 
                         $file['pedido']->{'id_ped'} = $resp->{'id_ped'};
@@ -416,7 +419,6 @@ class Core{
                     }
     
                     file_put_contents($this->dir_info."pedidos/".$file['pedido']->{'pedido_code'}.".json", json_encode($file));
-                    curl_close($ch);
 
                 }else{
                     $this->enviar_error("#E01", 0, "No se pudo enviar pedido de ".$this->host, 0, "");
@@ -531,6 +533,13 @@ class Core{
     }
     private function enviar_error_2($error){
         file_put_contents($this->file_err, $this->host." - ".$error);
+    }
+    public function pass_generate($n){
+        $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        for($i=0; $i<$n; $i++){
+            $r .= $chars{rand(0, strlen($chars)-1)};
+        }
+        return $r;
     }
 
 }

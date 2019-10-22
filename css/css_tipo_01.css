@@ -396,7 +396,7 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
 }
 .cont_direccion .direccion_op1 .dir_locales .cont_local .local_info {
   left: 10px;
-  width: calc(100% - 60px);
+  width: calc(100% - 100px);
 }
 .cont_direccion .direccion_op1 .dir_locales .cont_local .accioness {
   right: 10px;
