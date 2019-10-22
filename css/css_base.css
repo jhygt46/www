@@ -290,6 +290,9 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones {
 .paso_02 .cont_direccion {
   height: 100%;
 }
+.paso_02 .cont_direccion .direccion_opciones .dir_op .codir{
+  cursor: pointer;
+}
 .paso_02 .cont_direccion .direccion_opciones .dir_op .title {
   display: block;
 }
