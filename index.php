@@ -404,8 +404,8 @@
                                     <div class="pedido_mensaje"></div>
                                     <div class="pedido_final">
                                         <div class="cont_pedido clearfix">
-                                            <div class="estado"><h1 class="font1">Estado</h1><h2 class="font3">Enviado</h2></div>
-                                            <div class="tiempo"><h1 class="font1">Tiempo Restante</h1><h2 class="font3">15 minutos aprox</h2></div>
+                                            <div class="estado"><h1 class="font1">Estado</h1><h2 class="font5"></h2></div>
+                                            <div class="tiempo"><h1 class="font1">Tiempo Restante</h1><h2 class="font5"></h2></div>
                                         </div>
                                         <div class="posicion" id="mapa_posicion"></div>
                                         <div class="total font1"></div>

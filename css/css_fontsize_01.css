@@ -143,7 +143,7 @@ body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_princi
     font-size: 15px;
   }
   .font5{
-    font-size: 11px;
+    font-size: 12px;
   }
 }
 @media only screen and (min-width: 700px){
@@ -160,7 +160,7 @@ body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_princi
     font-size: 17px;
   }
   .font5{
-    font-size: 11px;
+    font-size: 14px;
   }
 }
 @media only screen and (min-width: 1000px){
@@ -168,15 +168,15 @@ body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_princi
     font-size: 22px;
   }
   .font2{
-    font-size: 20px;
+    font-size: 21px;
   }
   .font3{
-    font-size: 18px;
+    font-size: 20px;
   }
   .font4{
-    font-size: 16px;
+    font-size: 19px;
   }
   .font5{
-    font-size: 11px;
+    font-size: 16px;
   }
 }
