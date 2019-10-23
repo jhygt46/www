@@ -401,7 +401,6 @@
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info">
                                 <div class="info_modal" style="padding-bottom: 57px">
-                                    
                                     <div class="pedido_mensaje"></div>
                                     <div class="pedido_final">
                                         <div class="cont_pedido clearfix">
@@ -411,7 +410,6 @@
                                         <div class="posicion" id="mapa_posicion"></div>
                                         <div class="total font1"></div>
                                     </div>
-
                                     <div class="pedido_chat" style="display: none">
                                         <div class="mensajes">
                                             <div class="info_mensajes"></div>
@@ -419,7 +417,6 @@
                                         <div class="entrada"><input type="text" id="texto_chat" /></div>
                                         <div class="enviar" onclick="send_chat()"><div class="enviar_txt vhalign">Enviar</div></div>
                                     </div>
-                                    
                                 </div>
                             </div>
                             <div class="acciones">
