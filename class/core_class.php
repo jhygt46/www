@@ -102,16 +102,14 @@ class Core{
     }
     public function get_data(){
         $config = $this->get_config();
-        return $this->curlData();
-        /*
         if(file_exists($this->dir_info."versiones/".$config["info"]) && $config["actualizar"] == 0){
             return json_decode(file_get_contents($this->dir_info."versiones/".$config["info"]));
         }else{
             return $this->curlData();
         }
-        */
     }
     public function curlData(){
+
         $send["code"] = $this->code;
         $send["host"] = $this->host;
         $send["tipo"] = 1;
@@ -121,43 +119,37 @@ class Core{
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         if(!curl_errno($ch)){
             $data = json_decode(curl_exec($ch));
-            if($_GET["debug"] == 1){
-                echo "<pre>";
-                print_r($data);
-                echo "</pre>";
-                exit;
-            }
             curl_close($ch);
             if($data->{'op'} == 1){
                 if(!is_dir($this->dir)){
                     if(!mkdir($this->dir, 0777)){
                         die("LA CARPETA ".$this->dir." NO PUDO SER CREADA<br/>");
-                        $this->enviar_error(16, "No se pudo crear el directorio ".$this->dir);
+                        $this->enviar_error(16, "No se pudo crear el directorio ".$this->dir." ".$this->host);
                     }
                 }
                 if(!is_dir($this->dir_info)){
                     if(!mkdir($this->dir_info, 0777)){
                         die("LA CARPETA ".$this->dir_info." NO PUDO SER CREADA<br/>");
-                        $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info);
+                        $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info." ".$this->host);
                     }else{
                         if(!mkdir($this->dir_info."pedidos/", 0777)){
                             die("LA CARPETA ".$this->dir_info."pedidos/ NO PUDO SER CREADA<br/>");
-                            $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."pedidos");
+                            $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."pedidos ".$this->host);
                         }
                         if(!mkdir($this->dir_info."versiones/", 0777)){
                             die("LA CARPETA ".$this->dir_info."versiones/ NO PUDO SER CREADA<br/>");
-                            $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."versiones");
+                            $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."versiones ".$this->host);
                         }
                         if(!mkdir($this->dir_info."polygon/", 0777)){
                             die("LA CARPETA ".$this->dir_info."polygon/ NO PUDO SER CREADA<br/>");
-                            $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."polygon");
+                            $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."polygon ".$this->host);
                         }
                     }
                 }
                 $config = $this->get_config();
                 $config["actualizar"] = 0;
                 if(!file_put_contents($this->dir_info."config.json", json_encode($config))){
-                    $this->enviar_error(16, "No se pudo guardar actualizacion #0");
+                    $this->enviar_error(16, "No se pudo guardar actualizacion #0 ".$this->host);
                 }
                 if(file_exists($this->dir_info."versiones/last.json")){
                     rename($this->dir_info."versiones/last.json", $this->dir_info."versiones/".date("Ymd", filemtime($this->dir_info."versiones/last.json")).".json");
@@ -165,12 +157,12 @@ class Core{
                 if(file_put_contents($this->dir_info."versiones/last.json", json_encode($data->{"info"}))){
                     if($data->{"info"}->{"logo"} != "sinlogo.png"){
                         if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"logo"}, file_get_contents("http://www.misitiodelivery.cl/images/logos/".$data->{"info"}->{"logo"}))){
-                            $this->enviar_error(16, "No se pudo guardar el logo");
+                            $this->enviar_error(16, "No se pudo guardar el logo ".$this->host);
                         }
                     }
                     if($data->{"info"}->{"favicon"} != "default.ico"){
                         if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"favicon"}, file_get_contents("http://www.misitiodelivery.cl/images/favicon/".$data->{"info"}->{"favicon"}))){
-                            $this->enviar_error(16, "No se pudo guardar el favicon");
+                            $this->enviar_error(16, "No se pudo guardar el favicon ".$this->host);
                         }
                     }
                 }
@@ -178,12 +170,12 @@ class Core{
                     rename($this->dir_info."polygon/last.json", $this->dir_info."polygon/".date("Ymd", filemtime($this->dir_info."polygon/last.json")).".json");
                 }
                 if(!file_put_contents($this->dir_info."polygon/last.json", json_encode($data->{"polygons"}))){
-                    $this->enviar_error(16, "No se pudo guardar los poligonos");
+                    $this->enviar_error(16, "No se pudo guardar los poligonos ".$this->host);
                 }
                 if(!is_dir($this->dir_data."data/".$data->{"info"}->{"code"}."/")){
                     if(!mkdir($this->dir_data."data/".$data->{"info"}->{"code"}."/", 0777)){
                         die("LA CARPETA ".$this->dir_data."data/".$data->{"info"}->{"code"}."/ NO PUDO SER CREADA<br/>");
-                        $this->enviar_error(16, "No se pudo crear el directorio ".$this->dir_data."data/".$data->{"info"}->{"code"}."/");
+                        $this->enviar_error(16, "No se pudo crear el directorio ".$this->dir_data."data/".$data->{"info"}->{"code"}."/ ".$this->host);
                     }else{
                         file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/index.html", "");
                     }
@@ -194,7 +186,7 @@ class Core{
                         if(strlen($categorias[$i]->{"image"}) == 25){
                             if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$categorias[$i]->{"image"})){
                                 if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$categorias[$i]->{"image"}, file_get_contents("http://www.misitiodelivery.cl/images/categorias/".$categorias[$i]->{"image"}))){
-                                    $this->enviar_error(16, "No se pudo guardar las imagenes de categorias");
+                                    $this->enviar_error(16, "No se pudo guardar las imagenes de categorias ".$this->host);
                                 }
                             }
                         }
@@ -202,14 +194,14 @@ class Core{
                     if($data->{"info"}->{"foto_retiro"} != ""){
                         if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"foto_retiro"})){
                             if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"foto_retiro"}, file_get_contents("http://www.misitiodelivery.cl/images/categorias/".$data->{"info"}->{"foto_retiro"}))){
-                                $this->enviar_error(16, "No se pudo guardar la foto retiro");
+                                $this->enviar_error(16, "No se pudo guardar la foto retiro ".$this->host);
                             }
                         }
                     }
                     if($data->{"info"}->{"foto_despacho"} != ""){
                         if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"foto_despacho"})){
                             if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$data->{"info"}->{"foto_despacho"}, file_get_contents("http://www.misitiodelivery.cl/images/categorias/".$data->{"info"}->{"foto_despacho"}))){
-                                $this->enviar_error(16, "No se pudo guardar la foto despacho");
+                                $this->enviar_error(16, "No se pudo guardar la foto despacho ".$this->host);
                             }
                         }
                     }
@@ -218,7 +210,7 @@ class Core{
                         if(strlen($locales[$i]->{'image'}) == 25){
                             if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$locales[$i]->{'image'})){
                                 if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$locales[$i]->{'image'}, file_get_contents("http://www.misitiodelivery.cl/images/categorias/".$locales[$i]->{'image'}))){
-                                    $this->enviar_error(16, "No se pudo guardar las imagen del local");
+                                    $this->enviar_error(16, "No se pudo guardar las imagen del local ".$this->host);
                                 }
                             }
                         }
@@ -227,8 +219,9 @@ class Core{
                 }else{ $this->enviar_error(16, "No se pudo crear el archivo index.js"); }
                 
                 return $data->{"info"};
-            }else{ $this->enviar_error(17, "curlData() #2"); }
-        }else{ $this->enviar_error(17, "curlData() #1"); }
+            }else{ $this->enviar_error(17, "curlData() #2 ".$this->host); }
+        }else{ $this->enviar_error(17, "curlData() #1 ".$this->host); }
+
     }
     public function get_info_despacho($lat, $lng){
 
@@ -236,10 +229,8 @@ class Core{
         $polygons = json_decode(file_get_contents($this->dir_info."polygon/".$config["polygon"]));
         $precio = 9999999;
         $info['op'] = 2;
-
         if(count($polygons) > 0){
             foreach($polygons as $polygon){
-
                 $lats = [];
                 $lngs = [];
                 $puntos = json_decode($polygon->{'poligono'});
@@ -259,13 +250,11 @@ class Core{
                         $precio = $polygon->{'precio'};
                     }
                 }
-
             }
         }else{
             $info['op'] = 3;
-            $this->enviar_error("#B03", 0, "Sin Poligonos", 0, "");
+            $this->enviar_error(16, "Sin Poligonos en ".$this->host);
         }
-    
         return $info;
 
     }
@@ -330,7 +319,7 @@ class Core{
         $pedido = json_decode($_POST['pedido']);
         $nombre = $pedido->{'nombre'};
         $telefono = str_replace(" ", "", $pedido->{'telefono'});
-        
+
         if(strlen($nombre) > 2){
             if(strlen($telefono) >= 12 && strlen($telefono) <= 14){
 
@@ -341,7 +330,6 @@ class Core{
                 $send["code"] = $this->code;
                 $send["host"] = $this->host;
                 $send["tipo"] = 2;
-
                 $file['pedido'] = $pedido;
                 $file['puser'] = json_decode($_POST['puser']);
                 $file['carro'] = json_decode($_POST['carro']);
@@ -351,36 +339,27 @@ class Core{
                 curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-                
-
                 if(!curl_errno($ch)){
-
                     $resp = json_decode(curl_exec($ch));
-                    $info['resp'] = $resp;
-
+                    curl_close($ch);
+                    
                     if($resp->{'op'} == 1){
-
                         $file['pedido']->{'id_ped'} = $resp->{'id_ped'};
                         $file['pedido']->{'num_ped'} = $resp->{'num_ped'};
                         $file['pedido']->{'pedido_code'} = $resp->{'pedido_code'};
                         $file['pedido']->{'fecha'} = $resp->{'fecha'};
-    
                         $info['op'] = 1;
                         $info['pedido_code'] = $resp->{'pedido_code'};
                         $id_puser = (isset($file['puser']->{'id_puser'})) ? $file['puser']->{'id_puser'} : 0 ;
                         
                         if($resp->{'set_puser'} == 1){
-    
                             $info['set_puser'] = 1;
                             $info['puser_id'] = $resp->{'puser_id'};
                             $info['puser_code'] = $resp->{'puser_code'};
                             $info['puser_nombre'] = $resp->{'puser_nombre'};
                             $info['puser_telefono'] = $resp->{'puser_telefono'};
-    
                         }
-                        
                         if($resp->{'email'} == 1){
-    
                             $info['email'] = 1;
                             $info['lat'] = $resp->{'lat'};
                             $info['lng'] = $resp->{'lng'};
@@ -389,47 +368,32 @@ class Core{
                             $info['t_despacho'] = $resp->{'t_despacho'};
                             $info['t_retiro'] = $resp->{'t_retiro'};
                             $info['fecha'] = $resp->{'fecha'};
-    
                         }
-    
                         if($resp->{'email'} == 2){
-    
                             $info['email'] = 2;
                             $info['tel'] = $resp->{'telefono'};
                             $info['mailto'] = $resp->{'correo'};
                             $info['body'] = $resp->{'url'}.'/detalle.php?code='.$resp->{'pedido_code'};
-    
                         }
-                        
                     }
                     if($resp->{'op'} == 2){
-    
                         $info['op'] = 2;
                         $temp_code = $this->pass_generate(20);
-    
                         $info['tel'] = $resp->{'telefono'};
                         $info['mailto'] = $resp->{'correo'};
                         $info['body'] = $resp->{'url'}.'/detalle.php?code='.$temp_code;
-    
                         $file['pedido']->{'id_ped'} = 0;
                         $file['pedido']->{'num_ped'} = 0;
                         $file['pedido']->{'pedido_code'} = $temp_code;
                         $file['pedido']->{'fecha'} = date('Y-m-d H:i:s');
-    
                     }
-    
                     file_put_contents($this->dir_info."pedidos/".$file['pedido']->{'pedido_code'}.".json", json_encode($file));
-
                 }else{
-                    $this->enviar_error("#E01", 0, "No se pudo enviar pedido de ".$this->host, 0, "");
+                    $this->enviar_error(17, "Curl error enviar_pedido() #1 ".$this->host);
                 }
-                curl_close($ch);
-
             }
         }
-        
         return $info;
-
     }
     public function ver_pedido(){
 
@@ -443,13 +407,10 @@ class Core{
             $data = json_decode(file_get_contents($file));
             $fecha = $data->{'pedido'}->{'fecha'};
             $diff = time() - $fecha;
-
             if($diff < 86400){
-
                 $info['op'] = 1;
                 $info['data'] = $data;
                 $info['code'] = $aux->{'code'};
-
             }else{
                 $info['op'] = 2;
             }
@@ -525,17 +486,19 @@ class Core{
         curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-        $resp = json_decode(curl_exec($ch));
         if(!curl_errno($ch)){
+            $resp = json_decode(curl_exec($ch));
             if($resp->{'op'} != 1){ $this->enviar_error_2($code." // ".$error); }
-        }else{ $this->enviar_error_2($code." // ".$error); }
+        }else{ 
+            $this->enviar_error_2($code." // ".$error);
+        }
         curl_close($ch);
 
     }
     private function enviar_error_2($error){
         file_put_contents($this->file_err, $this->host." - ".$error);
     }
-    public function pass_generate($n){
+    private function pass_generate($n){
         $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         for($i=0; $i<$n; $i++){
             $r .= $chars{rand(0, strlen($chars)-1)};

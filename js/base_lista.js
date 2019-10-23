@@ -1001,7 +1001,6 @@ function paso_4(){
             pedido.depto = $('#pedido_depto').val();
             pedido.pre_gengibre = ($('#pedido_gengibre').is(':checked') ? 1 : 0 );
             pedido.pre_wasabi = ($('#pedido_wasabi').is(':checked') ? 1 : 0 );
-            pedido.pre_embarazadas = ($('#pedido_embarazadas').is(':checked') ? 1 : 0 );
             pedido.pre_palitos = ($('#pedido_palitos').val()) ? $('#pedido_palitos').val() : 0 ;
             pedido.pre_soya = ($('#pedido_soya').is(':checked') ? 1 : 0 );
             pedido.pre_teriyaki = ($('#pedido_teriyaki').is(':checked') ? 1 : 0 );
@@ -1277,19 +1276,20 @@ function initMap(){
     });
 
 }
-function send_error(code, status, error){
+function send_error(code, error){
     
-    var puser = get_puser();
-    var send = { accion: 'enviar_error', codes: code, status: status, error: error, id_puser: puser.id_puser, code: puser.code };
+    var send = { accion: 'enviar_error', codes: code, error: error };
     $.ajax({
         url: 'ajax/index.php',
         type: "POST",
         data: send,
-        success: function(){
-
+        success: function(res){
+            console.log("res");
+            console.log(res);
         },
-        error: function(){
-            
+        error: function(err){
+            console.log("err");
+            console.log(err);
         }
     });
 

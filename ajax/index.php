@@ -18,7 +18,7 @@
     if($_POST["accion"] == "enviar_error"){
         require_once "../class/core_class.php";
         $core = new Core();
-        $info = $core->enviar_error($_POST["codes"], $_POST["status"], $_POST["error"], $_POST["id_puser"], $_POST["code"]);
+        $info = $core->enviar_error($_POST["codes"], $_POST["error"]);
         echo json_encode($info);
     }
 
