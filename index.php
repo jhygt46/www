@@ -286,6 +286,7 @@
                                                         <a class="accion ver_mapa" href="" onclick="local_mapa(<?php echo $locales[$i]->{'lat'}; ?>, <?php echo $locales[$i]->{'lng'}; ?>)"><img src="_images/mapa.png" alt="" /></a>
                                                     </div>
                                                 </div>
+                                                <div class="dir_map"></div>
                                             </div>
                                             <?php } ?>
                                         </div>
