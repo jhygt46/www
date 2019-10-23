@@ -121,7 +121,6 @@ function tiene_pedido(){
         return false;
     }
     if(pedido.id_ped > 0){
-        
         var limit = Math.round(new Date().getTime()/1000) - pedido.fecha;
         if(limit < time_limit){
             return true;
@@ -130,9 +129,8 @@ function tiene_pedido(){
             aux_nuevo();
             return false;
         }
-        
     }
-    
+
 }
 function open_carro(){
     
@@ -171,7 +169,6 @@ function imprimir_productos_modal(id){
 function imprimir_categoria_modal(categorias){
     
     $('.modal_carta .info_modal').html('');
-    
     var html = create_element_class('lista_categorias');
     for(var i=0, ilen=categorias.length; i<ilen; i++){
         if(categorias[i].tipo == 0 && categorias[i].ocultar == 0){
@@ -192,7 +189,6 @@ function add_carro_producto(id_pro){
     
     var producto = get_producto(id_pro);
     var carro = get_carro();
-    
     var item_carro = { id_pro: parseInt(id_pro) };
     if(producto.preguntas){
         item_carro.preguntas = [];
@@ -200,7 +196,6 @@ function add_carro_producto(id_pro){
             item_carro.preguntas.push(get_preguntas(producto.preguntas[k]));
         }
     }
-    
     carro.push(item_carro);
     set_cantidad(1);
     localStorage.setItem("carro", JSON.stringify(carro));
@@ -212,7 +207,6 @@ function add_carro_promocion(id_cae){
     var producto, item_carro;
     var carro = JSON.parse(localStorage.getItem("carro")) || [];
     var promo = get_categoria(id_cae);
-
     if(promo.categorias){
         for(var i=0, ilen=promo.categorias.length; i<ilen; i++){
             carro.push({id_cae: parseInt(promo.categorias[i].id_cae), cantidad: parseInt(promo.categorias[i].cantidad)});
@@ -1059,13 +1053,13 @@ function paso_4(){
                     }else if(res.op == 2){
                         show_modal('modal_error_locales');
                     }else{
-                        send_error("#A02", 0, 'res.op != 1 && != 2');
+                        send_error(16, " enviar_pedido() op!=1|2 ");
                     }
                     document.getElementById("enviar_cotizacion").disabled = false;
                     
                 }, error: function(e, err){
                     show_modal('modal_error_locales');
-                    send_error("#A01", e.status, err);
+                    send_error(16, "enviar_pedido() " + err);
                     document.getElementById("enviar_cotizacion").disabled = false;
                 }
             });
@@ -1229,12 +1223,12 @@ function initMap(){
                             alert("Error: no hay tramos definidos");
                         }else{
                             show_modal('modal_error_locales');
-                            send_error("#B02", 0, 'op != 1-2-3');
+                            send_error(16, " despacho_domicilio() op!=1|2|3 ");
                         }
                         
                     }, error: function(e, err){
                         show_modal('modal_error_locales');
-                        send_error("#B01", e.status, err);
+                        send_error(16, " despacho_domicilio() " + err);
                     }
                 });
                 
@@ -1282,15 +1276,7 @@ function send_error(code, error){
     $.ajax({
         url: 'ajax/index.php',
         type: "POST",
-        data: send,
-        success: function(res){
-            console.log("res");
-            console.log(res);
-        },
-        error: function(err){
-            console.log("err");
-            console.log(err);
-        }
+        data: send
     });
 
 }
