@@ -394,13 +394,15 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   height: 100px;
   display: none;
 }
-.cont_direccion .direccion_op1 .dir_locales .cont_local .local_info {
-  left: 10px;
-  width: calc(100% - 100px);
+.cont_direccion .direccion_op1 .dir_locales .cont_local .left_acciones {
+  
+}
+.cont_direccion .direccion_op1 .dir_locales .cont_local .left_acciones .local_info {
+  width: 100%
 }
 .cont_direccion .direccion_op1 .dir_locales .cont_local .accioness {
   right: 10px;
-  width: 36px;
+  width: 35px;
   background: #fff;
   padding: 5px;
 }
