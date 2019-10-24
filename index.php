@@ -146,9 +146,9 @@
                                                     <div class="cont_local prin_alpha_1">
                                                         <div class="left_acciones">
                                                             <div class="local_info valign">
-                                                                <div class="title"><?php echo $locales[$i]->{'nombre'}; ?></div>
-                                                                <div class="stitle"><?php echo $locales[$i]->{'direccion'}; ?></div>
-                                                                <div class="alert"></div>
+                                                                <div class="title font1"><?php echo $locales[$i]->{'nombre'}; ?></div>
+                                                                <div class="stitle font4"><?php echo $locales[$i]->{'direccion'}; ?></div>
+                                                                <div class="alert font4"></div>
                                                             </div>
                                                         </div>
                                                         <div class="accioness valign">
