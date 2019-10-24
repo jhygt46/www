@@ -85,6 +85,7 @@ class Core{
         $config = $this->get_config();
         $config["actualizar"] = 1;
         file_put_contents($this->dir_info."config.json", json_encode($config));
+        die("BUENA NELSON");
     }
     public function get_config(){
         if(file_exists($this->dir_info."config.json")){
@@ -102,6 +103,9 @@ class Core{
     }
     public function get_data(){
         $config = $this->get_config();
+        echo "<pre>";
+        print_r($config);
+        echo "</pre>";
         if(file_exists($this->dir_info."versiones/".$config["info"]) && $config["actualizar"] == 0){
             return json_decode(file_get_contents($this->dir_info."versiones/".$config["info"]));
         }else{
