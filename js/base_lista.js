@@ -1273,6 +1273,7 @@ function map_local(id, lat, lng){
         init_map_local(id, lat, lng);
         maps.push(id);
     }
+    return false;
 }
 function init_map_local(id, lat, lng){
     
