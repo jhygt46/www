@@ -392,11 +392,14 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   height: 100%;
   position: relative;
 }
-.cont_direccion .direccion_op1 .dir_map {
-  width: calc(100% - 20px);
+.cont_direccion .direccion_op1 .cont_map {
+  padding: 10px;
+  background: #fff;
+}
+.cont_direccion .direccion_op1 .cont_map .dir_map {
+  width: 100%;
   height: 160px;
   display: none;
-  margin: 10px;
 }
 .cont_direccion .direccion_op1 .dir_locales .cont_local .left_acciones {
   width: calc(100% - 75px);
