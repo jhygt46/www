@@ -421,6 +421,7 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   display: block;
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: center;
 }
 .cont_direccion .direccion_op1 .dir_locales .cont_local .local_info .alert {
   color: #D00;
