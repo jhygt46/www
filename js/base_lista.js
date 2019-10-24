@@ -1270,7 +1270,7 @@ function send_error(code, error){
 function local_mapa(id, lat, lng){    
     $('#lmap-'+id).toggle();
     if(maps.indexOf(id) == -1){
-        //init_map_local(id, lat, lng);
+        init_map_local(id, lat, lng);
         maps.push(id);
     }
     return false;

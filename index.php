@@ -152,11 +152,11 @@
                                                         <div class="accioness valign">
                                                             <a class="accion ver_mapa" href="tel:<?php echo $locales[$i]->{'telefono'}; ?>"><img src="_images/telefono.png" alt="" /></a>
                                                             <a class="accion ver_mapa" href="https://api.whatsapp.com/send?phone=<?php echo $locales[$i]->{'whatsapp'}; ?>"><img src="_images/whatsapp.png" alt="" /></a>
-                                                            <div class="accion ver_mapa" onclick="local_mapa(<?php echo $locales[$i]->{'id_loc'}; ?>, <?php echo $locales[$i]->{'lat'}; ?>, <?php echo $locales[$i]->{'lng'}; ?>)"><img src="_images/mapa.png" alt="" /></div>
+                                                            <a class="accion ver_mapa" href="JavaScript:Void(0)" onclick="local_mapa(<?php echo $locales[$i]->{'id_loc'}; ?>, <?php echo $locales[$i]->{'lat'}; ?>, <?php echo $locales[$i]->{'lng'}; ?>)"><img src="_images/mapa.png" alt="" /></a>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="dir_map" id="lmap-<?php echo $locales[$i]->{'id_loc'}; ?>"></div>
+                                                <div class="dir_map" id="lmaps-<?php echo $locales[$i]->{'id_loc'}; ?>"></div>
                                             </div>
                                             <?php } ?>
                                         </div>
@@ -288,11 +288,11 @@
                                                         <div class="accioness valign">
                                                             <a class="accion ver_mapa" href="tel:<?php echo $locales[$i]->{'telefono'}; ?>"><img src="_images/telefono.png" alt="" /></a>
                                                             <a class="accion ver_mapa" href="https://api.whatsapp.com/send?phone=<?php echo $locales[$i]->{'whatsapp'}; ?>"><img src="_images/whatsapp.png" alt="" /></a>
-                                                            <a class="accion ver_mapa" href="" onclick="local_mapa(<?php echo $locales[$i]->{'lat'}; ?>, <?php echo $locales[$i]->{'lng'}; ?>)"><img src="_images/mapa.png" alt="" /></a>
+                                                            <a class="accion ver_mapa" href="" onclick="local_mapa(<?php echo $locales[$i]->{'id_loc'}; ?>, <?php echo $locales[$i]->{'lat'}; ?>, <?php echo $locales[$i]->{'lng'}; ?>)"><img src="_images/mapa.png" alt="" /></a>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="dir_map"></div>
+                                                <div class="dir_map" id="lmap-<?php echo $locales[$i]->{'id_loc'}; ?>"></div>
                                             </div>
                                             <?php } ?>
                                         </div>
