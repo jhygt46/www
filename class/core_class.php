@@ -330,6 +330,7 @@ class Core{
                 $send["code"] = $this->code;
                 $send["host"] = $this->host;
                 $send["tipo"] = 2;
+                
                 $file['pedido'] = $pedido;
                 $file['puser'] = json_decode($_POST['puser']);
                 $file['carro'] = json_decode($_POST['carro']);

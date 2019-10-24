@@ -999,7 +999,6 @@ function paso_4(){
             pedido.pre_soya = ($('#pedido_soya').is(':checked') ? 1 : 0 );
             pedido.pre_teriyaki = ($('#pedido_teriyaki').is(':checked') ? 1 : 0 );
             pedido.comentarios = ($('#pedido_comentarios').val()) ? $('#pedido_comentarios').val() : '' ;
-            
             document.getElementById("enviar_cotizacion").disabled = true;
             var send = { accion: 'enviar_pedido', pedido: JSON.stringify(pedido), carro: JSON.stringify(get_carro()), promos: JSON.stringify(get_promos()), puser: JSON.stringify(get_puser()) };
             
@@ -1011,24 +1010,16 @@ function paso_4(){
 
                     console.log(res);
                     if(res.op == 1){
-                        
                         $('#pedido_nombre').css({ border: '0px' });
                         $('#pedido_telefono').css({ border: '0px' });
-
                         if(res.email == 1){
-
                             if(res.set_puser == 1){ set_puser({ id_puser: res.puser_id, code: res.puser_code, nombre: res.puser_nombre, telefono: res.puser_telefono }); }
-
                             if(pedido.despacho == 0){
                                 pedido.time = res.t_retiro;
-                                //$('.pedido_mensaje').html(pedido.nombre+" tu pedido fue recibido correctamente. En "+pedido.time+" minutos puedes venir a buscarlo");
                             }
                             if(pedido.despacho == 1){
                                 pedido.time = res.t_despacho;
-                                //$('.pedido_mensaje').html(pedido.nombre+" tu pedido fue recibido correctamente. En "+pedido.time+" minutos estaremos alla");
-                            }                
-                            //$('.pedido_mensaje').show();
-
+                            } 
                             pedido.id_ped = res.id_ped;
                             pedido.num_ped = res.num_ped;
                             pedido.pedido_code = res.pedido_code;
@@ -1036,18 +1027,14 @@ function paso_4(){
                             pedido.lat = res.lat;
                             pedido.lng = res.lng;
                             pedido.estado = estados[0];
-
                             show_modal_4(pedido);
                             set_pedido(pedido);
                             paso = 1;
-
                         }
                         if(res.email == 2){
-
-                            show_modal('modal_error');
                             $('#err_telefono').attr('href', 'tel:'+res.tel);
                             $('#err_correo').attr('href', 'mailto:'+res.mailto+';misitiodelivery@gmail.com?subject=Envio%20Manual&body='+res.body);
-
+                            show_modal('modal_error');
                         }
 
                     }else if(res.op == 2){
