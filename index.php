@@ -272,7 +272,11 @@
                                         <div class="direccion_op1">
                                             <?php
                                             $locales = json_decode($info->{'lista_locales'});
-                                            for($i=0; $i<count($locales); $i++){ ?>
+                                            for($i=0; $i<count($locales); $i++){ 
+                                            echo "<pre>";
+                                            print_r($locales[$i]);
+                                            echo "</pre>";
+                                            ?>
                                             <div class="dir_locales" id="<?php echo $locales[$i]->{'id_loc'}; ?>" <?php if($locales[$i]->{'image'} != ""){ ?>style="background-image: url('<?php echo "/data/".$info->{"code"}."/".$locales[$i]->{'image'}; ?>')" <?php } ?>>
                                                 <div class="cont_local prin_alpha_1">
                                                     <div class="left_acciones" onclick="select_local(<?php echo $locales[$i]->{'id_loc'}; ?>, '<?php echo $locales[$i]->{'nombre'}; ?>', '<?php echo $locales[$i]->{'direccion'}; ?>')">
