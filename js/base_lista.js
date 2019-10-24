@@ -1267,7 +1267,8 @@ function send_error(code, error){
     });
 
 }
-function local_mapa(id, lat, lng){    
+function local_mapa(id, lat, lng){
+    console.log('#contmap-'+id);
     $('#contmap-'+id).toggle();
     if(maps.indexOf(id) == -1){
         init_map_local(id, lat, lng);
