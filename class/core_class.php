@@ -85,7 +85,6 @@ class Core{
         $config = $this->get_config();
         $config["actualizar"] = 1;
         file_put_contents($this->dir_info."config.json", json_encode($config));
-        die("BUENA NELSON");
     }
     public function get_config(){
         if(file_exists($this->dir_info."config.json")){

