@@ -1295,6 +1295,7 @@ function select_local(id, nombre, direccion){
     pedido.despacho = 0;
     pedido.id_loc = id;
     set_pedido(pedido);
+    $('.cont_map').hide();
     
     selecciono_retiro(nombre, direccion, pedido.total);
     paso_3();
