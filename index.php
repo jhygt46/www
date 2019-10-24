@@ -120,10 +120,10 @@
                             <div class="cont_info">
                                 <div class="cont_err">
                                     <div class="cont_ab_err valign">
-                                        <div class="titulo_error">Lo sentimos, tu pedido no pudo ser enviado</div>
+                                        <div class="titulo_error font1">Lo sentimos, tu pedido no pudo ser enviado</div>
                                         <div class="btns_err clearfix">
-                                            <a id="err_telefono" class="btn_err btn_err1" href="">Llamar al local</a>
-                                            <a id="err_correo" class="btn_err btn_err2" href="">Enviar por mail</a>
+                                            <a id="err_telefono" class="btn_err btn_err1 font5" href="">Llamar al local</a>
+                                            <a id="err_correo" class="btn_err btn_err2 font5" href="">Enviar por mail</a>
                                         </div>
                                     </div>
                                 </div>
