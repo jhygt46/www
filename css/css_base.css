@@ -306,6 +306,9 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones {
   height: 100%;
 }
 .paso_02a .cont_direccion .direccion_op1 .dir_locales .cont_local {
+  
+}
+.paso_02a .cont_direccion .direccion_op1 .dir_locales .cont_local .left_acciones{
   cursor: pointer;
 }
 .paso_02a .cont_direccion .direccion_op1 .dir_locales .cont_local .local_info .title {
