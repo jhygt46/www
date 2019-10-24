@@ -1273,7 +1273,6 @@ function local_mapa(id, lat, lng){
         init_map_local(id, lat, lng);
         maps.push(id);
     }
-    return false;
 }
 function init_map_local(id, lat, lng){
     
@@ -1283,10 +1282,8 @@ function init_map_local(id, lat, lng){
         mapTypeId: 'roadmap',
         disableDefaultUI: true
     });
-    
     var myLatLng = { lat: lat, lng: lng };
-    
-    var marker = new google.maps.Marker({
+    new google.maps.Marker({
         position: myLatLng,
         map: map_local
     });
