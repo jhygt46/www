@@ -144,10 +144,12 @@
                                             <div class="parent_locales">
                                                 <div class="dir_locales" id="<?php echo $locales[$i]->{'id_loc'}; ?>" <?php if($locales[$i]->{'image'} != ""){ ?>style="background-image: url('<?php echo "/data/".$info->{"code"}."/".$locales[$i]->{'image'}; ?>')" <?php } ?>>
                                                     <div class="cont_local prin_alpha_1">
-                                                        <div class="local_info valign">
-                                                            <div class="title"><?php echo $locales[$i]->{'nombre'}; ?></div>
-                                                            <div class="stitle"><?php echo $locales[$i]->{'direccion'}; ?></div>
-                                                            <div class="alert"></div>
+                                                        <div class="left_acciones">
+                                                            <div class="local_info valign">
+                                                                <div class="title"><?php echo $locales[$i]->{'nombre'}; ?></div>
+                                                                <div class="stitle"><?php echo $locales[$i]->{'direccion'}; ?></div>
+                                                                <div class="alert"></div>
+                                                            </div>
                                                         </div>
                                                         <div class="accioness valign">
                                                             <a class="accion ver_mapa" style="background-image: url('../_images/telefono.png')" href="tel:<?php echo $locales[$i]->{'telefono'}; ?>"></a>
