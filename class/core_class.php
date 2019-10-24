@@ -102,10 +102,6 @@ class Core{
     }
     public function get_data(){
         $config = $this->get_config();
-        echo "<pre>";
-        print_r($config);
-        echo "</pre>";
-        exit;
         if(file_exists($this->dir_info."versiones/".$config["info"]) && $config["actualizar"] == 0){
             return json_decode(file_get_contents($this->dir_info."versiones/".$config["info"]));
         }else{
