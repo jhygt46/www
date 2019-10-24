@@ -142,7 +142,7 @@
                                             $locales = json_decode($info->{'lista_locales'});
                                             for($i=0; $i<count($locales); $i++){ ?>
                                             <div class="parent_locales">
-                                                <div class="dir_locales">
+                                                <div class="dir_locales" id="<?php echo $locales[$i]->{'id_loc'}; ?>" <?php if($locales[$i]->{'image'} != ""){ ?>style="background-image: url('<?php echo "/data/".$info->{"code"}."/".$locales[$i]->{'image'}; ?>')" <?php } ?>>
                                                     <div class="cont_local prin_alpha_1">
                                                         <div class="local_info valign">
                                                             <div class="title"><?php echo $locales[$i]->{'nombre'}; ?></div>
