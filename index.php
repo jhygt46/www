@@ -119,7 +119,25 @@
                             <div class="titulo"><div class="cont_titulo valign"><h1 class="font1">Contacto</h1><h2 class="font3">Tienes alguna duda? contactate con nosotros</h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info">
-                                <div class="info_modal" style="padding-bottom: 57px"></div>
+                                <div class="info_modal" style="padding-bottom: 57px">
+                                    <div class="cont_final">
+                                        <ul class="block_direccion clearfix">
+                                            <li class="item_direccion"><h1 class="font3">Direccion: </h1><h2></h2></li>
+                                            <li class="item_numero"><h1 class="font3">Numero: </h1><h2></h2></li>
+                                            <li class="item_depto"><h1 class="font3">Depto: </h1><input type="text" id="pedido_depto" /></li>
+                                        </ul>
+                                        <ul class="block_nombre_telefono clearfix">
+                                            <li class="item_nombre"><h1 class="font3">Nombre:</h1><input type="text" id="pedido_nombre" /></li>
+                                                <li class="item_telefono"><h1 class="font3">Telefono:</h1><input type="text" id="pedido_telefono" value="+569" /></li>
+                                        </ul>
+                                        <div class="block_preguntas">
+                                            <h1 class="font3">Comentarios</h1>
+                                            <div class="preguntas">
+                                                <Textarea id="pedido_comentarios" style="width: 100%; height: 70px; border: 0px"></Textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
