@@ -673,6 +673,7 @@ function ver_pagina(id){
 
     for(var i=0, ilen=data.paginas.length; i<ilen; i++){
         if(data.paginas[i].id_pag == id){
+            console.log("tipo: "+data.paginas[i].tipo);
             if(data.paginas[i].imagen != ""){
                 var html = data.paginas[i].html.replace("#FOTO#", data.paginas[i].imagen);
             }
