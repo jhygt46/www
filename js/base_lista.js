@@ -79,13 +79,10 @@ function open_categoria(id){
     
     var tp = tiene_pedido();
     if(!tp){
-    
         if(proceso(true, false)){
-
             show_modal('modal_carta');
             var categorias = data.catalogos[catalogo].categorias;
             var cats = [];
-
             for(var i=0, ilen=categorias.length; i<ilen; i++){
                 if(categorias[i].id_cae == id){
                     $('.modal_carta .titulo h1').html(categorias[i].nombre);
@@ -103,15 +100,12 @@ function open_categoria(id){
                     }
                 }
             }
-
         }
-    
     }
     if(tp){
-        
         show_modal_4(get_pedido());
-        
     }
+    hidemenu();
     
 }
 function tiene_pedido(){
@@ -145,6 +139,7 @@ function open_carro(){
         show_modal('paso_04');
     }
     paso = 2;
+    hidemenu();
     
 }
 function imprimir_productos_modal(id){
