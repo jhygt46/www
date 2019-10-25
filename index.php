@@ -159,7 +159,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="cont_map" id="contmapr-<?php echo $locales[$i]->{'id_loc'}; ?>">
-                                                    <div class="dir_map" id="lmaps-<?php echo $locales[$i]->{'id_loc'}; ?>"></div>
+                                                    <div class="dir_map" id="lmap-<?php echo $locales[$i]->{'id_loc'}; ?>"></div>
                                                 </div>
                                             </div>
                                             <?php } ?>

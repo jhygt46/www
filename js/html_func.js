@@ -56,8 +56,6 @@ function html_paginas(pagina){
     
 }
 
-
-
 // HTML MODALS //
 function create_html_categorias(obj){
 
@@ -288,8 +286,6 @@ function create_html_promocion(obj){
     return Div;
     
 }
-
-
 // PROMOS //
 function promo_carros(producto, j){
     
@@ -407,22 +403,6 @@ function promo_restantes(producto, j, tiene_pregunta){
 
     
 }
-/*
-function promo_nombre(promocion){
-    
-    var Div = document.createElement('div');
-    Div.className = 'process_carro_promo';
-    
-    var Nombre = document.createElement('div');
-    Nombre.className = 'promo_info';
-    Nombre.innerHTML = promocion.nombre;
-    Div.appendChild(Nombre);            
-    
-    return Div;
-    
-}
-*/
-// PROMO DETALLE //
 function imprimir_promo_modal(categoria){
     
     var html = document.createElement('div');
@@ -489,7 +469,6 @@ function imprimir_promo_modal(categoria){
     return html;
     
 }
-
 // PREGUNTAS PRODUCTOS //
 function html_seleccionar_productos_categoria_promo(categoria, i, cantidad){
     
@@ -558,7 +537,6 @@ function html_seleccionar_productos_categoria_promo(categoria, i, cantidad){
     return html;
     
 }
-
 function html_preguntas_producto(i){
     
     var carro = get_carro();
@@ -617,7 +595,6 @@ function html_preguntas_producto(i){
     return html;
     
 }
-
 // VER DETALLE PRODUCTO//
 function ver_detalle_producto(that){
     if(that.parentElement.childNodes[1].style.display == 'block'){
@@ -626,9 +603,6 @@ function ver_detalle_producto(that){
         that.parentElement.childNodes[1].style.display = 'block';
     }
 }
-
-
-
 // AUX CREAR ELEMENTOS // 
 function create_element_class(clase){
     var Div = document.createElement('div');
