@@ -48,7 +48,6 @@ function html_home_categorias(obj, num){
 }
 function html_paginas(pagina){
     
-    console.log(pagina);
     li = document.createElement('LI');
     li.onclick = function(){ ver_pagina(pagina.id_pag) };
     li.innerHTML = pagina.nombre;
