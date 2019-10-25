@@ -51,6 +51,7 @@ function html_paginas(pagina){
     li = document.createElement('LI');
     li.onclick = function(){ ver_pagina(pagina.id_pag) };
     li.innerHTML = pagina.nombre;
+    li.className = 'font2';
     return li;
     
 }
