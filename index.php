@@ -114,6 +114,15 @@
             <div class="modals">
                 <div class="cont_modals">
                     <?php echo $info->{"inicio_html"}; ?>
+                    <div class="modal modal_dim1 vhalign hide modal_contacto">
+                        <div class="cont_modal">
+                            <div class="titulo"><div class="cont_titulo valign"><h1 class="font1">Contacto</h1><h2 class="font3">Tienes alguna duda? contactate con nosotros</h2></div></div>
+                            <div onclick="close_that(this)" class="close material-icons">close</div>
+                            <div class="cont_info">
+                                <div class="info_modal" style="padding-bottom: 57px"></div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="modal modal_dim2 vhalign hide modal_error">
                         <div class="cont_modal">
                             <div onclick="close_that(this)" class="close material-icons">close</div>

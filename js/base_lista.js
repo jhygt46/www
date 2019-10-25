@@ -680,7 +680,7 @@ function ver_pagina(id){
                 show_locales('Locales', 'Listado de todos nuestros locales');
             }
             if(data.paginas[i].tipo == 2){
-                console.log("Contacto");
+                show_modal('modal_contacto');
             }
             
         }
@@ -1282,7 +1282,7 @@ function send_error(code, error){
 
 }
 function local_mapa(id, lat, lng, n){
-    
+
     $('#contmap'+n+'-'+id).toggle();
     if(n == "s"){
         if(maps.indexOf(id) == -1){
