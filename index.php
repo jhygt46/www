@@ -124,13 +124,19 @@
                                         <div class="block_preguntas">
                                             <h1 class="font3">Nombre</h1>
                                             <div class="preguntas">
-                                                <input type="text" style="width: 100%; 20px; border: 0px" />
+                                                <input type="text" style="width: 100%; height: 25px; border: 0px" />
                                             </div>
                                         </div>
                                         <div class="block_preguntas">
                                             <h1 class="font3">Telefono</h1>
                                             <div class="preguntas">
-                                                <input type="text" style="width: 100%; 20px; border: 0px" />
+                                                <input type="text" style="width: 100%; height: 25px; border: 0px" />
+                                            </div>
+                                        </div>
+                                        <div class="block_preguntas">
+                                            <h1 class="font3">Correo</h1>
+                                            <div class="preguntas">
+                                                <input type="text" style="width: 100%; height: 25px; border: 0px" />
                                             </div>
                                         </div>
                                         <div class="block_preguntas">
