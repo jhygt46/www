@@ -682,7 +682,7 @@ function ver_pagina(id){
                 show_modal('modal_pagina');
             }
             if(data.paginas[i].tipo == 1){
-                console.log("Locales");
+                show_locales('Locales', 'Listado de todos nuestros locales');
             }
             if(data.paginas[i].tipo == 2){
                 console.log("Contacto");
@@ -1050,14 +1050,14 @@ function paso_4(){
                         }
 
                     }else if(res.op == 2){
-                        show_modal('modal_error_locales');
+                        show_locales('Ocurrio un Error', 'Disculpe las Molestias');
                     }else{
                         send_error(16, " enviar_pedido() op!=1|2 ");
                     }
                     document.getElementById("enviar_cotizacion").disabled = false;
                     
                 }, error: function(e, err){
-                    show_modal('modal_error_locales');
+                    show_locales('Ocurrio un Error', 'Disculpe las Molestias');
                     send_error(16, "enviar_pedido() " + err);
                     document.getElementById("enviar_cotizacion").disabled = false;
                 }
@@ -1146,6 +1146,13 @@ function show_despacho(){
     }
     
 }
+function show_locales(titulo, subtitulo){
+
+    $('.modal_error_locales .cont_titulo h1').html(titulo);
+    $('.modal_error_locales .cont_titulo h2').html(subtitulo);
+    show_modal('modal_error_locales');
+
+}
 function initMap(){
     
     map_init = 1;
@@ -1221,12 +1228,12 @@ function initMap(){
                         }else if(data.op == 3){
                             alert("Error: no hay tramos definidos");
                         }else{
-                            show_modal('modal_error_locales');
+                            show_locales('Ocurrio un Error', 'Disculpe las Molestias');
                             send_error(16, " despacho_domicilio() op!=1|2|3 ");
                         }
                         
                     }, error: function(e, err){
-                        show_modal('modal_error_locales');
+                        show_locales('Ocurrio un Error', 'Disculpe las Molestias');
                         send_error(16, " despacho_domicilio() " + err);
                     }
                 });
