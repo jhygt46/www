@@ -1,11 +1,9 @@
 $(document).ready(function(){
-    
     borrar_carro();
     render_pagina();
     if(inicio == 1){
         show_modal('modal_inicio');
     }
-
 });
 
 $(window).resize(function(){
@@ -21,6 +19,7 @@ var cantidad = 0;
 var pre_promo = 0;
 var map_init = 0;
 var maps = [];
+var mapsl = [];
 var time_limit = 7200;
 var timer = false;
 
