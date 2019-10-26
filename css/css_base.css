@@ -60,6 +60,9 @@ body .contenedor .menu_left .cont_menu_left .btn_toogle {
 body .contenedor .menu_left .cont_menu_left .menu_info {
   display: block;
 }
+body .contenedor .menu_left .cont_menu_left .menu_info .lista_paginas li{
+  cursor: pointer;
+}
 /* PAGINA */
 body .contenedor .pagina {
   position: absolute;
