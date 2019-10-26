@@ -119,30 +119,30 @@
                             <div class="titulo"><div class="cont_titulo valign"><h1 class="font1">Contacto</h1><h2 class="font3">Tienes alguna duda? contactate con nosotros</h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info">
-                                <div class="info_modal" style="padding-bottom: 57px">
+                                <div class="info_modal">
                                     <div class="cont_final">
-                                        <div class="block_preguntas">
+                                        <div class="input_contacto">
                                             <h1 class="font3">Nombre</h1>
-                                            <div class="preguntas">
-                                                <input type="text" style="width: 100%; height: 25px; border: 0px" />
+                                            <div class="d_input">
+                                                <input type="text" id="contacto_nombre" />
                                             </div>
                                         </div>
-                                        <div class="block_preguntas">
+                                        <div class="input_contacto">
                                             <h1 class="font3">Telefono</h1>
-                                            <div class="preguntas">
-                                                <input type="text" style="width: 100%; height: 25px; border: 0px" />
+                                            <div class="d_input">
+                                                <input type="text" id="contacto_telefono" />
                                             </div>
                                         </div>
-                                        <div class="block_preguntas">
+                                        <div class="input_contacto">
                                             <h1 class="font3">Correo</h1>
-                                            <div class="preguntas">
-                                                <input type="text" style="width: 100%; height: 25px; border: 0px" />
+                                            <div class="d_input">
+                                                <input type="text" id="contacto_correo" />
                                             </div>
                                         </div>
-                                        <div class="block_preguntas">
+                                        <div class="input_contacto">
                                             <h1 class="font3">Comentarios</h1>
-                                            <div class="preguntas">
-                                                <Textarea id="pedido_comentarios" style="width: 100%; height: 70px; border: 0px"></Textarea>
+                                            <div class="d_input">
+                                                <Textarea id="contacto_comentarios" style="width: 100%; height: 70px; border: 0px"></Textarea>
                                             </div>
                                         </div>
                                     </div>
