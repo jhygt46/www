@@ -489,11 +489,60 @@ class Core{
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         if(!curl_errno($ch)){
             $resp = json_decode(curl_exec($ch));
+            curl_close($ch);
             if($resp->{'op'} != 1){ $this->enviar_error_2($code." // ".$error); }
         }else{ 
             $this->enviar_error_2($code." // ".$error);
         }
-        curl_close($ch);
+
+    }
+    public function enviar_contacto($nombre, $telefono, $correo, $comentario){
+
+        $url = 'https://www.google.com/recaptcha/api/siteverify';
+        $datas = [
+            'secret' => '6LdZp78UAAAAALb66uCWx7RR3cuSjhQLhy8sWZdu',
+            'response' => $_POST['token'],
+            'remoteip' => $_SERVER['REMOTE_ADDR']
+        ];
+
+        $options = array(
+            'http' => array(
+                'header'  => 'Content-type: application/x-www-form-urlencoded\r\n',
+                'method'  => 'POST',
+                'content' => http_build_query($datas)
+            )
+        );
+
+        $context  = stream_context_create($options);
+        $response = file_get_contents($url, false, $context);
+        return $response;
+
+        /*
+        $res = json_decode($response, true);
+        $send["tipo"] = 5;
+        $send["nombre"] = $nombre;
+        $send["telefono"] = $telefono;
+        $send["correo"] = $telefono;
+        $send["comentario"] = $comentario;
+        $send["code"] = $this->code;
+        $send["host"] = $this->host;
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
+        if(!curl_errno($ch)){
+            $resp = json_decode(curl_exec($ch));
+            curl_close($ch);
+            if($resp->{'op'} == 1){
+                return $resp;
+            }
+            if($resp->{'op'} != 1){
+                $this->enviar_error(17, "Curl error enviar_error() #1 ".$this->host);
+            }
+        }else{ 
+            $this->enviar_error(17, "Curl error enviar_error() #1 ".$this->host);
+        }
+        */
 
     }
     private function enviar_error_2($error){

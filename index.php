@@ -140,9 +140,9 @@
                                             </div>
                                         </div>
                                         <div class="input_contacto">
-                                            <h1 class="font3">Comentarios</h1>
+                                            <h1 class="font3">Comentario</h1>
                                             <div class="d_input">
-                                                <Textarea id="contacto_comentarios" style="width: 100%; height: 70px; border: 0px"></Textarea>
+                                                <Textarea id="contacto_comentario" style="width: 100%; height: 70px; border: 0px"></Textarea>
                                             </div>
                                         </div>
                                         <div class="input_enviar">
@@ -485,6 +485,7 @@
                 </div>
             </div>
         </div>
+        <script src="https://www.google.com/recaptcha/api.js?render=6LdZp78UAAAAAK56zJAVEkaSupUdCrRhsd1wnKkO"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo $info->{'mapcode'}; ?>&libraries=places" async defer></script>
     </body>
 </html>
