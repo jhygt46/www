@@ -146,7 +146,7 @@
                                             </div>
                                         </div>
                                         <div class="input_enviar">
-                                            <input class="confirmar" onclick="enviar_contacto()" type="button" value="Enviar">
+                                            <input class="confirmar font4" onclick="enviar_contacto()" type="button" value="Enviar">
                                         </div>
                                     </div>
                                 </div>
