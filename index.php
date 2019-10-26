@@ -145,6 +145,9 @@
                                                 <Textarea id="contacto_comentarios" style="width: 100%; height: 70px; border: 0px"></Textarea>
                                             </div>
                                         </div>
+                                        <div class="input_contacto">
+                                            <input class="confirmar" onclick="enviar_contacto()" type="button" value="Enviar">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
