@@ -79,6 +79,9 @@ body .contenedor .modals .cont_modals .modal_contacto .cont_modal .cont_info .in
   height: 30px;
   border: 0px;
 }
+body .contenedor .modals .cont_modals .modal_contacto .cont_modal .cont_info .info_modal .cont_final .input_enviar input{
+  padding: 5px 15px;
+}
 body .contenedor .modals .cont_modals .modal .cont_modal .sub_total {
   bottom: 51px;
   left: 0px;
