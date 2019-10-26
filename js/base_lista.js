@@ -1078,9 +1078,9 @@ function enviar_contacto(){
     var comentario = $('#contacto_comentario').val();
     console.log("SHOW LOADING");
     
-    if(nombre.length > 2){
-        if(telefono.length >= 12 && telefono.length <= 14){
-            document.getElementById("enviar_cotizacion").disabled = true;
+    //if(nombre.length > 2){
+        //if(telefono.length >= 12 && telefono.length <= 14){
+            //document.getElementById("enviar_cotizacion").disabled = true;
             grecaptcha.ready(function(){
                 grecaptcha.execute('6LdZp78UAAAAAK56zJAVEkaSupUdCrRhsd1wnKkO', { action: 'contacto' }).then(function(token){
                     var send = { accion: 'enviar_contacto', nombre: nombre, telefono: telefono, correo: correo, comentario: comentario, token: token };
@@ -1092,14 +1092,15 @@ function enviar_contacto(){
                             console.log("RESPONSE");
                             console.log("HIDE LOADING");
                             console.log(res);
-                            document.getElementById("enviar_cotizacion").disabled = false;
+                            //document.getElementById("enviar_cotizacion").disabled = false;
                         }, error: function(e, err){
-                            send_error(16, "enviar_pedido() " + err);
-                            document.getElementById("enviar_cotizacion").disabled = false;
+                            //send_error(16, "enviar_pedido() " + err);
+                            //document.getElementById("enviar_cotizacion").disabled = false;
                         }
                     });
                 });
             });
+        /*
         }else{
             document.getElementById("enviar_cotizacion").disabled = false;
             $('#pedido_telefono').css({ border: '1px solid #900' });
@@ -1108,6 +1109,7 @@ function enviar_contacto(){
         document.getElementById("enviar_cotizacion").disabled = false;
         $('#pedido_nombre').css({ border: '1px solid #900' });
     }
+    */
 
 }
 function time(){
