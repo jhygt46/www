@@ -72,7 +72,7 @@ body .contenedor .modals .cont_modals .modal_contacto .cont_modal .cont_info .in
   padding-bottom: 2px;
 }
 body .contenedor .modals .cont_modals .modal_contacto .cont_modal .cont_info .info_modal .cont_final .input_contacto .d_input{
-  
+  padding-bottom: 6px;
 }
 body .contenedor .modals .cont_modals .modal_contacto .cont_modal .cont_info .info_modal .cont_final .input_contacto .d_input input{
   width: 100%;
