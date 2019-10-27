@@ -11,13 +11,11 @@
     $core = new Core();
     $info = $core->ver_pedido();
     
-    if($info['op'] == 3){
-
-        echo "<pre>";
-        print_r($info);
-        echo "</pre>";
-
-    }
+    echo $_GET["code"];
+    echo "<pre>";
+    print_r($info);
+    echo "</pre>";
+    exit;
     
     if($info['op'] == 1){
 
