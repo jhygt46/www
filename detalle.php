@@ -1,5 +1,10 @@
 <?php
 
+    echo "<pre>";
+    print_r($_SERVER);
+    echo "</pre>";
+    exit;
+
     require_once "class/core_class.php";
 
     $core = new Core();
