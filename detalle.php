@@ -2,15 +2,14 @@
 
     $file = explode("/", $_SERVER["REQUEST_URI"]);
 
-    echo "<pre>";
-    print_r($file);
-    echo "</pre>";
+    echo "last: ".$file[count($file) - 1]."<br/>";
+    echo "count: ".count($file);
     exit;
 
-    if($file[count($file) - 1] != "detalle.php" && count($file) == 2){
+    if($file[count($file) - 1] != "detalle.php" && count($file) == 3){
         header('HTTP/1.1 404 Not Found', true, 404);
         //include(DIR.'errors/404.html');
-        exit;
+        //exit;
     }
 
     require_once "class/core_class.php";
