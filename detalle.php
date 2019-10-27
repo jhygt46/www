@@ -3,12 +3,11 @@
     $file = explode("/", $_SERVER["REQUEST_URI"]);
     if($file[count($file) - 1] == "detalle.php" && count($file) == 2){
         header('HTTP/1.1 404 Not Found', true, 404);
-        //include(DIR.'errors/404.html');
+        include(DIR.'errors/404.html');
         exit;
     }
 
     require_once "class/core_class.php";
-
     $core = new Core();
     $info = $core->ver_pedido();
     
