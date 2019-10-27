@@ -11,12 +11,6 @@
     $core = new Core();
     $info = $core->ver_pedido();
     
-    echo $_GET["code"];
-    echo "<pre>";
-    print_r($info);
-    echo "</pre>";
-    exit;
-    
     if($info['op'] == 1){
 
         $pedido = $info['data']->{'pedido'};
