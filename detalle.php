@@ -2,7 +2,7 @@
 
     $file = explode("/", $_SERVER["REQUEST_URI"]);
     echo "<pre>";
-    print_r($_SERVER);
+    print_r($file);
     echo "</pre>";
     exit;
 
