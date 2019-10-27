@@ -1,14 +1,9 @@
 <?php
 
     $file = explode("/", $_SERVER["REQUEST_URI"]);
-    echo "<pre>";
-    print_r($file);
-    echo "</pre>";
-    exit;
-
-    if($file[count($file) - 1] != ""){
+    if($file[count($file) - 1] != "detalle.php" && count($file) == 3){
         header('HTTP/1.1 404 Not Found', true, 404);
-        include(DIR.'errors/404.html');
+        //include(DIR.'errors/404.html');
         exit;
     }
 
