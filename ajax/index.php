@@ -23,7 +23,7 @@
     if($_POST["accion"] == "enviar_contacto"){
         require_once "../class/core_class.php";
         $core = new Core();
-        $info = $core->enviar_contacto($nombre, $telefono, $correo, $comentario);
+        $info = $core->enviar_contacto($_POST["nombre"], $_POST["telefono"], $_POST["correo"], $_POST["comentario"]);
         echo json_encode($info);
     }
 

@@ -76,7 +76,7 @@
         <script>
             var inicio = <?php echo ($info->{"inicio_html"} == "") ? 0 : 1 ; ?>;
             var code = "<?php echo $info->{'code'}; ?>";
-            var estados = [ <?php for($i=0; $i<count($info->{'estado'}); $i++){ if($i>0){ echo ", "; } echo "'".$info->{'estados'}[$i]."'";  } ?> ];
+            var estados = [ <?php for($i=0; $i<count($info->{'estado'}); $i++){ if($i>0){ echo ", "; } echo "'".$info->{'estado'}[$i]."'";  } ?> ];
             var fecha_js = new Date(<?php echo (time() + $horas * 60 * 60); ?>000).getTime();
             var fecha_pc = new Date().getTime();
         </script>
@@ -146,7 +146,7 @@
                                             </div>
                                         </div>
                                         <div class="input_enviar">
-                                            <input class="confirmar font4" onclick="enviar_contacto()" type="button" value="Enviar">
+                                            <input class="confirmar font4" id="enviar_contacto" onclick="enviar_contacto()" type="button" value="Enviar">
                                         </div>
                                     </div>
                                 </div>

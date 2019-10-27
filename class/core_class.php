@@ -316,85 +316,116 @@ class Core{
     }
     public function enviar_pedido(){
 
-        $pedido = json_decode($_POST['pedido']);
-        $nombre = $pedido->{'nombre'};
-        $telefono = str_replace(" ", "", $pedido->{'telefono'});
+        $url = 'https://www.google.com/recaptcha/api/siteverify';
+        $datas = [
+            'secret' => '6LdZp78UAAAAALb66uCWx7RR3cuSjhQLhy8sWZdu',
+            'response' => $_POST['token'],
+            'remoteip' => $_SERVER['REMOTE_ADDR']
+        ];
+        $options = array(
+            'http' => array(
+                'header'  => 'Content-type: application/x-www-form-urlencoded\r\n',
+                'method'  => 'POST',
+                'content' => http_build_query($datas)
+            )
+        );
+        $context  = stream_context_create($options);
+        $response = file_get_contents($url, false, $context);
+        $res = json_decode($response, true);
 
-        if(strlen($nombre) > 2){
-            if(strlen($telefono) >= 12 && strlen($telefono) <= 14){
+        if($res['success'] == true){
 
-                $send['pedido'] = $pedido;
-                $send['puser'] = json_decode($_POST['puser']);
-                $send['carro'] = json_decode($_POST['carro']);
-                $send['promos'] = json_decode($_POST['promos']);
-                $send["code"] = $this->code;
-                $send["host"] = $this->host;
-                $send["tipo"] = 2;
-                
-                $file['pedido'] = $pedido;
-                $file['puser'] = json_decode($_POST['puser']);
-                $file['carro'] = json_decode($_POST['carro']);
-                $file['promos'] = json_decode($_POST['promos']);
+            $pedido = json_decode($_POST['pedido']);
+            $nombre = $pedido->{'nombre'};
+            $telefono = $pedido->{'telefono'};
 
-                $ch = curl_init();
-                curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-                if(!curl_errno($ch)){
-                    $resp = json_decode(curl_exec($ch));
-                    curl_close($ch);
+            if(strlen($nombre) > 2){
+                if(strlen($telefono) >= 12 && strlen($telefono) <= 14){
+
+                    $send['pedido'] = $pedido;
+                    $send['puser'] = json_decode($_POST['puser']);
+                    $send['carro'] = json_decode($_POST['carro']);
+                    $send['promos'] = json_decode($_POST['promos']);
+                    $send["code"] = $this->code;
+                    $send["host"] = $this->host;
+                    $send["tipo"] = 2;
                     
-                    if($resp->{'op'} == 1){
-                        $file['pedido']->{'id_ped'} = $resp->{'id_ped'};
-                        $file['pedido']->{'num_ped'} = $resp->{'num_ped'};
-                        $file['pedido']->{'pedido_code'} = $resp->{'pedido_code'};
-                        $file['pedido']->{'fecha'} = $resp->{'fecha'};
-                        $info['op'] = 1;
-                        $info['pedido_code'] = $resp->{'pedido_code'};
-                        $id_puser = (isset($file['puser']->{'id_puser'})) ? $file['puser']->{'id_puser'} : 0 ;
+                    $file['pedido'] = $pedido;
+                    $file['puser'] = json_decode($_POST['puser']);
+                    $file['carro'] = json_decode($_POST['carro']);
+                    $file['promos'] = json_decode($_POST['promos']);
+
+                    $ch = curl_init();
+                    curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
+                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
+                    if(!curl_errno($ch)){
+                        $resp = json_decode(curl_exec($ch));
+                        curl_close($ch);
                         
-                        if($resp->{'set_puser'} == 1){
-                            $info['set_puser'] = 1;
-                            $info['puser_id'] = $resp->{'puser_id'};
-                            $info['puser_code'] = $resp->{'puser_code'};
-                            $info['puser_nombre'] = $resp->{'puser_nombre'};
-                            $info['puser_telefono'] = $resp->{'puser_telefono'};
+                        if($resp->{'op'} == 1){
+
+                            $file['pedido']->{'id_ped'} = $resp->{'id_ped'};
+                            $file['pedido']->{'num_ped'} = $resp->{'num_ped'};
+                            $file['pedido']->{'pedido_code'} = $resp->{'pedido_code'};
+                            $file['pedido']->{'fecha'} = $resp->{'fecha'};
+                            $info['op'] = 1;
+                            $info['pedido_code'] = $resp->{'pedido_code'};
+                            $id_puser = (isset($file['puser']->{'id_puser'})) ? $file['puser']->{'id_puser'} : 0 ;
+                            
+                            if($resp->{'set_puser'} == 1){
+
+                                $info['set_puser'] = 1;
+                                $info['puser_id'] = $resp->{'puser_id'};
+                                $info['puser_code'] = $resp->{'puser_code'};
+                                $info['puser_nombre'] = $resp->{'puser_nombre'};
+                                $info['puser_telefono'] = $resp->{'puser_telefono'};
+
+                            }
+                            if($resp->{'email'} == 1){
+
+                                $info['email'] = 1;
+                                $info['lat'] = $resp->{'lat'};
+                                $info['lng'] = $resp->{'lng'};
+                                $info['id_ped'] = $resp->{'id_ped'};
+                                $info['num_ped'] = $resp->{'num_ped'};
+                                $info['t_despacho'] = $resp->{'t_despacho'};
+                                $info['t_retiro'] = $resp->{'t_retiro'};
+                                $info['fecha'] = $resp->{'fecha'};
+
+                            }
+                            if($resp->{'email'} == 2){
+
+                                $info['email'] = 2;
+                                $info['tel'] = $resp->{'telefono'};
+                                $info['mailto'] = $resp->{'correo'};
+                                $info['body'] = $resp->{'url'}.'/detalle.php?code='.$resp->{'pedido_code'};
+                            
+                            }
                         }
-                        if($resp->{'email'} == 1){
-                            $info['email'] = 1;
-                            $info['lat'] = $resp->{'lat'};
-                            $info['lng'] = $resp->{'lng'};
-                            $info['id_ped'] = $resp->{'id_ped'};
-                            $info['num_ped'] = $resp->{'num_ped'};
-                            $info['t_despacho'] = $resp->{'t_despacho'};
-                            $info['t_retiro'] = $resp->{'t_retiro'};
-                            $info['fecha'] = $resp->{'fecha'};
-                        }
-                        if($resp->{'email'} == 2){
-                            $info['email'] = 2;
+                        if($resp->{'op'} == 2){
+
+                            $info['op'] = 2;
+                            $temp_code = $this->pass_generate(20);
                             $info['tel'] = $resp->{'telefono'};
                             $info['mailto'] = $resp->{'correo'};
-                            $info['body'] = $resp->{'url'}.'/detalle.php?code='.$resp->{'pedido_code'};
+                            $info['body'] = $resp->{'url'}.'/detalle.php?code='.$temp_code;
+                            $file['pedido']->{'id_ped'} = 0;
+                            $file['pedido']->{'num_ped'} = 0;
+                            $file['pedido']->{'pedido_code'} = $temp_code;
+                            $file['pedido']->{'fecha'} = date('Y-m-d H:i:s');
+
                         }
+                        file_put_contents($this->dir_info."pedidos/".$file['pedido']->{'pedido_code'}.".json", json_encode($file));
+                    }else{
+                        $this->enviar_error(17, "Curl error enviar_pedido() #1 ".$this->host);
                     }
-                    if($resp->{'op'} == 2){
-                        $info['op'] = 2;
-                        $temp_code = $this->pass_generate(20);
-                        $info['tel'] = $resp->{'telefono'};
-                        $info['mailto'] = $resp->{'correo'};
-                        $info['body'] = $resp->{'url'}.'/detalle.php?code='.$temp_code;
-                        $file['pedido']->{'id_ped'} = 0;
-                        $file['pedido']->{'num_ped'} = 0;
-                        $file['pedido']->{'pedido_code'} = $temp_code;
-                        $file['pedido']->{'fecha'} = date('Y-m-d H:i:s');
-                    }
-                    file_put_contents($this->dir_info."pedidos/".$file['pedido']->{'pedido_code'}.".json", json_encode($file));
-                }else{
-                    $this->enviar_error(17, "Curl error enviar_pedido() #1 ".$this->host);
-                }
-            }
+                }else{  }
+            }else{  }
+
         }
         return $info;
+
     }
     public function ver_pedido(){
 
@@ -504,7 +535,6 @@ class Core{
             'response' => $_POST['token'],
             'remoteip' => $_SERVER['REMOTE_ADDR']
         ];
-
         $options = array(
             'http' => array(
                 'header'  => 'Content-type: application/x-www-form-urlencoded\r\n',
@@ -512,37 +542,46 @@ class Core{
                 'content' => http_build_query($datas)
             )
         );
-
         $context  = stream_context_create($options);
         $response = file_get_contents($url, false, $context);
-        return $response;
-
-        /*
         $res = json_decode($response, true);
-        $send["tipo"] = 5;
-        $send["nombre"] = $nombre;
-        $send["telefono"] = $telefono;
-        $send["correo"] = $telefono;
-        $send["comentario"] = $comentario;
-        $send["code"] = $this->code;
-        $send["host"] = $this->host;
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-        if(!curl_errno($ch)){
-            $resp = json_decode(curl_exec($ch));
-            curl_close($ch);
-            if($resp->{'op'} == 1){
-                return $resp;
-            }
-            if($resp->{'op'} != 1){
+
+        if($res['success'] == true){
+
+            $send["tipo"] = 5;
+            $send["nombre"] = $nombre;
+            $send["telefono"] = $telefono;
+            $send["correo"] = $telefono;
+            $send["comentario"] = $comentario;
+            $send["code"] = $this->code;
+            $send["host"] = $this->host;
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
+            if(!curl_errno($ch)){
+                $resp = json_decode(curl_exec($ch));
+                curl_close($ch);
+                if($resp->{'op'} == 1){
+                    $info['op'] = 1;
+                    $info['mensaje'] = "Error Captcha";
+                }
+                if($resp->{'op'} != 1){
+                    $info['op'] = 2;
+                    $info['mensaje'] = "Error Captcha";
+                    $this->enviar_error(17, "Curl error enviar_error() #1 ".$this->host);
+                }
+            }else{
+                $info['op'] = 2;
+                $info['mensaje'] = "Error Captcha";
                 $this->enviar_error(17, "Curl error enviar_error() #1 ".$this->host);
             }
-        }else{ 
-            $this->enviar_error(17, "Curl error enviar_error() #1 ".$this->host);
+
+        }else{
+            $info['op'] = 2;
+            $info['mensaje'] = "Error Captcha";
         }
-        */
+        return $info;
 
     }
     private function enviar_error_2($error){

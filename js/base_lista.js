@@ -972,13 +972,11 @@ function send_chat(){
     var pedido = get_pedido();
     var mensaje = $('#texto_chat').val();
     var send = { accion: 'enviar_chat', id_ped: pedido.id_ped, id_loc: pedido.id_loc, code: pedido.pedido_code, mensaje: mensaje };
-
     $.ajax({
         url: 'ajax/index.php',
         type: "POST",
         data: send,
         success: function(data){
-            
             if(data.op == 1){
                 $('#texto_chat').val("");
                 $(".info_mensajes").append("<div class='chat_1'><div class='nom'>"+nombre+"</div><div class='msg'>"+mensaje+"</div></div>");
@@ -992,79 +990,81 @@ function paso_4(){
     
     var nombre = $('#pedido_nombre').val();
     var telefono = $('#pedido_telefono').val().split(" ").join("");
-
     if(nombre.length > 2){
         if(telefono.length >= 12 && telefono.length <= 14){
             
-            var pedido = get_pedido();
-            pedido.nombre = nombre;
-            pedido.telefono = telefono;
-            pedido.depto = $('#pedido_depto').val();
-            pedido.pre_gengibre = ($('#pedido_gengibre').is(':checked') ? 1 : 0 );
-            pedido.pre_wasabi = ($('#pedido_wasabi').is(':checked') ? 1 : 0 );
-            pedido.pre_palitos = ($('#pedido_palitos').val()) ? $('#pedido_palitos').val() : 0 ;
-            pedido.pre_soya = ($('#pedido_soya').is(':checked') ? 1 : 0 );
-            pedido.pre_teriyaki = ($('#pedido_teriyaki').is(':checked') ? 1 : 0 );
-            pedido.comentarios = ($('#pedido_comentarios').val()) ? $('#pedido_comentarios').val() : '' ;
-            document.getElementById("enviar_cotizacion").disabled = true;
-            var send = { accion: 'enviar_pedido', pedido: JSON.stringify(pedido), carro: JSON.stringify(get_carro()), promos: JSON.stringify(get_promos()), puser: JSON.stringify(get_puser()) };
-            
-            $.ajax({
-                url: 'ajax/index.php',
-                type: "POST",
-                data: send,
-                success: function(res){
-
-                    console.log(res);
-                    if(res.op == 1){
-                        $('#pedido_nombre').css({ border: '0px' });
-                        $('#pedido_telefono').css({ border: '0px' });
-                        if(res.email == 1){
-                            if(res.set_puser == 1){ set_puser({ id_puser: res.puser_id, code: res.puser_code, nombre: res.puser_nombre, telefono: res.puser_telefono }); }
-                            if(pedido.despacho == 0){
-                                pedido.time = res.t_retiro;
-                            }
-                            if(pedido.despacho == 1){
-                                pedido.time = res.t_despacho;
-                            } 
-                            pedido.id_ped = res.id_ped;
-                            pedido.num_ped = res.num_ped;
-                            pedido.pedido_code = res.pedido_code;
-                            pedido.fecha = res.fecha;
-                            pedido.lat = res.lat;
-                            pedido.lng = res.lng;
-                            pedido.estado = estados[0];
-                            show_modal_4(pedido);
-                            set_pedido(pedido);
-                            paso = 1;
-                        }
-                        if(res.email == 2){
-                            $('#err_telefono').attr('href', 'tel:'+res.tel);
-                            $('#err_correo').attr('href', 'mailto:'+res.mailto+';misitiodelivery@gmail.com?subject=Envio%20Manual&body='+res.body);
-                            show_modal('modal_error');
-                        }
-
-                    }else if(res.op == 2){
-                        show_locales('Ocurrio un Error', 'Disculpe las Molestias');
-                    }else{
-                        send_error(16, " enviar_pedido() op!=1|2 ");
-                    }
-                    document.getElementById("enviar_cotizacion").disabled = false;
+            grecaptcha.ready(function(){
+                grecaptcha.execute('6LdZp78UAAAAAK56zJAVEkaSupUdCrRhsd1wnKkO', { action: 'contacto' }).then(function(token){
                     
-                }, error: function(e, err){
-                    show_locales('Ocurrio un Error', 'Disculpe las Molestias');
-                    send_error(16, "enviar_pedido() " + err);
-                    document.getElementById("enviar_cotizacion").disabled = false;
-                }
-            });
+                    var pedido = get_pedido();
+                    pedido.nombre = nombre;
+                    pedido.telefono = telefono;
+                    pedido.depto = $('#pedido_depto').val();
+                    pedido.pre_gengibre = ($('#pedido_gengibre').is(':checked') ? 1 : 0 );
+                    pedido.pre_wasabi = ($('#pedido_wasabi').is(':checked') ? 1 : 0 );
+                    pedido.pre_palitos = ($('#pedido_palitos').val()) ? $('#pedido_palitos').val() : 0 ;
+                    pedido.pre_soya = ($('#pedido_soya').is(':checked') ? 1 : 0 );
+                    pedido.pre_teriyaki = ($('#pedido_teriyaki').is(':checked') ? 1 : 0 );
+                    pedido.comentarios = ($('#pedido_comentarios').val()) ? $('#pedido_comentarios').val() : '' ;
+                    document.getElementById("enviar_cotizacion").disabled = true;
+                    var send = { accion: 'enviar_pedido', pedido: JSON.stringify(pedido), carro: JSON.stringify(get_carro()), promos: JSON.stringify(get_promos()), puser: JSON.stringify(get_puser()), token: token };
+                    
+                    $.ajax({
+                        url: 'ajax/index.php',
+                        type: "POST",
+                        data: send,
+                        success: function(res){
 
+                            if(res.op == 1){
+                                $('#pedido_nombre').css({ border: '0px' });
+                                $('#pedido_telefono').css({ border: '0px' });
+                                if(res.email == 1){
+                                    if(res.set_puser == 1){ set_puser({ id_puser: res.puser_id, code: res.puser_code, nombre: res.puser_nombre, telefono: res.puser_telefono }); }
+                                    if(pedido.despacho == 0){
+                                        pedido.time = res.t_retiro;
+                                    }
+                                    if(pedido.despacho == 1){
+                                        pedido.time = res.t_despacho;
+                                    } 
+                                    pedido.id_ped = res.id_ped;
+                                    pedido.num_ped = res.num_ped;
+                                    pedido.pedido_code = res.pedido_code;
+                                    pedido.fecha = res.fecha;
+                                    pedido.lat = res.lat;
+                                    pedido.lng = res.lng;
+                                    pedido.estado = estados[0];
+                                    show_modal_4(pedido);
+                                    set_pedido(pedido);
+                                    paso = 1;
+                                }
+                                if(res.email == 2){
+                                    $('#err_telefono').attr('href', 'tel:'+res.tel);
+                                    $('#err_correo').attr('href', 'mailto:'+res.mailto+';misitiodelivery@gmail.com?subject=Envio%20Manual&body='+res.body);
+                                    show_modal('modal_error');
+                                }
+
+                            }else if(res.op == 2){
+                                show_locales('Ocurrio un Error', 'Disculpe las Molestias');
+                                send_error(16, " enviar_pedido() op!=2 ");
+                            }else{
+                                show_locales('Ocurrio un Error', 'Disculpe las Molestias');
+                                send_error(16, " enviar_pedido() op!=1|2 ");
+                            }
+                            document.getElementById("enviar_cotizacion").disabled = false;
+                            
+                        }, error: function(e, err){
+                            show_locales('Ocurrio un Error', 'Disculpe las Molestias');
+                            send_error(16, "enviar_pedido() " + err);
+                            document.getElementById("enviar_cotizacion").disabled = false;
+                        }
+                    });
+                });
+            });
         }else{
-            document.getElementById("enviar_cotizacion").disabled = false;
             $('#pedido_telefono').css({ border: '1px solid #900' });
             alert("Debe ingresar numero de telefono valido");
         }  
     }else{
-        document.getElementById("enviar_cotizacion").disabled = false;
         $('#pedido_nombre').css({ border: '1px solid #900' });
         alert("Debe ingresar nombre valido");
     }
@@ -1076,41 +1076,34 @@ function enviar_contacto(){
     var telefono = $('#contacto_telefono').val().split(" ").join("");
     var correo = $('#contacto_correo').val();
     var comentario = $('#contacto_comentario').val();
-    console.log("SHOW LOADING");
     
-    //if(nombre.length > 2){
-        //if(telefono.length >= 12 && telefono.length <= 14){
-            //document.getElementById("enviar_cotizacion").disabled = true;
-            grecaptcha.ready(function(){
-                grecaptcha.execute('6LdZp78UAAAAAK56zJAVEkaSupUdCrRhsd1wnKkO', { action: 'contacto' }).then(function(token){
-                    var send = { accion: 'enviar_contacto', nombre: nombre, telefono: telefono, correo: correo, comentario: comentario, token: token };
-                    $.ajax({
-                        url: 'ajax/index.php',
-                        type: "POST",
-                        data: send,
-                        success: function(res){
-                            console.log("RESPONSE");
-                            console.log("HIDE LOADING");
-                            console.log(res);
-                            //document.getElementById("enviar_cotizacion").disabled = false;
-                        }, error: function(e, err){
-                            //send_error(16, "enviar_pedido() " + err);
-                            //document.getElementById("enviar_cotizacion").disabled = false;
-                        }
+    if(validar_email(correo)){
+        if(nombre.length > 2){
+            if(telefono.length >= 12 && telefono.length <= 14){
+                if(comentario.length > 0){
+                    document.getElementById("enviar_contacto").disabled = true;
+                    grecaptcha.ready(function(){
+                        grecaptcha.execute('6LdZp78UAAAAAK56zJAVEkaSupUdCrRhsd1wnKkO', { action: 'contacto' }).then(function(token){
+                            var send = { accion: 'enviar_contacto', nombre: nombre, telefono: telefono, correo: correo, comentario: comentario, token: token };
+                            $.ajax({
+                                url: 'ajax/index.php',
+                                type: "POST",
+                                data: send,
+                                success: function(res){
+                                    console.log(res);
+                                    document.getElementById("enviar_contacto").disabled = false;
+                                }, error: function(e, err){
+                                    send_error(16, "enviar_contacto() " + err);
+                                    document.getElementById("enviar_contacto").disabled = false;
+                                }
+                            });
+                        });
                     });
-                });
-            });
-        /*
-        }else{
-            document.getElementById("enviar_cotizacion").disabled = false;
-            $('#pedido_telefono').css({ border: '1px solid #900' });
-        }  
-    }else{
-        document.getElementById("enviar_cotizacion").disabled = false;
-        $('#pedido_nombre').css({ border: '1px solid #900' });
-    }
-    */
-
+                }else{ $('#contacto_comentario').css({ border: '1px solid #900' }); } 
+            }else{ $('#contacto_telefono').css({ border: '1px solid #900' }); }  
+        }else{ $('#contacto_nombre').css({ border: '1px solid #900' }); }
+    }else{ $('#contacto_correo').css({ border: '1px solid #900' }); }
+    
 }
 function time(){
 
@@ -1182,6 +1175,10 @@ function show_despacho(){
         }
     }
     
+}
+function validar_email(email){
+    var regex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email) ? true : false;
 }
 function show_locales(titulo, subtitulo){
 
