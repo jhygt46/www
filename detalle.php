@@ -1,9 +1,16 @@
 <?php
 
+    $file = explode("/", $_SERVER["REQUEST_URI"]);
     echo "<pre>";
     print_r($_SERVER);
     echo "</pre>";
     exit;
+
+    if($file[count($file) - 1] != ""){
+        header('HTTP/1.1 404 Not Found', true, 404);
+        include(DIR.'errors/404.html');
+        exit;
+    }
 
     require_once "class/core_class.php";
 
