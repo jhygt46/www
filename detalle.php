@@ -1,15 +1,6 @@
 <?php
-
-    echo $_SERVER["REQUEST_URI"]."<br/>";
-
-    $file = explode("/", $_SERVER["REQUEST_URI"]);
-
-    echo "<pre>";
-    print_r($file);
-    echo "</pre>";
-    exit;
-
-    if($file[count($file) - 1] == "detalle.php" && count($file) == 2){
+    
+    if(strpos($_SERVER["REQUEST_URI"], "detalle.php") !== false){
         header('HTTP/1.1 404 Not Found', true, 404);
         include('errors/404.html');
         exit;
