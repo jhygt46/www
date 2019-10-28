@@ -21,7 +21,6 @@ $(document).ready(function(){
     if(tc == 1){
         window.print();
         window.close();
-        console.log("TC 1");
     }
 });
 
@@ -29,6 +28,8 @@ function create_item(item){
     
     var producto = get_producto(item.id_pro);
     
+    console.log(producto);
+
     var Div = document.createElement('div');
     Div.className = 'producto';
     
