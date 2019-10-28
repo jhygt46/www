@@ -35,7 +35,23 @@ function create_item(item){
     
     var Dnombre = document.createElement('div');
     Dnombre.className = 'nombre';
-    Dnombre.innerHTML = producto.numero+".- "+producto.nombre;
+
+    if(producto.numero == 0){
+        if(producto.nombre_carro == ""){
+            Dnombre.innerHTML = producto.nombre;
+        }else{
+            Dnombre.innerHTML = producto.nombre_carro;
+        }
+    }
+    if(producto.numero > 0){
+        Dnombre.innerHTML = producto.numero+".- ";
+        if(producto.nombre_carro == ""){
+            Dnombre.innerHTML += producto.nombre;
+        }else{
+            Dnombre.innerHTML += producto.nombre_carro;
+        }
+    }
+    
     Div.appendChild(Dnombre);
     
     if(item.preguntas){
