@@ -441,6 +441,7 @@ class Core{
             print_r($data);
             echo "<pre>";
             exit;
+            
             $fecha = $data->{'pedido'}->{'fecha'};
             $diff = time() - $fecha;
             if($diff < 86400){
