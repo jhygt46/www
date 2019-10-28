@@ -437,11 +437,12 @@ class Core{
         if(file_exists($file) && !isset($_GET["ft"])){
 
             $data = json_decode(file_get_contents($file));
+            /*
             echo "<pre>";
             print_r($data);
             echo "<pre>";
             exit;
-            
+            */
             $fecha = $data->{'pedido'}->{'fecha'};
             $diff = time() - $fecha;
             if($diff < 86400){
