@@ -436,6 +436,7 @@ class Core{
 
         if(file_exists($file) && !isset($_GET["ft"])){
 
+            echo "FILE";
             $data = json_decode(file_get_contents($file));
             $fecha = $data->{'pedido'}->{'fecha'};
             $diff = time() - $fecha;
@@ -449,6 +450,7 @@ class Core{
 
         }else{
 
+            echo "CURL";
             $send["tipo"] = 4;
             $send["pedido_code"] = $pedido_code;
             $send["host"] = $this->host;
