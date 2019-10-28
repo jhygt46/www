@@ -1,5 +1,7 @@
 <?php
 
+    echo $_SERVER["REQUEST_URI"]."<br/>";
+
     $file = explode("/", $_SERVER["REQUEST_URI"]);
 
     echo "<pre>";
