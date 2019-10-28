@@ -435,7 +435,7 @@ class Core{
         $aux = json_decode(file_get_contents($this->dir_info."versiones/".$config["info"]));
 
         echo "<pre>";
-        print_r($aux);
+        print_r($file);
         echo "<pre>";
 
         if(file_exists($file) && !isset($_GET["ft"])){
