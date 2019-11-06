@@ -1132,6 +1132,8 @@ function open_socket(code){
         var pedido = get_pedido();
         var info = JSON.parse(data.estado);
 
+        console.log(info);
+
         if(info.accion == 0){
             $('.pedido_final .estado h2').html(info.estado);
             pedido.estado = info.estado;
