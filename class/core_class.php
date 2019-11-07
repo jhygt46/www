@@ -458,10 +458,14 @@ class Core{
             curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
 
             if(!curl_errno($ch)){
-                $data = curl_exec($ch);
-                file_put_contents($file, $data);
-                $info['op'] = 1;
-                $info['data'] = json_decode($data);
+                $data = json_decode(curl_exec($ch));
+                if($data["op"] == 1){
+                    file_put_contents($file, json_encode($data["resp"]));
+                    $info['op'] = 1;
+                    $info['data'] = $data["resp"];
+                }else{
+                    $info['op'] = 2;
+                }
                 curl_close($ch);
             }else{
                 $info['op'] = 2;
