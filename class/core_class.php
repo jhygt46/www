@@ -432,29 +432,21 @@ class Core{
         $pedido_code = $_GET["code"];
         $config = $this->get_config();
         $file = $this->dir_info."pedidos/".$pedido_code.".json";
-        $aux = json_decode(file_get_contents($this->dir_info."versiones/".$config["info"]));
 
-        if(file_exists($file)){
+        if(file_exists($file) && !isset($_GET["flag"])){
 
-            $data = json_decode(file_get_contents($file));
-            echo "<pre>";
-            print_r($data);
-            echo "<pre>";
-            exit;
-            
+            $data = json_decode(file_get_contents($file));           
             $fecha = $data->{'pedido'}->{'fecha'};
             $diff = time() - $fecha;
             if($diff < 86400){
                 $info['op'] = 1;
                 $info['data'] = $data;
-                $info['code'] = $aux->{'code'};
             }else{
                 $info['op'] = 2;
             }
 
         }else{
 
-            echo "CURL";
             $send["tipo"] = 4;
             $send["pedido_code"] = $pedido_code;
             $send["host"] = $this->host;
@@ -464,24 +456,29 @@ class Core{
             curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-            $data = json_decode(curl_exec($ch));
-            curl_close($ch);
 
+            if(!curl_errno($ch)){
+                $data = curl_exec($ch);
+                file_put_contents($file, $data);
+                $info['op'] = 1;
+                $info['data'] = json_decode($data);
+                curl_close($ch);
+            }else{
+                $info['op'] = 2;
+            }
+
+            /*
             $info['op'] = 3;
             $info['data'] = $data;
-            
             if($data->{'op'} == 1){
-
                 $pedido['pedido']->{'id_ped'} = $data->{'id_ped'};
                 $pedido['pedido']->{'num_ped'} = $data->{'num_ped'};
                 $pedido['pedido']->{'pedido_code'} = $data->{'pedido_code'};
                 $pedido['pedido']->{'fecha'} = strtotime($data->{'fecha'});
                 $pedido['pedido']->{'despacho'} = $data->{'despacho'};
                 $pedido['pedido']->{'id_loc'} = $data->{'id_loc'};
-                
                 $pedido['pedido']->{'nombre'} = $data->{'nombre'};
                 $pedido['pedido']->{'telefono'} = $data->{'telefono'};
-
                 $pedido['pedido']->{'calle'} = $data->{'calle'};
                 $pedido['pedido']->{'num'} = $data->{'num'};
                 $pedido['pedido']->{'depto'} = $data->{'depto'};
@@ -489,7 +486,6 @@ class Core{
                 $pedido['pedido']->{'comuna'} = $data->{'comuna'};
                 $pedido['pedido']->{'lat'} = $data->{'lat'};
                 $pedido['pedido']->{'lng'} = $data->{'lng'};
-
                 $pedido['pedido']->{'comentarios'} = $data->{'comentarios'};
                 $pedido['pedido']->{'pre_gengibre'} = $data->{'pre_gengibre'};
                 $pedido['pedido']->{'pre_wasabi'} = $data->{'pre_wasabi'};
@@ -497,17 +493,15 @@ class Core{
                 $pedido['pedido']->{'pre_palitos'} = $data->{'pre_palitos'};
                 $pedido['pedido']->{'pre_teriyaki'} = $data->{'pre_teriyaki'};
                 $pedido['pedido']->{'pre_soya'} = $data->{'pre_soya'};
-
                 $pedido['pedido']->{'puser'} = $data->{'puser'};
                 $pedido['pedido']->{'carro'} = $data->{'carro'};
                 $pedido['pedido']->{'promos'} = $data->{'promos'};
-
                 $pedido['pedido']->{'costo'} = $data->{'costo'};
                 $pedido['pedido']->{'total'} = $data->{'total'};
-
                 file_put_contents($file, json_encode($pedido));
             
             }
+            */
             
         }
         return $info;
