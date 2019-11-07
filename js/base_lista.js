@@ -1132,11 +1132,9 @@ function open_socket(code){
         var pedido = get_pedido();
         var info = JSON.parse(data.estado);
 
-        console.log(info);
-
         if(info.accion == 0){
-            $('.pedido_final .estado h2').html(info.estado);
-            pedido.estado = info.estado;
+            $('.pedido_final .estado h2').html(estados[parseInt(info.estado)]);
+            pedido.estado = estados[parseInt(info.estado)];
             set_pedido(pedido);
         }
         if(info.accion == 1){
@@ -1144,15 +1142,15 @@ function open_socket(code){
             set_pedido(pedido);
         }
         if(info.accion == 2){
-            move_marker(info.lat, info.lng);
-        }
-        if(info.accion == 3){
             $('.paso_04 .pedido_final .total').html("Total: "+formatNumber.new(parseInt(info.total), "$"));
             pedido.total = info.total;
             set_pedido(pedido);
         }
-        if(info.accion == 4){
+        if(info.accion == 3){
             chat_local(info.mensaje);
+        }
+        if(info.accion == 4){
+            move_marker(info.lat, info.lng);
         }
         
     });
