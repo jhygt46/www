@@ -435,14 +435,7 @@ class Core{
 
         if(file_exists($file) && !isset($_GET["n"])){
 
-            $data = json_decode(file_get_contents($file));
-            
-            echo "FILE EXIST";
-            echo "<pre>";
-            print_r($data);
-            echo "</pre>";
-            exit;
-            
+            $data = json_decode(file_get_contents($file));            
             $fecha = $data->{'pedido'}->{'fecha'};
             $diff = time() - $fecha;
             if($diff < 86400){
@@ -467,15 +460,6 @@ class Core{
             if(!curl_errno($ch)){
 
                 $data = json_decode(curl_exec($ch));
-                
-                /*
-                echo "CURL FILE";
-                echo "<pre>";
-                print_r(json_decode($data->{'resp'}));
-                echo "</pre>";
-                exit;
-                */
-
                 if($data->{"op"} == 1){
                     file_put_contents($file, $data->{"resp"});
                     $info['op'] = 1;
@@ -487,42 +471,6 @@ class Core{
             }else{
                 $info['op'] = 2;
             }
-
-            /*
-            $info['op'] = 3;
-            $info['data'] = $data;
-            if($data->{'op'} == 1){
-                $pedido['pedido']->{'id_ped'} = $data->{'id_ped'};
-                $pedido['pedido']->{'num_ped'} = $data->{'num_ped'};
-                $pedido['pedido']->{'pedido_code'} = $data->{'pedido_code'};
-                $pedido['pedido']->{'fecha'} = strtotime($data->{'fecha'});
-                $pedido['pedido']->{'despacho'} = $data->{'despacho'};
-                $pedido['pedido']->{'id_loc'} = $data->{'id_loc'};
-                $pedido['pedido']->{'nombre'} = $data->{'nombre'};
-                $pedido['pedido']->{'telefono'} = $data->{'telefono'};
-                $pedido['pedido']->{'calle'} = $data->{'calle'};
-                $pedido['pedido']->{'num'} = $data->{'num'};
-                $pedido['pedido']->{'depto'} = $data->{'depto'};
-                $pedido['pedido']->{'direccion'} = $data->{'direccion'};
-                $pedido['pedido']->{'comuna'} = $data->{'comuna'};
-                $pedido['pedido']->{'lat'} = $data->{'lat'};
-                $pedido['pedido']->{'lng'} = $data->{'lng'};
-                $pedido['pedido']->{'comentarios'} = $data->{'comentarios'};
-                $pedido['pedido']->{'pre_gengibre'} = $data->{'pre_gengibre'};
-                $pedido['pedido']->{'pre_wasabi'} = $data->{'pre_wasabi'};
-                $pedido['pedido']->{'pre_embarazadas'} = $data->{'pre_embarazadas'};
-                $pedido['pedido']->{'pre_palitos'} = $data->{'pre_palitos'};
-                $pedido['pedido']->{'pre_teriyaki'} = $data->{'pre_teriyaki'};
-                $pedido['pedido']->{'pre_soya'} = $data->{'pre_soya'};
-                $pedido['pedido']->{'puser'} = $data->{'puser'};
-                $pedido['pedido']->{'carro'} = $data->{'carro'};
-                $pedido['pedido']->{'promos'} = $data->{'promos'};
-                $pedido['pedido']->{'costo'} = $data->{'costo'};
-                $pedido['pedido']->{'total'} = $data->{'total'};
-                file_put_contents($file, json_encode($pedido));
-            
-            }
-            */
             
         }
         return $info;
