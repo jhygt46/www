@@ -10,7 +10,12 @@
     $core = new Core();
     $info = $core->ver_pedido();
     
-    if($info['op'] == 1){ 
+    echo "<pre>";
+    print_r($info);
+    echo "</pre>";
+    exit;
+
+    if($info['op'] == 1){
 
         $pedido = $info['data']->{'pedido'};
         $puser = $info['data']->{'puser'};
