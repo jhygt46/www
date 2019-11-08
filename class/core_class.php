@@ -435,7 +435,14 @@ class Core{
 
         if(file_exists($file) && !isset($_GET["n"])){
 
-            $data = json_decode(file_get_contents($file));           
+            $data = json_decode(file_get_contents($file));
+            
+            echo "FILE EXIST";
+            echo "<pre>";
+            print_r($info);
+            echo "</pre>";
+            exit;
+            
             $fecha = $data->{'pedido'}->{'fecha'};
             $diff = time() - $fecha;
             if($diff < 86400){
@@ -459,6 +466,13 @@ class Core{
 
             if(!curl_errno($ch)){
                 $data = json_decode(curl_exec($ch));
+
+                echo "CURL FILE";
+                echo "<pre>";
+                print_r($data);
+                echo "</pre>";
+                exit;
+
                 if($data->{"op"} == 1){
                     file_put_contents($file, json_encode($data->{"resp"}));
                     $info['op'] = 1;
