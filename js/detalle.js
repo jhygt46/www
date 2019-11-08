@@ -88,7 +88,7 @@ function render_items(carro, promos){
         if(!carro[i].hasOwnProperty('promo')){
             if(x == 0){
                 x = 1;
-                $('.lista_de_productos').append("<div style='font-weight: bold; padding-top: 15px; display: block; font-size: 26px'>Lista de Productos</div>");
+                $('.lista_de_productos').append("<div style='padding-bottom: 10px; padding-top: 15px; display: block; font-size: 26px'>Lista de Productos</div>");
             }
             $('.lista_de_productos').append(create_item(carro[i]));
         }
