@@ -9,6 +9,12 @@
     require_once "class/core_class.php";
     $core = new Core();
     $info = $core->ver_pedido();
+    $data = $core->get_data();
+
+    echo "<pre>";
+    print_r($data);
+    echo "</pre>";
+
     if($info['op'] == 1){
 
         $pedido = $info['data']->{'pedido'};
