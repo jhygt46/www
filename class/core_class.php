@@ -439,7 +439,7 @@ class Core{
             
             echo "FILE EXIST";
             echo "<pre>";
-            print_r($info);
+            print_r($data);
             echo "</pre>";
             exit;
             
@@ -465,6 +465,7 @@ class Core{
             curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
 
             if(!curl_errno($ch)){
+                
                 $data = json_decode(curl_exec($ch));
 
                 echo "CURL FILE";
