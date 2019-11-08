@@ -459,10 +459,10 @@ class Core{
 
             if(!curl_errno($ch)){
                 $data = json_decode(curl_exec($ch));
-                if($data["op"] == 1){
-                    file_put_contents($file, json_encode($data["resp"]));
+                if($data->{"op"} == 1){
+                    file_put_contents($file, json_encode($data->{"resp"}));
                     $info['op'] = 1;
-                    $info['data'] = $data["resp"];
+                    $info['data'] = $data->{"resp"};
                 }else{
                     $info['op'] = 2;
                 }
