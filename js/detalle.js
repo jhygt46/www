@@ -72,12 +72,6 @@ function create_item(item){
 }
 function render_items(carro, promos){
 
-    for(var i=0, ilen=carro.length; i<ilen; i++){
-        if(!carro[i].hasOwnProperty('promo')){
-            $('.lista_de_productos').append(create_item(carro[i]));
-        }
-    }
-    
     for(var i=0, ilen=promos.length; i<ilen; i++){
         $('.lista_de_productos').append("<div style='text-align: center; font-size: 26px; padding-top: 10px'>"+get_categoria(promos[i].id_cae).nombre+"</div>");
         for(var j=0, jlen=carro.length; j<jlen; j++){
@@ -86,6 +80,17 @@ function render_items(carro, promos){
                     $('.lista_de_productos').append(create_item(carro[j]));
                 }
             }
+        }
+    }
+
+    var x = 0;
+    for(var i=0, ilen=carro.length; i<ilen; i++){
+        if(!carro[i].hasOwnProperty('promo')){
+            if(x == 0){
+                x = 1;
+                $('.lista_de_productos').append("<div>Lista de Productos</div>");
+            }
+            $('.lista_de_productos').append(create_item(carro[i]));
         }
     }
     
