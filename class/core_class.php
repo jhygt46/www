@@ -467,7 +467,7 @@ class Core{
             if(!curl_errno($ch)){
 
                 $data = json_decode(curl_exec($ch));
-
+                
                 echo "CURL FILE";
                 echo "<pre>";
                 print_r(json_decode($data->{'resp'}));
