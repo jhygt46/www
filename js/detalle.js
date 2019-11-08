@@ -27,7 +27,6 @@ $(document).ready(function(){
 function create_item(item){
     
     var producto = get_producto(item.id_pro);
-    
     console.log(producto);
 
     var Div = document.createElement('div');
@@ -75,6 +74,9 @@ function create_item(item){
 }
 function render_items(carro, promos){
     
+    console.log(carro);
+    console.log(promos);
+
     for(var i=0, ilen=carro.length; i<ilen; i++){
         if(!carro[i].hasOwnProperty('promo')){
             $('.lista_de_productos').append(create_item(carro[i]));
