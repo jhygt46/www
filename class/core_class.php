@@ -465,12 +465,12 @@ class Core{
             curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
 
             if(!curl_errno($ch)){
-                
+
                 $data = json_decode(curl_exec($ch));
 
                 echo "CURL FILE";
                 echo "<pre>";
-                print_r($data);
+                print_r(json_decode($data->{'resp'}));
                 echo "</pre>";
                 exit;
 
