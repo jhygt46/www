@@ -468,11 +468,13 @@ class Core{
 
                 $data = json_decode(curl_exec($ch));
                 
+                /*
                 echo "CURL FILE";
                 echo "<pre>";
                 print_r(json_decode($data->{'resp'}));
                 echo "</pre>";
                 exit;
+                */
 
                 if($data->{"op"} == 1){
                     file_put_contents($file, $data->{"resp"});
