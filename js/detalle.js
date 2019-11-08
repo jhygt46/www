@@ -73,7 +73,6 @@ function create_item(item){
     return Div;
     
 }
-
 function render_items(carro, promos){
     
     for(var i=0, ilen=carro.length; i<ilen; i++){
@@ -94,7 +93,6 @@ function render_items(carro, promos){
     }
     
 }
-
 function get_producto(id_pro){
     var productos = data.catalogos[catalogo].productos;
     for(var i=0, ilen=productos.length; i<ilen; i++){
