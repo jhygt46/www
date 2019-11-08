@@ -475,9 +475,9 @@ class Core{
                 exit;
 
                 if($data->{"op"} == 1){
-                    file_put_contents($file, json_encode($data->{"resp"}));
+                    file_put_contents($file, $data->{"resp"});
                     $info['op'] = 1;
-                    $info['data'] = $data->{"resp"};
+                    $info['data'] = json_decode($data->{"resp"});
                 }else{
                     $info['op'] = 2;
                 }
