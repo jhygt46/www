@@ -433,7 +433,7 @@ class Core{
         $config = $this->get_config();
         $file = $this->dir_info."pedidos/".$pedido_code.".json";
 
-        if(file_exists($file) && !isset($_GET["flag"])){
+        if(file_exists($file) && !isset($_GET["n"])){
 
             $data = json_decode(file_get_contents($file));           
             $fecha = $data->{'pedido'}->{'fecha'};
