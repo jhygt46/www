@@ -362,7 +362,8 @@ class Core{
                     if(!curl_errno($ch)){
                         $resp = json_decode(curl_exec($ch));
                         curl_close($ch);
-                        
+                        $info['resp'] = $resp;
+                        /*
                         if($resp->{'op'} == 1){
 
                             $file['pedido']->{'id_ped'} = $resp->{'id_ped'};
@@ -417,6 +418,8 @@ class Core{
 
                         }
                         file_put_contents($this->dir_info."pedidos/".$file['pedido']->{'pedido_code'}.".json", json_encode($file));
+                        */
+
                     }else{
                         $this->enviar_error(17, "Curl error enviar_pedido() #1 ".$this->host);
                     }
