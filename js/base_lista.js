@@ -1007,6 +1007,7 @@ function paso_4(){
                     pedido.pre_teriyaki = ($('#pedido_teriyaki').is(':checked') ? 1 : 0 );
                     pedido.comentarios = ($('#pedido_comentarios').val()) ? $('#pedido_comentarios').val() : '' ;
                     document.getElementById("enviar_cotizacion").disabled = true;
+                    
                     var send = { accion: 'enviar_pedido', pedido: JSON.stringify(pedido), carro: JSON.stringify(get_carro()), promos: JSON.stringify(get_promos()), puser: JSON.stringify(get_puser()), token: token };
                     
                     $.ajax({
@@ -1015,6 +1016,8 @@ function paso_4(){
                         data: send,
                         success: function(res){
 
+                            console.log(res);
+                            /*
                             if(res.op == 1){
                                 $('#pedido_nombre').css({ border: '0px' });
                                 $('#pedido_telefono').css({ border: '0px' });
@@ -1050,6 +1053,7 @@ function paso_4(){
                                 show_locales('Ocurrio un Error', 'Disculpe las Molestias');
                                 send_error(16, " enviar_pedido() op!=1|2 ");
                             }
+                            */
                             document.getElementById("enviar_cotizacion").disabled = false;
                             
                         }, error: function(e, err){
