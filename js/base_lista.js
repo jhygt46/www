@@ -1010,6 +1010,8 @@ function paso_4(){
                     
                     var send = { accion: 'enviar_pedido', pedido: JSON.stringify(pedido), carro: JSON.stringify(get_carro()), promos: JSON.stringify(get_promos()), puser: JSON.stringify(get_puser()), token: token };
                     
+                    console.log(send);
+
                     $.ajax({
                         url: 'ajax/index.php',
                         type: "POST",

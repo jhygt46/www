@@ -346,6 +346,7 @@ class Core{
                     $send['puser'] = json_decode($_POST['puser']);
                     $send['carro'] = json_decode($_POST['carro']);
                     $send['promos'] = json_decode($_POST['promos']);
+                    $send["id_loc"] = $pedido->{'id_loc'};
                     $send["code"] = $this->code;
                     $send["host"] = $this->host;
                     $send["tipo"] = 2;
