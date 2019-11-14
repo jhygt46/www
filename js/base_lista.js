@@ -958,7 +958,6 @@ function show_modal_4(pedido){
     show_modal('paso_04');
     open_socket(pedido.pedido_code);
     time();
-
     
 }
 function move_marker(lat, lng){
@@ -1038,6 +1037,7 @@ function paso_4(){
                                     paso = 1;
 
                                 }
+
                                 if(res.activar_envio == 1){
 
                                     if(res.email == 1){
@@ -1056,11 +1056,9 @@ function paso_4(){
                                         paso = 1;
                                     }
                                     if(res.email == 2){
-
                                         $('#err_telefono').attr('href', 'tel:'+res.tel);
                                         $('#err_correo').attr('href', 'mailto:'+res.mailto+';misitiodelivery@gmail.com?subject=Envio%20Manual&body='+res.body);
                                         show_modal('modal_error');
-
                                     }
 
                                 }
@@ -1079,6 +1077,7 @@ function paso_4(){
                             send_error(16, "enviar_pedido() " + err);
                             document.getElementById("enviar_cotizacion").disabled = false;
                         }
+
                     });
                 });
             });
@@ -1112,11 +1111,20 @@ function enviar_contacto(){
                                 type: "POST",
                                 data: send,
                                 success: function(res){
+                                    
                                     console.log(res);
+                                    $('#contacto_nombre').val("");
+                                    $('#contacto_telefono').val("");
+                                    $('#contacto_correo').val("");
+                                    $('#contacto_comentario').val("");
                                     document.getElementById("enviar_contacto").disabled = false;
-                                }, error: function(e, err){
+
+                                },
+                                error: function(e, err){
+
                                     send_error(16, "enviar_contacto() " + err);
                                     document.getElementById("enviar_contacto").disabled = false;
+
                                 }
                             });
                         });

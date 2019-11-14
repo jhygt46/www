@@ -35,8 +35,36 @@ class Core{
             $this->file_err = "/var/error/error.log";
         }else{ die("ARCHIVO CODE NO EXISTE"); }
     }
-    public function put_ip_black_list($ip, $tipo){
-        file_put_contents($this->dir."black_list.json", $ip."-".time()."-".$tipo."\n", FILE_APPEND);
+    private function put_ip_black_list($ip, $tipo){
+
+        file_put_contents($this->dir_info."black_list/".$ip."_".$tipo.".json", time()."\n", FILE_APPEND);
+    
+    }
+    private function get_ip_black_list($ip, $tipo, $segundos, $cantidad){
+
+        if(file_exists($this->dir_info."black_list/".$ip."_".$tipo.".json")){
+            $file = fopen($this->dir_info."black_list/".$ip."_".$tipo.".json", "r"); 
+            $cont = 0;
+            while(!feof($file)) {  
+                $linea = intval(fgets($file)); 
+                if(time() - $linea < $segundos){
+                    $cont++;
+                }
+                if($cont == 0){
+                    unlink($this->dir_info."black_list/".$ip."_".$tipo.".json");
+                }else{
+                    if($cont <= $cantidad){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                }
+            } 
+            fclose($file);
+        }else{
+            return true;
+        }
+
     }
     public function volver(){
         if(file_exists($this->dir_info."versiones/last.json")){
@@ -147,6 +175,10 @@ class Core{
                             die("LA CARPETA ".$this->dir_info."polygon/ NO PUDO SER CREADA<br/>");
                             $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."polygon ".$this->host);
                         }
+                        if(!mkdir($this->dir_info."black_list/", 0777)){
+                            die("LA CARPETA ".$this->dir_info."black_list/ NO PUDO SER CREADA<br/>");
+                            $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."black_list ".$this->host);
+                        }
                     }
                 }
                 $config = $this->get_config();
@@ -228,35 +260,41 @@ class Core{
     }
     public function get_info_despacho($lat, $lng){
 
-        $config = $this->get_config();
-        $polygons = json_decode(file_get_contents($this->dir_info."polygon/".$config["polygon"]));
-        $precio = 9999999;
-        $info['op'] = 2;
-        if(count($polygons) > 0){
-            foreach($polygons as $polygon){
-                $lats = [];
-                $lngs = [];
-                $puntos = json_decode($polygon->{'poligono'});
-                foreach($puntos as $punto){
-                    $lats[] = $punto->{'lat'};
-                    $lngs[] = $punto->{'lng'};
-                }
-                $is = $this->is_in_polygon($lats, $lngs, $lat, $lng);
-                if($is){
-                    if($precio > $polygon->{'precio'}){
-                        $info['op'] = 1;
-                        $info['id_loc'] = intval($polygon->{'id_loc'});
-                        $info['precio'] = intval($polygon->{'precio'});
-                        $info['nombre'] = $polygon->{'nombre'};
-                        $info['lat'] = $lat;
-                        $info['lng'] = $lng;
-                        $precio = $polygon->{'precio'};
+        if($this->get_ip_black_list($this->getUserIpAddr(), 1, 3600, 20)){
+
+            $config = $this->get_config();
+            $polygons = json_decode(file_get_contents($this->dir_info."polygon/".$config["polygon"]));
+            $precio = 9999999;
+            $info['op'] = 2;
+            if(count($polygons) > 0){
+                foreach($polygons as $polygon){
+                    $lats = [];
+                    $lngs = [];
+                    $puntos = json_decode($polygon->{'poligono'});
+                    foreach($puntos as $punto){
+                        $lats[] = $punto->{'lat'};
+                        $lngs[] = $punto->{'lng'};
+                    }
+                    $is = $this->is_in_polygon($lats, $lngs, $lat, $lng);
+                    if($is){
+                        if($precio > $polygon->{'precio'}){
+                            $info['op'] = 1;
+                            $info['id_loc'] = intval($polygon->{'id_loc'});
+                            $info['precio'] = intval($polygon->{'precio'});
+                            $info['nombre'] = $polygon->{'nombre'};
+                            $info['lat'] = $lat;
+                            $info['lng'] = $lng;
+                            $precio = $polygon->{'precio'};
+                        }
                     }
                 }
+            }else{
+                $info['op'] = 3;
+                $this->enviar_error(16, "Sin Poligonos en ".$this->host);
             }
+
         }else{
             $info['op'] = 3;
-            $this->enviar_error(16, "Sin Poligonos en ".$this->host);
         }
         return $info;
 
@@ -319,122 +357,129 @@ class Core{
     }
     public function enviar_pedido(){
 
-        $url = 'https://www.google.com/recaptcha/api/siteverify';
-        $datas = [
-            'secret' => '6LdZp78UAAAAALb66uCWx7RR3cuSjhQLhy8sWZdu',
-            'response' => $_POST['token'],
-            'remoteip' => $_SERVER['REMOTE_ADDR']
-        ];
-        $options = array(
-            'http' => array(
-                'header'  => 'Content-type: application/x-www-form-urlencoded\r\n',
-                'method'  => 'POST',
-                'content' => http_build_query($datas)
-            )
-        );
-        $context  = stream_context_create($options);
-        $response = file_get_contents($url, false, $context);
-        $res = json_decode($response, true);
+        if($this->get_ip_black_list($this->getUserIpAddr(), 2, 3600, 5)){
 
-        if($res['success'] == true){
+            $url = 'https://www.google.com/recaptcha/api/siteverify';
+            $datas = [
+                'secret' => '6LdZp78UAAAAALb66uCWx7RR3cuSjhQLhy8sWZdu',
+                'response' => $_POST['token'],
+                'remoteip' => $this->getUserIpAddr()
+            ];
+            $options = array(
+                'http' => array(
+                    'header'  => 'Content-type: application/x-www-form-urlencoded\r\n',
+                    'method'  => 'POST',
+                    'content' => http_build_query($datas)
+                )
+            );
+            $context  = stream_context_create($options);
+            $response = file_get_contents($url, false, $context);
+            $res = json_decode($response, true);
 
-            $pedido = json_decode($_POST['pedido']);
-            $nombre = $pedido->{'nombre'};
-            $telefono = $pedido->{'telefono'};
+            if($res['success'] == true){
 
-            if(strlen($nombre) > 2){
-                if(strlen($telefono) >= 12 && strlen($telefono) <= 14){
+                $pedido = json_decode($_POST['pedido']);
+                $nombre = $pedido->{'nombre'};
+                $telefono = $pedido->{'telefono'};
 
-                    $send['pedido'] = $pedido;
-                    $send['puser'] = json_decode($_POST['puser']);
-                    $send['carro'] = json_decode($_POST['carro']);
-                    $send['promos'] = json_decode($_POST['promos']);
-                    $send["id_loc"] = $pedido->{'id_loc'};
-                    $send["code"] = $this->code;
-                    $send["host"] = $this->host;
-                    $send["tipo"] = 2;
-                    
-                    $file['pedido'] = $pedido;
-                    $file['puser'] = json_decode($_POST['puser']);
-                    $file['carro'] = json_decode($_POST['carro']);
-                    $file['promos'] = json_decode($_POST['promos']);
+                if(strlen($nombre) > 2){
+                    if(strlen($telefono) >= 12 && strlen($telefono) <= 14){
 
-                    $ch = curl_init();
-                    curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
-                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-                    if(!curl_errno($ch)){
-
-                        $resp = json_decode(curl_exec($ch));
-                        curl_close($ch);
+                        $send['pedido'] = $pedido;
+                        $send['puser'] = json_decode($_POST['puser']);
+                        $send['carro'] = json_decode($_POST['carro']);
+                        $send['promos'] = json_decode($_POST['promos']);
+                        $send["id_loc"] = $pedido->{'id_loc'};
+                        $send["code"] = $this->code;
+                        $send["host"] = $this->host;
+                        $send["tipo"] = 2;
                         
-                        if($resp->{'op'} == 1){
+                        $file['pedido'] = $pedido;
+                        $file['puser'] = json_decode($_POST['puser']);
+                        $file['carro'] = json_decode($_POST['carro']);
+                        $file['promos'] = json_decode($_POST['promos']);
 
-                            $file['pedido']->{'id_ped'} = $resp->{'id_ped'};
-                            $file['pedido']->{'num_ped'} = $resp->{'num_ped'};
-                            $file['pedido']->{'pedido_code'} = $resp->{'pedido_code'};
-                            $file['pedido']->{'fecha'} = $resp->{'fecha'};
+                        $ch = curl_init();
+                        curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
+                        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
+                        if(!curl_errno($ch)){
 
-                            $info['op'] = 1;
-                            $info['pedido_code'] = $resp->{'pedido_code'};
-                            $info['lat'] = $resp->{'lat'};
-                            $info['lng'] = $resp->{'lng'};
-                            $info['id_ped'] = $resp->{'id_ped'};
-                            $info['num_ped'] = $resp->{'num_ped'};
-                            $info['fecha'] = $resp->{'fecha'};
-                            $info['activar_envio'] = $resp->{'activar_envio'};
+                            $resp = json_decode(curl_exec($ch));
+                            curl_close($ch);
 
-                            if($pedido->{'despacho'} == 0){
-                                $info['t_retiro'] = $resp->{'t_retiro'};
-                            }
-                            if($pedido->{'despacho'} == 1){
-                                $info['t_despacho'] = $resp->{'t_despacho'};
-                            }
+                            $this->put_ip_black_list($this->getUserIpAddr(), 2);
                             
-                            if($resp->{'set_puser'} == 1){
-                                $info['set_puser'] = 1;
-                                $info['puser_id'] = $resp->{'puser_id'};
-                                $info['puser_code'] = $resp->{'puser_code'};
-                                $info['puser_nombre'] = $resp->{'puser_nombre'};
-                                $info['puser_telefono'] = $resp->{'puser_telefono'};
-                            }
+                            if($resp->{'op'} == 1){
 
-                            if($resp->{'activar_envio'} == 1){
-                                if($resp->{'email'} == 1){
-                                    $info['email'] = 1;
+                                $file['pedido']->{'id_ped'} = $resp->{'id_ped'};
+                                $file['pedido']->{'num_ped'} = $resp->{'num_ped'};
+                                $file['pedido']->{'pedido_code'} = $resp->{'pedido_code'};
+                                $file['pedido']->{'fecha'} = $resp->{'fecha'};
+
+                                $info['op'] = 1;
+                                $info['pedido_code'] = $resp->{'pedido_code'};
+                                $info['lat'] = $resp->{'lat'};
+                                $info['lng'] = $resp->{'lng'};
+                                $info['id_ped'] = $resp->{'id_ped'};
+                                $info['num_ped'] = $resp->{'num_ped'};
+                                $info['fecha'] = $resp->{'fecha'};
+                                $info['activar_envio'] = $resp->{'activar_envio'};
+
+                                if($pedido->{'despacho'} == 0){
+                                    $info['t_retiro'] = $resp->{'t_retiro'};
                                 }
-                                if($resp->{'email'} == 2){
-                                    $info['email'] = 2;
-                                    $info['tel'] = $resp->{'telefono'};
-                                    $info['mailto'] = $resp->{'correo'};
-                                    $info['body'] = $resp->{'url'}.'/detalle.php?code='.$resp->{'pedido_code'};
+                                if($pedido->{'despacho'} == 1){
+                                    $info['t_despacho'] = $resp->{'t_despacho'};
                                 }
+                                
+                                if($resp->{'set_puser'} == 1){
+                                    $info['set_puser'] = 1;
+                                    $info['puser_id'] = $resp->{'puser_id'};
+                                    $info['puser_code'] = $resp->{'puser_code'};
+                                    $info['puser_nombre'] = $resp->{'puser_nombre'};
+                                    $info['puser_telefono'] = $resp->{'puser_telefono'};
+                                }
+
+                                if($resp->{'activar_envio'} == 1){
+                                    if($resp->{'email'} == 1){
+                                        $info['email'] = 1;
+                                    }
+                                    if($resp->{'email'} == 2){
+                                        $info['email'] = 2;
+                                        $info['tel'] = $resp->{'telefono'};
+                                        $info['mailto'] = $resp->{'correo'};
+                                        $info['body'] = $resp->{'url'}.'/detalle.php?code='.$resp->{'pedido_code'};
+                                    }
+                                }
+
                             }
+                            if($resp->{'op'} == 2){
 
+                                $info['op'] = 2;
+                                $temp_code = $this->pass_generate(20);
+
+                                $info['tel'] = $resp->{'telefono'};
+                                $info['mailto'] = $resp->{'correo'};
+                                $info['body'] = $resp->{'url'}.'/detalle.php?code='.$temp_code;
+
+                                $file['pedido']->{'id_ped'} = 0;
+                                $file['pedido']->{'num_ped'} = 0;
+                                $file['pedido']->{'pedido_code'} = $temp_code;
+                                $file['pedido']->{'fecha'} = date('Y-m-d H:i:s');
+
+                            }
+                            file_put_contents($this->dir_info."pedidos/".$file['pedido']->{'pedido_code'}.".json", json_encode($file));
+
+                        }else{
+                            $this->enviar_error(17, "Curl error enviar_pedido() #1 ".$this->host);
                         }
-                        if($resp->{'op'} == 2){
-
-                            $info['op'] = 2;
-                            $temp_code = $this->pass_generate(20);
-
-                            $info['tel'] = $resp->{'telefono'};
-                            $info['mailto'] = $resp->{'correo'};
-                            $info['body'] = $resp->{'url'}.'/detalle.php?code='.$temp_code;
-
-                            $file['pedido']->{'id_ped'} = 0;
-                            $file['pedido']->{'num_ped'} = 0;
-                            $file['pedido']->{'pedido_code'} = $temp_code;
-                            $file['pedido']->{'fecha'} = date('Y-m-d H:i:s');
-
-                        }
-                        file_put_contents($this->dir_info."pedidos/".$file['pedido']->{'pedido_code'}.".json", json_encode($file));
-
-                    }else{
-                        $this->enviar_error(17, "Curl error enviar_pedido() #1 ".$this->host);
-                    }
+                    }else{  }
                 }else{  }
-            }else{  }
 
+            }
+        }else{
+            $info['op'] = 2;
         }
         return $info;
 
@@ -490,83 +535,92 @@ class Core{
     }
     public function enviar_error($code, $error){
 
-        $send["tipo"] = 3;
-        $send["codes"] = $code;
-        $send["error"] = $error;
-        $send["code"] = $this->code;
-        $send["host"] = $this->host;
-        $send["send_ip"] = $this->getUserIpAddr();
+        if($this->get_ip_black_list($this->getUserIpAddr(), 3, 3600, 10)){
 
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-        if(!curl_errno($ch)){
+            $send["tipo"] = 3;
+            $send["codes"] = $code;
+            $send["error"] = $error;
+            $send["code"] = $this->code;
+            $send["host"] = $this->host;
 
-            $resp = json_decode(curl_exec($ch));
-            curl_close($ch);
-            if($resp->{'op'} != 1){ $this->enviar_error_2($code." // ".$error); }
-            
-        }else{
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
+            if(!curl_errno($ch)){
 
-            $this->enviar_error_2($code." // ".$error);
+                $resp = json_decode(curl_exec($ch));
+                curl_close($ch);
+                if($resp->{'op'} != 1){ $this->enviar_error_2($code." // ".$error); }
+                
+            }else{
+
+                $this->enviar_error_2($code." // ".$error);
+
+            }
 
         }
 
     }
     public function enviar_contacto($nombre, $telefono, $correo, $comentario){
 
-        $url = 'https://www.google.com/recaptcha/api/siteverify';
-        $datas = [
-            'secret' => '6LdZp78UAAAAALb66uCWx7RR3cuSjhQLhy8sWZdu',
-            'response' => $_POST['token'],
-            'remoteip' => $_SERVER['REMOTE_ADDR']
-        ];
-        $options = array(
-            'http' => array(
-                'header'  => 'Content-type: application/x-www-form-urlencoded\r\n',
-                'method'  => 'POST',
-                'content' => http_build_query($datas)
-            )
-        );
-        $context  = stream_context_create($options);
-        $response = file_get_contents($url, false, $context);
-        $res = json_decode($response, true);
+        if($this->get_ip_black_list($this->getUserIpAddr(), 5, 3600, 3)){
+             
+            $url = 'https://www.google.com/recaptcha/api/siteverify';
+            $datas = [
+                'secret' => '6LdZp78UAAAAALb66uCWx7RR3cuSjhQLhy8sWZdu',
+                'response' => $_POST['token'],
+                'remoteip' => $_SERVER['REMOTE_ADDR']
+            ];
+            $options = array(
+                'http' => array(
+                    'header'  => 'Content-type: application/x-www-form-urlencoded\r\n',
+                    'method'  => 'POST',
+                    'content' => http_build_query($datas)
+                )
+            );
+            $context  = stream_context_create($options);
+            $response = file_get_contents($url, false, $context);
+            $res = json_decode($response, true);
 
-        if($res['success'] == true){
+            if($res['success'] == true){
 
-            $send["tipo"] = 5;
-            $send["nombre"] = $nombre;
-            $send["telefono"] = $telefono;
-            $send["correo"] = $telefono;
-            $send["comentario"] = $comentario;
-            $send["code"] = $this->code;
-            $send["host"] = $this->host;
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
-            if(!curl_errno($ch)){
-                $resp = json_decode(curl_exec($ch));
-                curl_close($ch);
-                if($resp->{'op'} == 1){
-                    $info['op'] = 1;
-                    $info['mensaje'] = "Error Captcha";
-                }
-                if($resp->{'op'} != 1){
+                $send["tipo"] = 5;
+                $send["nombre"] = $nombre;
+                $send["telefono"] = $telefono;
+                $send["correo"] = $telefono;
+                $send["comentario"] = $comentario;
+                $send["code"] = $this->code;
+                $send["host"] = $this->host;
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
+                if(!curl_errno($ch)){
+                    $resp = json_decode(curl_exec($ch));
+                    curl_close($ch);
+                    if($resp->{'op'} == 1){
+                        $info['op'] = 1;
+                        $info['mensaje'] = "Error Captcha";
+                    }
+                    if($resp->{'op'} != 1){
+                        $info['op'] = 2;
+                        $info['mensaje'] = "Error Captcha";
+                        $this->enviar_error(17, "Curl error enviar_error() #1 ".$this->host);
+                    }
+                }else{
                     $info['op'] = 2;
                     $info['mensaje'] = "Error Captcha";
                     $this->enviar_error(17, "Curl error enviar_error() #1 ".$this->host);
                 }
+
             }else{
                 $info['op'] = 2;
                 $info['mensaje'] = "Error Captcha";
-                $this->enviar_error(17, "Curl error enviar_error() #1 ".$this->host);
             }
-
         }else{
             $info['op'] = 2;
-            $info['mensaje'] = "Error Captcha";
+            $info['mensaje'] = "";
         }
         return $info;
 
