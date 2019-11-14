@@ -35,6 +35,9 @@ class Core{
             $this->file_err = "/var/error/error.log";
         }else{ die("ARCHIVO CODE NO EXISTE"); }
     }
+    public function put_ip_black_list($ip, $tipo){
+        file_put_contents($this->dir."black_list.json", $ip."-".time()."-".$tipo."\n", FILE_APPEND);
+    }
     public function volver(){
         if(file_exists($this->dir_info."versiones/last.json")){
             $aux = json_decode(file_get_contents($this->dir_info."versiones/last.json"));
@@ -361,57 +364,63 @@ class Core{
                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
                     if(!curl_errno($ch)){
+
                         $resp = json_decode(curl_exec($ch));
                         curl_close($ch);
-                        $info['resp'] = $resp;
-                        /*
+                        
                         if($resp->{'op'} == 1){
 
                             $file['pedido']->{'id_ped'} = $resp->{'id_ped'};
                             $file['pedido']->{'num_ped'} = $resp->{'num_ped'};
                             $file['pedido']->{'pedido_code'} = $resp->{'pedido_code'};
                             $file['pedido']->{'fecha'} = $resp->{'fecha'};
+
                             $info['op'] = 1;
                             $info['pedido_code'] = $resp->{'pedido_code'};
-                            $id_puser = (isset($file['puser']->{'id_puser'})) ? $file['puser']->{'id_puser'} : 0 ;
+                            $info['lat'] = $resp->{'lat'};
+                            $info['lng'] = $resp->{'lng'};
+                            $info['id_ped'] = $resp->{'id_ped'};
+                            $info['num_ped'] = $resp->{'num_ped'};
+                            $info['fecha'] = $resp->{'fecha'};
+                            $info['activar_envio'] = $resp->{'activar_envio'};
+
+                            if($pedido->{'despacho'} == 0){
+                                $info['t_retiro'] = $resp->{'t_retiro'};
+                            }
+                            if($pedido->{'despacho'} == 1){
+                                $info['t_despacho'] = $resp->{'t_despacho'};
+                            }
                             
                             if($resp->{'set_puser'} == 1){
-
                                 $info['set_puser'] = 1;
                                 $info['puser_id'] = $resp->{'puser_id'};
                                 $info['puser_code'] = $resp->{'puser_code'};
                                 $info['puser_nombre'] = $resp->{'puser_nombre'};
                                 $info['puser_telefono'] = $resp->{'puser_telefono'};
-
                             }
-                            if($resp->{'email'} == 1){
 
-                                $info['email'] = 1;
-                                $info['lat'] = $resp->{'lat'};
-                                $info['lng'] = $resp->{'lng'};
-                                $info['id_ped'] = $resp->{'id_ped'};
-                                $info['num_ped'] = $resp->{'num_ped'};
-                                $info['t_despacho'] = $resp->{'t_despacho'};
-                                $info['t_retiro'] = $resp->{'t_retiro'};
-                                $info['fecha'] = $resp->{'fecha'};
-
+                            if($resp->{'activar_envio'} == 1){
+                                if($resp->{'email'} == 1){
+                                    $info['email'] = 1;
+                                }
+                                if($resp->{'email'} == 2){
+                                    $info['email'] = 2;
+                                    $info['tel'] = $resp->{'telefono'};
+                                    $info['mailto'] = $resp->{'correo'};
+                                    $info['body'] = $resp->{'url'}.'/detalle.php?code='.$resp->{'pedido_code'};
+                                }
                             }
-                            if($resp->{'email'} == 2){
 
-                                $info['email'] = 2;
-                                $info['tel'] = $resp->{'telefono'};
-                                $info['mailto'] = $resp->{'correo'};
-                                $info['body'] = $resp->{'url'}.'/detalle.php?code='.$resp->{'pedido_code'};
-                            
-                            }
                         }
                         if($resp->{'op'} == 2){
 
                             $info['op'] = 2;
                             $temp_code = $this->pass_generate(20);
+
                             $info['tel'] = $resp->{'telefono'};
                             $info['mailto'] = $resp->{'correo'};
                             $info['body'] = $resp->{'url'}.'/detalle.php?code='.$temp_code;
+
                             $file['pedido']->{'id_ped'} = 0;
                             $file['pedido']->{'num_ped'} = 0;
                             $file['pedido']->{'pedido_code'} = $temp_code;
@@ -419,7 +428,6 @@ class Core{
 
                         }
                         file_put_contents($this->dir_info."pedidos/".$file['pedido']->{'pedido_code'}.".json", json_encode($file));
-                        */
 
                     }else{
                         $this->enviar_error(17, "Curl error enviar_pedido() #1 ".$this->host);
@@ -487,16 +495,22 @@ class Core{
         $send["error"] = $error;
         $send["code"] = $this->code;
         $send["host"] = $this->host;
+        $send["send_ip"] = $this->getUserIpAddr();
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         if(!curl_errno($ch)){
+
             $resp = json_decode(curl_exec($ch));
             curl_close($ch);
             if($resp->{'op'} != 1){ $this->enviar_error_2($code." // ".$error); }
-        }else{ 
+            
+        }else{
+
             $this->enviar_error_2($code." // ".$error);
+
         }
 
     }
@@ -566,6 +580,16 @@ class Core{
             $r .= $chars{rand(0, strlen($chars)-1)};
         }
         return $r;
+    }
+    private function getUserIpAddr(){
+        if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+            $ip = $_SERVER['HTTP_CLIENT_IP'];
+        }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        }else{
+            $ip = $_SERVER['REMOTE_ADDR'];
+        }
+        return $ip;
     }
 
 }
