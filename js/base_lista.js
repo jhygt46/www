@@ -1206,6 +1206,7 @@ function show_despacho(){
                 $('#siguiente_map').show();
             }else{
                 $('#siguiente_map').hide();
+                console.log("HIDE");
             }
             show_modal('paso_02b');
         }
