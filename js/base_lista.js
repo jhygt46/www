@@ -1204,6 +1204,7 @@ function show_despacho(){
             }
             if(pedido.lat != 0 && pedido.lng != 0){
                 $('#siguiente_map').show();
+                console.log("SHOW");
             }else{
                 $('#siguiente_map').hide();
                 console.log("HIDE");
