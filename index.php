@@ -364,7 +364,7 @@
                                 </div>
                             </div>
                             <div class="acciones">
-                                <input class="confirmar" onclick="paso_2()" type="button" value="Siguiente">
+                                <input class="confirmar" onclick="paso_4()" type="button" value="Siguiente">
                             </div>
                         </div>
                     </div>

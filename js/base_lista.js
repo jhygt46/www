@@ -1192,7 +1192,11 @@ function chat_local(mensaje){
 }
 function show_despacho(){
 
-    var total = parseInt(get_pedido().total);
+    var pedido = get_pedido();
+
+    console.log(pedido);
+
+    var total = parseInt(pedido.total);
     var pedido_minimo = parseInt(data.config.pedido_minimo);
     var info_desp = estado_locales(2);
 
