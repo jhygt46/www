@@ -4,9 +4,11 @@
         die("hjS3r%mDs-5gYa6ib_5Ps");
     }
 
+    // BORRAR //
     if($_GET["mode"] != "developer" && $_POST["accion"] != "xS3w1Dm8Po87Wltd"){
         die("SITIO EN CONSTRUCCION");
     }
+    // BORRAR //
 
     require_once "class/core_class.php";
     $core = new Core();
@@ -15,7 +17,7 @@
         $core->actualizar();
         exit;
     }
-    
+
     $info = $core->get_data();
     if($info === null){
         die("<table border='0' width='100%' height='100%'><tr><td align='center' valign='middle'>Sitio no existe</td></tr></table>");
@@ -25,19 +27,19 @@
         }
     }
 
-    if ((empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === "off") && $info->{'ssl'} == 1) {
+    if((empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === "off") && $info->{'ssl'} == 1) {
         $location = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         header('HTTP/1.1 301 Moved Permanently');
         header('Location: ' . $location);
         exit;
     }
-    if ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === "on") && $info->{'ssl'} == 0) {
+    if((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === "on") && $info->{'ssl'} == 0) {
         $location = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         header('HTTP/1.1 302 Moved Temporarily');
         header('Location: ' . $location);
         exit;
     }
-
+    
     $horas = (isset($_GET['horas'])) ? $_GET['horas'] : 0 ;
 
 ?>
