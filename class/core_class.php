@@ -34,8 +34,6 @@ class Core{
             $this->dir_data = "/var/www/html/";
             $this->file_err = "/var/error/error.log";
 
-            echo "HOST: ".$this->host."<br/>";
-
         }else{ die("ARCHIVO CODE NO EXISTE"); }
     }
     private function put_ip_black_list($ip, $tipo){
