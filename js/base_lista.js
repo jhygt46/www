@@ -13,6 +13,8 @@ function render_pagina(){
         }
     }
     
+    console.log(num);
+
     // MENU LEFT PAGINAS
     if(data.paginas){
         var paginas = data.paginas;
