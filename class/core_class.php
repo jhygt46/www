@@ -262,6 +262,8 @@ class Core{
 
         if($this->get_ip_black_list($this->getUserIpAddr(), 1, 3600, 20)){
 
+            $this->put_ip_black_list($this->getUserIpAddr(), 1);
+
             $config = $this->get_config();
             $polygons = json_decode(file_get_contents($this->dir_info."polygon/".$config["polygon"]));
             $precio = 9999999;
@@ -549,6 +551,7 @@ class Core{
             if(!curl_errno($ch)){
                 $resp = json_decode(curl_exec($ch));
                 curl_close($ch);
+                $this->put_ip_black_list($this->getUserIpAddr(), 3);
                 if($resp->{'op'} != 1){ $this->enviar_error_2($code." // ".$error); }
             }else{
                 $this->enviar_error_2($code." // ".$error);
@@ -559,7 +562,7 @@ class Core{
     }
     public function enviar_contacto($nombre, $telefono, $correo, $comentario){
 
-        if($this->get_ip_black_list($this->getUserIpAddr(), 5, 3600, 3)){
+        if($this->get_ip_black_list($this->getUserIpAddr(), 5, 3600, 2)){
              
             $url = 'https://www.google.com/recaptcha/api/siteverify';
             $datas = [
@@ -594,6 +597,7 @@ class Core{
                 if(!curl_errno($ch)){
                     $resp = json_decode(curl_exec($ch));
                     curl_close($ch);
+                    $this->put_ip_black_list($this->getUserIpAddr(), 5);
                     if($resp->{'op'} == 1){
                         $info['op'] = 1;
                         $info['mensaje'] = "Error Captcha";
@@ -640,5 +644,5 @@ class Core{
         }
         return $ip;
     }
-
+    
 }
