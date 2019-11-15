@@ -14,11 +14,17 @@
     if(isset($_POST["accion"]) && $_POST["accion"] == "xS3w1Dm8Po87Wltd"){
         $core->actualizar();
     }
+    /*
     if(isset($_POST["accion"]) && $_POST["accion"] == "uDr72rE2kIt9z5bF"){
         $core->volver();
     }
-    
+    */
     $info = $core->get_data();
+
+    echo "<pre>";
+    print_r($info);
+    echo "</pre>";
+    exit;
 
     if($info === null){
         die("<table border='0' width='100%' height='100%'><tr><td align='center' valign='middle'>Sitio no existe</td></tr></table>");
