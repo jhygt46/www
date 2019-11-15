@@ -575,14 +575,6 @@ function get_puser(){
 function set_puser(puser){
     localStorage.setItem("p_user", JSON.stringify(puser));
 }
-/*
-function get_pdir(){
-    return JSON.parse(localStorage.getItem("p_dir")) || { id_pdir: 0, direccion: '', calle: '', num: '', depto: '', lat: 0, lng: 0, verificado: 0 };
-}
-function set_pdir(pdir){
-    localStorage.setItem("p_dir", JSON.stringify(pdir));
-}
-*/
 function get_carro(){
     return JSON.parse(localStorage.getItem("carro")) || [];
 }
@@ -924,9 +916,12 @@ function paso_2(){
         }else{
             if(data.config.retiro_local == 1){
                 show_modal_locales();
-            }
-            if(data.config.despacho_domicilio == 1){
-                show_despacho();
+            }else{
+                if(data.config.despacho_domicilio == 1){
+                    show_despacho();
+                }else{
+                    alert("No tiene configurado el retiro en el local y tampoco despacho a domicilio");
+                }
             }
         }
     }
