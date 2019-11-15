@@ -535,28 +535,23 @@ class Core{
     }
     public function enviar_error($code, $error){
 
-        if($this->get_ip_black_list($this->getUserIpAddr(), 3, 3600, 10)){
+        if($this->get_ip_black_list($this->getUserIpAddr(), 3, 3600, 5)){
 
             $send["tipo"] = 3;
             $send["codes"] = $code;
             $send["error"] = $error;
             $send["code"] = $this->code;
             $send["host"] = $this->host;
-
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
             if(!curl_errno($ch)){
-
                 $resp = json_decode(curl_exec($ch));
                 curl_close($ch);
                 if($resp->{'op'} != 1){ $this->enviar_error_2($code." // ".$error); }
-                
             }else{
-
                 $this->enviar_error_2($code." // ".$error);
-
             }
 
         }
