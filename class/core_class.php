@@ -54,6 +54,7 @@ class Core{
             fclose($file);
             if($cont == 0){
                 unlink($this->dir_info."black_list/".$ip."_".$tipo.".json");
+                return true;
             }else{
                 if($cont <= $cantidad){
                     return true;
@@ -66,7 +67,9 @@ class Core{
         }
 
     }
+    /*
     public function volver(){
+        
         if(file_exists($this->dir_info."versiones/last.json")){
             $aux = json_decode(file_get_contents($this->dir_info."versiones/last.json"));
             $code = $aux->{'code'};
@@ -112,6 +115,7 @@ class Core{
             }   
         }
     }
+    */
     public function actualizar(){
         $config = $this->get_config();
         $config["actualizar"] = 1;
