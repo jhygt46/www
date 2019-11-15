@@ -13,7 +13,9 @@ function render_pagina(){
         }
     }
     
-    console.log(num);
+    if(num == 0){
+        alert("Debe ingresar categorias en el administrador, en Carta");
+    }
 
     // MENU LEFT PAGINAS
     if(data.paginas){
