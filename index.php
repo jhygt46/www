@@ -363,6 +363,9 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="acciones">
+                                <input class="confirmar" onclick="paso_2()" type="button" value="Siguiente">
+                            </div>
                         </div>
                     </div>
                     <?php } ?>
