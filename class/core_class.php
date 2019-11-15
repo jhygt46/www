@@ -118,11 +118,14 @@ class Core{
     }
     */
     public function actualizar(){
+
         $config = $this->get_config();
         $config["actualizar"] = 1;
         file_put_contents($this->dir_info."config.json", json_encode($config));
+
     }
     public function get_config(){
+
         if(file_exists($this->dir_info."config.json")){
             $aux_conf = json_decode(file_get_contents($this->dir_info."config.json"));
             $config["info"] = $aux_conf->{"info"};
@@ -132,11 +135,9 @@ class Core{
             $config["info"] = "last.json";
             $config["polygon"] = "last.json";
             $config["actualizar"] = 0;
-            if(file_exists($this->dir_info."config.json")){
-                file_put_contents($this->dir_info."config.json", json_encode($config));
-            }
         }
         return $config;
+        
     }
     public function get_data(){
         $config = $this->get_config();
