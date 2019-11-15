@@ -931,6 +931,9 @@ function paso_2(){
 function paso_3(){
 
     var init_puser = get_puser();
+
+    console.log(init_puser);
+
     $('#pedido_nombre').val(init_puser.nombre);
     $('#pedido_telefono').val(init_puser.telefono);
     paso = 3;

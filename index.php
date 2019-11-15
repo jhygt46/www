@@ -369,7 +369,6 @@
                         </div>
                     </div>
                     <?php } ?>
-                    
                     <div class="modal modal_dim1 vhalign hide modal_carro paso_03">
                         <div class="cont_modal">
                             <div class="titulo"><div class="cont_titulo valign"><h1 class="font1"><?php echo $info->{"pedido_03_titulo"}; ?></h1><h2 class="font3"><?php echo $info->{"pedido_03_subtitulo"}; ?></h2></div></div>
@@ -455,7 +454,6 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div class="modal modal_dim1 vhalign hide modal_carro paso_04">
                         <div class="cont_modal">
                             <div class="titulo"><div class="cont_titulo valign"><h1 class="font1"></h1><h2 class="font3"></h2></div></div>
