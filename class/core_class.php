@@ -132,6 +132,9 @@ class Core{
             $config["info"] = "last.json";
             $config["polygon"] = "last.json";
             $config["actualizar"] = 0;
+            if(file_exists($this->dir_info."config.json")){
+                file_put_contents($this->dir_info."config.json", json_encode($config));
+            }
         }
         return $config;
     }
@@ -148,7 +151,7 @@ class Core{
         $send["code"] = $this->code;
         $send["host"] = $this->host;
         $send["tipo"] = 1;
-
+        
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://misitiodelivery.cl/web/');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -168,7 +171,6 @@ class Core{
                         die("LA CARPETA ".$this->dir_info." NO PUDO SER CREADA<br/>");
                         $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info." ".$this->host);
                     }else{
-                        
                         if(!mkdir($this->dir_info."pedidos/", 0777)){
                             die("LA CARPETA ".$this->dir_info."pedidos/ NO PUDO SER CREADA<br/>");
                             $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."pedidos ".$this->host);
@@ -185,7 +187,6 @@ class Core{
                             die("LA CARPETA ".$this->dir_info."black_list/ NO PUDO SER CREADA<br/>");
                             $this->enviar_error(16, "No se pudo crear el direcctorio ".$this->dir_info."black_list ".$this->host);
                         }
-
                     }
                 }
                 $config = $this->get_config();
