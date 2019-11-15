@@ -1193,9 +1193,6 @@ function chat_local(mensaje){
 function show_despacho(){
 
     var pedido = get_pedido();
-
-    console.log(pedido);
-
     var total = parseInt(pedido.total);
     var pedido_minimo = parseInt(data.config.pedido_minimo);
     var info_desp = estado_locales(2);
@@ -1204,6 +1201,11 @@ function show_despacho(){
         if(total >= pedido_minimo){
             if(map_init == 0){
                 initMap();
+            }
+            if(pedido.lat != 0 && pedido.lng != 0){
+                $('#siguiente_map').show();
+            }else{
+                $('#siguiente_map').hide();
             }
             show_modal('paso_02b');
         }

@@ -363,7 +363,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="acciones">
+                            <div class="acciones" id="siguiente_map">
                                 <input class="confirmar" onclick="paso_4()" type="button" value="Siguiente">
                             </div>
                         </div>
