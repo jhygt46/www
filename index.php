@@ -364,7 +364,7 @@
                                 </div>
                             </div>
                             <div class="acciones" id="siguiente_map">
-                                <input class="confirmar" onclick="paso_4()" type="button" value="Siguiente">
+                                <input class="confirmar" onclick="paso_3()" type="button" value="Siguiente">
                             </div>
                         </div>
                     </div>

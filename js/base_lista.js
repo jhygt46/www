@@ -933,7 +933,6 @@ function paso_3(){
     var init_puser = get_puser();
     $('#pedido_nombre').val(init_puser.nombre);
     $('#pedido_telefono').val(init_puser.telefono);
-
     paso = 3;
     show_modal('paso_03');
 
@@ -1207,10 +1206,8 @@ function show_despacho(){
             }
             if(pedido.lat != 0 && pedido.lng != 0){
                 $('#siguiente_map').show();
-                console.log("SHOW");
             }else{
                 $('#siguiente_map').hide();
-                console.log("HIDE");
             }
             show_modal('paso_02b');
         }
