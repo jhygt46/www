@@ -50,17 +50,17 @@ class Core{
                 if(time() - $linea < $segundos){
                     $cont++;
                 }
-                if($cont == 0){
-                    unlink($this->dir_info."black_list/".$ip."_".$tipo.".json");
-                }else{
-                    if($cont <= $cantidad){
-                        return true;
-                    }else{
-                        return false;
-                    }
-                }
-            } 
+            }
             fclose($file);
+            if($cont == 0){
+                unlink($this->dir_info."black_list/".$ip."_".$tipo.".json");
+            }else{
+                if($cont <= $cantidad){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
         }else{
             return true;
         }
@@ -644,5 +644,5 @@ class Core{
         }
         return $ip;
     }
-    
+
 }
