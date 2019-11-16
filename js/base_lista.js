@@ -691,13 +691,13 @@ function showmenu(){
         left: "0px"
     }, 200, function(){
         menu = 1;
+        if(data.paginas.length == 0){
+            alert("No hay paginas disponibles");
+        }
     });
     $('.btn_toogle').animate({
         right: "20px"
     }, 400);
-    if(data.paginas.length == 0){
-        alert("No hay paginas disponibles");
-    }
 }
 function hidemenu(){
     $('.menu_left').animate({
