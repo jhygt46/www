@@ -691,7 +691,7 @@ function showmenu(){
         left: "0px"
     }, 200, function(){
         menu = 1;
-        if(data.paginas.length == 0){
+        if(data.paginas.length == 0 && produccion == 0){
             alert("No hay paginas disponibles");
         }
     });
