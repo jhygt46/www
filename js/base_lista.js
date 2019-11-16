@@ -13,8 +13,8 @@ function render_pagina(){
         }
     }
     
-    if(num == 0){
-        alert("Debe ingresar categorias en el administrador, en Carta");
+    if(num == 0 && produccion == 0){
+        alert("No hay categorias creadas!\nEn el administrador debe crearlas en la categoria 'Carta'");
     }
 
     // MENU LEFT PAGINAS
@@ -923,7 +923,9 @@ function paso_2(){
                 if(data.config.despacho_domicilio == 1){
                     show_despacho();
                 }else{
-                    alert("No tiene configurado el retiro en el local y tampoco despacho a domicilio");
+                    if(produccion == 0){
+                        alert("No tiene configurado el retiro en el local y tampoco despacho a domicilio");
+                    }
                 }
             }
         }
