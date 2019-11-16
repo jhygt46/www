@@ -648,6 +648,8 @@ function set_pedido(pedido){
 function get_productos_categoria(id_cae){
     
     var categorias = get_categoria(id_cae);
+    console.log(categorias);
+
     var productos = [];
     if(categorias.productos){
         for(var i=0, ilen=categorias.productos.length; i<ilen; i++){
