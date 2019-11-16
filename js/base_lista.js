@@ -500,8 +500,6 @@ function process_promo(){
     var productos = [];
     var aux = [];
     var cantidad = 0;
-
-    console.log(promos);
     
     for(var i=0, ilen=promos.length; i<ilen; i++){
         productos = [];
