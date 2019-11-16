@@ -625,7 +625,6 @@ function get_cats(tipo){
     for(var i=0, ilen=categorias.length; i<ilen; i++){
         if(categorias[i].tipo == tipo){
             aux.push(categorias[i]);
-            
         }
     }
     return aux;
