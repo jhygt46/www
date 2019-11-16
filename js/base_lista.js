@@ -692,7 +692,7 @@ function showmenu(){
     }, 200, function(){
         menu = 1;
         if(data.paginas.length == 0 && produccion == 0){
-            alert("No hay paginas disponibles");
+            alert("No hay paginas creadas!\nEn el administrador debe crearlas en la categoria 'Contenido'");
         }
     });
     $('.btn_toogle').animate({
@@ -924,7 +924,7 @@ function paso_2(){
                     show_despacho();
                 }else{
                     if(produccion == 0){
-                        alert("No tiene configurado el retiro en el local y tampoco despacho a domicilio");
+                        alert("No hay locales creados!\nEn el administrador debe crearlas en la categoria 'Locales'");
                     }
                 }
             }
