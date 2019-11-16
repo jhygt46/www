@@ -19,11 +19,6 @@
     }
 
     $info = $core->get_data();
-
-    echo "<pre>";
-    print_r($info);
-    echo "</pre>";
-
     if($info === null){
         die("<table border='0' width='100%' height='100%'><tr><td align='center' valign='middle'>Sitio no existe</td></tr></table>");
     }else{
@@ -84,6 +79,7 @@
             var estados = [ <?php for($i=0; $i<count($info->{'estado'}); $i++){ if($i>0){ echo ", "; } echo "'".$info->{'estado'}[$i]."'";  } ?> ];
             var fecha_js = new Date(<?php echo (time() + $horas * 60 * 60); ?>000).getTime();
             var fecha_pc = new Date().getTime();
+            var produccion = <?php echo $info->{'dns'}; ?>;
         </script>
         <style>
             body{
