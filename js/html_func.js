@@ -213,9 +213,6 @@ function create_html_producto2(aux){
 
     var width_rest = widthpx - width_foto;
 
-    console.log(height);
-    console.log(width_foto);
-
     var cfoto = create_element_class('pro_foto');
     var foto = create_element_class('foto');
     foto.style.width = (width_foto - 10) + "px";
@@ -223,9 +220,9 @@ function create_html_producto2(aux){
     Divm.appendChild(cfoto);
 
     var cont_data = create_element_class('cont_data valign');
+    cont_data.style.width = width_rest + "px";
 
     var nombre = create_element_class('nombre font2');
-    nombre.style.width = width_rest + "px";
     if(aux.numero > 0){
         nombre.innerHTML = aux.numero + '.- ' + aux.nombre;
     }else{
@@ -235,7 +232,6 @@ function create_html_producto2(aux){
     
 
     var descripcion = create_element_class('descripcion font5');
-    descripcion.style.width = width_rest + "px";
     if(aux.disponible == 0){
         descripcion.innerHTML = aux.descripcion;
     }
@@ -245,7 +241,6 @@ function create_html_producto2(aux){
     cont_data.appendChild(descripcion);
     
     var precio = create_element_class('precio valign font3');
-    precio.style.width = width_rest + "px";
     precio.innerHTML = formatNumber.new(parseInt(aux.precio), "$");
     cont_data.appendChild(precio);
     Divm.appendChild(cont_data);
