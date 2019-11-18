@@ -206,12 +206,15 @@ function create_html_producto2(aux){
 
     if(height > 90){
         Divm.style.minHeight = height+"px";
+        var width_foto = height;
+    }else{
+        var width_foto = 90;
     }
 
-    var width_foto = (height > 90) ? height : 90 ;
     var width_rest = widthpx - width_foto;
 
     console.log(height);
+    console.log(width_foto);
 
     var cfoto = create_element_class('pro_foto');
     var foto = create_element_class('foto');
