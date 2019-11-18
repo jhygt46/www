@@ -152,13 +152,11 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   right: 0px;
   top: 0px;
   height: 100%;
-  background: #000;
-  padding: 10px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .pro_foto .foto{
-  width: 100%;
-  height: 100%;
+  height: calc(100% - 10px); 
   background: #000;
+  padding: 5px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias {
   padding: 10px;
