@@ -205,19 +205,21 @@ function create_html_producto2(aux){
     }
 
     var Divm = create_element_class('cont_pro');
-    console.log(Divm);
+
     if(height > 90){
         Divm.style.minHeight = height+"px";
     }
 
-    var cfoto = create_element_class('pro_foto');
-    foto.style.width = (height > 90) ? height+"px" : "90px" ;
+    var width_foto = (height > 90) ? height : 90 ;
+    var width_rest = widthpx - width_foto;
 
+    var cfoto = create_element_class('pro_foto');
     var foto = create_element_class('foto');
+    foto.style.width = width_foto+"px";
     cfoto.appendChild(foto);
 
-    var nombre = document.createElement('div');
-    nombre.className = 'nombre font2';
+    var nombre = create_element_class('nombre font2');
+    foto.style.width = width_rest + "px";
     if(aux.numero > 0){
         nombre.innerHTML = aux.numero + '.- ' + aux.nombre;
     }else{
@@ -226,8 +228,8 @@ function create_html_producto2(aux){
     Divm.appendChild(nombre);
     Divm.appendChild(cfoto);
 
-    var descripcion = document.createElement('div');
-    descripcion.className = 'descripcion font5';
+    var descripcion = create_element_class('descripcion font5');
+    descripcion.style.width = width_rest + "px";
     if(aux.disponible == 0){
         descripcion.innerHTML = aux.descripcion;
     }
@@ -236,8 +238,8 @@ function create_html_producto2(aux){
     }
     Divm.appendChild(descripcion);
     
-    var precio = document.createElement('div');
-    precio.className = 'precio valign font3';
+    var precio = create_element_class('precio valign font3');
+    precio.style.width = width_rest + "px";
     precio.innerHTML = formatNumber.new(parseInt(aux.precio), "$");
     Divm.appendChild(precio);
     Div.appendChild(Divm);
