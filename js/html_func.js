@@ -192,8 +192,6 @@ function create_html_producto(aux){
 function create_html_producto2(aux){
     
     var height = parseInt((widthpx - 20) * data.config.alto_pro / 100);
-    console.log(parseInt((widthpx - 20)));
-
     var Div = document.createElement('div');
     Div.className = 'producto2';
 
@@ -212,6 +210,8 @@ function create_html_producto2(aux){
 
     var width_foto = (height > 90) ? height : 90 ;
     var width_rest = widthpx - width_foto;
+
+    console.log(height);
 
     var cfoto = create_element_class('pro_foto');
     var foto = create_element_class('foto');
