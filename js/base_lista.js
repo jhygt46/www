@@ -157,7 +157,8 @@ function imprimir_productos_modal(id){
         for(var j=0, jlen=productos.length; j<jlen; j++){
             var producto = get_producto(productos[j]);
             if(producto.disponible != 2 && categoria.detalle_prods == 0){
-                html.append(create_html_producto(producto, categoria.detalle_prods));
+                //html.append(create_html_producto(producto));
+                html.append(create_html_producto2(producto));
             }
         }
     }

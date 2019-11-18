@@ -153,7 +153,7 @@ function create_html_categorias(obj){
     return Div;
     
 }
-function create_html_producto(aux, detalle){
+function create_html_producto(aux){
     
     var Div = document.createElement('div');
     Div.className = 'producto';
@@ -171,6 +171,46 @@ function create_html_producto(aux, detalle){
         nombre.innerHTML = aux.nombre;
     }
     Div.appendChild(nombre);
+
+    var descripcion = document.createElement('div');
+    descripcion.className = 'descripcion font5';
+    if(aux.disponible == 0){
+        descripcion.innerHTML = aux.descripcion;
+    }
+    if(aux.disponible == 1){
+        descripcion.innerHTML = aux.descripcion + '<br/><p style="color: #A33; font-size: 11px">Producto no disponible</p>';
+    }
+    Div.appendChild(descripcion);
+    
+    var precio = document.createElement('div');
+    precio.className = 'precio valign font3';
+    precio.innerHTML = formatNumber.new(parseInt(aux.precio), "$");
+    Div.appendChild(precio);
+    return Div;
+    
+}
+function create_html_producto2(aux){
+    
+    var Div = document.createElement('div');
+    Div.className = 'producto';
+
+    if(aux.disponible == 0){
+        Div.onclick = function(){ add_carro_producto(aux.id_pro) };
+    }
+    if(aux.disponible == 1){
+        Div.onclick = function(){ alert("Producto no disponible") };
+    }
+
+    var foto = create_element_class('pro_foto');
+    var nombre = document.createElement('div');
+    nombre.className = 'nombre font2';
+    if(aux.numero > 0){
+        nombre.innerHTML = aux.numero + '.- ' + aux.nombre;
+    }else{
+        nombre.innerHTML = aux.nombre;
+    }
+    Div.appendChild(nombre);
+    Div.appendChild(foto);
 
     var descripcion = document.createElement('div');
     descripcion.className = 'descripcion font5';
