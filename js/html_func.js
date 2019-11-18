@@ -211,7 +211,7 @@ function create_html_producto2(aux){
         var width_foto = 100;
     }
 
-    var width_rest = widthpx - 30 - width_foto;
+    var width_rest = widthpx - 25 - width_foto;
 
     var cfoto = create_element_class('pro_foto');
     var foto = create_element_class('foto');
@@ -229,7 +229,7 @@ function create_html_producto2(aux){
         nombre.innerHTML = aux.nombre;
     }
     if(aux.disponible == 1){
-        nombre.innerHTML += "<p style='color: #900; font-size: 10px; padding-left: 4px'>No disponible</p>";
+        nombre.innerHTML += "<p style='color: #900; font-size: 10px; padding-left: 4px; display: inline'>No disponible</p>";
     }
     cont_data.appendChild(nombre);
     
