@@ -243,7 +243,7 @@ function create_html_producto2(aux){
 
     if(aux.disponible == 1){
         var disponible = create_element_class('disponible');
-        disponible.innerHTML = '<p style="color: #A33; font-size: 11px">Producto no disponible</p>';
+        disponible.innerHTML = 'Producto no disponible';
         Div.appendChild(disponible);
     }
     
