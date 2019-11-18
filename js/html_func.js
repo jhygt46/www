@@ -222,7 +222,7 @@ function create_html_producto2(aux){
     cfoto.appendChild(foto);
 
     var nombre = create_element_class('nombre font2');
-    foto.style.width = width_rest + "px";
+    nombre.style.width = width_rest + "px";
     if(aux.numero > 0){
         nombre.innerHTML = aux.numero + '.- ' + aux.nombre;
     }else{
