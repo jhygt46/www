@@ -239,14 +239,14 @@ function create_html_producto2(aux){
     cont_data.appendChild(precio);
 
     Divm.appendChild(cont_data);
+    Div.appendChild(Divm);
 
     if(aux.disponible == 1){
         var disponible = create_element_class('disponible');
         disponible.innerHTML = '<p style="color: #A33; font-size: 11px">Producto no disponible</p>';
+        Div.appendChild(disponible);
     }
     
-    Div.appendChild(Divm);
-    Div.appendChild(disponible);
     return Div;
     
 }
