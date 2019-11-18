@@ -238,15 +238,14 @@ function create_html_producto2(aux){
     precio.innerHTML = formatNumber.new(parseInt(aux.precio), "$");
     cont_data.appendChild(precio);
 
-    Divm.appendChild(cont_data);
-    Div.appendChild(Divm);
-
     if(aux.disponible == 1){
         var disponible = create_element_class('disponible');
         disponible.innerHTML = 'Producto no disponible';
-        Div.appendChild(disponible);
+        cont_data.appendChild(disponible);
     }
     
+    Divm.appendChild(cont_data);
+    Div.appendChild(Divm);
     return Div;
     
 }
