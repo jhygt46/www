@@ -209,7 +209,7 @@ function create_html_producto2(aux){
     }
 
     var width_foto = height;
-    var width_rest = widthpx - 30 - width_foto;
+    var width_rest = widthpx - 20 - width_foto;
 
     
 
