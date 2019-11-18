@@ -232,17 +232,19 @@ function create_html_producto2(aux){
     
 
     var descripcion = create_element_class('descripcion font5');
-    if(aux.disponible == 0){
-        descripcion.innerHTML = aux.descripcion;
-    }
-    if(aux.disponible == 1){
-        descripcion.innerHTML = aux.descripcion + '<br/><p style="color: #A33; font-size: 11px">Producto no disponible</p>';
-    }
+    descripcion.innerHTML = aux.descripcion;
     cont_data.appendChild(descripcion);
-    
-    var precio = create_element_class('precio valign font3');
+
+    var precio = create_element_class('precio font3');
     precio.innerHTML = formatNumber.new(parseInt(aux.precio), "$");
     cont_data.appendChild(precio);
+
+    if(aux.disponible == 1){
+        var disponible = create_element_class('disponible');
+        disponible.innerHTML = '<p style="color: #A33; font-size: 11px">Producto no disponible</p>';
+        cont_data.appendChild(disponible);
+    }
+    
     Divm.appendChild(cont_data);
     Div.appendChild(Divm);
     return Div;
