@@ -158,66 +158,40 @@ function create_html_producto(id, detalle){
     var aux = get_producto(id);
     if(detalle == 0){
         
-        var Div = document.createElement('div');
-        Div.className = 'producto';
-        Div.onclick = function(){ add_carro_producto(aux.id_pro) };
-        
-        var nombre = document.createElement('div');
-        nombre.className = 'nombre font2';
-        if(aux.numero > 0){
-            nombre.innerHTML = aux.numero + '.- ' + aux.nombre;
-        }else{
-            nombre.innerHTML = aux.nombre;
+        if(aux.disponible != 2){
+
+            var Div = document.createElement('div');
+            Div.className = 'producto';
+            if(aux.disponible == 0){
+                Div.onclick = function(){ add_carro_producto(aux.id_pro) };
+            }
+            var nombre = document.createElement('div');
+            nombre.className = 'nombre font2';
+            if(aux.numero > 0){
+                nombre.innerHTML = aux.numero + '.- ' + aux.nombre;
+            }else{
+                nombre.innerHTML = aux.nombre;
+            }
+            Div.appendChild(nombre);
+
+            var descripcion = document.createElement('div');
+            descripcion.className = 'descripcion font5';
+            if(aux.disponible == 0){
+                descripcion.innerHTML = aux.descripcion;
+            }
+            if(aux.disponible == 1){
+                descripcion.innerHTML = aux.descripcion + '<br/><p style="color: #933">Producto no disponible</p>';
+            }
+            Div.appendChild(descripcion);
+            
+            var precio = document.createElement('div');
+            precio.className = 'precio valign font3';
+            precio.innerHTML = formatNumber.new(parseInt(aux.precio), "$");
+            Div.appendChild(precio);
+
         }
-        Div.appendChild(nombre);
-
-        var descripcion = document.createElement('div');
-        descripcion.className = 'descripcion font5';
-        descripcion.innerHTML = aux.descripcion;
-        Div.appendChild(descripcion);
-        
-        var precio = document.createElement('div');
-        precio.className = 'precio valign font3';
-        precio.innerHTML = formatNumber.new(parseInt(aux.precio), "$");
-        Div.appendChild(precio);
         
     }
-    /*
-    if(detalle == 1){
-        
-        var Div = document.createElement('div');
-        Div.className = 'categoria';
-        
-        var detalle = document.createElement('div');
-        detalle.className = 'detalle_pro clearfix';
-        detalle.onclick = function(){ ver_detalle_producto(this) }
-        
-        var nombre = document.createElement('div');
-        nombre.className = 'nombre_pro';
-        nombre.innerHTML = aux.numero + " " + aux.nombre;
-        detalle.appendChild(nombre);
-        
-        var precio = document.createElement('div');
-        precio.className = 'precio_pro';
-        precio.innerHTML = aux.precio;
-        detalle.appendChild(precio);
-        
-        Div.appendChild(detalle);
-
-        
-        var Info = create_element_class('info hide');
-        
-        var Info_cont = create_element_class('info_cont clearfix');
-        var info_01 = create_element_class_inner('info_01', 'INFO 1');
-        Info_cont.appendChild(info_01);
-        var info_02 = create_element_class_inner('info_02 material-icons', 'shopping_cart');
-        Info_cont.appendChild(info_02);
-        
-        Info.appendChild(Info_cont);
-        Div.appendChild(Info);
-        
-    }
-    */
     return Div;
     
 }
