@@ -192,7 +192,7 @@ function create_html_producto(aux){
 function create_html_producto2(aux){
     
     var Div = document.createElement('div');
-    Div.className = 'producto';
+    Div.className = 'producto2';
 
     if(aux.disponible == 0){
         Div.onclick = function(){ add_carro_producto(aux.id_pro) };

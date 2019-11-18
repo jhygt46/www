@@ -126,6 +126,32 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   width: 70px;
   text-align: right;
 }
+.modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 {
+  position: relative;
+  padding: 10px;
+  background: #ddd;
+  margin-bottom: 5px;
+}
+.modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .nombre {
+  padding-right: 80px;
+}
+.modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .descripcion {
+  padding-right: 80px;
+}
+.modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .precio {
+  position: absolute;
+  right: 10px;
+  width: 70px;
+  text-align: right;
+}
+.modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .pro_foto {
+  position: absolute;
+  right: 10px;
+  width: 70px;
+  width: 200px;
+  height: 200px;
+  background: #000;
+}
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias {
   padding: 10px;
 }
