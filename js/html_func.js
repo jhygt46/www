@@ -160,6 +160,9 @@ function create_html_producto(aux, detalle){
     if(aux.disponible == 0){
         Div.onclick = function(){ add_carro_producto(aux.id_pro) };
     }
+    if(aux.disponible == 1){
+        Div.onclick = function(){ alert("Producto no disponible") };
+    }
     var nombre = document.createElement('div');
     nombre.className = 'nombre font2';
     if(aux.numero > 0){
