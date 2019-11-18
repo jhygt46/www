@@ -155,7 +155,10 @@ function imprimir_productos_modal(id){
         var html = create_element_class('lista_productos');
         var productos = categoria.productos;
         for(var j=0, jlen=productos.length; j<jlen; j++){
-            html.append(create_html_producto(productos[j], categoria.detalle_prods));
+            var producto = get_producto(productos[j]);
+            if(producto.disponible != 2 && categoria.detalle_prods == 0){
+                html.append(create_html_producto(producto, categoria.detalle_prods));
+            }
         }
     }
     if(categoria.tipo == 1){
