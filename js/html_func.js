@@ -191,6 +191,8 @@ function create_html_producto(aux){
 }
 function create_html_producto2(aux){
     
+    var height = parseInt((widthpx - 20) * data.config.alto_pro / 100);
+
     var Div = document.createElement('div');
     Div.className = 'producto2';
 
@@ -201,11 +203,11 @@ function create_html_producto2(aux){
         Div.onclick = function(){ alert("Producto no disponible") };
     }
 
-    var height = parseInt((widthpx - 20) * data.config.alto_pro / 100);
-
     var Divm = create_element_class('cont_pro');
-    Divm.style.minHeight = height+"px";
-
+    if(height > 80){
+        Divm.style.minHeight = height+"px";
+    }
+    
     var foto = create_element_class('pro_foto');
     foto.style.width = (height > 80) ? height+"px" : "80px" ;
 
