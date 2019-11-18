@@ -201,11 +201,13 @@ function create_html_producto2(aux){
         Div.onclick = function(){ alert("Producto no disponible") };
     }
 
+    var height = parseInt((widthpx - 20) * data.config.alto_pro / 100);
+
     var Divm = create_element_class('cont_pro');
-    Divm.style.minHeight = parseInt((widthpx - 20) * data.config.alto_pro / 100)+"px";
+    Divm.style.minHeight = height+"px";
 
     var foto = create_element_class('pro_foto');
-    foto.style.width = parseInt((widthpx - 20) * data.config.alto_pro / 100)+"px";
+    foto.style.width = (height > 80) ? height+"px" : "80px" ;
 
     var nombre = document.createElement('div');
     nombre.className = 'nombre font2';
