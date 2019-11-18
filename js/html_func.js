@@ -205,12 +205,15 @@ function create_html_producto2(aux){
 
     var Divm = create_element_class('cont_pro');
     console.log(Divm);
-    if(height > 80){
+    if(height > 90){
         Divm.style.minHeight = height+"px";
     }
 
-    var foto = create_element_class('pro_foto');
-    foto.style.width = (height > 80) ? height+"px" : "80px" ;
+    var cfoto = create_element_class('pro_foto');
+    foto.style.width = (height > 90) ? height+"px" : "80px" ;
+
+    var foto = create_element_class('foto');
+    cfoto.appendChild(foto);
 
     var nombre = document.createElement('div');
     nombre.className = 'nombre font2';
@@ -220,7 +223,7 @@ function create_html_producto2(aux){
         nombre.innerHTML = aux.nombre;
     }
     Divm.appendChild(nombre);
-    Divm.appendChild(foto);
+    Divm.appendChild(cfoto);
 
     var descripcion = document.createElement('div');
     descripcion.className = 'descripcion font5';
