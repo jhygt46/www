@@ -188,11 +188,12 @@ function create_html_producto(id, detalle){
             precio.className = 'precio valign font3';
             precio.innerHTML = formatNumber.new(parseInt(aux.precio), "$");
             Div.appendChild(precio);
+            return Div;
 
         }
-        
     }
-    return Div;
+    return false
+    
     
 }
 function create_html_promocion(obj){

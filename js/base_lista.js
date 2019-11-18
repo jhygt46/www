@@ -155,7 +155,6 @@ function imprimir_productos_modal(id){
         var html = create_element_class('lista_productos');
         var productos = categoria.productos;
         for(var j=0, jlen=productos.length; j<jlen; j++){
-            console.log(productos[j]);
             html.append(create_html_producto(productos[j], categoria.detalle_prods));
         }
     }
