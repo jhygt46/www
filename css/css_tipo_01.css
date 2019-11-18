@@ -146,20 +146,17 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .cont_data .descripcion {
   display: block;
   line-height: 13px;
-  height: 60px;
   overflow-y: auto;
-  height: 50%;
+  max-height: 40px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .cont_data .precio {
   display: block;
   font-weight: bold;
-  padding-top: 4px;
   height: 20%;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .cont_data .disponible{
   color: #A33; 
   font-size: 12px;
-  background: #fff;
   height: 10%;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .pro_foto {
