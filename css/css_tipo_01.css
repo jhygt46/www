@@ -136,11 +136,9 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .nombre {
   position: absolute;
-  padding-right: 80px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .descripcion {
   position: absolute;
-  padding-right: 80px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .precio {
   position: absolute;
@@ -150,10 +148,9 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .pro_foto {
   position: absolute;
-  right: 10px;
+  right: 0px;
   top: 0px;
-  width: 60px;
-  height: 60px;
+  height: 100%;
   background: #000;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_categorias {

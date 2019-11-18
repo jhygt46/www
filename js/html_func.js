@@ -202,9 +202,11 @@ function create_html_producto2(aux){
     }
 
     var Divm = create_element_class('cont_pro');
-    Divm.style.minHeight = parseInt((widthpx - 20) * data.config.alto / 100)+"px";
-    
+    Divm.style.minHeight = parseInt((widthpx - 20) * data.config.alto_pro / 100)+"px";
+
     var foto = create_element_class('pro_foto');
+    foto.style.width = parseInt((widthpx - 20) * data.config.alto_pro / 100)+"px";
+
     var nombre = document.createElement('div');
     nombre.className = 'nombre font2';
     if(aux.numero > 0){
