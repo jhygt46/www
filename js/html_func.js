@@ -211,7 +211,7 @@ function create_html_producto2(aux){
         var width_foto = 90;
     }
 
-    var width_rest = widthpx - width_foto;
+    var width_rest = widthpx - 40 - width_foto;
 
     var cfoto = create_element_class('pro_foto');
     var foto = create_element_class('foto');

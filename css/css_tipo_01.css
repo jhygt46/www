@@ -137,8 +137,7 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .cont_data {
   position: absolute;
-  left: 0px;
-  top: 0px;
+  left: 10px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .cont_data .nombre {
   display: block;
