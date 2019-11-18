@@ -202,23 +202,23 @@ function create_html_producto2(aux){
         Div.onclick = function(){ alert("Producto no disponible") };
     }
 
-    var Divm = create_element_class('cont_pro');
+    var Divm = create_element_class('cont_pro clearfix');
 
     if(height > 100){
         Divm.style.minHeight = height+"px";
     }
 
     var width_foto = height;
-    var width_rest = widthpx - 25 - width_foto;
+    var width_rest = widthpx - 30 - width_foto;
 
-    var cfoto = create_element_class('pro_foto valign');
+    var cfoto = create_element_class('pro_foto');
     var foto = create_element_class('foto');
     foto.style.width = (width_foto - 10) + "px";
     foto.style.height = (width_foto - 10) + "px";
     cfoto.appendChild(foto);
     Divm.appendChild(cfoto);
 
-    var cont_data = create_element_class('cont_data valign');
+    var cont_data = create_element_class('cont_data');
     cont_data.style.width = width_rest + "px";
 
     var nombre = create_element_class('nombre font2');

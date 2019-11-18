@@ -136,8 +136,7 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   background: #ddd;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .cont_data {
-  position: absolute;
-  left: 10px;
+  float: left;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .cont_data .nombre {
   display: block;
@@ -153,7 +152,7 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   font-weight: bold;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .pro_foto {
-  right: 0px;
+  float: left;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .pro_foto .foto{
   height: calc(100% - 10px); 
