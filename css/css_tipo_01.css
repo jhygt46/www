@@ -135,17 +135,20 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   position: relative;
   min-height: 90px;
 }
-.modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .nombre {
+.modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .cont_data {
   position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
 }
-.modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .descripcion {
-  position: absolute;
+.modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .cont_data .nombre {
+  display: block;
 }
-.modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .precio {
-  position: absolute;
-  right: 10px;
-  width: 70px;
-  text-align: right;
+.modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .cont_data .descripcion {
+  display: block;
+}
+.modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .cont_data .precio {
+  display: block;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .pro_foto {
   position: absolute;
