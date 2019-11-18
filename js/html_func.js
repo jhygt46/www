@@ -206,11 +206,9 @@ function create_html_producto2(aux){
 
     if(height > 100){
         Divm.style.minHeight = height+"px";
-        var width_foto = height;
-    }else{
-        var width_foto = 100;
     }
 
+    var width_foto = height;
     var width_rest = widthpx - 25 - width_foto;
 
     var cfoto = create_element_class('pro_foto');

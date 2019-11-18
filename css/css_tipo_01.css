@@ -141,18 +141,16 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .cont_data .nombre {
   display: block;
-  height: 20%;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .cont_data .descripcion {
   display: block;
   line-height: 13px;
   overflow-y: auto;
-  max-height: 40px;
+  max-height: 50px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .cont_data .precio {
   display: block;
   font-weight: bold;
-  height: 20%;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .pro_foto {
   position: absolute;
