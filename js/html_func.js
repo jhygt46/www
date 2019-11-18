@@ -241,8 +241,8 @@ function create_html_producto2(aux){
     foto.style.height = (width_foto - 10) + "px";
     cfoto.appendChild(foto);
     
-    Divm.appendChild(cfoto);
     Divm.appendChild(cont_data);
+    Divm.appendChild(cfoto);
     Div.appendChild(Divm);
     return Div;
     
