@@ -204,14 +204,14 @@ function create_html_producto2(aux){
 
     var Divm = create_element_class('cont_pro');
 
-    if(height > 90){
+    if(height > 100){
         Divm.style.minHeight = height+"px";
         var width_foto = height;
     }else{
-        var width_foto = 90;
+        var width_foto = 100;
     }
 
-    var width_rest = widthpx - 34 - width_foto;
+    var width_rest = widthpx - 30 - width_foto;
 
     var cfoto = create_element_class('pro_foto');
     var foto = create_element_class('foto');
@@ -229,7 +229,7 @@ function create_html_producto2(aux){
         nombre.innerHTML = aux.nombre;
     }
     if(aux.disponible == 1){
-        nombre.innerHTML += "<p style='font-color: #900'>No disponible</p>";
+        nombre.innerHTML += "<p style='color: #900; font-size: 10px; padding-left: 4px'>No disponible</p>";
     }
     cont_data.appendChild(nombre);
     

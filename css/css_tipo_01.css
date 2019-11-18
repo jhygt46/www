@@ -132,7 +132,7 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro {
   position: relative;
-  min-height: 90px;
+  min-height: 100px;
   background: #ddd;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .cont_data {
