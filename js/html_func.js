@@ -214,6 +214,7 @@ function create_html_producto2(aux){
     var cfoto = create_element_class('pro_foto');
     var foto = create_element_class('foto');
     foto.style.width = (width_foto - 10) + "px";
+    foto.style.height = (width_foto - 10) + "px";
     cfoto.appendChild(foto);
     Divm.appendChild(cfoto);
 
