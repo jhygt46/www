@@ -180,7 +180,7 @@ function create_html_producto(id, detalle){
                 descripcion.innerHTML = aux.descripcion;
             }
             if(aux.disponible == 1){
-                descripcion.innerHTML = aux.descripcion + '<br/><p style="color: #933">Producto no disponible</p>';
+                descripcion.innerHTML = aux.descripcion + '<br/><p style="color: #933; font-size: 10px">Producto no disponible</p>';
             }
             Div.appendChild(descripcion);
             
