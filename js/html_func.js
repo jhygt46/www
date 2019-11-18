@@ -211,12 +211,7 @@ function create_html_producto2(aux){
     var width_foto = height;
     var width_rest = widthpx - 30 - width_foto;
 
-    var cfoto = create_element_class('pro_foto');
-    var foto = create_element_class('foto');
-    foto.style.width = (width_foto - 10) + "px";
-    foto.style.height = (width_foto - 10) + "px";
-    cfoto.appendChild(foto);
-    Divm.appendChild(cfoto);
+    
 
     var cont_data = create_element_class('cont_data');
     cont_data.style.width = width_rest + "px";
@@ -240,6 +235,13 @@ function create_html_producto2(aux){
     precio.innerHTML = formatNumber.new(parseInt(aux.precio), "$");
     cont_data.appendChild(precio);
 
+    var cfoto = create_element_class('pro_foto');
+    var foto = create_element_class('foto');
+    foto.style.width = (width_foto - 10) + "px";
+    foto.style.height = (width_foto - 10) + "px";
+    cfoto.appendChild(foto);
+    
+    Divm.appendChild(cfoto);
     Divm.appendChild(cont_data);
     Div.appendChild(Divm);
     return Div;
