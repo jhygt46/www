@@ -204,10 +204,11 @@ function create_html_producto2(aux){
     }
 
     var Divm = create_element_class('cont_pro');
+    console.log(Divm);
     if(height > 80){
         Divm.style.minHeight = height+"px";
     }
-    
+
     var foto = create_element_class('pro_foto');
     foto.style.width = (height > 80) ? height+"px" : "80px" ;
 
