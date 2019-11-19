@@ -236,6 +236,7 @@ function create_html_producto2(aux){
     foto.style.height = (height - 10) + "px";
 
     var add_carro = create_element_class('carro');
+    add_carro.innerHTML = 'Carro';
 
     Div.appendChild(tabla(cont_data, foto, add_carro));
     return Div;
