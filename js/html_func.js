@@ -235,15 +235,15 @@ function create_html_producto2(aux){
     precio.innerHTML = formatNumber.new(parseInt(aux.precio), "$");
     cont_data.appendChild(precio);
 
-    var cfoto = create_element_class('pro_foto');
+
     var foto = create_element_class('foto');
     foto.style.width = (width_foto - 10) + "px";
     foto.style.height = (width_foto - 10) + "px";
-    cfoto.appendChild(foto);
+
     
     //Divm.appendChild(cont_data);
     //Divm.appendChild(cfoto);
-    Divm.appendChild(tabla(cont_data, cfoto));
+    Divm.appendChild(tabla(cont_data, foto));
     Div.appendChild(Divm);
     return Div;
     
@@ -255,9 +255,7 @@ function tabla(cont_data, pro_foto){
     var tbdy = document.createElement('tbody');
     var tr = document.createElement('tr');
     var td1 = document.createElement('td');
-    td1.className = 'cont_data';
     var td2 = document.createElement('td');
-    td2.className = 'pro_foto';
     td1.appendChild(cont_data);
     td2.appendChild(pro_foto);
     tr.appendChild(td1);
