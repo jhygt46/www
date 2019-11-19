@@ -250,10 +250,10 @@ function create_html_producto2(aux){
 function tabla(x, h){
 
     var tbl = document.createElement('table');
+    tbl.width= h + 'px';
     var tbdy = document.createElement('tbody');
     var tr = document.createElement('tr');
     var td = document.createElement('td');
-    td.width= h + 'px';
     td.appendChild(x);
     tr.appendChild(td);
     tbdy.appendChild(tr);
