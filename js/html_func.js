@@ -208,13 +208,7 @@ function create_html_producto2(aux){
         Divm.style.minHeight = height+"px";
     }
 
-    var width_foto = height;
-    var width_rest = widthpx - 20 - width_foto;
-
-    
-
     var cont_data = create_element_class('cont_data');
-    //cont_data.style.width = width_rest + "px";
 
     var nombre = create_element_class('nombre font2');
     if(aux.numero > 0){
@@ -237,13 +231,9 @@ function create_html_producto2(aux){
 
 
     var foto = create_element_class('foto');
-    foto.style.width = (width_foto - 10) + "px";
-    foto.style.height = (width_foto - 10) + "px";
+    foto.style.width = (height - 10) + "px";
+    foto.style.height = (height - 10) + "px";
 
-    
-    //Divm.appendChild(cont_data);
-    //Divm.appendChild(cfoto);
-    //Divm.appendChild(tabla(cont_data, foto));
     Div.appendChild(tabla(cont_data, foto));
     return Div;
     
