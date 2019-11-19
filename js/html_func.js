@@ -254,11 +254,10 @@ function create_html_producto3(aux){
         Div.onclick = function(){ alert("Producto no disponible") };
     }
 
-    if(height > 100){
-        Div.style.minHeight = height+"px";
-    }
-
     var Divm = create_element_class('cont_pr prin_alpha_1');
+    if(height > 80){
+        Divm.style.minHeight = height+"px";
+    }
 
     Div.appendChild(Divm);
     return Div;
