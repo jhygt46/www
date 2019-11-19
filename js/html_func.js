@@ -255,9 +255,9 @@ function tabla(cont_data, pro_foto){
     var tbdy = document.createElement('tbody');
     var tr = document.createElement('tr');
     var td1 = document.createElement('td');
-    cellLeft.style.verticalAlign = 'middle';
+    td1.style.verticalAlign = 'middle';
     var td2 = document.createElement('td');
-    cellLeft.style.verticalAlign = 'middle';
+    td2.style.verticalAlign = 'middle';
     td1.appendChild(cont_data);
     td2.appendChild(pro_foto);
     tr.appendChild(td1);
