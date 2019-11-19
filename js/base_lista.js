@@ -1446,9 +1446,13 @@ function mostrar_add_carro(that){
 }
 function mostrar_mensaje(that){
     var element = $(that).parent().find('.add_carro_alert');
-    element.html("x1 Producto Agregado")
     var el = element.html();
-    console.log(el);
+    if(el == ""){
+        element.html("x1 Producto Agregado");
+    }else{
+        var n = parseInt(el.split(" ").join()[0].substr(1)) + 1;
+        element.html("x"+n+" Producto Agregado");
+    }
 }
 function selecciono_retiro(nombre, direccion, total){
     
