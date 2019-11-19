@@ -253,7 +253,7 @@ function tabla(x, h){
     var tbdy = document.createElement('tbody');
     var tr = document.createElement('tr');
     var td = document.createElement('td');
-    td.style.width = h + "px";
+    td.setAttribute('width', h + "px");
     td.appendChild(x);
     tr.appendChild(td);
     tbdy.appendChild(tr);
