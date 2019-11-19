@@ -1439,6 +1439,9 @@ function volver_tipo_despacho(){
     dir_ops.eq(1).find('.stitle').html("Desde "+formatNumber.new(parseInt(data.config.desde), "$"));
     
 }
+function mostrar_add_carro(that){
+    console.log(that);
+}
 function selecciono_retiro(nombre, direccion, total){
     
     var dir_ops = $('.direccion_opciones').find('.dir_op');

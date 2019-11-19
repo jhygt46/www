@@ -80,7 +80,7 @@
             var fecha_js = new Date(<?php echo (time() + $horas * 60 * 60); ?>000).getTime();
             var fecha_pc = new Date().getTime();
             var produccion = <?php echo $info->{'dns'}; ?>;
-            var html_producto = "create_html_producto2";
+            var tipo_add_carro = 1;
         </script>
         <style>
             body{

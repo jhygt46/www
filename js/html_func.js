@@ -196,7 +196,12 @@ function create_html_producto2(aux){
     Div.className = 'producto2';
 
     if(aux.disponible == 0){
-        Div.onclick = function(){ add_carro_producto(aux.id_pro) };
+        if(tipo_add_carro == 0){
+            Div.onclick = function(){ add_carro_producto(aux.id_pro) };
+        }
+        if(tipo_add_carro == 1){
+            Div.onclick = function(){ mostrar_add_carro(this) };
+        }
     }
     if(aux.disponible == 1){
         Div.onclick = function(){ alert("Producto no disponible") };
