@@ -1,0 +1,71 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,span{
+	margin:0;
+	padding:0;
+	outline:none;
+}
+table{
+	width: 100%;
+}
+fieldset, img, abbr, acronym{
+	border: 0px;
+}
+address,caption,cite,code,dfn,th,var{
+	font-style: normal;
+	font-weight: normal;
+}
+ol,ul,dl{
+	list-style: none;
+}
+caption,th{
+	text-align: left;
+}
+h1,h2,h3,h4,h5,h6{
+	font-size: 1em;
+	font-size: 100%;
+	font-weight: normal;
+}
+a{
+	outline:none;
+}
+/*PROPIEDADES*******************************/
+.clearfix:after{
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+.clearfix{
+	display: inline-block;
+}
+/*\*/* html .clearfix {
+	height: 1%;
+}
+.clearfix {
+	display: block;
+}/**/
+.flotar_izq{
+	float:left;
+	display:inline;
+}
+.flotar_der{
+	float:right;
+	display:inline;
+}
+.vhalign{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.valign{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.halign{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
