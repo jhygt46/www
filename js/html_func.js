@@ -209,6 +209,7 @@ function create_html_producto2(aux){
     }
 
     var cont_data = create_element_class('cont_data');
+    cont_data.style.width = (widthpx - 20 - height) + "px";
 
     var nombre = create_element_class('nombre font2');
     if(aux.numero > 0){
@@ -241,7 +242,7 @@ function create_html_producto2(aux){
 function tabla(cont_data, pro_foto){
 
     var tbl = document.createElement('table');
-    //tbl.width= h + 'px';
+    tbl.setAttribute('border', '0');
     var tbdy = document.createElement('tbody');
     var tr = document.createElement('tr');
     var td1 = document.createElement('td');
