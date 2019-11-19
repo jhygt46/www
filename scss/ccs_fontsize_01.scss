@@ -1,0 +1,55 @@
+$menu_left_titulo: "20px";
+$menu_left_btns: "18px";
+
+
+body {
+    .contenedor {
+        .menu_left {
+            .cont_menu_left{
+                .btn_toogle{}
+                .menu_info{
+                    h1{ font-size: $menu_left_titulo; }
+                    ul{
+                        li{ font-size: $menu_left_btns; }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
+body {
+    .contenedor {
+        .pagina {
+            .cont_pagina {
+                .header {
+                    .header_logo {
+                        img {}
+                    }
+                    .menu_right {
+                        .shop {}
+                        .cantcart {
+                            .cantcart_num{ }
+                        }
+                    }
+                }
+                .footer {}
+                .contenido {
+                    .cont_contenido {
+                        .botones_principales {
+                            .cont_bp{
+                                .cont_bpi{
+                                    .nombre {}
+                                    .descripcion {}
+                                    .precio {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */

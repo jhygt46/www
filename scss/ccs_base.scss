@@ -1,0 +1,210 @@
+html {
+    height: 100%;
+    body {
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        .contenedor {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+    }
+}
+
+/* MENU LEFT */
+body {
+    .contenedor {
+        .menu_left {
+            width: 219px;
+            height: 100%;
+            top: 0px;
+            left: -220px;
+            position: fixed;
+            z-index: 2;
+            .cont_menu_left{
+                width: 100%;
+                height: 100%;
+                position: relative;
+                .btn_toogle{
+                    width: 40px;
+                    height: 40px;
+                    right: -50px;
+                    font-size: 40px;
+                    position: absolute;
+                }
+                .menu_info{
+                    display: block;
+                    h1{}
+                    ul{
+                        li{}
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
+body {
+    .contenedor {
+        .pagina {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            z-index: 1;
+            .cont_pagina {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                .header {
+                    width: 100%;
+                    top: 0px;
+                    left: 0px;
+                    z-index: 2;
+                    .header_logo {
+                        img {
+                            max-width: 100%;
+                        }
+                    }
+                    .menu_right {
+                        position: absolute;
+                        z-index: 2;
+                        .shop {}
+                        .cantcart {
+                            position: absolute;
+                            .cantcart_num{
+                                position: absolute;
+                            }
+                        }
+                    }
+                }
+                .footer {
+                    height: 100px;
+                    width: 100%;
+                    bottom: 0px;
+                    left: 0px;
+                    z-index: 2;
+                }
+                .fixed {
+                    position: fixed;
+                }
+                .contenido {
+                    width: 100%;
+                    z-index: 1;
+                    .cont_contenido {
+                        margin: 0 auto;
+                        display: block;
+                        .botones_principales {
+                            display: block;
+                            .cont_bp{
+                                position: relative;
+                                width: 100%;
+                                height: 100%;
+                                .cont_bpi{
+                                    .nombre {}
+                                    .descripcion {}
+                                    .precio {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// FINAL RESET //
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,span{
+	margin:0;
+	padding:0;
+	outline:none;
+}
+table{
+	width: 100%;
+}
+fieldset, img, abbr, acronym{
+	border: 0px;
+}
+address,caption,cite,code,dfn,th,var{
+	font-style: normal;
+	font-weight: normal;
+}
+ol,ul,dl{
+	list-style: none;
+}
+caption,th{
+	text-align: left;
+}
+h1,h2,h3,h4,h5,h6{
+	font-size: 1em;
+	font-size: 100%;
+	font-weight: normal;
+}
+a{
+	outline:none;
+}
+/*PROPIEDADES*******************************/
+.clearfix:after{
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+.clearfix{
+	display: inline-block;
+}
+/*\*/* html .clearfix {
+	height: 1%;
+}
+.clearfix {
+	display: block;
+}/**/
+.flotar_izq{
+	float:left;
+	display:inline;
+}
+.flotar_der{
+	float:right;
+	display:inline;
+}
+.vhalign{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.valign{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.halign{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}

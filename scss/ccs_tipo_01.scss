@@ -1,0 +1,68 @@
+body{
+    .contenedor {
+        .menu_left {
+            .cont_menu_left{
+                .btn_toogle{
+                }
+                .menu_info{
+                    padding: 40px 20px 0px 20px;
+                    h1{}
+                    ul{
+                        padding-top: 50px;
+                        li{ padding: 5px 0px; border-bottom-style: solid; border-bottom-width: 1px }
+                    }
+                }
+            }
+        }
+    }
+}
+
+$header_height: "130px";
+
+/* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
+body {
+    .contenedor {
+        .pagina {
+            .cont_pagina {
+                .header {
+                    height: $header_height;
+                    border-bottom-style: solid;
+                    border-bottom-width: 1px;
+                    position: fixed;
+                    .header_logo {
+                        img {}
+                    }
+                    .menu_right {
+                        height: 40px;
+                        width: 40px;
+                        right: 20px;
+                        .shop {}
+                        .cantcart {
+                            width: 26px;
+                            height: 26px;
+                            border-radius: 13px;
+                            top: 22px;
+                            left: -10px;
+                            .cantcart_num{}
+                        }
+                    }
+                }
+                .footer {}
+                .contenido {
+                    .cont_contenido {
+                        .botones_principales {
+                            .cont_bp{
+                                .cont_bpi{
+                                    .nombre {}
+                                    .descripcion { line-height: 15px; }
+                                    .precio {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
