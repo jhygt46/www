@@ -1445,7 +1445,7 @@ function mostrar_add_carro(that){
     $(that).find('.mostrar_add_carro').show();
 }
 function mostrar_mensaje(that){
-    $('that').parent().find('.add_carro_alert').html("BUENA ERNESTOR");
+    $('that').parents('.carro').find('.add_carro_alert').html("BUENA ERNESTOR");
 }
 function selecciono_retiro(nombre, direccion, total){
     
