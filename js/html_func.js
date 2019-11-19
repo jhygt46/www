@@ -214,7 +214,7 @@ function create_html_producto2(aux){
     
 
     var cont_data = create_element_class('cont_data');
-    cont_data.style.width = width_rest + "px";
+    //cont_data.style.width = width_rest + "px";
 
     var nombre = create_element_class('nombre font2');
     if(aux.numero > 0){
@@ -241,11 +241,25 @@ function create_html_producto2(aux){
     foto.style.height = (width_foto - 10) + "px";
     cfoto.appendChild(foto);
     
-    Divm.appendChild(cont_data);
+    Divm.appendChild(tabla(cont_data));
     Divm.appendChild(cfoto);
     Div.appendChild(Divm);
     return Div;
     
+}
+function tabla(x, h){
+
+    var tbl = document.createElement('table');
+    var tbdy = document.createElement('tbody');
+    var tr = document.createElement('tr');
+    var td = document.createElement('td');
+    td.style.width = h + "px";
+    td.appendChild(x);
+    tr.appendChild(td);
+    tbdy.appendChild(tr);
+    tbl.appendChild(tbdy);
+    return tbl;
+
 }
 function create_html_promocion(obj){
     
