@@ -243,8 +243,8 @@ function create_html_producto2(aux){
     
     //Divm.appendChild(cont_data);
     //Divm.appendChild(cfoto);
-    Divm.appendChild(tabla(cont_data, foto));
-    Div.appendChild(Divm);
+    //Divm.appendChild(tabla(cont_data, foto));
+    Div.appendChild(tabla(cont_data, foto));
     return Div;
     
 }
