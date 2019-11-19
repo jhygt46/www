@@ -1440,7 +1440,7 @@ function volver_tipo_despacho(){
     
 }
 function mostrar_add_carro(that){
-    console.log(that);
+    that.find('mostrar_add_carro').show();
 }
 function selecciono_retiro(nombre, direccion, total){
     
