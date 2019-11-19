@@ -241,7 +241,7 @@ function create_html_producto2(aux){
     foto.style.height = (width_foto - 10) + "px";
     cfoto.appendChild(foto);
     
-    Divm.appendChild(tabla(cont_data));
+    Divm.appendChild(tabla(cont_data, width_rest));
     Divm.appendChild(cfoto);
     Div.appendChild(Divm);
     return Div;
@@ -253,7 +253,7 @@ function tabla(x, h){
     var tbdy = document.createElement('tbody');
     var tr = document.createElement('tr');
     var td = document.createElement('td');
-    td.setAttribute('width', h + "px");
+    td.setAttribute('width', h);
     td.appendChild(x);
     tr.appendChild(td);
     tbdy.appendChild(tr);
