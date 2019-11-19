@@ -250,11 +250,7 @@ function create_html_producto2(aux){
     add_carro_btn1.appendChild(add_carro_btn1b);
 
     var add_carro_btn2 = create_element_class('add_carro_alert');
-    
     add_carro_btn1.onclick = function(){ add_carro_producto(aux.id_pro, 1) };
-    add_carro_btn1.innerHTML = 'Agregar';
-    add_carro_btn2.innerHTML = '';
-
     add_carro.appendChild(add_carro_btn1);
     add_carro.appendChild(add_carro_btn2);
 
