@@ -246,7 +246,7 @@ function create_html_producto2(aux){
     var add_carro_btn2 = create_element_class('add_carro_alert');
     
     add_carro_btn1.innerHTML = 'Agregar';
-    add_carro_btn1.innerHTML = 'Producto agregado';
+    add_carro_btn2.innerHTML = 'Producto agregado';
 
     add_carro.appendChild(add_carro_btn1);
     add_carro.appendChild(add_carro_btn2);
