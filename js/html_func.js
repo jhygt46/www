@@ -240,7 +240,7 @@ function create_html_producto2(aux){
     foto.style.width = (height - 10) + "px";
     foto.style.height = (height - 10) + "px";
 
-    var add_carro = create_element_class('carro');
+    var add_carro = create_element_class('carro clearfix');
 
     var add_carro_btn1 = create_element_class('add_carro_btn');
     var add_carro_btn2 = create_element_class('add_carro_alert');
