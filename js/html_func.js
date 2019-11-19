@@ -235,25 +235,31 @@ function create_html_producto2(aux){
     foto.style.width = (height - 10) + "px";
     foto.style.height = (height - 10) + "px";
 
-    Div.appendChild(tabla(cont_data, foto));
+    var add_carro = create_element_class('carro');
+
+    Div.appendChild(tabla(cont_data, foto, add_carro));
     return Div;
     
 }
-function tabla(cont_data, pro_foto){
+function tabla(cont_data, pro_foto, add_carro){
 
     var tbl = document.createElement('table');
     tbl.setAttribute('border', '0');
     var tbdy = document.createElement('tbody');
-    var tr = document.createElement('tr');
+    var tr1 = document.createElement('tr');
     var td1 = document.createElement('td');
     td1.style.verticalAlign = 'middle';
     var td2 = document.createElement('td');
     td2.style.verticalAlign = 'middle';
+    var tr2 = document.createElement('tr');
+    var td3 = document.createElement('td');
+    td3.appendChild(add_carro);
+    tr2.appendChild(td3);
     td1.appendChild(cont_data);
     td2.appendChild(pro_foto);
-    tr.appendChild(td1);
-    tr.appendChild(td2);
-    tbdy.appendChild(tr);
+    tr1.appendChild(td1);
+    tr1.appendChild(td2);
+    tbdy.appendChild(tr1);
     tbl.appendChild(tbdy);
     return tbl;
 
