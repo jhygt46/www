@@ -289,6 +289,9 @@ function create_html_producto3(aux){
     */
     
 }
+function tabla(cont_data){
+
+}
 
 function tabla(cont_data, pro_foto, add_carro){
 
