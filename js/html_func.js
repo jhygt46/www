@@ -245,6 +245,7 @@ function create_html_producto2(aux){
     var add_carro_btn1 = create_element_class('add_carro_btn');
     var add_carro_btn1a = create_element_class('add_info');
     var add_carro_btn1b = create_element_class('add_logo valign material-icons');
+    add_carro_btn1a.innerHTML = 'Agregar a carro';
     add_carro_btn1b.innerHTML = 'shopping_cart';
     add_carro_btn1.appendChild(add_carro_btn1a);
     add_carro_btn1.appendChild(add_carro_btn1b);
