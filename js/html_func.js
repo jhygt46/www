@@ -317,6 +317,7 @@ function tabla(cont_data, pro_foto, add_carro){
     tr1.appendChild(td1);
     tr1.appendChild(td2);
     tbdy.appendChild(tr1);
+    tbdy.appendChild(tr2);
     tbl.appendChild(tbdy);
     return tbl;
 
