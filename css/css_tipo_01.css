@@ -166,6 +166,16 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar{
   color: #fff;
   padding: 2px;
   font-size: 14px;
+  position: relative;
+}
+.modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 table .carro .add_carro_btn .add_info{
+  display: block;
+  padding-right: 45px;
+}
+.modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 table .carro .add_carro_btn .add_logo{
+  width: 40px;
+  height: 40px;
+  background: #090;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 table .carro .add_carro_alert{
   float: left;
