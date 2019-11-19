@@ -158,7 +158,7 @@ function create_html_producto(aux){
     var Div = document.createElement('div');
     Div.className = 'producto';
     if(aux.disponible == 0){
-        Div.onclick = function(){ add_carro_producto(aux.id_pro) };
+        Div.onclick = function(){ add_carro_producto(aux.id_pro, 0) };
     }
     if(aux.disponible == 1){
         Div.onclick = function(){ alert("Producto no disponible") };
@@ -197,7 +197,7 @@ function create_html_producto2(aux){
 
     if(aux.disponible == 0){
         if(tipo_add_carro == 0){
-            Div.onclick = function(){ add_carro_producto(aux.id_pro) };
+            Div.onclick = function(){ add_carro_producto(aux.id_pro, 0) };
         }
         if(tipo_add_carro == 1){
             Div.onclick = function(){ mostrar_add_carro(this) };
@@ -245,8 +245,9 @@ function create_html_producto2(aux){
     var add_carro_btn1 = create_element_class('add_carro_btn');
     var add_carro_btn2 = create_element_class('add_carro_alert');
     
+    add_carro_btn1.onclick = function(){ add_carro_producto(aux.id_pro, 1) };
     add_carro_btn1.innerHTML = 'Agregar';
-    add_carro_btn2.innerHTML = 'Producto agregado';
+    add_carro_btn2.innerHTML = '';
 
     add_carro.appendChild(add_carro_btn1);
     add_carro.appendChild(add_carro_btn2);
