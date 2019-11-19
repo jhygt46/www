@@ -1450,7 +1450,7 @@ function mostrar_mensaje(that){
     if(el == ""){
         element.html("x1 Producto Agregado");
     }else{
-        console.log(el.split(" ").join()[0]);
+        console.log(el.split(" ").join());
         var n = parseInt(el.split(" ").join()[0].substr(1)) + 1;
         element.html("x"+n+" Producto Agregado");
     }
