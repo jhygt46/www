@@ -170,12 +170,13 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar{
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 table .carro .add_carro_btn .add_info{
   display: block;
-  padding-right: 45px;
+  padding-right: 50px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 table .carro .add_carro_btn .add_logo{
   width: 40px;
   height: 40px;
   background: #090;
+  right: 5px;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 table .carro .add_carro_alert{
   float: left;
