@@ -1445,7 +1445,10 @@ function mostrar_add_carro(that){
     $(that).find('.mostrar_add_carro').show();
 }
 function mostrar_mensaje(that){
-    $(that).parent().find('.add_carro_alert').html("BUENA ERNESTOR");
+    var element = $(that).parent().find('.add_carro_alert');
+    element.html("x1 Producto Agregado")
+    var el = element.html();
+    console.log(el);
 }
 function selecciono_retiro(nombre, direccion, total){
     
