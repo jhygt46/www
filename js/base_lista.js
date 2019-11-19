@@ -1451,7 +1451,7 @@ function mostrar_mensaje(that){
         element.html("x1 Producto Agregado");
     }else{
         var n = parseInt(el.split(" ")[0].substr(1)) + 1;
-        element.html("x"+n+" Producto Agregado");
+        element.html("x"+n+" Productos Agregados");
     }
 }
 function selecciono_retiro(nombre, direccion, total){

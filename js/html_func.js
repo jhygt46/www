@@ -240,8 +240,9 @@ function create_html_producto2(aux){
     foto.style.width = (height - 10) + "px";
     foto.style.height = (height - 10) + "px";
 
+    if(aux.disponible == 0){
+    // CARRO DE COMPRAS //
     var add_carro = create_element_class('carro clearfix');
-
     var add_carro_btn1 = create_element_class('add_carro_btn');
     add_carro_btn1.onclick = function(){ mostrar_mensaje(this); add_carro_producto(aux.id_pro, 1) };
     var add_carro_btn1a = create_element_class('add_info font5');
@@ -251,9 +252,14 @@ function create_html_producto2(aux){
     add_carro_btn1.appendChild(add_carro_btn1a);
     add_carro_btn1.appendChild(add_carro_btn1b);
     var add_carro_btn2 = create_element_class('add_carro_alert font5');
-    
     add_carro.appendChild(add_carro_btn1);
     add_carro.appendChild(add_carro_btn2);
+    // CARRO DE COMPRAS //
+    }
+    if(aux.disponible == 1){
+        var add_carro = create_element_class('carro_no font5');
+        add_carro.innerHTML = 'Producto no Disponible';
+    }
 
     Div.appendChild(tabla(cont_data, foto, add_carro));
     return Div;
@@ -305,9 +311,6 @@ function create_html_producto3(aux){
     Div.appendChild(precio);
     */
     
-}
-function tabla(cont_data){
-
 }
 
 function tabla(cont_data, pro_foto, add_carro){
