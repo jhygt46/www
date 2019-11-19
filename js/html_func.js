@@ -317,6 +317,8 @@ function tabla(cont_data, pro_foto, add_carro){
 
     var tbl = document.createElement('table');
     tbl.setAttribute('border', '0');
+    tbl.setAttribute("cellspacing", 0);
+    tbl.setAttribute("cellpadding", 0)
     var tbdy = document.createElement('tbody');
     var tr1 = document.createElement('tr');
     var td1 = document.createElement('td');
