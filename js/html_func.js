@@ -241,7 +241,15 @@ function create_html_producto2(aux){
     foto.style.height = (height - 10) + "px";
 
     var add_carro = create_element_class('carro');
-    add_carro.innerHTML = 'Carro';
+
+    var add_carro_btn1 = create_element_class('add_carro_btn');
+    var add_carro_btn2 = create_element_class('add_carro_alert');
+    
+    add_carro_btn1.innerHTML = 'Agregar';
+    add_carro_btn1.innerHTML = 'Producto agregado';
+
+    add_carro.appendChild(add_carro_btn1);
+    add_carro.appendChild(add_carro_btn2);
 
     Div.appendChild(tabla(cont_data, foto, add_carro));
     return Div;
