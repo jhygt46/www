@@ -188,9 +188,8 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar{
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 table .carro_no{
   padding: 5px;
-  background: #ccc;
   color: #000;
-  color: #fff;
+  background: #fff;
   font-weight: bold;
 }
 .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto3{
