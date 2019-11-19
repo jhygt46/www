@@ -204,7 +204,7 @@ function create_html_producto2(aux){
         }
     }
     if(aux.disponible == 1){
-        Div.onclick = function(){ alert("Producto no disponible") };
+        Div.onclick = function(){ mostrar_add_carro(this) };
     }
 
     var Divm = create_element_class('cont_pro clearfix');
