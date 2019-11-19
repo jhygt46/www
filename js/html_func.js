@@ -310,7 +310,7 @@ function tabla(cont_data, pro_foto, add_carro){
     td2.style.verticalAlign = 'middle';
     var tr2 = document.createElement('tr');
     var td3 = document.createElement('td');
-    td3.setAttribute('rowSpan', '2');
+    td3.setAttribute('colSpan', '2');
     td3.style.display = 'none';
     td3.className = 'mostrar_add_carro';
     td3.appendChild(add_carro);
