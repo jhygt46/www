@@ -253,9 +253,13 @@ function tabla(x, h){
     tbl.width= h + 'px';
     var tbdy = document.createElement('tbody');
     var tr = document.createElement('tr');
-    var td = document.createElement('td');
+    var td1 = document.createElement('td');
+    td1.className = 'cont_data';
+    var td2 = document.createElement('td');
+    td2.className = 'pro_foto';
     td.appendChild(x);
-    tr.appendChild(td);
+    tr.appendChild(td1);
+    tr.appendChild(td2);
     tbdy.appendChild(tr);
     tbl.appendChild(tbdy);
     return tbl;
