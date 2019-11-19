@@ -241,16 +241,17 @@ function create_html_producto2(aux){
     foto.style.height = (width_foto - 10) + "px";
     cfoto.appendChild(foto);
     
-    Divm.appendChild(cont_data);
-    Divm.appendChild(cfoto);
+    //Divm.appendChild(cont_data);
+    //Divm.appendChild(cfoto);
+    Divm.appendChild(tabla(cont_data, pro_foto));
     Div.appendChild(Divm);
     return Div;
     
 }
-function tabla(h, cont_data, pro_foto){
+function tabla(cont_data, pro_foto){
 
     var tbl = document.createElement('table');
-    tbl.width= h + 'px';
+    //tbl.width= h + 'px';
     var tbdy = document.createElement('tbody');
     var tr = document.createElement('tr');
     var td1 = document.createElement('td');
