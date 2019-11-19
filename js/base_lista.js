@@ -203,7 +203,9 @@ function add_carro_producto(id_pro, silencio){
     carro.push(item_carro);
     set_cantidad(1);
     localStorage.setItem("carro", JSON.stringify(carro));
-    if(tiene_pregunta(item_carro) && silencio == 0){ mostrar_pregunta(carro.length - 1) }else{ hide_modal() }
+    if(silencio == 0){
+        if(tiene_pregunta(item_carro)){ mostrar_pregunta(carro.length - 1) }else{ hide_modal() }
+    }
     
 }
 function add_carro_promocion(id_cae){
@@ -1442,8 +1444,8 @@ function volver_tipo_despacho(){
 function mostrar_add_carro(that){
     $(that).find('.mostrar_add_carro').show();
 }
-function btn_add_carro(){
-
+function mostrar_mensaje(that){
+    $('that').parent().find('.add_carro_alert').html("BUENA ERNESTOR");
 }
 function selecciono_retiro(nombre, direccion, total){
     

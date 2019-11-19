@@ -243,15 +243,15 @@ function create_html_producto2(aux){
     var add_carro = create_element_class('carro clearfix');
 
     var add_carro_btn1 = create_element_class('add_carro_btn');
+    add_carro_btn1.onclick = function(){ mostrar_mensaje(this); add_carro_producto(aux.id_pro, 1) };
     var add_carro_btn1a = create_element_class('add_info');
     var add_carro_btn1b = create_element_class('add_logo valign material-icons');
     add_carro_btn1a.innerHTML = 'Agregar a carro';
     add_carro_btn1b.innerHTML = 'shopping_cart';
     add_carro_btn1.appendChild(add_carro_btn1a);
     add_carro_btn1.appendChild(add_carro_btn1b);
-
     var add_carro_btn2 = create_element_class('add_carro_alert');
-    add_carro_btn1.onclick = function(){ add_carro_producto(aux.id_pro, 1) };
+    
     add_carro.appendChild(add_carro_btn1);
     add_carro.appendChild(add_carro_btn2);
 
@@ -265,7 +265,7 @@ function create_html_producto3(aux){
     var Div = create_element_class('producto3');
 
     if(aux.disponible == 0){
-        Div.onclick = function(){ add_carro_producto(aux.id_pro) };
+        Div.onclick = function(){ add_carro_producto(aux.id_pro, 0); };
     }
     if(aux.disponible == 1){
         Div.onclick = function(){ alert("Producto no disponible") };
