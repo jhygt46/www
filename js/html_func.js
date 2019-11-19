@@ -250,7 +250,7 @@ function create_html_producto2(aux){
     add_carro_btn1b.innerHTML = 'shopping_cart';
     add_carro_btn1.appendChild(add_carro_btn1a);
     add_carro_btn1.appendChild(add_carro_btn1b);
-    var add_carro_btn2 = create_element_class('add_carro_alert');
+    var add_carro_btn2 = create_element_class('add_carro_alert font5');
     
     add_carro.appendChild(add_carro_btn1);
     add_carro.appendChild(add_carro_btn2);
