@@ -242,6 +242,55 @@ function create_html_producto2(aux){
     return Div;
     
 }
+function create_html_producto3(aux){
+    
+    var height = parseInt((widthpx - 20) * data.config.alto_pro / 100);
+    var Div = create_element_class('producto3');
+
+    if(aux.disponible == 0){
+        Div.onclick = function(){ add_carro_producto(aux.id_pro) };
+    }
+    if(aux.disponible == 1){
+        Div.onclick = function(){ alert("Producto no disponible") };
+    }
+
+    if(height > 100){
+        Div.style.minHeight = height+"px";
+    }
+
+    var Divm = create_element_class('cont_pr prin_alpha_1');
+
+    Div.appendChild(Divm);
+    return Div;
+
+    /*
+    var nombre = document.createElement('div');
+    nombre.className = 'nombre font2';
+    if(aux.numero > 0){
+        nombre.innerHTML = aux.numero + '.- ' + aux.nombre;
+    }else{
+        nombre.innerHTML = aux.nombre;
+    }
+    Div.appendChild(nombre);
+
+    var descripcion = document.createElement('div');
+    descripcion.className = 'descripcion font5';
+    if(aux.disponible == 0){
+        descripcion.innerHTML = aux.descripcion;
+    }
+    if(aux.disponible == 1){
+        descripcion.innerHTML = aux.descripcion + '<br/><p style="color: #A33; font-size: 11px">Producto no disponible</p>';
+    }
+    Div.appendChild(descripcion);
+    
+    var precio = document.createElement('div');
+    precio.className = 'precio valign font3';
+    precio.innerHTML = formatNumber.new(parseInt(aux.precio), "$");
+    Div.appendChild(precio);
+    */
+    
+}
+
 function tabla(cont_data, pro_foto, add_carro){
 
     var tbl = document.createElement('table');
