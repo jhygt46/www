@@ -241,13 +241,13 @@ function create_html_producto2(aux){
     foto.style.height = (width_foto - 10) + "px";
     cfoto.appendChild(foto);
     
-    Divm.appendChild(tabla(cont_data, width_rest));
+    Divm.appendChild(cont_data);
     Divm.appendChild(cfoto);
     Div.appendChild(Divm);
     return Div;
     
 }
-function tabla(x, h){
+function tabla(h, cont_data, pro_foto){
 
     var tbl = document.createElement('table');
     tbl.width= h + 'px';
@@ -257,7 +257,8 @@ function tabla(x, h){
     td1.className = 'cont_data';
     var td2 = document.createElement('td');
     td2.className = 'pro_foto';
-    td.appendChild(x);
+    td1.appendChild(cont_data);
+    td2.appendChild(pro_foto);
     tr.appendChild(td1);
     tr.appendChild(td2);
     tbdy.appendChild(tr);
