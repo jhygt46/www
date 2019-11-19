@@ -161,11 +161,10 @@ body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
   padding-top: 5px;
   padding-bottom: 10px;
 }
-.modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .pro_foto {
+.modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro {
   float: left;
 }
-.modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .pro_foto .foto{
-  height: calc(100% - 10px); 
+.modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 .cont_pro .foto{
   background: #000;
   margin: 5px;
 }
