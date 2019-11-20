@@ -282,6 +282,7 @@ function create_html_producto3(aux){
         Divm.style.minHeight = height+"px";
     }
 
+    var Divc = create_element_class('cont_prod');
     var nombre = document.createElement('div');
     nombre.className = 'nombre';
     if(aux.numero > 0){
@@ -292,20 +293,20 @@ function create_html_producto3(aux){
     if(aux.disponible == 1){
         nombre.innerHTML += "<p style='color: #900; font-size: 10px; padding-left: 4px; display: inline'>No disponible</p>";
     }
-    Divm.appendChild(nombre);
+    Divc.appendChild(nombre);
 
     var descripcion = document.createElement('div');
     descripcion.className = 'descripcion';
     descripcion.innerHTML = aux.descripcion;
-    
-    Divm.appendChild(descripcion);
+    Divc.appendChild(descripcion);
     
     var precio = document.createElement('div');
-    precio.className = 'precio valign';
+    precio.className = 'precio';
     precio.innerHTML = formatNumber.new(parseInt(aux.precio), "$");
-    Divm.appendChild(precio);
+    Divc.appendChild(precio);
 
-    Div.appendChild(Divm);
+    Divc.appendChild(Divm);
+    Div.appendChild(Divc);
     return Div;
     
     
