@@ -270,6 +270,16 @@ function create_html_producto3(aux){
     var height = parseInt((widthpx - 20) * data.config.alto_pro / 100);
     var Div = create_element_class('producto3');
 
+    console.log(aux);
+
+    /*
+    if(obj.image == ""){
+        Div.style.backgroundImage = 'url("/_images/cat_'+num+'.jpg")';
+    }else{
+        Div.style.backgroundImage = 'url("/data/'+code+'/'+obj.image+'")';
+    }
+    */
+
     if(aux.disponible == 0){
         Div.onclick = function(){ add_carro_producto(aux.id_pro, 0); };
     }
@@ -282,7 +292,7 @@ function create_html_producto3(aux){
         Divm.style.minHeight = height+"px";
     }
 
-    var Divc = create_element_class('cont_prod');
+    var Divc = create_element_class('cont_prod valign');
     var nombre = document.createElement('div');
     nombre.className = 'nombre';
     if(aux.numero > 0){
