@@ -21,10 +21,10 @@ class Core{
             }
             if($_SERVER["HTTP_HOST"] == $this->server_ip){
                 if(isset($_GET["url"])){
-                    $this->host = (count(explode(".", $_GET["url"])) == 2) ? "www.".strtolower($_GET["url"]) : strtolower($_GET["url"]) ;
+                    $this->host = (count(explode(".", $_GET["url"])) == 2) ? "www1.".strtolower($_GET["url"]) : strtolower($_GET["url"]) ;
                 }else{
                     $var = explode("?url=", $_SERVER["HTTP_REFERER"]);
-                    $this->host = (count(explode(".", $var[1])) == 2) ? "www.".strtolower($var[1]) : strtolower($var[1]) ;
+                    $this->host = (count(explode(".", $var[1])) == 2) ? "www2.".strtolower($var[1]) : strtolower($var[1]) ;
                 }
             }else{
                 $this->host = (count(explode(".", $_SERVER["HTTP_HOST"])) == 2) ? "www.".strtolower($_SERVER["HTTP_HOST"]) : strtolower($_SERVER["HTTP_HOST"]) ;
