@@ -12,6 +12,7 @@
 
     require_once "class/core_class.php";
     $core = new Core();
+    exit;
     
     if(isset($_POST["accion"]) && $_POST["accion"] == "xS3w1Dm8Po87Wltd"){
         $core->actualizar();
@@ -19,8 +20,6 @@
     }
 
     $info = $core->get_data();
-    echo $info->host;
-    exit;
     if($_GET["mode2"] == "developer"){
         echo "<pre>";
         print_r($info);

@@ -33,6 +33,7 @@ class Core{
             $this->dir_info = "/var/www/data/".$this->host."/";
             $this->dir_data = "/var/www/html/";
             $this->file_err = "/var/error/error.log";
+            echo $this->host;
 
         }else{ die("ARCHIVO CODE NO EXISTE"); }
     }
