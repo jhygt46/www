@@ -111,7 +111,7 @@ body {
                         .close { width: 34px; height: 34px; top: 2px; right: 2px; font-size: 34px; }
                         .cont_info {
                             .info_modal {
-                                padding-bottom: $modal_titulo_height;
+                                padding-top: $modal_titulo_height;
                             }
                             .padding_01 {
                                 padding-bottom: $modal_info_modal_padding1;
@@ -149,3 +149,559 @@ body {
     }
 }
 /* MODALS BASE */
+
+
+/* MODALS PASO 01 CARRO */
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .modal {
+                    .cont_modal {
+                        .titulo {
+                            .cont_titulo{
+                                h1{}
+                                h2{}
+                            }
+                        }
+                        .close {}
+                        .cont_info {
+                            .info_modal {
+                                .process_carro {
+                                    padding: 10px;
+                                    .process_carro_promo{
+                                        position: relative;
+                                        margin-bottom: 10px;
+                                        padding: 6px 6px 26px 6px;
+                                        .promo_info{}
+                                        .promo_precio{
+                                            position: absolute;
+                                            bottom: 5px;
+                                            right: 5px;
+                                        }
+                                        .promo_delete{
+                                            position: absolute;
+                                            top: 0px;
+                                            right: 0px;
+                                            font-size: 30px;
+                                            width: 30px;
+                                            height: 30px;
+                                        }
+                                        .promo_detalle{
+                                            padding-left: 10px;
+                                            padding-top: 10px;
+                                            .promo_detalle_item{
+                                                .promo_detalle_nombre{
+                                                    width: calc(100% - 25px);
+                                                }
+                                                .promo_detalle_acciones{
+                                                    width: 25px;
+                                                    .accion{
+                                                        font-size: 25px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .process_carro_restantes{
+                                        padding: 6px;
+                                        .restantes_detalle_item{
+                                            margin-bottom: 6px;
+                                            padding: 5px 0px;
+                                            border-top-style: solid;
+                                            border-top-width: 1px;
+                                            .restantes_detalle_nombre{
+                                                width: calc(100% - 120px);
+                                            }
+                                            .restantes_detalle_acciones{
+                                                width: 120px;
+                                                .precio{ width: 76px; text-align: right; }
+                                                .espacio{ width: 22px }
+                                                .pregunta{ width: 22px }
+                                                .accion{ width: 22px }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .padding_01 {}
+                            .padding_02 {}
+                        }
+                        .sub_total {
+                            .cont_subtotal {
+                                .total_detalle{
+                                    .paso_01_sub_total{}
+                                    .paso_03_costo{}
+                                    .paso_03_total{}
+                                }
+                            }
+                        }
+                        .acciones {
+                            .confirmar{}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS PASO 01 CARRO */
+
+
+
+/* MODALS PASO 02 CARRO */
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .paso_02 {
+                    .cont_modal {
+                        .titulo {
+                            .cont_titulo {
+                                h1{}
+                                h2{}
+                            }
+                        }
+                        .close {}
+                        .cont_info {
+                            .info_modal {
+                                .cont_direccion {
+                                    padding: 10px;
+                                    .direccion_opciones {
+                                        .dir_op{
+                                            margin-bottom: 10px;
+                                            background-size: cover;
+                                            .codir{
+                                                .cont_info_dir {
+                                                    left: 20px;
+                                                    .title{}
+                                                    .stitle{}
+                                                    .alert{}
+                                                }
+                                            }
+                                        }
+                                        .rlocal{}
+                                        .cdesp{}
+                                    }
+                                }
+                            }
+                        }
+                        .acciones {
+                            .confirmar{}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS PASO 02 CARRO */
+
+
+
+/* MODALS PASO 02A LOCALES CARRO */
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .paso_02a {
+                    .cont_modal {
+                        .titulo {
+                            .cont_titulo {
+                                h1{}
+                                h2{}
+                            }
+                        }
+                        .close {}
+                        .cont_info {
+                            .info_modal {
+                                .cont_direccion {
+                                    padding: 10px;
+                                    .direccion_op1 {
+                                        .parent_locales {
+                                            padding-bottom: 10px;
+                                            .dir_locales {
+                                                background-size: cover;
+                                                .cont_local {
+                                                    .left_acciones {
+                                                        width: calc(100% - 75px);
+                                                        left: 10px;
+                                                        .local_info {
+                                                            .title{}
+                                                            .stitle{}
+                                                            .alert{}
+                                                        }
+                                                    }
+                                                    .accioness {
+                                                        right: 10px;
+                                                        min-width: 36px;
+                                                        .accion {
+                                                            height: 33.33%;
+                                                            width: 36px;
+                                                            background-repeat: no-repeat;
+                                                            background-size: contain;
+                                                            background-position: center;
+                                                        }
+                                                        .ver_tel {
+                                                            background-image: url('../_images/telefono.png');
+                                                        }
+                                                        .ver_whats {
+                                                            background-image: url('../_images/whatsapp.png');
+                                                        }
+                                                        .ver_mapa {
+                                                            background-image: url('../_images/mapa.png');
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            .cont_map {
+                                                display: none;
+                                                padding: 6px;
+                                                .dir_map{ height: 160px }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .acciones {
+                            .confirmar{}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS PASO 02A LOCALES CARRO */
+
+
+/* MODALS PASO 02B LOCALES CARRO */
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .paso_02b {
+                    .cont_modal {
+                        .titulo {
+                            .cont_titulo {
+                                h1{}
+                                h2{}
+                            }
+                        }
+                        .close {}
+                        .cont_info {
+                            .info_modal {
+                                .cont_direccion {
+                                    height: 100%;
+                                    .direccion_op2 {
+                                        height: 100%;
+                                        #map_direccion{
+                                            height: 100%;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .acciones {
+                            display: none;
+                            .confirmar{}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS PASO 02B LOCALES CARRO */
+
+
+
+/* MODALS PASO 3 DATA */
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .paso_03 {
+                    .cont_modal {
+                        .titulo {
+                            .cont_titulo {
+                                h1{}
+                                h2{}
+                            }
+                        }
+                        .close {}
+                        .cont_info {
+                            .info_modal {
+                                .cont_final {
+                                    padding: 10px;
+                                    .block_direccion {
+                                        margin-bottom: 10px;
+                                        .item_direccion {
+                                            width: 50%;
+                                            h1{}
+                                            h2{ height: 30px; }
+                                        }
+                                        .item_numero {
+                                            width: 25%;
+                                            h1{}
+                                            h2{ height: 30px; }
+                                        }
+                                        .item_depto {
+                                            width: 25%;
+                                            h1{}
+                                            input{ height: 30px; border: 0px }
+                                        }
+                                    }
+                                    .block_nombre_telefono {
+                                        margin-bottom: 10px;
+                                        .item_nombre {
+                                            width: 50%;
+                                            h1{}
+                                            input{ height: 30px; border: 0px }
+                                        }
+                                        .item_telefono {
+                                            width: 50%;
+                                            h1{}
+                                            input{ height: 30px; border: 0px }
+                                        }
+                                    }
+                                    .block_preguntas {
+                                        margin-bottom: 10px;
+                                        h1{}
+                                        .preguntas {
+                                            padding: 10px;
+                                            margin-top: 4px;
+                                            .pregunta {
+                                                .pre_nom{ 
+                                                    width: 90%;
+                                                }
+                                                .pre_input {
+                                                    width: 10%;
+                                                    input{ width: 18px; height: 18px; margin-top: 2px }
+                                                }
+                                                textarea{ width: 100%; height: 70px; border: 0px }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .sub_total {
+                            .cont_subtotal {
+                                .total_detalle{
+                                    .paso_01_sub_total{}
+                                    .paso_03_costo{}
+                                    .paso_03_total{}
+                                }
+                            }
+                        }
+                        .acciones {
+                            .confirmar{}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS PASO 3 DATA */
+
+
+
+/* MODALS PASO 4 LOCALES CARRO */
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .paso_04 {
+                    .cont_modal {
+                        .titulo {
+                            .cont_titulo {
+                                h1{}
+                                h2{}
+                            }
+                        }
+                        .close {}
+                        .cont_info {
+                            .info_modal {
+                                .data_final {
+                                    padding: 10px;
+                                    .pedido_mensaje{ 
+                                        margin-bottom: 10px;
+                                        padding: 10px;
+                                    }
+                                    .pedido_final {
+                                        .cont_pedido {
+                                            .estado {
+                                                width: 46%;
+                                                padding: 2%;
+                                                h1{}
+                                                h2{}
+                                            }
+                                            .tiempo {
+                                                width: 46%;
+                                                padding: 2%;
+                                                h1{}
+                                                h2{} 
+                                            }
+                                        }
+                                        .posicion{ height: 240px; }
+                                        .total{ padding: 2%; text-align: right; }
+                                    }
+                                    .titulo_chat{
+                                        margin-top: 10px;
+                                    }
+                                    .pedido_chat {
+                                        margin-top: 5px;
+                                        height: 135px;
+                                        .mensajes {
+                                            width: 100%;
+                                            height: 100px;
+                                            top: 0px;
+                                            left: 0px;
+                                            overflow-y: auto;
+                                            .info_mensajes{
+                                                padding: 2%;
+                                            }
+                                        }
+                                        .entrada {
+                                            width: calc(100% - 80px);
+                                            height: 30px;
+                                            border: 1px solid #ccc;
+                                            top: 104px;
+                                            left: 0px;
+                                            input{
+                                                padding: 0% 1%;
+                                                width: 98%;
+                                                height: 100%;
+                                                border: 0px;
+                                            }
+                                        }
+                                        .enviar {
+                                            width: 72px;
+                                            right: 0px;
+                                            top: 105px;
+                                            height: 30px;
+                                            .enviar_txt{}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .acciones {
+                            .confirmar{}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS PASO 4 LOCALES CARRO */
+
+
+
+/* MODALS PASO PREGUNTAS */
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .modal_pregunta_productos {
+                    .cont_modal {
+                        .titulo {
+                            .cont_titulo {
+                                h1{}
+                                h2{}
+                            }
+                        }
+                        .close {}
+                        .cont_info {
+                            .info_modal {
+                                .s_pregunta {
+                                    padding: 10px;
+                                    .e_pregunta {
+                                        margin-bottom: 10px;
+                                        .pregunta_titulo{}
+                                        .titulo_v_pregunta{}
+                                        .v_pregunta{
+                                            margin-top: 10px;
+                                            border-top-style: solid;
+                                            border-top-width: 1px;
+                                            border-left-style: solid;
+                                            border-left-width: 1px;
+                                            border-right-style: solid;
+                                            border-right-width: 1px;
+                                            .n_pregunta{
+                                                padding: 10px;
+                                                border-bottom-style: solid;
+                                                border-bottom-width: 1px;
+                                            }
+                                            .selected{}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .acciones {
+                            .confirmar{}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS PASO PREGUNTAS */
+
+
+
+/* MODALS PASO PROMOCION */
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .modal_productos_promo {
+                    .cont_modal {
+                        .titulo {
+                            .cont_titulo {
+                                h1{}
+                                h2{}
+                            }
+                        }
+                        .close {}
+                        .cont_info {
+                            .info_modal {
+                                .pro_cat_promo {
+                                    padding: 10px;
+                                    .pro_cat_item {
+                                        padding: 10px 0px;
+                                        margin-top: 2px;
+                                        .pro_cat_item_select {
+                                            width: 50px;
+                                            left: 10px;
+                                            select{
+                                                width: 100%;
+                                                height: 40px;
+                                            }
+                                        }
+                                        .pro_cat_item_nombre{
+                                            padding-left: 70px;
+                                        }
+                                        .pro_cat_item_descripcion{
+                                            padding-left: 70px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .acciones {
+                            .confirmar{}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS PASO PROMOCION */

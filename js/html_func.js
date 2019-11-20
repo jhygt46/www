@@ -322,9 +322,9 @@ function tabla(cont_data, pro_foto, add_carro){
     var tbdy = document.createElement('tbody');
     var tr1 = document.createElement('tr');
     var td1 = document.createElement('td');
-    td1.style.verticalAlign = 'middle';
+    td1.setAttribute("valign", "middle");
     var td2 = document.createElement('td');
-    td2.style.verticalAlign = 'middle';
+    td2.setAttribute("valign", "middle");
     var tr2 = document.createElement('tr');
     var td3 = document.createElement('td');
     td3.setAttribute('colSpan', '2');

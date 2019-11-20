@@ -124,6 +124,7 @@
             <div class="modals">
                 <div class="cont_modals">
                     <?php echo $info->{"inicio_html"}; ?>
+
                     <div class="modal modal_dim1 vhalign hide modal_contacto">
                         <div class="cont_modal">
                             <div class="titulo"><div class="cont_titulo valign"><h1 class="font1">Contacto</h1><h2 class="font3">Tienes alguna duda? contactate con nosotros</h2></div></div>
@@ -250,13 +251,15 @@
                             <div class="titulo"><div class="cont_titulo valign"><h1 class="font1"></h1><h2 class="font3"></h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info">
-                                <div class="info_modal" style="padding-bottom: 57px"></div>
+                                <div class="info_modal padding_01"></div>
                             </div>
                             <div class="acciones">
                                 <input class="confirmar vhalign" onclick="confirmar_pregunta_productos(this)" type="button" value="Confirmar" />
                             </div>
                         </div>
                     </div>
+
+
                     <!-- MODAL CARRO 01 -->
                     <div class="modal modal_dim1 vhalign hide modal_carro paso_01">
                         <div class="cont_modal">
@@ -277,7 +280,6 @@
                             </div>
                         </div>
                     </div>
-                    
                     <?php if($info->{'retiro_local'} == 1 && $info->{'despacho_domicilio'} == 1){ ?>
                     <div class="modal modal_dim1 vhalign hide modal_carro paso_02">
                         <div class="cont_modal">
@@ -339,9 +341,9 @@
                                                             </div>
                                                         </div>
                                                         <div class="accioness valign">
-                                                            <a class="accion ver_mapa" style="background-image: url('../_images/telefono.png')" href="tel:<?php echo $locales[$i]->{'telefono'}; ?>"></a>
-                                                            <a class="accion ver_mapa" style="background-image: url('../_images/whatsapp.png')" href="https://api.whatsapp.com/send?phone=<?php echo $locales[$i]->{'whatsapp'}; ?>"></a>
-                                                            <div class="accion ver_mapa" style="background-image: url('../_images/mapa.png')" onclick="local_mapa(<?php echo $locales[$i]->{'id_loc'}; ?>, <?php echo $locales[$i]->{'lat'}; ?>, <?php echo $locales[$i]->{'lng'}; ?>, 's')"></div>
+                                                            <a class="accion ver_tel" href="tel:<?php echo $locales[$i]->{'telefono'}; ?>"></a>
+                                                            <a class="accion ver_whats"  href="https://api.whatsapp.com/send?phone=<?php echo $locales[$i]->{'whatsapp'}; ?>"></a>
+                                                            <div class="accion ver_mapa" onclick="local_mapa(<?php echo $locales[$i]->{'id_loc'}; ?>, <?php echo $locales[$i]->{'lat'}; ?>, <?php echo $locales[$i]->{'lng'}; ?>, 's')"></div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -469,21 +471,24 @@
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info">
                                 <div class="info_modal padding_01">
-                                    <div class="pedido_mensaje"></div>
-                                    <div class="pedido_final">
-                                        <div class="cont_pedido clearfix">
-                                            <div class="estado"><h1 class="font1">Estado</h1><h2 class="font5"></h2></div>
-                                            <div class="tiempo"><h1 class="font1">Tiempo Restante</h1><h2 class="font5"></h2></div>
+                                    <div class="data_final">
+                                        <div class="pedido_mensaje"></div>
+                                        <div class="pedido_final">
+                                            <div class="cont_pedido clearfix">
+                                                <div class="estado"><h1 class="font1">Estado</h1><h2 class="font5"></h2></div>
+                                                <div class="tiempo"><h1 class="font1">Tiempo Restante</h1><h2 class="font5"></h2></div>
+                                            </div>
+                                            <div class="posicion" id="mapa_posicion"></div>
+                                            <div class="total font1"></div>
                                         </div>
-                                        <div class="posicion" id="mapa_posicion"></div>
-                                        <div class="total font1"></div>
-                                    </div>
-                                    <div class="pedido_chat" style="display: none">
-                                        <div class="mensajes">
-                                            <div class="info_mensajes"></div>
+                                        <div class="titulo_chat">Alguna Duda? chatea con nosotros</div>
+                                        <div class="pedido_chat" style="display: none">
+                                            <div class="mensajes">
+                                                <div class="info_mensajes"></div>
+                                            </div>
+                                            <div class="entrada"><input type="text" id="texto_chat" /></div>
+                                            <div class="enviar" onclick="send_chat()"><div class="enviar_txt vhalign">Enviar</div></div>
                                         </div>
-                                        <div class="entrada"><input type="text" id="texto_chat" /></div>
-                                        <div class="enviar" onclick="send_chat()"><div class="enviar_txt vhalign">Enviar</div></div>
                                     </div>
                                 </div>
                             </div>
@@ -492,6 +497,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- MODAL CARRO 01 -->
                     
                 </div>
             </div>

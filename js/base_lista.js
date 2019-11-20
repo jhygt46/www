@@ -158,8 +158,8 @@ function imprimir_productos_modal(id){
             var producto = get_producto(productos[j]);
             if(producto.disponible != 2 && categoria.detalle_prods == 0){
                 //html.append(create_html_producto(producto));
-                html.append(create_html_producto2(producto));
-                //html.append(create_html_producto3(producto));
+                //html.append(create_html_producto2(producto));
+                html.append(create_html_producto3(producto));
             }
         }
     }
@@ -653,7 +653,6 @@ function set_pedido(pedido){
 function get_productos_categoria(id_cae){
     
     var categorias = get_categoria(id_cae);
-    console.log(categorias);
 
     var productos = [];
     if(categorias.productos){
@@ -1289,7 +1288,7 @@ function initMap(){
                     type: "POST",
                     data: send,
                     success: function(data){
-                        console.log(data);
+
                         if(data.op == 1){
 
                             var pedido = get_pedido();
