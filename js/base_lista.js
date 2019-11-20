@@ -161,10 +161,10 @@ function imprimir_productos_modal(id){
                 if(producto.tipo == 0){
                     html.append(create_html_producto(producto));
                 }
-                if(producto.tipo == 0){
+                if(producto.tipo == 1){
                     html.append(create_html_producto2(producto));
                 }
-                if(producto.tipo == 0){
+                if(producto.tipo == 2){
                     html.append(create_html_producto3(producto));
                 }
             }
