@@ -216,7 +216,7 @@ function create_html_producto2(aux){
     var cont_data = create_element_class('cont_data');
     cont_data.style.width = (widthpx - 20 - height) + "px";
 
-    var nombre = create_element_class('nombre font2');
+    var nombre = create_element_class('nombre');
     if(aux.numero > 0){
         nombre.innerHTML = aux.numero + '.- ' + aux.nombre;
     }else{
@@ -227,11 +227,11 @@ function create_html_producto2(aux){
     }
     cont_data.appendChild(nombre);
     
-    var descripcion = create_element_class('descripcion font5');
+    var descripcion = create_element_class('descripcion');
     descripcion.innerHTML = aux.descripcion;
     cont_data.appendChild(descripcion);
 
-    var precio = create_element_class('precio font3');
+    var precio = create_element_class('precio');
     precio.innerHTML = formatNumber.new(parseInt(aux.precio), "$");
     cont_data.appendChild(precio);
 
@@ -282,34 +282,32 @@ function create_html_producto3(aux){
         Divm.style.minHeight = height+"px";
     }
 
-    Div.appendChild(Divm);
-    return Div;
-
-    /*
     var nombre = document.createElement('div');
-    nombre.className = 'nombre font2';
+    nombre.className = 'nombre';
     if(aux.numero > 0){
         nombre.innerHTML = aux.numero + '.- ' + aux.nombre;
     }else{
         nombre.innerHTML = aux.nombre;
     }
-    Div.appendChild(nombre);
+    if(aux.disponible == 1){
+        nombre.innerHTML += "<p style='color: #900; font-size: 10px; padding-left: 4px; display: inline'>No disponible</p>";
+    }
+    Divm.appendChild(nombre);
 
     var descripcion = document.createElement('div');
-    descripcion.className = 'descripcion font5';
-    if(aux.disponible == 0){
-        descripcion.innerHTML = aux.descripcion;
-    }
-    if(aux.disponible == 1){
-        descripcion.innerHTML = aux.descripcion + '<br/><p style="color: #A33; font-size: 11px">Producto no disponible</p>';
-    }
-    Div.appendChild(descripcion);
+    descripcion.className = 'descripcion';
+    descripcion.innerHTML = aux.descripcion;
+    
+    Divm.appendChild(descripcion);
     
     var precio = document.createElement('div');
-    precio.className = 'precio valign font3';
+    precio.className = 'precio valign';
     precio.innerHTML = formatNumber.new(parseInt(aux.precio), "$");
-    Div.appendChild(precio);
-    */
+    Divm.appendChild(precio);
+
+    Div.appendChild(Divm);
+    return Div;
+    
     
 }
 
