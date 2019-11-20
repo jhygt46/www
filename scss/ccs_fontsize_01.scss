@@ -18,6 +18,9 @@ body {
     }
 }
 
+$header_cant_cart: "14px";
+$header_cart_mensaje: "12px";
+
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
 body {
     .contenedor {
@@ -30,9 +33,10 @@ body {
                     .menu_right {
                         .shop {}
                         .cantcart {
-                            .cantcart_num{ }
+                            .cantcart_num{ font-size: $header_cant_cart; }
                         }
                     }
+                    .cart_info{ font-size: $header_cart_mensaje }
                 }
                 .footer {}
                 .contenido {
@@ -53,3 +57,46 @@ body {
     }
 }
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
+
+$modal_global_titulo: "20px";
+$modal_global_subtitulo: "20px";
+$modal_subtotal: "20px";
+$modal_costo: "20px";
+$modal_total: "20px";
+$modal_confirmar: "16px"
+/* MODALS BASE */
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .modal {
+                    .cont_modal {
+                        .titulo {
+                            .cont_titulo{
+                                h1{ font-size: $modal_global_titulo }
+                                h2{ font-size: $modal_global_subtitulo }
+                            }
+                        }
+                        .close {}
+                        .cont_info {
+                            .info_modal {}
+                        }
+                        .sub_total {
+                            .cont_subtotal {
+                                .total_detalle{
+                                    .paso_01_sub_total{ font-size: $modal_subtotal }
+                                    .paso_03_costo{ font-size: $modal_costo }
+                                    .paso_03_total{ font-size: $modal_total }
+                                }
+                            }
+                        }
+                        .acciones {
+                            .confirmar{ font-size: $modal_confirmar }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS BASE */

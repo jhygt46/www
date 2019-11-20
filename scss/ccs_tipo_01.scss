@@ -18,6 +18,10 @@ body{
 }
 
 $header_height: "130px";
+$footer_height: "10px";
+
+$padd_footer_fixed: "110px";
+$padd_footer_nofixed: "5px";
 
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
 body {
@@ -28,7 +32,6 @@ body {
                     height: $header_height;
                     border-bottom-style: solid;
                     border-bottom-width: 1px;
-                    position: fixed;
                     .header_logo {
                         img {}
                     }
@@ -36,7 +39,7 @@ body {
                         height: 40px;
                         width: 40px;
                         right: 20px;
-                        .shop {}
+                        .shop { font-size: 36px; }
                         .cantcart {
                             width: 26px;
                             height: 26px;
@@ -46,10 +49,17 @@ body {
                             .cantcart_num{}
                         }
                     }
+                    .cart_info{
+                        right: 20px;
+                        bottom: 15px;
+                    }
                 }
-                .footer {}
+                .footer { height: $footer_height; }
                 .contenido {
                     .cont_contenido {
+                        width: 94%;
+                        max-width: 500px;
+                        padding-top: $header_height;
                         .botones_principales {
                             .cont_bp{
                                 .cont_bpi{
@@ -60,9 +70,82 @@ body {
                             }
                         }
                     }
+                    .padd_footer_fixed{
+                        padding-bottom: $padd_footer_fixed;
+                    }
+                    .padd_footer_nofixed{
+                        padding-bottom: $padd_footer_nofixed;
+                    }
                 }
             }
         }
     }
 }
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
+
+$modal_titulo_height: "80px";
+$modal_acciones_height: "55px";
+$modal_subtotal_bottom: "56px";
+$modal_subtotal_height: "50px";
+
+$modal_info_modal_padding1: "56px";
+$modal_info_modal_padding2: "106px";
+
+/* MODALS BASE */
+body {
+    .contenedor {
+        .modals{
+            background: rgba(0, 0, 0, 0.75);
+            .cont_modals {
+                .modal {
+                    .cont_modal {
+                        .titulo {
+                            border-bottom-style: solid;
+                            border-bottom-width: 1px;
+                            height: $modal_titulo_height;
+                            .cont_titulo{
+                                h1{}
+                                h2{}
+                            }
+                        }
+                        .close { width: 34px; height: 34px; top: 2px; right: 2px; font-size: 34px; }
+                        .cont_info {
+                            .info_modal {
+                                padding-bottom: $modal_titulo_height;
+                            }
+                            .padding_01 {
+                                padding-bottom: $modal_info_modal_padding1;
+                            }
+                            .padding_02 {
+                                padding-bottom: $modal_info_modal_padding2;
+                            }
+                        }
+                        .sub_total {
+                            bottom: $modal_subtotal_bottom;
+                            width: 100%;
+                            height: $modal_subtotal_height;
+                            .cont_subtotal {
+                                .total_detalle{
+                                    text-align: right;
+                                    right: 6px;
+                                    .paso_01_sub_total{}
+                                    .paso_03_costo{}
+                                    .paso_03_total{}
+                                }
+                            }
+                        }
+                        .acciones {
+                            border-top-style: solid;
+                            border-top-width: 1px;
+                            height: $modal_acciones_height;
+                            .confirmar{
+                                padding: 5px 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS BASE */

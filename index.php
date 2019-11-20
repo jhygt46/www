@@ -110,12 +110,13 @@
             </div>
             <div class="pagina">
                 <div class="cont_pagina">
-                    <div class="header <?php echo ($info->{"header_fixed"} == 1) ? 'fixed' : ''; ?>">
+                    <div class="header <?php echo ($info->{"header_fixed"} == 1) ? 'fixed' : 'absolute'; ?>">
                         <div class="header_logo vhalign"><img src="<?php if($info->{'logo'} == "sinlogo.png"){ echo "/_images/sinlogo.png"; }else{ echo "/data/".$info->{"code"}."/".$info->{"logo"}; } ?>" alt="" /></div>
                         <div class="menu_right valign" onclick="open_carro()"><div class="shop material-icons">shopping_cart</div><div class="cantcart"><div class="cantcart_num vhalign"></div></div></div>
+                        <div class="cart_info"></div>
                     </div>
                     <div class="contenido">
-                        <div class="cont_contenido <?php echo ($info->{"footer_fixed"} == 1) ? 'padding_cont_f1' : 'padding_cont_f2'; ?>"></div>
+                        <div class="cont_contenido <?php echo ($info->{"footer_fixed"} == 1) ? 'padd_footer_fixed' : 'padd_footer_nofixed'; ?>"></div>
                     </div>
                     <div class="footer <?php echo ($info->{"footer_fixed"} == 1) ? 'fixed' : ''; ?>"><?php echo $info->{"footer_html"}; ?></div>
                 </div>
@@ -240,7 +241,7 @@
                                 <div class="info_modal" style="padding-bottom: 57px"></div>
                             </div>
                             <div class="acciones">
-                                <input class="confirmar" onclick="confirmar_productos_promo(this)" type="button" value="Confirmar" />
+                                <input class="confirmar vhalign" onclick="confirmar_productos_promo(this)" type="button" value="Confirmar" />
                             </div>
                         </div>
                     </div>
@@ -252,7 +253,7 @@
                                 <div class="info_modal" style="padding-bottom: 57px"></div>
                             </div>
                             <div class="acciones">
-                                <input class="confirmar" onclick="confirmar_pregunta_productos(this)" type="button" value="Confirmar" />
+                                <input class="confirmar vhalign" onclick="confirmar_pregunta_productos(this)" type="button" value="Confirmar" />
                             </div>
                         </div>
                     </div>
@@ -262,7 +263,7 @@
                             <div class="titulo"><div class="cont_titulo valign"><h1 class="font1"><?php echo $info->{"pedido_01_titulo"}; ?></h1><h2 class="font3"><?php echo $info->{"pedido_01_subtitulo"}; ?></h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info">
-                                <div class="info_modal" style="padding-bottom: 57px"></div>
+                                <div class="info_modal padding_01"></div>
                             </div>
                             <div class="sub_total">
                                 <div class="cont_subtotal">
@@ -272,7 +273,7 @@
                                 </div>
                             </div>
                             <div class="acciones">
-                                <input class="confirmar" onclick="paso_2()" type="button" value="Siguiente" />
+                                <input class="confirmar vhalign" onclick="paso_2()" type="button" value="Siguiente" />
                             </div>
                         </div>
                     </div>
@@ -283,7 +284,7 @@
                             <div class="titulo"><div class="cont_titulo valign"><h1 class="font1"><?php echo $info->{"pedido_02_titulo"}; ?></h1><h2 class="font3"><?php echo $info->{"pedido_02_subtitulo"}; ?></h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info">
-                                <div class="info_modal">
+                                <div class="info_modal padding_01">
                                     <div class="cont_direccion">
                                         <div class="direccion_opciones">
                                             <div class="rlocal dir_op" onclick="show_modal_locales()" style="background-image: url('<?php if($info->{'foto_retiro'} == ""){ echo "/_images/retiro.jpg"; }else{ echo "/data/".$info->{"code"}."/".$info->{"foto_retiro"}; } ?>')">
@@ -309,7 +310,7 @@
                                 </div>
                             </div>
                             <div class="acciones acc_paso2 hide">
-                                <input class="confirmar" onclick="paso_3()" type="button" value="Siguiente" />
+                                <input class="confirmar vhalign" onclick="paso_3()" type="button" value="Siguiente" />
                             </div>
                         </div>
                     </div>
@@ -372,7 +373,7 @@
                                 </div>
                             </div>
                             <div class="acciones" id="siguiente_map">
-                                <input class="confirmar" onclick="paso_3()" type="button" value="Siguiente">
+                                <input class="confirmar vhalign" onclick="paso_3()" type="button" value="Siguiente">
                             </div>
                         </div>
                     </div>
@@ -382,7 +383,7 @@
                             <div class="titulo"><div class="cont_titulo valign"><h1 class="font1"><?php echo $info->{"pedido_03_titulo"}; ?></h1><h2 class="font3"><?php echo $info->{"pedido_03_subtitulo"}; ?></h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info">
-                                <div class="info_modal" style="padding-bottom: 116px">
+                                <div class="info_modal padding_02">
                                     
                                     <div class="cont_final">
                                         <ul class="block_direccion clearfix">
@@ -458,7 +459,7 @@
                                 </div>
                             </div>
                             <div class="acciones">
-                                <input class="confirmar" id="enviar_cotizacion" onclick="paso_4()" type="button" value="Finalizar" />
+                                <input class="confirmar vhalign" id="enviar_cotizacion" onclick="paso_4()" type="button" value="Finalizar" />
                             </div>
                         </div>
                     </div>
@@ -467,7 +468,7 @@
                             <div class="titulo"><div class="cont_titulo valign"><h1 class="font1"></h1><h2 class="font3"></h2></div></div>
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info">
-                                <div class="info_modal" style="padding-bottom: 57px">
+                                <div class="info_modal padding_01">
                                     <div class="pedido_mensaje"></div>
                                     <div class="pedido_final">
                                         <div class="cont_pedido clearfix">
@@ -487,7 +488,7 @@
                                 </div>
                             </div>
                             <div class="acciones">
-                                <input class="confirmar" onclick="aux_nuevo()" type="button" value="Hacer Nuevo Pedido" />
+                                <input class="confirmar vhalign" onclick="aux_nuevo()" type="button" value="Hacer Nuevo Pedido" />
                             </div>
                         </div>
                     </div>

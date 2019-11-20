@@ -1289,7 +1289,7 @@ function initMap(){
                     type: "POST",
                     data: send,
                     success: function(data){
-
+                        console.log(data);
                         if(data.op == 1){
 
                             var pedido = get_pedido();
