@@ -12,8 +12,7 @@
 
     require_once "class/core_class.php";
     $core = new Core();
-    exit;
-    
+
     if(isset($_POST["accion"]) && $_POST["accion"] == "xS3w1Dm8Po87Wltd"){
         $core->actualizar();
         exit;
