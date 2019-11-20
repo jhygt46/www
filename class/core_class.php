@@ -25,9 +25,9 @@ class Core{
                     $this->host = (count(explode(".", $_GET["url"])) == 2) ? "www.".strtolower($_GET["url"]) : strtolower($_GET["url"]) ;
                     $this->aux = 0;
                 }else{
-                    $var = explode("?url=", $_SERVER["HTTP_REFERER"]);
-                    $this->host = (count(explode(".", $var[1])) == 2) ? "www2.".strtolower($var[1]) : strtolower($var[1]) ;
-                    $this->aux = 1;
+                    $var = explode("&", explode("?url=", $_SERVER["HTTP_REFERER"])[1])[0];
+                    $this->host = (count(explode(".", $var[1])) == 2) ? "www.".strtolower($var[1]) : strtolower($var[1]) ;
+                    $this->aux = explode("&", explode("?url=", $_SERVER["HTTP_REFERER"])[1])[0];
                 }
             }else{
                 $this->host = (count(explode(".", $_SERVER["HTTP_HOST"])) == 2) ? "www.".strtolower($_SERVER["HTTP_HOST"]) : strtolower($_SERVER["HTTP_HOST"]) ;
