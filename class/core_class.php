@@ -8,6 +8,7 @@ class Core{
     public $dir_info = null;
     public $dir_data = null;
     public $server_ip = null;
+    public $aux = null;
 
     public function __construct(){
         
@@ -21,14 +22,17 @@ class Core{
             }
             if($_SERVER["HTTP_HOST"] == $this->server_ip){
                 if(isset($_GET["url"])){
-                    $this->host = (count(explode(".", $_GET["url"])) == 2) ? "www1.".strtolower($_GET["url"]) : strtolower($_GET["url"]) ;
+                    $this->host = (count(explode(".", $_GET["url"])) == 2) ? "www.".strtolower($_GET["url"]) : strtolower($_GET["url"]) ;
+                    $this->aux = 0;
                 }else{
                     $var = explode("?url=", $_SERVER["HTTP_REFERER"]);
                     $this->host = (count(explode(".", $var[1])) == 2) ? "www2.".strtolower($var[1]) : strtolower($var[1]) ;
+                    $this->aux = 1;
                 }
             }else{
                 $this->host = (count(explode(".", $_SERVER["HTTP_HOST"])) == 2) ? "www.".strtolower($_SERVER["HTTP_HOST"]) : strtolower($_SERVER["HTTP_HOST"]) ;
             }
+
             $this->dir = "/var/www/data/";
             $this->dir_info = "/var/www/data/".$this->host."/";
             $this->dir_data = "/var/www/html/";
@@ -280,6 +284,7 @@ class Core{
             $info['config'] = $config;
             $info['polygons'] = $polygons;
             $info['path'] = $this->dir_info."polygon/".$config["polygon"];
+            $info['aux'] = $this->aux;
             if(count($polygons) > 0){
                 foreach($polygons as $polygon){
                     $lats = [];
