@@ -305,8 +305,8 @@ function create_html_producto3(aux){
     precio.innerHTML = formatNumber.new(parseInt(aux.precio), "$");
     Divc.appendChild(precio);
 
-    Divc.appendChild(Divm);
-    Div.appendChild(Divc);
+    Divm.appendChild(Divc);
+    Div.appendChild(Divm);
     return Div;
     
     
