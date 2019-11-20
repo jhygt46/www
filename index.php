@@ -19,6 +19,8 @@
     }
 
     $info = $core->get_data();
+    echo $info->host;
+    exit;
     if($_GET["mode2"] == "developer"){
         echo "<pre>";
         print_r($info);
