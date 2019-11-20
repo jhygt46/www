@@ -279,6 +279,7 @@ class Core{
             $info['op'] = 2;
             $info['config'] = $config;
             $info['polygons'] = $polygons;
+            $info['path'] = $this->dir_info."polygon/".$config["polygon"];
             if(count($polygons) > 0){
                 foreach($polygons as $polygon){
                     $lats = [];
