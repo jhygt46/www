@@ -739,10 +739,10 @@ body {
                                             .cont_info_pro{
                                                 width: calc(100% - 20px);
                                                 .nombre{
-                                                    padding-left: 75px;
+                                                    padding-right: 75px;
                                                 }
                                                 .descripcion{
-                                                    padding-left: 75px;
+                                                    padding-right: 75px;
                                                 }
                                                 .precio{
                                                     width: 70px;
@@ -789,16 +789,20 @@ body {
 
                                                     }
                                                     .carro{
+                                                        padding: 5px;
                                                         .add_carro_btn{
+                                                            padding: 2px;
                                                             .add_info{
-
+                                                                padding: 5px 30px 5px 5px;
                                                             }
                                                             .add_logo{
-
+                                                                width: 24px;
+                                                                height: 24px;
+                                                                right: 5px;
                                                             }
                                                         }
                                                         .add_carro_alert{
-
+                                                            padding: 5px 0px 0px 10px;
                                                         }
                                                     }
                                                 }
@@ -821,16 +825,20 @@ body {
                                             }
                                         }
                                         .carro{
+                                            padding: 5px;
                                             .add_carro_btn{
+                                                padding: 2px;
                                                 .add_info{
-
+                                                    padding: 5px 30px 5px 5px;
                                                 }
                                                 .add_logo{
-
+                                                    width: 24px;
+                                                    height: 24px;
+                                                    right: 5px;
                                                 }
                                             }
                                             .add_carro_alert{
-
+                                                padding: 5px 0px 0px 10px;
                                             }
                                         }
                                     }
