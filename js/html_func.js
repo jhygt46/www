@@ -25,19 +25,19 @@ function html_home_categorias(obj, num){
 
     var Divnombre = document.createElement('div');
     Divnombre.innerHTML = obj.nombre;
-    Divnombre.className = 'nombre font1';
+    Divnombre.className = 'nombre';
     Divvalign.appendChild(Divnombre);
     
     if(obj.descripcion){
         var Divdescripcion = document.createElement('div');
         Divdescripcion.innerHTML = obj.descripcion;
-        Divdescripcion.className = 'descripcion font3';
+        Divdescripcion.className = 'descripcion';
         Divvalign.appendChild(Divdescripcion);
     }
     if(obj.precio > 0){
         var Divprecio = document.createElement('div');
         Divprecio.innerHTML = formatNumber.new(parseInt(obj.precio), "$");
-        Divprecio.className = 'precio font3';
+        Divprecio.className = 'precio';
         Divvalign.appendChild(Divprecio);
     }
 
@@ -51,7 +51,6 @@ function html_paginas(pagina){
     li = document.createElement('LI');
     li.onclick = function(){ ver_pagina(pagina.id_pag) };
     li.innerHTML = pagina.nombre;
-    li.className = 'font4';
     return li;
     
 }
@@ -81,11 +80,11 @@ function create_html_categorias(obj){
         Divm.style.height = parseInt((widthpx - 20) * data.config.alto / 100)+"px";
 
         var Nombre = document.createElement('div');
-        Nombre.className = 'nombre font1';
+        Nombre.className = 'nombre';
         Nombre.innerHTML = obj.nombre;
         
         var Descripcion = document.createElement('div');
-        Descripcion.className = 'descripcion font4';
+        Descripcion.className = 'descripcion';
         Descripcion.innerHTML = obj.descripcion;
 
         Divm.appendChild(Nombre);
@@ -96,12 +95,12 @@ function create_html_categorias(obj){
     if(obj.mostrar_prods == 1){
         
         var Nombre = document.createElement('div');
-        Nombre.className = 'nombre font1';
+        Nombre.className = 'nombre';
         Nombre.innerHTML = obj.nombre;
 
         Divm.appendChild(Nombre);
         var Descripcion = document.createElement('div');
-        Descripcion.className = 'descripcion font4';
+        Descripcion.className = 'descripcion';
         Descripcion.innerHTML = obj.descripcion;
         Divm.appendChild(Descripcion);
 
@@ -127,19 +126,19 @@ function create_html_categorias(obj){
                 p_nombre.className = 'prod_i_nom';
                 
                 p_nombre_ttl = document.createElement('div');
-                p_nombre_ttl.className = 'prod_i_ttl font4';
+                p_nombre_ttl.className = 'prod_i_ttl';
                 p_nombre_ttl.innerHTML = aux.nombre;
                 p_nombre.appendChild(p_nombre_ttl);
 
                 p_nombre_sttl = document.createElement('div');
-                p_nombre_sttl.className = 'prod_i_sttl font5';
+                p_nombre_sttl.className = 'prod_i_sttl';
                 p_nombre_sttl.innerHTML = aux.descripcion;
                 p_nombre.appendChild(p_nombre_sttl);
 
                 producto.appendChild(p_nombre);
                 
                 p_precio = document.createElement('div');
-                p_precio.className = 'prod_i_pre valign font3';
+                p_precio.className = 'prod_i_pre valign';
                 p_precio.innerHTML = formatNumber.new(parseInt(aux.precio), "$");
                 producto.appendChild(p_precio);
 
@@ -277,7 +276,7 @@ function create_html_producto2(aux){
         add_carro_btn1b.innerHTML = 'shopping_cart';
         add_carro_btn1.appendChild(add_carro_btn1a);
         add_carro_btn1.appendChild(add_carro_btn1b);
-        var add_carro_btn2 = create_element_class('add_carro_alert font5');
+        var add_carro_btn2 = create_element_class('add_carro_alert');
         add_carro.appendChild(add_carro_btn1);
         add_carro.appendChild(add_carro_btn2);
         // CARRO DE COMPRAS //
@@ -348,7 +347,7 @@ function create_html_producto3(aux){
         add_carro_btn1b.innerHTML = 'shopping_cart';
         add_carro_btn1.appendChild(add_carro_btn1a);
         add_carro_btn1.appendChild(add_carro_btn1b);
-        var add_carro_btn2 = create_element_class('add_carro_alert font5');
+        var add_carro_btn2 = create_element_class('add_carro_alert');
         add_carro.appendChild(add_carro_btn1);
         add_carro.appendChild(add_carro_btn2);
         // CARRO DE COMPRAS //
@@ -411,17 +410,17 @@ function create_html_promocion(obj){
     }
 
     var Nombre = document.createElement('div');
-    Nombre.className = 'nombre font1';
+    Nombre.className = 'nombre';
     Nombre.innerHTML = obj.nombre;
     Divm.appendChild(Nombre);
     
     var Descripcion = document.createElement('div');
-    Descripcion.className = 'descripcion font4';
+    Descripcion.className = 'descripcion';
     Descripcion.innerHTML = obj.descripcion;
     Divm.appendChild(Descripcion);
     
     var Precio = document.createElement('div');
-    Precio.className = 'precio font1';
+    Precio.className = 'precio';
     Precio.innerHTML = formatNumber.new(parseInt(obj.precio), "$");
     Divm.appendChild(Precio);
     
@@ -436,7 +435,7 @@ function create_html_promocion(obj){
             for(var i=0, ilen=obj.categorias.length; i<ilen; i++){
                 aux = get_categoria(obj.categorias[i].id_cae);
                 cat = document.createElement('div');
-                cat.className = 'prod_item font4';
+                cat.className = 'prod_item';
                 cat.innerHTML = obj.categorias[i].cantidad + " " +aux.nombre;
                 listado.appendChild(cat);
             }
@@ -445,7 +444,7 @@ function create_html_promocion(obj){
             for(var i=0, ilen=obj.productos.length; i<ilen; i++){
                 aux = get_producto(obj.productos[i].id_pro);
                 producto = document.createElement('div');
-                producto.className = 'prod_item font4';
+                producto.className = 'prod_item';
                 producto.innerHTML = obj.productos[i].cantidad + " " +aux.nombre;
                 listado.appendChild(producto);
             }
@@ -466,7 +465,7 @@ function promo_carros(producto, j){
     Div.className = 'promo_detalle_item clearfix';
     
     var Nombre = document.createElement('div');
-    Nombre.className = 'promo_detalle_nombre font4';
+    Nombre.className = 'promo_detalle_nombre';
 
 
     if(producto.nombre_carro != ""){
@@ -524,7 +523,7 @@ function promo_restantes(producto, j, tiene_pregunta){
     Div.className = 'restantes_detalle_item clearfix';
     
     var Nombre = document.createElement('div');
-    Nombre.className = 'restantes_detalle_nombre font3';
+    Nombre.className = 'restantes_detalle_nombre';
     if(producto.nombre_carro == ""){
         Nombre.innerHTML = producto.nombre;
     }else{
@@ -536,7 +535,7 @@ function promo_restantes(producto, j, tiene_pregunta){
     Acciones.className = 'restantes_detalle_acciones clearfix';
 
     var Precio = document.createElement('div');
-    Precio.className = 'precio font3';
+    Precio.className = 'precio';
     Precio.innerHTML = formatNumber.new(parseInt(producto.precio), "$");
     Acciones.appendChild(Precio);
     
@@ -680,7 +679,7 @@ function html_seleccionar_productos_categoria_promo(categoria, i, cantidad){
             pro_cat_item.appendChild(pro_cat_item_select);
             
             pro_cat_item_nombre = document.createElement('div');
-            pro_cat_item_nombre.className = 'pro_cat_item_nombre font3';
+            pro_cat_item_nombre.className = 'pro_cat_item_nombre';
             
             if(producto.nombre_carro != ""){
                 if(producto.numero > 0){
@@ -697,7 +696,7 @@ function html_seleccionar_productos_categoria_promo(categoria, i, cantidad){
                 }
                 pro_cat_item.appendChild(pro_cat_item_nombre);
                 pro_cat_item_descripcion = document.createElement('div');
-                pro_cat_item_descripcion.className = 'pro_cat_item_descripcion font4';
+                pro_cat_item_descripcion.className = 'pro_cat_item_descripcion';
                 pro_cat_item_descripcion.innerHTML = producto.descripcion;
                 pro_cat_item.appendChild(pro_cat_item_descripcion);
             }            
@@ -724,7 +723,7 @@ function html_preguntas_producto(i){
         e_pregunta.setAttribute('data-pos', k);
         
         var pregunta_titulo = document.createElement('div');
-        pregunta_titulo.className = 'pregunta_titulo font2';
+        pregunta_titulo.className = 'pregunta_titulo';
         pregunta_titulo.innerHTML = carro[i].preguntas[k].nombre;
         e_pregunta.appendChild(pregunta_titulo);
         
@@ -732,7 +731,7 @@ function html_preguntas_producto(i){
         for(var m=0, mlen=carro[i].preguntas[k].valores.length; m<mlen; m++){
             
             var titulo_v_pregunta = document.createElement('div');
-            titulo_v_pregunta.className = 'titulo_v_pregunta font4';
+            titulo_v_pregunta.className = 'titulo_v_pregunta';
             titulo_v_pregunta.innerHTML = carro[i].preguntas[k].valores[m].nombre;
                         
             var v_pregunta = document.createElement('div');
@@ -745,12 +744,12 @@ function html_preguntas_producto(i){
                 var n_pregunta = document.createElement('div');
                 if(carro[i].preguntas[k].valores[m].seleccionados){
                     if(carro[i].preguntas[k].valores[m].seleccionados.indexOf(carro[i].preguntas[k].valores[m].valores[n].trim()) != -1){
-                        n_pregunta.className = 'n_pregunta font3 selected';
+                        n_pregunta.className = 'n_pregunta selected';
                     }else{
-                        n_pregunta.className = 'n_pregunta font3';
+                        n_pregunta.className = 'n_pregunta';
                     }
                 }else{
-                    n_pregunta.className = 'n_pregunta font3';
+                    n_pregunta.className = 'n_pregunta';
                 }
                 n_pregunta.innerHTML = carro[i].preguntas[k].valores[m].valores[n];
                 n_pregunta.onclick = function(){ select_pregunta(this) };
