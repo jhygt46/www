@@ -359,8 +359,8 @@ function create_html_producto3(aux){
     }
 
     Divf.appendChild(Divm);
-    Div.appendChild(add_carro);
     Div.appendChild(Divf);
+    Div.appendChild(add_carro);
     return Div;
     
     
