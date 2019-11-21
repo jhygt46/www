@@ -587,3 +587,125 @@ body {
     }
 }
 /* MODALS PASO PROMOCION */
+
+
+
+/* MODALS PASO CARTA */
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .modal_carta {
+                    .cont_modal {
+                        .titulo {
+                            .cont_titulo {
+                                h1{}
+                                h2{}
+                            }
+                        }
+                        .close {}
+                        .cont_info {
+                            .info_modal {
+                                .lista_productos {
+                                    .producto {
+                                        .cont_producto{
+                                            .nombre{
+
+                                            }
+                                            .descripcion{
+
+                                            }
+                                            .precio{
+                                                
+                                            }
+                                        }
+                                        .carro{
+                                            .add_carro_btn{
+                                                .add_info{
+
+                                                }
+                                                .add_logo{
+
+                                                }
+                                            }
+                                            .add_carro_alert{
+
+                                            }
+                                        }
+                                    }
+                                    .producto2 {
+                                        table {
+                                            tr {
+                                                td {
+                                                    .cont_data {
+                                                        .nombre {
+
+                                                        }
+                                                        .descripcion {
+                                                            
+                                                        }
+                                                        .precio {
+                                                            
+                                                        }
+                                                    }
+                                                    .foto {
+
+                                                    }
+                                                    .carro{
+                                                        .add_carro_btn{
+                                                            .add_info{
+
+                                                            }
+                                                            .add_logo{
+
+                                                            }
+                                                        }
+                                                        .add_carro_alert{
+
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .producto3{
+                                        .cont_pr{
+                                            .cont_prod{
+                                                .nombre{
+
+                                                }
+                                                .descripcion{
+                                                    
+                                                }
+                                                .precio{
+                                                    
+                                                }
+                                            }
+                                        }
+                                        .carro{
+                                            .add_carro_btn{
+                                                .add_info{
+
+                                                }
+                                                .add_logo{
+
+                                                }
+                                            }
+                                            .add_carro_alert{
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .acciones {
+                            .confirmar{}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS PASO CARTA PENDIENTE */

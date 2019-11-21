@@ -294,7 +294,7 @@ function create_html_producto3(aux){
     var height = parseInt((widthpx - 20) * data.config.alto_pro / 100);
     var Div = create_element_class('producto3');
 
-    if(obj.image != ""){
+    if(aux.image != ""){
         Div.style.backgroundImage = 'url("/data/'+code+'/'+obj.image+'")';
     }
 
