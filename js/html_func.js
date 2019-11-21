@@ -359,7 +359,7 @@ function create_html_producto3(aux){
     }
 
     Divf.appendChild(Divm);
-    Divf.appendChild(add_carro);
+    Div.appendChild(add_carro);
     Div.appendChild(Divf);
     return Div;
     
