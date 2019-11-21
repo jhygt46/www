@@ -61,6 +61,8 @@ body {
                         max-width: 500px;
                         padding-top: $header_height;
                         .botones_principales {
+                            background-size: cover;
+                            margin-bottom: 5px;
                             .cont_bp{
                                 .cont_bpi{
                                     .nombre {}
