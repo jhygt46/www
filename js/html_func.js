@@ -294,16 +294,17 @@ function create_html_producto3(aux){
     
     var height = parseInt((widthpx - 20) * data.config.alto_pro / 100);
     var Div = create_element_class('producto3');
+    var Divf = create_element_class('pro_fondo');
 
     if(aux.image != ""){
-        Div.style.backgroundImage = 'url("/data/'+code+'/'+obj.image+'")';
+        Divf.style.backgroundImage = 'url("/data/'+code+'/'+obj.image+'")';
     }
 
     if(aux.disponible == 0){
-        Div.onclick = function(){ add_carro_producto(aux.id_pro, 0); };
+        Divf.onclick = function(){ add_carro_producto(aux.id_pro, 0); };
     }
     if(aux.disponible == 1){
-        Div.onclick = function(){ alert("Producto no disponible") };
+        Divf.onclick = function(){ alert("Producto no disponible") };
     }
 
     var Divm = create_element_class('cont_pr prin_alpha_1');
@@ -357,8 +358,9 @@ function create_html_producto3(aux){
         add_carro.innerHTML = 'Producto no Disponible';
     }
 
-    Div.appendChild(Divm);
-    Div.appendChild(add_carro);
+    Divf.appendChild(Divm);
+    Divf.appendChild(add_carro);
+    Div.appendChild(Divf);
     return Div;
     
     
