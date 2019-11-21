@@ -463,6 +463,7 @@ body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 table tr td .cont_data .descripcion {
   display: block;
   padding-left: 5px;
+  line-height: 12px;
 }
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 table tr td .cont_data .precio {
   display: block;
