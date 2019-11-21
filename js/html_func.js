@@ -164,6 +164,7 @@ function create_html_producto(aux){
     }
 
     var Divm = create_element_class('cont_producto');
+    var Divn = create_element_class('cont_info_pro valign');
 
     var nombre = create_element_class('nombre');
     if(aux.numero > 0){
@@ -181,10 +182,11 @@ function create_html_producto(aux){
     var precio = create_element_class('precio valign');
     precio.innerHTML = formatNumber.new(parseInt(aux.precio), "$");
 
-    Divm.appendChild(nombre);
-    Divm.appendChild(descripcion);
-    Divm.appendChild(precio);
+    Divn.appendChild(nombre);
+    Divn.appendChild(descripcion);
+    Divn.appendChild(precio);
 
+    Divm.appendChild(Divn);
     Div.appendChild(Divm);
 
     if(aux.disponible == 0){
@@ -198,7 +200,7 @@ function create_html_producto(aux){
         add_carro_btn1b.innerHTML = 'shopping_cart';
         add_carro_btn1.appendChild(add_carro_btn1a);
         add_carro_btn1.appendChild(add_carro_btn1b);
-        var add_carro_btn2 = create_element_class('add_carro_alert font5');
+        var add_carro_btn2 = create_element_class('add_carro_alert');
         add_carro.appendChild(add_carro_btn1);
         add_carro.appendChild(add_carro_btn2);
         // CARRO DE COMPRAS //

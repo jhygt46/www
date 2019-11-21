@@ -591,6 +591,12 @@ body {
 
 
 /* MODALS PASO CARTA */
+
+$producto_add_carro_background: "#900";
+$producto_add_carro_color: "#fff";
+$producto_add_carro_cont_background: "#ddd";
+$producto_cont_background: "#ddd";
+
 body {
     .contenedor {
         .modals{
@@ -609,18 +615,24 @@ body {
                                 .lista_productos {
                                     .producto {
                                         .cont_producto{
-                                            .nombre{
+                                            background: $producto_cont_background;
+                                            .cont_info_pro{
+                                                .nombre{
 
-                                            }
-                                            .descripcion{
+                                                }
+                                                .descripcion{
 
-                                            }
-                                            .precio{
-                                                
+                                                }
+                                                .precio{
+                                                    
+                                                }
                                             }
                                         }
                                         .carro{
+                                            background: $producto_add_carro_cont_background;
                                             .add_carro_btn{
+                                                background: $producto_add_carro_background;
+                                                color: $producto_add_carro_color;
                                                 .add_info{
 
                                                 }

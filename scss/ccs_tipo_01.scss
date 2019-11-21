@@ -729,33 +729,40 @@ body {
                                         margin-bottom: 5px;
                                         .cont_producto{
                                             padding: 10px;
-                                            .nombre{
-                                                padding-left: 75px;
-                                            }
-                                            .descripcion{
-                                                padding-left: 75px;
-                                            }
-                                            .precio{
-                                                width: 70px;
-                                                right: 10px;
-                                                text-align: right;
+                                            .cont_info_pro{
+                                                .nombre{
+                                                    padding-left: 75px;
+                                                }
+                                                .descripcion{
+                                                    padding-left: 75px;
+                                                }
+                                                .precio{
+                                                    width: 70px;
+                                                    right: 10px;
+                                                    text-align: right;
+                                                }
                                             }
                                         }
                                         .carro{
+                                            padding: 5px;
                                             .add_carro_btn{
+                                                padding: 2px;
                                                 .add_info{
-
+                                                    padding: 5px 30px 5px 5px;
                                                 }
                                                 .add_logo{
-
+                                                    width: 24px;
+                                                    height: 24px;
+                                                    right: 5px;
                                                 }
                                             }
                                             .add_carro_alert{
-
+                                                padding: 5px 0px 0px 10px;
                                             }
                                         }
                                     }
                                     .producto2 {
+                                        margin-bottom: 5px;
                                         table {
                                             tr {
                                                 td {
@@ -791,6 +798,7 @@ body {
                                         }
                                     }
                                     .producto3{
+                                        margin-bottom: 5px;
                                         .cont_pr{
                                             .cont_prod{
                                                 .nombre{

@@ -739,18 +739,22 @@ body {
                                     .producto {
                                         .cont_producto{
                                             position: relative;
-                                            .nombre{
+                                            .cont_info_pro{
+                                                .nombre{
 
-                                            }
-                                            .descripcion{
+                                                }
+                                                .descripcion{
 
-                                            }
-                                            .precio{
-                                                
+                                                }
+                                                .precio{
+                                                    
+                                                }
                                             }
                                         }
                                         .carro{
                                             .add_carro_btn{
+                                                float: left;
+                                                position: relative;
                                                 .add_info{
 
                                                 }
@@ -759,7 +763,7 @@ body {
                                                 }
                                             }
                                             .add_carro_alert{
-
+                                                float: left;
                                             }
                                         }
                                     }
