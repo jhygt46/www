@@ -1,80 +1,121 @@
-body{
+html {
+    height: 100%;
+    body {
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        .contenedor {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+    }
+}
+
+/* MENU LEFT */
+body {
     .contenedor {
         .menu_left {
+            width: 219px;
+            height: 100%;
+            top: 0px;
+            left: -220px;
+            position: fixed;
+            z-index: 2;
             .cont_menu_left{
+                width: 100%;
+                height: 100%;
+                position: relative;
                 .btn_toogle{
+                    width: 40px;
+                    height: 40px;
+                    right: -50px;
+                    font-size: 40px;
+                    position: absolute;
                 }
                 .menu_info{
-                    padding: 40px 20px 0px 20px;
+                    display: block;
                     h1{}
                     ul{
-                        padding-top: 50px;
-                        li{ padding: 5px 0px; border-bottom-style: solid; border-bottom-width: 1px }
+                        li{}
                     }
                 }
             }
         }
     }
 }
+/* MENU LEFT */
 
-$header_height: "130px";
-$footer_height: "10px";
-
-$padd_footer_fixed: "110px";
-$padd_footer_nofixed: "5px";
 
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
 body {
     .contenedor {
         .pagina {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            z-index: 1;
             .cont_pagina {
+                position: relative;
+                width: 100%;
+                height: 100%;
                 .header {
-                    height: $header_height;
-                    border-bottom-style: solid;
-                    border-bottom-width: 1px;
+                    width: 100%;
+                    top: 0px;
+                    left: 0px;
+                    z-index: 2;
                     .header_logo {
-                        img {}
+                        img {
+                            max-width: 100%;
+                        }
                     }
                     .menu_right {
-                        height: 40px;
-                        width: 40px;
-                        right: 20px;
-                        .shop { font-size: 36px; }
+                        position: absolute;
+                        z-index: 2;
+                        .shop {}
                         .cantcart {
-                            width: 26px;
-                            height: 26px;
-                            border-radius: 13px;
-                            top: 22px;
-                            left: -10px;
+                            position: absolute;
                             .cantcart_num{}
                         }
                     }
                     .cart_info{
-                        right: 20px;
-                        bottom: 15px;
+                        position: absolute;
+                        z-index: 2;
                     }
                 }
-                .footer { height: $footer_height; }
+                .footer {
+                    width: 100%;
+                    bottom: 0px;
+                    left: 0px;
+                    z-index: 2;
+                }
+                .fixed {
+                    position: fixed;
+                }
+                .absolute {
+                    position: absolute;
+                }
                 .contenido {
+                    width: 100%;
+                    z-index: 1;
                     .cont_contenido {
-                        width: 94%;
-                        max-width: 500px;
-                        padding-top: $header_height;
+                        margin: 0 auto;
+                        display: block;
                         .botones_principales {
+                            display: block;
                             .cont_bp{
+                                position: relative;
+                                width: 100%;
+                                height: 100%;
                                 .cont_bpi{
                                     .nombre {}
-                                    .descripcion { line-height: 15px; }
+                                    .descripcion {}
                                     .precio {}
                                 }
                             }
                         }
-                    }
-                    .padd_footer_fixed{
-                        padding-bottom: $padd_footer_fixed;
-                    }
-                    .padd_footer_nofixed{
-                        padding-bottom: $padd_footer_nofixed;
                     }
                 }
             }
@@ -83,51 +124,69 @@ body {
 }
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
 
-$modal_titulo_height: "80px";
-$modal_acciones_height: "55px";
-$modal_subtotal_bottom: "56px";
-$modal_subtotal_height: "50px";
 
-$modal_info_modal_padding1: "56px";
-$modal_info_modal_padding2: "106px";
 
 /* MODALS BASE */
 body {
     .contenedor {
         .modals{
-            background: rgba(0, 0, 0, 0.75);
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            z-index: 3;
+            display: none;
             .cont_modals {
+                width: 100%;
+                height: 100%;
+                position: relative;
                 .modal {
+                    position: absolute;
                     .cont_modal {
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
                         .titulo {
-                            border-bottom-style: solid;
-                            border-bottom-width: 1px;
-                            height: $modal_titulo_height;
+                            position: absolute;
+                            z-index: 2;
+                            width: 100%;
+                            top: 0px;
+                            left: 0px;
                             .cont_titulo{
-                                h1{}
-                                h2{}
+                                width: 100%;
+                                text-align: center;
+                                h1{
+                                    display: block;
+                                }
+                                h2{
+                                    display: block;
+                                }
                             }
                         }
-                        .close { width: 34px; height: 34px; top: 2px; right: 2px; font-size: 34px; }
+                        .close {
+                            position: absolute;
+                            z-index: 3;
+                        }
                         .cont_info {
-                            .info_modal {
-                                padding-top: $modal_titulo_height;
-                            }
-                            .padding_01 {
-                                padding-bottom: $modal_info_modal_padding1;
-                            }
-                            .padding_02 {
-                                padding-bottom: $modal_info_modal_padding2;
-                            }
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            overflow-y: auto;
+                            z-index: 1;
+                            .info_modal {}
+                            .padding_01 {}
+                            .padding_02 {}
                         }
                         .sub_total {
-                            bottom: $modal_subtotal_bottom;
-                            width: 100%;
-                            height: $modal_subtotal_height;
+                            position: absolute;
+                            z-index: 2;
+                            left: 0px;
                             .cont_subtotal {
+                                width: 100%;
+                                height: 100%;
+                                position: relative;
                                 .total_detalle{
-                                    text-align: right;
-                                    right: 6px;
                                     .paso_01_sub_total{}
                                     .paso_03_costo{}
                                     .paso_03_total{}
@@ -135,12 +194,12 @@ body {
                             }
                         }
                         .acciones {
-                            border-top-style: solid;
-                            border-top-width: 1px;
-                            height: $modal_acciones_height;
-                            .confirmar{
-                                padding: 5px 15px;
-                            }
+                            width: 100%;
+                            position: absolute;
+                            z-index: 2;
+                            left: 0px;
+                            bottom: 0px;
+                            .confirmar{}
                         }
                     }
                 }
@@ -151,12 +210,13 @@ body {
 /* MODALS BASE */
 
 
+
 /* MODALS PASO 01 CARRO */
 body {
     .contenedor {
         .modals{
             .cont_modals {
-                .modal {
+                .paso_01 {
                     .cont_modal {
                         .titulo {
                             .cont_titulo{
@@ -168,57 +228,33 @@ body {
                         .cont_info {
                             .info_modal {
                                 .process_carro {
-                                    padding: 10px;
                                     .process_carro_promo{
-                                        position: relative;
-                                        margin-bottom: 10px;
-                                        padding: 6px 6px 26px 6px;
                                         .promo_info{}
-                                        .promo_precio{
-                                            position: absolute;
-                                            bottom: 5px;
-                                            right: 5px;
-                                        }
-                                        .promo_delete{
-                                            position: absolute;
-                                            top: 0px;
-                                            right: 0px;
-                                            font-size: 30px;
-                                            width: 30px;
-                                            height: 30px;
-                                        }
+                                        .promo_precio{}
+                                        .promo_delete{}
                                         .promo_detalle{
-                                            padding-left: 10px;
-                                            padding-top: 10px;
                                             .promo_detalle_item{
                                                 .promo_detalle_nombre{
-                                                    width: calc(100% - 25px);
+                                                    float: left;
                                                 }
                                                 .promo_detalle_acciones{
-                                                    width: 25px;
-                                                    .accion{
-                                                        font-size: 25px;
-                                                    }
+                                                    float: left;
+                                                    .accion{}
                                                 }
                                             }
                                         }
                                     }
                                     .process_carro_restantes{
-                                        padding: 6px;
                                         .restantes_detalle_item{
-                                            margin-bottom: 6px;
-                                            padding: 5px 0px;
-                                            border-top-style: solid;
-                                            border-top-width: 1px;
                                             .restantes_detalle_nombre{
-                                                width: calc(100% - 120px);
+                                                float: left;
                                             }
                                             .restantes_detalle_acciones{
-                                                width: 120px;
-                                                .precio{ width: 76px; text-align: right; }
-                                                .espacio{ width: 22px }
-                                                .pregunta{ width: 22px }
-                                                .accion{ width: 22px }
+                                                float: left;
+                                                .precio{ float: left; }
+                                                .espacio{ float: left; }
+                                                .pregunta{ float: left; }
+                                                .accion{ float: left; }
                                             }
                                         }
                                     }
@@ -257,7 +293,7 @@ body {
                 .paso_02 {
                     .cont_modal {
                         .titulo {
-                            .cont_titulo {
+                            .cont_titulo{
                                 h1{}
                                 h2{}
                             }
@@ -266,14 +302,62 @@ body {
                         .cont_info {
                             .info_modal {
                                 .cont_direccion {
-                                    padding: 10px;
-                                    .direccion_opciones {
+                                    .direccion_opciones{
                                         .dir_op{
-                                            margin-bottom: 10px;
-                                            background-size: cover;
                                             .codir{
+                                                width: 100%;
+                                                height: 100%;
+                                                position: relative;
+                                                .cont_info_dir{
+                                                    .title{}
+                                                    .stitle{}
+                                                    .alert{}
+                                                }
+                                            }
+                                        }
+                                        .rlocal{}
+                                        .cdesp{}
+                                    }
+                                }
+                            }
+                        }
+                        .acciones {
+                            .confirmar{}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS PASO 02 CARRO */
+
+
+
+/* MODALS PASO 02A  CARRO */
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .paso_02 {
+                    .cont_modal {
+                        .titulo {
+                            .cont_titulo{
+                                h1{}
+                                h2{}
+                            }
+                        }
+                        .close {}
+                        .cont_info {
+                            .info_modal {
+                                .cont_direccion {
+                                    .direccion_opciones {
+                                        .dir_op {
+                                            .codir {
+                                                width: 100%;
+                                                height: 100%;
+                                                position: relative;
                                                 .cont_info_dir {
-                                                    left: 20px;
                                                     .title{}
                                                     .stitle{}
                                                     .alert{}
@@ -316,16 +400,16 @@ body {
                         .cont_info {
                             .info_modal {
                                 .cont_direccion {
-                                    padding: 10px;
                                     .direccion_op1 {
                                         .parent_locales {
-                                            padding-bottom: 10px;
                                             .dir_locales {
-                                                background-size: cover;
                                                 .cont_local {
+                                                    width: 100%;
+                                                    height: 100%;
+                                                    position: relative;
                                                     .left_acciones {
-                                                        width: calc(100% - 75px);
-                                                        left: 10px;
+                                                        position: absolute;
+                                                        height: 100%;
                                                         .local_info {
                                                             .title{}
                                                             .stitle{}
@@ -333,31 +417,18 @@ body {
                                                         }
                                                     }
                                                     .accioness {
-                                                        right: 10px;
-                                                        min-width: 36px;
-                                                        .accion {
-                                                            height: 33.33%;
-                                                            width: 36px;
-                                                            background-repeat: no-repeat;
-                                                            background-size: contain;
-                                                            background-position: center;
+                                                        height: 100%;
+                                                        .accion{ 
+                                                            display: block;
                                                         }
-                                                        .ver_tel {
-                                                            background-image: url('../_images/telefono.png');
-                                                        }
-                                                        .ver_whats {
-                                                            background-image: url('../_images/whatsapp.png');
-                                                        }
-                                                        .ver_mapa {
-                                                            background-image: url('../_images/mapa.png');
-                                                        }
+                                                        .ver_mapa{}
+                                                        .ver_whats{}
+                                                        .ver_tel{}
                                                     }
                                                 }
                                             }
                                             .cont_map {
-                                                display: none;
-                                                padding: 6px;
-                                                .dir_map{ height: 160px }
+                                                .dir_map{ width: 100%; }
                                             }
                                         }
                                     }
@@ -374,6 +445,7 @@ body {
     }
 }
 /* MODALS PASO 02A LOCALES CARRO */
+
 
 
 /* MODALS PASO 02B LOCALES CARRO */
@@ -434,53 +506,43 @@ body {
                         .cont_info {
                             .info_modal {
                                 .cont_final {
-                                    padding: 10px;
                                     .block_direccion {
-                                        margin-bottom: 10px;
                                         .item_direccion {
-                                            width: 50%;
+                                            float: left;
                                             h1{}
-                                            h2{ height: 30px; }
+                                            h2{}
                                         }
                                         .item_numero {
-                                            width: 25%;
+                                            float: left;
                                             h1{}
-                                            h2{ height: 30px; }
+                                            h2{}
                                         }
                                         .item_depto {
-                                            width: 25%;
+                                            float: left;
                                             h1{}
-                                            input{ height: 30px; border: 0px }
+                                            input{}
                                         }
                                     }
                                     .block_nombre_telefono {
-                                        margin-bottom: 10px;
                                         .item_nombre {
-                                            width: 50%;
                                             h1{}
-                                            input{ height: 30px; border: 0px }
+                                            input{}
                                         }
                                         .item_telefono {
-                                            width: 50%;
                                             h1{}
-                                            input{ height: 30px; border: 0px }
+                                            input{}
                                         }
                                     }
                                     .block_preguntas {
-                                        margin-bottom: 10px;
                                         h1{}
                                         .preguntas {
-                                            padding: 10px;
-                                            margin-top: 4px;
                                             .pregunta {
-                                                .pre_nom{ 
-                                                    width: 90%;
-                                                }
+                                                .pre_nom{ float: left  }
                                                 .pre_input {
-                                                    width: 10%;
-                                                    input{ width: 18px; height: 18px; margin-top: 2px }
+                                                    float: left;
+                                                    input{}
                                                 }
-                                                textarea{ width: 100%; height: 70px; border: 0px }
+                                                textarea{}
                                             }
                                         }
                                     }
@@ -526,63 +588,36 @@ body {
                         .cont_info {
                             .info_modal {
                                 .data_final {
-                                    padding: 10px;
-                                    .pedido_mensaje{ 
-                                        margin-bottom: 10px;
-                                        padding: 10px;
-                                    }
+                                    .pedido_mensaje{}
                                     .pedido_final {
                                         .cont_pedido {
                                             .estado {
-                                                width: 46%;
-                                                padding: 2%;
+                                                float: left;
                                                 h1{}
                                                 h2{}
                                             }
                                             .tiempo {
-                                                width: 46%;
-                                                padding: 2%;
+                                                float: left;
                                                 h1{}
                                                 h2{} 
                                             }
                                         }
-                                        .posicion{ height: 240px; }
-                                        .total{ padding: 2%; text-align: right; }
+                                        .posicion{}
+                                        .total{}
                                     }
-                                    .titulo_chat{
-                                        margin-top: 10px;
-                                    }
+                                    .titulo_chat{}
                                     .pedido_chat {
-                                        margin-top: 5px;
-                                        height: 135px;
+                                        position: relative;
                                         .mensajes {
-                                            width: 100%;
-                                            height: 100px;
-                                            top: 0px;
-                                            left: 0px;
-                                            overflow-y: auto;
-                                            .info_mensajes{
-                                                padding: 2%;
-                                            }
+                                            position: absolute;
+                                            .info_mensajes{}
                                         }
                                         .entrada {
-                                            width: calc(100% - 80px);
-                                            height: 30px;
-                                            border: 1px solid #ccc;
-                                            top: 104px;
-                                            left: 0px;
-                                            input{
-                                                padding: 0% 1%;
-                                                width: 98%;
-                                                height: 100%;
-                                                border: 0px;
-                                            }
+                                            position: absolute;
+                                            input{}
                                         }
                                         .enviar {
-                                            width: 72px;
-                                            right: 0px;
-                                            top: 105px;
-                                            height: 30px;
+                                            position: absolute;
                                             .enviar_txt{}
                                         }
                                     }
@@ -619,24 +654,11 @@ body {
                         .cont_info {
                             .info_modal {
                                 .s_pregunta {
-                                    padding: 10px;
                                     .e_pregunta {
-                                        margin-bottom: 10px;
                                         .pregunta_titulo{}
                                         .titulo_v_pregunta{}
                                         .v_pregunta{
-                                            margin-top: 10px;
-                                            border-top-style: solid;
-                                            border-top-width: 1px;
-                                            border-left-style: solid;
-                                            border-left-width: 1px;
-                                            border-right-style: solid;
-                                            border-right-width: 1px;
-                                            .n_pregunta{
-                                                padding: 10px;
-                                                border-bottom-style: solid;
-                                                border-bottom-width: 1px;
-                                            }
+                                            .n_pregunta{}
                                             .selected{}
                                         }
                                     }
@@ -673,24 +695,13 @@ body {
                         .cont_info {
                             .info_modal {
                                 .pro_cat_promo {
-                                    padding: 10px;
                                     .pro_cat_item {
-                                        padding: 10px 0px;
-                                        margin-top: 2px;
+                                        position: relative;
                                         .pro_cat_item_select {
-                                            width: 50px;
-                                            left: 10px;
-                                            select{
-                                                width: 100%;
-                                                height: 40px;
-                                            }
+                                            select{}
                                         }
-                                        .pro_cat_item_nombre{
-                                            padding-left: 70px;
-                                        }
-                                        .pro_cat_item_descripcion{
-                                            padding-left: 70px;
-                                        }
+                                        .pro_cat_item_nombre{}
+                                        .pro_cat_item_descripcion{}
                                     }
                                 }
                             }
@@ -726,43 +737,37 @@ body {
                             .info_modal {
                                 .lista_productos {
                                     .producto {
-                                        margin-bottom: 5px;
                                         .cont_producto{
-                                            padding: 10px;
+                                            position: relative;
                                             .cont_info_pro{
                                                 .nombre{
-                                                    padding-left: 75px;
+
                                                 }
                                                 .descripcion{
-                                                    padding-left: 75px;
+
                                                 }
                                                 .precio{
-                                                    width: 70px;
-                                                    right: 10px;
-                                                    text-align: right;
+                                                    
                                                 }
                                             }
                                         }
                                         .carro{
-                                            padding: 5px;
                                             .add_carro_btn{
-                                                padding: 2px;
+                                                float: left;
+                                                position: relative;
                                                 .add_info{
-                                                    padding: 5px 30px 5px 5px;
+
                                                 }
                                                 .add_logo{
-                                                    width: 24px;
-                                                    height: 24px;
-                                                    right: 5px;
+
                                                 }
                                             }
                                             .add_carro_alert{
-                                                padding: 5px 0px 0px 10px;
+                                                float: left;
                                             }
                                         }
                                     }
                                     .producto2 {
-                                        margin-bottom: 5px;
                                         table {
                                             tr {
                                                 td {
@@ -782,6 +787,8 @@ body {
                                                     }
                                                     .carro{
                                                         .add_carro_btn{
+                                                            float: left;
+                                                            position: relative;
                                                             .add_info{
 
                                                             }
@@ -790,7 +797,7 @@ body {
                                                             }
                                                         }
                                                         .add_carro_alert{
-
+                                                            float: left;
                                                         }
                                                     }
                                                 }
@@ -798,7 +805,6 @@ body {
                                         }
                                     }
                                     .producto3{
-                                        margin-bottom: 5px;
                                         .cont_pr{
                                             .cont_prod{
                                                 .nombre{
@@ -814,6 +820,8 @@ body {
                                         }
                                         .carro{
                                             .add_carro_btn{
+                                                float: left;
+                                                position: relative;
                                                 .add_info{
 
                                                 }
@@ -822,7 +830,7 @@ body {
                                                 }
                                             }
                                             .add_carro_alert{
-
+                                                float: left;
                                             }
                                         }
                                     }
@@ -839,3 +847,96 @@ body {
     }
 }
 /* MODALS PASO CARTA PENDIENTE */
+
+
+.prin_alpha_1 {
+    background: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0) 100%);
+}
+.prin_alpha_2 {
+    background: linear-gradient(90deg, gray 0%, rgba(128, 128, 128, 0) 100%);
+}
+.prin_alpha_3 {
+    background: linear-gradient(90deg, black 0%, rgba(0, 0, 0, 0) 100%);
+}
+.prin_alpha_4 {
+    background: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0.5) 100%);
+}
+
+
+
+
+// FINAL RESET //
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,span{
+	margin:0;
+	padding:0;
+	outline:none;
+}
+table{
+	width: 100%;
+}
+fieldset, img, abbr, acronym{
+	border: 0px;
+}
+address,caption,cite,code,dfn,th,var{
+	font-style: normal;
+	font-weight: normal;
+}
+ol,ul,dl{
+	list-style: none;
+}
+caption,th{
+	text-align: left;
+}
+h1,h2,h3,h4,h5,h6{
+	font-size: 1em;
+	font-size: 100%;
+	font-weight: normal;
+}
+a{
+	outline:none;
+}
+/*PROPIEDADES*******************************/
+.clearfix:after{
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+.clearfix{
+	display: inline-block;
+}
+/*\*/* html .clearfix {
+	height: 1%;
+}
+.clearfix {
+	display: block;
+}/**/
+.hide {
+    display: none;
+}
+.flotar_izq{
+	float:left;
+	display:inline;
+}
+.flotar_der{
+	float:right;
+	display:inline;
+}
+.vhalign{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.valign{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.halign{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}

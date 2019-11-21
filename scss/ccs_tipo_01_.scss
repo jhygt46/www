@@ -1,20 +1,15 @@
-$menu_left_color: "#941C80";
-$menu_left_linea: "#941C80";
-
-$menu_left_color_titulo: "#000";
-$menu_left_color_lista: "#000";
-$menu_left_color_lista_bottom: "#ddd";
-
 body{
     .contenedor {
         .menu_left {
-            border-right: 1px solid $menu_left_linea;
             .cont_menu_left{
-                .btn_toogle{ color: $menu_left_color; }
+                .btn_toogle{
+                }
                 .menu_info{
-                    h1{ color: $menu_left_color_titulo; }
+                    padding: 40px 20px 0px 20px;
+                    h1{}
                     ul{
-                        li{ color: $menu_left_color_lista; border-bottom-color: $menu_left_color_lista_bottom; }
+                        padding-top: 50px;
+                        li{ padding: 5px 0px; border-bottom-style: solid; border-bottom-width: 1px }
                     }
                 }
             }
@@ -22,12 +17,11 @@ body{
     }
 }
 
-$header_color: "#fff";
-$header_bottom: "#941C80";
-$header_cart_color: "#941C80";
-$header_cant_cart_color: "#F9DDF3";
-$header_cart_mensaje: "#F9DDF3";
+$header_height: "130px";
+$footer_height: "10px";
 
+$padd_footer_fixed: "110px";
+$padd_footer_nofixed: "5px";
 
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
 body {
@@ -35,32 +29,52 @@ body {
         .pagina {
             .cont_pagina {
                 .header {
-                    background: $header_color;
-                    border-bottom-color: $header_bottom;
+                    height: $header_height;
+                    border-bottom-style: solid;
+                    border-bottom-width: 1px;
                     .header_logo {
                         img {}
                     }
                     .menu_right {
-                        .shop { color: $header_cart_color; }
+                        height: 40px;
+                        width: 40px;
+                        right: 20px;
+                        .shop { font-size: 36px; }
                         .cantcart {
-                            background: $header_cant_cart_color;
+                            width: 26px;
+                            height: 26px;
+                            border-radius: 13px;
+                            top: 22px;
+                            left: -10px;
                             .cantcart_num{}
                         }
                     }
-                    .cart_info{ color: $header_cart_mensaje }
+                    .cart_info{
+                        right: 20px;
+                        bottom: 15px;
+                    }
                 }
-                .footer {}
+                .footer { height: $footer_height; }
                 .contenido {
                     .cont_contenido {
+                        width: 94%;
+                        max-width: 500px;
+                        padding-top: $header_height;
                         .botones_principales {
                             .cont_bp{
                                 .cont_bpi{
                                     .nombre {}
-                                    .descripcion {}
+                                    .descripcion { line-height: 15px; }
                                     .precio {}
                                 }
                             }
                         }
+                    }
+                    .padd_footer_fixed{
+                        padding-bottom: $padd_footer_fixed;
+                    }
+                    .padd_footer_nofixed{
+                        padding-bottom: $padd_footer_nofixed;
                     }
                 }
             }
@@ -69,36 +83,51 @@ body {
 }
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
 
-$modal_global_color: "#999";
-$modal_titulo_border_color: "#999";
-$modal_close_color: "#999";
-$modal_close_back: "none";
-$modal_acciones_border_color: "#999";
-$modal_acciones_background: "#ddd";
-$modal_subtotal_background: "#ddd";
+$modal_titulo_height: "80px";
+$modal_acciones_height: "55px";
+$modal_subtotal_bottom: "56px";
+$modal_subtotal_height: "50px";
+
+$modal_info_modal_padding1: "56px";
+$modal_info_modal_padding2: "106px";
+
 /* MODALS BASE */
 body {
     .contenedor {
         .modals{
+            background: rgba(0, 0, 0, 0.75);
             .cont_modals {
                 .modal {
-                    background: $modal_global_color;
                     .cont_modal {
                         .titulo {
-                            border-bottom-color: $modal_titulo_border_color;
+                            border-bottom-style: solid;
+                            border-bottom-width: 1px;
+                            height: $modal_titulo_height;
                             .cont_titulo{
                                 h1{}
                                 h2{}
                             }
                         }
-                        .close { color: $modal_close_color; background: $modal_close_back }
+                        .close { width: 34px; height: 34px; top: 2px; right: 2px; font-size: 34px; }
                         .cont_info {
-                            .info_modal{}
+                            .info_modal {
+                                padding-top: $modal_titulo_height;
+                            }
+                            .padding_01 {
+                                padding-bottom: $modal_info_modal_padding1;
+                            }
+                            .padding_02 {
+                                padding-bottom: $modal_info_modal_padding2;
+                            }
                         }
                         .sub_total {
-                            background: $modal_subtotal_background;
+                            bottom: $modal_subtotal_bottom;
+                            width: 100%;
+                            height: $modal_subtotal_height;
                             .cont_subtotal {
                                 .total_detalle{
+                                    text-align: right;
+                                    right: 6px;
                                     .paso_01_sub_total{}
                                     .paso_03_costo{}
                                     .paso_03_total{}
@@ -106,9 +135,12 @@ body {
                             }
                         }
                         .acciones {
-                            border-top-color: $modal_acciones_border_color;
-                            background: $modal_acciones_background;
-                            .confirmar{}
+                            border-top-style: solid;
+                            border-top-width: 1px;
+                            height: $modal_acciones_height;
+                            .confirmar{
+                                padding: 5px 15px;
+                            }
                         }
                     }
                 }
@@ -120,10 +152,6 @@ body {
 
 
 /* MODALS PASO 01 CARRO */
-
-$modal_carro_promo_background: "#f5f5f5";
-$modal_carro_border_color: "#ddd";
-
 body {
     .contenedor {
         .modals{
@@ -140,29 +168,57 @@ body {
                         .cont_info {
                             .info_modal {
                                 .process_carro {
+                                    padding: 10px;
                                     .process_carro_promo{
-                                        background: $modal_carro_promo_background;
+                                        position: relative;
+                                        margin-bottom: 10px;
+                                        padding: 6px 6px 26px 6px;
                                         .promo_info{}
-                                        .promo_precio{}
-                                        .promo_delete{}
+                                        .promo_precio{
+                                            position: absolute;
+                                            bottom: 5px;
+                                            right: 5px;
+                                        }
+                                        .promo_delete{
+                                            position: absolute;
+                                            top: 0px;
+                                            right: 0px;
+                                            font-size: 30px;
+                                            width: 30px;
+                                            height: 30px;
+                                        }
                                         .promo_detalle{
+                                            padding-left: 10px;
+                                            padding-top: 10px;
                                             .promo_detalle_item{
-                                                .promo_detalle_nombre{}
+                                                .promo_detalle_nombre{
+                                                    width: calc(100% - 25px);
+                                                }
                                                 .promo_detalle_acciones{
-                                                    .accion{}
+                                                    width: 25px;
+                                                    .accion{
+                                                        font-size: 25px;
+                                                    }
                                                 }
                                             }
                                         }
                                     }
                                     .process_carro_restantes{
+                                        padding: 6px;
                                         .restantes_detalle_item{
-                                            border-bottom-color: $modal_carro_border_color;
-                                            .restantes_detalle_nombre{}
+                                            margin-bottom: 6px;
+                                            padding: 5px 0px;
+                                            border-top-style: solid;
+                                            border-top-width: 1px;
+                                            .restantes_detalle_nombre{
+                                                width: calc(100% - 120px);
+                                            }
                                             .restantes_detalle_acciones{
-                                                .precio{}
-                                                .espacio{}
-                                                .pregunta{}
-                                                .accion{}
+                                                width: 120px;
+                                                .precio{ width: 76px; text-align: right; }
+                                                .espacio{ width: 22px }
+                                                .pregunta{ width: 22px }
+                                                .accion{ width: 22px }
                                             }
                                         }
                                     }
@@ -189,14 +245,11 @@ body {
         }
     }
 }
-
 /* MODALS PASO 01 CARRO */
 
+
+
 /* MODALS PASO 02 CARRO */
-
-$modal_carro_tipo_color: "#ddd";
-$modal_carro_tipo_alert: "#900";
-
 body {
     .contenedor {
         .modals{
@@ -213,14 +266,17 @@ body {
                         .cont_info {
                             .info_modal {
                                 .cont_direccion {
+                                    padding: 10px;
                                     .direccion_opciones {
                                         .dir_op{
-                                            background: $modal_carro_tipo_color;
+                                            margin-bottom: 10px;
+                                            background-size: cover;
                                             .codir{
                                                 .cont_info_dir {
+                                                    left: 20px;
                                                     .title{}
                                                     .stitle{}
-                                                    .alert{ color: $modal_carro_tipo_alert }
+                                                    .alert{}
                                                 }
                                             }
                                         }
@@ -244,9 +300,6 @@ body {
 
 
 /* MODALS PASO 02A LOCALES CARRO */
-
-$modal_local_map_color: "#ddd";
-
 body {
     .contenedor {
         .modals{
@@ -263,11 +316,16 @@ body {
                         .cont_info {
                             .info_modal {
                                 .cont_direccion {
+                                    padding: 10px;
                                     .direccion_op1 {
                                         .parent_locales {
+                                            padding-bottom: 10px;
                                             .dir_locales {
+                                                background-size: cover;
                                                 .cont_local {
                                                     .left_acciones {
+                                                        width: calc(100% - 75px);
+                                                        left: 10px;
                                                         .local_info {
                                                             .title{}
                                                             .stitle{}
@@ -275,16 +333,31 @@ body {
                                                         }
                                                     }
                                                     .accioness {
-                                                        .accion{}
-                                                        .ver_mapa{}
-                                                        .ver_whats{}
-                                                        .ver_tel{}
+                                                        right: 10px;
+                                                        min-width: 36px;
+                                                        .accion {
+                                                            height: 33.33%;
+                                                            width: 36px;
+                                                            background-repeat: no-repeat;
+                                                            background-size: contain;
+                                                            background-position: center;
+                                                        }
+                                                        .ver_tel {
+                                                            background-image: url('../_images/telefono.png');
+                                                        }
+                                                        .ver_whats {
+                                                            background-image: url('../_images/whatsapp.png');
+                                                        }
+                                                        .ver_mapa {
+                                                            background-image: url('../_images/mapa.png');
+                                                        }
                                                     }
                                                 }
                                             }
                                             .cont_map {
-                                                background: $modal_local_map_color;
-                                                .dir_map{}
+                                                display: none;
+                                                padding: 6px;
+                                                .dir_map{ height: 160px }
                                             }
                                         }
                                     }
@@ -361,39 +434,53 @@ body {
                         .cont_info {
                             .info_modal {
                                 .cont_final {
+                                    padding: 10px;
                                     .block_direccion {
+                                        margin-bottom: 10px;
                                         .item_direccion {
+                                            width: 50%;
                                             h1{}
-                                            h2{}
+                                            h2{ height: 30px; }
                                         }
                                         .item_numero {
+                                            width: 25%;
                                             h1{}
-                                            h2{}
+                                            h2{ height: 30px; }
                                         }
                                         .item_depto {
+                                            width: 25%;
                                             h1{}
-                                            input{}
+                                            input{ height: 30px; border: 0px }
                                         }
                                     }
                                     .block_nombre_telefono {
+                                        margin-bottom: 10px;
                                         .item_nombre {
+                                            width: 50%;
                                             h1{}
-                                            input{}
+                                            input{ height: 30px; border: 0px }
                                         }
                                         .item_telefono {
+                                            width: 50%;
                                             h1{}
-                                            input{}
+                                            input{ height: 30px; border: 0px }
                                         }
                                     }
                                     .block_preguntas {
+                                        margin-bottom: 10px;
                                         h1{}
                                         .preguntas {
+                                            padding: 10px;
+                                            margin-top: 4px;
                                             .pregunta {
-                                                .pre_nom{}
-                                                .pre_input {
-                                                    input{}
+                                                .pre_nom{ 
+                                                    width: 90%;
                                                 }
-                                                textarea{}
+                                                .pre_input {
+                                                    width: 10%;
+                                                    input{ width: 18px; height: 18px; margin-top: 2px }
+                                                }
+                                                textarea{ width: 100%; height: 70px; border: 0px }
                                             }
                                         }
                                     }
@@ -423,14 +510,6 @@ body {
 
 
 /* MODALS PASO 4 LOCALES CARRO */
-
-$modal_final_mensaje_background: "#fcc";
-$modal_final_mensaje_color: "#600";
-$modal_final_cont_background: "#ddd";
-$modal_final_btn_chat_background: "#999";
-$modal_final_btn_chat_color: "#fff";
-$modal_final_chat_background: "#fff";
-
 body {
     .contenedor {
         .modals{
@@ -447,39 +526,64 @@ body {
                         .cont_info {
                             .info_modal {
                                 .data_final {
-                                    .pedido_mensaje{
-                                        background: $modal_final_mensaje_background;
-                                        color: $modal_final_mensaje_color;
+                                    padding: 10px;
+                                    .pedido_mensaje{ 
+                                        margin-bottom: 10px;
+                                        padding: 10px;
                                     }
                                     .pedido_final {
-                                        background: $modal_final_cont_background;
                                         .cont_pedido {
                                             .estado {
+                                                width: 46%;
+                                                padding: 2%;
                                                 h1{}
                                                 h2{}
                                             }
                                             .tiempo {
+                                                width: 46%;
+                                                padding: 2%;
                                                 h1{}
                                                 h2{} 
                                             }
                                         }
-                                        .posicion{}
-                                        .total{}
+                                        .posicion{ height: 240px; }
+                                        .total{ padding: 2%; text-align: right; }
                                     }
-                                    .titulo_chat{}
+                                    .titulo_chat{
+                                        margin-top: 10px;
+                                    }
                                     .pedido_chat {
+                                        margin-top: 5px;
+                                        height: 135px;
                                         .mensajes {
-                                            background: $modal_final_chat_background;
-                                            .info_mensajes{}
+                                            width: 100%;
+                                            height: 100px;
+                                            top: 0px;
+                                            left: 0px;
+                                            overflow-y: auto;
+                                            .info_mensajes{
+                                                padding: 2%;
+                                            }
                                         }
                                         .entrada {
-                                            input{}
+                                            width: calc(100% - 80px);
+                                            height: 30px;
+                                            border: 1px solid #ccc;
+                                            top: 104px;
+                                            left: 0px;
+                                            input{
+                                                padding: 0% 1%;
+                                                width: 98%;
+                                                height: 100%;
+                                                border: 0px;
+                                            }
                                         }
                                         .enviar {
-                                            .enviar_txt {
-                                                background: $modal_final_btn_chat_background;
-                                                color: $modal_final_btn_chat_color;
-                                            }
+                                            width: 72px;
+                                            right: 0px;
+                                            top: 105px;
+                                            height: 30px;
+                                            .enviar_txt{}
                                         }
                                     }
                                 }
@@ -499,10 +603,6 @@ body {
 
 
 /* MODALS PASO PREGUNTAS */
-
-$modal_preguntas_border_color: "#ccc";
-$modal_preguntas_selected_color: "#ccc";
-
 body {
     .contenedor {
         .modals{
@@ -519,19 +619,25 @@ body {
                         .cont_info {
                             .info_modal {
                                 .s_pregunta {
+                                    padding: 10px;
                                     .e_pregunta {
+                                        margin-bottom: 10px;
                                         .pregunta_titulo{}
                                         .titulo_v_pregunta{}
                                         .v_pregunta{
-                                            border-top-color: $modal_preguntas_border_color;
-                                            border-left-color: $modal_preguntas_border_color;
-                                            border-right-color: $modal_preguntas_border_color;
+                                            margin-top: 10px;
+                                            border-top-style: solid;
+                                            border-top-width: 1px;
+                                            border-left-style: solid;
+                                            border-left-width: 1px;
+                                            border-right-style: solid;
+                                            border-right-width: 1px;
                                             .n_pregunta{
-                                                border-bottom-color: $modal_preguntas_border_color;
+                                                padding: 10px;
+                                                border-bottom-style: solid;
+                                                border-bottom-width: 1px;
                                             }
-                                            .selected{
-                                                background: $modal_preguntas_selected_color;
-                                            }
+                                            .selected{}
                                         }
                                     }
                                 }
@@ -567,12 +673,24 @@ body {
                         .cont_info {
                             .info_modal {
                                 .pro_cat_promo {
+                                    padding: 10px;
                                     .pro_cat_item {
+                                        padding: 10px 0px;
+                                        margin-top: 2px;
                                         .pro_cat_item_select {
-                                            select{}
+                                            width: 50px;
+                                            left: 10px;
+                                            select{
+                                                width: 100%;
+                                                height: 40px;
+                                            }
                                         }
-                                        .pro_cat_item_nombre{}
-                                        .pro_cat_item_descripcion{}
+                                        .pro_cat_item_nombre{
+                                            padding-left: 70px;
+                                        }
+                                        .pro_cat_item_descripcion{
+                                            padding-left: 70px;
+                                        }
                                     }
                                 }
                             }
@@ -591,12 +709,6 @@ body {
 
 
 /* MODALS PASO CARTA */
-
-$producto_add_carro_background: "#900";
-$producto_add_carro_color: "#fff";
-$producto_add_carro_cont_background: "#ddd";
-$producto_cont_background: "#ddd";
-
 body {
     .contenedor {
         .modals{
@@ -614,38 +726,45 @@ body {
                             .info_modal {
                                 .lista_productos {
                                     .producto {
+                                        margin-bottom: 5px;
                                         .cont_producto{
-                                            background: $producto_cont_background;
+                                            padding: 10px;
+                                            min-height: 60px;
                                             .cont_info_pro{
+                                                width: calc(100% - 20px);
                                                 .nombre{
-
+                                                    padding-left: 75px;
                                                 }
                                                 .descripcion{
-
+                                                    padding-left: 75px;
                                                 }
                                                 .precio{
-                                                    
+                                                    width: 70px;
+                                                    right: 10px;
+                                                    text-align: right;
                                                 }
                                             }
                                         }
                                         .carro{
-                                            background: $producto_add_carro_cont_background;
+                                            padding: 5px;
                                             .add_carro_btn{
-                                                background: $producto_add_carro_background;
-                                                color: $producto_add_carro_color;
+                                                padding: 2px;
                                                 .add_info{
-
+                                                    padding: 5px 30px 5px 5px;
                                                 }
                                                 .add_logo{
-
+                                                    width: 24px;
+                                                    height: 24px;
+                                                    right: 5px;
                                                 }
                                             }
                                             .add_carro_alert{
-
+                                                padding: 5px 0px 0px 10px;
                                             }
                                         }
                                     }
                                     .producto2 {
+                                        margin-bottom: 5px;
                                         table {
                                             tr {
                                                 td {
@@ -681,6 +800,7 @@ body {
                                         }
                                     }
                                     .producto3{
+                                        margin-bottom: 5px;
                                         .cont_pr{
                                             .cont_prod{
                                                 .nombre{
