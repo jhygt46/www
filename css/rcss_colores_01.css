@@ -1,5 +1,6 @@
 body .contenedor .menu_left {
   border-right: 1px solid #941C80;
+  background: #fff;
 }
 body .contenedor .menu_left .cont_menu_left .btn_toogle {
   color: #941C80;

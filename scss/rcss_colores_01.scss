@@ -4,11 +4,13 @@ $menu_left_linea: #941C80;
 $menu_left_color_titulo: #000;
 $menu_left_color_lista: #000;
 $menu_left_color_lista_bottom: #ddd;
+$menu_background: #fff;
 
 body{
     .contenedor {
         .menu_left {
             border-right: 1px solid $menu_left_linea;
+            background: $menu_background;
             .cont_menu_left{
                 .btn_toogle{ color: $menu_left_color; }
                 .menu_info{
