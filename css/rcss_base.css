@@ -305,6 +305,9 @@ body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 table tr td .carro .add_carro_alert {
   float: left;
 }
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto3 .pro_fondo .cont_pr {
+  position: relative;
+}
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto3 .carro .add_carro_btn {
   float: left;
   position: relative;
