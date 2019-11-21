@@ -3,6 +3,7 @@ body{
         .menu_left {
             .cont_menu_left{
                 .btn_toogle{
+                    top: 40px;
                 }
                 .menu_info{
                     padding: 40px 20px 0px 20px;
@@ -65,6 +66,8 @@ body {
                             margin-top: 5px;
                             .cont_bp{
                                 .cont_bpi{
+                                    width: 94%;
+                                    padding: 0% 3%;
                                     .nombre {}
                                     .descripcion { line-height: 15px; }
                                     .precio {}
