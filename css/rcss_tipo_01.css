@@ -455,6 +455,20 @@ body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 {
   margin-bottom: 5px;
 }
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 table tr td .cont_data .nombre {
+  display: block;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 table tr td .cont_data .descripcion {
+  display: block;
+  padding-left: 5px;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 table tr td .cont_data .precio {
+  display: block;
+  padding-left: 5px;
+  padding-bottom: 5px;
+}
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 table tr td .carro {
   padding: 5px;
 }

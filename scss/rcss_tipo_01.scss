@@ -776,13 +776,18 @@ body {
                                                 td {
                                                     .cont_data {
                                                         .nombre {
-
+                                                            display: block;
+                                                            padding-left: 5px;
+                                                            padding-top: 5px;
                                                         }
                                                         .descripcion {
-                                                            
+                                                            display: block;
+                                                            padding-left: 5px;
                                                         }
                                                         .precio {
-                                                            
+                                                            display: block;
+                                                            padding-left: 5px;
+                                                            padding-bottom: 5px;
                                                         }
                                                     }
                                                     .foto {
