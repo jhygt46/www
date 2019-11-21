@@ -220,18 +220,6 @@ function create_html_producto2(aux){
     var Div = document.createElement('div');
     Div.className = 'producto2';
 
-    if(aux.disponible == 0){
-        if(tipo_add_carro == 0){
-            Div.onclick = function(){ add_carro_producto(aux.id_pro, 0) };
-        }
-        if(tipo_add_carro == 1){
-            Div.onclick = function(){ mostrar_add_carro(this) };
-        }
-    }
-    if(aux.disponible == 1){
-        Div.onclick = function(){ mostrar_add_carro(this) };
-    }
-
     var Divm = create_element_class('cont_pro clearfix');
 
     if(height > 100){
@@ -267,7 +255,7 @@ function create_html_producto2(aux){
 
     if(aux.disponible == 0){
         // CARRO DE COMPRAS //
-        var add_carro = create_element_class('carro clearfix');
+        var add_carro = create_element_class('mcarro carro clearfix');
         var add_carro_btn1 = create_element_class('add_carro_btn');
         add_carro_btn1.onclick = function(){ mostrar_mensaje(this); add_carro_producto(aux.id_pro, 1) };
         var add_carro_btn1a = create_element_class('add_info');
@@ -282,11 +270,11 @@ function create_html_producto2(aux){
         // CARRO DE COMPRAS //
     }
     if(aux.disponible == 1){
-        var add_carro = create_element_class('carro_no');
+        var add_carro = create_element_class('mcarro carro_no');
         add_carro.innerHTML = 'Producto no Disponible';
     }
 
-    Div.appendChild(tabla(cont_data, foto, add_carro));
+    Div.appendChild(tabla(cont_data, foto, add_carro, aux));
     return Div;
     
 }
@@ -366,7 +354,7 @@ function create_html_producto3(aux){
     
 }
 
-function tabla(cont_data, pro_foto, add_carro){
+function tabla(cont_data, pro_foto, add_carro, aux){
 
     var tbl = document.createElement('table');
     tbl.setAttribute('border', '0');
@@ -374,6 +362,19 @@ function tabla(cont_data, pro_foto, add_carro){
     tbl.setAttribute("cellpadding", 0)
     var tbdy = document.createElement('tbody');
     var tr1 = document.createElement('tr');
+
+    if(aux.disponible == 0){
+        if(tipo_add_carro == 0){
+            tr1.onclick = function(){ add_carro_producto(aux.id_pro, 0) };
+        }
+        if(tipo_add_carro == 1){
+            tr1.onclick = function(){ mostrar_add_carro(this) };
+        }
+    }
+    if(aux.disponible == 1){
+        tr1.onclick = function(){ mostrar_add_carro(this) };
+    }
+    
     var td1 = document.createElement('td');
     td1.setAttribute("valign", "middle");
     var td2 = document.createElement('td');

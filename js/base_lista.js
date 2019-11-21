@@ -1448,7 +1448,7 @@ function volver_tipo_despacho(){
     
 }
 function mostrar_add_carro(that){
-    $(that).find('.mostrar_add_carro').show();
+    $(that).parent().find('.mcarro').show();
 }
 function mostrar_mensaje(that){
     var element = $(that).parent().find('.add_carro_alert');
