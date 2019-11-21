@@ -1,9 +1,9 @@
-$menu_left_color: "#941C80";
-$menu_left_linea: "#941C80";
+$menu_left_color: #941C80;
+$menu_left_linea: #941C80;
 
-$menu_left_color_titulo: "#000";
-$menu_left_color_lista: "#000";
-$menu_left_color_lista_bottom: "#ddd";
+$menu_left_color_titulo: #000;
+$menu_left_color_lista: #000;
+$menu_left_color_lista_bottom: #ddd;
 
 body{
     .contenedor {
@@ -22,11 +22,11 @@ body{
     }
 }
 
-$header_color: "#fff";
-$header_bottom: "#941C80";
-$header_cart_color: "#941C80";
-$header_cant_cart_color: "#F9DDF3";
-$header_cart_mensaje: "#F9DDF3";
+$header_color: #fff;
+$header_bottom: #941C80;
+$header_cart_color: #941C80;
+$header_cant_cart_color: #F9DDF3;
+$header_cart_mensaje: #F9DDF3;
 
 
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
@@ -69,13 +69,13 @@ body {
 }
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
 
-$modal_global_color: "#999";
-$modal_titulo_border_color: "#999";
-$modal_close_color: "#999";
-$modal_close_back: "none";
-$modal_acciones_border_color: "#999";
-$modal_acciones_background: "#ddd";
-$modal_subtotal_background: "#ddd";
+$modal_global_color: #999;
+$modal_titulo_border_color: #999;
+$modal_close_color: #999;
+$modal_close_back: none;
+$modal_acciones_border_color: #999;
+$modal_acciones_background: #ddd;
+$modal_subtotal_background: #ddd;
 /* MODALS BASE */
 body {
     .contenedor {
@@ -119,10 +119,11 @@ body {
 /* MODALS BASE */
 
 
+
 /* MODALS PASO 01 CARRO */
 
-$modal_carro_promo_background: "#f5f5f5";
-$modal_carro_border_color: "#ddd";
+$modal_carro_promo_background: #f5f5f5;
+$modal_carro_border_color: #ddd;
 
 body {
     .contenedor {
@@ -192,10 +193,12 @@ body {
 
 /* MODALS PASO 01 CARRO */
 
+
+
 /* MODALS PASO 02 CARRO */
 
-$modal_carro_tipo_color: "#ddd";
-$modal_carro_tipo_alert: "#900";
+$modal_carro_tipo_color: #ddd;
+$modal_carro_tipo_alert: #900;
 
 body {
     .contenedor {
@@ -245,7 +248,7 @@ body {
 
 /* MODALS PASO 02A LOCALES CARRO */
 
-$modal_local_map_color: "#ddd";
+$modal_local_map_color: #ddd;
 
 body {
     .contenedor {
@@ -301,6 +304,7 @@ body {
     }
 }
 /* MODALS PASO 02A LOCALES CARRO */
+
 
 
 /* MODALS PASO 02B LOCALES CARRO */
@@ -424,12 +428,12 @@ body {
 
 /* MODALS PASO 4 LOCALES CARRO */
 
-$modal_final_mensaje_background: "#fcc";
-$modal_final_mensaje_color: "#600";
-$modal_final_cont_background: "#ddd";
-$modal_final_btn_chat_background: "#999";
-$modal_final_btn_chat_color: "#fff";
-$modal_final_chat_background: "#fff";
+$modal_final_mensaje_background: #fcc;
+$modal_final_mensaje_color: #600;
+$modal_final_cont_background: #ddd;
+$modal_final_btn_chat_background: #999;
+$modal_final_btn_chat_color: #fff;
+$modal_final_chat_background: #fff;
 
 body {
     .contenedor {
@@ -500,8 +504,8 @@ body {
 
 /* MODALS PASO PREGUNTAS */
 
-$modal_preguntas_border_color: "#ccc";
-$modal_preguntas_selected_color: "#ccc";
+$modal_preguntas_border_color: #ccc;
+$modal_preguntas_selected_color: #ccc;
 
 body {
     .contenedor {
@@ -592,20 +596,20 @@ body {
 
 /* MODALS PASO CARTA */
 
-$producto_add_carro_background: "#900";
-$producto_add_carro_color: "#fff";
-$producto_add_carro_cont_background: "#ddd";
-$producto_cont_background: "#ddd";
+$producto_add_carro_background: #900;
+$producto_add_carro_color: #fff;
+$producto_add_carro_cont_background: #ddd;
+$producto_cont_background: #ddd;
 
-$producto2_add_carro_background: "#900";
-$producto2_add_carro_color: "#fff";
-$producto2_add_carro_cont_background: "#ddd";
-$producto2_cont_background: "#ddd";
+$producto2_add_carro_background: #900;
+$producto2_add_carro_color: #fff;
+$producto2_add_carro_cont_background: #ddd;
+$producto2_cont_background: #ddd;
 
-$producto3_add_carro_background: "#900";
-$producto3_add_carro_color: "#fff";
-$producto3_add_carro_cont_background: "#ddd";
-$producto3_cont_background: "#ddd";
+$producto3_add_carro_background: #900;
+$producto3_add_carro_color: #fff;
+$producto3_add_carro_cont_background: #ddd;
+$producto3_cont_background: #ddd;
 
 body {
     .contenedor {

@@ -1,5 +1,5 @@
-$menu_left_titulo: "20px";
-$menu_left_btns: "18px";
+$menu_left_titulo: 20px;
+$menu_left_btns: 18px;
 
 
 body {
@@ -18,8 +18,8 @@ body {
     }
 }
 
-$header_cant_cart: "14px";
-$header_cart_mensaje: "12px";
+$header_cant_cart: 14px;
+$header_cart_mensaje: 12px;
 
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
 body {
@@ -58,12 +58,12 @@ body {
 }
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
 
-$modal_global_titulo: "20px";
-$modal_global_subtitulo: "20px";
-$modal_subtotal: "20px";
-$modal_costo: "20px";
-$modal_total: "20px";
-$modal_confirmar: "16px";
+$modal_global_titulo: 20px;
+$modal_global_subtitulo: 20px;
+$modal_subtotal: 20px;
+$modal_costo: 20px;
+$modal_total: 20px;
+$modal_confirmar: 16px;
 
 /* MODALS BASE */
 body {
@@ -105,11 +105,11 @@ body {
 
 /* MODALS PASO 01 CARRO */
 
-$modal_carro_promo_titulo: "22px";
-$modal_carro_promo_precio: "22px";
-$modal_carro_promo_nombre: "16px";
-$modal_carro_restantes_nombre: "18px";
-$modal_carro_restantes_precio: "18px";
+$modal_carro_promo_titulo: 22px;
+$modal_carro_promo_precio: 22px;
+$modal_carro_promo_nombre: 16px;
+$modal_carro_restantes_nombre: 18px;
+$modal_carro_restantes_precio: 18px;
 
 body {
     .contenedor {
@@ -185,11 +185,13 @@ body {
 
 /* MODALS PASO 01 CARRO */
 
+
+
 /* MODALS PASO 02 CARRO */
 
-$modal_dir_titulo: "20px";
-$modal_dir_subtitulo: "18px";
-$modal_dir_alert: "16px";
+$modal_dir_titulo: 20px;
+$modal_dir_subtitulo: 18px;
+$modal_dir_alert: 16px;
 
 body {
     .contenedor {
@@ -233,6 +235,7 @@ body {
     }
 }
 /* MODALS PASO 02 CARRO */
+
 
 
 /* MODALS PASO 02A LOCALES CARRO */
@@ -289,6 +292,7 @@ body {
     }
 }
 /* MODALS PASO 02A LOCALES CARRO */
+
 
 
 /* MODALS PASO 02B LOCALES CARRO */
