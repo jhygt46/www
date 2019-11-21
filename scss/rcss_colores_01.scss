@@ -73,7 +73,7 @@ body {
 }
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
 
-$modal_global_color: #999;
+$modal_global_color: #eee;
 $modal_titulo_border_color: #999;
 $modal_close_color: #999;
 $modal_close_back: none;
@@ -163,7 +163,7 @@ body {
                                     }
                                     .process_carro_restantes{
                                         .restantes_detalle_item{
-                                            border-bottom-color: $modal_carro_border_color;
+                                            border-top-color: $modal_carro_border_color;
                                             .restantes_detalle_nombre{}
                                             .restantes_detalle_acciones{
                                                 .precio{}
