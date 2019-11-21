@@ -157,7 +157,6 @@ function imprimir_productos_modal(id){
         for(var j=0, jlen=productos.length; j<jlen; j++){
             var producto = get_producto(productos[j]);
             if(producto.disponible != 2 && categoria.detalle_prods == 0){
-                console.log(producto);
                 if(producto.tipo == 0){
                     html.append(create_html_producto(producto));
                 }
@@ -1130,8 +1129,7 @@ function enviar_contacto(){
                                 type: "POST",
                                 data: send,
                                 success: function(res){
-                                    
-                                    console.log(res);
+
                                     $('#contacto_nombre').val("");
                                     $('#contacto_telefono').val("");
                                     $('#contacto_correo').val("");

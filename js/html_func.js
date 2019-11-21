@@ -1,7 +1,6 @@
 // IMPRIME CATEGORIAS Y PAGINAS EN HOME //
 function html_home_categorias(obj, num){
 
-    //console.log(obj);
     var Div = document.createElement('div');
     Div.className = 'botones_principales';
     
@@ -57,8 +56,6 @@ function html_paginas(pagina){
 
 // HTML MODALS //
 function create_html_categorias(obj){
-
-    //console.log(obj);
 
     var Div = document.createElement('div');
     Div.className = 'categoria';
