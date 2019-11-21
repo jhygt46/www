@@ -535,6 +535,9 @@ body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_
   padding: 5px;
   display: none;
 }
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias {
+  padding: 10px;
+}
 /* MODALS PASO CARTA PENDIENTE */
 
 /*# sourceMappingURL=rcss_tipo_01.css.map */
