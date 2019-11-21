@@ -50,6 +50,10 @@ body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_princi
   background-size: cover;
   margin-top: 5px;
 }
+body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .cont_bpi {
+  width: 80%;
+  left: 3%;
+}
 body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .cont_bpi .descripcion {
   line-height: 15px;
 }
