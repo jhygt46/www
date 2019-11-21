@@ -736,7 +736,7 @@ body {
                                         margin-bottom: 5px;
                                         .cont_producto{
                                             padding: 10px;
-                                            min-height: 60px;
+                                            min-height: 80px;
                                             .cont_info_pro{
                                                 width: calc(100% - 20px);
                                                 .nombre{
@@ -830,6 +830,7 @@ body {
                                         margin-bottom: 5px;
                                         .pro_fondo {
                                             .cont_pr {
+                                                min-height: 80px;
                                                 .cont_prod {
                                                     width: 75%;
                                                     left: 5px;
@@ -873,7 +874,7 @@ body {
                                     padding: 10px;
                                     .promocion{
                                         .cont_fondo{
-                                            
+
                                         }
                                     }
                                 }
