@@ -80,6 +80,7 @@ $modal_close_back: none;
 $modal_acciones_border_color: #999;
 $modal_acciones_background: #ddd;
 $modal_subtotal_background: #ddd;
+$moda_titulo_background: #f5f5f5;
 /* MODALS BASE */
 body {
     .contenedor {
@@ -89,6 +90,7 @@ body {
                     background: $modal_global_color;
                     .cont_modal {
                         .titulo {
+                            background: $moda_titulo_background;
                             border-bottom-color: $modal_titulo_border_color;
                             .cont_titulo{
                                 h1{}

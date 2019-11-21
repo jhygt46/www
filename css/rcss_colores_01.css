@@ -36,6 +36,7 @@ body .contenedor .modals .cont_modals .modal {
   background: #999;
 }
 body .contenedor .modals .cont_modals .modal .cont_modal .titulo {
+  background: #f5f5f5;
   border-bottom-color: #999;
 }
 body .contenedor .modals .cont_modals .modal .cont_modal .close {
