@@ -45,7 +45,7 @@ body .contenedor .pagina .cont_pagina .contenido .cont_contenido {
 }
 body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales {
   background-size: cover;
-  margin-bottom: 5px;
+  margin-top: 5px;
 }
 body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .cont_bpi .descripcion {
   line-height: 15px;

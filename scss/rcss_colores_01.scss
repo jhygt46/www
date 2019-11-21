@@ -27,6 +27,7 @@ $header_bottom: #941C80;
 $header_cart_color: #941C80;
 $header_cant_cart_color: #F9DDF3;
 $header_cart_mensaje: #F9DDF3;
+$contenido_background: #e8e8e8;
 
 
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
@@ -51,6 +52,7 @@ body {
                 }
                 .footer {}
                 .contenido {
+                    background: $contenido_background;
                     .cont_contenido {
                         .botones_principales {
                             .cont_bp{

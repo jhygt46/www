@@ -917,6 +917,16 @@ a{
 .hide {
     display: none;
 }
+::-webkit-scrollbar {
+    width: 5px;
+    height: 0px;
+}
+::-webkit-scrollbar-track-piece {
+    background: #eee;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
 .flotar_izq{
 	float:left;
 	display:inline;
