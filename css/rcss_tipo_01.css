@@ -414,6 +414,9 @@ body .contenedor .modals .cont_modals .modal_productos_promo .cont_modal .cont_i
 }
 /* MODALS PASO PROMOCION */
 /* MODALS PASO CARTA */
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos {
+  padding: 10px;
+}
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto {
   margin-bottom: 5px;
 }
