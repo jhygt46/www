@@ -1,0 +1,452 @@
+body .contenedor .menu_left .cont_menu_left .menu_info {
+  padding: 40px 20px 0px 20px;
+}
+body .contenedor .menu_left .cont_menu_left .menu_info ul {
+  padding-top: 50px;
+}
+body .contenedor .menu_left .cont_menu_left .menu_info ul li {
+  padding: 5px 0px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+
+/* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
+body .contenedor .pagina .cont_pagina .header {
+  height: 130px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+body .contenedor .pagina .cont_pagina .header .menu_right {
+  height: 40px;
+  width: 40px;
+  right: 20px;
+}
+body .contenedor .pagina .cont_pagina .header .menu_right .shop {
+  font-size: 36px;
+}
+body .contenedor .pagina .cont_pagina .header .menu_right .cantcart {
+  width: 26px;
+  height: 26px;
+  border-radius: 13px;
+  top: 22px;
+  left: -10px;
+}
+body .contenedor .pagina .cont_pagina .header .cart_info {
+  right: 20px;
+  bottom: 15px;
+}
+body .contenedor .pagina .cont_pagina .footer {
+  height: 10px;
+}
+body .contenedor .pagina .cont_pagina .contenido .cont_contenido {
+  width: 94%;
+  max-width: 500px;
+  padding-top: 130px;
+}
+body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .cont_bpi .descripcion {
+  line-height: 15px;
+}
+body .contenedor .pagina .cont_pagina .contenido .padd_footer_fixed {
+  padding-bottom: 110px;
+}
+body .contenedor .pagina .cont_pagina .contenido .padd_footer_nofixed {
+  padding-bottom: 5px;
+}
+
+/* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
+/* MODALS BASE */
+body .contenedor .modals {
+  background: rgba(0, 0, 0, 0.75);
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .titulo {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  height: 80px;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .close {
+  width: 34px;
+  height: 34px;
+  top: 2px;
+  right: 2px;
+  font-size: 34px;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal {
+  padding-top: 80px;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .padding_01 {
+  padding-bottom: 56px;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .padding_02 {
+  padding-bottom: 106px;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .sub_total {
+  bottom: 56px;
+  width: 100%;
+  height: 50px;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .sub_total .cont_subtotal .total_detalle {
+  text-align: right;
+  right: 6px;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .acciones {
+  border-top-style: solid;
+  border-top-width: 1px;
+  height: 55px;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .acciones .confirmar {
+  padding: 5px 15px;
+}
+
+/* MODALS BASE */
+/* MODALS PASO 01 CARRO */
+body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro {
+  padding: 10px;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_promo {
+  position: relative;
+  margin-bottom: 10px;
+  padding: 6px 6px 26px 6px;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_promo .promo_precio {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_promo .promo_delete {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_promo .promo_detalle {
+  padding-left: 10px;
+  padding-top: 10px;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_promo .promo_detalle .promo_detalle_item .promo_detalle_nombre {
+  width: calc(100% - 25px);
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_promo .promo_detalle .promo_detalle_item .promo_detalle_acciones {
+  width: 25px;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_promo .promo_detalle .promo_detalle_item .promo_detalle_acciones .accion {
+  font-size: 25px;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_restantes {
+  padding: 6px;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_restantes .restantes_detalle_item {
+  margin-bottom: 6px;
+  padding: 5px 0px;
+  border-top-style: solid;
+  border-top-width: 1px;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_nombre {
+  width: calc(100% - 120px);
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones {
+  width: 120px;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones .precio {
+  width: 76px;
+  text-align: right;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones .espacio {
+  width: 22px;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones .pregunta {
+  width: 22px;
+}
+body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones .accion {
+  width: 22px;
+}
+/* MODALS PASO 01 CARRO */
+/* MODALS PASO 02 CARRO */
+body .contenedor .modals .cont_modals .paso_02 .cont_modal .cont_info .info_modal .cont_direccion {
+  padding: 10px;
+}
+body .contenedor .modals .cont_modals .paso_02 .cont_modal .cont_info .info_modal .cont_direccion .direccion_opciones .dir_op {
+  margin-bottom: 10px;
+  background-size: cover;
+}
+body .contenedor .modals .cont_modals .paso_02 .cont_modal .cont_info .info_modal .cont_direccion .direccion_opciones .dir_op .codir .cont_info_dir {
+  left: 20px;
+}
+/* MODALS PASO 02 CARRO */
+/* MODALS PASO 02A LOCALES CARRO */
+body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion {
+  padding: 10px;
+}
+body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales {
+  padding-bottom: 10px;
+}
+body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales {
+  background-size: cover;
+}
+body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .left_acciones {
+  width: calc(100% - 75px);
+  left: 10px;
+}
+body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .accioness {
+  right: 10px;
+  min-width: 36px;
+}
+body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .accioness .accion {
+  height: 33.33%;
+  width: 36px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .accioness .ver_tel {
+  background-image: url("../_images/telefono.png");
+}
+body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .accioness .ver_whats {
+  background-image: url("../_images/whatsapp.png");
+}
+body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .accioness .ver_mapa {
+  background-image: url("../_images/mapa.png");
+}
+body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .cont_map {
+  display: none;
+  padding: 6px;
+}
+body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .cont_map .dir_map {
+  height: 160px;
+}
+/* MODALS PASO 02A LOCALES CARRO */
+/* MODALS PASO 02B LOCALES CARRO */
+body .contenedor .modals .cont_modals .paso_02b .cont_modal .cont_info .info_modal .cont_direccion {
+  height: 100%;
+}
+body .contenedor .modals .cont_modals .paso_02b .cont_modal .cont_info .info_modal .cont_direccion .direccion_op2 {
+  height: 100%;
+}
+body .contenedor .modals .cont_modals .paso_02b .cont_modal .cont_info .info_modal .cont_direccion .direccion_op2 #map_direccion {
+  height: 100%;
+}
+body .contenedor .modals .cont_modals .paso_02b .cont_modal .acciones {
+  display: none;
+}
+/* MODALS PASO 02B LOCALES CARRO */
+/* MODALS PASO 3 DATA */
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final {
+  padding: 10px;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion {
+  margin-bottom: 10px;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion .item_direccion {
+  width: 50%;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion .item_direccion h2 {
+  height: 30px;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion .item_numero {
+  width: 25%;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion .item_numero h2 {
+  height: 30px;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion .item_depto {
+  width: 25%;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion .item_depto input {
+  height: 30px;
+  border: 0px;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_nombre_telefono {
+  margin-bottom: 10px;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_nombre_telefono .item_nombre {
+  width: 50%;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_nombre_telefono .item_nombre input {
+  height: 30px;
+  border: 0px;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_nombre_telefono .item_telefono {
+  width: 50%;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_nombre_telefono .item_telefono input {
+  height: 30px;
+  border: 0px;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_preguntas {
+  margin-bottom: 10px;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_preguntas .preguntas {
+  padding: 10px;
+  margin-top: 4px;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_preguntas .preguntas .pregunta .pre_nom {
+  width: 90%;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_preguntas .preguntas .pregunta .pre_input {
+  width: 10%;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_preguntas .preguntas .pregunta .pre_input input {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_preguntas .preguntas .pregunta textarea {
+  width: 100%;
+  height: 70px;
+  border: 0px;
+}
+/* MODALS PASO 3 DATA */
+/* MODALS PASO 4 LOCALES CARRO */
+body .contenedor .modals .cont_modals .paso_04 .cont_modal .cont_info .info_modal .data_final {
+  padding: 10px;
+}
+body .contenedor .modals .cont_modals .paso_04 .cont_modal .cont_info .info_modal .data_final .pedido_mensaje {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+body .contenedor .modals .cont_modals .paso_04 .cont_modal .cont_info .info_modal .data_final .pedido_final .cont_pedido .estado {
+  width: 46%;
+  padding: 2%;
+}
+body .contenedor .modals .cont_modals .paso_04 .cont_modal .cont_info .info_modal .data_final .pedido_final .cont_pedido .tiempo {
+  width: 46%;
+  padding: 2%;
+}
+body .contenedor .modals .cont_modals .paso_04 .cont_modal .cont_info .info_modal .data_final .pedido_final .posicion {
+  height: 240px;
+}
+body .contenedor .modals .cont_modals .paso_04 .cont_modal .cont_info .info_modal .data_final .pedido_final .total {
+  padding: 2%;
+  text-align: right;
+}
+body .contenedor .modals .cont_modals .paso_04 .cont_modal .cont_info .info_modal .data_final .titulo_chat {
+  margin-top: 10px;
+}
+body .contenedor .modals .cont_modals .paso_04 .cont_modal .cont_info .info_modal .data_final .pedido_chat {
+  margin-top: 5px;
+  height: 135px;
+}
+body .contenedor .modals .cont_modals .paso_04 .cont_modal .cont_info .info_modal .data_final .pedido_chat .mensajes {
+  width: 100%;
+  height: 100px;
+  top: 0px;
+  left: 0px;
+  overflow-y: auto;
+}
+body .contenedor .modals .cont_modals .paso_04 .cont_modal .cont_info .info_modal .data_final .pedido_chat .mensajes .info_mensajes {
+  padding: 2%;
+}
+body .contenedor .modals .cont_modals .paso_04 .cont_modal .cont_info .info_modal .data_final .pedido_chat .entrada {
+  width: calc(100% - 80px);
+  height: 30px;
+  border: 1px solid #ccc;
+  top: 104px;
+  left: 0px;
+}
+body .contenedor .modals .cont_modals .paso_04 .cont_modal .cont_info .info_modal .data_final .pedido_chat .entrada input {
+  padding: 0% 1%;
+  width: 98%;
+  height: 100%;
+  border: 0px;
+}
+body .contenedor .modals .cont_modals .paso_04 .cont_modal .cont_info .info_modal .data_final .pedido_chat .enviar {
+  width: 72px;
+  right: 0px;
+  top: 105px;
+  height: 30px;
+}
+/* MODALS PASO 4 LOCALES CARRO */
+/* MODALS PASO PREGUNTAS */
+body .contenedor .modals .cont_modals .modal_pregunta_productos .cont_modal .cont_info .info_modal .s_pregunta {
+  padding: 10px;
+}
+body .contenedor .modals .cont_modals .modal_pregunta_productos .cont_modal .cont_info .info_modal .s_pregunta .e_pregunta {
+  margin-bottom: 10px;
+}
+body .contenedor .modals .cont_modals .modal_pregunta_productos .cont_modal .cont_info .info_modal .s_pregunta .e_pregunta .v_pregunta {
+  margin-top: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-style: solid;
+  border-right-width: 1px;
+}
+body .contenedor .modals .cont_modals .modal_pregunta_productos .cont_modal .cont_info .info_modal .s_pregunta .e_pregunta .v_pregunta .n_pregunta {
+  padding: 10px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+/* MODALS PASO PREGUNTAS */
+/* MODALS PASO PROMOCION */
+body .contenedor .modals .cont_modals .modal_productos_promo .cont_modal .cont_info .info_modal .pro_cat_promo {
+  padding: 10px;
+}
+body .contenedor .modals .cont_modals .modal_productos_promo .cont_modal .cont_info .info_modal .pro_cat_promo .pro_cat_item {
+  padding: 10px 0px;
+  margin-top: 2px;
+}
+body .contenedor .modals .cont_modals .modal_productos_promo .cont_modal .cont_info .info_modal .pro_cat_promo .pro_cat_item .pro_cat_item_select {
+  width: 50px;
+  left: 10px;
+}
+body .contenedor .modals .cont_modals .modal_productos_promo .cont_modal .cont_info .info_modal .pro_cat_promo .pro_cat_item .pro_cat_item_select select {
+  width: 100%;
+  height: 40px;
+}
+body .contenedor .modals .cont_modals .modal_productos_promo .cont_modal .cont_info .info_modal .pro_cat_promo .pro_cat_item .pro_cat_item_nombre {
+  padding-left: 70px;
+}
+body .contenedor .modals .cont_modals .modal_productos_promo .cont_modal .cont_info .info_modal .pro_cat_promo .pro_cat_item .pro_cat_item_descripcion {
+  padding-left: 70px;
+}
+/* MODALS PASO PROMOCION */
+/* MODALS PASO CARTA */
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto {
+  margin-bottom: 5px;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .cont_producto {
+  padding: 10px;
+  min-height: 60px;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .cont_producto .cont_info_pro {
+  width: calc(100% - 20px);
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .cont_producto .cont_info_pro .nombre {
+  padding-left: 75px;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .cont_producto .cont_info_pro .descripcion {
+  padding-left: 75px;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .cont_producto .cont_info_pro .precio {
+  width: 70px;
+  right: 10px;
+  text-align: right;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .carro {
+  padding: 5px;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .carro .add_carro_btn {
+  padding: 2px;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .carro .add_carro_btn .add_info {
+  padding: 5px 30px 5px 5px;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .carro .add_carro_btn .add_logo {
+  width: 24px;
+  height: 24px;
+  right: 5px;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .carro .add_carro_alert {
+  padding: 5px 0px 0px 10px;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 {
+  margin-bottom: 5px;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto3 {
+  margin-bottom: 5px;
+}
+/* MODALS PASO CARTA PENDIENTE */
+
+/*# sourceMappingURL=ccs_tipo_01_.css.map */
