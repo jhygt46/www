@@ -317,7 +317,7 @@ body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_
 }
 /* MODALS PASO CARTA PENDIENTE */
 .prin_alpha_1 {
-  background: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 100%);
 }
 
 .prin_alpha_2 {
