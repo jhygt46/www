@@ -130,6 +130,9 @@ body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_
   background: #900;
   color: #fff;
 }
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 table {
+  background: #eee;
+}
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 table tr td .foto {
   background: #000;
 }
