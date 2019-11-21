@@ -110,7 +110,7 @@ body {
                             height: $modal_titulo_height;
                             .cont_titulo{
                                 h1{}
-                                h2{}
+                                h2{ width: 90%; padding: 0% 5%; line-height: 12px }
                             }
                         }
                         .close { width: 34px; height: 34px; top: 2px; right: 2px; font-size: 34px; }

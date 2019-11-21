@@ -74,6 +74,11 @@ body .contenedor .modals .cont_modals .modal .cont_modal .titulo {
   border-bottom-width: 1px;
   height: 80px;
 }
+body .contenedor .modals .cont_modals .modal .cont_modal .titulo .cont_titulo h2 {
+  width: 90%;
+  padding: 0% 5%;
+  line-height: 12px;
+}
 body .contenedor .modals .cont_modals .modal .cont_modal .close {
   width: 34px;
   height: 34px;

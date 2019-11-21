@@ -157,12 +157,8 @@ body {
                             .cont_titulo{
                                 width: 100%;
                                 text-align: center;
-                                h1{
-                                    display: block;
-                                }
-                                h2{
-                                    display: block;
-                                }
+                                h1{}
+                                h2{}
                             }
                         }
                         .close {
@@ -854,7 +850,7 @@ body {
 
 
 .prin_alpha_1 {
-    background: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
 }
 .prin_alpha_2 {
     background: linear-gradient(90deg, gray 0%, rgba(128, 128, 128, 0) 100%);
