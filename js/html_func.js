@@ -155,14 +155,20 @@ function create_html_categorias(obj){
 function create_html_producto(aux){
     
     var Div = create_element_class('producto');
+    var Divm = create_element_class('cont_producto');
+
     if(aux.disponible == 0){
-        Div.onclick = function(){ add_carro_producto(aux.id_pro, 0) };
+        if(tipo_add_carro == 0){
+            Divm.onclick = function(){ add_carro_producto(aux.id_pro, 0) };
+        }
+        if(tipo_add_carro == 1){
+            Divm.onclick = function(){ mostrar_add_carro(this) };
+        }
     }
     if(aux.disponible == 1){
-        Div.onclick = function(){ alert("Producto no disponible") };
+        Divm.onclick = function(){ alert("Producto no disponible") };
     }
 
-    var Divm = create_element_class('cont_producto');
     var Divn = create_element_class('cont_info_pro valign');
 
     var nombre = create_element_class('nombre');
@@ -190,7 +196,7 @@ function create_html_producto(aux){
 
     if(aux.disponible == 0){
         // CARRO DE COMPRAS //
-        var add_carro = create_element_class('carro clearfix');
+        var add_carro = create_element_class('mcarro carro clearfix');
         var add_carro_btn1 = create_element_class('add_carro_btn');
         add_carro_btn1.onclick = function(){ mostrar_mensaje(this); add_carro_producto(aux.id_pro, 1) };
         var add_carro_btn1a = create_element_class('add_info');
@@ -205,7 +211,7 @@ function create_html_producto(aux){
         // CARRO DE COMPRAS //
     }
     if(aux.disponible == 1){
-        var add_carro = create_element_class('carro_no');
+        var add_carro = create_element_class('mcarro carro_no');
         add_carro.innerHTML = 'Producto no Disponible';
     }
 
@@ -329,7 +335,7 @@ function create_html_producto3(aux){
 
     if(aux.disponible == 0){
         // CARRO DE COMPRAS //
-        var add_carro = create_element_class('carro clearfix');
+        var add_carro = create_element_class('mcarro carro clearfix');
         var add_carro_btn1 = create_element_class('add_carro_btn');
         add_carro_btn1.onclick = function(){ mostrar_mensaje(this); add_carro_producto(aux.id_pro, 1) };
         var add_carro_btn1a = create_element_class('add_info');
@@ -344,7 +350,7 @@ function create_html_producto3(aux){
         // CARRO DE COMPRAS //
     }
     if(aux.disponible == 1){
-        var add_carro = create_element_class('carro_no');
+        var add_carro = create_element_class('mcarro carro_no');
         add_carro.innerHTML = 'Producto no Disponible';
     }
 
