@@ -68,10 +68,11 @@ function create_html_promocion(obj){
         var Divm = create_element_class('cont_fondo prin_alpha_'+obj.degradado);
     }
 
+    Divm.onclick = function(){ add_carro_promocion(obj.id_cae) };
+    Divm.style.minHeight = parseInt((widthpx - 20) * data.config.alto / 100)+"px";
+
     if(obj.mostrar_prods == 0){
 
-        Divm.onclick = function(){ add_carro_promocion(obj.id_cae) };
-        Divm.style.minHeight = parseInt((widthpx - 20) * data.config.alto / 100)+"px";
         var Divn = create_element_class('cont_fondoi valign');
         var Nombre = create_element_class_inner('nombre', obj.nombre);
         Divn.appendChild(Nombre);
@@ -87,30 +88,18 @@ function create_html_promocion(obj){
 
     if(obj.mostrar_prods == 1){
 
-        var tbl = document.createElement('table');
-        tbl.setAttribute('border', '0');
-        tbl.setAttribute("cellspacing", 0);
-        tbl.setAttribute("cellpadding", 0);
+        var Divn = create_element_class('cont_detalle_pro');
+        var Divx = create_element_class('cont_detalle_pro_np clearfix');
+        var Nombre = create_element_class_inner('nombre', obj.nombre);
+        var Precio = create_element_class_inner('precio', formatNumber.new(parseInt(obj.precio), "$"));
+        Divx.appendChild(Nombre);
+        Divx.appendChild(Precio);
+        Divn.appendChild(Divx);
 
-        var tbdy = document.createElement('tbody');
-        var tr1 = document.createElement('tr');
-        var td1 = document.createElement('td');
-        var td2 = document.createElement('td');
-        td1.appendChild(create_element_class_inner('nombre', obj.nombre));
-        td2.appendChild(create_element_class_inner('nombre', obj.precio));
-        tr1.appendChild(td1);
-        tr1.appendChild(td2);
+        var descripcion = create_element_class_inner('nombre', obj.descripcion);
+        Divn.appendChild(descripcion);
 
-        var tr2 = document.createElement('tr');
-        var td3 = document.createElement('td');
-        td3.setAttribute('colSpan', '2');
-        tr2.appendChild(create_element_class_inner('nombre', obj.descripcion));
-
-        tbdy.appendChild(tr1);
-        tbdy.appendChild(tr2);
-        tbl.appendChild(tbdy);
-
-        /*
+        
         var listado = create_element_class('listado');
         var producto;
         var cat;
@@ -129,12 +118,13 @@ function create_html_promocion(obj){
                 listado.appendChild(producto);
             }
         }
-        */
-        Divm.appendChild(tbl);
+        
+        Divn.appendChild(listado);
+        Divm.appendChild(Divn);
+
     }
 
     Div.appendChild(Divm);
-
     return Div;
     
 }
