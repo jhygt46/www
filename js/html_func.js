@@ -90,8 +90,6 @@ function create_html_promocion(obj){
 
         var Divn = create_element_class('cont_detalle_pro');
 
-        
-
         var Divx = create_element_class('cont_detalle_pro_np clearfix');
         var Nombre = create_element_class_inner('nombre', obj.nombre);
         var Precio = create_element_class_inner('precio', formatNumber.new(parseInt(obj.precio), "$"));
@@ -102,7 +100,6 @@ function create_html_promocion(obj){
         var descripcion = create_element_class_inner('descripcion', obj.descripcion);
         Divn.appendChild(descripcion);
 
-        
         var listado = create_element_class('listado');
         var producto;
         var cat;
@@ -125,6 +122,7 @@ function create_html_promocion(obj){
         Divn.appendChild(listado);
 
         var tbl = document.createElement('table');
+        tbl.style.minHeight = parseInt((widthpx - 20) * data.config.alto / 100)+"px";
         tbl.setAttribute('border', '0');
         tbl.setAttribute("cellspacing", 0);
         tbl.setAttribute("cellpadding", 0);
