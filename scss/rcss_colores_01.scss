@@ -742,10 +742,15 @@ body {
                                 .lista_categorias {
                                     .promocion {
                                         .cont_fondo {
-                                            .cont_fondoi {
-                                                .nombre{}
+                                            .cont_detalle_pro {
+                                                .cont_detalle_pro_np {
+                                                    .nombre{}
+                                                    .precio{}
+                                                }
                                                 .descripcion{}
-                                                .precio{}
+                                                .listado {
+                                                    .prod_item{}
+                                                }
                                             }
                                         }
                                     }

@@ -875,12 +875,24 @@ body {
                                     .promocion {
                                         margin-bottom: 5px;
                                         .cont_fondo {
-                                            .cont_fondoi {
-                                                width: 94%;
-                                                left: 3%;
-                                                .nombre{}
-                                                .descripcion{}
-                                                .precio{}
+                                            padding: 3%;
+                                            .cont_detalle_pro {
+                                                .cont_detalle_pro_np {
+                                                    .nombre {
+                                                        width: 50%;
+                                                    }
+                                                    .precio {
+                                                        float: left;
+                                                        width: 50%;
+                                                        text-align: right;
+                                                    }
+                                                }
+                                                .descripcion {
+                                                    line-height: 12px;
+                                                }
+                                                .listado {
+                                                    .prod_item{}
+                                                }
                                             }
                                         }
                                     }

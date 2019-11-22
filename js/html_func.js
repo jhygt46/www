@@ -96,7 +96,7 @@ function create_html_promocion(obj){
         Divx.appendChild(Precio);
         Divn.appendChild(Divx);
 
-        var descripcion = create_element_class_inner('nombre', obj.descripcion);
+        var descripcion = create_element_class_inner('descripcion', obj.descripcion);
         Divn.appendChild(descripcion);
 
         
@@ -107,14 +107,14 @@ function create_html_promocion(obj){
         if(obj.categorias){
             for(var i=0, ilen=obj.categorias.length; i<ilen; i++){
                 aux = get_categoria(obj.categorias[i].id_cae);
-                cat = create_element_class_inner('prod_item', obj.categorias[i].cantidad + " " +aux.nombre);
+                cat = create_element_class_inner('prod_item', '- ' + obj.categorias[i].cantidad + ' ' +aux.nombre);
                 listado.appendChild(cat);
             }
         }
         if(obj.productos){
             for(var i=0, ilen=obj.productos.length; i<ilen; i++){
                 aux = get_producto(obj.productos[i].id_pro);
-                producto = create_element_class_inner('prod_item', obj.productos[i].cantidad + " " +aux.nombre);
+                producto = create_element_class_inner('prod_item', '- ' + obj.productos[i].cantidad + ' ' +aux.nombre);
                 listado.appendChild(producto);
             }
         }
