@@ -96,15 +96,15 @@ function create_html_promocion(obj){
         var tr1 = document.createElement('tr');
         var td1 = document.createElement('td');
         var td2 = document.createElement('td');
-        td1.appendChild(obj.nombre);
-        td2.appendChild(obj.precio);
+        td1.appendChild(create_element_class_inner('nombre', obj.nombre));
+        td2.appendChild(create_element_class_inner('nombre', obj.precio));
         tr1.appendChild(td1);
         tr1.appendChild(td2);
 
         var tr2 = document.createElement('tr');
         var td3 = document.createElement('td');
         td3.setAttribute('colSpan', '2');
-        tr2.appendChild(obj.descripcion);
+        tr2.appendChild(create_element_class_inner('nombre', obj.descripcion));
 
         tbdy.appendChild(tr1);
         tbdy.appendChild(tr2);
