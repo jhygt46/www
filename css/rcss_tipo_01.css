@@ -546,6 +546,12 @@ body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias {
   padding: 10px;
 }
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .promocion {
+  margin-bottom: 5px;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoria {
+  margin-bottom: 5px;
+}
 /* MODALS PASO CARTA PENDIENTE */
 
 /*# sourceMappingURL=rcss_tipo_01.css.map */
