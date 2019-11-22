@@ -67,7 +67,7 @@ function create_html_promocion(obj){
     }else{
         var Divm = create_element_class('cont_fondo prin_alpha_'+obj.degradado);
     }
-    
+
     Divm.onclick = function(){ add_carro_promocion(obj.id_cae) };
     Divm.style.minHeight = parseInt((widthpx - 20) * data.config.alto / 100)+"px";
 
@@ -86,6 +86,8 @@ function create_html_promocion(obj){
     Divm.appendChild(Divn);
 
     if(obj.mostrar_prods == 1){
+
+        console.log(obj);
 
         var listado = create_element_class('listado');
         var producto;
