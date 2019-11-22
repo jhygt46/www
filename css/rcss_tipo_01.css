@@ -563,6 +563,10 @@ body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .promocion .cont_fondo .cont_detalle_pro .descripcion {
   line-height: 12px;
 }
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .promocion .cont_fondoi {
+  width: 94%;
+  left: 3%;
+}
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoria {
   margin-bottom: 5px;
 }
