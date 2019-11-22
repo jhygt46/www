@@ -128,6 +128,7 @@ function create_html_promocion(obj){
         tbl.setAttribute('border', '0');
         tbl.setAttribute("cellspacing", 0);
         tbl.setAttribute("cellpadding", 0);
+        tbl.setAttribute("height", "100%");
         var tbdy = document.createElement('tbody');
         var tr1 = document.createElement('tr');
         var td1 = document.createElement('td');
