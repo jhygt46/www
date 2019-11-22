@@ -89,6 +89,9 @@ function create_html_promocion(obj){
     if(obj.mostrar_prods == 1){
 
         var Divn = create_element_class('cont_detalle_pro');
+
+        
+
         var Divx = create_element_class('cont_detalle_pro_np clearfix');
         var Nombre = create_element_class_inner('nombre', obj.nombre);
         var Precio = create_element_class_inner('precio', formatNumber.new(parseInt(obj.precio), "$"));
@@ -120,7 +123,21 @@ function create_html_promocion(obj){
         }
         
         Divn.appendChild(listado);
-        Divm.appendChild(Divn);
+
+        var tbl = document.createElement('table');
+        tbl.setAttribute('border', '0');
+        tbl.setAttribute("cellspacing", 0);
+        tbl.setAttribute("cellpadding", 0);
+        var tbdy = document.createElement('tbody');
+        var tr1 = document.createElement('tr');
+        var td1 = document.createElement('td');
+        td1.setAttribute("valign", "middle");
+        td1.appendChild(Divn);
+        tr1.appendChild(td1);
+        tbdy.appendChild(tr1);
+        tbl.appendChild(tbdy);
+
+        Divm.appendChild(tbl);
 
     }
 
