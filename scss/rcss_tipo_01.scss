@@ -899,7 +899,9 @@ body {
                                             width: 94%;
                                             left: 3%;
                                             .nombre{}
-                                            .descripcion{}
+                                            .descripcion {
+                                                line-height: 12px;
+                                            }
                                             .precio{}
                                         }
                                     }
