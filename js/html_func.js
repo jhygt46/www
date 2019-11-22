@@ -74,14 +74,18 @@ function create_html_promocion(obj){
         Divm.style.minHeight = parseInt((widthpx - 20) * data.config.alto / 100)+"px";
 
         var Divn = create_element_class('cont_fondoi valign');
+
         var Nombre = create_element_class_inner('nombre', obj.nombre);
-        var Descripcion = create_element_class_inner('descripcion', obj.descripcion);
-        var Precio = create_element_class_inner('precio', formatNumber.new(parseInt(obj.precio), "$"));
-
         Divn.appendChild(Nombre);
-        Divn.appendChild(Descripcion);
-        Divn.appendChild(Precio);
 
+        var Descripcion = create_element_class_inner('descripcion', obj.descripcion);
+        Divn.appendChild(Descripcion);
+
+        if(obj.precio > 0){
+            var Precio = create_element_class_inner('precio', formatNumber.new(parseInt(obj.precio), "$"));
+            Divn.appendChild(Precio);
+        }
+        
         Divm.appendChild(Divn);
 
     }
@@ -143,13 +147,16 @@ function create_html_categorias(obj){
         var Divn = create_element_class('cont_fondoi valign');
 
         var Nombre = create_element_class_inner('nombre', obj.nombre);
-        var Descripcion = create_element_class_inner('descripcion', obj.descripcion);
-        var Precio = create_element_class_inner('precio', formatNumber.new(parseInt(obj.precio)));
-
         Divn.appendChild(Nombre);
-        Divn.appendChild(Descripcion);
-        Divn.appendChild(Precio);
 
+        var Descripcion = create_element_class_inner('descripcion', obj.descripcion);
+        Divn.appendChild(Descripcion);
+
+        if(obj.precio > 0){
+            var Precio = create_element_class_inner('precio', formatNumber.new(parseInt(obj.precio)));
+            Divn.appendChild(Precio);
+        }
+        
         Divm.appendChild(Divn);
 
     }
