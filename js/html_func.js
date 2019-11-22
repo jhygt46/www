@@ -97,7 +97,7 @@ function create_html_promocion(obj){
         var td1 = document.createElement('td');
         var td2 = document.createElement('td');
         td1.appendChild(obj.nombre);
-        td1.appendChild(obj.precio);
+        td2.appendChild(obj.precio);
         tr1.appendChild(td1);
         tr1.appendChild(td2);
 
