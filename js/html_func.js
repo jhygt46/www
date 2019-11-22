@@ -57,18 +57,15 @@ function html_paginas(pagina){
 // HTML MODALS //
 function create_html_categorias(obj){
 
-    var Div = document.createElement('div');
-    Div.className = 'categoria';
+    var Div = create_element_class('categoria');
     if(obj.image != ""){
         Div.style.backgroundImage = 'url("/data/'+code+'/'+obj.image+'")';
     }
-    var Divm = document.createElement('div');
-
 
     if(obj.degradado == 0){
-        Divm.className = 'cont_fondo';
+        var Divm = create_element_class('cont_fondo');
     }else{
-        Divm.className = 'cont_fondo prin_alpha_'+obj.degradado;
+        var Divm = create_element_class('cont_fondo prin_alpha_'+obj.degradado);
     }
 
     if(obj.mostrar_prods == 0){
@@ -76,19 +73,19 @@ function create_html_categorias(obj){
         Divm.onclick = function(){ open_categoria(obj.id_cae) };
         Divm.style.height = parseInt((widthpx - 20) * data.config.alto / 100)+"px";
 
-        var Nombre = document.createElement('div');
-        Nombre.className = 'nombre';
-        Nombre.innerHTML = obj.nombre;
-        
-        var Descripcion = document.createElement('div');
-        Descripcion.className = 'descripcion';
-        Descripcion.innerHTML = obj.descripcion;
+        var Divn = create_element_class('cont_fondoi valign');
 
-        Divm.appendChild(Nombre);
-        Divm.appendChild(Descripcion);
+        var Nombre = create_element_class_inner('nombre', obj.nombre);
+        var Descripcion = create_element_class_inner('descripcion', obj.descripcion);
+        var Precio = create_element_class_inner('precio', obj.precio);
+
+        Divn.appendChild(Nombre);
+        Divn.appendChild(Descripcion);
+        Divn.appendChild(Precio);
+
+        Divm.appendChild(Divn);
 
     }
-
     if(obj.mostrar_prods == 1){
         
         var Nombre = document.createElement('div');
