@@ -67,61 +67,45 @@ function create_html_promocion(obj){
     }else{
         var Divm = create_element_class('cont_fondo prin_alpha_'+obj.degradado);
     }
+    
+    Divm.onclick = function(){ add_carro_promocion(obj.id_cae) };
+    Divm.style.minHeight = parseInt((widthpx - 20) * data.config.alto / 100)+"px";
 
-    console.log(obj);
+    var Divn = create_element_class('cont_fondoi valign');
+    var Nombre = create_element_class_inner('nombre', obj.nombre);
+    Divn.appendChild(Nombre);
 
-    if(obj.mostrar_prods == 0){
+    var Descripcion = create_element_class_inner('descripcion', obj.descripcion);
+    Divn.appendChild(Descripcion);
 
-        Divm.onclick = function(){ add_carro_promocion(obj.id_cae) };
-        Divm.style.minHeight = parseInt((widthpx - 20) * data.config.alto / 100)+"px";
-
-        var Divn = create_element_class('cont_fondoi valign');
-
-        var Nombre = create_element_class_inner('nombre', obj.nombre);
-        Divn.appendChild(Nombre);
-
-        var Descripcion = create_element_class_inner('descripcion', obj.descripcion);
-        Divn.appendChild(Descripcion);
-
-        if(obj.precio > 0){
-            var Precio = create_element_class_inner('precio', formatNumber.new(parseInt(obj.precio), "$"));
-            Divn.appendChild(Precio);
-        }
-        
-        Divm.appendChild(Divn);
-
+    if(obj.precio > 0){
+        var Precio = create_element_class_inner('precio', formatNumber.new(parseInt(obj.precio), "$"));
+        Divn.appendChild(Precio);
     }
 
-    if(obj.mostrar_prods == 1){
-        
-        // OJO ACA FALTA // 
+    Divm.appendChild(Divn);
 
-        var listado = document.createElement('div');
-        listado.className = 'listado';
+    if(obj.mostrar_prods == 1){
+
+        var listado = create_element_class('listado');
         var producto;
         var cat;
         var aux;
         if(obj.categorias){
             for(var i=0, ilen=obj.categorias.length; i<ilen; i++){
                 aux = get_categoria(obj.categorias[i].id_cae);
-                cat = document.createElement('div');
-                cat.className = 'prod_item';
-                cat.innerHTML = obj.categorias[i].cantidad + " " +aux.nombre;
+                cat = create_element_class_inner('prod_item', obj.categorias[i].cantidad + " " +aux.nombre);
                 listado.appendChild(cat);
             }
         }
         if(obj.productos){
             for(var i=0, ilen=obj.productos.length; i<ilen; i++){
                 aux = get_producto(obj.productos[i].id_pro);
-                producto = document.createElement('div');
-                producto.className = 'prod_item';
-                producto.innerHTML = obj.productos[i].cantidad + " " +aux.nombre;
+                producto = create_element_class_inner('prod_item', obj.productos[i].cantidad + " " +aux.nombre);
                 listado.appendChild(producto);
             }
         }
-        
         Divm.appendChild(listado);
-        
     }
 
     Div.appendChild(Divm);
