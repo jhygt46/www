@@ -68,6 +68,8 @@ function create_html_promocion(obj){
         var Divm = create_element_class('cont_fondo prin_alpha_'+obj.degradado);
     }
 
+    console.log(obj);
+
     if(obj.mostrar_prods == 0){
 
         Divm.onclick = function(){ add_carro_promocion(obj.id_cae) };
@@ -121,6 +123,7 @@ function create_html_promocion(obj){
         Divm.appendChild(listado);
         
     }
+
     Div.appendChild(Divm);
 
     return Div;
