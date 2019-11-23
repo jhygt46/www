@@ -588,6 +588,9 @@ body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo {
   padding: 20px 3% 15px 3%;
 }
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo .descripcion {
+  line-height: 12px;
+}
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo .listado {
   padding: 15px 0px 0px 0px;
 }

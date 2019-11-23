@@ -926,7 +926,9 @@ body {
                                         .cont_fondo {
                                             padding: 20px 3% 15px 3%;
                                             .nombre {}
-                                            .descripcion{}
+                                            .descripcion {
+                                                line-height: 12px;
+                                            }
                                             .listado {
                                                 padding: 15px 0px 0px 0px;
                                                 .prod_item {
