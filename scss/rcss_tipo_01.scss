@@ -408,6 +408,11 @@ body {
                                         height: 100%;
                                         #map_direccion{
                                             height: 100%;
+                                            input {
+                                                width: 97%;
+                                                margin: 1%;
+                                                height: 40px;
+                                            }
                                         }
                                     }
                                 }

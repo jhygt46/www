@@ -245,6 +245,11 @@ body .contenedor .modals .cont_modals .paso_02b .cont_modal .cont_info .info_mod
 body .contenedor .modals .cont_modals .paso_02b .cont_modal .cont_info .info_modal .cont_direccion .direccion_op2 #map_direccion {
   height: 100%;
 }
+body .contenedor .modals .cont_modals .paso_02b .cont_modal .cont_info .info_modal .cont_direccion .direccion_op2 #map_direccion input {
+  width: 97%;
+  margin: 1%;
+  height: 40px;
+}
 body .contenedor .modals .cont_modals .paso_02b .cont_modal .acciones {
   display: none;
 }
