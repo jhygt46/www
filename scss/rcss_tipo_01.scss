@@ -94,7 +94,7 @@ $modal_subtotal_bottom: 56px;
 $modal_subtotal_height: 50px;
 
 $modal_info_modal_padding1: 56px;
-$modal_info_modal_padding2: 106px;
+$modal_info_modal_padding2: 130px;
 
 /* MODALS BASE */
 body {
@@ -433,6 +433,9 @@ body {
 
 
 /* MODALS PASO 3 DATA */
+
+$modal_paso3_subtotal_height: 74px;
+
 body {
     .contenedor {
         .modals{
@@ -507,6 +510,7 @@ body {
                             }
                         }
                         .sub_total {
+                            height: $modal_paso3_subtotal_height;
                             .cont_subtotal {
                                 .total_detalle{
                                     .paso_01_sub_total{}
