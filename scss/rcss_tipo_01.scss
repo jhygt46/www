@@ -735,15 +735,16 @@ body {
                                     .producto {
                                         margin-bottom: 5px;
                                         .cont_producto{
-                                            padding: 10px;
                                             min-height: 80px;
                                             .cont_info_pro{
+                                                padding: 10px;
                                                 width: calc(100% - 20px);
                                                 .nombre{
                                                     padding-right: 75px;
                                                 }
                                                 .descripcion{
                                                     padding-right: 75px;
+                                                    line-height: 12px;
                                                 }
                                                 .precio{
                                                     width: 70px;

@@ -426,10 +426,10 @@ body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_
   margin-bottom: 5px;
 }
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .cont_producto {
-  padding: 10px;
   min-height: 80px;
 }
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .cont_producto .cont_info_pro {
+  padding: 10px;
   width: calc(100% - 20px);
 }
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .cont_producto .cont_info_pro .nombre {
@@ -437,6 +437,7 @@ body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_
 }
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .cont_producto .cont_info_pro .descripcion {
   padding-right: 75px;
+  line-height: 12px;
 }
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .cont_producto .cont_info_pro .precio {
   width: 70px;
