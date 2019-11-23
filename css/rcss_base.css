@@ -224,15 +224,6 @@ body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_mod
 }
 /* MODALS PASO 02A LOCALES CARRO */
 /* MODALS PASO 02B LOCALES CARRO */
-body .contenedor .modals .cont_modals .paso_02b .cont_modal .cont_info .info_modal .cont_direccion {
-  height: 100%;
-}
-body .contenedor .modals .cont_modals .paso_02b .cont_modal .cont_info .info_modal .cont_direccion .direccion_op2 {
-  height: 100%;
-}
-body .contenedor .modals .cont_modals .paso_02b .cont_modal .cont_info .info_modal .cont_direccion .direccion_op2 #map_direccion {
-  height: 100%;
-}
 body .contenedor .modals .cont_modals .paso_02b .cont_modal .acciones {
   display: none;
 }

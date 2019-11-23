@@ -458,16 +458,12 @@ body {
                                 h2{}
                             }
                         }
-                        .close {}
+                        .close{}
                         .cont_info {
                             .info_modal {
                                 .cont_direccion {
-                                    height: 100%;
                                     .direccion_op2 {
-                                        height: 100%;
-                                        #map_direccion{
-                                            height: 100%;
-                                        }
+                                        #map_direccion{}
                                     }
                                 }
                             }

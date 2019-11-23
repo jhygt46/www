@@ -383,6 +383,9 @@ body {
 
 
 /* MODALS PASO 02B LOCALES CARRO */
+
+$modal_paso2b: calc(100% - $modal_titulo_height);
+
 body {
     .contenedor {
         .modals{
@@ -395,9 +398,10 @@ body {
                                 h2{}
                             }
                         }
-                        .close {}
+                        .close{}
                         .cont_info {
                             .info_modal {
+                                height: $modal_paso2b;
                                 .cont_direccion {
                                     height: 100%;
                                     .direccion_op2 {
