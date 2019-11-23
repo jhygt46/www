@@ -319,6 +319,7 @@ body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_moda
 }
 body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_preguntas .preguntas .pregunta .pre_input {
   width: 10%;
+  text-align: right;
 }
 body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_preguntas .preguntas .pregunta .pre_input input {
   width: 18px;
