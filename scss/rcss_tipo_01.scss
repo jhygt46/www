@@ -917,6 +917,33 @@ body {
                                             }
                                         }
                                     }
+                                    .categoriaopen {
+                                        margin-bottom: 5px;
+                                        background-size: cover;
+                                        .cont_fondo {
+                                            padding: 20px 10px 10px 10px;
+                                            .nombre {}
+                                            .descripcion{}
+                                            .listado {
+                                                padding: 20px 0px 0px 0px;
+                                                .prod_item {
+                                                    padding: 0px 0px 5px 0px;
+                                                    border-bottom-style: solid;
+                                                    border-bottom-width: 1px;
+                                                    .prod_i_nom {
+                                                        width: calc(100% - 70px);
+                                                        .prod_i_ttl{}
+                                                        .prod_i_sttl{}
+                                                    }
+                                                    .prod_i_pre {
+                                                        width: 70px;
+                                                        right: 0px;
+                                                        text-align: right;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }

@@ -618,6 +618,8 @@ $producto3_add_carro_color: #fff;
 $producto3_add_carro_cont_background: #ddd;
 $producto3_cont_background: #ddd;
 
+$categoria_open_background: #ddd;
+
 body {
     .contenedor {
         .modals{
@@ -765,6 +767,23 @@ body {
                                                 .nombre{}
                                                 .descripcion{}
                                                 .precio{}
+                                            }
+                                        }
+                                    }
+                                    .categoriaopen {
+                                        background: $categoria_open_background;
+                                        .cont_fondo {
+                                            .nombre {}
+                                            .descripcion{}
+                                            .listado {
+                                                .prod_item {
+                                                    border-bottom-color: #ccc;
+                                                    .prod_i_nom {
+                                                        .prod_i_ttl{}
+                                                        .prod_i_sttl{}
+                                                    }
+                                                    .prod_i_pre{}
+                                                }
                                             }
                                         }
                                     }

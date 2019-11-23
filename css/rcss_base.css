@@ -321,6 +321,12 @@ body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoria .cont_fondo {
   position: relative;
 }
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen {
+  position: relative;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo .listado .prod_item {
+  position: relative;
+}
 /* MODALS PASO CARTA PENDIENTE */
 .prin_alpha_1 {
   background: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
