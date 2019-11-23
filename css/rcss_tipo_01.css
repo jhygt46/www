@@ -158,7 +158,7 @@ body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal 
   border-top-width: 0px;
 }
 body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_nombre {
-  width: calc(100% - 115px);
+  width: calc(100% - 119px);
   padding-left: 4px;
 }
 body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones {
@@ -170,6 +170,7 @@ body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal 
 }
 body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones .espacio {
   width: 25px;
+  height: 20px;
 }
 body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones .pregunta {
   width: 25px;

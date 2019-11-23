@@ -215,13 +215,13 @@ body {
                                             border-top-style: solid;
                                             border-top-width: 0px;
                                             .restantes_detalle_nombre{
-                                                width: calc(100% - 115px);
+                                                width: calc(100% - 119px);
                                                 padding-left: 4px;
                                             }
                                             .restantes_detalle_acciones{
                                                 width: 115px;
                                                 .precio{ width: 65px; text-align: right; }
-                                                .espacio{ width: 25px }
+                                                .espacio{ width: 25px; height: 20px }
                                                 .pregunta{ width: 25px }
                                                 .accion{ width: 25px }
                                             }
