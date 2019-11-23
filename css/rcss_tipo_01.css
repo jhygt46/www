@@ -153,29 +153,29 @@ body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal 
   padding: 20px 6px 10px 6px;
 }
 body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_restantes .restantes_detalle_item {
-  margin-bottom: 6px;
-  padding: 5px 0px;
+  margin-bottom: 10px;
   border-top-style: solid;
   border-top-width: 0px;
 }
 body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_nombre {
-  width: calc(100% - 120px);
+  width: calc(100% - 115px);
+  padding-left: 4px;
 }
 body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones {
-  width: 120px;
+  width: 115px;
 }
 body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones .precio {
-  width: 76px;
+  width: 65px;
   text-align: right;
 }
 body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones .espacio {
-  width: 22px;
+  width: 25px;
 }
 body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones .pregunta {
-  width: 22px;
+  width: 25px;
 }
 body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones .accion {
-  width: 22px;
+  width: 25px;
 }
 /* MODALS PASO 01 CARRO */
 /* MODALS PASO 02 CARRO */

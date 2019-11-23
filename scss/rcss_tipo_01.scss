@@ -211,19 +211,19 @@ body {
                                     .process_carro_restantes{
                                         padding: 20px 6px 10px 6px;
                                         .restantes_detalle_item{
-                                            margin-bottom: 6px;
-                                            padding: 5px 0px;
+                                            margin-bottom: 10px;
                                             border-top-style: solid;
                                             border-top-width: 0px;
                                             .restantes_detalle_nombre{
-                                                width: calc(100% - 120px);
+                                                width: calc(100% - 115px);
+                                                padding-left: 4px;
                                             }
                                             .restantes_detalle_acciones{
-                                                width: 120px;
-                                                .precio{ width: 76px; text-align: right; }
-                                                .espacio{ width: 22px }
-                                                .pregunta{ width: 22px }
-                                                .accion{ width: 22px }
+                                                width: 115px;
+                                                .precio{ width: 65px; text-align: right; }
+                                                .espacio{ width: 25px }
+                                                .pregunta{ width: 25px }
+                                                .accion{ width: 25px }
                                             }
                                         }
                                     }
