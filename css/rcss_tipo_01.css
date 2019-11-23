@@ -165,19 +165,19 @@ body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal 
   width: 116px;
 }
 body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones .precio {
-  width: 69px;
+  width: 76px;
   text-align: right;
 }
 body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones .espacio {
-  width: 23px;
+  width: 20px;
   height: 20px;
 }
 body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones .pregunta {
-  width: 23px;
+  width: 20px;
   text-align: center;
 }
 body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal .process_carro .process_carro_restantes .restantes_detalle_item .restantes_detalle_acciones .accion {
-  width: 23px;
+  width: 20px;
   text-align: center;
 }
 /* MODALS PASO 01 CARRO */
