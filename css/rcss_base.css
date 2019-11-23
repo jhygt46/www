@@ -238,6 +238,12 @@ body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_moda
 body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion .item_depto {
   float: left;
 }
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_nombre_telefono .item_nombre {
+  float: left;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_nombre_telefono .item_telefono {
+  float: left;
+}
 body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_preguntas .preguntas .pregunta .pre_nom {
   float: left;
 }
