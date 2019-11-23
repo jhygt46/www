@@ -81,6 +81,9 @@ body .contenedor .modals .cont_modals .paso_02b .cont_modal .acciones {
 }
 /* MODALS PASO 02B LOCALES CARRO */
 /* MODALS PASO 3 DATA */
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_preguntas .preguntas {
+  background: #ddd;
+}
 /* MODALS PASO 3 DATA */
 /* MODALS PASO 4 LOCALES CARRO */
 body .contenedor .modals .cont_modals .paso_04 .cont_modal .cont_info .info_modal .data_final .pedido_mensaje {

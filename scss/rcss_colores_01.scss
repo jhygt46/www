@@ -353,6 +353,9 @@ body {
 
 
 /* MODALS PASO 3 DATA */
+
+$modal_preguntas_background: #ddd;
+
 body {
     .contenedor {
         .modals{
@@ -396,13 +399,14 @@ body {
                                     .block_preguntas {
                                         h1{}
                                         .preguntas {
+                                            background: $modal_preguntas_background;
                                             .pregunta {
                                                 .pre_nom{}
                                                 .pre_input {
                                                     input{}
                                                 }
-                                                textarea{}
                                             }
+                                            textarea{}
                                         }
                                     }
                                 }
