@@ -471,12 +471,14 @@ body {
                                     .block_nombre_telefono {
                                         margin-bottom: 10px;
                                         .item_nombre {
-                                            width: 50%;
+                                            width: 49%;
+                                            padding-right: 1%;
                                             h1{}
                                             input{ height: 30px; border: 0px; width: 100% }
                                         }
                                         .item_telefono {
-                                            width: 50%;
+                                            width: 49%;
+                                            padding-left: 1%;
                                             h1{}
                                             input{ height: 30px; border: 0px; width: 100% }
                                         }

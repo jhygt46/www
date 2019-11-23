@@ -285,7 +285,8 @@ body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_moda
   margin-bottom: 10px;
 }
 body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_nombre_telefono .item_nombre {
-  width: 50%;
+  width: 49%;
+  padding-right: 1%;
 }
 body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_nombre_telefono .item_nombre input {
   height: 30px;
@@ -293,7 +294,8 @@ body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_moda
   width: 100%;
 }
 body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_nombre_telefono .item_telefono {
-  width: 50%;
+  width: 49%;
+  padding-left: 1%;
 }
 body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_nombre_telefono .item_telefono input {
   height: 30px;
