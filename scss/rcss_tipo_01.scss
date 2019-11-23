@@ -913,7 +913,9 @@ body {
                                                 width: 94%;
                                                 left: 3%;
                                                 .nombre{}
-                                                .descripcion{}
+                                                .descripcion {
+                                                    line-height: 12px;
+                                                }
                                                 .precio{}
                                             }
                                         }
@@ -934,7 +936,9 @@ body {
                                                     .prod_i_nom {
                                                         width: calc(100% - 70px);
                                                         .prod_i_ttl{}
-                                                        .prod_i_sttl{}
+                                                        .prod_i_sttl {
+                                                            line-height: 12px;
+                                                        }
                                                     }
                                                     .prod_i_pre {
                                                         width: 70px;
