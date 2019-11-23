@@ -279,6 +279,7 @@ body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_moda
 body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion .item_depto input {
   height: 30px;
   border: 0px;
+  width: 100%;
 }
 body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_nombre_telefono {
   margin-bottom: 10px;
@@ -289,6 +290,7 @@ body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_moda
 body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_nombre_telefono .item_nombre input {
   height: 30px;
   border: 0px;
+  width: 100%;
 }
 body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_nombre_telefono .item_telefono {
   width: 50%;
@@ -296,6 +298,7 @@ body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_moda
 body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_nombre_telefono .item_telefono input {
   height: 30px;
   border: 0px;
+  width: 100%;
 }
 body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_preguntas {
   margin-bottom: 10px;
