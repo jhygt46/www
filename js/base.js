@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    borrar_carro();
+    //borrar_carro();
     render_pagina();
     if(inicio == 1){
         show_modal('modal_inicio');
