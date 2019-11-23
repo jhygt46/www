@@ -130,6 +130,7 @@ body {
 
 $modal_carro_promo_background: #f5f5f5;
 $modal_carro_border_color: #ddd;
+$modal_carro_restantes_background: #f5f5f5;
 
 body {
     .contenedor {
@@ -162,6 +163,7 @@ body {
                                         }
                                     }
                                     .process_carro_restantes{
+                                        background: $modal_carro_restantes_background;
                                         .restantes_detalle_item{
                                             border-top-color: $modal_carro_border_color;
                                             .restantes_detalle_nombre{}
