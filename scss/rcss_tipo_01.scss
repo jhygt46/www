@@ -384,7 +384,7 @@ body {
 
 /* MODALS PASO 02B LOCALES CARRO */
 
-$modal_paso2b: calc(100% - $modal_titulo_height);
+$modal_paso2b: calc(100% - #{$modal_titulo_height});
 
 body {
     .contenedor {
