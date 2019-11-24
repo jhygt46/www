@@ -1169,7 +1169,17 @@ body {
                     .cont_modal {
                         .close{}
                         .cont_info_inicio {
-                            
+                            .inicio_titulo{
+                                padding: 10px 10px 0px 10px;
+                            }
+                            .inicio_subtitulo{
+                                padding: 10px 10px 0px 10px;
+                            }
+                            .inicio_texto{
+                                padding: 10px 10px 0px 10px;
+                                max-height: 200px;
+                                overflow-y: scroll;
+                            }
                         }
                     }
                 }
