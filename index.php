@@ -122,12 +122,12 @@
             </div>
             <div class="modals">
                 <div class="cont_modals">
-
-                
-                    <?php echo $info->{"inicio_html"}; ?>
-
-
-
+                    <div class="modal vhalign hide modal_pagina_inicio">
+                        <div class="cont_modal">
+                            <div onclick="close_that(this)" class="close material-icons">close</div>
+                            <div class="cont_info"><?php echo $info->{"inicio_html"}; ?></div>
+                        </div>
+                    </div>
                     <div class="modal modal_dim1 vhalign hide modal_contacto">
                         <div class="cont_modal">
                             <div class="titulo"><div class="cont_titulo valign"><h1>Contacto</h1><h2>Tienes alguna duda? contactate con nosotros</h2></div></div>
