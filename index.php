@@ -218,12 +218,17 @@
                             </div>
                         </div>
                     </div>
+
+                    
                     <div class="modal modal_dim1 vhalign hide modal_pagina">
                         <div class="cont_modal">
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info"></div>
                         </div>
                     </div>
+
+
+
                     <div class="modal modal_dim1 vhalign hide modal_carta">
                         <div class="cont_modal">
                             <div class="titulo"><div class="cont_titulo valign"><h1></h1><h2></h2></div></div>
