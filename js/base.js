@@ -2,7 +2,7 @@ $(document).ready(function(){
     borrar_carro();
     render_pagina();
     if(inicio == 1){
-        show_modal('modal_inicio');
+        show_modal('modal_pagina_inicio');
     }
 });
 
