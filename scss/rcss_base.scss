@@ -1061,6 +1061,26 @@ body {
 /* MODALS CONTACTO */
 
 
+
+/* MODALS PAGINA INICIO */
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .modal_pagina_inicio {
+                    .cont_modal {
+                        .close{}
+                        .cont_info_inicio {
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS PAGINA INICIO */
+
 .prin_alpha_1 {
     background: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
 }

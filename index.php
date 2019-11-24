@@ -125,7 +125,7 @@
                     <div class="modal vhalign hide modal_pagina_inicio">
                         <div class="cont_modal">
                             <div onclick="close_that(this)" class="close material-icons">close</div>
-                            <div class="cont_info"><?php echo $info->{"inicio_html"}; ?></div>
+                            <div class="cont_info_inicio"><?php echo $info->{"inicio_html"}; ?></div>
                         </div>
                     </div>
                     <div class="modal modal_dim1 vhalign hide modal_contacto">
