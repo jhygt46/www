@@ -82,7 +82,7 @@
         <script src="/js/base.js" type="text/javascript"></script>
         <script src="/js/base_lista.js" type="text/javascript"></script>
         <script>
-            var inicio = <?php echo ($info->{"inicio_html"} == "") ? 0 : 1 ; ?>;
+            var ver_inicio = <?php echo $info->{"ver_inicio"}; ?>;
             var code = "<?php echo $info->{'code'}; ?>";
             var estados = [ <?php for($i=0; $i<count($info->{'estado'}); $i++){ if($i>0){ echo ", "; } echo "'".$info->{'estado'}[$i]."'";  } ?> ];
             var fecha_js = new Date(<?php echo (time() + $horas * 60 * 60); ?>000).getTime();

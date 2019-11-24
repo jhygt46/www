@@ -1,7 +1,7 @@
 $(document).ready(function(){
     borrar_carro();
     render_pagina();
-    if(inicio == 1){
+    if(ver_inicio == 1){
         show_modal('modal_pagina_inicio');
     }
 });
