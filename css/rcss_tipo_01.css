@@ -633,5 +633,53 @@ body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_
   text-align: right;
 }
 /* MODALS PASO CARTA PENDIENTE */
+/* MODALS PAGINA */
+/* MODALS PAGINA */
+/* MODALS ERROR LOCALES */
+body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .cont_info .info_modal .cont_direccion {
+  padding: 10px;
+}
+body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales {
+  padding-bottom: 10px;
+}
+body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales {
+  background-size: cover;
+}
+body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .left_acciones {
+  width: calc(100% - 75px);
+  left: 10px;
+}
+body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .accioness {
+  right: 10px;
+  min-width: 36px;
+}
+body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .accioness .accion {
+  height: 33.33%;
+  width: 36px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .accioness .ver_tel {
+  background-image: url("../_images/telefono.png");
+}
+body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .accioness .ver_whats {
+  background-image: url("../_images/whatsapp.png");
+}
+body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .accioness .ver_mapa {
+  background-image: url("../_images/mapa.png");
+}
+body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .cont_map {
+  display: none;
+  padding: 6px;
+}
+body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .cont_map .dir_map {
+  height: 160px;
+}
+/* MODALS ERROR LOCALES */
+/* MODALS ERROR */
+/* MODALS ERROR */
+/* MODALS CONTACTO */
+/* MODALS CONTACTO */
 
 /*# sourceMappingURL=rcss_tipo_01.css.map */

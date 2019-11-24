@@ -122,7 +122,11 @@
             </div>
             <div class="modals">
                 <div class="cont_modals">
+
+                
                     <?php echo $info->{"inicio_html"}; ?>
+
+
 
                     <div class="modal modal_dim1 vhalign hide modal_contacto">
                         <div class="cont_modal">
@@ -201,8 +205,8 @@
                                                             </div>
                                                         </div>
                                                         <div class="accioness valign">
-                                                            <a class="accion ver_mapa" style="background-image: url('../_images/telefono.png')" href="tel:<?php echo $locales[$i]->{'telefono'}; ?>"></a>
-                                                            <a class="accion ver_mapa" style="background-image: url('../_images/whatsapp.png')" href="https://api.whatsapp.com/send?phone=<?php echo $locales[$i]->{'whatsapp'}; ?>"></a>
+                                                            <a class="accion ver_tel" style="background-image: url('../_images/telefono.png')" href="tel:<?php echo $locales[$i]->{'telefono'}; ?>"></a>
+                                                            <a class="accion ver_whats" style="background-image: url('../_images/whatsapp.png')" href="https://api.whatsapp.com/send?phone=<?php echo $locales[$i]->{'whatsapp'}; ?>"></a>
                                                             <div class="accion ver_mapa" style="background-image: url('../_images/mapa.png')" onclick="local_mapa(<?php echo $locales[$i]->{'id_loc'}; ?>, <?php echo $locales[$i]->{'lat'}; ?>, <?php echo $locales[$i]->{'lng'}; ?>, 'r')"></div>
                                                         </div>
                                                     </div>
@@ -218,17 +222,12 @@
                             </div>
                         </div>
                     </div>
-
-                    
                     <div class="modal modal_dim1 vhalign hide modal_pagina">
                         <div class="cont_modal">
                             <div onclick="close_that(this)" class="close material-icons">close</div>
                             <div class="cont_info"></div>
                         </div>
                     </div>
-
-
-
                     <div class="modal modal_dim1 vhalign hide modal_carta">
                         <div class="cont_modal">
                             <div class="titulo"><div class="cont_titulo valign"><h1></h1><h2></h2></div></div>
@@ -262,8 +261,6 @@
                             </div>
                         </div>
                     </div>
-
-
                     <!-- MODAL CARRO 01 -->
                     <div class="modal modal_dim1 vhalign hide modal_carro paso_01">
                         <div class="cont_modal">

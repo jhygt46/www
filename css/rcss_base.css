@@ -325,6 +325,32 @@ body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_
   position: relative;
 }
 /* MODALS PASO CARTA */
+/* MODALS PAGINA */
+/* MODALS PAGINA */
+/* MODALS ERROR LOCALES */
+body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .left_acciones {
+  position: absolute;
+  height: 100%;
+}
+body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .accioness {
+  height: 100%;
+}
+body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .accioness .accion {
+  display: block;
+}
+body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .cont_map .dir_map {
+  width: 100%;
+}
+/* MODALS ERROR LOCALES */
+/* MODALS ERROR */
+/* MODALS ERROR */
+/* MODALS CONTACTO */
+/* MODALS CONTACTO */
 .prin_alpha_1 {
   background: linear-gradient(90deg, white 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
 }
