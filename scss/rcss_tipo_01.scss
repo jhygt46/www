@@ -1170,15 +1170,16 @@ body {
                         .close{ top: 0px; right: 0px; }
                         .cont_info_inicio {
                             .inicio_titulo {
-                                //margin: 10px 10px 0px 10px;
+                                padding-top: 5px 10px 0px 10px;
                             }
                             .inicio_subtitulo {
-                                //margin: 5px 10px 0px 10px;
+                                padding-top: 5px 10px 0px 10px;
                             }
-                            .inicio_texto {
-                                //margin: 5px 10px 0px 10px;
+                            .inicio_div_texto {
+                                padding: 10px;
                                 max-height: 200px;
                                 overflow-y: scroll;
+                                .inicio_texto{}
                             }
                         }
                     }
