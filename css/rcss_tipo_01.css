@@ -697,9 +697,12 @@ body .contenedor .modals .cont_modals .modal_pagina_inicio .cont_modal .cont_inf
 }
 body .contenedor .modals .cont_modals .modal_pagina_inicio .cont_modal .cont_info_inicio .inicio_div_texto {
   padding: 5px 10px 10px 10px;
-  max-height: 200px;
   overflow-y: scroll;
 }
+body .contenedor .modals .cont_modals .modal_pagina_inicio .cont_modal .cont_info_inicio .inicio_div_texto .inicio_texto {
+  text-align: justify;
+}
+
 /* MODALS PAGINA INICIO */
 
 /*# sourceMappingURL=rcss_tipo_01.css.map */

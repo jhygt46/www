@@ -1177,9 +1177,10 @@ body {
                             }
                             .inicio_div_texto {
                                 padding: 5px 10px 10px 10px;
-                                max-height: 200px;
                                 overflow-y: scroll;
-                                .inicio_texto{}
+                                .inicio_texto {
+                                    text-align: justify;
+                                }
                             }
                         }
                     }
