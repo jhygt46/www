@@ -683,16 +683,9 @@ body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .cont_inf
 /* MODALS CONTACTO */
 /* MODALS PAGINA INICIO */
 body .contenedor .modals .cont_modals .modal_pagina_inicio {
-  padding: 20px;
-}
-body .contenedor .modals .cont_modals .modal_pagina_inicio .cont_modal .cont_info_inicio .inicio_titulo {
-  margin: 10px 10px 0px 10px;
-}
-body .contenedor .modals .cont_modals .modal_pagina_inicio .cont_modal .cont_info_inicio .inicio_subtitulo {
-  margin: 5px 10px 0px 10px;
+  padding: 10px 20px;
 }
 body .contenedor .modals .cont_modals .modal_pagina_inicio .cont_modal .cont_info_inicio .inicio_texto {
-  margin: 5px 10px 0px 10px;
   max-height: 200px;
   overflow-y: scroll;
 }
