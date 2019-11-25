@@ -684,8 +684,9 @@ function ver_pagina(id){
         if(data.paginas[i].id_pag == id){
 
             if(data.paginas[i].tipo == 0){
+                var html = data.paginas[i].html;
                 if(data.paginas[i].imagen != ""){
-                    var html = data.paginas[i].html.replace("#FOTO#", data.paginas[i].imagen);
+                    html = data.paginas[i].html.replace("#FOTO#", data.paginas[i].imagen);
                 }
                 $('.modal_pagina .cont_info').html(html);
                 show_modal('modal_pagina');
