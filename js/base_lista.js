@@ -70,10 +70,12 @@ function btn_prin(){
 
     $('.dir_locales').css({ height: dir_op });
     $('.dir_op').css({ height: dir_op });
+    
     $('.modal_dim1').css({ width: widthpx });
     $('.modal_dim1').css({ height: heightpx });
 
     $('.modal_dim3').css({ width: widthpx });
+    $('.modal_dim4').css({ width: widthpx });
 
 }
 function close_that(that){
