@@ -73,6 +73,8 @@ function btn_prin(){
     $('.modal_dim1').css({ width: widthpx });
     $('.modal_dim1').css({ height: heightpx });
 
+    $('.modal_dim3').css({ width: widthpx });
+
 }
 function close_that(that){
     $('.modals').hide();
