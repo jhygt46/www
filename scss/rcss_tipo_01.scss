@@ -1165,20 +1165,19 @@ body {
         .modals{
             .cont_modals {
                 .modal_pagina_inicio {
-                    padding: 10px;
                     .cont_modal {
                         .close{ top: 0px; right: 0px; }
                         .cont_info_inicio {
                             .inicio_titulo {
-                                padding: 5px 10px 0px 10px;
+                                padding: 15px 20px 0px 20px;
                             }
                             .inicio_subtitulo {
-                                padding: 0px 10px 0px 10px;
+                                padding: 0px 20px 0px 20px;
                             }
                             .inicio_div_texto {
                                 overflow-y: scroll;
                                 .inicio_texto {
-                                    padding: 5px 10px 10px 10px;
+                                    padding: 5px 20px 20px 20px;
                                     text-align: justify;
                                 }
                             }
