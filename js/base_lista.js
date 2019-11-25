@@ -75,7 +75,7 @@ function btn_prin(){
     $('.modal_dim1').css({ height: heightpx });
 
     $('.modal_dim3').css({ width: widthpx });
-    $('.modal_dim3').css( 'max-height',  heightpx + 'px' });
+    $('.modal_dim3').css( 'max-height', heightpx + 'px');
 
 }
 function close_that(that){
