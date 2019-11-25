@@ -1165,9 +1165,9 @@ body {
         .modals{
             .cont_modals {
                 .modal_pagina_inicio {
-                    padding: 10px 20px;
+                    padding: 10px;
                     .cont_modal {
-                        .close{}
+                        .close{ top: 0px; right: 0px; }
                         .cont_info_inicio {
                             .inicio_titulo {
                                 //margin: 10px 10px 0px 10px;
