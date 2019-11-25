@@ -1177,7 +1177,7 @@ body {
                             .inicio_div_texto {
                                 padding: 10px 20px 20px 20px;
                                 .inicio_texto {
-                                    padding: 5px 20px 20px 20px;
+                                    overflow-y: scroll;
                                     text-align: justify;
                                 }
                             }
