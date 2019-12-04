@@ -4,10 +4,9 @@
         die("hjS3r%mDs-5gYa6ib_5Ps");
     }
 
-    echo "<pre>";
-    print_r($_SERVER);
-    echo "</pre>";
-    exit;
+    if($_SERVER["HTTP_HOST"] == "www.tockedelivery.cl"){
+        die("SITIO EN CONSTRUCCION");
+    }
 
     require_once "class/core_class.php";
     $core = new Core();
