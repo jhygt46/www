@@ -4,11 +4,10 @@
         die("hjS3r%mDs-5gYa6ib_5Ps");
     }
 
-    // BORRAR //
-    if($_GET["mode"] != "developer" && $_POST["accion"] != "xS3w1Dm8Po87Wltd"){
-        die("SITIO EN CONSTRUCCION");
-    }
-    // BORRAR //
+    echo "<pre>";
+    print_r($_SERVER);
+    echo "</pre>";
+    exit;
 
     require_once "class/core_class.php";
     $core = new Core();
@@ -19,12 +18,6 @@
     }
 
     $info = $core->get_data();
-    if($_GET["mode2"] == "developer"){
-        echo "<pre>";
-        print_r($info);
-        echo "</pre>";
-        exit;
-    }
 
     if($info === null){
         die("<table border='0' width='100%' height='100%'><tr><td align='center' valign='middle'>Sitio no existe</td></tr></table>");
@@ -261,7 +254,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- MODAL CARRO 01 -->
                     <div class="modal modal_dim1 vhalign hide modal_carro paso_01">
                         <div class="cont_modal">
                             <div class="titulo"><div class="cont_titulo valign"><h1><?php echo $info->{"pedido_01_titulo"}; ?></h1><h2><?php echo $info->{"pedido_01_subtitulo"}; ?></h2></div></div>
@@ -498,8 +490,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- MODAL CARRO 01 -->
-                    
                 </div>
             </div>
         </div>

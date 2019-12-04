@@ -89,7 +89,7 @@
                 <?php } ?>
             </div>
             <div class="total padding_01 borbottom">
-                <?php if($pedido->{'costo'} > 0){ ?><div class="txtcen font_04">Costo Despacho: $<?php echo number_format($pedido->{'costo'}, 0, '', '.');; ?></div><?php } ?>
+                <?php if($pedido->{'costo'} > 0){ ?><div class="txtcen font_04">Costo Despacho: $<?php echo number_format($pedido->{'costo'}, 0, '', '.'); ?></div><?php } ?>
                 <div class="txtcen font_06 strong">Total: $<?php echo number_format($pedido->{'total'}, 0, '', '.'); ?></div>
             </div>
         </div>
