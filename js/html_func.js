@@ -240,8 +240,6 @@ function create_html_categorias(obj){
     
 }
 function create_html_producto(aux){
-    
-    console.log(aux);
 
     var Div = create_element_class('producto');
     var Divm = create_element_class('cont_producto');
