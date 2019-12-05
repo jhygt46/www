@@ -1033,7 +1033,7 @@ function paso_4(){
                     var send = { accion: 'enviar_pedido', pedido: JSON.stringify(pedido), carro: JSON.stringify(get_carro()), promos: JSON.stringify(get_promos()), puser: JSON.stringify(get_puser()), token: token };
 
                     $.ajax({
-                        url: 'ajax/index.php',
+                        url: '/ajax/',
                         type: "POST",
                         data: send,
                         success: function(res){
