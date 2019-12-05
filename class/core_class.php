@@ -419,7 +419,8 @@ class Core{
 
                             $resp = json_decode(curl_exec($ch));
                             $info["resp"] = $resp;
-                            $info["host"] = $this->host;
+                            $info["http_referer"] = $_SERVER["HTTP_REFERER"];
+                            $info["http_host"] = $_SERVER["HTTP_HOST"];
                             curl_close($ch);
 
                             $this->put_ip_black_list($this->getUserIpAddr(), 2);
