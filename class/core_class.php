@@ -419,6 +419,7 @@ class Core{
 
                             $resp = json_decode(curl_exec($ch));
                             $info["resp"] = $resp;
+                            $info["host"] = $this->host;
                             curl_close($ch);
 
                             $this->put_ip_black_list($this->getUserIpAddr(), 2);
