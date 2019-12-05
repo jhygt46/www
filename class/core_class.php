@@ -24,7 +24,7 @@ class Core{
                 if(isset($_GET["url"])){
                     $this->host = (count(explode(".", $_GET["url"])) == 2) ? "www.".strtolower($_GET["url"]) : strtolower($_GET["url"]) ;
                 }else{
-                    $var = explode("&", explode("?url=", $_SERVER["HTTP_REFERER"])[1])[0];
+                    $var = explode("/", $_SERVER["HTTP_REFERER"])[4];
                     $this->host = (count(explode(".", $var)) == 2) ? "www.".strtolower($var) : strtolower($var) ;
                 }
             }else{
@@ -419,8 +419,7 @@ class Core{
 
                             $resp = json_decode(curl_exec($ch));
                             $info["resp"] = $resp;
-                            $info["http_referer"] = $_SERVER["HTTP_REFERER"];
-                            $info["http_host"] = $_SERVER["HTTP_HOST"];
+                            $info["http"] = $this->host;
                             curl_close($ch);
 
                             $this->put_ip_black_list($this->getUserIpAddr(), 2);
