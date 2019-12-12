@@ -282,6 +282,7 @@ class Core{
             $info['polygons'] = $polygons;
             if(count($polygons) > 0){
                 foreach($polygons as $polygon){
+
                     $lats = [];
                     $lngs = [];
                     $puntos = json_decode($polygon->{'poligono'});
@@ -289,6 +290,13 @@ class Core{
                         $lats[] = $punto->{'lat'};
                         $lngs[] = $punto->{'lng'};
                     }
+
+                    $info['lats'] = $lats;
+                    $info['lngs'] = $lngs;
+
+                    $info['lat'] = $lat;
+                    $info['lng'] = $lng;
+
                     $is = $this->is_in_polygon($lats, $lngs, $lat, $lng);
                     if($is){
                         if($precio > $polygon->{'precio'}){
