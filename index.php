@@ -40,7 +40,7 @@
     }
     
     $horas = (isset($_GET['horas'])) ? $_GET['horas'] : 0 ;
-    $css = (isset($_GET['css'])) ? "r" : "" ;
+    $css = (isset($_GET['css'])) ? "r" : "r" ;
 
 ?>
 
