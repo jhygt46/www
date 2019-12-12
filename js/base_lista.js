@@ -1300,6 +1300,9 @@ function initMap(){
                     data: send,
                     success: function(data){
 
+                        console.log("despacho_domicilio");
+                        console.log(data);
+
                         if(data.op == 1){
 
                             var pedido = get_pedido();
