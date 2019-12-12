@@ -4,7 +4,7 @@
         die("hjS3r%mDs-5gYa6ib_5Ps");
     }
 
-    if($_SERVER["HTTP_HOST"] == "www.tockedelivery.cl"){
+    if($_SERVER["HTTP_HOST"] == "www.tockedelivery.cl" || $_SERVER["HTTP_HOST"] == "tockedelivery.cl"){
         die("SITIO EN CONSTRUCCION");
     }
 
