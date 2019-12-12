@@ -279,10 +279,8 @@ class Core{
             $polygons = json_decode(file_get_contents($this->dir_info."polygon/".$config["polygon"]));
             $precio = 9999999;
             $info['op'] = 2;
-            $info['polygons'] = $polygons;
             if(count($polygons) > 0){
                 foreach($polygons as $polygon){
-
                     $lats = [];
                     $lngs = [];
                     $puntos = json_decode($polygon->{'poligono'});
@@ -290,17 +288,7 @@ class Core{
                         $lats[] = $punto->{'lat'};
                         $lngs[] = $punto->{'lng'};
                     }
-
-                    $info['lats'] = $lats;
-                    $info['lngs'] = $lngs;
-
-                    $info['lat'] = $lat;
-                    $info['lng'] = $lng;
-
                     $is = $this->is_in_polygon($lats, $lngs, $lat, $lng);
-
-                    $info['is'] = $is;
-
                     if($is){
                         if($precio > $polygon->{'precio'}){
                             $info['op'] = 1;
