@@ -1,5 +1,11 @@
 <?php
 
+    if(strpos($_SERVER["REQUEST_URI"], "index.php") !== false){
+        header('HTTP/1.1 404 Not Found', true, 404);
+        include('../errors/404.html');
+        exit;
+    }
+
     header('Content-type: text/json');
     header('Content-type: application/json');
 

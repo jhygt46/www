@@ -995,7 +995,7 @@ function send_chat(){
     var mensaje = $('#texto_chat').val();
     var send = { accion: 'enviar_chat', id_ped: pedido.id_ped, id_loc: pedido.id_loc, code: pedido.pedido_code, mensaje: mensaje };
     $.ajax({
-        url: 'ajax/index.php',
+        url: '/ajax/',
         type: "POST",
         data: send,
         success: function(data){
@@ -1131,7 +1131,7 @@ function enviar_contacto(){
                         grecaptcha.execute('6LdZp78UAAAAAK56zJAVEkaSupUdCrRhsd1wnKkO', { action: 'contacto' }).then(function(token){
                             var send = { accion: 'enviar_contacto', nombre: nombre, telefono: telefono, correo: correo, comentario: comentario, token: token };
                             $.ajax({
-                                url: 'ajax/index.php',
+                                url: '/ajax/',
                                 type: "POST",
                                 data: send,
                                 success: function(res){
@@ -1295,7 +1295,7 @@ function initMap(){
                 
                 var send = { accion: 'despacho_domicilio', lat: places[0].geometry.location.lat(), lng: places[0].geometry.location.lng()};
                 $.ajax({
-                    url: 'ajax/index.php',
+                    url: '/ajax/',
                     type: "POST",
                     data: send,
                     success: function(data){
@@ -1376,7 +1376,7 @@ function send_error(code, error){
     
     var send = { accion: 'enviar_error', codes: code, error: error };
     $.ajax({
-        url: 'ajax/index.php',
+        url: '/ajax/',
         type: "POST",
         data: send
     });
