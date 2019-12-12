@@ -279,6 +279,7 @@ class Core{
             $polygons = json_decode(file_get_contents($this->dir_info."polygon/".$config["polygon"]));
             $precio = 9999999;
             $info['op'] = 2;
+            $info['polygons'] = $polygons;
             if(count($polygons) > 0){
                 foreach($polygons as $polygon){
                     $lats = [];
