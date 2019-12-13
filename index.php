@@ -39,9 +39,6 @@
     }
     
     $horas = (isset($_GET['horas'])) ? $_GET['horas'] : 0 ;
-    $css = (isset($_GET['css'])) ? "r" : "" ;
-    $rand = rand(0, 1);
-    $css = ($rand == 0) ? "r" : "" ;
 
 ?>
 
@@ -56,10 +53,10 @@
         <link href="https://fonts.googleapis.com/css?family=<?php echo $info->{"font"}->{'family'}; ?>" rel="stylesheet">
         
         <?php if(!isset($_GET['css'])){ ?><link rel="stylesheet" href="/css/reset.css" media="all" /><?php } ?>
-        <link rel="stylesheet" href="/css/<?php echo $css.$info->{"css_font_size"}; ?>" media="all" />
-        <link rel="stylesheet" href="/css/<?php echo $css.$info->{"css_color"}; ?>" media="all" />
-        <link rel="stylesheet" href="/css/<?php echo $css.$info->{"css_tipo"}; ?>" media="all" />
-        <link rel="stylesheet" href="/css/<?php echo $css; ?>css_base.css" media="all" />
+        <link rel="stylesheet" href="/css/r<?php echo $info->{"css_font_size"}; ?>" media="all" />
+        <link rel="stylesheet" href="/css/r<?php echo $info->{"css_color"}; ?>" media="all" />
+        <link rel="stylesheet" href="/css/r<?php echo $info->{"css_tipo"}; ?>" media="all" />
+        <link rel="stylesheet" href="/css/rcss_base.css" media="all" />
         <?php if($info->{"favicon"} == "default.ico"){ ?>
             <link rel='shortcut icon' type='image/x-icon' href='default.ico' />
         <?php }else{ ?>
