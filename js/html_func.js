@@ -342,6 +342,9 @@ function create_html_producto2(aux){
     var foto = create_element_class('foto');
     foto.style.width = (height - 10) + "px";
     foto.style.height = (height - 10) + "px";
+    if(aux.image != ""){
+        foto.style.backgroundImage = 'url("/data/'+code+'/'+obj.image+'")';
+    }
 
     if(aux.disponible == 0){
         // CARRO DE COMPRAS //
