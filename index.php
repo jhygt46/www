@@ -1,5 +1,12 @@
 <?php
 
+    if(isset($_GET["cat"])){
+        echo "CAT: ".$_GET["cat"]."<br/>";
+    }
+    if(isset($_GET["pro"])){
+        echo "PRO: ".$_GET["pro"]."<br/>";
+    }
+
     if(isset($_POST["test"]) && $_POST["test"] == "Dw7k2s_hKi5sqPs8"){
         die("hjS3r%mDs-5gYa6ib_5Ps");
     }
