@@ -161,12 +161,6 @@ class Core{
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($send));
         if(!curl_errno($ch)){
             $data = json_decode(curl_exec($ch));
-
-            echo "<pre>";
-            print_r($data);
-            echo "</pre>";
-            exit;
-
             curl_close($ch);
             if($data->{'op'} == 1){
                 if(!is_dir($this->dir)){
@@ -238,6 +232,14 @@ class Core{
                         if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$categorias[$i]->{"image"})){
                             if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$categorias[$i]->{"image"}, file_get_contents("http://www.misitiodelivery.cl/images/categorias/".$categorias[$i]->{"image"}))){
                                 $this->enviar_error(16, "No se pudo guardar las imagenes de categorias ".$this->host);
+                            }
+                        }
+                    }
+                    $productos = $data->{"data"}->{"catalogos"}[0]->{"productos"};
+                    for($i=0; $i<count($productos); $i++){
+                        if(!file_exists($this->dir_data."data/".$data->{"info"}->{"code"}."/".$productos[$i]->{"image"})){
+                            if(!file_put_contents($this->dir_data."data/".$data->{"info"}->{"code"}."/".$productos[$i]->{"image"}, file_get_contents("http://www.misitiodelivery.cl/images/productos/".$productos[$i]->{"image"}))){
+                                $this->enviar_error(16, "No se pudo guardar las imagenes de productos ".$this->host);
                             }
                         }
                     }
