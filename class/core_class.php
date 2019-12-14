@@ -165,6 +165,7 @@ class Core{
             echo "<pre>";
             print_r($data);
             echo "</pre>";
+            exit;
 
             curl_close($ch);
             if($data->{'op'} == 1){
