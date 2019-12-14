@@ -46,7 +46,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title><?php echo $info->{"titulo"}." - ".$css; ?></title>
+        <title><?php echo $info->{"titulo"}; ?></title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -57,12 +57,12 @@
         <link rel="stylesheet" href="/css/r<?php echo $info->{"css_color"}; ?>" media="all" />
         <link rel="stylesheet" href="/css/r<?php echo $info->{"css_tipo"}; ?>" media="all" />
         <link rel="stylesheet" href="/css/rcss_base.css" media="all" />
+        
         <?php if($info->{"favicon"} == "default.ico"){ ?>
             <link rel='shortcut icon' type='image/x-icon' href='default.ico' />
         <?php }else{ ?>
             <link rel='shortcut icon' type='image/x-icon' href='/data/<?php echo $info->{'code'}; ?>/<?php echo $info->{"favicon"}; ?>' />
         <?php } ?>
-        
         
         <script src="https://www.izusushi.cl/socket.io/socket.io.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
