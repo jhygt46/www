@@ -343,7 +343,7 @@ function create_html_producto2(aux){
     foto.style.width = (height - 10) + "px";
     foto.style.height = (height - 10) + "px";
     if(aux.image != ""){
-        foto.style.backgroundImage = 'url("/data/'+code+'/'+obj.image+'")';
+        foto.style.backgroundImage = 'url("/data/'+code+'/'+aux.image+'")';
     }
 
     if(aux.disponible == 0){
