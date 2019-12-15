@@ -2,25 +2,14 @@
 
     
     $url = explode("/", $_SERVER["REQUEST_URI"]);
+    if($url[1] != ""){
+        if(filter_var("http://".$url[1], FILTER_VALIDATE_URL)){
+            // ES URL
+        }else{
 
-    echo "<pre>";
-    print_r($url);
-    echo "</pre>";
-
-    unset($url[0]);
-
-    echo "<pre>";
-    print_r($url);
-    echo "</pre>";
-
-    if(filter_var("http://".$url[0], FILTER_VALIDATE_URL)){
-        // ES URL
-    }else{
-
+        }
     }
-        
-
-
+    
     exit;
 
     if(isset($_POST["test"]) && $_POST["test"] == "Dw7k2s_hKi5sqPs8"){
@@ -40,6 +29,11 @@
     }
 
     $info = $core->get_data();
+
+    echo "<pre>";
+    print_r($info);
+    echo "</pre>";
+
     if($info === null){
         die("<table border='0' width='100%' height='100%'><tr><td align='center' valign='middle'>Sitio no existe</td></tr></table>");
     }else{
