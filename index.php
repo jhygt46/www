@@ -5,6 +5,15 @@
     echo "<pre>";
     print_r($url);
     echo "</pre>";
+
+    if(filter_var($url[1], FILTER_VALIDATE_URL)){
+        echo 'this is URL';
+    }else{
+        echo 'this is NO URL';
+    }
+        
+
+
     exit;
 
     if(isset($_POST["test"]) && $_POST["test"] == "Dw7k2s_hKi5sqPs8"){
