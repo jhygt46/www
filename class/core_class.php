@@ -27,16 +27,11 @@ class Core{
                     if(filter_var("http://".$url[1], FILTER_VALIDATE_URL)){
                         $this->host = $url[1];
                     }
+                    if($url[1] == "ajax"){
+                        $var = explode("/", $_SERVER["HTTP_REFERER"])[4];
+                        $this->host = (count(explode(".", $var)) == 2) ? "www.".strtolower($var) : strtolower($var) ;
+                    }
                 }
-
-                /*
-                if(isset($_GET["url"])){
-                    $this->host = (count(explode(".", $_GET["url"])) == 2) ? "www.".strtolower($_GET["url"]) : strtolower($_GET["url"]) ;
-                }else{
-                    $var = explode("/", $_SERVER["HTTP_REFERER"])[4];
-                    $this->host = (count(explode(".", $var)) == 2) ? "www.".strtolower($var) : strtolower($var) ;
-                }
-                */
 
             }else{
                 $this->host = (count(explode(".", $_SERVER["HTTP_HOST"])) == 2) ? "www.".strtolower($_SERVER["HTTP_HOST"]) : strtolower($_SERVER["HTTP_HOST"]) ;
@@ -292,7 +287,7 @@ class Core{
 
             $this->put_ip_black_list($this->getUserIpAddr(), 1);
 
-            return $_SERVER;
+            return $this->host;
             $config = $this->get_config();
             $polygons = json_decode(file_get_contents($this->dir_info."polygon/".$config["polygon"]));
             $precio = 9999999;
