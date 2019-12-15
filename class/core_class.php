@@ -286,8 +286,6 @@ class Core{
         if($this->get_ip_black_list($this->getUserIpAddr(), 1, 3600, 20)){
 
             $this->put_ip_black_list($this->getUserIpAddr(), 1);
-
-            return $this->host;
             $config = $this->get_config();
             $polygons = json_decode(file_get_contents($this->dir_info."polygon/".$config["polygon"]));
             $precio = 9999999;
