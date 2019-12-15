@@ -300,16 +300,6 @@ class Core{
                         $lngs[] = $punto->{'lng'};
                     }
                     $is = $this->is_in_polygon($lats, $lngs, $lat, $lng);
-
-                    $aux['lats'] = $lats;
-                    $aux['lngs'] = $lngs;
-                    $aux['lat'] = $lat;
-                    $aux['lng'] = $lng;
-                    $aux['is'] = $is;
-
-                    $ret[] = $aux;
-                    unset($aux);
-
                     if($is){
                         if($precio > $polygon->{'precio'}){
                             $info['op'] = 1;
@@ -329,7 +319,6 @@ class Core{
         }else{
             $info['op'] = 3;
         }
-        return $ret;
         return $info;
 
     }
