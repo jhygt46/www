@@ -288,7 +288,6 @@ class Core{
             $this->put_ip_black_list($this->getUserIpAddr(), 1);
             $config = $this->get_config();
             $polygons = json_decode(file_get_contents($this->dir_info."polygon/".$config["polygon"]));
-            return $polygons;
             $precio = 9999999;
             $info['op'] = 2;
             if(count($polygons) > 0){
@@ -301,6 +300,16 @@ class Core{
                         $lngs[] = $punto->{'lng'};
                     }
                     $is = $this->is_in_polygon($lats, $lngs, $lat, $lng);
+
+                    $aux['lats'] = $lats;
+                    $aux['lngs'] = $lngs;
+                    $aux['lat'] = $lat;
+                    $aux['lng'] = $lng;
+                    $aux['is'] = $is;
+
+                    $ret[] = $aux;
+                    unset($aux);
+
                     if($is){
                         if($precio > $polygon->{'precio'}){
                             $info['op'] = 1;
@@ -312,6 +321,8 @@ class Core{
                             $precio = $polygon->{'precio'};
                         }
                     }
+
+                    return $ret;
                 }
             }else{
                 $info['op'] = 3;
