@@ -37,7 +37,7 @@ class Core{
                     $this->host = (count(explode(".", $var)) == 2) ? "www.".strtolower($var) : strtolower($var) ;
                 }
                 */
-                
+
             }else{
                 $this->host = (count(explode(".", $_SERVER["HTTP_HOST"])) == 2) ? "www.".strtolower($_SERVER["HTTP_HOST"]) : strtolower($_SERVER["HTTP_HOST"]) ;
             }
@@ -292,6 +292,7 @@ class Core{
 
             $this->put_ip_black_list($this->getUserIpAddr(), 1);
 
+            return $_SERVER;
             $config = $this->get_config();
             $polygons = json_decode(file_get_contents($this->dir_info."polygon/".$config["polygon"]));
             $precio = 9999999;
