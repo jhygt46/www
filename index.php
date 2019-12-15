@@ -1,7 +1,9 @@
 <?php
 
+    
+    $url = explode("/", $_SERVER["REQUEST_URI"]);
     echo "<pre>";
-    print_r($_SERVER);
+    print_r($url);
     echo "</pre>";
     exit;
 
