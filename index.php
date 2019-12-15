@@ -2,14 +2,21 @@
 
     
     $url = explode("/", $_SERVER["REQUEST_URI"]);
+
     echo "<pre>";
     print_r($url);
     echo "</pre>";
 
-    if(filter_var("http://".$url[1], FILTER_VALIDATE_URL)){
-        echo 'this is URL';
+    unset($url[0]);
+
+    echo "<pre>";
+    print_r($url);
+    echo "</pre>";
+
+    if(filter_var("http://".$url[0], FILTER_VALIDATE_URL)){
+        // ES URL
     }else{
-        echo 'this is NO URL';
+
     }
         
 
