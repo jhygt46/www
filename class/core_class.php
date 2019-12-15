@@ -321,8 +321,6 @@ class Core{
                             $precio = $polygon->{'precio'};
                         }
                     }
-
-                    return $ret;
                 }
             }else{
                 $info['op'] = 3;
@@ -331,6 +329,7 @@ class Core{
         }else{
             $info['op'] = 3;
         }
+        return $ret;
         return $info;
 
     }
