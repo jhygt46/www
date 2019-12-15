@@ -1,21 +1,7 @@
 <?php
 
-    
-    $url = explode("/", $_SERVER["REQUEST_URI"]);
-    if($url[1] != ""){
-        if(filter_var("http://".$url[1], FILTER_VALIDATE_URL)){
-            // ES URL
-        }else{
-
-        }
-    }
-    
     if(isset($_POST["test"]) && $_POST["test"] == "Dw7k2s_hKi5sqPs8"){
         die("hjS3r%mDs-5gYa6ib_5Ps");
-    }
-
-    if($_SERVER["HTTP_HOST"] == "www.tockedelivery.cl" /* || $_SERVER["HTTP_HOST"] == "tockedelivery.cl" */ ){
-        die("SITIO EN CONSTRUCCION");
     }
 
     require_once "class/core_class.php";
@@ -27,6 +13,17 @@
     }
 
     $info = $core->get_data();
+
+    $url = explode("/", $_SERVER["REQUEST_URI"]);
+    if($url[1] != ""){
+        if(filter_var("http://".$url[1], FILTER_VALIDATE_URL)){
+            // ES URL
+        }else{
+
+        }
+    }
+
+    
 
     echo "<pre>";
     print_r($info);
@@ -52,8 +49,6 @@
         header('Location: ' . $location);
         exit;
     }
-    
-    $horas = (isset($_GET['horas'])) ? $_GET['horas'] : 0 ;
 
 ?>
 

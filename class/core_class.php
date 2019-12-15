@@ -21,12 +21,23 @@ class Core{
                 file_put_contents("/var/server_ip.json", $this->server_ip);
             }
             if($_SERVER["HTTP_HOST"] == $this->server_ip){
+
+                $url = explode("/", $_SERVER["REQUEST_URI"]);
+                if($url[1] != ""){
+                    if(filter_var("http://".$url[1], FILTER_VALIDATE_URL)){
+                        $this->host = $url[1];
+                    }
+                }
+
+                /*
                 if(isset($_GET["url"])){
                     $this->host = (count(explode(".", $_GET["url"])) == 2) ? "www.".strtolower($_GET["url"]) : strtolower($_GET["url"]) ;
                 }else{
                     $var = explode("/", $_SERVER["HTTP_REFERER"])[4];
                     $this->host = (count(explode(".", $var)) == 2) ? "www.".strtolower($var) : strtolower($var) ;
                 }
+                */
+                
             }else{
                 $this->host = (count(explode(".", $_SERVER["HTTP_HOST"])) == 2) ? "www.".strtolower($_SERVER["HTTP_HOST"]) : strtolower($_SERVER["HTTP_HOST"]) ;
             }
