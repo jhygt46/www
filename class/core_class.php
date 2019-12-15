@@ -28,7 +28,7 @@ class Core{
                         $this->host = $url[1];
                     }
                     if($url[1] == "ajax"){
-                        $var = explode("/", $_SERVER["HTTP_REFERER"])[4];
+                        $var = explode("/", $_SERVER["HTTP_REFERER"])[3];
                         $this->host = (count(explode(".", $var)) == 2) ? "www.".strtolower($var) : strtolower($var) ;
                     }
                 }
