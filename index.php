@@ -6,7 +6,7 @@
     print_r($url);
     echo "</pre>";
 
-    if(filter_var("http//".$url[1], FILTER_VALIDATE_URL)){
+    if(filter_var("http://".$url[1], FILTER_VALIDATE_URL)){
         echo 'this is URL';
     }else{
         echo 'this is NO URL';
