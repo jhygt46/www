@@ -41,8 +41,8 @@
         for($j=0; $j<count($cats); $j++){
             if($url[$x] == $cats[$j]->{'nombre'} && $p_id == $cats[$j]->{'parent_id'}){
                 if(count($url) > $x){
-                    echo "rec_url".count($url)."/".$x."<br/>";
-                    rec_url($cats, $cats[$j]->{'id'}, $url, $x++);
+                    $i = $x + 1;
+                    rec_url($cats, $cats[$j]->{'id'}, $url, $i);
                 }else{
                     return true;
                 }
