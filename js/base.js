@@ -6,6 +6,11 @@ $(document).ready(function(){
     }
     console.log(url_pag_id);
     console.log(url_cat_id);
+
+    if(url_cat_id > 0){
+        history.pushState(null, 'Buena Nelson', 'http://www.tockedelivery.cl/buena/nelson');
+    }
+    
 });
 
 $(window).resize(function(){
