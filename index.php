@@ -16,9 +16,11 @@
     $url = explode("/", $_SERVER["REQUEST_URI"]);
     $url_cat_id = 0;
     $url_pag_id = 0;
+    $err404 = false;
 
     if($url[1] != ""){
 
+        $err404 = true;
         if($url[1] == "detalle"):
             $_GET["code"] = $url[2];
             require "detalle.php";
@@ -41,6 +43,12 @@
             exit;
         else:
             $url_cat = $core->rec_url($info->{'categorias'}, 0, $url, 1);
+
+            echo "<pre>";
+            print_r($url_cat);
+            echo "</pre>";
+            exit;
+
             if($url_cat['op'] == 1){
                 $url_cat_id = $url_cat['id'];
             }
@@ -52,6 +60,8 @@
             }
         endif;
     }
+
+
 
     if($info === null){
         die("<table border='0' width='100%' height='100%'><tr><td align='center' valign='middle'>Sitio no existe</td></tr></table>");
