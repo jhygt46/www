@@ -93,7 +93,7 @@ function open_categoria(id){
             for(var i=0, ilen=categorias.length; i<ilen; i++){
                 if(categorias[i].id_cae == id){
                     show_modal('modal_carta');
-                    if(categorias[j].parent_id == 0){
+                    if(categorias[i].parent_id == 0){
                         history.pushState(null, categorias[i].nombre, '/'+categorias[i].nombre+'/');
                     }else{
                         history.pushState(null, categorias[i].nombre, categorias[i].nombre+'/');
