@@ -15,35 +15,46 @@
     $info = $core->get_data();
     $url = explode("/", $_SERVER["REQUEST_URI"]);
     if($url[1] != ""){
-        if(filter_var("http://".$url[1], FILTER_VALIDATE_URL)){
-            // ES URL
-        }else{
 
-        }
-    }
-
-    $data = rec_url($info->{'categorias'}, 0, $url, 1);
-    echo "<pre>";
-    print_r($data);
-    echo "</pre>";
-
-    function rec_url($cats, $p_id, $url, $x){
-        for($j=0; $j<count($cats); $j++){
-            if($url[$x] == $cats[$j]->{'nombre'} && $p_id == $cats[$j]->{'parent_id'}){
-                if(count($url) == $x + 1){
-                    $res['id'] = $cats[$j]->{'id'};
-                    $res['op'] = true;
-                    return $res;
-                }else{
-                    $i = $x + 1;
-                    return rec_url($cats, $cats[$j]->{'id'}, $url, $i);
+        if($url[1] == "detalle"):
+            $pagina = "DETALLE";
+            $_GET["code"] = $url[2];
+            require "detalle.php";
+            exit;
+        elseif($url[1] == "detalle_n"):
+            $pagina = "DETALLE N";
+            $_GET["n"] = 1;
+            $_GET["code"] = $url[2];
+            require "detalle.php";
+            exit;
+        elseif($url[1] == "detalle1"):
+            $pagina = "DETALLE 1";
+            $_GET["tc"] = 1;
+            $_GET["code"] = $url[2];
+            require "detalle.php";
+            exit;
+        elseif($url[1] == "detalle_n1"):
+            $pagina = "DETALLE N1";
+            $_GET["tc"] = 1;
+            $_GET["n"] = 1;
+            $_GET["code"] = $url[2];
+            require "detalle.php";
+            exit;
+        else:
+            $url_cat = $this->rec_url($info->{'categorias'}, 0, $url, 1);
+            if($url_cat['op'] == 1){
+                $pagina = "CATEGORIA";
+            }
+            if($url_cat['op'] == 2){
+                $url_pag = $this->rec_pag($info->{'categorias'}, $url[1]);
+                if($url_pag['op'] == 1){
+                    $pagina = "CATEGORIA";
                 }
             }
-        }
-        $res['op'] = false;
-        return $res;
+        endif;
     }
 
+    echo $pagina."<br/>";
     exit;
 
     if($info === null){
