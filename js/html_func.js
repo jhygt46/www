@@ -3,7 +3,7 @@ function html_home_categorias(obj, num){
 
     var Div = document.createElement('a');
     Div.className = 'botones_principales';
-    Div.setAttribute('href', "/"+obj.nombre);
+    Div.setAttribute('href', "/"+obj.nombre+"/");
     
     if(obj.image == ""){
         Div.style.backgroundImage = 'url("/_images/cat_'+num+'.jpg")';
