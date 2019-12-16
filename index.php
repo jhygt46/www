@@ -13,6 +13,10 @@
     }
 
     $info = $core->get_data();
+    echo "<pre>";
+    print_r($info);
+    echo "<pre>";
+    exit;
 
     $url = explode("/", $_SERVER["REQUEST_URI"]);
     if($url[1] != ""){
@@ -23,12 +27,31 @@
         }
     }
 
-    
-    
-    echo "<pre>";
-    print_r($info);
-    echo "</pre>";
-    
+    /*
+    $cat[0]['id'] = 1;
+    $cat[0]['nombre'] = 'pizzas';
+    $cat[0]['parent_id'] = 0;
+
+    $cat[1]['id'] = 2;
+    $cat[1]['nombre'] = 'sandwich';
+    $cat[1]['parent_id'] = 0;
+
+    $cat[2]['id'] = 3;
+    $cat[2]['nombre'] = 'ensaladas';
+    $cat[2]['parent_id'] = 0;
+
+    $cat[3]['id'] = 4;
+    $cat[3]['nombre'] = 'margarita';
+    $cat[3]['parent_id'] = 1;
+
+    function rec_url($cats, $p_id, $url, $x){
+        for($j=0; $j<count($cats); $j++){
+            if($url[$x] == $cats[$j]['nombre'] && $p_id == $cats[$j]['parent_id']){
+                rec_url($cats, $cats[$j]['id'], $url, $x++);
+            }
+        }
+    }
+    */
 
     if($info === null){
         die("<table border='0' width='100%' height='100%'><tr><td align='center' valign='middle'>Sitio no existe</td></tr></table>");
