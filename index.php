@@ -42,6 +42,7 @@
             if($url[$x] == $cats[$j]->{'nombre'} && $p_id == $cats[$j]->{'parent_id'}){
                 echo count($url)." // ".$x."<br/>";
                 if(count($url) == $x + 1){
+                    echo "RETURN TRUE => <br/>";
                     return true;
                 }else{
                     $i = $x + 1;
