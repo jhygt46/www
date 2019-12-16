@@ -13,7 +13,7 @@ function html_home_categorias(obj, num){
         Div.style.backgroundImage = 'url("/data/'+code+'/'+obj.image+'")';
     }
 
-    Div.onclick = function(){ open_categoria(obj.id_cae) };
+    Div.onclick = function(){ open_categoria(obj.id_cae); return false; };
     var Divbp = document.createElement('div');
 
     if(obj.degradado == 0){

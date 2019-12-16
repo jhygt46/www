@@ -114,7 +114,6 @@ function open_categoria(id){
         show_modal_4(get_pedido());
     }
     hidemenu();
-    return false;
     
 }
 function tiene_pedido(){
