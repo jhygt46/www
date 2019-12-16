@@ -22,6 +22,7 @@ $(window).on('popstate', function (e) {
         //load content with ajax
     }
     console.log("POPSTATE");
+    console.log(e);
 });
 
 $(window).resize(function(){
