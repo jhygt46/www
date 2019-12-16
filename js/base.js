@@ -16,12 +16,12 @@ $(document).ready(function(){
     
 });
 
-$(window).on('popstate', function (e) {
+$(window).on('popstate', function(e){
     var state = e.originalEvent.state;
     if(state !== null) {
         //load content with ajax
     }
-    console.log("POPSTATE");
+    console.log(state);
     console.log(window.location.href);
 });
 
