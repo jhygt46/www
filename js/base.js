@@ -16,13 +16,13 @@ $(document).ready(function(){
     
 });
 
-window.onhashchange = function() {
-    if(window.innerDocClick) {
-        console.log("BUENA");
-    }else{
-        console.log("NELSON");
+$(window).on('popstate', function (e) {
+    var state = e.originalEvent.state;
+    if(state !== null) {
+        //load content with ajax
     }
-}
+    console.log("POPSTATE");
+});
 
 $(window).resize(function(){
     btn_prin();
