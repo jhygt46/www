@@ -4,11 +4,14 @@ $(document).ready(function(){
     if(ver_inicio == 1){
         show_modal('modal_pagina_inicio');
     }
+
+
+    
     console.log(url_pag_id);
     console.log(url_cat_id);
 
     if(url_cat_id > 0){
-        history.pushState(null, 'Buena Nelson', 'http://www.tockedelivery.cl/buena/nelson');
+        history.pushState(null, 'Buena Nelson', '/buena/nelson');
     }
     
 });

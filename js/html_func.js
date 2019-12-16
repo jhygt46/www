@@ -1,7 +1,7 @@
 // IMPRIME CATEGORIAS Y PAGINAS EN HOME //
 function html_home_categorias(obj, num){
 
-    var Div = document.createElement('div');
+    var Div = document.createElement('a');
     Div.className = 'botones_principales';
     
     if(obj.image == ""){
