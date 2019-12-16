@@ -34,7 +34,7 @@
 
     function rec_url($cats, $p_id, $url, $x){
         for($j=0; $j<count($cats); $j++){
-            if($url[$x] == $cats[$j]['nombre'] && $p_id == $cats[$j]['parent_id']){
+            if($url[$x] == $cats[$j]->{'nombre'} && $p_id == $cats[$j]->{'parent_id'}){
                 return "buena nelson";
             }
         }
