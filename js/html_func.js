@@ -5,7 +5,7 @@ function html_home_categorias(obj, num){
 
     var Div = document.createElement('a');
     Div.className = 'botones_principales';
-    Div.setAttribute('href', "http://google.com");
+    Div.setAttribute('href', "/categoria");
     
     if(obj.image == ""){
         Div.style.backgroundImage = 'url("/_images/cat_'+num+'.jpg")';
