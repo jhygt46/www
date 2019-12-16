@@ -41,12 +41,12 @@
             require "detalle.php";
             exit;
         else:
-            $url_cat = $this->rec_url($info->{'categorias'}, 0, $url, 1);
+            $url_cat = $core->rec_url($info->{'categorias'}, 0, $url, 1);
             if($url_cat['op'] == 1){
                 $pagina = "CATEGORIA";
             }
             if($url_cat['op'] == 2){
-                $url_pag = $this->rec_pag($info->{'categorias'}, $url[1]);
+                $url_pag = $core->rec_pag($info->{'categorias'}, $url[1]);
                 if($url_pag['op'] == 1){
                     $pagina = "CATEGORIA";
                 }
