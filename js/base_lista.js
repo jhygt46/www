@@ -82,6 +82,7 @@ function close_that(that){
     $('.modals').hide();
     $(that).parents('.modal').hide();
     paso = 1;
+    history.pushState(null, 'Buena Nelson', '/');
 }
 function open_categoria(id){
     
