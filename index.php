@@ -114,7 +114,7 @@
             var produccion = <?php echo $info->{'dns'}; ?>;
             var tipo_add_carro = <?php echo $info->{'tipo_add_carro'}; ?>;
             var url_pag_id = <?php echo $url_pag_id; ?>;
-            var url_cat_id = <?php echo $url_pag_id; ?>;
+            var url_cat_id = <?php echo $url_cat_id; ?>;
         </script>
         <style>
             body{
