@@ -41,11 +41,13 @@
         for($j=0; $j<count($cats); $j++){
             if($url[$x] == $cats[$j]->{'nombre'} && $p_id == $cats[$j]->{'parent_id'}){
                 echo count($url)." // ".$x."<br/>";
-                if(count($url) > $x){
+                if(count($url) - 1 == $x){
+                    return true;
+                }else{
                     $i = $x + 1;
                     rec_url($cats, $cats[$j]->{'id'}, $url, $i);
                 }
-                return true;
+                
             }
         }
         return false;
