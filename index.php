@@ -37,9 +37,10 @@
     }
 
     function rec_url($cats, $p_id, $url, $x){
-        echo $p_id."/".$x."<br/>";
+        
         for($j=0; $j<count($cats); $j++){
             if($url[$x] == $cats[$j]->{'nombre'} && $p_id == $cats[$j]->{'parent_id'}){
+                echo count($url)."/".$x."<br/>";
                 if(count($url) < $x){
                     rec_url($cats, $cats[$j]->{'id'}, $url, $x++);
                 }else{
