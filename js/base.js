@@ -4,6 +4,8 @@ $(document).ready(function(){
     if(ver_inicio == 1){
         show_modal('modal_pagina_inicio');
     }
+    console.log(url_pag_id);
+    console.log(url_cat_id);
 });
 
 $(window).resize(function(){

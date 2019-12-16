@@ -14,27 +14,26 @@
 
     $info = $core->get_data();
     $url = explode("/", $_SERVER["REQUEST_URI"]);
+    $url_cat_id = 0;
+    $url_pag_id = 0;
+
     if($url[1] != ""){
 
         if($url[1] == "detalle"):
-            $pagina = "DETALLE";
             $_GET["code"] = $url[2];
             require "detalle.php";
             exit;
         elseif($url[1] == "detalle_n"):
-            $pagina = "DETALLE N";
             $_GET["n"] = 1;
             $_GET["code"] = $url[2];
             require "detalle.php";
             exit;
         elseif($url[1] == "detalle1"):
-            $pagina = "DETALLE 1";
             $_GET["tc"] = 1;
             $_GET["code"] = $url[2];
             require "detalle.php";
             exit;
         elseif($url[1] == "detalle_n1"):
-            $pagina = "DETALLE N1";
             $_GET["tc"] = 1;
             $_GET["n"] = 1;
             $_GET["code"] = $url[2];
@@ -43,19 +42,16 @@
         else:
             $url_cat = $core->rec_url($info->{'categorias'}, 0, $url, 1);
             if($url_cat['op'] == 1){
-                $pagina = "CATEGORIA";
+                $url_cat_id = $url_cat['id'];
             }
             if($url_cat['op'] == 2){
                 $url_pag = $core->rec_pag($info->{'categorias'}, $url[1]);
                 if($url_pag['op'] == 1){
-                    $pagina = "CATEGORIA";
+                    $url_pag_id = $url_pag['id'];
                 }
             }
         endif;
     }
-
-    echo $pagina."<br/>";
-    exit;
 
     if($info === null){
         die("<table border='0' width='100%' height='100%'><tr><td align='center' valign='middle'>Sitio no existe</td></tr></table>");
@@ -117,6 +113,8 @@
             var fecha_pc = new Date().getTime();
             var produccion = <?php echo $info->{'dns'}; ?>;
             var tipo_add_carro = <?php echo $info->{'tipo_add_carro'}; ?>;
+            var url_pag_id = <?php $url_pag_id; ?>;
+            var url_cat_id = <?php $url_pag_id; ?>;
         </script>
         <style>
             body{
