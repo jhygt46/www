@@ -16,6 +16,14 @@ $(document).ready(function(){
     
 });
 
+window.onhashchange = function() {
+    if(window.innerDocClick) {
+        console.log("BUENA");
+    }else{
+        console.log("NELSON");
+    }
+}
+
 $(window).resize(function(){
     btn_prin();
 });
