@@ -30,14 +30,23 @@
     print_r($info->{'categorias'});
     echo "<pre>";
 
-    echo rec_url($info->{'categorias'}, 0, $url, 1);
+    if(rec_url($info->{'categorias'}, 0, $url, 1)){
+        echo "CATEGORIA BIEN";
+    }else{
+        echo "ERROR";
+    }
 
     function rec_url($cats, $p_id, $url, $x){
         for($j=0; $j<count($cats); $j++){
             if($url[$x] == $cats[$j]->{'nombre'} && $p_id == $cats[$j]->{'parent_id'}){
-                return "buena nelson";
+                if(count($url) < $x){
+                    rec_url($cats, $cats[$j]->{'id'}, $url, $x++);
+                }else{
+                    return true;
+                }
             }
         }
+        return false;
     }
 
     exit;
