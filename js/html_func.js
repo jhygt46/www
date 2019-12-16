@@ -1,8 +1,11 @@
 // IMPRIME CATEGORIAS Y PAGINAS EN HOME //
 function html_home_categorias(obj, num){
 
+    console.log(obj);
+
     var Div = document.createElement('a');
     Div.className = 'botones_principales';
+    Div.setAttribute('href', "http://google.com");
     
     if(obj.image == ""){
         Div.style.backgroundImage = 'url("/_images/cat_'+num+'.jpg")';
