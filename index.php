@@ -22,35 +22,26 @@
         }
     }
 
+    $data = rec_url($info->{'categorias'}, 0, $url, 1);
     echo "<pre>";
-    print_r($url);
-    echo "<pre>";
-
-    echo "<pre>";
-    print_r($info->{'categorias'});
-    echo "<pre>";
-
-    if(rec_url($info->{'categorias'}, 0, $url, 1)){
-        echo "CATEGORIA BIEN";
-    }else{
-        echo "ERROR";
-    }
+    print_r($data);
+    echo "</pre>";
 
     function rec_url($cats, $p_id, $url, $x){
-        echo "rec_url init: ".$x."<br/>";
         for($j=0; $j<count($cats); $j++){
             if($url[$x] == $cats[$j]->{'nombre'} && $p_id == $cats[$j]->{'parent_id'}){
-                echo count($url)." // ".$x."<br/>";
                 if(count($url) == $x + 1){
-                    return true;
+                    $res['id'] = $cats[$j]->{'id'};
+                    $res['op'] = true;
+                    return $res;
                 }else{
                     $i = $x + 1;
                     return rec_url($cats, $cats[$j]->{'id'}, $url, $i);
                 }
-                
             }
         }
-        return false;
+        $res['op'] = false;
+        return $res;
     }
 
     exit;
