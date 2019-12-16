@@ -41,7 +41,7 @@
         for($j=0; $j<count($cats); $j++){
             if($url[$x] == $cats[$j]->{'nombre'} && $p_id == $cats[$j]->{'parent_id'}){
                 echo count($url)." // ".$x."<br/>";
-                if(count($url) - 1 == $x){
+                if(count($url) == $x + 1){
                     return true;
                 }else{
                     $i = $x + 1;
