@@ -15,20 +15,10 @@
     $info = $core->get_data();
     $url = explode("/", $_SERVER["REQUEST_URI"]);
     $c_url = count($url) - 1;
-
-    echo "<pre>";
-    print_r($url);
-    echo "</pre>";
-
     if($url[$c_url] == ""){
         unset($url[$c_url]);
     }
-
-    echo "<pre>";
-    print_r($url);
-    echo "</pre>";
-    exit;
-
+    
     $url_cat_id = 0;
     $url_pag_id = 0;
 

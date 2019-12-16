@@ -88,11 +88,12 @@ function open_categoria(id){
     var tp = tiene_pedido();
     if(!tp){
         if(proceso(true, false)){
-            show_modal('modal_carta');
             var categorias = data.catalogos[catalogo].categorias;
             var cats = [];
             for(var i=0, ilen=categorias.length; i<ilen; i++){
                 if(categorias[i].id_cae == id){
+                    show_modal('modal_carta');
+                    history.pushState(null, categorias[i].nombre, '/'+categorias[i].nombre+'/');
                     $('.modal_carta .titulo h1').html(categorias[i].nombre);
                     $('.modal_carta .titulo h2').html(categorias[i].descripcion_sub);
                     for(var j=0, jlen=categorias.length; j<jlen; j++){
