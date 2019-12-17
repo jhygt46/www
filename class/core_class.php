@@ -110,13 +110,12 @@ class Core{
                 
                 if($p_id == 0){
                     $res[] = $cats[$j]->{'id'};
-                }else{
-                    return $cats[$j]->{'id'};
                 }
                 if(count($url) > $x + 1){
                     $i = $x + 1;
                     $res[] = $this->rec_url2($cats, $cats[$j]->{'id'}, $url, $i);
                 }
+                return $cats[$j]->{'id'};
 
             }
         }
