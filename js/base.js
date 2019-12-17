@@ -23,24 +23,30 @@ $(window).on('popstate', function(e){
         back.pop();
     }
 
-    var p_id = 0;
-    var categorias = data.catalogos[0].categorias;
-    var cont1 = 0;
-    var cont2 = 0;
+    console.log(rec_url(0, back, 3));
 
-    for(var i=3, ilen=back.length; i<ilen; i++){
-        cont1++;
-        for(var j=0, jlen=categorias.length; j<jlen; j++){
-            if(back[i] == categorias[j].nombre && p_id == categorias[j].parent_id){
-                p_id = categorias[j].id_cae;
-                cont2++;
+});
+
+function rec_url(p_id, url, x){
+
+    var categorias = data.catalogos[0].categorias;
+    for(var j=0; j<categorias.length; j++){
+        if(url[x] == categorias[j].nombre && p_id == categorias[j].parent_id){
+            if(url.length == x + 1){
+                var res = new Object();
+                res.id = categorias[j].id;
+                res.op = 1;
+                return res;
+            }else{
+                var i = x + 1;
+                return rec_url(categorias[j].id, url, i);
             }
         }
     }
-
-    console.log(cont1 + "-" + cont2);
-
-});
+    var res = new Object();
+    res.op = 2;
+    return res;
+}
 
 $(window).resize(function(){
     btn_prin();
