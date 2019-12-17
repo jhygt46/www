@@ -21,6 +21,7 @@ $(document).ready(function(){
                 history.pushState(null, 'Buena Nelson', url_cat_ids[i].nombre+'/');
                 console.log(url_cat_ids[i].nombre+'/');
             }
+            open_categoria(url_cat_ids[i].id);
         }
     }
     
