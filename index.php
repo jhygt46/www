@@ -46,7 +46,7 @@
             require "detalle.php";
             exit;
         else:
-            $url_cat = $core->rec_url($info->{'categorias'}, 0, $url, 1);
+            $url_cat = $core->rec_url2($info->{'categorias'}, 0, $url, 1);
 
             echo "<pre>";
             print_r($url_cat);
