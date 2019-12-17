@@ -964,6 +964,7 @@ function paso_2(){
     }else{
         console.log("A1");
     }
+    console.log("A0");
     
 }
 function paso_3(){
