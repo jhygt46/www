@@ -115,6 +115,9 @@ class Core{
                     $i = $x + 1;
                     $res[] = $this->rec_url2($cats, $cats[$j]->{'id'}, $url, $i);
                 }
+                if($p_id > 0){
+                    return $cats[$j]->{'id'};
+                }
 
             }
         }
