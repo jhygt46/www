@@ -51,6 +51,7 @@
             echo "<pre>";
             print_r($url_cat);
             echo "</pre>";
+            exit;
 
             if($url_cat['op'] == 1){
                 $url_cat_id = $url_cat['id'];
