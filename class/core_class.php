@@ -107,6 +107,7 @@ class Core{
 
         $p_id = 0;
         for($i=1; $i<count($url); $i++){
+            $in = false;
             for($j=0; $j<count($cats); $j++){
                 if($url[$i] == $cats[$j]->{'nombre'} && $p_id == $cats[$j]->{'parent_id'}){
                     
@@ -115,8 +116,12 @@ class Core{
                     $aux['nombre'] = $cats[$j]->{'nombre'};
                     $res[] = $aux;
                     unset($aux);
+                    $in = true;
 
                 }
+            }
+            if(!$in){
+                return false;
             }
         }
         return $res;
