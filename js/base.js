@@ -34,12 +34,12 @@ function rec_url(p_id, url, x){
         if(url[x] == categorias[j].nombre && p_id == categorias[j].parent_id){
             if(url.length == x + 1){
                 var res = new Object();
-                res.id = categorias[j].id;
+                res.id = categorias[j].id_cae;
                 res.op = 1;
                 return res;
             }else{
                 var i = x + 1;
-                return rec_url(categorias[j].id, url, i);
+                return rec_url(categorias[j].id_cae, url, i);
             }
         }
     }
