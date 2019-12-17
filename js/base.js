@@ -21,6 +21,7 @@ $(window).on('popstate', function(e){
     if(state !== null) {
         //load content with ajax
     }
+    console.log(window.history.lengt);
     console.log(state);
     console.log(window.location.href);
 });
