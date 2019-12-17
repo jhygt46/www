@@ -4,9 +4,7 @@ $(document).ready(function(){
     if(ver_inicio == 1){
         show_modal('modal_pagina_inicio');
     }
-
-
-
+    
     if(url_pag_id > 0){
         console.log(url_pag_id);
     }

@@ -49,7 +49,7 @@ function html_home_categorias(obj, num){
 function html_paginas(pagina){
     
     li = document.createElement('LI');
-    li.onclick = function(){ ver_pagina(pagina.id_pag) };
+    li.onclick = function(){ ver_pagina(pagina.id_pag, 1) };
     li.innerHTML = pagina.nombre;
     return li;
     

@@ -687,11 +687,15 @@ function borrar_carro(){
     borrar_pedido();
     $('.cantcart_num').html(0);
 }
-function ver_pagina(id){
+function ver_pagina(id, ps){
 
     for(var i=0, ilen=data.paginas.length; i<ilen; i++){
         if(data.paginas[i].id_pag == id){
             
+            if(ps == 1){
+                history.pushState(null, data.paginas[i].nombre, '/'+data.paginas[i].nombre+'/');
+            }
+
             if(data.paginas[i].tipo == 0){
                 var html = data.paginas[i].html;
                 if(data.paginas[i].imagen != ""){
