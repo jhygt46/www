@@ -103,23 +103,23 @@ class Core{
         $res['op'] = 2;
         return $res;
     }
-    public function rec_url2($cats, $p_id, $url, $x){
+    public function rec_url2($cats, $url){
 
+        $p_id = 0;
+        for($i=1; $i<count($url); $i++){
+            for($j=0; $j<count($cats); $j++){
+                if($url[$i] == $cats[$j]->{'nombre'} && $p_id == $cats[$j]->{'parent_id'}){
+                    
+                    $p_id = $cats[$j]->{'parent_id'};
+                    $aux['id'] = $cats[$j]->{'id'};
+                    $aux['nombre'] = $cats[$j]->{'nombre'};
+                    $res[] = $aux;
 
-
-
-        for($j=0; $j<count($cats); $j++){
-            if($url[$x] == $cats[$j]->{'nombre'} && $p_id == $cats[$j]->{'parent_id'}){
-                
-                
-
+                }
             }
         }
+        return $res;
         
-
-
-
-
     }
     public function actualizar(){
 
