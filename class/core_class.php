@@ -91,7 +91,7 @@ class Core{
         for($j=0; $j<count($cats); $j++){
             if($url[$x] == $cats[$j]->{'nombre'} && $p_id == $cats[$j]->{'parent_id'}){
                 if(count($url) == $x + 1){
-                    $res['id'] = $cats[$j]->{'id'};
+                    $res['id'][] = $cats[$j]->{'id'};
                     $res['op'] = 1;
                     return $res;
                 }else{
