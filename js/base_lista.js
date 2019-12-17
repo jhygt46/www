@@ -710,6 +710,7 @@ function ver_pagina(id, ps){
             if(data.paginas[i].tipo == 2){
                 show_modal('modal_contacto');
             }
+            hidemenu();
             
         }
     }
