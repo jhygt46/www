@@ -945,26 +945,29 @@ function paso_2(){
 
     paso = 2;
     if(proceso(true, true) && cantidad > 0){
+        console.log("A0");
         if(data.config.retiro_local == 1 && data.config.despacho_domicilio == 1){
+            console.log("A1");
             ver_paso_2();
         }else{
+            console.log("A2");
             if(data.config.retiro_local == 1){
+                console.log("A3");
                 show_modal_locales();
             }else{
                 if(data.config.despacho_domicilio == 1){
+                    console.log("A4");
                     show_despacho();
                 }else{
+                    console.log("A5");
                     if(produccion == 0){
                         alert("No hay locales creados!\nEn el administrador debe crearlas en la categoria 'Locales'");
                     }
-                    console.log("B1");
                 }
             }
         }
-    }else{
-        console.log("A1");
     }
-    console.log("A0");
+    
     
 }
 function paso_3(){
