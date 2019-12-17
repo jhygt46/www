@@ -111,7 +111,7 @@ class Core{
                 if($p_id == 0){
                     $res[] = $cats[$j]->{'id'};
                 }
-                if(count($url) > $x + 1){
+                if(count($url) > $x){
                     $i = $x + 1;
                     $res[] = $this->rec_url2($cats, $cats[$j]->{'id'}, $url, $i);
                 }
