@@ -17,7 +17,8 @@ $(document).ready(function(){
 });
 
 $(window).on('popstate', function(e){
-    console.log(window.location.href.split('/'));
+    var back = window.location.href.split('/');
+    console.log(back);
 });
 
 $(window).resize(function(){
