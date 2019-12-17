@@ -957,9 +957,12 @@ function paso_2(){
                     if(produccion == 0){
                         alert("No hay locales creados!\nEn el administrador debe crearlas en la categoria 'Locales'");
                     }
+                    console.log("B1");
                 }
             }
         }
+    }else{
+        console.log("A1");
     }
     
 }
