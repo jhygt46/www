@@ -22,14 +22,14 @@ $(window).on('popstate', function(e){
     if(back[back.length - 1] == ""){
         back.pop();
     }
-    var rec_url = rec_url(0, back, 3);
-    if(rec_url.op == 1){
-        open_categoria(rec_url.id, 0);
+    var rec = rec_url(0, back, 3);
+    if(rec.op == 1){
+        open_categoria(rec.id, 0);
     }
-    if(rec_url.op == 3){
+    if(rec.op == 3){
         $('.modals').hide();
     }
-    if(rec_url.op == 2){
+    if(rec.op == 2){
         console.log("VER PAGINAS");
     }
 
