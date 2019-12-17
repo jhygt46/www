@@ -114,6 +114,7 @@ class Core{
                     $aux['id'] = $cats[$j]->{'id'};
                     $aux['nombre'] = $cats[$j]->{'nombre'};
                     $res[] = $aux;
+                    unset($aux);
 
                 }
             }
