@@ -18,7 +18,14 @@ $(document).ready(function(){
 
 $(window).on('popstate', function(e){
     var back = window.location.href.split('/');
-    console.log(back);
+    if(back[back.length - 1] == ""){
+        back.pop();
+    }
+
+    for(var i=3, ilen=back.length; i<ilen; i++){
+        console.log(back[i]);
+    }
+
 });
 
 $(window).resize(function(){
