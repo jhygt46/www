@@ -13,9 +13,9 @@ $(document).ready(function(){
     if(url_cat_ids.length > 0){
         for(var i=0, ilen=url_cat_ids.length; i<ilen; i++){
             if(i == 0){
-                history.pushState(null, 'Buena Nelson', '/'+url_cat_ids.nombre+'/');
+                history.pushState(null, 'Buena Nelson', '/'+url_cat_ids[i].nombre+'/');
             }else{
-                history.pushState(null, 'Buena Nelson', url_cat_ids.nombre+'/');
+                history.pushState(null, 'Buena Nelson', url_cat_ids[i].nombre+'/');
             }
         }
     }
