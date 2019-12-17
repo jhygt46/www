@@ -7,10 +7,11 @@ $(document).ready(function(){
 
 
 
-    console.log(url_pag_id);
-    console.log(url_cat_ids);
-
-    if(url_cat_id > 0){
+    if(url_pag_id > 0){
+        console.log(url_pag_id);
+    }
+    if(url_cat_ids.length > 0){
+        console.log(url_cat_ids);
         //history.pushState(null, 'Buena Nelson', '/buena/nelson');
     }
     
