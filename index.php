@@ -18,7 +18,7 @@
     if($url[$c_url] == ""){
         unset($url[$c_url]);
     }
-    
+
     $url_cat_id = 0;
     $url_pag_id = 0;
 
@@ -47,6 +47,11 @@
             exit;
         else:
             $url_cat = $core->rec_url($info->{'categorias'}, 0, $url, 1);
+
+            echo "<pre>";
+            print_r($url_cat);
+            echo "</pre>";
+
             if($url_cat['op'] == 1){
                 $url_cat_id = $url_cat['id'];
             }
