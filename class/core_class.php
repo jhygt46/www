@@ -110,7 +110,7 @@ class Core{
                 $res[] = $cats[$j]->{'id'};
                 if(count($url) < $x + 1){
                     $i = $x + 1;
-                    $res[] = $this->rec_url($cats, $cats[$j]->{'id'}, $url, $i);
+                    $res[] = $this->rec_url2($cats, $cats[$j]->{'id'}, $url, $i);
                 }
 
             }
