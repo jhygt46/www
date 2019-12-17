@@ -11,8 +11,13 @@ $(document).ready(function(){
         console.log(url_pag_id);
     }
     if(url_cat_ids.length > 0){
-        console.log(url_cat_ids);
-        //history.pushState(null, 'Buena Nelson', '/buena/nelson');
+        for(var i=0, ilen=url_cat_ids.length; i<ilen; i++){
+            if(i == 0){
+                history.pushState(null, 'Buena Nelson', '/'+url_cat_ids.nombre+'/');
+            }else{
+                history.pushState(null, 'Buena Nelson', url_cat_ids.nombre+'/');
+            }
+        }
     }
     
 });
