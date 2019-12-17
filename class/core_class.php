@@ -105,18 +105,20 @@ class Core{
     }
     public function rec_url2($cats, $p_id, $url, $x){
 
+
+
+
         for($j=0; $j<count($cats); $j++){
             if($url[$x] == $cats[$j]->{'nombre'} && $p_id == $cats[$j]->{'parent_id'}){
                 
-                if(count($url) > $x + 1){
-                    $i = $x + 1;
-                    $res[] = $this->rec_url2($cats, $cats[$j]->{'id'}, $url, $i);
-                }
-                $res[] = $cats[$j]->{'id'};
+                
 
             }
         }
-        return $res;
+        
+
+
+
 
     }
     public function actualizar(){

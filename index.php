@@ -49,6 +49,10 @@
             $url_cat = $core->rec_url2($info->{'categorias'}, 0, $url, 1);
 
             echo "<pre>";
+            print_r($url);
+            echo "</pre>";
+
+            echo "<pre>";
             print_r($info->{'categorias'});
             echo "</pre>";
 
