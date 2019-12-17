@@ -108,7 +108,7 @@ class Core{
             if($url[$x] == $cats[$j]->{'nombre'} && $p_id == $cats[$j]->{'parent_id'}){
 
                 $res[] = $cats[$j]->{'id'};
-                if(count($url) < $x + 1){
+                if(count($url) > $x + 1){
                     $i = $x + 1;
                     $res[] = $this->rec_url2($cats, $cats[$j]->{'id'}, $url, $i);
                 }
