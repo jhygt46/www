@@ -19,8 +19,8 @@
         unset($url[$c_url]);
     }
 
-    $url_cat_id = 0;
     $url_pag_id = 0;
+    $url_cat_ids = "[]";
 
     if($url[1] != ""){
 
@@ -48,7 +48,6 @@
         else:
             //$url_cat = $core->rec_url($info->{'categorias'}, 0, $url, 1);
             $url_cat = $core->rec_url2($info->{'categorias'}, $url);
-            $url_cat_ids = "[]";
             if(count($url_cat) > 0){
                 $url_cat_ids = json_encode($url_cat); 
             }else{
