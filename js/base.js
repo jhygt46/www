@@ -33,7 +33,8 @@ $(window).on('popstate', function(e){
             $('.modals').hide();
         }
     }
-    return false;
+    var state = e.originalEvent.state;
+    console.log(state);
 
 });
 
