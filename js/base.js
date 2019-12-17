@@ -22,8 +22,16 @@ $(window).on('popstate', function(e){
     if(back[back.length - 1] == ""){
         back.pop();
     }
-
-    console.log(rec_url(0, back, 3));
+    var rec_url = rec_url(0, back, 3);
+    if(rec_url.op == 1){
+        open_categoria(rec_url.id, 0);
+    }
+    if(rec_url.op == 3){
+        $('.modals').hide();
+    }
+    if(rec_url.op == 2){
+        console.log("VER PAGINAS");
+    }
 
 });
 
@@ -44,7 +52,12 @@ function rec_url(p_id, url, x){
         }
     }
     var res = new Object();
-    res.op = 2;
+    if(p_id == 0){
+        res.op = 3;
+    }else{
+        res.op = 2;
+    }
+    
     return res;
 }
 
