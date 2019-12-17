@@ -4,7 +4,7 @@ $(document).ready(function(){
     if(ver_inicio == 1){
         show_modal('modal_pagina_inicio');
     }
-    
+
     if(url_pag_id > 0){
         console.log(url_pag_id);
     }
@@ -20,19 +20,38 @@ $(window).on('popstate', function(e){
     if(back[back.length - 1] == ""){
         back.pop();
     }
-    var rec = rec_url(0, back, 3);
-    if(rec.op == 1){
-        open_categoria(rec.id, 0);
+    var rec_u = rec_url(0, back, 3);
+    if(rec_u.op == 1){
+        open_categoria(rec_u.id, 0);
     }
-    if(rec.op == 3){
-        $('.modals').hide();
-    }
-    if(rec.op == 2){
-        console.log("VER PAGINAS");
+    if(rec_u.op == 2){
+        var rec_p = rec_pagina(back[3]);
+        console.log(rec_p);
+        if(rec_p.op == 1){
+            ver_pagina(rec_p.id, 0)
+        }
+        if(rec_p.op == 2){
+            $('.modals').hide();
+        }
     }
 
 });
 
+function rec_pagina(nombre){
+
+    var res = new Object();
+    var paginas = data.paginas;
+    for(var j=0; j<paginas.length; j++){
+        if(nombre == paginas[j].nombre){
+            res.id = paginas[j].id_pag;
+            res.op = 1;
+            return res;
+        }
+    }
+    res.op = 2;
+    return res;
+
+}
 function rec_url(p_id, url, x){
 
     var categorias = data.catalogos[0].categorias;
@@ -50,12 +69,7 @@ function rec_url(p_id, url, x){
         }
     }
     var res = new Object();
-    if(p_id == 0){
-        res.op = 3;
-    }else{
-        res.op = 2;
-    }
-    
+    res.op = 2;
     return res;
 }
 
