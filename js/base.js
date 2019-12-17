@@ -33,9 +33,6 @@ $(window).on('popstate', function(e){
             $('.modals').hide();
         }
     }
-    if(e == null){
-        alert("BUENA NELSON");
-    }
 
 });
 

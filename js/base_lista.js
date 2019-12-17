@@ -149,10 +149,12 @@ function open_carro(){
         if(proceso(true, false)){
             process_carro();
             show_modal('paso_01');
+            history.pushState(null, '', '/paso_1');
         }
     }
     if(tp){
         show_modal('paso_04');
+        history.pushState(null, '', '/paso_4');
     }
     paso = 2;
     hidemenu();
