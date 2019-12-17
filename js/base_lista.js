@@ -94,10 +94,12 @@ function open_categoria(id, ps){
             for(var i=0, ilen=categorias.length; i<ilen; i++){
                 if(categorias[i].id_cae == id){
                     show_modal('modal_carta');
-                    if(categorias[i].parent_id == 0 && ps == 1){
-                        history.pushState(null, categorias[i].nombre, '/'+categorias[i].nombre+'/');
-                    }else{
-                        history.pushState(null, categorias[i].nombre, categorias[i].nombre+'/');
+                    if(ps == 1){
+                        if(categorias[i].parent_id == 0){
+                            history.pushState(null, categorias[i].nombre, '/'+categorias[i].nombre+'/');
+                        }else{
+                            history.pushState(null, categorias[i].nombre, categorias[i].nombre+'/');
+                        }
                     }
                     $('.modal_carta .titulo h1').html(categorias[i].nombre);
                     $('.modal_carta .titulo h2').html(categorias[i].descripcion_sub);
