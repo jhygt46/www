@@ -26,7 +26,6 @@ $(window).on('popstate', function(e){
     }
     if(rec_u.op == 2){
         var rec_p = rec_pagina(back[3]);
-        console.log(rec_p);
         if(rec_p.op == 1){
             ver_pagina(rec_p.id, 0)
         }
@@ -34,6 +33,7 @@ $(window).on('popstate', function(e){
             $('.modals').hide();
         }
     }
+    return false;
 
 });
 
