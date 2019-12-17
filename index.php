@@ -46,7 +46,6 @@
             require "detalle.php";
             exit;
         else:
-            //$url_cat = $core->rec_url($info->{'categorias'}, 0, $url, 1);
             $url_cat = $core->rec_url2($info->{'categorias'}, $url);
             if(count($url_cat) > 0){
                 $url_cat_ids = json_encode($url_cat); 
@@ -56,11 +55,8 @@
                     $url_pag_id = $url_pag['id'];
                 }
             }
-
         endif;
     }
-
-
 
     if($info === null){
         die("<table border='0' width='100%' height='100%'><tr><td align='center' valign='middle'>Sitio no existe</td></tr></table>");
@@ -84,7 +80,6 @@
     }
 
 ?>
-
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
