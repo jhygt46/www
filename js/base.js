@@ -95,5 +95,6 @@ var timer = false;
 $(document).click(function(e) {
     if($(e.target).hasClass('cont_modals')){
         hide_modal();
+        history.pushState(null, '', '/');
     }
 });
