@@ -11,11 +11,15 @@ $(document).ready(function(){
         console.log(url_pag_id);
     }
     if(url_cat_ids.length > 0){
+        history.pushState(null, 'Buena Nelson', '/');
+        console.log('/');
         for(var i=0, ilen=url_cat_ids.length; i<ilen; i++){
             if(i == 0){
                 history.pushState(null, 'Buena Nelson', '/'+url_cat_ids[i].nombre+'/');
+                console.log('/'+url_cat_ids[i].nombre+'/');
             }else{
                 history.pushState(null, 'Buena Nelson', url_cat_ids[i].nombre+'/');
+                console.log(url_cat_ids[i].nombre+'/');
             }
         }
     }
