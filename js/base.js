@@ -17,14 +17,28 @@ $(document).ready(function(){
 });
 
 $(window).on('popstate', function(e){
+
     var back = window.location.href.split('/');
     if(back[back.length - 1] == ""){
         back.pop();
     }
 
+    var p_id = 0;
+    var categorias = data.catalogos[0].categorias;
+    var cont1 = 0;
+    var cont2 = 0;
+
     for(var i=3, ilen=back.length; i<ilen; i++){
-        console.log(back[i]);
+        cont1++;
+        for(var j=0, jlen=categorias.length; j<jlen; j++){
+            if(back[i] == categorias[j].nombre && p_id == categorias[j].parent_id){
+                p_id = categorias[j].id_cae;
+                cont2++;
+            }
+        }
     }
+
+    console.log(cont1 + "-" + cont2);
 
 });
 
