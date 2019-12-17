@@ -17,12 +17,7 @@ $(document).ready(function(){
 });
 
 $(window).on('popstate', function(e){
-    var state = e.originalEvent.state;
-    if(state !== null) {
-        //load content with ajax
-    }
-    console.log(e);
-    console.log(window.location.href);
+    console.log(window.location.href.split('/'));
 });
 
 $(window).resize(function(){
