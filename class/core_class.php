@@ -121,7 +121,7 @@ class Core{
                 }
             }
             if($bool){
-                return false;
+                return [];
             }
         }
         return $res;
