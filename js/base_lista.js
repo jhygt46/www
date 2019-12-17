@@ -84,7 +84,7 @@ function close_that(that){
     paso = 1;
     history.pushState(null, 'Buena Nelson', '/');
 }
-function open_categoria(id){
+function open_categoria(id, ps){
     
     var tp = tiene_pedido();
     if(!tp){
@@ -94,7 +94,7 @@ function open_categoria(id){
             for(var i=0, ilen=categorias.length; i<ilen; i++){
                 if(categorias[i].id_cae == id){
                     show_modal('modal_carta');
-                    if(categorias[i].parent_id == 0){
+                    if(categorias[i].parent_id == 0 && ps == 1){
                         history.pushState(null, categorias[i].nombre, '/'+categorias[i].nombre+'/');
                     }else{
                         history.pushState(null, categorias[i].nombre, categorias[i].nombre+'/');

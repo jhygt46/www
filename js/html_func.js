@@ -11,7 +11,7 @@ function html_home_categorias(obj, num){
         Div.style.backgroundImage = 'url("/data/'+code+'/'+obj.image+'")';
     }
 
-    Div.onclick = function(){ open_categoria(obj.id_cae); return false; };
+    Div.onclick = function(){ open_categoria(obj.id_cae, 1); return false; };
     var Divbp = document.createElement('div');
 
     if(obj.degradado == 0){
@@ -160,7 +160,7 @@ function create_html_categorias(obj){
 
     if(obj.mostrar_prods == 0){
 
-        Divm.onclick = function(){ open_categoria(obj.id_cae) };
+        Divm.onclick = function(){ open_categoria(obj.id_cae, 1) };
         Divm.style.height = parseInt((widthpx - 20) * data.config.alto / 100)+"px";
 
         var Divn = create_element_class('cont_fondoi valign');
