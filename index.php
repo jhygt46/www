@@ -49,28 +49,15 @@
             //$url_cat = $core->rec_url($info->{'categorias'}, 0, $url, 1);
             $url_cat = $core->rec_url2($info->{'categorias'}, $url);
 
-            echo "<pre>";
-            print_r($url);
-            echo "</pre>";
-
-            echo "<pre>";
-            print_r($info->{'categorias'});
-            echo "</pre>";
-
-            echo "<pre>";
-            print_r($url_cat);
-            echo "</pre>";
-            exit;
-
-            if($url_cat['op'] == 1){
-                $url_cat_id = $url_cat['id'];
-            }
-            if($url_cat['op'] == 2){
-                $url_pag = $core->rec_pag($info->{'categorias'}, $url[1]);
+            if(count($url_cat) > 0){
+                $url_cat_ids = json_encode($url_cat); 
+            }else{
+                $url_pag = $core->rec_pag($info->{'paginas'}, $url[1]);
                 if($url_pag['op'] == 1){
                     $url_pag_id = $url_pag['id'];
                 }
             }
+
         endif;
     }
 
@@ -137,7 +124,7 @@
             var produccion = <?php echo $info->{'dns'}; ?>;
             var tipo_add_carro = <?php echo $info->{'tipo_add_carro'}; ?>;
             var url_pag_id = <?php echo $url_pag_id; ?>;
-            var url_cat_id = <?php echo $url_cat_id; ?>;
+            var url_cat_ids = <?php echo $url_cat_ids; ?>;
         </script>
         <style>
             body{

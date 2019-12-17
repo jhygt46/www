@@ -8,7 +8,7 @@ $(document).ready(function(){
 
 
     console.log(url_pag_id);
-    console.log(url_cat_id);
+    console.log(url_cat_ids);
 
     if(url_cat_id > 0){
         //history.pushState(null, 'Buena Nelson', '/buena/nelson');
