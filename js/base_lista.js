@@ -225,7 +225,7 @@ function add_carro_producto(id_pro, silencio){
     set_cantidad(1);
     localStorage.setItem("carro", JSON.stringify(carro));
     if(silencio == 0){
-        if(tiene_pregunta(item_carro)){ mostrar_pregunta(carro.length - 1) }else{ hide_modal() }
+        if(tiene_pregunta(item_carro)){ mostrar_pregunta(carro.length - 1) }else{ hide_modal(); $('.cart_info').html("Producto Agregado"); }
         history.pushState(null, '', '/');
     }
     
