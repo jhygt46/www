@@ -79,6 +79,7 @@ class Core{
     public function rec_pag($pags, $nombre){
         for($j=0; $j<count($pags); $j++){
             $pag_nombre = str_replace(' ', '-', $pags[$j]->{'nombre'});
+            $nombre = str_replace(' ', '-', $nombre);
             if($nombre == $pag_nombre){
                 $res['id'] = $pags[$j]->{'id'};
                 $res['op'] = 1;
