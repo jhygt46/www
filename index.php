@@ -79,14 +79,9 @@
                 $url_pag = $core->rec_pag($info->{'paginas'}, $url[1]);
                 if($url_pag['op'] == 1){
                     $url_pag_id = $url_pag['id'];
+                }else{
+                    die("ERROR 404 NOT FOUND");
                 }
-                echo "<pre>";
-                print_r($info->{'paginas'});
-                echo "</pre>";
-                echo "<pre>";
-                print_r($url_pag);
-                echo "</pre>";
-                exit;
             }
         endif;
     }
