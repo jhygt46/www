@@ -47,13 +47,17 @@
             require "detalle.php";
             exit;
         elseif($url[1] == "paso_1"):
-            $paso = 1;
+            $paso = "1";
         elseif($url[1] == "paso_2"):
-            $paso = 2;
+            $paso = "2";
+        elseif($url[1] == "paso_2a"):
+            $paso = "2a";
+        elseif($url[1] == "paso_2b"):
+            $paso = "2b";
         elseif($url[1] == "paso_3"):
-            $paso = 3;
+            $paso = "3";
         elseif($url[1] == "paso_4"):
-            $paso = 4;
+            $paso = "4";
         else:
             $url_cat = $core->rec_url2($info->{'categorias'}, $url);
             if(count($url_cat) > 0){
