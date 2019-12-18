@@ -97,10 +97,11 @@ function open_categoria(id, ps){
                 if(categorias[i].id_cae == id){
                     show_modal('modal_carta');
                     if(ps == 1 && produccion == 1){
+                        var url_name = categorias[i].nombre.split(" ").join("-");
                         if(categorias[i].parent_id == 0){
-                            history.pushState(null, categorias[i].nombre, '/'+categorias[i].nombre+'/');
+                            history.pushState(null, categorias[i].nombre, '/'+url_name+'/');
                         }else{
-                            history.pushState(null, categorias[i].nombre, categorias[i].nombre+'/');
+                            history.pushState(null, categorias[i].nombre, url_name+'/');
                         }
                     }
                     $('.modal_carta .titulo h1').html(categorias[i].nombre);
@@ -695,7 +696,8 @@ function ver_pagina(id, ps){
         if(data.paginas[i].id_pag == id){
             
             if(ps == 1 && produccion == 1){
-                history.pushState(null, data.paginas[i].nombre, '/'+data.paginas[i].nombre+'/');
+                var url_name = data.paginas[i].nombre.split(" ").join("-");
+                history.pushState(null, data.paginas[i].nombre, '/'+url_name+'/');
             }
 
             if(data.paginas[i].tipo == 0){
