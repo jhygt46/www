@@ -884,6 +884,7 @@ function estado_locales(tipo){
 function show_modal_locales(){
 
     var info_retiro = estado_locales(1);
+    console.log(info_retiro);
     if(info_retiro){
         $('.paso_02a .direccion_op1').find('.dir_locales').each(function(){
             
