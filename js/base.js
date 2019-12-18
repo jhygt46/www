@@ -7,17 +7,17 @@ $(document).ready(function(){
         show_modal('modal_pagina_inicio');
     }
 
-    if(back[3] == "paso_1"){
+    if(paso == "1"){
         console.log("x paso_1");
-    }else if(back[3] == "paso_2"){
+    }else if(paso == "2"){
         console.log("x paso_2");
-    }else if(back[3] == "paso_2a"){
+    }else if(paso == "2a"){
         console.log("x paso_2a");
-    }else if(back[3] == "paso_2b"){
+    }else if(paso == "2b"){
         console.log("x paso_2b");
-    }else if(back[3] == "paso_3"){
+    }else if(paso == "3"){
         console.log("x paso_3");
-    }else if(back[3] == "paso_4"){
+    }else if(paso == "4"){
         console.log("x paso_4");
     }else{
         if(url_pag_id > 0){
