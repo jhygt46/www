@@ -142,19 +142,23 @@ function tiene_pedido(){
     }
 
 }
-function open_carro(){
+function open_carro(ps){
     
     var tp = tiene_pedido();
     if(!tp){
         if(proceso(true, false)){
             process_carro();
             show_modal('paso_01');
-            history.pushState(null, '', '/paso_1');
+            if(ps == 1){
+                history.pushState(null, '', '/paso_1');
+            }
         }
     }
     if(tp){
         show_modal('paso_04');
-        history.pushState(null, '', '/paso_4');
+        if(ps == 1){
+            history.pushState(null, '', '/paso_4');
+        }
     }
     paso = 2;
     hidemenu();

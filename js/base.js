@@ -38,7 +38,7 @@ $(window).on('popstate', function(e){
     }
 
     if(back[3] == "paso_1"){
-        console.log("y paso_1");
+        open_carro(0);
     }else if(back[3] == "paso_2"){
         console.log("y paso_2");
     }else if(back[3] == "paso_2a"){

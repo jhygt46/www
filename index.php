@@ -155,7 +155,7 @@
                 <div class="cont_pagina">
                     <div class="header <?php echo ($info->{"header_fixed"} == 1) ? 'fixed' : 'absolute'; ?>">
                         <div class="header_logo vhalign"><img src="<?php if($info->{'logo'} == "sinlogo.png"){ echo "/_images/sinlogo.png"; }else{ echo "/data/".$info->{"code"}."/".$info->{"logo"}; } ?>" alt="" /></div>
-                        <div class="menu_right valign" onclick="open_carro()"><div class="shop material-icons">shopping_cart</div><div class="cantcart"><div class="cantcart_num vhalign"></div></div></div>
+                        <div class="menu_right valign" onclick="open_carro(1)"><div class="shop material-icons">shopping_cart</div><div class="cantcart"><div class="cantcart_num vhalign"></div></div></div>
                         <div class="cart_info"></div>
                     </div>
                     <div class="contenido">
