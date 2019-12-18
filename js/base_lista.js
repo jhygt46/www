@@ -82,7 +82,9 @@ function close_that(that){
     $('.modals').hide();
     $(that).parents('.modal').hide();
     paso = 1;
-    history.pushState(null, '', '/');
+    if(produccion == 1){
+        history.pushState(null, '', '/');
+    }
 }
 function open_categoria(id, ps){
     
@@ -94,7 +96,7 @@ function open_categoria(id, ps){
             for(var i=0, ilen=categorias.length; i<ilen; i++){
                 if(categorias[i].id_cae == id){
                     show_modal('modal_carta');
-                    if(ps == 1){
+                    if(ps == 1 && produccion == 1){
                         if(categorias[i].parent_id == 0){
                             history.pushState(null, categorias[i].nombre, '/'+categorias[i].nombre+'/');
                         }else{
@@ -142,23 +144,17 @@ function tiene_pedido(){
     }
 
 }
-function open_carro(ps){
+function open_carro(){
     
     var tp = tiene_pedido();
     if(!tp){
         if(proceso(true, false)){
             process_carro();
             show_modal('paso_01');
-            if(ps == 1){
-                history.pushState(null, '', '/paso_1');
-            }
         }
     }
     if(tp){
         show_modal('paso_04');
-        if(ps == 1){
-            history.pushState(null, '', '/paso_4');
-        }
     }
     paso = 2;
     hidemenu();
@@ -698,7 +694,7 @@ function ver_pagina(id, ps){
     for(var i=0, ilen=data.paginas.length; i<ilen; i++){
         if(data.paginas[i].id_pag == id){
             
-            if(ps == 1){
+            if(ps == 1 && produccion == 1){
                 history.pushState(null, data.paginas[i].nombre, '/'+data.paginas[i].nombre+'/');
             }
 
@@ -951,15 +947,12 @@ function paso_2(){
     if(proceso(true, true) && cantidad > 0){
         if(data.config.retiro_local == 1 && data.config.despacho_domicilio == 1){
             ver_paso_2();
-            history.pushState(null, '', '/paso_2');
         }else{
             if(data.config.retiro_local == 1){
                 show_modal_locales();
-                history.pushState(null, '', '/paso_2a');
             }else{
                 if(data.config.despacho_domicilio == 1){
                     show_despacho();
-                    history.pushState(null, '', '/paso_2b');
                 }else{
                     if(produccion == 0){
                         alert("No hay locales creados!\nEn el administrador debe crearlas en la categoria 'Locales'");
