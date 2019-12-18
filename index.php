@@ -19,6 +19,7 @@
         unset($url[$c_url]);
     }
 
+    $paso = 0;
     $url_pag_id = 0;
     $url_cat_ids = "[]";
 
@@ -45,6 +46,14 @@
             $_GET["code"] = $url[2];
             require "detalle.php";
             exit;
+        elseif($url[1] == "paso_1"):
+            $paso = 1;
+        elseif($url[1] == "paso_2"):
+            $paso = 2;
+        elseif($url[1] == "paso_3"):
+            $paso = 3;
+        elseif($url[1] == "paso_4"):
+            $paso = 4;
         else:
             $url_cat = $core->rec_url2($info->{'categorias'}, $url);
             if(count($url_cat) > 0){
@@ -119,6 +128,7 @@
             var tipo_add_carro = <?php echo $info->{'tipo_add_carro'}; ?>;
             var url_pag_id = <?php echo $url_pag_id; ?>;
             var url_cat_ids = <?php echo $url_cat_ids; ?>;
+            var paso = <?php echo $paso; ?>;
         </script>
         <style>
             body{
