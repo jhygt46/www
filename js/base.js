@@ -8,7 +8,7 @@ $(document).ready(function(){
     }
 
     if(paso == "1"){
-        console.log("x paso_1");
+        open_carro(0);
     }else if(paso == "2"){
         console.log("x paso_2");
     }else if(paso == "2a"){
