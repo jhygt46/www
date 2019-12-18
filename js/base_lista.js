@@ -884,7 +884,6 @@ function estado_locales(tipo){
 function show_modal_locales(){
 
     var info_retiro = estado_locales(1);
-    console.log(info_retiro);
     if(info_retiro){
         $('.paso_02a .direccion_op1').find('.dir_locales').each(function(){
             
@@ -952,12 +951,15 @@ function paso_2(){
     if(proceso(true, true) && cantidad > 0){
         if(data.config.retiro_local == 1 && data.config.despacho_domicilio == 1){
             ver_paso_2();
+            history.pushState(null, '', '/paso_2');
         }else{
             if(data.config.retiro_local == 1){
                 show_modal_locales();
+                history.pushState(null, '', '/paso_2a');
             }else{
                 if(data.config.despacho_domicilio == 1){
                     show_despacho();
+                    history.pushState(null, '', '/paso_2b');
                 }else{
                     if(produccion == 0){
                         alert("No hay locales creados!\nEn el administrador debe crearlas en la categoria 'Locales'");
