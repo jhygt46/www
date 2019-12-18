@@ -212,8 +212,6 @@ function add_carro_producto_aux(that){
 }
 function add_carro_producto(id_pro, silencio){
     
-    console.log(id_pro + " / " + silencio);
-
     var producto = get_producto(id_pro);
     var carro = get_carro();
     var item_carro = { id_pro: parseInt(id_pro) };
@@ -228,6 +226,7 @@ function add_carro_producto(id_pro, silencio){
     localStorage.setItem("carro", JSON.stringify(carro));
     if(silencio == 0){
         if(tiene_pregunta(item_carro)){ mostrar_pregunta(carro.length - 1) }else{ hide_modal() }
+        history.pushState(null, '', '/');
     }
     
 }
