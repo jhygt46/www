@@ -25,7 +25,7 @@
         $core->actualizar();
         exit;
     }
-    
+
     $url = explode("/", $_SERVER["REQUEST_URI"]);
     $c_url = count($url) - 1;
     if($url[$c_url] == ""){
@@ -80,6 +80,10 @@
                 if($url_pag['op'] == 1){
                     $url_pag_id = $url_pag['id'];
                 }
+                echo "<pre>";
+                print_r($url_pag);
+                echo "</pre>";
+                exit;
             }
         endif;
     }
