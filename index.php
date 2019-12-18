@@ -81,6 +81,9 @@
                     $url_pag_id = $url_pag['id'];
                 }
                 echo "<pre>";
+                print_r($info->{'paginas'});
+                echo "</pre>";
+                echo "<pre>";
                 print_r($url_pag);
                 echo "</pre>";
                 exit;
