@@ -1,15 +1,31 @@
 $(document).ready(function(){
+    
     borrar_carro();
     render_pagina();
+
     if(ver_inicio == 1){
         show_modal('modal_pagina_inicio');
     }
 
-    if(url_pag_id > 0){
-        console.log(url_pag_id);
-    }
-    if(url_cat_ids.length > 0){
-        open_categoria(url_cat_ids[url_cat_ids.length - 1].id, 0);
+    if(back[3] == "paso_1"){
+        console.log("x paso_1");
+    }else if(back[3] == "paso_2"){
+        console.log("x paso_2");
+    }else if(back[3] == "paso_2a"){
+        console.log("x paso_2a");
+    }else if(back[3] == "paso_2b"){
+        console.log("x paso_2b");
+    }else if(back[3] == "paso_3"){
+        console.log("x paso_3");
+    }else if(back[3] == "paso_4"){
+        console.log("x paso_4");
+    }else{
+        if(url_pag_id > 0){
+            ver_pagina(url_pag_id, 0);
+        }
+        if(url_cat_ids.length > 0){
+            open_categoria(url_cat_ids[url_cat_ids.length - 1].id, 0);
+        }
     }
     
 });
@@ -20,17 +36,32 @@ $(window).on('popstate', function(e){
     if(back[back.length - 1] == ""){
         back.pop();
     }
-    var rec_u = rec_url(0, back, 3);
-    if(rec_u.op == 1){
-        open_categoria(rec_u.id, 0);
-    }
-    if(rec_u.op == 2){
-        var rec_p = rec_pagina(back[3]);
-        if(rec_p.op == 1){
-            ver_pagina(rec_p.id, 0)
+
+    if(back[3] == "paso_1"){
+        console.log("y paso_1");
+    }else if(back[3] == "paso_2"){
+        console.log("y paso_2");
+    }else if(back[3] == "paso_2a"){
+        console.log("y paso_2a");
+    }else if(back[3] == "paso_2b"){
+        console.log("y paso_2b");
+    }else if(back[3] == "paso_3"){
+        console.log("y paso_3");
+    }else if(back[3] == "paso_4"){
+        console.log("y paso_4");
+    }else{
+        var rec_u = rec_url(0, back, 3);
+        if(rec_u.op == 1){
+            open_categoria(rec_u.id, 0);
         }
-        if(rec_p.op == 2){
-            $('.modals').hide();
+        if(rec_u.op == 2){
+            var rec_p = rec_pagina(back[3]);
+            if(rec_p.op == 1){
+                ver_pagina(rec_p.id, 0);
+            }
+            if(rec_p.op == 2){
+                $('.modals').hide();
+            }
         }
     }
 
