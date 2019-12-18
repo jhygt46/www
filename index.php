@@ -6,13 +6,26 @@
 
     require_once "class/core_class.php";
     $core = new Core();
+    $info = $core->get_data();
+
+    if((empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === "off") && $info->{'ssl'} == 1) {
+        $location = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+        header('HTTP/1.1 301 Moved Permanently');
+        header('Location: ' . $location);
+        exit;
+    }
+    if((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === "on") && $info->{'ssl'} == 0) {
+        $location = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+        header('HTTP/1.1 302 Moved Temporarily');
+        header('Location: ' . $location);
+        exit;
+    }
 
     if(isset($_POST["accion"]) && $_POST["accion"] == "xS3w1Dm8Po87Wltd"){
         $core->actualizar();
         exit;
     }
-
-    $info = $core->get_data();
+    
     $url = explode("/", $_SERVER["REQUEST_URI"]);
     $c_url = count($url) - 1;
     if($url[$c_url] == ""){
@@ -79,18 +92,7 @@
         }
     }
 
-    if((empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] === "off") && $info->{'ssl'} == 1) {
-        $location = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-        header('HTTP/1.1 301 Moved Permanently');
-        header('Location: ' . $location);
-        exit;
-    }
-    if((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === "on") && $info->{'ssl'} == 0) {
-        $location = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
-        header('HTTP/1.1 302 Moved Temporarily');
-        header('Location: ' . $location);
-        exit;
-    }
+    
 
 ?>
 

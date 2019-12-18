@@ -78,7 +78,8 @@ class Core{
     }
     public function rec_pag($pags, $nombre){
         for($j=0; $j<count($pags); $j++){
-            if($nombre == $pags[$j]->{'nombre'}){
+            $pag_nombre = str_replace(' ', '-', $pags[$j]->{'nombre'});
+            if($nombre == $pag_nombre){
                 $res['id'] = $pags[$j]->{'id'};
                 $res['op'] = 1;
                 return $res;
@@ -109,15 +110,14 @@ class Core{
         for($i=1; $i<count($url); $i++){
             $bool = true;
             for($j=0; $j<count($cats); $j++){
-                if($url[$i] == $cats[$j]->{'nombre'} && $p_id == $cats[$j]->{'parent_id'}){
-                    
+                $cat_nombre = str_replace(' ', '-', $cats[$j]->{'nombre'});
+                if($url[$i] == $cat_nombre && $p_id == $cats[$j]->{'parent_id'}){
                     $p_id = $cats[$j]->{'id'};
                     $aux['id'] = $cats[$j]->{'id'};
-                    $aux['nombre'] = $cats[$j]->{'nombre'};
+                    $aux['nombre'] = $cat_nombre;
                     $res[] = $aux;
                     unset($aux);
                     $bool = false;
-
                 }
             }
             if($bool){
