@@ -45,7 +45,8 @@ function rec_pagina(nombre){
     var res = new Object();
     var paginas = data.paginas;
     for(var j=0; j<paginas.length; j++){
-        if(nombre == paginas[j].nombre){
+        var pag_name = paginas[j].nombre.split(" ").join("-");
+        if(nombre == pag_name){
             res.id = paginas[j].id_pag;
             res.op = 1;
             return res;
@@ -59,7 +60,8 @@ function rec_url(p_id, url, x){
 
     var categorias = data.catalogos[0].categorias;
     for(var j=0; j<categorias.length; j++){
-        if(url[x] == categorias[j].nombre && p_id == categorias[j].parent_id){
+        var cat_name = categorias[j].nombre.split(" ").join("-");
+        if(url[x] == cat_name && p_id == categorias[j].parent_id){
             if(url.length == x + 1){
                 var res = new Object();
                 res.id = categorias[j].id_cae;
