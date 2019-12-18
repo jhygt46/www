@@ -81,7 +81,7 @@ class Core{
             $pag_nombre = str_replace(' ', '-', $pags[$j]->{'nombre'});
             $nombre = str_replace(' ', '-', $nombre);
             if($nombre == $pag_nombre){
-                $res['id'] = $pags[$j]->{'id'};
+                $res['id'] = $pags[$j]->{'id_pag'};
                 $res['op'] = 1;
                 return $res;
             }
