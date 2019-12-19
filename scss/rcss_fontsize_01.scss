@@ -9,8 +9,8 @@ body {
                 .btn_toogle{}
                 .menu_info{
                     h1{ font-size: $menu_left_titulo; }
-                    ul{
-                        li{ font-size: $menu_left_btns; }
+                    .lista_paginas{
+                        a{ font-size: $menu_left_btns; }
                     }
                 }
             }

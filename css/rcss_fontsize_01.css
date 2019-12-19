@@ -1,7 +1,7 @@
 body .contenedor .menu_left .cont_menu_left .menu_info h1 {
   font-size: 20px;
 }
-body .contenedor .menu_left .cont_menu_left .menu_info ul li {
+body .contenedor .menu_left .cont_menu_left .menu_info .lista_paginas a {
   font-size: 18px;
 }
 

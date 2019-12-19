@@ -8,7 +8,7 @@ body .contenedor .menu_left .cont_menu_left .btn_toogle {
 body .contenedor .menu_left .cont_menu_left .menu_info h1 {
   color: #000;
 }
-body .contenedor .menu_left .cont_menu_left .menu_info ul li {
+body .contenedor .menu_left .cont_menu_left .menu_info .lista_paginas a {
   color: #000;
   border-bottom-color: #ddd;
 }

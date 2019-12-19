@@ -15,8 +15,8 @@ body{
                 .btn_toogle{ color: $menu_left_color; }
                 .menu_info{
                     h1{ color: $menu_left_color_titulo; }
-                    ul{
-                        li{ color: $menu_left_color_lista; border-bottom-color: $menu_left_color_lista_bottom; }
+                    .lista_paginas{
+                        a{ color: $menu_left_color_lista; border-bottom-color: $menu_left_color_lista_bottom; }
                     }
                 }
             }

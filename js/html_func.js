@@ -48,10 +48,11 @@ function html_home_categorias(obj, num){
 }
 function html_paginas(pagina){
     
-    li = document.createElement('LI');
-    li.onclick = function(){ ver_pagina(pagina.id_pag, 1) };
-    li.innerHTML = pagina.nombre;
-    return li;
+    a = document.createElement('a');
+    a.setAttribute('href', "/"+pagina.nombre);
+    a.onclick = function(){ ver_pagina(pagina.id_pag, 1); return false; };
+    a.innerHTML = pagina.nombre;
+    return a;
     
 }
 

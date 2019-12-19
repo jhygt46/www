@@ -151,7 +151,7 @@
                     <div class="btn_toogle material-icons" onclick="tooglemenu()">view_headline</div>
                     <div class="menu_info">
                         <h1>Men&uacute;</h1>
-                        <ul class="lista_paginas"></ul>
+                        <div class="lista_paginas"></div>
                     </div>
                 </div>
             </div>

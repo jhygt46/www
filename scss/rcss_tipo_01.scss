@@ -8,9 +8,9 @@ body{
                 .menu_info{
                     padding: 40px 20px 0px 20px;
                     h1{}
-                    ul{
+                    .lista_paginas{
                         padding-top: 50px;
-                        li{ padding: 5px 0px; border-bottom-style: solid; border-bottom-width: 1px }
+                        a{ padding: 5px 0px; border-bottom-style: solid; border-bottom-width: 1px }
                     }
                 }
             }

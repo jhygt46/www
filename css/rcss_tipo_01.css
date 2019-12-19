@@ -4,10 +4,10 @@ body .contenedor .menu_left .cont_menu_left .btn_toogle {
 body .contenedor .menu_left .cont_menu_left .menu_info {
   padding: 40px 20px 0px 20px;
 }
-body .contenedor .menu_left .cont_menu_left .menu_info ul {
+body .contenedor .menu_left .cont_menu_left .menu_info .lista_paginas {
   padding-top: 50px;
 }
-body .contenedor .menu_left .cont_menu_left .menu_info ul li {
+body .contenedor .menu_left .cont_menu_left .menu_info .lista_paginas a {
   padding: 5px 0px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
