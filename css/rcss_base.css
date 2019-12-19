@@ -36,6 +36,11 @@ body .contenedor .menu_left .cont_menu_left .btn_toogle {
 body .contenedor .menu_left .cont_menu_left .menu_info {
   display: block;
 }
+body .contenedor .menu_left .cont_menu_left .menu_info .lista_paginas a {
+  display: block;
+  text-decoration: none;
+}
+
 /* MENU LEFT */
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
 body .contenedor .pagina {
