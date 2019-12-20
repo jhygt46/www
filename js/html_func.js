@@ -148,10 +148,10 @@ function create_html_promocion(obj){
 }
 function create_html_categorias(obj){
 
-    var Div = document.createElement('a');
-    Div.className = 'categoria';
-    //var Div = create_element_class('categoria');
-    
+    //var Div = document.createElement('a');
+    //Div.className = 'categoria';
+    var Div = create_element_class('categoria');
+
     if(obj.image != ""){
         Div.style.backgroundImage = 'url("/data/'+code+'/'+obj.image+'")';
     }
