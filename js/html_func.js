@@ -148,9 +148,9 @@ function create_html_promocion(obj){
 }
 function create_html_categorias(obj){
 
-    //var Div = document.createElement('a');
-    //Div.className = 'categoria';
-    var Div = create_element_class('categoria');
+    var Div = document.createElement('a');
+    Div.className = 'categoria';
+    Div.setAttribute('href', "/"+obj.nombre);
 
     if(obj.image != ""){
         Div.style.backgroundImage = 'url("/data/'+code+'/'+obj.image+'")';
@@ -164,7 +164,7 @@ function create_html_categorias(obj){
 
     if(obj.mostrar_prods == 0){
 
-        Divm.onclick = function(){ open_categoria(obj.id_cae, 1) };
+        Divm.onclick = function(){ open_categoria(obj.id_cae, 1); return false; };
         Divm.style.height = parseInt((widthpx - 20) * data.config.alto / 100)+"px";
 
         var Divn = create_element_class('cont_fondoi valign');
