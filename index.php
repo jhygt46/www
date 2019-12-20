@@ -36,7 +36,7 @@
     $url_pag_id = 0;
     $url_cat_ids = "[]";
 
-    if($url[1] != ""){
+    if($url[1] != "" && !filter_var("http://".$url[1], FILTER_VALIDATE_URL)){
 
         $err404 = true;
         if($url[1] == "detalle"):
