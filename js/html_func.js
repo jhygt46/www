@@ -383,7 +383,7 @@ function create_html_producto3(aux){
     var Divf = create_element_class('pro_fondo');
 
     if(aux.image != ""){
-        Divf.style.backgroundImage = 'url("/data/'+code+'/'+obj.image+'")';
+        Divf.style.backgroundImage = 'url("/data/'+code+'/'+aux.image+'")';
     }
 
     if(aux.disponible == 0){
