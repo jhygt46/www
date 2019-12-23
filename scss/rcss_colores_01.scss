@@ -31,6 +31,10 @@ $header_cant_cart_color: #F9DDF3;
 $header_cart_mensaje: #F9DDF3;
 $contenido_background: #e8e8e8;
 
+$btn_prin_nombre: #000;
+$btn_prin_desc: #000;
+$btn_prin_precio: #000;
+
 
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
 body {
@@ -59,9 +63,9 @@ body {
                         .botones_principales {
                             .cont_bp{
                                 .cont_bpi{
-                                    .nombre {}
-                                    .descripcion {}
-                                    .precio {}
+                                    .nombre { color: $btn_prin_nombre }
+                                    .descripcion { color: $btn_prin_desc }
+                                    .precio { color: $btn_prin_precio }
                                 }
                             }
                         }

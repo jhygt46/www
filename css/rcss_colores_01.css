@@ -30,6 +30,16 @@ body .contenedor .pagina .cont_pagina .header .cart_info {
 body .contenedor .pagina .cont_pagina .contenido {
   background: #e8e8e8;
 }
+body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .cont_bpi .nombre {
+  color: #000;
+}
+body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .cont_bpi .descripcion {
+  color: #000;
+}
+body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .cont_bpi .precio {
+  color: #000;
+}
+
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
 /* MODALS BASE */
 body .contenedor .modals .cont_modals .modal {
