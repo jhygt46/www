@@ -4,6 +4,9 @@
         die("hjS3r%mDs-5gYa6ib_5Ps");
     }
 
+    echo $_SERVER['REMOTE_ADDR'];
+    exit;
+
     require_once "class/core_class.php";
     $core = new Core();
     $info = $core->get_data();
