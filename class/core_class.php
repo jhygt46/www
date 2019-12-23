@@ -670,54 +670,5 @@ class Core{
         }
         return $ip;
     }
-    /*
-    public function volver(){
-        
-        if(file_exists($this->dir_info."versiones/last.json")){
-            $aux = json_decode(file_get_contents($this->dir_info."versiones/last.json"));
-            $code = $aux->{'code'};
-            if($code == $_POST["code"]){
-                $config = $this->get_config();
-                $ver_anterior = (isset($_POST["version"]) && is_numeric($_POST["version"])) ? $_POST["version"] : -1 ;
-                $pol_anterior = (isset($_POST["polygon"]) && is_numeric($_POST["polygon"])) ? $_POST["polygon"] : -1 ;
-                $versiones = opendir($this->dir_info."versiones/");
-                while($archivo = readdir($versiones)){
-                    if($archivo != "." && $archivo != ".." && $archivo != "last.json"){
-                        $ver_file[] = $archivo;
-                    }
-                }
-                ksort($ver_file);
-                $polygon = opendir($this->dir_info."polygon/");
-                while($archivo = readdir($polygon)){
-                    if($archivo != "." && $archivo != ".." && $archivo != "last.json"){
-                        $pol_file[] = $archivo;
-                    }
-                }
-                ksort($pol_file);
-                if($ver_anterior == -1){
-                    $config["info"] = "last.json";
-                }
-                if($ver_anterior > -1 && $ver_anterior < count($ver_file)){
-                    for($i=0; $i<count($ver_file); $i++){
-                        if($i == $ver_anterior){
-                            $config["info"] = $ver_file[$i];
-                        }
-                    }
-                }
-                if($pol_anterior == -1){
-                    $config["info"] = "last.json";
-                }
-                if($pol_anterior > -1 && $pol_anterior < count($pol_file)){
-                    for($i=0; $i<count($pol_file); $i++){
-                        if($i == $pol_anterior){
-                            $config["polygon"] = $pol_file[$i];
-                        }
-                    }
-                }
-                file_put_contents($this->dir_info."config.json", json_encode($config));
-            }   
-        }
-    }
-    */
 
 }
