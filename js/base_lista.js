@@ -172,7 +172,6 @@ function imprimir_productos_modal(id){
         for(var j=0, jlen=productos.length; j<jlen; j++){
             var producto = get_producto(productos[j]);
             if(producto.disponible != 2 && categoria.detalle_prods == 0){
-                console.log(producto.tipo);
                 if(producto.tipo == 0){
                     html.append(create_html_producto(producto));
                 }
@@ -1069,7 +1068,6 @@ function paso_4(){
                         data: send,
                         success: function(res){
 
-                            console.log(res);
                             if(res.op == 1){
 
                                 $('#pedido_nombre').css({ border: '0px' });
@@ -1330,9 +1328,6 @@ function initMap(){
                     type: "POST",
                     data: send,
                     success: function(data){
-
-                        console.log("despacho_domicilio");
-                        console.log(data);
 
                         if(data.op == 1){
 

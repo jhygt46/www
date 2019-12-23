@@ -6,17 +6,14 @@ $(document).ready(function(){
     for(var i=0, ilen=carro.length; i<ilen; i++){
         if(!carro[i].hasOwnProperty('promo')){
             total_process = total_process + parseInt(get_producto(carro[i].id_pro).precio);
-            //console.log("prod: "+get_producto(carro[i].id_pro).precio);
         }
     }
     for(var i=0, ilen=promos.length; i<ilen; i++){
         total_process = total_process + parseInt(get_categoria(promos[i].id_cae).precio);
-        //console.log("cate: "+get_categoria(promos[i].id_cae).precio);
     }
     var diff = costo + total_process - total; 
-    console.log("diff: "+diff);
     if(diff > 0){
-        //$('.verificar').append('<div>ERROR: TOTAL ENVIADO ES MENOR: ($'+diff+')</div>')
+        $('.verificar').append('<div>ERROR: TOTAL ENVIADO ES MENOR: ($'+diff+')</div>')
     }
     if(tc == 1){
         window.print();

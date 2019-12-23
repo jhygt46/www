@@ -15,10 +15,10 @@ body .contenedor .pagina .cont_pagina .header .cart_info {
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
 /* MODALS BASE */
 body .contenedor .modals .cont_modals .modal .cont_modal .titulo .cont_titulo h1 {
-  font-size: 20px;
+  font-size: 21px;
 }
 body .contenedor .modals .cont_modals .modal .cont_modal .titulo .cont_titulo h2 {
-  font-size: 20px;
+  font-size: 18px;
 }
 body .contenedor .modals .cont_modals .modal .cont_modal .sub_total .cont_subtotal .total_detalle .paso_01_sub_total {
   font-size: 20px;
