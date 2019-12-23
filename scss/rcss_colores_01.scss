@@ -624,6 +624,10 @@ $producto3_cont_background: #ddd;
 
 $categoria_open_background: #ddd;
 
+$lista_cat_nombre: #000;
+$lista_cat_desc: #000;
+$lista_cat_precio: #000;
+
 body {
     .contenedor {
         .modals{
@@ -768,9 +772,9 @@ body {
                                     .categoria {
                                         .cont_fondo {
                                             .cont_fondoi {
-                                                .nombre{}
-                                                .descripcion{}
-                                                .precio{}
+                                                .nombre{ color: $lista_cat_nombre }
+                                                .descripcion{ color: $lista_cat_desc }
+                                                .precio{ color: $lista_cat_precio }
                                             }
                                         }
                                     }
