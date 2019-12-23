@@ -231,7 +231,9 @@ function add_carro_producto(id_pro, silencio){
             hide_modal(); 
             $('.cart_info').html("Producto Agregado"); 
             setTimeout(function(){ $('.cart_info').html("");  }, 4000);
-            history.pushState(null, '', '/');
+            if(produccion == 1){
+                history.pushState(null, '', '/');
+            }
         }
         
     }
