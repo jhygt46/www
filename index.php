@@ -3,11 +3,7 @@
     if(isset($_POST["test"]) && $_POST["test"] == "Dw7k2s_hKi5sqPs8"){
         die("hjS3r%mDs-5gYa6ib_5Ps");
     }
-
-    if($_SERVER['REMOTE_ADDR'] != "190.22.86.203"){
-        die("En construccion");
-    }
-
+    
     require_once "class/core_class.php";
     $core = new Core();
     $info = $core->get_data();
