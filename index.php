@@ -4,8 +4,9 @@
         die("hjS3r%mDs-5gYa6ib_5Ps");
     }
 
-    echo $_SERVER['REMOTE_ADDR'];
-    exit;
+    if($_SERVER['REMOTE_ADDR'] != "190.22.86.203"){
+        die("En construccion");
+    }
 
     require_once "class/core_class.php";
     $core = new Core();
