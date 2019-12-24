@@ -140,7 +140,7 @@
             body{
                 font-family: "<?php echo $info->{"font"}->{"css"}; ?>";
                 font-size: 2px;
-                font-color: #ff0;
+                color: #ff0;
             }
         </style>
     </head>
