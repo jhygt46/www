@@ -277,7 +277,7 @@ function create_html_producto(aux){
     var Divn = create_element_class('cont_info_pro valign');
 
     var nombre = create_element_class('nombre');
-    if(aux.numero > 0){
+    if(aux.numero > 0 && data.config.mostrar_numero == 1){
         nombre.innerHTML = aux.numero + '.- ' + aux.nombre;
     }else{
         nombre.innerHTML = aux.nombre;
@@ -339,7 +339,7 @@ function create_html_producto2(aux){
     cont_data.style.width = (widthpx - 20 - height) + "px";
 
     var nombre = create_element_class('nombre');
-    if(aux.numero > 0){
+    if(aux.numero > 0 && data.config.mostrar_numero == 1){
         nombre.innerHTML = aux.numero + '.- ' + aux.nombre;
     }else{
         nombre.innerHTML = aux.nombre;
@@ -419,7 +419,7 @@ function create_html_producto3(aux){
     var Divc = create_element_class('cont_prod valign');
     var nombre = document.createElement('div');
     nombre.className = 'nombre';
-    if(aux.numero > 0){
+    if(aux.numero > 0 && data.config.mostrar_numero == 1){
         nombre.innerHTML = aux.numero + '.- ' + aux.nombre;
     }else{
         nombre.innerHTML = aux.nombre;
@@ -522,13 +522,13 @@ function promo_carros(producto, j){
 
 
     if(producto.nombre_carro != ""){
-        if(producto.numero > 0){
+        if(producto.numero > 0 && data.config.mostrar_numero == 1){
             Nombre.innerHTML = producto.numero + '.- ' + producto.nombre_carro;
         }else{
             Nombre.innerHTML = producto.nombre_carro;
         }
     }else{
-        if(producto.numero > 0){
+        if(producto.numero > 0 && data.config.mostrar_numero == 1){
             Nombre.innerHTML = producto.numero + '.- ' + producto.nombre;
         }else{
             Nombre.innerHTML = producto.nombre;
@@ -735,14 +735,14 @@ function html_seleccionar_productos_categoria_promo(categoria, i, cantidad){
             pro_cat_item_nombre.className = 'pro_cat_item_nombre';
             
             if(producto.nombre_carro != ""){
-                if(producto.numero > 0){
+                if(producto.numero > 0 && data.config.mostrar_numero == 1){
                     pro_cat_item_nombre.innerHTML = producto.numero + '.- ' + producto.nombre_carro;
                 }else{
                     pro_cat_item_nombre.innerHTML = producto.nombre_carro;
                 }
                 pro_cat_item.appendChild(pro_cat_item_nombre);
             }else{
-                if(producto.numero > 0){
+                if(producto.numero > 0 && data.config.mostrar_numero == 1){
                     pro_cat_item_nombre.innerHTML = producto.numero + '.- ' + producto.nombre;
                 }else{
                     pro_cat_item_nombre.innerHTML = producto.nombre;

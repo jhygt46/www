@@ -38,7 +38,9 @@ function create_item(item){
         }
     }
     if(producto.numero > 0){
-        Dnombre.innerHTML = producto.numero+".- ";
+        if(data.config.mostrar_numero == 1){
+            Dnombre.innerHTML = producto.numero+".- ";
+        }
         if(producto.nombre_carro == ""){
             Dnombre.innerHTML += producto.nombre;
         }else{

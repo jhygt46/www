@@ -367,13 +367,13 @@ function mostrar_pregunta(i){
     show_modal('modal_pregunta_productos');
 
     if(producto.nombre_carro != ""){
-        if(producto.numero > 0){
+        if(producto.numero > 0 && data.config.mostrar_numero == 1){
             $('.modal_pregunta_productos .titulo h1').html(producto.numero + '.- ' + producto.nombre_carro);
         }else{
             $('.modal_pregunta_productos .titulo h1').html(producto.nombre_carro);
         }
     }else{
-        if(producto.numero > 0){
+        if(producto.numero > 0 && data.config.mostrar_numero == 1){
             $('.modal_pregunta_productos .titulo h1').html(producto.numero + '.- ' + producto.nombre);
         }else{
             $('.modal_pregunta_productos .titulo h1').html(producto.nombre);
