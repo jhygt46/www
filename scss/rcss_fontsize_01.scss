@@ -577,8 +577,6 @@ $pro3_sttl: 16px;
 $pro3_pre: 18px;
 $pro3_line_height_sttl: 14px;
 
-$modal_titulo: 12px;
-$modal_subtitulo: 10px;
 
 /* MODALS PASO CARTA */
 body {
@@ -589,8 +587,8 @@ body {
                     .cont_modal {
                         .titulo {
                             .cont_titulo {
-                                h1{ font-size: $modal_titulo }
-                                h2{ font-size: $modal_subtitulo }
+                                h1{}
+                                h2{}
                             }
                         }
                         .close {}
@@ -929,3 +927,4 @@ body {
     }
 }
 /* MODALS PAGINA INICIO */
+

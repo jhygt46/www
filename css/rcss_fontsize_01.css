@@ -78,12 +78,6 @@ body .contenedor .modals .cont_modals .paso_02b .cont_modal .acciones {
 /* MODALS PASO PROMOCION */
 /* MODALS PASO PROMOCION */
 /* MODALS PASO CARTA */
-body .contenedor .modals .cont_modals .modal_carta .cont_modal .titulo .cont_titulo h1 {
-  font-size: 12px;
-}
-body .contenedor .modals .cont_modals .modal_carta .cont_modal .titulo .cont_titulo h2 {
-  font-size: 10px;
-}
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .cont_producto .cont_info_pro .nombre {
   font-size: 18px;
 }
