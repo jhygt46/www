@@ -555,13 +555,30 @@ $catopen_sttl: 16px;
 $catopen_prod_ttl: 18px;
 $catopen_prod_sttl: 12px;
 $catopen_prod_pre: 16px;
-
 $catopen_prod_line_height_sttl: 12px;
+
+$cat_ttl: 18px;
+$cat_sttl: 12px;
+$cat_pre: 16px;
+$cat_line_height_sttl: 12px;
+
+$pro1_ttl: 18px;
+$pro1_sttl: 16px;
+$pro1_pre: 18px;
+$pro1_line_height_sttl: 14px;
 
 $pro2_ttl: 18px;
 $pro2_sttl: 16px;
 $pro2_pre: 18px;
 $pro2_line_height_sttl: 14px;
+
+$pro3_ttl: 18px;
+$pro3_sttl: 16px;
+$pro3_pre: 18px;
+$pro3_line_height_sttl: 14px;
+
+$modal_titulo: 12px;
+$modal_subtitulo: 10px;
 
 /* MODALS PASO CARTA */
 body {
@@ -572,8 +589,8 @@ body {
                     .cont_modal {
                         .titulo {
                             .cont_titulo {
-                                h1{}
-                                h2{}
+                                h1{ font-size: $modal_titulo }
+                                h2{ font-size: $modal_subtitulo }
                             }
                         }
                         .close {}
@@ -584,13 +601,14 @@ body {
                                         .cont_producto{
                                             .cont_info_pro{
                                                 .nombre{
-
+                                                    font-size: $pro1_ttl;
                                                 }
                                                 .descripcion{
-
+                                                    font-size: $pro1_sttl;
+                                                    line-height: $pro1_line_height_sttl;
                                                 }
                                                 .precio{
-                                                    
+                                                    font-size: $pro1_pre;
                                                 }
                                             }
                                         }
@@ -649,13 +667,14 @@ body {
                                             .cont_pr {
                                                 .cont_prod {
                                                     .nombre {
-
+                                                        font-size: $pro3_ttl;
                                                     }
                                                     .descripcion {
-                                                        
+                                                        font-size: $pro3_sttl;
+                                                        line-height: $pro3_line_height_sttl;
                                                     }
                                                     .precio {
-                                                        
+                                                        font-size: $pro3_pre;
                                                     }
                                                 }
                                             }
@@ -680,27 +699,27 @@ body {
                                         .cont_fondo {
                                             .cont_detalle_pro {
                                                 .cont_detalle_pro_np {
-                                                    .nombre{}
-                                                    .precio{}
+                                                    .nombre{  }
+                                                    .precio{  }
                                                 }
-                                                .descripcion{}
+                                                .descripcion{  }
                                                 .listado {
-                                                    .prod_item{}
+                                                    .prod_item{  }
                                                 }
                                             }
                                         }
                                         .cont_fondoi {
-                                            .nombre{}
-                                            .descripcion{}
-                                            .precio{}
+                                            .nombre{  }
+                                            .descripcion{  }
+                                            .precio{  }
                                         }
                                     }
                                     .categoria {
                                         .cont_fondo {
                                             .cont_fondoi {
-                                                .nombre{}
-                                                .descripcion{}
-                                                .precio{}
+                                                .nombre{ font-size: $cat_ttl }
+                                                .descripcion{ font-size: $cat_sttl; line-height: $cat_line_height_sttl; }
+                                                .precio{ font-size: $cat_pre }
                                             }
                                         }
                                     }
