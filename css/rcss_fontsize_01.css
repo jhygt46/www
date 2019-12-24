@@ -78,6 +78,22 @@ body .contenedor .modals .cont_modals .paso_02b .cont_modal .acciones {
 /* MODALS PASO PROMOCION */
 /* MODALS PASO PROMOCION */
 /* MODALS PASO CARTA */
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo .nombre {
+  font-size: 22px;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo .descripcion {
+  font-size: 16px;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo .listado .prod_item .prod_i_nom .prod_i_ttl {
+  font-size: 18px;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo .listado .prod_item .prod_i_nom .prod_i_sttl {
+  font-size: 12px;
+  line-height: 12px;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo .listado .prod_item .prod_i_pre {
+  font-size: 16px;
+}
 /* MODALS PASO CARTA PENDIENTE */
 /* MODALS PAGINA */
 /* MODALS PAGINA */

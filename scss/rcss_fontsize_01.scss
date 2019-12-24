@@ -549,6 +549,14 @@ body {
 }
 /* MODALS PASO PROMOCION */
 
+$catopen_ttl: 22px;
+$catopen_sttl: 16px;
+
+$catopen_prod_ttl: 18px;
+$catopen_prod_sttl: 12px;
+$catopen_prod_pre: 16px;
+
+$catopen_prod_line_height_sttl: 12px;
 
 
 /* MODALS PASO CARTA */
@@ -693,15 +701,15 @@ body {
                                     }
                                     .categoriaopen {
                                         .cont_fondo {
-                                            .nombre {}
-                                            .descripcion{}
+                                            .nombre { font-size: $catopen_ttl }
+                                            .descripcion{ font-size: $catopen_sttl }
                                             .listado {
                                                 .prod_item {
                                                     .prod_i_nom {
-                                                        .prod_i_ttl{}
-                                                        .prod_i_sttl{}
+                                                        .prod_i_ttl{ font-size: $catopen_prod_ttl }
+                                                        .prod_i_sttl{ font-size: $catopen_prod_sttl; line-height: $catopen_prod_line_height_sttl; }
                                                     }
-                                                    .prod_i_pre{}
+                                                    .prod_i_pre{ font-size: $catopen_prod_pre }
                                                 }
                                             }
                                         }

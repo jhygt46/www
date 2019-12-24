@@ -3,7 +3,7 @@ function html_home_categorias(obj, num){
 
     var Div = document.createElement('a');
     Div.className = 'botones_principales';
-    Div.setAttribute('href', "/"+obj.nombre+"/");
+    Div.setAttribute('href', "/"+obj.nombre.split(" ").join("-")+"/");
     
     if(obj.image == ""){
         Div.style.backgroundImage = 'url("/_images/cat_'+num+'.jpg")';
@@ -49,7 +49,7 @@ function html_home_categorias(obj, num){
 function html_paginas(pagina){
     
     a = document.createElement('a');
-    a.setAttribute('href', "/"+pagina.nombre);
+    a.setAttribute('href', "/"+pagina.nombre.split(" ").join("-"));
     a.onclick = function(){ ver_pagina(pagina.id_pag, 1); return false; };
     a.innerHTML = pagina.nombre;
     return a;
@@ -148,15 +148,11 @@ function create_html_promocion(obj){
 }
 function create_html_categorias(obj){
 
-    
-
-    
-
     if(obj.mostrar_prods == 0){
 
         var Div = document.createElement('a');
         Div.className = 'categoria';
-        Div.setAttribute('href', "/"+obj.nombre);
+        Div.setAttribute('href', "/"+obj.nombre.split(" ").join("-"));
 
         if(obj.image != ""){
             Div.style.backgroundImage = 'url("/data/'+code+'/'+obj.image+'")';
