@@ -21,6 +21,10 @@ body {
 $header_cant_cart: 14px;
 $header_cart_mensaje: 12px;
 
+$cat_prin_ttl: 18px;
+$cat_prin_sttl: 12px;
+$cat_prin_pre: 16px;
+
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
 body {
     .contenedor {
@@ -44,9 +48,9 @@ body {
                         .botones_principales {
                             .cont_bp{
                                 .cont_bpi{
-                                    .nombre {}
-                                    .descripcion {}
-                                    .precio {}
+                                    .nombre { font-size: $cat_prin_ttl }
+                                    .descripcion { font-size: $cat_prin_sttl }
+                                    .precio { font-size: $cat_prin_pre }
                                 }
                             }
                         }

@@ -12,6 +12,16 @@ body .contenedor .pagina .cont_pagina .header .menu_right .cantcart .cantcart_nu
 body .contenedor .pagina .cont_pagina .header .cart_info {
   font-size: 12px;
 }
+body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .cont_bpi .nombre {
+  font-size: 18px;
+}
+body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .cont_bpi .descripcion {
+  font-size: 12px;
+}
+body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .cont_bpi .precio {
+  font-size: 16px;
+}
+
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
 /* MODALS BASE */
 body .contenedor .modals .cont_modals .modal .cont_modal .titulo .cont_titulo h1 {
