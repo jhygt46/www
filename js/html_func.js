@@ -148,21 +148,25 @@ function create_html_promocion(obj){
 }
 function create_html_categorias(obj){
 
-    var Div = document.createElement('a');
-    Div.className = 'categoria';
-    Div.setAttribute('href', "/"+obj.nombre);
+    
 
-    if(obj.image != ""){
-        Div.style.backgroundImage = 'url("/data/'+code+'/'+obj.image+'")';
-    }
-
-    if(obj.degradado == 0){
-        var Divm = create_element_class('cont_fondo');
-    }else{
-        var Divm = create_element_class('cont_fondo prin_alpha_'+obj.degradado);
-    }
+    
 
     if(obj.mostrar_prods == 0){
+
+        var Div = document.createElement('a');
+        Div.className = 'categoria';
+        Div.setAttribute('href', "/"+obj.nombre);
+
+        if(obj.image != ""){
+            Div.style.backgroundImage = 'url("/data/'+code+'/'+obj.image+'")';
+        }
+
+        if(obj.degradado == 0){
+            var Divm = create_element_class('cont_fondo');
+        }else{
+            var Divm = create_element_class('cont_fondo prin_alpha_'+obj.degradado);
+        }
 
         Divm.onclick = function(){ open_categoria(obj.id_cae, 1); return false; };
         Divm.style.height = parseInt((widthpx - 20) * data.config.alto / 100)+"px";
@@ -185,6 +189,19 @@ function create_html_categorias(obj){
     }
     if(obj.mostrar_prods == 1){
         
+        var Div = document.createElement('div');
+        Div.className = 'categoria';
+
+        if(obj.image != ""){
+            Div.style.backgroundImage = 'url("/data/'+code+'/'+obj.image+'")';
+        }
+
+        if(obj.degradado == 0){
+            var Divm = create_element_class('cont_fondo');
+        }else{
+            var Divm = create_element_class('cont_fondo prin_alpha_'+obj.degradado);
+        }
+
         // OJO FALTA //
         var Nombre = document.createElement('div');
         Nombre.className = 'nombre';
