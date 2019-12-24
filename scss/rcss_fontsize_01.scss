@@ -558,6 +558,10 @@ $catopen_prod_pre: 16px;
 
 $catopen_prod_line_height_sttl: 12px;
 
+$pro2_ttl: 18px;
+$pro2_sttl: 16px;
+$pro2_pre: 18px;
+$pro2_line_height_sttl: 14px;
 
 /* MODALS PASO CARTA */
 body {
@@ -610,13 +614,14 @@ body {
                                                 td {
                                                     .cont_data {
                                                         .nombre {
-
+                                                            font-size: $pro2_ttl;
                                                         }
                                                         .descripcion {
-                                                            
+                                                            font-size: $pro2_sttl;
+                                                            line-height: $pro2_line_height_sttl;
                                                         }
                                                         .precio {
-                                                            
+                                                            font-size: $pro2_pre;
                                                         }
                                                     }
                                                     .foto {
