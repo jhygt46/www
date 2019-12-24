@@ -130,13 +130,8 @@
             var ver_inicio = <?php echo $info->{"ver_inicio"}; ?>;
             var code = "<?php echo $info->{'code'}; ?>";
             var estados = [ <?php for($i=0; $i<count($info->{'estado'}); $i++){ if($i>0){ echo ", "; } echo "'".$info->{'estado'}[$i]."'";  } ?> ];
-            
-            var fecha_js = new Date(<?php echo (time() + $horas * 60 * 60); ?>000).getTime();
+            var fecha_js = new Date(<?php echo time(); ?>000).getTime();
             var fecha_pc = new Date().getTime();
-
-            var produccion = <?php echo $info->{'dns'}; ?>;
-            var tipo_add_carro = <?php echo $info->{'tipo_add_carro'}; ?>;
-
             var url_pag_id = <?php echo $url_pag_id; ?>;
             var url_cat_ids = <?php echo $url_cat_ids; ?>;
             var paso = <?php echo $paso; ?>;

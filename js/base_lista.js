@@ -13,7 +13,7 @@ function render_pagina(){
         }
     }
     
-    if(num == 0 && produccion == 0){
+    if(num == 0 && data.config.dns == 0){
         alert("No hay categorias creadas!\nEn el administrador debe crearlas en la categoria 'Carta'");
     }
 
@@ -82,7 +82,7 @@ function close_that(that){
     $('.modals').hide();
     $(that).parents('.modal').hide();
     paso = 1;
-    if(produccion == 1){
+    if(data.config.dns == 1){
         history.pushState(null, '', '/');
     }
 }
@@ -96,7 +96,7 @@ function open_categoria(id, ps){
             for(var i=0, ilen=categorias.length; i<ilen; i++){
                 if(categorias[i].id_cae == id){
                     show_modal('modal_carta');
-                    if(ps == 1 && produccion == 1){
+                    if(ps == 1 && data.config.dns == 1){
                         var url_name = categorias[i].nombre.split(" ").join("-");
                         if(categorias[i].parent_id == 0){
                             history.pushState(null, categorias[i].nombre, '/'+url_name+'/');
@@ -231,7 +231,7 @@ function add_carro_producto(id_pro, silencio){
             hide_modal(); 
             $('.cart_info').html("Producto Agregado"); 
             setTimeout(function(){ $('.cart_info').html("");  }, 4000);
-            if(produccion == 1){
+            if(data.config.dns == 1){
                 history.pushState(null, '', '/');
             }
         }
@@ -335,7 +335,7 @@ function confirmar_pregunta_productos(that){
                         }
                     }else{
                         hide_modal();
-                        if(tipo_add_carro == 0){
+                        if(data.config.tipo_add_carro == 0){
                             $('.cart_info').html("Producto Agregado"); 
                             setTimeout(function(){ $('.cart_info').html("");  }, 4000);
                         }
@@ -708,7 +708,7 @@ function ver_pagina(id, ps){
     for(var i=0, ilen=data.paginas.length; i<ilen; i++){
         if(data.paginas[i].id_pag == id){
             
-            if(ps == 1 && produccion == 1){
+            if(ps == 1 && data.config.dns == 1){
                 var url_name = data.paginas[i].nombre.split(" ").join("-");
                 history.pushState(null, data.paginas[i].nombre, '/'+url_name+'/');
             }
@@ -737,7 +737,7 @@ function showmenu(){
         left: "0px"
     }, 200, function(){
         menu = 1;
-        if(data.paginas.length == 0 && produccion == 0){
+        if(data.paginas.length == 0 && data.config.dns == 0){
             alert("No hay paginas creadas!\nEn el administrador debe crearlas en la categoria 'Contenido'");
         }
     });
@@ -969,7 +969,7 @@ function paso_2(){
                 if(data.config.despacho_domicilio == 1){
                     show_despacho();
                 }else{
-                    if(produccion == 0){
+                    if(data.config.dns == 0){
                         alert("No hay locales creados!\nEn el administrador debe crearlas en la categoria 'Locales'");
                     }
                 }

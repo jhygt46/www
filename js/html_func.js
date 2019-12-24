@@ -263,10 +263,10 @@ function create_html_producto(aux){
     var Divm = create_element_class('cont_producto');
 
     if(aux.disponible == 0){
-        if(tipo_add_carro == 0){
+        if(data.config.tipo_add_carro == 0){
             Divm.onclick = function(){ add_carro_producto(aux.id_pro, 0) };
         }
-        if(tipo_add_carro == 1){
+        if(data.config.tipo_add_carro == 1){
             Divm.onclick = function(){ mostrar_add_carro(this) };
         }
     }
@@ -400,10 +400,10 @@ function create_html_producto3(aux){
     }
 
     if(aux.disponible == 0){
-        if(tipo_add_carro == 0){
+        if(data.config.tipo_add_carro == 0){
             Divf.onclick = function(){ add_carro_producto(aux.id_pro, 0) };
         }
-        if(tipo_add_carro == 1){
+        if(data.config.tipo_add_carro == 1){
             Divf.onclick = function(){ mostrar_add_carro(this) };
         }
     }
@@ -480,10 +480,10 @@ function tabla(cont_data, pro_foto, add_carro, aux){
     var tr1 = document.createElement('tr');
 
     if(aux.disponible == 0){
-        if(tipo_add_carro == 0){
+        if(data.config.tipo_add_carro == 0){
             tr1.onclick = function(){ add_carro_producto(aux.id_pro, 0) };
         }
-        if(tipo_add_carro == 1){
+        if(data.config.tipo_add_carro == 1){
             tr1.onclick = function(){ mostrar_add_carro(this) };
         }
     }
