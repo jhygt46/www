@@ -126,10 +126,10 @@ body .contenedor .modals .cont_modals .modal_pregunta_productos .cont_modal .con
 /* MODALS PASO PREGUNTAS */
 /* MODALS PASO PROMOCION */
 body .contenedor .modals .cont_modals .modal_productos_promo .cont_modal .cont_info .info_modal .pro_cat_promo .pro_cat_item .pro_cat_item_nombre {
-  color: 18px;
+  font-size: 18px;
 }
 body .contenedor .modals .cont_modals .modal_productos_promo .cont_modal .cont_info .info_modal .pro_cat_promo .pro_cat_item .pro_cat_item_descripcion {
-  color: 12px;
+  font-size: 12px;
 }
 /* MODALS PASO PROMOCION */
 /* MODALS PASO CARTA */
