@@ -136,6 +136,15 @@ body .contenedor .modals .cont_modals .modal_carta .cont_modal .titulo .cont_tit
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .cont_producto {
   background: #ddd;
 }
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .cont_producto .cont_info_pro .nombre {
+  color: #000;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .cont_producto .cont_info_pro .descripcion {
+  color: #000;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .cont_producto .cont_info_pro .precio {
+  color: #000;
+}
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .carro {
   background: #ddd;
 }
@@ -146,6 +155,15 @@ body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 table {
   background: #ccc;
 }
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 table tr td .cont_data .nombre {
+  color: #000;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 table tr td .cont_data .descripcion {
+  color: #000;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 table tr td .cont_data .precio {
+  color: #000;
+}
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 table tr td .foto {
   background: #000;
 }
@@ -155,6 +173,15 @@ body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto2 table tr td .carro .add_carro_btn {
   background: #900;
   color: #fff;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto3 .pro_fondo .cont_pr .cont_prod .nombre {
+  color: #000;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto3 .pro_fondo .cont_pr .cont_prod .descripcion {
+  color: #000;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto3 .pro_fondo .cont_pr .cont_prod .precio {
+  color: #000;
 }
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto3 .carro {
   background: #ddd;
