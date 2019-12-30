@@ -137,6 +137,18 @@ $modal_carro_promo_background: #f5f5f5;
 $modal_carro_border_color: #ddd;
 $modal_carro_restantes_background: #f5f5f5;
 
+$modal_paso1_ttl: #000;
+$modal_paso1_sttl: #000;
+
+$modal_carro_restantes_nombre: #000;
+$modal_carro_restantes_precio: #000;
+$modal_carro_restantes_pregunta: #000;
+$modal_carro_restantes_close: #000;
+
+$modal_carro_sub_total: #000;
+$modal_carro_costo: #000;
+$modal_carro_total: #000;
+
 body {
     .contenedor {
         .modals{
@@ -145,8 +157,8 @@ body {
                     .cont_modal {
                         .titulo {
                             .cont_titulo{
-                                h1{}
-                                h2{}
+                                h1{ color: $modal_paso1_ttl }
+                                h2{ color: $modal_paso1_sttl }
                             }
                         }
                         .close {}
@@ -171,12 +183,12 @@ body {
                                         background: $modal_carro_restantes_background;
                                         .restantes_detalle_item{
                                             border-top-color: $modal_carro_border_color;
-                                            .restantes_detalle_nombre{}
+                                            .restantes_detalle_nombre{ color: $modal_carro_restantes_nombre }
                                             .restantes_detalle_acciones{
-                                                .precio{}
+                                                .precio{ color: $modal_carro_restantes_precio }
                                                 .espacio{}
-                                                .pregunta{}
-                                                .accion{}
+                                                .pregunta{ color: $modal_carro_restantes_pregunta }
+                                                .accion{ color: $modal_carro_restantes_close }
                                             }
                                         }
                                     }
@@ -186,9 +198,9 @@ body {
                         .sub_total {
                             .cont_subtotal {
                                 .total_detalle{
-                                    .paso_01_sub_total{}
-                                    .paso_03_costo{}
-                                    .paso_03_total{}
+                                    .paso_01_sub_total{ color: $modal_carro_sub_total }
+                                    .paso_03_costo{ color: $modal_carro_costo }
+                                    .paso_03_total{ color: $modal_carro_total }
                                 }
                             }
                         }
@@ -211,6 +223,9 @@ body {
 $modal_carro_tipo_color: #ddd;
 $modal_carro_tipo_alert: #900;
 
+$modal_paso2_ttl: #000;
+$modal_paso2_sttl: #000;
+
 body {
     .contenedor {
         .modals{
@@ -219,8 +234,8 @@ body {
                     .cont_modal {
                         .titulo {
                             .cont_titulo {
-                                h1{}
-                                h2{}
+                                h1{ color: $modal_paso2_ttl }
+                                h2{ color: $modal_paso2_sttl }
                             }
                         }
                         .close {}
@@ -261,6 +276,9 @@ body {
 
 $modal_local_map_color: #ddd;
 
+$modal_paso2a_ttl: #000;
+$modal_paso2a_sttl: #000;
+
 body {
     .contenedor {
         .modals{
@@ -269,8 +287,8 @@ body {
                     .cont_modal {
                         .titulo {
                             .cont_titulo {
-                                h1{}
-                                h2{}
+                                h1{ color: $modal_paso2a_ttl }
+                                h2{ color: $modal_paso2a_sttl }
                             }
                         }
                         .close {}
