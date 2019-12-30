@@ -112,6 +112,12 @@ body .contenedor .modals .cont_modals .paso_02 .cont_modal .titulo .cont_titulo 
 body .contenedor .modals .cont_modals .paso_02 .cont_modal .cont_info .info_modal .cont_direccion .direccion_opciones .dir_op {
   background: #ddd;
 }
+body .contenedor .modals .cont_modals .paso_02 .cont_modal .cont_info .info_modal .cont_direccion .direccion_opciones .dir_op .codir .cont_info_dir .title {
+  color: #000;
+}
+body .contenedor .modals .cont_modals .paso_02 .cont_modal .cont_info .info_modal .cont_direccion .direccion_opciones .dir_op .codir .cont_info_dir .stitle {
+  color: #000;
+}
 body .contenedor .modals .cont_modals .paso_02 .cont_modal .cont_info .info_modal .cont_direccion .direccion_opciones .dir_op .codir .cont_info_dir .alert {
   color: #900;
 }

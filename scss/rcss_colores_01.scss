@@ -220,11 +220,14 @@ body {
 
 /* MODALS PASO 02 CARRO */
 
-$modal_carro_tipo_color: #ddd;
-$modal_carro_tipo_alert: #900;
+$modal_paso2_tipo_color: #ddd;
+$modal_paso2_alert: #900;
 
 $modal_paso2_ttl: #000;
 $modal_paso2_sttl: #000;
+
+$modal_paso2_info_ttl: #000;
+$modal_paso2_info_sttl: #000;
 
 body {
     .contenedor {
@@ -244,12 +247,12 @@ body {
                                 .cont_direccion {
                                     .direccion_opciones {
                                         .dir_op{
-                                            background: $modal_carro_tipo_color;
+                                            background: $modal_paso2_tipo_color;
                                             .codir{
                                                 .cont_info_dir {
-                                                    .title{}
-                                                    .stitle{}
-                                                    .alert{ color: $modal_carro_tipo_alert }
+                                                    .title{ color: $modal_paso2_info_ttl }
+                                                    .stitle{ color: $modal_paso2_info_sttl }
+                                                    .alert{ color: $modal_paso2_alert }
                                                 }
                                             }
                                         }
