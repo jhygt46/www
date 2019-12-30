@@ -836,6 +836,8 @@ body {
 /* MODALS ERROR LOCALES */
 
 $modal_local_map_color: #ddd;
+$err_local_ttl: #000;
+$err_local_sttl: #000;
 
 body {
     .contenedor {
@@ -845,8 +847,8 @@ body {
                     .cont_modal {
                         .titulo {
                             .cont_titulo {
-                                h1{}
-                                h2{}
+                                h1{ color: $err_local_ttl }
+                                h2{ color: $err_local_sttl }
                             }
                         }
                         .close {}
@@ -933,6 +935,10 @@ body {
 
 
 /* MODALS CONTACTO */
+
+$contacto_ttl: #000;
+$contacto_sttl: #000;
+
 body {
     .contenedor {
         .modals{
@@ -941,8 +947,8 @@ body {
                     .cont_modal {
                         .titulo {
                             .cont_titulo {
-                                h1{}
-                                h2{}
+                                h1{ color: $contacto_ttl }
+                                h2{ color: $contacto_sttl }
                             }
                         }
                         .close{}

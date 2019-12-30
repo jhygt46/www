@@ -182,6 +182,12 @@ body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_
 /* MODALS PAGINA */
 /* MODALS PAGINA */
 /* MODALS ERROR LOCALES */
+body .contenedor .modals .cont_modals .paso_02a .cont_modal .titulo .cont_titulo h1 {
+  color: #000;
+}
+body .contenedor .modals .cont_modals .paso_02a .cont_modal .titulo .cont_titulo h2 {
+  color: #000;
+}
 body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .cont_map {
   background: #ddd;
 }
@@ -189,6 +195,12 @@ body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_mod
 /* MODALS ERROR */
 /* MODALS ERROR */
 /* MODALS CONTACTO */
+body .contenedor .modals .cont_modals .modal_contacto .cont_modal .titulo .cont_titulo h1 {
+  color: #000;
+}
+body .contenedor .modals .cont_modals .modal_contacto .cont_modal .titulo .cont_titulo h2 {
+  color: #000;
+}
 /* MODALS CONTACTO */
 /* MODALS PAGINA INICIO */
 /* MODALS PAGINA INICIO */
