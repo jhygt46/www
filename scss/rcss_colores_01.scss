@@ -643,6 +643,14 @@ $producto3_nombre: #000;
 $producto3_descripcion: #000;
 $producto3_precio: #000;
 
+$lista_pro1_nombre: #000;
+$lista_pro1_descripcion: #000;
+$lista_pro1_precio: #000;
+
+$lista_pro2_nombre: #000;
+$lista_pro2_descripcion: #000;
+$lista_pro2_precio: #000;
+
 body {
     .contenedor {
         .modals{
@@ -769,19 +777,19 @@ body {
                                         .cont_fondo {
                                             .cont_detalle_pro {
                                                 .cont_detalle_pro_np {
-                                                    .nombre{}
-                                                    .precio{}
+                                                    .nombre{ color: $lista_pro1_nombre }
+                                                    .precio{ color: $lista_pro1_descripcion }
                                                 }
-                                                .descripcion{}
+                                                .descripcion{ color: $lista_pro1_precio }
                                                 .listado {
                                                     .prod_item{}
                                                 }
                                             }
                                         }
                                         .cont_fondoi {
-                                            .nombre{}
-                                            .descripcion{}
-                                            .precio{}
+                                            .nombre{ color: $lista_pro2_nombre }
+                                            .descripcion{ color: $lista_pro2_descripcion }
+                                            .precio{ color: $lista_pro2_precio }
                                         }
                                     }
                                     .categoria {
