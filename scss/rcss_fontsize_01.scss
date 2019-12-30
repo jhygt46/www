@@ -479,6 +479,8 @@ body {
 $pregunta_titulo: 18px;
 $pregunta_desc: 12px;
 
+$pregunta_alternativa: 14px;
+
 body {
     .contenedor {
         .modals{
@@ -499,7 +501,7 @@ body {
                                         .pregunta_titulo{ font-size: $pregunta_titulo }
                                         .titulo_v_pregunta{ font-size: $pregunta_desc }
                                         .v_pregunta{
-                                            .n_pregunta{}
+                                            .n_pregunta{ font-size: $pregunta_alternativa }
                                             .selected{}
                                         }
                                     }

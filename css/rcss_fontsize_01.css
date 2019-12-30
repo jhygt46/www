@@ -90,6 +90,9 @@ body .contenedor .modals .cont_modals .modal_pregunta_productos .cont_modal .con
 body .contenedor .modals .cont_modals .modal_pregunta_productos .cont_modal .cont_info .info_modal .s_pregunta .e_pregunta .titulo_v_pregunta {
   font-size: 12px;
 }
+body .contenedor .modals .cont_modals .modal_pregunta_productos .cont_modal .cont_info .info_modal .s_pregunta .e_pregunta .v_pregunta .n_pregunta {
+  font-size: 14px;
+}
 /* MODALS PASO PREGUNTAS */
 /* MODALS PASO PROMOCION */
 /* MODALS PASO PROMOCION */
