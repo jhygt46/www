@@ -628,6 +628,9 @@ $lista_cat_nombre: #000;
 $lista_cat_desc: #000;
 $lista_cat_precio: #000;
 
+$modal_carta_ttl: #000;
+$modal_carta_sttl: #000;
+
 body {
     .contenedor {
         .modals{
@@ -636,8 +639,8 @@ body {
                     .cont_modal {
                         .titulo {
                             .cont_titulo {
-                                h1{}
-                                h2{}
+                                h1{ color: $modal_carta_ttl }
+                                h2{ color: $modal_carta_sttl }
                             }
                         }
                         .close {}

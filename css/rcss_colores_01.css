@@ -127,6 +127,12 @@ body .contenedor .modals .cont_modals .modal_pregunta_productos .cont_modal .con
 /* MODALS PASO PROMOCION */
 /* MODALS PASO PROMOCION */
 /* MODALS PASO CARTA */
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .titulo .cont_titulo h1 {
+  color: #000;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .titulo .cont_titulo h2 {
+  color: #000;
+}
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .cont_producto {
   background: #ddd;
 }
