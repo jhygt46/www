@@ -282,6 +282,10 @@ $modal_local_map_color: #ddd;
 $modal_paso2a_ttl: #000;
 $modal_paso2a_sttl: #000;
 
+$modal_paso2a_local_ttl: #000;
+$modal_paso2a_local_sttl: #000;
+$modal_paso2a_local_alert: #000;
+
 body {
     .contenedor {
         .modals{
@@ -304,9 +308,9 @@ body {
                                                 .cont_local {
                                                     .left_acciones {
                                                         .local_info {
-                                                            .title{}
-                                                            .stitle{}
-                                                            .alert{}
+                                                            .title{ color: $modal_paso2a_local_ttl }
+                                                            .stitle{ color: $modal_paso2a_local_sttl }
+                                                            .alert{ color: $modal_paso2a_local_alert }
                                                         }
                                                     }
                                                     .accioness {
@@ -340,6 +344,10 @@ body {
 
 
 /* MODALS PASO 02B LOCALES CARRO */
+
+$modal_paso2b_ttl: #000;
+$modal_paso2b_sttl: #000;
+
 body {
     .contenedor {
         .modals{
@@ -348,8 +356,8 @@ body {
                     .cont_modal {
                         .titulo {
                             .cont_titulo {
-                                h1{}
-                                h2{}
+                                h1{ color: $modal_paso2b_ttl }
+                                h2{ color: $modal_paso2b_sttl }
                             }
                         }
                         .close{}
