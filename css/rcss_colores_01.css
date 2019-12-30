@@ -222,6 +222,12 @@ body .contenedor .modals .cont_modals .modal_pregunta_productos .cont_modal .con
 }
 /* MODALS PASO PREGUNTAS */
 /* MODALS PASO PROMOCION */
+body .contenedor .modals .cont_modals .modal_productos_promo .cont_modal .cont_info .info_modal .pro_cat_promo .pro_cat_item .pro_cat_item_nombre {
+  color: #000;
+}
+body .contenedor .modals .cont_modals .modal_productos_promo .cont_modal .cont_info .info_modal .pro_cat_promo .pro_cat_item .pro_cat_item_descripcion {
+  color: #000;
+}
 /* MODALS PASO PROMOCION */
 /* MODALS PASO CARTA */
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .titulo .cont_titulo h1 {

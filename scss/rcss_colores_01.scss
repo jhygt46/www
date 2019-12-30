@@ -613,6 +613,10 @@ body {
 
 
 /* MODALS PASO PROMOCION */
+
+$pro_cat_item_nombre: #000;
+$pro_cat_item_descripcion: #000;
+
 body {
     .contenedor {
         .modals{
@@ -633,8 +637,8 @@ body {
                                         .pro_cat_item_select {
                                             select{}
                                         }
-                                        .pro_cat_item_nombre{}
-                                        .pro_cat_item_descripcion{}
+                                        .pro_cat_item_nombre{ color: $pro_cat_item_nombre }
+                                        .pro_cat_item_descripcion{ color: $pro_cat_item_descripcion }
                                     }
                                 }
                             }
