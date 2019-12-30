@@ -149,6 +149,13 @@ $modal_carro_sub_total: #000;
 $modal_carro_costo: #000;
 $modal_carro_total: #000;
 
+$promo_info_ttl: #000;
+$promo_info_precio: #000;
+$promo_info_close: #000;
+
+$promo_info_detalle_nombre: #000;
+$promo_info_detalle_acciones: #000;
+
 body {
     .contenedor {
         .modals{
@@ -167,13 +174,14 @@ body {
                                 .process_carro {
                                     .process_carro_promo{
                                         background: $modal_carro_promo_background;
-                                        .promo_info{}
-                                        .promo_precio{}
-                                        .promo_delete{}
+                                        .promo_info{ color: $promo_info_ttl }
+                                        .promo_precio{ color: $promo_info_precio }
+                                        .promo_delete{ color: $promo_info_close }
                                         .promo_detalle{
                                             .promo_detalle_item{
-                                                .promo_detalle_nombre{}
+                                                .promo_detalle_nombre{ color: $promo_info_detalle_nombre }
                                                 .promo_detalle_acciones{
+                                                    color: $promo_info_detalle_acciones;
                                                     .accion{}
                                                 }
                                             }
