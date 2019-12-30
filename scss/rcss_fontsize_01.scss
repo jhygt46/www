@@ -475,6 +475,10 @@ body {
 
 
 /* MODALS PASO PREGUNTAS */
+
+$pregunta_titulo: 18px;
+$pregunta_desc: 12px;
+
 body {
     .contenedor {
         .modals{
@@ -492,8 +496,8 @@ body {
                             .info_modal {
                                 .s_pregunta {
                                     .e_pregunta {
-                                        .pregunta_titulo{}
-                                        .titulo_v_pregunta{}
+                                        .pregunta_titulo{ font-size: $pregunta_titulo }
+                                        .titulo_v_pregunta{ font-size: $pregunta_desc }
                                         .v_pregunta{
                                             .n_pregunta{}
                                             .selected{}
