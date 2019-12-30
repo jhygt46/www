@@ -89,6 +89,27 @@ body .contenedor .modals .cont_modals .paso_02b .cont_modal .acciones {
 }
 /* MODALS PASO 02B LOCALES CARRO */
 /* MODALS PASO 3 DATA */
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion .item_direccion h1 {
+  font-size: 14px;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion .item_direccion h2 {
+  font-size: 12px;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion .item_numero h1 {
+  font-size: 14px;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion .item_numero h2 {
+  font-size: 12px;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion .item_depto h1 {
+  font-size: 14px;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_nombre_telefono .item_nombre h1 {
+  font-size: 14px;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_nombre_telefono .item_telefono h1 {
+  font-size: 14px;
+}
 /* MODALS PASO 3 DATA */
 /* MODALS PASO 4 LOCALES CARRO */
 /* MODALS PASO 4 LOCALES CARRO */

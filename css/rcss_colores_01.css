@@ -154,6 +154,27 @@ body .contenedor .modals .cont_modals .paso_02b .cont_modal .acciones {
 }
 /* MODALS PASO 02B LOCALES CARRO */
 /* MODALS PASO 3 DATA */
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion .item_direccion h1 {
+  color: #000;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion .item_direccion h2 {
+  color: #000;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion .item_numero h1 {
+  color: #000;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion .item_numero h2 {
+  color: #000;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion .item_depto h1 {
+  color: #000;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_nombre_telefono .item_nombre h1 {
+  color: #000;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_nombre_telefono .item_telefono h1 {
+  color: #000;
+}
 body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_preguntas .preguntas {
   background: #ddd;
 }

@@ -386,7 +386,17 @@ body {
 
 /* MODALS PASO 3 DATA */
 
-$modal_preguntas_background: #ddd;
+$modal_paso3_background: #ddd;
+
+$modal_paso3_input_direccion: #000;
+$modal_paso3_input_direccion_h2: #000;
+
+$modal_paso3_input_numero: #000;
+$modal_paso3_input_numero_h2: #000;
+
+$modal_paso3_input_nombre: #000;
+$modal_paso3_input_telefono: #000;
+$modal_paso3_input_depto: #000;
 
 body {
     .contenedor {
@@ -406,32 +416,32 @@ body {
                                 .cont_final {
                                     .block_direccion {
                                         .item_direccion {
-                                            h1{}
-                                            h2{}
+                                            h1{ color: $modal_paso3_input_direccion }
+                                            h2{ color: $modal_paso3_input_direccion_h2 }
                                         }
                                         .item_numero {
-                                            h1{}
-                                            h2{}
+                                            h1{ color: $modal_paso3_input_numero }
+                                            h2{ color: $modal_paso3_input_numero_h2 }
                                         }
                                         .item_depto {
-                                            h1{}
+                                            h1{ color: $modal_paso3_input_depto }
                                             input{}
                                         }
                                     }
                                     .block_nombre_telefono {
                                         .item_nombre {
-                                            h1{}
+                                            h1{ color: $modal_paso3_input_nombre }
                                             input{}
                                         }
                                         .item_telefono {
-                                            h1{}
+                                            h1{ color: $modal_paso3_input_telefono }
                                             input{}
                                         }
                                     }
                                     .block_preguntas {
                                         h1{}
                                         .preguntas {
-                                            background: $modal_preguntas_background;
+                                            background: $modal_paso3_background;
                                             .pregunta {
                                                 .pre_nom{}
                                                 .pre_input {

@@ -342,6 +342,17 @@ body {
 
 
 /* MODALS PASO 3 DATA */
+
+$modal_paso3_input_direccion: 14px;
+$modal_paso3_input_direccion_h2: 12px;
+
+$modal_paso3_input_numero: 14px;
+$modal_paso3_input_numero_h2: 12px;
+
+$modal_paso3_input_depto: 14px;
+$modal_paso3_input_nombre: 14px;
+$modal_paso3_input_telefono: 14px;
+
 body {
     .contenedor {
         .modals{
@@ -360,25 +371,25 @@ body {
                                 .cont_final {
                                     .block_direccion {
                                         .item_direccion {
-                                            h1{}
-                                            h2{}
+                                            h1{ font-size: $modal_paso3_input_direccion }
+                                            h2{ font-size: $modal_paso3_input_direccion_h2 }
                                         }
                                         .item_numero {
-                                            h1{}
-                                            h2{}
+                                            h1{ font-size: $modal_paso3_input_numero }
+                                            h2{ font-size: $modal_paso3_input_numero_h2 }
                                         }
                                         .item_depto {
-                                            h1{}
+                                            h1{ font-size: $modal_paso3_input_depto }
                                             input{}
                                         }
                                     }
                                     .block_nombre_telefono {
                                         .item_nombre {
-                                            h1{}
+                                            h1{ font-size: $modal_paso3_input_nombre }
                                             input{}
                                         }
                                         .item_telefono {
-                                            h1{}
+                                            h1{ font-size: $modal_paso3_input_telefono }
                                             input{}
                                         }
                                     }
