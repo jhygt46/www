@@ -897,6 +897,10 @@ $modal_local_map_color: #ddd;
 $err_local_ttl: #000;
 $err_local_sttl: #000;
 
+$modal_err_local_ttl: #000;
+$modal_err_local_sttl: #000;
+$modal_err_local_alert: #000;
+
 body {
     .contenedor {
         .modals{
@@ -919,9 +923,9 @@ body {
                                                 .cont_local {
                                                     .left_acciones {
                                                         .local_info {
-                                                            .title{}
-                                                            .stitle{}
-                                                            .alert{}
+                                                            .title{ color: $modal_err_local_ttl }
+                                                            .stitle{ color: $modal_err_local_sttl }
+                                                            .alert{ color: $modal_err_local_alert }
                                                         }
                                                     }
                                                     .accioness {

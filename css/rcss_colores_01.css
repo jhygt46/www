@@ -309,6 +309,15 @@ body .contenedor .modals .cont_modals .paso_02a .cont_modal .titulo .cont_titulo
 body .contenedor .modals .cont_modals .paso_02a .cont_modal .titulo .cont_titulo h2 {
   color: #000;
 }
+body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .left_acciones .local_info .title {
+  color: #000;
+}
+body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .left_acciones .local_info .stitle {
+  color: #000;
+}
+body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .left_acciones .local_info .alert {
+  color: #000;
+}
 body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .cont_map {
   background: #ddd;
 }

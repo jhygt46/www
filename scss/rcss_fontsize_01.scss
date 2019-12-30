@@ -243,6 +243,11 @@ body {
 
 
 /* MODALS PASO 02A LOCALES CARRO */
+
+$modal_paso2a_local_ttl: 18px;
+$modal_paso2a_local_sttl: 18px;
+$modal_paso2a_local_alert: 18px;
+
 body {
     .contenedor {
         .modals{
@@ -265,9 +270,9 @@ body {
                                                 .cont_local {
                                                     .left_acciones {
                                                         .local_info {
-                                                            .title{}
-                                                            .stitle{}
-                                                            .alert{}
+                                                            .title{ font-size: $modal_paso2a_local_ttl }
+                                                            .stitle{ font-size: $modal_paso2a_local_sttl }
+                                                            .alert{ font-size: $modal_paso2a_local_alert }
                                                         }
                                                     }
                                                     .accioness {
@@ -782,6 +787,11 @@ body {
 
 
 /* MODALS ERROR LOCALES */
+
+$modal_paso2a_local_ttl: 18px;
+$modal_paso2a_local_sttl: 18px;
+$modal_paso2a_local_alert: 18px;
+
 body {
     .contenedor {
         .modals{
@@ -804,9 +814,9 @@ body {
                                                 .cont_local {
                                                     .left_acciones {
                                                         .local_info {
-                                                            .title{}
-                                                            .stitle{}
-                                                            .alert{}
+                                                            .title{ font-size: $modal_paso2a_local_ttl }
+                                                            .stitle{ font-size: $modal_paso2a_local_ttl }
+                                                            .alert{ font-size: $modal_paso2a_local_ttl }
                                                         }
                                                     }
                                                     .accioness {
