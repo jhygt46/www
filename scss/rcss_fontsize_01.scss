@@ -603,6 +603,14 @@ $pro3_sttl: 16px;
 $pro3_pre: 18px;
 $pro3_line_height_sttl: 14px;
 
+$promo_ttl: 18px;
+$promo_sttl: 14px;
+$promo_precio: 18px;
+
+$promo_i_ttl: 18px;
+$promo_i_sttl: 14px;
+$promo_i_precio: 18px;
+
 
 /* MODALS PASO CARTA */
 body {
@@ -723,19 +731,19 @@ body {
                                         .cont_fondo {
                                             .cont_detalle_pro {
                                                 .cont_detalle_pro_np {
-                                                    .nombre{  }
-                                                    .precio{  }
+                                                    .nombre{ font-size: $promo_ttl }
+                                                    .precio{ font-size: $promo_precio }
                                                 }
-                                                .descripcion{  }
+                                                .descripcion{ font-size: $promo_sttl }
                                                 .listado {
                                                     .prod_item{  }
                                                 }
                                             }
                                         }
                                         .cont_fondoi {
-                                            .nombre{  }
-                                            .descripcion{  }
-                                            .precio{  }
+                                            .nombre{ font-size: $promo_i_ttl }
+                                            .descripcion{ font-size: $promo_i_sttl }
+                                            .precio{ font-size: $promo_i_precio }
                                         }
                                     }
                                     .categoria {
