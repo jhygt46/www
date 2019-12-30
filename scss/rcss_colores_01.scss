@@ -521,8 +521,6 @@ $modal_preguntas_selected_color: #ccc;
 $pregunta_titulo_color: #000;
 $pregunta_desc_color: #000;
 
-$alternativas_txt_color: #000;
-
 body {
     .contenedor {
         .modals{
@@ -548,7 +546,6 @@ body {
                                             border-right-color: $modal_preguntas_border_color;
                                             .n_pregunta{
                                                 border-bottom-color: $modal_preguntas_border_color;
-                                                color: $alternativas_txt_color; 
                                             }
                                             .selected{
                                                 background: $modal_preguntas_selected_color;
