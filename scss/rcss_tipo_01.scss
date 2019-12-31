@@ -212,9 +212,9 @@ body {
                                     .process_carro_restantes{
                                         padding: 20px 6px 10px 6px;
                                         .restantes_detalle_item{
-                                            margin-bottom: 10px;
-                                            border-top-style: solid;
-                                            border-top-width: 0px;
+                                            padding: 6px 0px;
+                                            border-bottom-style: solid;
+                                            border-bottom-width: 1px;
                                             .restantes_detalle_nombre{
                                                 width: calc(100% - 120px);
                                                 padding-left: 4px;
