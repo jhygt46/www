@@ -110,6 +110,12 @@ body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_moda
 body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_nombre_telefono .item_telefono h1 {
   font-size: 14px;
 }
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_preguntas h1 {
+  font-size: 18px;
+}
+body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_preguntas .preguntas .pregunta .pre_nom {
+  font-size: 16px;
+}
 /* MODALS PASO 3 DATA */
 /* MODALS PASO 4 LOCALES CARRO */
 /* MODALS PASO 4 LOCALES CARRO */

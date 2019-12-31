@@ -56,9 +56,9 @@ body {
                         .botones_principales {
                             .cont_bp{
                                 .cont_bpi{
-                                    .nombre {}
-                                    .descripcion {}
-                                    .precio {}
+                                    .nombre { color: $text_color }
+                                    .descripcion { color: $text_color }
+                                    .precio { color: $text_color }
                                 }
                             }
                         }
@@ -201,14 +201,8 @@ body {
 
 /* MODALS PASO 02 CARRO */
 
-$modal_paso2_tipo_color: #ddd;
-$modal_paso2_alert: #900;
-
-$modal_paso2_ttl: #000;
-$modal_paso2_sttl: #000;
-
-$modal_paso2_info_ttl: #000;
-$modal_paso2_info_sttl: #000;
+$modal_tipo_background: #ddd;
+$modal_alert: #900;
 
 body {
     .contenedor {
@@ -218,8 +212,8 @@ body {
                     .cont_modal {
                         .titulo {
                             .cont_titulo {
-                                h1{ color: $modal_paso2_ttl }
-                                h2{ color: $modal_paso2_sttl }
+                                h1{}
+                                h2{}
                             }
                         }
                         .close {}
@@ -227,13 +221,13 @@ body {
                             .info_modal {
                                 .cont_direccion {
                                     .direccion_opciones {
-                                        .dir_op{
-                                            background: $modal_paso2_tipo_color;
+                                        .dir_op {
+                                            background: $modal_tipo_background;
                                             .codir{
                                                 .cont_info_dir {
-                                                    .title{ color: $modal_paso2_info_ttl }
-                                                    .stitle{ color: $modal_paso2_info_sttl }
-                                                    .alert{ color: $modal_paso2_alert }
+                                                    .title{}
+                                                    .stitle{}
+                                                    .alert{ color: $modal_alert }
                                                 }
                                             }
                                         }
@@ -258,14 +252,7 @@ body {
 
 /* MODALS PASO 02A LOCALES CARRO */
 
-$modal_local_map_color: #ddd;
-
-$modal_paso2a_ttl: #000;
-$modal_paso2a_sttl: #000;
-
-$modal_paso2a_local_ttl: #000;
-$modal_paso2a_local_sttl: #000;
-$modal_paso2a_local_alert: #000;
+$modal_local_mapa_background: #ddd;
 
 body {
     .contenedor {
@@ -275,8 +262,8 @@ body {
                     .cont_modal {
                         .titulo {
                             .cont_titulo {
-                                h1{ color: $modal_paso2a_ttl }
-                                h2{ color: $modal_paso2a_sttl }
+                                h1{}
+                                h2{}
                             }
                         }
                         .close {}
@@ -289,9 +276,9 @@ body {
                                                 .cont_local {
                                                     .left_acciones {
                                                         .local_info {
-                                                            .title{ color: $modal_paso2a_local_ttl }
-                                                            .stitle{ color: $modal_paso2a_local_sttl }
-                                                            .alert{ color: $modal_paso2a_local_alert }
+                                                            .title{}
+                                                            .stitle{}
+                                                            .alert{}
                                                         }
                                                     }
                                                     .accioness {
@@ -303,7 +290,7 @@ body {
                                                 }
                                             }
                                             .cont_map {
-                                                background: $modal_local_map_color;
+                                                background: $modal_local_mapa_background;
                                                 .dir_map{}
                                             }
                                         }
@@ -326,9 +313,6 @@ body {
 
 /* MODALS PASO 02B LOCALES CARRO */
 
-$modal_paso2b_ttl: #000;
-$modal_paso2b_sttl: #000;
-
 body {
     .contenedor {
         .modals{
@@ -337,8 +321,8 @@ body {
                     .cont_modal {
                         .titulo {
                             .cont_titulo {
-                                h1{ color: $modal_paso2b_ttl }
-                                h2{ color: $modal_paso2b_sttl }
+                                h1{}
+                                h2{}
                             }
                         }
                         .close{}
@@ -369,16 +353,6 @@ body {
 
 $modal_paso3_background: #ddd;
 
-$modal_paso3_input_direccion: #000;
-$modal_paso3_input_direccion_h2: #000;
-
-$modal_paso3_input_numero: #000;
-$modal_paso3_input_numero_h2: #000;
-
-$modal_paso3_input_nombre: #000;
-$modal_paso3_input_telefono: #000;
-$modal_paso3_input_depto: #000;
-
 body {
     .contenedor {
         .modals{
@@ -397,25 +371,25 @@ body {
                                 .cont_final {
                                     .block_direccion {
                                         .item_direccion {
-                                            h1{ color: $modal_paso3_input_direccion }
-                                            h2{ color: $modal_paso3_input_direccion_h2 }
+                                            h1{}
+                                            h2{}
                                         }
                                         .item_numero {
-                                            h1{ color: $modal_paso3_input_numero }
-                                            h2{ color: $modal_paso3_input_numero_h2 }
+                                            h1{}
+                                            h2{}
                                         }
                                         .item_depto {
-                                            h1{ color: $modal_paso3_input_depto }
+                                            h1{}
                                             input{}
                                         }
                                     }
                                     .block_nombre_telefono {
                                         .item_nombre {
-                                            h1{ color: $modal_paso3_input_nombre }
+                                            h1{}
                                             input{}
                                         }
                                         .item_telefono {
-                                            h1{ color: $modal_paso3_input_telefono }
+                                            h1{}
                                             input{}
                                         }
                                     }

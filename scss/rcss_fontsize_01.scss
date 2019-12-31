@@ -353,6 +353,9 @@ $modal_paso3_input_depto: 14px;
 $modal_paso3_input_nombre: 14px;
 $modal_paso3_input_telefono: 14px;
 
+$modal_paso3_preguntas_ttl: 18px;
+$modal_paso3_preguntas_lista: 16px;
+
 body {
     .contenedor {
         .modals{
@@ -394,10 +397,10 @@ body {
                                         }
                                     }
                                     .block_preguntas {
-                                        h1{}
+                                        h1{ font-size: $modal_paso3_preguntas_ttl }
                                         .preguntas {
                                             .pregunta {
-                                                .pre_nom{}
+                                                .pre_nom{ font-size: $modal_paso3_preguntas_lista }
                                                 .pre_input {
                                                     input{}
                                                 }

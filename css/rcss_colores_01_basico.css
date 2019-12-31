@@ -30,6 +30,16 @@ body .contenedor .pagina .cont_pagina .header .menu_right .cantcart {
 body .contenedor .pagina .cont_pagina .contenido {
   background: #e8e8e8;
 }
+body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .cont_bpi .nombre {
+  color: #000;
+}
+body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .cont_bpi .descripcion {
+  color: #000;
+}
+body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .cont_bpi .precio {
+  color: #000;
+}
+
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
 /* MODALS BASE */
 body .contenedor .modals .cont_modals .modal {
@@ -62,78 +72,24 @@ body .contenedor .modals .cont_modals .modal .cont_modal .cont_info .info_modal 
 }
 /* MODALS PASO 01 CARRO */
 /* MODALS PASO 02 CARRO */
-body .contenedor .modals .cont_modals .paso_02 .cont_modal .titulo .cont_titulo h1 {
-  color: #000;
-}
-body .contenedor .modals .cont_modals .paso_02 .cont_modal .titulo .cont_titulo h2 {
-  color: #000;
-}
 body .contenedor .modals .cont_modals .paso_02 .cont_modal .cont_info .info_modal .cont_direccion .direccion_opciones .dir_op {
   background: #ddd;
-}
-body .contenedor .modals .cont_modals .paso_02 .cont_modal .cont_info .info_modal .cont_direccion .direccion_opciones .dir_op .codir .cont_info_dir .title {
-  color: #000;
-}
-body .contenedor .modals .cont_modals .paso_02 .cont_modal .cont_info .info_modal .cont_direccion .direccion_opciones .dir_op .codir .cont_info_dir .stitle {
-  color: #000;
 }
 body .contenedor .modals .cont_modals .paso_02 .cont_modal .cont_info .info_modal .cont_direccion .direccion_opciones .dir_op .codir .cont_info_dir .alert {
   color: #900;
 }
 /* MODALS PASO 02 CARRO */
 /* MODALS PASO 02A LOCALES CARRO */
-body .contenedor .modals .cont_modals .paso_02a .cont_modal .titulo .cont_titulo h1 {
-  color: #000;
-}
-body .contenedor .modals .cont_modals .paso_02a .cont_modal .titulo .cont_titulo h2 {
-  color: #000;
-}
-body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .left_acciones .local_info .title {
-  color: #000;
-}
-body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .left_acciones .local_info .stitle {
-  color: #000;
-}
-body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .left_acciones .local_info .alert {
-  color: #000;
-}
 body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .cont_map {
   background: #ddd;
 }
 /* MODALS PASO 02A LOCALES CARRO */
 /* MODALS PASO 02B LOCALES CARRO */
-body .contenedor .modals .cont_modals .paso_02b .cont_modal .titulo .cont_titulo h1 {
-  color: #000;
-}
-body .contenedor .modals .cont_modals .paso_02b .cont_modal .titulo .cont_titulo h2 {
-  color: #000;
-}
 body .contenedor .modals .cont_modals .paso_02b .cont_modal .acciones {
   display: none;
 }
 /* MODALS PASO 02B LOCALES CARRO */
 /* MODALS PASO 3 DATA */
-body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion .item_direccion h1 {
-  color: #000;
-}
-body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion .item_direccion h2 {
-  color: #000;
-}
-body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion .item_numero h1 {
-  color: #000;
-}
-body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion .item_numero h2 {
-  color: #000;
-}
-body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_direccion .item_depto h1 {
-  color: #000;
-}
-body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_nombre_telefono .item_nombre h1 {
-  color: #000;
-}
-body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_nombre_telefono .item_telefono h1 {
-  color: #000;
-}
 body .contenedor .modals .cont_modals .paso_03 .cont_modal .cont_info .info_modal .cont_final .block_preguntas .preguntas {
   background: #ddd;
 }
