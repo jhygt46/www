@@ -358,15 +358,6 @@ body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .cont_inf
 /* MODALS ERROR */
 /* MODALS ERROR */
 /* MODALS CONTACTO */
-body .contenedor .modals .cont_modals .modal_contacto .cont_modal .cont_info .info_modal .cont_final .input_contacto .d_input input {
-  width: 100%;
-  height: 20px;
-}
-body .contenedor .modals .cont_modals .modal_contacto .cont_modal .cont_info .info_modal .cont_final .input_enviar input {
-  width: 100%;
-  height: 70px;
-}
-
 /* MODALS CONTACTO */
 /* MODALS PAGINA INICIO */
 /* MODALS PAGINA INICIO */
