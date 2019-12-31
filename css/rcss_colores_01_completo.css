@@ -360,22 +360,22 @@ body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_
 /* MODALS PAGINA */
 /* MODALS PAGINA */
 /* MODALS ERROR LOCALES */
-body .contenedor .modals .cont_modals .paso_02a .cont_modal .titulo .cont_titulo h1 {
+body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .titulo .cont_titulo h1 {
   color: #000;
 }
-body .contenedor .modals .cont_modals .paso_02a .cont_modal .titulo .cont_titulo h2 {
+body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .titulo .cont_titulo h2 {
   color: #000;
 }
-body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .left_acciones .local_info .title {
+body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .left_acciones .local_info .title {
   color: #000;
 }
-body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .left_acciones .local_info .stitle {
+body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .left_acciones .local_info .stitle {
   color: #000;
 }
-body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .left_acciones .local_info .alert {
+body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .left_acciones .local_info .alert {
   color: #000;
 }
-body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .cont_map {
+body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .cont_map {
   background: #ddd;
 }
 /* MODALS ERROR LOCALES */

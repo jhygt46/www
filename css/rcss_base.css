@@ -336,22 +336,22 @@ body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_
 /* MODALS PAGINA */
 /* MODALS PAGINA */
 /* MODALS ERROR LOCALES */
-body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local {
+body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local {
   width: 100%;
   height: 100%;
   position: relative;
 }
-body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .left_acciones {
+body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .left_acciones {
   position: absolute;
   height: 100%;
 }
-body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .accioness {
+body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .accioness {
   height: 100%;
 }
-body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .accioness .accion {
+body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .dir_locales .cont_local .accioness .accion {
   display: block;
 }
-body .contenedor .modals .cont_modals .paso_02a .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .cont_map .dir_map {
+body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .cont_info .info_modal .cont_direccion .direccion_op1 .parent_locales .cont_map .dir_map {
   width: 100%;
 }
 /* MODALS ERROR LOCALES */

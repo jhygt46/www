@@ -25,10 +25,11 @@ body{
     }
 }
 
-$header_background: #fff;
-$contenido_background: #e8e8e8;
+
 
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
+$header_background: #fff;
+$contenido_background: #e8e8e8;
 body {
     .contenedor {
         color: $text_color;
@@ -68,18 +69,16 @@ body {
         }
     }
 }
-
-
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
 
-/* MODALS BASE */
 
+
+/* MODALS BASE */
 $modal_background: #eee;
 $modal_header_background: #f5f5f5;
 $modal_close: #999;
 $modal_footer_background: #f5f5f5;
 $modal_subtotal_background: #ddd;
-
 body {
     .contenedor {
         .modals{
@@ -125,11 +124,9 @@ body {
 
 
 /* MODALS PASO 01 CARRO */
-
 $modal_carro_promo_background: #f5f5f5;
 $modal_carro_restantes_background: #f5f5f5;
 $modal_restantes_border_color: #ddd;
-
 body {
     .contenedor {
         .modals{
@@ -194,16 +191,13 @@ body {
         }
     }
 }
-
 /* MODALS PASO 01 CARRO */
 
 
 
 /* MODALS PASO 02 CARRO */
-
 $modal_tipo_background: #ddd;
 $modal_alert: #900;
-
 body {
     .contenedor {
         .modals{
@@ -251,9 +245,7 @@ body {
 
 
 /* MODALS PASO 02A LOCALES CARRO */
-
 $modal_local_mapa_background: #ddd;
-
 body {
     .contenedor {
         .modals{
@@ -312,7 +304,6 @@ body {
 
 
 /* MODALS PASO 02B LOCALES CARRO */
-
 body {
     .contenedor {
         .modals{
@@ -350,9 +341,7 @@ body {
 
 
 /* MODALS PASO 3 DATA */
-
-$modal_paso3_background: #ddd;
-
+$modal_paso3_preguntas_background: #ddd;
 body {
     .contenedor {
         .modals{
@@ -396,7 +385,7 @@ body {
                                     .block_preguntas {
                                         h1{}
                                         .preguntas {
-                                            background: $modal_paso3_background;
+                                            background: $modal_paso3_preguntas_background;
                                             .pregunta {
                                                 .pre_nom{}
                                                 .pre_input {
@@ -432,14 +421,12 @@ body {
 
 
 /* MODALS PASO 4 LOCALES CARRO */
-
 $modal_final_mensaje_background: #fcc;
 $modal_final_mensaje_color: #600;
 $modal_final_cont_background: #ddd;
 $modal_final_btn_chat_background: #999;
 $modal_final_btn_chat_color: #fff;
 $modal_final_chat_background: #fff;
-
 body {
     .contenedor {
         .modals{
@@ -508,7 +495,6 @@ body {
 
 
 /* MODALS PASO PREGUNTAS */
-
 $modal_preguntas_border_color: #ccc;
 $modal_preguntas_selected_color: #ccc;
 
@@ -518,7 +504,6 @@ $pregunta_desc_color: #000;
 $modal_pregunta_ttl: #000;
 $modal_pregunta_sttl: #000;
 $alternativas_txt_color: #000;
-
 body {
     .contenedor {
         .modals{
@@ -568,10 +553,8 @@ body {
 
 
 /* MODALS PASO PROMOCION */
-
 $pro_cat_item_nombre: #000;
 $pro_cat_item_descripcion: #000;
-
 body {
     .contenedor {
         .modals{
@@ -635,8 +618,6 @@ $lista_cat_nombre: #000;
 $lista_cat_desc: #000;
 $lista_cat_precio: #000;
 
-$modal_carta_ttl: #000;
-$modal_carta_sttl: #000;
 
 $producto1_nombre: #000;
 $producto1_descripcion: #000;
@@ -672,8 +653,8 @@ body {
                     .cont_modal {
                         .titulo {
                             .cont_titulo {
-                                h1{ color: $modal_carta_ttl }
-                                h2{ color: $modal_carta_sttl }
+                                h1{}
+                                h2{}
                             }
                         }
                         .close {}
@@ -867,25 +848,17 @@ body {
 
 
 /* MODALS ERROR LOCALES */
-
 $modal_local_map_color: #ddd;
-$err_local_ttl: #000;
-$err_local_sttl: #000;
-
-$modal_err_local_ttl: #000;
-$modal_err_local_sttl: #000;
-$modal_err_local_alert: #000;
-
 body {
     .contenedor {
         .modals{
             .cont_modals {
-                .paso_02a {
+                .modal_error_locales {
                     .cont_modal {
                         .titulo {
                             .cont_titulo {
-                                h1{ color: $err_local_ttl }
-                                h2{ color: $err_local_sttl }
+                                h1{}
+                                h2{}
                             }
                         }
                         .close {}
@@ -898,9 +871,9 @@ body {
                                                 .cont_local {
                                                     .left_acciones {
                                                         .local_info {
-                                                            .title{ color: $modal_err_local_ttl }
-                                                            .stitle{ color: $modal_err_local_sttl }
-                                                            .alert{ color: $modal_err_local_alert }
+                                                            .title{}
+                                                            .stitle{}
+                                                            .alert{}
                                                         }
                                                     }
                                                     .accioness {
@@ -972,10 +945,6 @@ body {
 
 
 /* MODALS CONTACTO */
-
-$contacto_ttl: #000;
-$contacto_sttl: #000;
-
 body {
     .contenedor {
         .modals{
@@ -984,8 +953,8 @@ body {
                     .cont_modal {
                         .titulo {
                             .cont_titulo {
-                                h1{ color: $contacto_ttl }
-                                h2{ color: $contacto_sttl }
+                                h1{}
+                                h2{}
                             }
                         }
                         .close{}
