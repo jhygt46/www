@@ -107,9 +107,8 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=<?php echo $info->{"font"}->{'family'}; ?>" rel="stylesheet">
         
-        <?php if(!isset($_GET['css'])){ ?><link rel="stylesheet" href="/css/reset.css" media="all" /><?php } ?>
         <link rel="stylesheet" href="/css/r<?php echo $info->{"css_font_size"}; ?>" media="all" />
-        <link rel="stylesheet" href="/css/r<?php echo $info->{"css_color"}; ?>" media="all" />
+        <link rel="stylesheet" href="/css/rcss_colores_01_basico.css<?php //echo $info->{"css_color"}; ?>" media="all" />
         <link rel="stylesheet" href="/css/r<?php echo $info->{"css_tipo"}; ?>" media="all" />
         <link rel="stylesheet" href="/css/rcss_base.css" media="all" />
         
