@@ -338,8 +338,23 @@ body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen {
   background: #ddd;
 }
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo .nombre {
+  color: #000;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo .descripcion {
+  color: #000;
+}
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo .listado .prod_item {
   border-bottom-color: #ccc;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo .listado .prod_item .prod_i_nom .prod_i_ttl {
+  color: #000;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo .listado .prod_item .prod_i_nom .prod_i_sttl {
+  color: #000;
+}
+body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_categorias .categoriaopen .cont_fondo .listado .prod_item .prod_i_pre {
+  color: #000;
 }
 /* MODALS PASO CARTA */
 /* MODALS PAGINA */

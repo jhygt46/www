@@ -711,6 +711,12 @@ $lista_pro2_nombre: #000;
 $lista_pro2_descripcion: #000;
 $lista_pro2_precio: #000;
 
+$lista_catopen_nombre: #000;
+$lista_catopen_descripcion: #000;
+$lista_catopen_prod_ttl: #000;
+$lista_catopen_prod_sttl: #000;
+$lista_catopen_prod_precio: #000;
+
 body {
     .contenedor {
         .modals{
@@ -864,16 +870,16 @@ body {
                                     .categoriaopen {
                                         background: $categoria_open_background;
                                         .cont_fondo {
-                                            .nombre {}
-                                            .descripcion{}
+                                            .nombre { color: $lista_catopen_nombre }
+                                            .descripcion{ color: $lista_catopen_descripcion }
                                             .listado {
                                                 .prod_item {
                                                     border-bottom-color: #ccc;
                                                     .prod_i_nom {
-                                                        .prod_i_ttl{}
-                                                        .prod_i_sttl{}
+                                                        .prod_i_ttl{ color: $lista_catopen_prod_ttl }
+                                                        .prod_i_sttl{ color: $lista_catopen_prod_sttl }
                                                     }
-                                                    .prod_i_pre{}
+                                                    .prod_i_pre{ color: $lista_catopen_prod_precio }
                                                 }
                                             }
                                         }
