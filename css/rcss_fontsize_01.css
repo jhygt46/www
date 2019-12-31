@@ -230,6 +230,9 @@ body .contenedor .modals .cont_modals .modal_error_locales .cont_modal .cont_inf
 /* MODALS ERROR */
 /* MODALS ERROR */
 /* MODALS CONTACTO */
+body .contenedor .modals .cont_modals .modal_contacto .cont_modal .cont_info .info_modal .cont_final .input_contacto h1 {
+  font-size: 18px;
+}
 /* MODALS CONTACTO */
 /* MODALS PAGINA INICIO */
 /* MODALS PAGINA INICIO */

@@ -913,6 +913,7 @@ body {
 
 
 /* MODALS CONTACTO */
+$contacto_nombre: 18px;
 body {
     .contenedor {
         .modals{
@@ -930,7 +931,7 @@ body {
                             .info_modal {
                                 .cont_final {
                                     .input_contacto {
-                                        h1{}
+                                        h1{ font-size: $contacto_nombre }
                                         .d_input {
                                             input{}
                                         }
