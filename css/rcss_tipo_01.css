@@ -696,6 +696,10 @@ body .contenedor .modals .cont_modals .modal_contacto .cont_modal .cont_info .in
   width: 100%;
   height: 70px;
 }
+body .contenedor .modals .cont_modals .modal_contacto .cont_modal .cont_info .info_modal .cont_final .input_enviar input {
+  padding: 5px 15px;
+}
+
 /* MODALS CONTACTO */
 /* MODALS PAGINA INICIO */
 body .contenedor .modals .cont_modals .modal_pagina_inicio .cont_modal .cont_info_inicio .inicio_titulo {

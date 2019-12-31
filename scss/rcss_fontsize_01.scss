@@ -914,6 +914,7 @@ body {
 
 /* MODALS CONTACTO */
 $contacto_nombre: 18px;
+$contacto_nombre: 12px;
 body {
     .contenedor {
         .modals{
@@ -938,7 +939,7 @@ body {
                                         }
                                     }
                                     .input_enviar {
-                                        input{}
+                                        input{ font-size: $contacto_btn }
                                     }
                                 }
                             }
