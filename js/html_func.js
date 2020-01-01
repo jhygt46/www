@@ -570,10 +570,15 @@ function pregunta(carro){
     }
     
 }
-function promo_restantes(producto, j, tiene_pregunta){
+function promo_restantes(producto, j, tiene_pregunta, jlen){
 
     var Div = document.createElement('div');
-    Div.className = 'restantes_detalle_item clearfix';
+
+    if(j < jlen - 1){
+        Div.className = 'restantes_detalle_item linea_bottom clearfix';
+    }else{
+        Div.className = 'restantes_detalle_item no_linea clearfix';
+    }
     
     var Nombre = document.createElement('div');
     Nombre.className = 'restantes_detalle_nombre';

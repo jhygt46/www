@@ -425,7 +425,6 @@ function process_carro(){
     var info = process_new_promos();
     var carro = info.carro;
     var carro_promos = info.carro_promos;
-    var count = 0;
     var promocion, producto, promo_detalle, process_carro_promo, promo_info, promo_delete, promo_precio;
 
     var html = create_element_class('process_carro');
@@ -450,7 +449,6 @@ function process_carro(){
 
         for(var j=0, jlen=carro.length; j<jlen; j++){
             if(carro[j].promo == i){
-                count++;
                 producto = get_producto(carro[j].id_pro);
                 promo_detalle.appendChild(promo_carros(producto, j));
             }
@@ -466,9 +464,8 @@ function process_carro(){
 
     for(var j=0, jlen=carro.length; j<jlen; j++){
         if(carro[j].promo === undefined){
-            count++;
             producto = get_producto(carro[j].id_pro);
-            process_carro_restantes.appendChild(promo_restantes(producto, j, tiene_pregunta(carro[j])));
+            process_carro_restantes.appendChild(promo_restantes(producto, j, tiene_pregunta(carro[j]), jlen));
             total = total + parseInt(producto.precio);
             restantes = true;
         }

@@ -214,7 +214,6 @@ body {
                                         .restantes_detalle_item{
                                             padding: 6px 0px;
                                             border-bottom-style: solid;
-                                            border-bottom-width: 1px;
                                             .restantes_detalle_nombre{
                                                 width: calc(100% - 120px);
                                                 padding-left: 4px;
@@ -227,6 +226,8 @@ body {
                                                 .accion{ width: 20px; text-align: center; }
                                             }
                                         }
+                                        .linea_bottom{ border-bottom-width: 1px; }
+                                        .no_linea{ border-bottom-width: 0px; }
                                     }
                                 }
                             }
@@ -1137,7 +1138,7 @@ body {
                         .cont_info {
                             .info_modal {
                                 .cont_final {
-                                    padding: 5px 20px;
+                                    padding: 15px 20px 10px 20px;
                                     .input_contacto {
                                         h1{}
                                         .d_input {
