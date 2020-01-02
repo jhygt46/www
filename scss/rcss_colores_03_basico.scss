@@ -1,0 +1,1009 @@
+$color_base_01: #941C80;
+$color_base_02: #941C80;
+$color_base_03: #F9DDF3;
+$menu_background: #fff;
+
+$titulo_color: #000;
+$lista_color: #000;
+$text_color: #000;
+
+body{
+    .contenedor {
+        .menu_left {
+            border-right: 1px solid $color_base_01;
+            background: $menu_background;
+            .cont_menu_left{
+                .btn_toogle{ color: $color_base_01; }
+                .menu_info{
+                    h1{ color: $titulo_color; }
+                    .lista_paginas{
+                        a{ color: $lista_color; border-bottom-color: $color_base_02; }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+/* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
+$header_background: #fff;
+$contenido_background: #e8e8e8;
+body {
+    .contenedor {
+        color: $text_color;
+        .pagina {
+            .cont_pagina {
+                .header {
+                    background: $header_background;
+                    border-bottom-color: $color_base_01;
+                    .header_logo {
+                        img {}
+                    }
+                    .menu_right {
+                        .shop { color: $color_base_01; }
+                        .cantcart {
+                            background: $color_base_03;
+                            .cantcart_num{}
+                        }
+                    }
+                    .cart_info{}
+                }
+                .footer {}
+                .contenido {
+                    background: $contenido_background;
+                    .cont_contenido {
+                        .botones_principales {
+                            .cont_bp{
+                                .cont_bpi{
+                                    .nombre { color: $text_color }
+                                    .descripcion { color: $text_color }
+                                    .precio { color: $text_color }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
+
+
+
+/* MODALS BASE */
+$modal_background: #eee;
+$modal_header_background: #f5f5f5;
+$modal_close: #999;
+$modal_footer_background: #f5f5f5;
+$modal_subtotal_background: #ddd;
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .modal {
+                    background: $modal_background;
+                    .cont_modal {
+                        .titulo {
+                            background: $modal_header_background;
+                            border-bottom-color: $color_base_01;
+                            .cont_titulo{
+                                h1{}
+                                h2{}
+                            }
+                        }
+                        .close { color: $modal_close }
+                        .cont_info {
+                            .info_modal{}
+                        }
+                        .sub_total {
+                            background: $modal_subtotal_background;
+                            .cont_subtotal {
+                                .total_detalle{
+                                    .paso_01_sub_total{}
+                                    .paso_03_costo{}
+                                    .paso_03_total{}
+                                }
+                            }
+                        }
+                        .acciones {
+                            border-top-color: $color_base_01;
+                            background: $modal_footer_background;
+                            .confirmar{}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS BASE */
+
+
+
+/* MODALS PASO 01 CARRO */
+$modal_carro_promo_background: #f5f5f5;
+$modal_carro_restantes_background: #f5f5f5;
+$modal_restantes_border_color: #ddd;
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .modal {
+                    .cont_modal {
+                        .titulo {
+                            .cont_titulo{
+                                h1{}
+                                h2{}
+                            }
+                        }
+                        .close {}
+                        .cont_info {
+                            .info_modal {
+                                .process_carro {
+                                    .process_carro_promo{
+                                        background: $modal_carro_promo_background;
+                                        .promo_info{}
+                                        .promo_precio{}
+                                        .promo_delete{}
+                                        .promo_detalle{
+                                            .promo_detalle_item{
+                                                .promo_detalle_nombre{}
+                                                .promo_detalle_acciones{
+                                                    .accion{}
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .process_carro_restantes{
+                                        background: $modal_carro_restantes_background;
+                                        .restantes_detalle_item{
+                                            border-bottom-color: $modal_restantes_border_color;
+                                            .restantes_detalle_nombre{}
+                                            .restantes_detalle_acciones{
+                                                .precio{}
+                                                .espacio{}
+                                                .pregunta{}
+                                                .accion{}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .sub_total {
+                            .cont_subtotal {
+                                .total_detalle{
+                                    .paso_01_sub_total{}
+                                    .paso_03_costo{}
+                                    .paso_03_total{}
+                                }
+                            }
+                        }
+                        .acciones {
+                            .confirmar{}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS PASO 01 CARRO */
+
+
+
+/* MODALS PASO 02 CARRO */
+$modal_tipo_background: #ddd;
+$modal_alert: #900;
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .paso_02 {
+                    .cont_modal {
+                        .titulo {
+                            .cont_titulo {
+                                h1{}
+                                h2{}
+                            }
+                        }
+                        .close {}
+                        .cont_info {
+                            .info_modal {
+                                .cont_direccion {
+                                    .direccion_opciones {
+                                        .dir_op {
+                                            background: $modal_tipo_background;
+                                            .codir{
+                                                .cont_info_dir {
+                                                    .title{}
+                                                    .stitle{}
+                                                    .alert{ color: $modal_alert }
+                                                }
+                                            }
+                                        }
+                                        .rlocal{}
+                                        .cdesp{}
+                                    }
+                                }
+                            }
+                        }
+                        .acciones {
+                            .confirmar{}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS PASO 02 CARRO */
+
+
+
+/* MODALS PASO 02A LOCALES CARRO */
+$modal_local_mapa_background: #ddd;
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .paso_02a {
+                    .cont_modal {
+                        .titulo {
+                            .cont_titulo {
+                                h1{}
+                                h2{}
+                            }
+                        }
+                        .close {}
+                        .cont_info {
+                            .info_modal {
+                                .cont_direccion {
+                                    .direccion_op1 {
+                                        .parent_locales {
+                                            .dir_locales {
+                                                .cont_local {
+                                                    .left_acciones {
+                                                        .local_info {
+                                                            .title{}
+                                                            .stitle{}
+                                                            .alert{}
+                                                        }
+                                                    }
+                                                    .accioness {
+                                                        .accion{}
+                                                        .ver_mapa{}
+                                                        .ver_whats{}
+                                                        .ver_tel{}
+                                                    }
+                                                }
+                                            }
+                                            .cont_map {
+                                                background: $modal_local_mapa_background;
+                                                .dir_map{}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .acciones {
+                            .confirmar{}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS PASO 02A LOCALES CARRO */
+
+
+
+/* MODALS PASO 02B LOCALES CARRO */
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .paso_02b {
+                    .cont_modal {
+                        .titulo {
+                            .cont_titulo {
+                                h1{}
+                                h2{}
+                            }
+                        }
+                        .close{}
+                        .cont_info {
+                            .info_modal {
+                                .cont_direccion {
+                                    .direccion_op2 {
+                                        #map_direccion{}
+                                    }
+                                }
+                            }
+                        }
+                        .acciones {
+                            display: none;
+                            .confirmar{}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS PASO 02B LOCALES CARRO */
+
+
+
+/* MODALS PASO 3 DATA */
+$modal_paso3_preguntas_background: #ddd;
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .paso_03 {
+                    .cont_modal {
+                        .titulo {
+                            .cont_titulo {
+                                h1{}
+                                h2{}
+                            }
+                        }
+                        .close {}
+                        .cont_info {
+                            .info_modal {
+                                .cont_final {
+                                    .block_direccion {
+                                        .item_direccion {
+                                            h1{}
+                                            h2{}
+                                        }
+                                        .item_numero {
+                                            h1{}
+                                            h2{}
+                                        }
+                                        .item_depto {
+                                            h1{}
+                                            input{}
+                                        }
+                                    }
+                                    .block_nombre_telefono {
+                                        .item_nombre {
+                                            h1{}
+                                            input{}
+                                        }
+                                        .item_telefono {
+                                            h1{}
+                                            input{}
+                                        }
+                                    }
+                                    .block_preguntas {
+                                        h1{}
+                                        .preguntas {
+                                            background: $modal_paso3_preguntas_background;
+                                            .pregunta {
+                                                .pre_nom{}
+                                                .pre_input {
+                                                    input{}
+                                                }
+                                            }
+                                            textarea{}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .sub_total {
+                            .cont_subtotal {
+                                .total_detalle{
+                                    .paso_01_sub_total{}
+                                    .paso_03_costo{}
+                                    .paso_03_total{}
+                                }
+                            }
+                        }
+                        .acciones {
+                            .confirmar{}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS PASO 3 DATA */
+
+
+
+/* MODALS PASO 4 LOCALES CARRO */
+$modal_final_mensaje_background: #fcc;
+$modal_final_mensaje_color: #600;
+$modal_final_cont_background: #ddd;
+$modal_final_btn_chat_background: #999;
+$modal_final_btn_chat_color: #fff;
+$modal_final_chat_background: #fff;
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .paso_04 {
+                    .cont_modal {
+                        .titulo {
+                            .cont_titulo {
+                                h1{}
+                                h2{}
+                            }
+                        }
+                        .close {}
+                        .cont_info {
+                            .info_modal {
+                                .data_final {
+                                    .pedido_mensaje{
+                                        background: $modal_final_mensaje_background;
+                                        color: $modal_final_mensaje_color;
+                                    }
+                                    .pedido_final {
+                                        background: $modal_final_cont_background;
+                                        .cont_pedido {
+                                            .estado {
+                                                h1{}
+                                                h2{}
+                                            }
+                                            .tiempo {
+                                                h1{}
+                                                h2{} 
+                                            }
+                                        }
+                                        .posicion{}
+                                        .total{}
+                                    }
+                                    .titulo_chat{}
+                                    .pedido_chat {
+                                        .mensajes {
+                                            background: $modal_final_chat_background;
+                                            .info_mensajes{}
+                                        }
+                                        .entrada {
+                                            input{}
+                                        }
+                                        .enviar {
+                                            .enviar_txt {
+                                                background: $modal_final_btn_chat_background;
+                                                color: $modal_final_btn_chat_color;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .acciones {
+                            .confirmar{}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS PASO 4 LOCALES CARRO */
+
+
+
+/* MODALS PASO PREGUNTAS */
+$modal_preguntas_border_color: #ccc;
+$modal_preguntas_selected_color: #ccc;
+
+$pregunta_titulo_color: #000;
+$pregunta_desc_color: #000;
+
+$modal_pregunta_ttl: #000;
+$modal_pregunta_sttl: #000;
+$alternativas_txt_color: #000;
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .modal_pregunta_productos {
+                    .cont_modal {
+                        .titulo {
+                            .cont_titulo {
+                                h1{ color: $modal_pregunta_ttl }
+                                h2{ color: $modal_pregunta_sttl }
+                            }
+                        }
+                        .close {}
+                        .cont_info {
+                            .info_modal {
+                                .s_pregunta {
+                                    .e_pregunta {
+                                        .pregunta_titulo{ color: $pregunta_titulo_color }
+                                        .titulo_v_pregunta{ color: $pregunta_desc_color }
+                                        .v_pregunta{
+                                            border-top-color: $modal_preguntas_border_color;
+                                            border-left-color: $modal_preguntas_border_color;
+                                            border-right-color: $modal_preguntas_border_color;
+                                            .n_pregunta{
+                                                border-bottom-color: $modal_preguntas_border_color;
+                                                color: $alternativas_txt_color; 
+                                            }
+                                            .selected{
+                                                background: $modal_preguntas_selected_color;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .acciones {
+                            .confirmar{}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS PASO PREGUNTAS */
+
+
+
+/* MODALS PASO PROMOCION */
+$pro_cat_item_nombre: #000;
+$pro_cat_item_descripcion: #000;
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .modal_productos_promo {
+                    .cont_modal {
+                        .titulo {
+                            .cont_titulo {
+                                h1{}
+                                h2{}
+                            }
+                        }
+                        .close {}
+                        .cont_info {
+                            .info_modal {
+                                .pro_cat_promo {
+                                    .pro_cat_item {
+                                        .pro_cat_item_select {
+                                            select{}
+                                        }
+                                        .pro_cat_item_nombre{ color: $pro_cat_item_nombre }
+                                        .pro_cat_item_descripcion{ color: $pro_cat_item_descripcion }
+                                    }
+                                }
+                            }
+                        }
+                        .acciones {
+                            .confirmar{}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS PASO PROMOCION */
+
+
+
+/* MODALS PASO CARTA */
+
+$producto_add_carro_background: #900;
+$producto_add_carro_color: #fff;
+$producto_add_carro_cont_background: #ddd;
+$producto_cont_background: #ddd;
+
+$producto2_background: #ccc;
+$producto2_add_carro_background: #900;
+$producto2_add_carro_color: #fff;
+$producto2_add_carro_cont_background: #ddd;
+$producto2_cont_background: #ddd;
+
+$producto3_add_carro_background: #900;
+$producto3_add_carro_color: #fff;
+$producto3_add_carro_cont_background: #ddd;
+$producto3_cont_background: #ddd;
+
+$categoria_open_background: #ddd;
+
+$lista_cat_nombre: #000;
+$lista_cat_desc: #000;
+$lista_cat_precio: #000;
+
+
+$producto1_nombre: #000;
+$producto1_descripcion: #000;
+$producto1_precio: #000;
+
+$producto2_nombre: #000;
+$producto2_descripcion: #000;
+$producto2_precio: #000;
+
+$producto3_nombre: #000;
+$producto3_descripcion: #000;
+$producto3_precio: #000;
+
+$lista_pro1_nombre: #000;
+$lista_pro1_descripcion: #000;
+$lista_pro1_precio: #000;
+
+$lista_pro2_nombre: #000;
+$lista_pro2_descripcion: #000;
+$lista_pro2_precio: #000;
+
+$lista_catopen_nombre: #000;
+$lista_catopen_descripcion: #000;
+$lista_catopen_prod_ttl: #000;
+$lista_catopen_prod_sttl: #000;
+$lista_catopen_prod_precio: #000;
+
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .modal_carta {
+                    .cont_modal {
+                        .titulo {
+                            .cont_titulo {
+                                h1{}
+                                h2{}
+                            }
+                        }
+                        .close {}
+                        .cont_info {
+                            .info_modal {
+                                .lista_productos {
+                                    .producto {
+                                        .cont_producto{
+                                            background: $producto_cont_background;
+                                            .cont_info_pro{
+                                                .nombre{
+                                                    color: $producto1_nombre;
+                                                }
+                                                .descripcion{
+                                                    color: $producto1_descripcion;
+                                                }
+                                                .precio{
+                                                    color: $producto1_precio;
+                                                }
+                                            }
+                                        }
+                                        .carro{
+                                            background: $producto_add_carro_cont_background;
+                                            .add_carro_btn{
+                                                background: $producto_add_carro_background;
+                                                color: $producto_add_carro_color;
+                                                .add_info{
+
+                                                }
+                                                .add_logo{
+
+                                                }
+                                            }
+                                            .add_carro_alert{
+
+                                            }
+                                        }
+                                    }
+                                    .producto2 {
+                                        table {
+                                            background: $producto2_background;
+                                            tr {
+                                                td {
+                                                    .cont_data {
+                                                        .nombre {
+                                                            color: $producto2_nombre;
+                                                        }
+                                                        .descripcion {
+                                                            color: $producto2_descripcion;
+                                                        }
+                                                        .precio {
+                                                            color: $producto2_precio;
+                                                        }
+                                                    }
+                                                    .foto {
+                                                        background: #000;
+                                                    }
+                                                    .carro {
+                                                        background: $producto2_add_carro_cont_background;
+                                                        .add_carro_btn {
+                                                            background: $producto2_add_carro_background;
+                                                            color: $producto2_add_carro_color;
+                                                            .add_info {
+
+                                                            }
+                                                            .add_logo {
+
+                                                            }
+                                                        }
+                                                        .add_carro_alert {
+
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .producto3{
+                                        .pro_fondo {
+                                            .cont_pr {
+                                                .cont_prod {
+                                                    .nombre {
+                                                        color: $producto3_nombre;
+                                                    }
+                                                    .descripcion {
+                                                        color: $producto3_descripcion;
+                                                    }
+                                                    .precio {
+                                                        color: $producto3_precio;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .carro {
+                                            background: $producto3_add_carro_cont_background;
+                                            .add_carro_btn {
+                                                background: $producto3_add_carro_background;
+                                                color: $producto3_add_carro_color;
+                                                .add_info {
+
+                                                }
+                                                .add_logo {
+
+                                                }
+                                            }
+                                            .add_carro_alert {
+
+                                            }
+                                        }
+                                    }
+                                }
+                                .lista_categorias {
+                                    .promocion {
+                                        .cont_fondo {
+                                            .cont_detalle_pro {
+                                                .cont_detalle_pro_np {
+                                                    .nombre{ color: $lista_pro1_nombre }
+                                                    .precio{ color: $lista_pro1_descripcion }
+                                                }
+                                                .descripcion{ color: $lista_pro1_precio }
+                                                .listado {
+                                                    .prod_item{}
+                                                }
+                                            }
+                                        }
+                                        .cont_fondoi {
+                                            .nombre{ color: $lista_pro2_nombre }
+                                            .descripcion{ color: $lista_pro2_descripcion }
+                                            .precio{ color: $lista_pro2_precio }
+                                        }
+                                    }
+                                    .categoria {
+                                        .cont_fondo {
+                                            .cont_fondoi {
+                                                .nombre{ color: $lista_cat_nombre }
+                                                .descripcion{ color: $lista_cat_desc }
+                                                .precio{ color: $lista_cat_precio }
+                                            }
+                                        }
+                                    }
+                                    .categoriaopen {
+                                        background: $categoria_open_background;
+                                        .cont_fondo {
+                                            .nombre { color: $lista_catopen_nombre }
+                                            .descripcion{ color: $lista_catopen_descripcion }
+                                            .listado {
+                                                .prod_item {
+                                                    border-bottom-color: #ccc;
+                                                    .prod_i_nom {
+                                                        .prod_i_ttl{ color: $lista_catopen_prod_ttl }
+                                                        .prod_i_sttl{ color: $lista_catopen_prod_sttl }
+                                                    }
+                                                    .prod_i_pre{ color: $lista_catopen_prod_precio }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .acciones {
+                            .confirmar{}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS PASO CARTA */
+
+
+
+/* MODALS PAGINA */
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .modal_pagina {
+                    .cont_modal {
+                        .close{}
+                        .cont_info_pagina{}
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS PAGINA */
+
+
+
+/* MODALS ERROR LOCALES */
+$modal_local_map_color: #ddd;
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .modal_error_locales {
+                    .cont_modal {
+                        .titulo {
+                            .cont_titulo {
+                                h1{}
+                                h2{}
+                            }
+                        }
+                        .close {}
+                        .cont_info {
+                            .info_modal {
+                                .cont_direccion {
+                                    .direccion_op1 {
+                                        .parent_locales {
+                                            .dir_locales {
+                                                .cont_local {
+                                                    .left_acciones {
+                                                        .local_info {
+                                                            .title{}
+                                                            .stitle{}
+                                                            .alert{}
+                                                        }
+                                                    }
+                                                    .accioness {
+                                                        .accion{}
+                                                        .ver_mapa{}
+                                                        .ver_whats{}
+                                                        .ver_tel{}
+                                                    }
+                                                }
+                                            }
+                                            .cont_map {
+                                                background: $modal_local_map_color;
+                                                .dir_map{}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .acciones {
+                            .confirmar{}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS ERROR LOCALES */
+
+
+
+/* MODALS ERROR */
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .modal_error {
+                    .cont_modal {
+                        .close{}
+                        .cont_info {
+                            .cont_err {
+                                .cont_ab_err {
+                                    .titulo_error {
+
+                                    }
+                                    .btns_err {
+                                        .btn_err {
+
+                                        }
+                                        .btn_err1 {
+
+                                        }
+                                        .btn_err2 {
+
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS ERROR */
+
+
+
+/* MODALS CONTACTO */
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .modal_contacto {
+                    .cont_modal {
+                        .titulo {
+                            .cont_titulo {
+                                h1{}
+                                h2{}
+                            }
+                        }
+                        .close{}
+                        .cont_info {
+                            .info_modal {
+                                .cont_final {
+                                    .input_contacto {
+                                        h1{}
+                                        .d_input {
+                                            input{}
+                                            textarea{}
+                                        }
+                                    }
+                                    .input_enviar {
+                                        input{}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS CONTACTO */
+
+
+
+/* MODALS PAGINA INICIO */
+body {
+    .contenedor {
+        .modals{
+            .cont_modals {
+                .modal_pagina_inicio {
+                    .cont_modal {
+                        .close{}
+                        .cont_info_inicio {
+                            .inicio_titulo{}
+                            .inicio_subtitulo{}
+                            .inicio_div_texto {
+                                .inicio_texto{}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* MODALS PAGINA INICIO */
+
