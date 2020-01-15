@@ -1,16 +1,16 @@
 body .contenedor .menu_left {
-  border-right: 1px solid #df8543;
+  border-right: 1px solid #971549;
   background: #fff;
 }
 body .contenedor .menu_left .cont_menu_left .btn_toogle {
-  color: #df8543;
+  color: #971549;
 }
 body .contenedor .menu_left .cont_menu_left .menu_info h1 {
   color: #000;
 }
 body .contenedor .menu_left .cont_menu_left .menu_info .lista_paginas a {
   color: #000;
-  border-bottom-color: #941C80;
+  border-bottom-color: #971549;
 }
 
 /* PAGINA PRINCIPAL HEADER-CATEGORIAS-FOOTER */
@@ -18,17 +18,17 @@ body .contenedor {
   color: #000;
 }
 body .contenedor .pagina .cont_pagina .header {
-  background: #7fa998;
-  border-bottom-color: #df8543;
+  background: #fff;
+  border-bottom-color: #971549;
 }
 body .contenedor .pagina .cont_pagina .header .menu_right .shop {
-  color: #df8543;
+  color: #971549;
 }
 body .contenedor .pagina .cont_pagina .header .menu_right .cantcart {
-  background: #F9DDF3;
+  background: #cf455c;
 }
 body .contenedor .pagina .cont_pagina .contenido {
-  background: #e8e8e8;
+  background: #ff9898;
 }
 body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .cont_bpi .nombre {
   color: #000;
@@ -47,7 +47,7 @@ body .contenedor .modals .cont_modals .modal {
 }
 body .contenedor .modals .cont_modals .modal .cont_modal .titulo {
   background: #f5f5f5;
-  border-bottom-color: #df8543;
+  border-bottom-color: #971549;
 }
 body .contenedor .modals .cont_modals .modal .cont_modal .close {
   color: #999;
@@ -56,7 +56,7 @@ body .contenedor .modals .cont_modals .modal .cont_modal .sub_total {
   background: #ddd;
 }
 body .contenedor .modals .cont_modals .modal .cont_modal .acciones {
-  border-top-color: #df8543;
+  border-top-color: #971549;
   background: #f5f5f5;
 }
 /* MODALS BASE */
