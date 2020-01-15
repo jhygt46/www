@@ -18,7 +18,7 @@ body .contenedor {
   color: #000;
 }
 body .contenedor .pagina .cont_pagina .header {
-  background: #ebf0f7;
+  background: #fff;
   border-bottom-color: #941C80;
 }
 body .contenedor .pagina .cont_pagina .header .menu_right .shop {
@@ -28,7 +28,7 @@ body .contenedor .pagina .cont_pagina .header .menu_right .cantcart {
   background: #F9DDF3;
 }
 body .contenedor .pagina .cont_pagina .contenido {
-  background: #e8e8e8;
+  background: #ebf0f6;
 }
 body .contenedor .pagina .cont_pagina .contenido .cont_contenido .botones_principales .cont_bp .cont_bpi .nombre {
   color: #000;
