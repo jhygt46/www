@@ -451,6 +451,7 @@ body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_
 }
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto {
   margin-bottom: 5px;
+  cursor: pointer;
 }
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .cont_producto {
   min-height: 80px;
