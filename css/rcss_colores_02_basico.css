@@ -146,7 +146,7 @@ body .contenedor .modals .cont_modals .modal_productos_promo .cont_modal .cont_i
 /* MODALS PASO PROMOCION */
 /* MODALS PASO CARTA */
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .cont_producto {
-  background: #ddd;
+  background: #e4e4e4;
 }
 body .contenedor .modals .cont_modals .modal_carta .cont_modal .cont_info .info_modal .lista_productos .producto .cont_producto .cont_info_pro .nombre {
   color: #000;
